@@ -3,9 +3,17 @@ import OpenAI from 'openai'
 
 export const dynamic = 'force-dynamic'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+// Initialize OpenAI client only when needed to avoid build-time errors
+let openai: OpenAI | null = null
+
+function getOpenAIClient() {
+  if (!openai && process.env.OPENAI_API_KEY) {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    })
+  }
+  return openai
+}
 
 export async function POST(request: NextRequest) {
   let userId: string | undefined
@@ -43,7 +51,7 @@ export async function POST(request: NextRequest) {
     // Call OpenAI to generate meal plan with timeout
     console.log('Making OpenAI API call...')
     const completion = await Promise.race([
-      openai.chat.completions.create({
+      getOpenAIClient()?.chat.completions.create({
         model: 'gpt-4o-mini',
         messages: [
           {
