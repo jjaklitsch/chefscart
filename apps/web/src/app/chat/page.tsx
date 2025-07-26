@@ -2,7 +2,7 @@
 
 import { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import PreferencesChat from '../../../components/PreferencesChat'
+import { ConversationalChat } from '../../../components/ConversationalChat'
 import MealPlanPreview from '../../../components/MealPlanPreview'
 import { UserPreferences, MealPlan } from '../../../types'
 
@@ -106,9 +106,9 @@ function ChatPageContent() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center">
+      <div className="min-h-screen bg-health-gradient flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
+          <div className="loading-spinner mx-auto mb-4 w-12 h-12"></div>
           <h2 className="text-xl font-semibold text-gray-900 mb-2">
             {step === 'preferences' ? 'Generating your meal plan...' : 'Creating your cart...'}
           </h2>
@@ -120,9 +120,9 @@ function ChatPageContent() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center">
+      <div className="min-h-screen bg-health-gradient flex items-center justify-center">
         <div className="text-center max-w-md mx-auto px-4">
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+          <div className="alert-error mb-4">
             <strong className="font-bold">Error: </strong>
             <span>{error}</span>
           </div>
@@ -133,7 +133,7 @@ function ChatPageContent() {
               setMealPlan(null)
               setPreferences(null)
             }}
-            className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors"
+            className="btn-primary"
           >
             Try Again
           </button>
@@ -143,7 +143,7 @@ function ChatPageContent() {
   }
 
   if (step === 'preferences') {
-    return <PreferencesChat onPreferencesComplete={handlePreferencesComplete} />
+    return <ConversationalChat onPreferencesComplete={handlePreferencesComplete} />
   }
 
   if (step === 'mealplan' && mealPlan) {
@@ -158,15 +158,15 @@ function ChatPageContent() {
 
   if (step === 'cart') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center">
+      <div className="min-h-screen bg-health-gradient flex items-center justify-center">
         <div className="text-center max-w-md mx-auto px-4">
-          <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+          <div className="alert-success mb-4">
             <h2 className="text-xl font-bold mb-2">🎉 Success!</h2>
             <p>Your cart has been created and opened in Instacart. Check your email for the confirmation and shopping details.</p>
           </div>
           <button
             onClick={() => router.push('/')}
-            className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors"
+            className="btn-primary"
           >
             Start Over
           </button>
@@ -181,9 +181,9 @@ function ChatPageContent() {
 export default function ChatPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center">
+      <div className="min-h-screen bg-health-gradient flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
+          <div className="loading-spinner mx-auto mb-4 w-12 h-12"></div>
           <h2 className="text-xl font-semibold text-gray-900">Loading...</h2>
         </div>
       </div>
