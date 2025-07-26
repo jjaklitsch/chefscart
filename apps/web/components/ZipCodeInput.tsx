@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { MapPin, AlertCircle, CheckCircle, X, Mail, User } from 'lucide-react'
 import type { WaitlistRequest, WaitlistResponse, ZipCodeValidation } from '../types'
+import analytics from '../lib/analytics'
 
 interface ZipCodeInputProps {
   onZipValidation: (zip: string, isValid: boolean) => void
@@ -55,6 +56,18 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
 
       if (data.success) {
         setSubmitState('success')
+        
+        // Track waitlist signup success
+        const userId = localStorage.getItem('chefscart_user_id') || '';
+        analytics.track('waitlist_signup', {
+          email: formData.email,
+          zip_code: zipCode,
+          signup_source: 'no_coverage',
+          funnel_stage: 'acquisition',
+          first_name: formData.firstName,
+          last_name: formData.lastName
+        }, userId);
+        
         setTimeout(() => {
           onClose()
           setSubmitState('idle')
@@ -63,6 +76,15 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
       } else {
         setSubmitState('error')
         setErrorMessage(data.error || 'Failed to join waitlist')
+        
+        // Track waitlist signup failure
+        const userId = localStorage.getItem('chefscart_user_id') || '';
+        analytics.track('waitlist_signup_failed', {
+          email: formData.email,
+          zip_code: zipCode,
+          error: data.error,
+          funnel_stage: 'acquisition'
+        }, userId);
       }
     } catch (error) {
       setSubmitState('error')
@@ -83,13 +105,13 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold text-gray-900">Join Our Waitlist</h2>
+            <h2 className="text-xl font-semibold text-text-primary">Join Our Waitlist</h2>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-neutral-400 hover:text-neutral-600 transition-colors p-1 rounded-lg hover:bg-neutral-100"
             >
               <X className="h-5 w-5" />
             </button>
@@ -97,26 +119,26 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
 
           {submitState === 'success' ? (
             <div className="text-center py-8">
-              <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">You're on the list!</h3>
-              <p className="text-gray-600">
+              <CheckCircle className="h-12 w-12 text-mint-500 mx-auto mb-4" />
+              <h3 className="text-lg font-medium text-text-primary mb-2">You're on the list!</h3>
+              <p className="text-text-secondary">
                 We'll notify you when ChefsCart becomes available in {location}.
               </p>
             </div>
           ) : (
             <>
               <div className="mb-6">
-                <p className="text-gray-600 mb-2">
+                <p className="text-text-secondary mb-2">
                   Be the first to know when ChefsCart launches in:
                 </p>
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-3">
-                  <p className="font-medium text-orange-800">{location}</p>
+                <div className="bg-brand-50 border border-brand-200 rounded-xl p-3">
+                  <p className="font-medium text-brand-800">{location}</p>
                 </div>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-1">
                     Email Address *
                   </label>
                   <div className="relative">
@@ -126,16 +148,16 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
                       value={formData.email}
                       onChange={handleInputChange('email')}
                       placeholder="you@example.com"
-                      className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200 focus:border-orange-500"
+                      className="input-primary pl-10"
                       required
                     />
-                    <Mail className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <Mail className="h-4 w-4 text-neutral-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-text-primary mb-1">
                       First Name
                     </label>
                     <div className="relative">
@@ -145,14 +167,14 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
                         value={formData.firstName}
                         onChange={handleInputChange('firstName')}
                         placeholder="John"
-                        className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200 focus:border-orange-500"
+                        className="input-primary pl-10"
                       />
-                      <User className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                      <User className="h-4 w-4 text-neutral-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-text-primary mb-1">
                       Last Name
                     </label>
                     <input
@@ -161,14 +183,14 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
                       value={formData.lastName}
                       onChange={handleInputChange('lastName')}
                       placeholder="Doe"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200 focus:border-orange-500"
+                      className="input-primary"
                     />
                   </div>
                 </div>
 
                 {errorMessage && (
-                  <div className="text-red-600 text-sm flex items-center">
-                    <AlertCircle className="h-4 w-4 mr-1 flex-shrink-0" />
+                  <div className="alert-error text-sm">
+                    <AlertCircle className="h-4 w-4 flex-shrink-0" />
                     {errorMessage}
                   </div>
                 )}
@@ -177,21 +199,21 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
                   <button
                     type="button"
                     onClick={onClose}
-                    className="flex-1 px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="btn-secondary flex-1"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="btn-primary flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Joining...' : 'Join Waitlist'}
                   </button>
                 </div>
               </form>
 
-              <p className="text-xs text-gray-500 mt-4 text-center">
+              <p className="text-xs text-text-muted mt-4 text-center">
                 We'll only use your email to notify you about ChefsCart availability in your area.
               </p>
             </>
@@ -234,6 +256,15 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
       setMessage('Please enter a valid 5-digit ZIP code')
       setValidationData({})
       onZipValidation(zip, false)
+      
+      // Track invalid ZIP attempt
+      const userId = localStorage.getItem('chefscart_user_id') || '';
+      analytics.track('zip_validation_failed', {
+        zip_code: zip,
+        error_type: 'invalid_format',
+        funnel_stage: 'acquisition'
+      }, userId);
+      
       return
     }
 
@@ -246,6 +277,7 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
       })
       
       const data: ZipCodeValidation = await response.json()
+      const userId = localStorage.getItem('chefscart_user_id') || '';
       
       if (data.hasInstacartCoverage) {
         setValidationState('valid')
@@ -255,6 +287,9 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
           ...(data.state && { state: data.state })
         })
         onZipValidation(zip, true)
+        
+        // Track successful ZIP completion - key conversion event
+        analytics.trackZipCompletion(zip, true, userId);
       } else if (data.isValid) {
         setValidationState('no-coverage')
         setMessage('Sorry, Instacart doesn\'t deliver to this area yet. Join our waitlist!')
@@ -263,17 +298,39 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
           ...(data.state && { state: data.state })
         })
         onZipValidation(zip, false)
+        
+        // Track ZIP with no coverage
+        analytics.track('zip_no_coverage', {
+          zip_code: zip,
+          funnel_stage: 'acquisition',
+          conversion_blocker: 'no_instacart_coverage'
+        }, userId);
       } else {
         setValidationState('invalid')
         setMessage(data.message || 'Invalid ZIP code')
         setValidationData({})
         onZipValidation(zip, false)
+        
+        // Track invalid ZIP response
+        analytics.track('zip_validation_failed', {
+          zip_code: zip,
+          error_type: 'invalid_zip',
+          funnel_stage: 'acquisition'
+        }, userId);
       }
     } catch (error) {
       setValidationState('invalid')
       setMessage('Unable to verify ZIP code. Please try again.')
       setValidationData({})
       onZipValidation(zip, false)
+      
+      // Track API error
+      const userId = localStorage.getItem('chefscart_user_id') || '';
+      analytics.track('zip_validation_failed', {
+        zip_code: zip,
+        error_type: 'api_error',
+        funnel_stage: 'acquisition'
+      }, userId);
     } finally {
       setIsLoading(false)
     }
@@ -296,19 +353,19 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
   const getInputBorderColor = () => {
     switch (validationState) {
       case 'valid':
-        return 'border-green-500 focus:border-green-600'
+        return 'border-mint-500 focus:border-mint-600 focus:ring-mint-100 shadow-sm ring-1 ring-mint-200'
       case 'invalid':
       case 'no-coverage':
-        return 'border-red-500 focus:border-red-600'
+        return 'border-red-500 focus:border-red-600 focus:ring-red-100'
       default:
-        return 'border-gray-300 focus:border-orange-500'
+        return 'border-neutral-200 focus:border-brand-600 focus:ring-brand-100'
     }
   }
 
   return (
     <>
       <div className="w-full">
-        <label htmlFor="zipCode" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="zipCode" className="block text-sm font-medium text-text-primary mb-2">
           Enter your ZIP code to get started
         </label>
         <div className="relative">
@@ -318,23 +375,25 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
             value={zipCode}
             onChange={handleZipChange}
             placeholder="12345"
-            className={`w-full pl-12 pr-12 py-3 border rounded-lg text-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-orange-200 ${getInputBorderColor()}`}
+            className={`w-full pl-12 pr-12 py-3 border-2 rounded-xl text-lg font-medium transition-all duration-200 ease-out focus:outline-none focus:ring-4 ${getInputBorderColor()}`}
             maxLength={5}
           />
           <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
-            <MapPin className="h-5 w-5 text-gray-400" />
+            <MapPin className="h-5 w-5 text-neutral-400" />
           </div>
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
             {isLoading && (
-              <div className="h-5 w-5 border-2 border-gray-300 border-t-orange-600 rounded-full animate-spin"></div>
+              <div className="loading-spinner"></div>
             )}
           </div>
         </div>
         {message && (
-          <div className={`mt-3 text-sm flex items-start ${
-            validationState === 'valid' ? 'text-green-600' : 'text-red-600'
+          <div className={`mt-3 p-3 rounded-xl border flex items-start text-sm transition-all duration-300 ease-out ${
+            validationState === 'valid' 
+              ? 'bg-mint-50 border-mint-200 text-mint-800 animate-slide-up shadow-sm' 
+              : 'bg-red-50 border-red-200 text-red-800 animate-slide-up'
           }`}>
-            {validationState === 'valid' && <CheckCircle className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5" />}
+            {validationState === 'valid' && <CheckCircle className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-mint-600" />}
             {(validationState === 'invalid' || validationState === 'no-coverage') && <AlertCircle className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5" />}
             <span className="leading-relaxed">{message}</span>
           </div>
@@ -342,7 +401,7 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
         {validationState === 'no-coverage' && (
           <button 
             onClick={() => setShowWaitlistModal(true)}
-            className="w-full mt-3 bg-orange-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-orange-700 transition-colors"
+            className="btn-primary w-full mt-3"
           >
             Join Waitlist
           </button>

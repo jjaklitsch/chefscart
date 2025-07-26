@@ -52,8 +52,8 @@ export default function HeadlineABTest({ className = "" }: HeadlineABTestProps) 
     return (
       <div className={className}>
         <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded mb-4"></div>
-          <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          <div className="h-8 bg-brand-100 rounded mb-4"></div>
+          <div className="h-4 bg-brand-100 rounded w-3/4"></div>
         </div>
       </div>
     );
@@ -64,10 +64,10 @@ export default function HeadlineABTest({ className = "" }: HeadlineABTestProps) 
 
   return (
     <div className={className}>
-      <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-4">
+      <p className="text-xl text-text-primary max-w-2xl mx-auto mb-4">
         {content.h1}
       </p>
-      <p className="text-lg text-gray-500 max-w-xl mx-auto">
+      <p className="text-lg text-text-secondary max-w-xl mx-auto">
         {content.subtext}
       </p>
     </div>
