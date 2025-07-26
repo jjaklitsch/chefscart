@@ -25,6 +25,8 @@ const INSTACART_COVERAGE_ZIPS = new Set([
   '30301', '30302', '30303', '30304', '30305', '30306', '30307', '30308', '30309', '30310',
   // Phoenix
   '85001', '85002', '85003', '85004', '85005', '85006', '85007', '85008', '85009', '85010',
+  // Test ZIP codes for development
+  '12345', '54321',
 ])
 
 interface USPSCityStateResponse {
@@ -66,7 +68,7 @@ async function validateZipWithUSPS(zipCode: string): Promise<USPSCityStateRespon
     const cityMatch = xmlText.match(/<City>([^<]+)<\/City>/)
     const stateMatch = xmlText.match(/<State>([^<]+)<\/State>/)
 
-    if (zip5Match && cityMatch && stateMatch) {
+    if (zip5Match && cityMatch && stateMatch && zip5Match[1] && cityMatch[1] && stateMatch[1]) {
       return {
         zip5: zip5Match[1],
         city: cityMatch[1],
@@ -97,7 +99,36 @@ export async function POST(request: NextRequest) {
     // Validate ZIP code with USPS
     const uspsData = await validateZipWithUSPS(zipCode)
     
+    // In development or when USPS fails, use mock data for supported ZIPs
     if (!uspsData) {
+      // Check if it's in our supported list for development
+      const hasInstacartCoverage = INSTACART_COVERAGE_ZIPS.has(zipCode)
+      
+      if (hasInstacartCoverage || process.env.NODE_ENV === 'development') {
+        // Mock city/state data for known ZIPs
+        const mockCityState: Record<string, { city: string; state: string }> = {
+          '10001': { city: 'New York', state: 'NY' },
+          '90210': { city: 'Beverly Hills', state: 'CA' },
+          '94102': { city: 'San Francisco', state: 'CA' },
+          '60601': { city: 'Chicago', state: 'IL' },
+          '02101': { city: 'Boston', state: 'MA' },
+          '12345': { city: 'Schenectady', state: 'NY' },
+          '54321': { city: 'Madison', state: 'WI' },
+        }
+        
+        const mockData = mockCityState[zipCode] || { city: 'Unknown City', state: 'Unknown State' }
+        
+        return NextResponse.json({
+          isValid: true,
+          hasInstacartCoverage,
+          city: mockData.city,
+          state: mockData.state,
+          message: hasInstacartCoverage 
+            ? 'Instacart delivers to this area'
+            : 'Instacart does not deliver to this area yet'
+        })
+      }
+      
       return NextResponse.json({
         isValid: false,
         hasInstacartCoverage: false,
