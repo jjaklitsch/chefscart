@@ -187,10 +187,6 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [])
 
-  useEffect(() => {
-    scrollToBottom()
-  }, [messages, isTyping, scrollToBottom])
-
   const startConversation = useCallback(() => {
     const firstStep = conversationSteps[0]
     if (!firstStep) return
@@ -214,6 +210,10 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
       awaitingResponse: false
     })
   }, [])
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages, isTyping, scrollToBottom])
 
   // Load saved state on mount
   useEffect(() => {
@@ -251,6 +251,15 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
             })
           }
         }
+      }
+
+      // Initialize meal configuration if we have selected meal types but no configuration
+      if (savedState.preferences.selectedMealTypes && Object.keys(savedState.mealConfiguration).length === 0) {
+        const initialMealConfig: Record<string, { days: number, adults: number, kids: number }> = {}
+        savedState.preferences.selectedMealTypes.forEach((mealType: string) => {
+          initialMealConfig[mealType] = { days: 1, adults: 2, kids: 0 }
+        })
+        savedState.mealConfiguration = initialMealConfig
       }
       
       setMessages(reconstructedMessages)
@@ -359,8 +368,8 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
         ).join(', ')
         break
       case 'mealconfig':
-        const mealTypes = selectedReplies.length > 0 ? selectedReplies : Object.keys(conversationState.mealConfiguration)
-        value = mealTypes.map(type => ({
+        const configuredMealTypes = Object.keys(conversationState.mealConfiguration)
+        value = configuredMealTypes.map(type => ({
           type: type.toLowerCase() as 'breakfast' | 'lunch' | 'dinner' | 'snacks' | 'dessert',
           days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, conversationState.mealConfiguration[type]?.days || 5),
           adults: conversationState.mealConfiguration[type]?.adults || 2,
@@ -386,9 +395,20 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
       setIsTyping(false)
 
       // Update preferences
-      const newPreferences = { 
+      let newPreferences = { 
         ...conversationState.preferences, 
         [currentStep.key]: value 
+      }
+
+      // Initialize meal configuration with defaults when meal types are selected
+      let newMealConfiguration = conversationState.mealConfiguration
+      if (currentStep.key === 'mealTypes' && Array.isArray(value)) {
+        newMealConfiguration = {}
+        value.forEach((mealType: string) => {
+          newMealConfiguration[mealType] = { days: 1, adults: 2, kids: 0 }
+        })
+        // Store the selected meal types temporarily (not as final MealType objects yet)
+        newPreferences = { ...newPreferences, selectedMealTypes: value }
       }
 
       // Calculate total meals per week for meal configuration
@@ -400,6 +420,7 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
       const newState = {
         ...conversationState,
         preferences: newPreferences,
+        mealConfiguration: newMealConfiguration,
         selectedReplies: [],
         step: conversationState.step + 1
       }
@@ -480,7 +501,12 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
   const currentStep = conversationSteps[conversationState.step]
   const currentMessage = messages.find(m => m.waitingForInput)
   const canContinue = conversationState.selectedReplies.length > 0 || 
-    (currentStep?.inputType === 'mealconfig' && Object.keys(conversationState.mealConfiguration).length > 0)
+    (currentStep?.inputType === 'mealconfig' && 
+     Object.keys(conversationState.mealConfiguration).length > 0 &&
+     Object.keys(conversationState.mealConfiguration).every(mealType => 
+       conversationState.mealConfiguration[mealType]?.days && 
+       conversationState.mealConfiguration[mealType]?.adults
+     ))
 
   return (
     <div className="min-h-screen bg-health-gradient flex flex-col">
@@ -583,7 +609,7 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
               Configure how many times per week you want each meal type, and for how many people:
             </p>
             
-            {conversationState.selectedReplies.map((mealType) => {
+            {Object.keys(conversationState.mealConfiguration).map((mealType) => {
               const config = conversationState.mealConfiguration[mealType] || { days: 1, adults: 2, kids: 0 }
               
               return (
@@ -660,7 +686,7 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
             
             <button
               onClick={() => processResponse()}
-              disabled={Object.keys(conversationState.mealConfiguration).length === 0}
+              disabled={!canContinue}
               className="btn-primary w-full"
             >
               Continue
