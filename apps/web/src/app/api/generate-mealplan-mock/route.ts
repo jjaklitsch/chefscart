@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { generateMealPlanWithFunctionCalling } from '../../../lib/openai-function-calling'
-import type { UserPreferences } from '../../../types'
+import { generateMealPlanWithFunctionCalling } from '../../../../lib/openai-function-calling'
+import type { UserPreferences } from '../../../../types'
 
 export const dynamic = 'force-dynamic'
 

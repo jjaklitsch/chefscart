@@ -8,6 +8,75 @@ const openai = new OpenAI({
 
 const db = getFirestore()
 
+// Function schema for structured recipe generation
+const RECIPE_GENERATION_FUNCTION = {
+  name: 'generate_recipes',
+  description: 'Generate a collection of recipes for meal planning',
+  parameters: {
+    type: 'object',
+    properties: {
+      recipes: {
+        type: 'array',
+        description: 'Array of recipe objects',
+        items: {
+          type: 'object',
+          properties: {
+            id: { type: 'string', description: 'Unique recipe identifier' },
+            title: { type: 'string', description: 'Recipe name' },
+            description: { type: 'string', description: 'Brief recipe description' },
+            ingredients: {
+              type: 'array',
+              items: {
+                type: 'object',
+                properties: {
+                  name: { type: 'string' },
+                  amount: { type: 'number' },
+                  unit: { type: 'string' },
+                  category: { type: 'string' }
+                },
+                required: ['name', 'amount', 'unit']
+              }
+            },
+            instructions: {
+              type: 'array',
+              items: { type: 'string' }
+            },
+            nutrition: {
+              type: 'object',
+              properties: {
+                calories: { type: 'number' },
+                protein: { type: 'number' },
+                carbs: { type: 'number' },
+                fat: { type: 'number' },
+                fiber: { type: 'number' },
+                sugar: { type: 'number' }
+              },
+              required: ['calories', 'protein', 'carbs', 'fat', 'fiber', 'sugar']
+            },
+            estimatedCost: { type: 'number', description: 'Estimated ingredient cost in USD' },
+            cookTime: { type: 'number', description: 'Cooking time in minutes' },
+            prepTime: { type: 'number', description: 'Preparation time in minutes' },
+            servings: { type: 'number', description: 'Number of servings' },
+            difficulty: { 
+              type: 'string', 
+              enum: ['easy', 'medium', 'hard'],
+              description: 'Recipe difficulty level'
+            },
+            cuisine: { type: 'string', description: 'Cuisine type' },
+            tags: {
+              type: 'array',
+              items: { type: 'string' },
+              description: 'Recipe tags and categories'
+            }
+          },
+          required: ['id', 'title', 'description', 'ingredients', 'instructions', 'nutrition', 'estimatedCost', 'cookTime', 'prepTime', 'servings', 'difficulty', 'cuisine', 'tags']
+        }
+      }
+    },
+    required: ['recipes']
+  }
+}
+
 interface MealPlanRequest {
   userId: string
   preferences: {
@@ -40,52 +109,64 @@ export async function generateMealPlan(req: Request, res: Response) {
       return res.status(400).json({ error: 'Missing required fields' })
     }
 
-    // Create GPT prompt based on preferences
-    const prompt = createMealPlanPrompt(preferences, pantryItems)
+    // Generate 40% more recipes than needed for backups
+    const totalRecipesToGenerate = Math.ceil(preferences.mealsPerWeek * 1.4)
+    const prompt = createMealPlanPrompt(preferences, pantryItems, totalRecipesToGenerate)
     
-    console.log('GPT Prompt:', prompt)
+    console.log('Generating meal plan with function calling...')
 
-    // Call OpenAI to generate meal plan
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
-      messages: [
-        {
-          role: 'system',
-          content: 'You are an expert chef and nutritionist. Generate meal plans in valid JSON format only. No additional text or explanations.'
-        },
-        {
-          role: 'user',
-          content: prompt
-        }
-      ],
-      temperature: 0.7,
-      max_tokens: 4000,
-      response_format: { type: 'json_object' }
-    })
+    // Call OpenAI with function calling for structured output and 4.5s timeout
+    const startTime = Date.now()
+    const completion = await Promise.race([
+      openai.chat.completions.create({
+        model: 'gpt-4o-mini',
+        messages: [
+          {
+            role: 'system',
+            content: `You are an expert chef and nutritionist. Generate diverse, creative meal plans that perfectly match user preferences. Focus on seasonal ingredients, balanced nutrition, and cost-effective shopping. Always generate exactly the requested number of recipes.`
+          },
+          {
+            role: 'user',
+            content: prompt
+          }
+        ],
+        functions: [RECIPE_GENERATION_FUNCTION],
+        function_call: { name: 'generate_recipes' },
+        temperature: 0.8, // Higher creativity for more diverse recipes
+        max_tokens: 4000,
+      }),
+      new Promise<never>((_, reject) => 
+        setTimeout(() => reject(new Error('OpenAI request timeout')), 4500)
+      )
+    ])
 
-    const mealPlanData = completion.choices[0]?.message?.content
-    if (!mealPlanData) {
-      throw new Error('No response from OpenAI')
+    const functionCall = completion.choices[0]?.message?.function_call
+    if (!functionCall || functionCall.name !== 'generate_recipes') {
+      throw new Error('No function call in OpenAI response')
     }
 
-    console.log('GPT Response:', mealPlanData)
+    const generationTime = Date.now() - startTime
+    console.log(`OpenAI function call completed in ${generationTime}ms`)
 
-    // Parse the JSON response
-    let parsedPlan
+    // Parse the function call response
+    let parsedRecipes: { recipes: any[] }
     try {
-      parsedPlan = JSON.parse(mealPlanData)
+      parsedRecipes = JSON.parse(functionCall.arguments)
     } catch (parseError) {
-      console.error('Failed to parse GPT response:', parseError)
-      throw new Error('Invalid JSON response from AI')
+      console.error('Failed to parse function call arguments:', parseError)
+      throw new Error('Invalid JSON in function call response')
     }
 
-    // Add 30-40% more recipes as backups
-    const targetRecipes = preferences.mealsPerWeek
-    const backupCount = Math.ceil(targetRecipes * 0.35)
+    const recipes = parsedRecipes.recipes || []
     
-    const recipes = parsedPlan.recipes || []
-    const primaryRecipes = recipes.slice(0, targetRecipes)
-    const backupRecipes = recipes.slice(targetRecipes, targetRecipes + backupCount)
+    // Validate that we got recipes
+    if (recipes.length === 0) {
+      throw new Error('No recipes generated by OpenAI')
+    }
+
+    // Split into primary and backup recipes
+    const primaryRecipes = recipes.slice(0, preferences.mealsPerWeek)
+    const backupRecipes = recipes.slice(preferences.mealsPerWeek)
 
     // Calculate estimated cost
     const subtotalEstimate = calculateEstimatedCost(primaryRecipes, preferences.peoplePerMeal)
@@ -126,7 +207,7 @@ export async function generateMealPlan(req: Request, res: Response) {
   }
 }
 
-function createMealPlanPrompt(preferences: any, pantryItems: string[]): string {
+function createMealPlanPrompt(preferences: any, pantryItems: string[], totalRecipesToGenerate: number): string {
   const {
     mealsPerWeek,
     peoplePerMeal,
@@ -139,68 +220,41 @@ function createMealPlanPrompt(preferences: any, pantryItems: string[]): string {
     preferredCuisines
   } = preferences
 
-  // Generate 30-40% more recipes than needed for backups
-  const totalRecipesToGenerate = Math.ceil(mealsPerWeek * 1.35)
+  // Use the provided total recipe count
 
-  return `Generate ${totalRecipesToGenerate} diverse recipe ideas for meal planning with the following requirements:
+  const mealTypesString = mealTypes.map((m: any) => `${m.type} (${m.days.join(', ')})`).join('; ')
+  const pantryString = pantryItems.length > 0 ? pantryItems.join(', ') : 'None specified'
 
-REQUIREMENTS:
-- ${mealsPerWeek} meals needed for ${peoplePerMeal} people
-- Meal types: ${mealTypes.map((m: any) => m.type).join(', ')}
+  return `Create ${totalRecipesToGenerate} diverse, delicious recipes for meal planning. Primary need: ${mealsPerWeek} meals for ${peoplePerMeal} people.
+
+STRICT REQUIREMENTS:
+- Meal types: ${mealTypesString}
 - Dietary restrictions: ${diets.length > 0 ? diets.join(', ') : 'None'}
-- Allergies: ${allergies.length > 0 ? allergies.join(', ') : 'None'}
-- Avoid ingredients: ${avoidIngredients.length > 0 ? avoidIngredients.join(', ') : 'None'}
-- Max cooking time: ${maxCookTime} minutes
+- Allergies to avoid: ${allergies.length > 0 ? allergies.join(', ') : 'None'}
+- Ingredients to avoid: ${avoidIngredients.length > 0 ? avoidIngredients.join(', ') : 'None'}
+- Maximum total time (prep + cook): ${maxCookTime} minutes
 - Cooking skill level: ${cookingSkillLevel}
 - Preferred cuisines: ${preferredCuisines.length > 0 ? preferredCuisines.join(', ') : 'Any'}
-- Pantry items already available: ${pantryItems.length > 0 ? pantryItems.join(', ') : 'None specified'}
+- Available pantry items: ${pantryString}
 
-INSTRUCTIONS:
-1. Create recipes that match the dietary restrictions and preferences
-2. Ensure cooking time is within the ${maxCookTime} minute limit
-3. Match the ${cookingSkillLevel} skill level
-4. Include detailed ingredient lists with quantities
-5. Provide nutrition information (calories, protein, carbs, fat, fiber)
-6. Estimate ingredient cost in USD
-7. Exclude pantry items from shopping lists when possible
-8. Vary cuisines and cooking methods for diversity
+OPTIMIZATION GOALS:
+1. Maximize variety across cuisines, proteins, and cooking methods
+2. Balance nutrition across all meals (aim for 400-600 calories per serving)
+3. Optimize ingredient overlap to reduce shopping complexity
+4. Consider seasonal availability and cost-effectiveness
+5. Match difficulty to stated skill level
+6. Utilize pantry items when possible to reduce costs
 
-REQUIRED JSON FORMAT:
-{
-  "recipes": [
-    {
-      "id": "recipe-1",
-      "title": "Recipe Name",
-      "description": "One sentence description",
-      "ingredients": [
-        {
-          "name": "ingredient name",
-          "amount": 2,
-          "unit": "cups",
-          "category": "produce"
-        }
-      ],
-      "instructions": ["Step 1", "Step 2", "Step 3"],
-      "nutrition": {
-        "calories": 450,
-        "protein": 25,
-        "carbs": 40,
-        "fat": 18,
-        "fiber": 8,
-        "sugar": 12
-      },
-      "estimatedCost": 12.50,
-      "cookTime": 25,
-      "prepTime": 10,
-      "servings": ${peoplePerMeal},
-      "difficulty": "easy",
-      "cuisine": "Italian",
-      "tags": ["healthy", "quick"]
-    }
-  ]
-}
+RECIPE REQUIREMENTS:
+- Generate exactly ${totalRecipesToGenerate} complete recipes
+- Each recipe serves ${peoplePerMeal} people
+- Include precise ingredient quantities and clear instructions
+- Provide accurate nutrition information
+- Estimate realistic ingredient costs (USD)
+- Use diverse cooking techniques (baking, grilling, stovetop, etc.)
+- Ensure recipes can be completed within time constraints
 
-Generate exactly ${totalRecipesToGenerate} recipes in this format.`
+Focus on creating a cohesive meal plan that's exciting, nutritious, and practical for the specified preferences.`
 }
 
 function calculateEstimatedCost(recipes: any[], servings: number): number {
