@@ -17,7 +17,7 @@ interface ConversationMessage {
   role: 'user' | 'assistant'
   content: string
   timestamp: Date
-  quickReplies?: QuickReply[]
+  quickReplies?: QuickReply[] | undefined
   waitingForInput?: boolean
   inputType?: 'text' | 'selection' | 'multiselect' | 'mealconfig'
 }
@@ -191,9 +191,34 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
     scrollToBottom()
   }, [messages, isTyping, scrollToBottom])
 
+  const startConversation = useCallback(() => {
+    const firstStep = conversationSteps[0]
+    if (!firstStep) return
+
+    const welcomeMessage: ConversationMessage = {
+      id: 'assistant-0',
+      role: 'assistant',
+      content: firstStep.message,
+      timestamp: new Date(),
+      quickReplies: firstStep.quickReplies,
+      waitingForInput: true,
+      inputType: firstStep.inputType
+    }
+
+    setMessages([welcomeMessage])
+    setConversationState({
+      step: 0,
+      preferences: {},
+      selectedReplies: [],
+      mealConfiguration: {},
+      awaitingResponse: false
+    })
+  }, [])
+
   // Load saved state on mount
   useEffect(() => {
     const savedState = loadFromLocalStorage()
+    
     if (savedState) {
       setConversationState(savedState)
       // Reconstruct messages from saved state
@@ -201,6 +226,7 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
       
       for (let i = 0; i <= savedState.step && i < conversationSteps.length; i++) {
         const step = conversationSteps[i]
+        if (!step) continue
         
         // Add assistant message
         reconstructedMessages.push({
@@ -232,29 +258,7 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
       // Start fresh conversation
       startConversation()
     }
-  }, [])
-
-  const startConversation = useCallback(() => {
-    const firstStep = conversationSteps[0]
-    const welcomeMessage: ConversationMessage = {
-      id: 'assistant-0',
-      role: 'assistant',
-      content: firstStep.message,
-      timestamp: new Date(),
-      quickReplies: firstStep.quickReplies,
-      waitingForInput: true,
-      inputType: firstStep.inputType
-    }
-
-    setMessages([welcomeMessage])
-    setConversationState({
-      step: 0,
-      preferences: {},
-      selectedReplies: [],
-      mealConfiguration: {},
-      awaitingResponse: false
-    })
-  }, [])
+  }, [startConversation])
 
   // Save state whenever it changes
   useEffect(() => {
@@ -346,7 +350,7 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
         if (currentStep.key === 'maxCookTime') value = parseInt(value)
         if (currentStep.key === 'organicPreference' && value === 'budget') value = 'only_if_within_10_percent'
         if (currentStep.key === 'organicPreference' && value === 'no-preference') value = 'no_preference'
-        responseText = currentStep.quickReplies?.find(qr => qr.value === selectedReplies[0])?.text || selectedReplies[0]
+        responseText = currentStep.quickReplies?.find(qr => qr.value === selectedReplies[0])?.text || selectedReplies[0] || ''
         break
       case 'multiselect':
         value = selectedReplies

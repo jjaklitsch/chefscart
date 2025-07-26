@@ -42,7 +42,7 @@ function validatePreferences(preferences: any): string | null {
 
 export async function POST(request: NextRequest) {
   let userId: string | undefined
-  let preferences: UserPreferences
+  let preferences: UserPreferences | undefined
   let zipCode: string | undefined
   
   try {

@@ -227,10 +227,10 @@ export async function POST(request: NextRequest) {
     const waitlistEntry: WaitlistEntry = {
       email: normalizedEmail,
       zipCode,
-      firstName: firstName?.trim(),
-      lastName: lastName?.trim(),
-      city: zipValidation.city,
-      state: zipValidation.state,
+      ...(firstName?.trim() && { firstName: firstName.trim() }),
+      ...(lastName?.trim() && { lastName: lastName.trim() }),
+      ...(zipValidation.city && { city: zipValidation.city }),
+      ...(zipValidation.state && { state: zipValidation.state }),
       createdAt: new Date(),
       source: 'manual',
     }

@@ -1,0 +1,52 @@
+
+> @chefscart/web@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.30
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1338ms
+ ○ Compiling /chat ...
+ ✓ Compiled /chat in 1477ms (603 modules)
+ GET /chat?zip=12345 200 in 1598ms
+ ✓ Compiled in 178ms (273 modules)
+ GET /chat?zip=12345 200 in 20ms
+ ✓ Compiled / in 401ms (617 modules)
+ GET / 200 in 509ms
+ ✓ Compiled /api/geo-ip in 253ms (373 modules)
+ GET /api/geo-ip 200 in 340ms
+ GET /api/geo-ip 200 in 5ms
+ ✓ Compiled /api/validate-zip in 94ms (375 modules)
+USPS API key not configured, falling back to format validation only
+USPS API key not configured, falling back to format validation only
+ POST /api/validate-zip 200 in 136ms
+ POST /api/validate-zip 200 in 136ms
+ GET /chat?zip=12345 200 in 71ms
+ ✓ Compiled in 500ms (616 modules)
+ ✓ Compiled in 227ms (616 modules)
+ GET /chat?zip=12345 200 in 45ms
+ GET /chat?zip=10001 200 in 26ms
+ ✓ Compiled in 311ms (616 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ components/ConversationalChat/ConversationalChat.tsx (241:7) @ startConversation
+ ⨯ ReferenceError: Cannot access 'startConversation' before initialization
+    at ConversationalChat (./components/ConversationalChat/ConversationalChat.tsx:339:9)
+digest: "2507928994"
+[0m [90m 239 |[39m       startConversation()[0m
+[0m [90m 240 |[39m     }[0m
+[0m[31m[1m>[22m[39m[90m 241 |[39m   }[33m,[39m [startConversation])[0m
+[0m [90m     |[39m       [31m[1m^[22m[39m[0m
+[0m [90m 242 |[39m[0m
+[0m [90m 243 |[39m   [36mconst[39m startConversation [33m=[39m useCallback(() [33m=>[39m {[0m
+[0m [90m 244 |[39m     console[33m.[39mlog([32m'ConversationalChat: startConversation called'[39m)[0m
+ GET /chat?zip=10001 200 in 165ms
+ ✓ Compiled in 238ms (616 modules)
+ GET /chat?zip=10001 200 in 57ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 264ms (616 modules)
+ GET /chat?zip=12345 200 in 35ms
+ GET /chat?zip=12345 200 in 17ms
+ GET /chat?zip=12345 200 in 34ms
+ ✓ Compiled in 268ms (616 modules)
+ ✓ Compiled in 232ms (616 modules)

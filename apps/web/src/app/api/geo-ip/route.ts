@@ -142,7 +142,7 @@ function extractClientIP(request: NextRequest): string {
     const value = request.headers.get(header)
     if (value) {
       // Take the first IP from comma-separated list
-      const ip = value.split(',')[0].trim()
+      const ip = value.split(',')[0]?.trim()
       if (ip && !isPrivateIP(ip)) {
         return ip
       }

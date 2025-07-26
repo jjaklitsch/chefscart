@@ -115,7 +115,7 @@ class Analytics {
     const analyticsEvent: AnalyticsEvent = {
       event,
       properties: enrichedProperties,
-      userId,
+      ...(userId && { userId }),
       timestamp
     };
 
