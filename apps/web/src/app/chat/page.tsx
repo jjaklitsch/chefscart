@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, Suspense } from 'react'
+import { useState, Suspense, useCallback } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { ConversationalChat } from '../../../components/ConversationalChat'
+import ConversationalChat from '../../../components/ConversationalChat'
 import MealPlanPreview from '../../../components/MealPlanPreview'
+import ProgressTracker from '../../../components/ProgressTracker'
 import { UserPreferences, MealPlan } from '../../../types'
 
 function ChatPageContent() {
@@ -12,13 +13,26 @@ function ChatPageContent() {
   const [mealPlan, setMealPlan] = useState<MealPlan | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [isProgressTrackerCollapsed, setIsProgressTrackerCollapsed] = useState(false)
+  const [currentPreferences, setCurrentPreferences] = useState<Partial<UserPreferences>>({})
   
   const router = useRouter()
   const searchParams = useSearchParams()
   const zipCode = searchParams?.get('zip') || ''
 
+  const handleProgressUpdate = useCallback((newPreferences: Partial<UserPreferences>) => {
+    setCurrentPreferences(newPreferences)
+  }, [])
+
+  const handleEditProgressItem = useCallback((itemKey: string) => {
+    // This would trigger the ConversationalChat component to jump to the specific step
+    // For now, just log - would need to implement step navigation in ConversationalChat
+    console.log('Edit progress item:', itemKey)
+  }, [])
+
   const handlePreferencesComplete = async (userPreferences: UserPreferences) => {
     setPreferences(userPreferences)
+    setCurrentPreferences(userPreferences)
     setIsLoading(true)
     setError(null)
 
@@ -143,7 +157,20 @@ function ChatPageContent() {
   }
 
   if (step === 'preferences') {
-    return <ConversationalChat onPreferencesComplete={handlePreferencesComplete} />
+    return (
+      <div className="relative">
+        <ConversationalChat 
+          onPreferencesComplete={handlePreferencesComplete}
+          onProgressUpdate={handleProgressUpdate}
+        />
+        <ProgressTracker
+          preferences={currentPreferences}
+          onEditItem={handleEditProgressItem}
+          isCollapsed={isProgressTrackerCollapsed}
+          onToggleCollapse={() => setIsProgressTrackerCollapsed(!isProgressTrackerCollapsed)}
+        />
+      </div>
+    )
   }
 
   if (step === 'mealplan' && mealPlan) {
