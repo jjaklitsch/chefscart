@@ -64,6 +64,14 @@ const loadFromLocalStorage = (): ConversationState | null => {
         return null
       }
       
+      // Convert timestamp strings back to Date objects
+      if (parsed.messages && Array.isArray(parsed.messages)) {
+        parsed.messages = parsed.messages.map((message: any) => ({
+          ...message,
+          timestamp: message.timestamp ? new Date(message.timestamp) : new Date()
+        }))
+      }
+      
       return parsed as ConversationState
     }
   } catch (error) {
@@ -447,13 +455,15 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
 
       {/* Chat Input */}
       {!isTyping && (
-        <ChatInput
-          onSendMessage={handleTextInput}
-          disabled={conversationState.awaitingResponse}
-          placeholder="Tell me about your meal preferences..."
-          isLoading={conversationState.awaitingResponse}
-          maxLength={1000}
-        />
+        <div className={`${showProgressTracker && !progressTrackerCollapsed ? 'mr-80' : ''}`}>
+          <ChatInput
+            onSendMessage={handleTextInput}
+            disabled={conversationState.awaitingResponse}
+            placeholder="Tell me about your meal preferences..."
+            isLoading={conversationState.awaitingResponse}
+            maxLength={1000}
+          />
+        </div>
       )}
 
       {/* Full Screen Voice UI */}

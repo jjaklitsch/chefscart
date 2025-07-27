@@ -96,7 +96,7 @@ export default function ChatInput({
             onError={handleVoiceError}
             disabled={disabled}
             showVisualFeedback={true}
-            className="w-9 h-9"
+            className="w-7 h-7"
           />
         </div>
 

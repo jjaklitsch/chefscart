@@ -204,7 +204,7 @@ export default function VoiceInput({
         className={`flex-shrink-0 rounded-full border-2 border-brand-200 bg-white text-brand-400 cursor-not-allowed ${className || 'w-11 h-11'}`}
         aria-label="Voice input loading"
       >
-        <Mic className={`mx-auto ${className?.includes('w-9') ? 'w-4 h-4' : 'w-5 h-5'}`} />
+        <Mic className={`mx-auto ${className?.includes('w-7') ? 'w-3.5 h-3.5' : className?.includes('w-9') ? 'w-4 h-4' : 'w-5 h-5'}`} />
       </button>
     )
   }
@@ -220,7 +220,7 @@ export default function VoiceInput({
         aria-label="Request microphone permission"
         title="Click to enable voice input"
       >
-        <Mic className={`mx-auto ${className?.includes('w-9') ? 'w-4 h-4' : 'w-5 h-5'}`} />
+        <Mic className={`mx-auto ${className?.includes('w-7') ? 'w-3.5 h-3.5' : className?.includes('w-9') ? 'w-4 h-4' : 'w-5 h-5'}`} />
       </button>
     )
   }
@@ -271,9 +271,9 @@ export default function VoiceInput({
         {isTranscribing ? (
           <div className="loading-spinner mx-auto" />
         ) : recordingState.isRecording ? (
-          <MicOff className={`mx-auto ${className?.includes('w-9') ? 'w-4 h-4' : 'w-5 h-5'}`} />
+          <MicOff className={`mx-auto ${className?.includes('w-7') ? 'w-3.5 h-3.5' : className?.includes('w-9') ? 'w-4 h-4' : 'w-5 h-5'}`} />
         ) : (
-          <Mic className={`mx-auto ${className?.includes('w-9') ? 'w-4 h-4' : 'w-5 h-5'}`} />
+          <Mic className={`mx-auto ${className?.includes('w-7') ? 'w-3.5 h-3.5' : className?.includes('w-9') ? 'w-4 h-4' : 'w-5 h-5'}`} />
         )}
       </button>
 
