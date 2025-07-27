@@ -2,7 +2,7 @@
 
 import { useState, Suspense, useCallback } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import ConversationalChat from '../../../components/ConversationalChat'
+import ConversationalChat from '../../../components/ConversationalChat/ConversationalChat'
 import MealPlanPreview from '../../../components/MealPlanPreview'
 import ProgressTracker from '../../../components/ProgressTracker'
 import { UserPreferences, MealPlan } from '../../../types'

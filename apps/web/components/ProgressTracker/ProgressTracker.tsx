@@ -39,6 +39,9 @@ export default function ProgressTracker({
       window.addEventListener('resize', checkMobile)
       return () => window.removeEventListener('resize', checkMobile)
     }
+    
+    // Return a no-op cleanup function when isMobile is true
+    return () => {}
   }, [isMobile])
 
   const getItemStatus = (key: keyof UserPreferences, value: any): 'pending' | 'warning' | 'completed' => {

@@ -335,7 +335,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
   
   // Helper function to determine if a quick reply was selected in a past step
   const isQuickReplySelectedInStep = (step: any, value: string, preferences: any): boolean => {
-    const preferenceValue = preferences[step.key]
+    const preferenceValue = preferences[step.key as keyof typeof preferences]
     if (!preferenceValue) return false
     
     if (Array.isArray(preferenceValue)) {
@@ -357,7 +357,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
           ? savedState.preferences.allergies.join(', ')
           : 'None'
       default:
-        const prefValue = savedState.preferences[step.key]
+        const prefValue = savedState.preferences[step.key as keyof typeof savedState.preferences]
         if (Array.isArray(prefValue)) {
           const texts = prefValue.map(val => 
             step.quickReplies?.find((qr: any) => qr.value === val)?.text || val
@@ -695,12 +695,53 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
         // Merge extracted data intelligently
         Object.entries(data.extractedData).forEach(([key, value]) => {
           if (value !== undefined && value !== null) {
-            if (Array.isArray(value) && Array.isArray(newPreferences[key as keyof typeof newPreferences])) {
-              // Merge arrays without duplicates
-              const existingArray = newPreferences[key as keyof typeof newPreferences] as any[]
-              newPreferences[key as keyof typeof newPreferences] = [...new Set([...existingArray, ...value])] as any
-            } else {
-              newPreferences[key as keyof typeof newPreferences] = value as any
+            // Type-safe property assignment for known keys
+            switch (key) {
+              case 'diets':
+                if (Array.isArray(value) && Array.isArray(newPreferences.diets)) {
+                  newPreferences.diets = Array.from(new Set([...newPreferences.diets, ...value]))
+                } else if (Array.isArray(value)) {
+                  newPreferences.diets = value
+                }
+                break
+              case 'allergies':
+                if (Array.isArray(value) && Array.isArray(newPreferences.allergies)) {
+                  newPreferences.allergies = Array.from(new Set([...newPreferences.allergies, ...value]))
+                } else if (Array.isArray(value)) {
+                  newPreferences.allergies = value
+                }
+                break
+              case 'preferredCuisines':
+                if (Array.isArray(value) && Array.isArray(newPreferences.preferredCuisines)) {
+                  newPreferences.preferredCuisines = Array.from(new Set([...newPreferences.preferredCuisines, ...value]))
+                } else if (Array.isArray(value)) {
+                  newPreferences.preferredCuisines = value
+                }
+                break
+              case 'selectedMealTypes':
+                if (Array.isArray(value)) {
+                  newPreferences.selectedMealTypes = value
+                }
+                break
+              case 'organicPreference':
+                if (typeof value === 'string') {
+                  newPreferences.organicPreference = value as 'preferred' | 'only_if_within_10_percent' | 'no_preference'
+                }
+                break
+              case 'maxCookTime':
+                if (typeof value === 'number') {
+                  newPreferences.maxCookTime = value
+                }
+                break
+              case 'cookingSkillLevel':
+                if (typeof value === 'string') {
+                  newPreferences.cookingSkillLevel = value as 'beginner' | 'intermediate' | 'advanced'
+                }
+                break
+              default:
+                // For unknown keys, use type assertion as fallback
+                (newPreferences as any)[key] = value
+                break
             }
           }
         })

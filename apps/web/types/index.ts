@@ -19,6 +19,7 @@ export interface UserPreferences {
   cookingSkillLevel: 'beginner' | 'intermediate' | 'advanced'
   preferredCuisines: string[]
   preferredRetailers: string[]
+  selectedMealTypes?: string[] // Temporary field used during conversation flow
 }
 
 export interface MealType {
