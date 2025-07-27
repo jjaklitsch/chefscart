@@ -155,7 +155,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
 
   // Order meal types
   const mealTypeOrder = ['breakfast', 'lunch', 'dinner', 'snack', 'other']
-  const orderedMealTypes = mealTypeOrder.filter(type => groupedRecipes[type]?.length > 0)
+  const orderedMealTypes = mealTypeOrder.filter(type => groupedRecipes && groupedRecipes[type] && groupedRecipes[type].length > 0)
 
   const handleReplaceRecipe = async (recipeToReplace: Recipe) => {
     // Mark recipe as being replaced
@@ -171,7 +171,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         body: JSON.stringify({
           recipeToReplace,
           currentRecipes: selectedRecipes,
-          preferences: mealPlan.preferences || preferences
+          preferences: preferences
         })
       })
 
@@ -318,7 +318,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                 {mealType === 'other' ? 'Other Meals' : `${mealType}s`}
               </h2>
               <div className="space-y-4 md:space-y-6">
-                {groupedRecipes[mealType].map((recipe) => (
+                {groupedRecipes[mealType]?.map((recipe) => (
                   <div key={recipe.id} className="bg-white rounded-xl md:rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-200">
                     {/* Mobile Layout */}
                     <div className="md:hidden">

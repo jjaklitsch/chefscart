@@ -46,12 +46,7 @@ export class OpenAIRealtimeService extends EventEmitter {
 
       const { token, url } = await response.json()
 
-      this.websocket = new WebSocket(url, [], {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'OpenAI-Beta': 'realtime=v1'
-        }
-      } as any)
+      this.websocket = new WebSocket(url)
 
       this.websocket.onopen = () => {
         this.isConnected = true
@@ -175,7 +170,7 @@ export class OpenAIRealtimeService extends EventEmitter {
 
     // Convert ArrayBuffer to base64
     const base64Audio = btoa(
-      String.fromCharCode(...new Uint8Array(audioData))
+      String.fromCharCode(...Array.from(new Uint8Array(audioData)))
     )
 
     const audioMessage = {

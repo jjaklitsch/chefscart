@@ -55,7 +55,6 @@ export class RealtimeVoiceService extends EventEmitter {
   constructor(config: RealtimeVoiceConfig) {
     super()
     this.config = {
-      voice: 'alloy',
       temperature: 0.9,
       instructions: 'You are Carter, a friendly AI sous-chef. Keep responses concise and conversational. Help with meal planning.',
       turnDetection: {
@@ -92,12 +91,7 @@ export class RealtimeVoiceService extends EventEmitter {
       const { token, url } = await response.json()
 
       // Create WebSocket connection
-      this.websocket = new WebSocket(url, [], {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'OpenAI-Beta': 'realtime=v1'
-        }
-      } as any)
+      this.websocket = new WebSocket(url)
 
       this.setupWebSocketHandlers()
       
@@ -134,7 +128,7 @@ export class RealtimeVoiceService extends EventEmitter {
         googAutoGainControl: false,
         googHighpassFilter: true,
         googTypingNoiseDetection: true
-      }
+      } as any
     })
 
     // Set up audio nodes for input processing
@@ -413,7 +407,7 @@ export class RealtimeVoiceService extends EventEmitter {
       
       // Convert Int16 to Float32
       for (let i = 0; i < audioData.length; i++) {
-        floatArray[i] = audioData[i] / 32768.0
+        floatArray[i] = (audioData[i] || 0) / 32768.0
       }
 
       if (floatArray.length === 0) {
@@ -456,7 +450,7 @@ export class RealtimeVoiceService extends EventEmitter {
       
       // Convert to base64
       const base64Audio = btoa(
-        String.fromCharCode(...new Uint8Array(arrayBuffer))
+        String.fromCharCode(...Array.from(new Uint8Array(arrayBuffer)))
       )
 
       // Send to WebSocket
@@ -483,7 +477,7 @@ export class RealtimeVoiceService extends EventEmitter {
       // Calculate RMS (root mean square) for voice activity
       let sum = 0
       for (let i = 0; i < dataArray.length; i++) {
-        sum += (dataArray[i] / 255) ** 2
+        sum += ((dataArray[i] || 0) / 255) ** 2
       }
       const rms = Math.sqrt(sum / dataArray.length)
       

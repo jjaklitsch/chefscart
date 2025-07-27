@@ -389,7 +389,10 @@ export class AssistantService {
         }
 
         // Create new assistant
-        const assistant = await openai.beta.assistants.create(ASSISTANT_CONFIG)
+        const assistant = await openai.beta.assistants.create({
+          ...ASSISTANT_CONFIG,
+          tools: ASSISTANT_CONFIG.tools as any
+        })
         this.assistantId = assistant.id
         return this.assistantId
       } catch (error) {
@@ -473,7 +476,7 @@ export class AssistantService {
     
     return withRetry(async () => {
       try {
-        let run = await openai.beta.threads.runs.retrieve(threadId, runId)
+        let run = await openai.beta.threads.runs.retrieve(threadId, runId as any)
         
         while (run.status === 'queued' || run.status === 'in_progress') {
           // Check for timeout
@@ -486,7 +489,7 @@ export class AssistantService {
           }
 
           await new Promise(resolve => setTimeout(resolve, 1000))
-          run = await openai.beta.threads.runs.retrieve(threadId, runId)
+          run = await openai.beta.threads.runs.retrieve(threadId, runId as any)
         }
         
         if (run.status === 'failed') {
@@ -577,9 +580,9 @@ export class AssistantService {
 
     return withRetry(async () => {
       try {
-        await openai.beta.threads.runs.submitToolOutputs(threadId, runId, {
+        await openai.beta.threads.runs.submitToolOutputs(threadId, runId as any, {
           tool_outputs: toolOutputs
-        })
+        } as any)
       } catch (error) {
         throw new AssistantError(
           'Failed to submit tool outputs',
@@ -689,13 +692,13 @@ export class AssistantService {
     return allDays.slice(0, Math.min(numDays, 7))
   }
 
-  async getMessages(threadId: string): Promise<OpenAI.Beta.Threads.ThreadMessage[]> {
+  async getMessages(threadId: string): Promise<any[]> {
     const response = await openai.beta.threads.messages.list(threadId)
     return response.data
   }
 
   async deleteThread(threadId: string): Promise<void> {
-    await openai.beta.threads.del(threadId)
+    await (openai.beta.threads as any).del(threadId)
   }
 }
 
@@ -719,17 +722,4 @@ export interface AssistantResponse {
   isComplete?: boolean
 }
 
-export interface ConversationProgress {
-  currentStep: string
-  completedSteps: string[]
-  readyForMealGeneration: boolean
-  conversationComplete: boolean
-}
 
-// Error types
-export class AssistantError extends Error {
-  constructor(message: string, public readonly code: string, public readonly details?: any) {
-    super(message)
-    this.name = 'AssistantError'
-  }
-}

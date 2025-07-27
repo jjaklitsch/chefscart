@@ -53,41 +53,6 @@ export default function RealtimeVoiceUI({
     }
   }, [])
 
-  // Stream audio delta for immediate playback
-  const streamAudioDelta = useCallback(async (audioBase64: string) => {
-    if (!audioPlaybackContext.current) {
-      await initializeAudioPlayback()
-    }
-
-    try {
-      // Decode base64 to binary
-      const binaryString = atob(audioBase64)
-      const audioBytes = new Uint8Array(binaryString.length)
-      for (let i = 0; i < binaryString.length; i++) {
-        audioBytes[i] = binaryString.charCodeAt(i)
-      }
-
-      // Convert to PCM16 format (assuming the data is PCM16)
-      const audioData = new Int16Array(audioBytes.buffer)
-      const floatArray = new Float32Array(audioData.length)
-      
-      // Convert Int16 to Float32 (-1 to 1 range)
-      for (let i = 0; i < audioData.length; i++) {
-        floatArray[i] = audioData[i] / 32768.0
-      }
-
-      // Add to buffer for streaming playback
-      audioBuffer.current.push(floatArray)
-      
-      // Start playback if not already playing
-      if (!isPlayingAudio.current) {
-        playAudioBuffer()
-      }
-    } catch (error) {
-      console.error('Error processing audio delta:', error)
-    }
-  }, [playAudioBuffer])
-
   // Play audio chunks immediately for streaming
   const playAudioBuffer = useCallback(async () => {
     if (!audioPlaybackContext.current || audioBuffer.current.length === 0) return
@@ -127,6 +92,42 @@ export default function RealtimeVoiceUI({
       isPlayingAudio.current = false
     }
   }, [])
+
+  // Stream audio delta for immediate playback
+  const streamAudioDelta = useCallback(async (audioBase64: string) => {
+    if (!audioPlaybackContext.current) {
+      await initializeAudioPlayback()
+    }
+
+    try {
+      // Decode base64 to binary
+      const binaryString = atob(audioBase64)
+      const audioBytes = new Uint8Array(binaryString.length)
+      for (let i = 0; i < binaryString.length; i++) {
+        audioBytes[i] = binaryString.charCodeAt(i)
+      }
+
+      // Convert to PCM16 format (assuming the data is PCM16)
+      const audioData = new Int16Array(audioBytes.buffer)
+      const floatArray = new Float32Array(audioData.length)
+      
+      // Convert Int16 to Float32 (-1 to 1 range)
+      for (let i = 0; i < audioData.length; i++) {
+        floatArray[i] = (audioData[i] || 0) / 32768.0
+      }
+
+      // Add to buffer for streaming playback
+      audioBuffer.current.push(floatArray)
+      
+      // Start playback if not already playing
+      if (!isPlayingAudio.current) {
+        playAudioBuffer()
+      }
+    } catch (error) {
+      console.error('Error processing audio delta:', error)
+    }
+  }, [playAudioBuffer])
+
 
   useEffect(() => {
     if (!isVisible) return

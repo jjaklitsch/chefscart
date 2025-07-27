@@ -182,7 +182,6 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     generatedMeals: [],
     selectedMeals: [],
     isMealGenerationLoading: false,
-    threadId: undefined,
     initialChoiceMade: false
   })
   const [isTyping, setIsTyping] = useState(false)
@@ -603,7 +602,6 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
       generatedMeals: [],
       selectedMeals: [],
       isMealGenerationLoading: false,
-      threadId: undefined,
       initialChoiceMade: false
     })
     setShowVoiceUI(false)
@@ -779,7 +777,6 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
         onChooseVoice={handleChooseVoice}
         onChooseChat={handleChooseChat}
         onChooseGuided={handleChooseGuided}
-        onBackToHome={onBackToHome}
       />
     )
   }
@@ -901,7 +898,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
                   return (
                     <div className="mt-4">
                       {(() => {
-                        const currentStep = getStepById(conversationState.conversationFlow.currentStepId)
+                        const currentStep = conversationState.conversationFlow.currentStepId ? getStepById(conversationState.conversationFlow.currentStepId) : null
                         if (currentStep && currentStep.quickReplies) {
                           return (
                             <QuickReplyGrid

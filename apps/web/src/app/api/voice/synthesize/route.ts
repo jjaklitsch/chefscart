@@ -9,7 +9,8 @@ const openai = new OpenAI({
 export async function POST(request: NextRequest) {
   try {
     const body: VoiceSynthesisRequest = await request.json()
-    const { text, voice = 'alloy', speed = 1.0, format = 'stream' } = body
+    const { text, voice = 'alloy', speed = 1.0 } = body
+    const format = 'stream' // Fixed format since it's not in the interface
 
     if (!text || text.trim().length === 0) {
       return NextResponse.json(
@@ -59,18 +60,7 @@ export async function POST(request: NextRequest) {
     // Convert the response to ArrayBuffer
     const arrayBuffer = await speechResponse.arrayBuffer()
 
-    // If format is base64, return JSON with base64 encoded audio
-    if (format === 'base64') {
-      const base64Audio = Buffer.from(arrayBuffer).toString('base64')
-      return NextResponse.json({
-        audio: base64Audio,
-        processingTime: processingTime,
-        voice: voice,
-        speed: speed
-      })
-    }
-
-    // Default: return streaming audio
+    // Return streaming audio
     const response = new NextResponse(arrayBuffer, {
       status: 200,
       headers: {

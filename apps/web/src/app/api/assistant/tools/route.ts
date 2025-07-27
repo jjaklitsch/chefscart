@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { UserPreferences, Recipe, MealType } from '../../../../types'
+import { UserPreferences, Recipe, MealType } from '../../../../../types'
 
 interface ToolCallRequest {
   function_name: string

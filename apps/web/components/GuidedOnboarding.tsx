@@ -204,6 +204,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
 
   const handleAnswer = (value: any) => {
     const step = currentStepData
+    if (!step) return
     
     if (step.type === 'multiple' || step.type === 'pills') {
       const currentAnswers = answers[step.id] || []
@@ -271,23 +272,23 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
   }
 
   const canContinue = () => {
-    if (!currentStepData.required) return true
+    if (!currentStepData?.required) return true
     
     // Special handling for household size
-    if (currentStepData.id === 'householdSize') {
+    if (currentStepData?.id === 'householdSize') {
       return (answers.adults > 0) || (answers.kids > 0)
     }
     
     // Special handling for meal frequency
-    if (currentStepData.id === 'mealFrequency') {
+    if (currentStepData?.id === 'mealFrequency') {
       return (answers.breakfastMeals || 0) > 0 || (answers.lunchMeals || 0) > 0 || (answers.dinnerMeals || 0) > 0
     }
     
-    const answer = answers[currentStepData.id]
-    if (currentStepData.type === 'multiple' || currentStepData.type === 'pills') {
+    const answer = answers[currentStepData?.id || '']
+    if (currentStepData?.type === 'multiple' || currentStepData?.type === 'pills') {
       return Array.isArray(answer) && answer.length > 0
     }
-    if (currentStepData.type === 'text') {
+    if (currentStepData?.type === 'text') {
       return true // Text fields are optional even if marked required
     }
     return answer !== undefined && answer !== null
@@ -310,10 +311,10 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         
         // Dietary preferences
         dietaryStyle: [
-          ...(answers.dietaryStyle?.filter(style => style !== 'other') || []),
+          ...(answers.dietaryStyle?.filter((style: string) => style !== 'other') || []),
           ...(answers.dietaryStyleOther ? [answers.dietaryStyleOther] : [])
         ],
-        foodsToAvoid: answers.foodsToAvoid ? answers.foodsToAvoid.split(',').map(s => s.trim()) : [],
+        foodsToAvoid: answers.foodsToAvoid ? answers.foodsToAvoid.split(',').map((s: string) => s.trim()) : [],
         favoriteFoods: answers.favoriteFoods || [],
         
         // Health and cooking preferences
@@ -349,7 +350,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         // Legacy fields for compatibility
         selectedMealTypes: [],
         diets: answers.dietaryStyle?.flat() || [],
-        allergies: answers.foodsToAvoid ? answers.foodsToAvoid.split(',').map(s => s.trim()) : [],
+        allergies: answers.foodsToAvoid ? answers.foodsToAvoid.split(',').map((s: string) => s.trim()) : [],
         maxCookTime: answers.cookingTime || 30,
         preferredCuisines: [
           ...((answers.cuisinePreferences || []).reduce((acc: string[], item: string) => {
@@ -365,7 +366,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         ],
         mealsPerWeek: (answers.mealTypes || []).length * 5, // Assume 5 days per week for each selected meal type
         peoplePerMeal: (answers.adults || 2) + ((answers.kids || 0) * 0.5),
-        mealTypes: (answers.mealTypes || []).map(mealType => ({
+        mealTypes: (answers.mealTypes || []).map((mealType: string) => ({
           type: mealType as 'breakfast' | 'lunch' | 'dinner' | 'snacks' | 'dessert',
           days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'],
           adults: answers.adults || 2,
@@ -388,6 +389,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
   }
 
   const isOptionSelected = (option: any) => {
+    if (!currentStepData) return false
     const answer = answers[currentStepData.id]
     if (currentStepData.type === 'multiple' || currentStepData.type === 'pills') {
       // Special handling for "None" option with empty array value
@@ -423,7 +425,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
             </div>
             <div>
               <h1 className="text-2xl font-display font-bold text-neutral-800">
-                {currentStepData.title}
+{currentStepData?.title}
               </h1>
               <p className="text-sm text-neutral-600">
                 Step {currentStep + 1} of {onboardingSteps.length}
@@ -445,11 +447,11 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         {/* Question */}
         <div className="mb-8">
           <h2 className="text-xl font-semibold text-neutral-800 mb-6">
-            {currentStepData.question}
+{currentStepData?.question}
           </h2>
 
           {/* Input based on step type */}
-          {currentStepData.type === 'number' && (
+          {currentStepData?.type === 'number' && (
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -484,19 +486,19 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
             </div>
           )}
 
-          {currentStepData.type === 'text' && (
+          {currentStepData?.type === 'text' && (
             <div>
               <textarea
-                value={answers[currentStepData.id] || ''}
-                onChange={(e) => setAnswers(prev => ({ ...prev, [currentStepData.id]: e.target.value }))}
+                value={answers[currentStepData?.id || ''] || ''}
+                onChange={(e) => setAnswers(prev => ({ ...prev, [currentStepData?.id || '']: e.target.value }))}
                 className="w-full p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
                 rows={3}
-                placeholder={currentStepData.id === 'foodsToAvoid' ? 'e.g. peanuts, shellfish, very spicy' : 'e.g. Training for half-marathon; low-sodium please.'}
+                placeholder={currentStepData?.id === 'foodsToAvoid' ? 'e.g. peanuts, shellfish, very spicy' : 'e.g. Training for half-marathon; low-sodium please.'}
               />
             </div>
           )}
 
-          {currentStepData.type === 'meal-frequency' && (
+          {currentStepData?.type === 'meal-frequency' && (
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 border-2 border-neutral-200 rounded-lg">
                 <div className="flex items-center gap-3">
@@ -547,7 +549,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
           )}
 
           {/* Per-meal sliders when meal participation is "no" */}
-          {currentStepData.id === 'mealParticipation' && answers.mealParticipation === 'no' && (
+          {currentStepData?.id === 'mealParticipation' && answers.mealParticipation === 'no' && (
             <div className="mt-6 p-4 bg-neutral-50 rounded-lg border">
               <h4 className="font-medium text-neutral-800 mb-4">Set serving sizes for each meal type:</h4>
               <div className="space-y-4">
@@ -731,10 +733,10 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
           )}
 
           {/* Pill button layout for specific multi-select options */}
-          {currentStepData.type === 'pills' && (
+          {currentStepData?.type === 'pills' && (
             <div className="space-y-4">
               <div className="flex flex-wrap gap-2">
-                {currentStepData.options?.map((option) => (
+                {currentStepData?.options?.map((option) => (
                   <button
                     key={option.id}
                     onClick={() => handleAnswer(option.value)}
@@ -776,13 +778,13 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
                     placeholder="Type any food item and hit Enter to add..."
                   />
                   {/* Show custom added foods as removable chips */}
-                  {answers.favoriteFoods?.filter(food => !currentStepData.options?.some(opt => opt.value.includes(food))).length > 0 && (
+                  {answers.favoriteFoods?.filter((food: string) => !currentStepData?.options?.some(opt => opt.value.includes(food))).length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-2">
-                      {answers.favoriteFoods.filter(food => !currentStepData.options?.some(opt => opt.value.includes(food))).map((food, index) => (
+                      {answers.favoriteFoods.filter((food: string) => !currentStepData?.options?.some(opt => opt.value.includes(food))).map((food: string, index: number) => (
                         <button
                           key={index}
                           onClick={() => {
-                            const updatedFoods = answers.favoriteFoods?.filter(f => f !== food) || []
+                            const updatedFoods = answers.favoriteFoods?.filter((f: string) => f !== food) || []
                             setAnswers(prev => ({ ...prev, favoriteFoods: updatedFoods }))
                           }}
                           className="inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 border-brand-500 bg-brand-50 text-brand-700 text-sm transition-all duration-200"
@@ -825,10 +827,10 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
           )}
 
           {/* Regular grid layout for single/multiple choice options */}
-          {currentStepData.type !== 'number' && currentStepData.type !== 'text' && currentStepData.type !== 'pills' && currentStepData.id !== 'mealsPerWeek' && currentStepData.id !== 'mealParticipation' && (
+          {currentStepData?.type !== 'number' && currentStepData?.type !== 'text' && currentStepData?.type !== 'pills' && currentStepData?.id !== 'mealsPerWeek' && currentStepData?.id !== 'mealParticipation' && (
             <div className="space-y-4">
               <div className="grid gap-3">
-                {currentStepData.options?.map((option) => (
+                {currentStepData?.options?.map((option) => (
                   <button
                     key={option.id}
                     onClick={() => handleAnswer(option.value)}
@@ -848,7 +850,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
               </div>
 
               {/* Show additional text input for budget custom option */}
-              {(currentStepData.id === 'budgetSensitivity' && answers.budgetSensitivity === 'custom') && (
+              {(currentStepData?.id === 'budgetSensitivity' && answers.budgetSensitivity === 'custom') && (
                 <div className="mt-4">
                   <input
                     type="text"
@@ -863,9 +865,9 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
           )}
 
           {/* Meal participation toggle */}
-          {currentStepData.id === 'mealParticipation' && (
+          {currentStepData?.id === 'mealParticipation' && (
             <div className="grid gap-3">
-              {currentStepData.options?.map((option) => (
+              {currentStepData?.options?.map((option) => (
                 <button
                   key={option.id}
                   onClick={() => handleAnswer(option.value)}

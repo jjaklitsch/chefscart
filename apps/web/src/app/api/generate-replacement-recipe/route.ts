@@ -31,13 +31,17 @@ export async function POST(request: NextRequest) {
     // Find the most unique recipe compared to current recipes
     const currentTitles = currentRecipes.map((r: any) => r.title.toLowerCase())
     const uniqueRecipe = result.recipes.find(recipe => 
-      !currentTitles.some(title => 
-        title.includes(recipe.title.toLowerCase().split(' ')[0]) ||
-        recipe.title.toLowerCase().includes(title.split(' ')[0])
+      !currentTitles.some((title: string) => 
+        title.includes(recipe.title.toLowerCase().split(' ')[0] || '') ||
+        recipe.title.toLowerCase().includes(title.split(' ')[0] || '')
       )
     ) || result.recipes[0] // Fallback to first if none are unique enough
     
     const newRecipe = uniqueRecipe
+    
+    if (!newRecipe) {
+      throw new Error('No replacement recipe could be generated')
+    }
     
     // Copy meal type tags from the original recipe
     const mealTypeTags = recipeToReplace.tags?.filter((tag: string) => 

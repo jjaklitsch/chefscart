@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { assistantService, AssistantResponse, ConversationProgress } from '../../../../lib/openai-assistant'
-import { UserPreferences, Recipe } from '../../../../types'
+import { assistantService, AssistantResponse } from '../../../../../lib/openai-assistant'
+import { UserPreferences, Recipe } from '../../../../../types'
+import { ConversationProgress } from '../../../../../types/assistant'
 
 interface ChatRequest {
   message: string
@@ -79,10 +80,10 @@ export async function POST(request: NextRequest) {
         content: assistantContent,
         timestamp: new Date(latestMessage?.created_at ? latestMessage.created_at * 1000 : Date.now())
       }],
-      extractedPreferences: extractedData.preferences,
-      generatedMeals: extractedData.meals,
-      conversationProgress: extractedData.progress,
-      isComplete: extractedData.isComplete
+      ...(extractedData.preferences && { extractedPreferences: extractedData.preferences }),
+      ...(extractedData.meals && { generatedMeals: extractedData.meals }),
+      ...(extractedData.progress && { conversationProgress: extractedData.progress }),
+      ...(extractedData.isComplete !== undefined && { isComplete: extractedData.isComplete })
     }
 
     return NextResponse.json({
@@ -118,7 +119,9 @@ async function parseToolCallResults(run: any, threadId: string): Promise<Extract
       currentStep: 'greeting',
       completedSteps: [],
       readyForMealGeneration: false,
-      conversationComplete: false
+      conversationComplete: false,
+      totalSteps: 7,
+      progressPercentage: 0
     },
     meals: [],
     isComplete: false

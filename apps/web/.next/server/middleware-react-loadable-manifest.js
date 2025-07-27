@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST='{"../components/VoiceInput.tsx -> ../lib/voice-recording":{"id":227,"files":[]}}';

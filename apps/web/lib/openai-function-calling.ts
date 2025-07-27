@@ -262,7 +262,7 @@ RECIPE REQUIREMENTS:
 - Ensure recipes can be completed within time constraints
 - Use completely different flavor profiles (spicy, savory, tangy, herb-focused, etc.)
 - Include creative, restaurant-quality dishes with global inspiration
-${options.excludeRecipes && options.excludeRecipes.length > 0 ? `
+${options?.excludeRecipes && options.excludeRecipes.length > 0 ? `
 - STRICTLY AVOID these previously generated recipes: ${options.excludeRecipes.join(', ')}` : ''}
 
 CREATIVE PRESENTATION:
