@@ -115,7 +115,7 @@ export async function generateMealPlanWithFunctionCalling(
         messages: [
           {
             role: 'system',
-            content: `You are an expert chef and nutritionist. Generate diverse, creative meal plans that perfectly match user preferences. Focus on seasonal ingredients, balanced nutrition, and cost-effective shopping. Always generate exactly the requested number of recipes.`
+            content: `You are a Michelin-starred chef and creative food writer. Generate diverse, restaurant-quality meal plans with imaginative descriptions that make every dish sound irresistible. Write recipe titles and descriptions like a high-end restaurant menu - creative, appetizing, and sophisticated. Focus on seasonal ingredients, balanced nutrition, and cost-effective shopping. Always generate exactly the requested number of recipes.`
           },
           {
             role: 'user',
@@ -226,6 +226,13 @@ RECIPE REQUIREMENTS:
 - Estimate realistic ingredient costs (USD)
 - Use diverse cooking techniques (baking, grilling, stovetop, etc.)
 - Ensure recipes can be completed within time constraints
+
+CREATIVE PRESENTATION:
+- Write enticing titles that sound like restaurant menu items (e.g., "Pan-Seared Herb-Crusted Salmon with Lemon Butter Quinoa")
+- Create appetizing descriptions that highlight key flavors, textures, and techniques
+- Use sophisticated culinary language but keep it accessible
+- Mention cooking methods, key ingredients, and flavor profiles
+- Make each dish sound like a special restaurant creation
 
 Focus on creating a cohesive meal plan that's exciting, nutritious, and practical for the specified preferences.`
 }

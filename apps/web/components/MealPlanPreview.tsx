@@ -42,28 +42,44 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack }: MealPla
   }
 
   const handleRemoveRecipe = (recipeToRemove: Recipe) => {
+    // Ensure we maintain minimum meal count
+    if (selectedRecipes.length <= 1) {
+      alert('You need at least one meal in your plan.')
+      return
+    }
     setSelectedRecipes(prev => prev.filter(recipe => recipe.id !== recipeToRemove.id))
   }
+  
+  const handleGenerateMore = () => {
+    alert('Generate more recipes feature coming soon!')
+  }
+  
+  const handleRemixPlan = () => {
+    alert('Remix plan feature coming soon!')
+  }
 
-  const totalCost = selectedRecipes.reduce((sum, recipe) => sum + (recipe.estimatedCost || 0), 0)
-  const totalCookTime = selectedRecipes.reduce((sum, recipe) => sum + (recipe.cookTime || 0), 0)
+  // Fix cost calculation - multiply by servings for total cost
+  const totalCost = selectedRecipes.reduce((sum, recipe) => sum + (recipe.estimatedCost || 0) * (recipe.servings || 1), 0)
+  const totalServings = selectedRecipes.reduce((sum, recipe) => sum + (recipe.servings || 0), 0)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 py-8">
       <div className="max-w-4xl mx-auto px-4">
         
         {/* Header */}
-        <div className="flex items-center mb-8">
-          <button
-            onClick={onBack}
-            className="flex items-center text-orange-600 hover:text-orange-700 mr-6"
-          >
-            <ArrowLeft className="h-5 w-5 mr-2" />
-            Back to Preferences
-          </button>
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Your Meal Plan</h1>
-            <p className="text-gray-600">Review and customize your recipes</p>
+        <div className="mb-8">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Your Meal Plan</h1>
+              <p className="text-gray-600">Review and customize your recipes</p>
+            </div>
+            <button
+              onClick={onBack}
+              className="flex items-center px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Preferences
+            </button>
           </div>
         </div>
 
@@ -75,7 +91,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack }: MealPla
                 <ChefHat className="h-6 w-6 text-orange-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Recipes</p>
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Meals</p>
                 <p className="text-2xl font-bold text-gray-900">{selectedRecipes.length}</p>
               </div>
             </div>
@@ -94,11 +110,11 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack }: MealPla
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
             <div className="flex items-center">
               <div className="bg-blue-100 rounded-full p-3 mr-4">
-                <Clock className="h-6 w-6 text-blue-600" />
+                <Users className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Total Cook Time</p>
-                <p className="text-2xl font-bold text-gray-900">{Math.round(totalCookTime/60)}h {totalCookTime%60}m</p>
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Servings</p>
+                <p className="text-2xl font-bold text-gray-900">{totalServings}</p>
               </div>
             </div>
           </div>
@@ -108,7 +124,20 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack }: MealPla
         <div className="space-y-8 mb-12">
           {selectedRecipes.map((recipe, index) => (
             <div key={recipe.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-200">
-              <div className="p-8">
+              <div className="flex">
+                {/* Recipe Image Placeholder */}
+                <div className="w-48 h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center flex-shrink-0">
+                  <div className="text-6xl opacity-60">
+                    {recipe.cuisine === 'Asian' ? '🥢' : 
+                     recipe.cuisine === 'Italian' ? '🍝' :
+                     recipe.cuisine === 'Mexican' ? '🌮' :
+                     recipe.title.toLowerCase().includes('chicken') ? '🐔' :
+                     recipe.title.toLowerCase().includes('pasta') ? '🍝' :
+                     recipe.title.toLowerCase().includes('salad') ? '🥗' :
+                     recipe.title.toLowerCase().includes('soup') ? '🍲' : '🍽️'}
+                  </div>
+                </div>
+                <div className="p-8 flex-1">
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">{recipe.title}</h3>
@@ -124,7 +153,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack }: MealPla
                       </span>
                       <span className="flex items-center">
                         <DollarSign className="h-4 w-4 mr-1" />
-                        ${recipe.estimatedCost?.toFixed(2)}
+                        {recipe.estimatedCost?.toFixed(2)}
                       </span>
                       <span className="px-2 py-1 bg-gray-100 rounded-full text-xs">
                         {recipe.difficulty}
@@ -134,17 +163,10 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack }: MealPla
                       </span>
                     </div>
                   </div>
-                  <div className="flex gap-3 ml-6">
-                    <button
-                      onClick={() => handleSwapRecipe(recipe)}
-                      disabled={swapCount >= maxSwaps || mealPlan.backupRecipes.length === 0}
-                      className="px-4 py-2 text-sm font-medium bg-orange-100 text-orange-700 rounded-lg hover:bg-orange-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                      Swap Recipe
-                    </button>
+                  <div className="flex gap-2 ml-6">
                     <button
                       onClick={() => handleRemoveRecipe(recipe)}
-                      className="px-4 py-2 text-sm font-medium bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors"
+                      className="px-3 py-1.5 text-xs font-medium bg-red-100 text-red-700 rounded-md hover:bg-red-200 transition-colors"
                     >
                       Remove
                     </button>
@@ -192,26 +214,43 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack }: MealPla
                     )}
                   </div>
                 </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <button
-            onClick={onApprove}
-            className="flex items-center justify-center px-10 py-4 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl text-lg"
-          >
-            <ShoppingCart className="h-6 w-6 mr-3" />
-            Build My Instacart Cart
-          </button>
-          <button
-            onClick={onBack}
-            className="px-10 py-4 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-200 border border-gray-300 text-lg"
-          >
-            Modify Preferences
-          </button>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
+              onClick={handleGenerateMore}
+              className="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              Generate More Ideas
+            </button>
+            <button
+              onClick={handleRemixPlan}
+              className="px-8 py-3 bg-purple-600 text-white rounded-xl font-semibold hover:bg-purple-700 transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              Remix This Plan
+            </button>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <button
+              onClick={onApprove}
+              className="flex items-center justify-center px-10 py-4 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl text-lg"
+            >
+              <ShoppingCart className="h-6 w-6 mr-3" />
+              Build My Instacart Cart
+            </button>
+            <button
+              onClick={onBack}
+              className="px-10 py-4 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-200 border border-gray-300 text-lg"
+            >
+              Modify Preferences
+            </button>
+          </div>
         </div>
 
         {/* Footer Note */}
