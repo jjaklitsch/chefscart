@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Bot, User } from 'lucide-react'
+import VoiceResponse from '../VoiceResponse'
 
 interface MessageBubbleProps {
   id: string
@@ -9,6 +10,7 @@ interface MessageBubbleProps {
   content: string
   timestamp?: Date
   isLatest?: boolean
+  enableVoice?: boolean
 }
 
 export default function MessageBubble({ 
@@ -16,13 +18,14 @@ export default function MessageBubble({
   role, 
   content, 
   timestamp, 
-  isLatest = false 
+  isLatest = false,
+  enableVoice = true
 }: MessageBubbleProps) {
   const isUser = role === 'user'
   
   return (
     <div 
-      className={`flex items-start gap-3 mb-6 animate-fade-in ${
+      className={`group flex items-start gap-3 mb-6 animate-fade-in ${
         isUser ? 'flex-row-reverse' : 'flex-row'
       }`}
       role="listitem"
@@ -56,17 +59,33 @@ export default function MessageBubble({
           </p>
         </div>
 
-        {/* Timestamp */}
-        {timestamp && (
-          <span className={`text-xs text-gray-500 mt-1 px-1 ${
-            isUser ? 'text-right' : 'text-left'
-          }`}>
-            {timestamp.toLocaleTimeString([], { 
-              hour: '2-digit', 
-              minute: '2-digit' 
-            })}
-          </span>
-        )}
+        {/* Timestamp and Voice Controls */}
+        <div className={`flex items-center gap-2 mt-1 ${
+          isUser ? 'flex-row-reverse' : 'flex-row'
+        }`}>
+          {timestamp && (
+            <span className={`text-xs text-gray-500 px-1 ${
+              isUser ? 'text-right' : 'text-left'
+            }`}>
+              {timestamp.toLocaleTimeString([], { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+              })}
+            </span>
+          )}
+          
+          {/* Voice Response Controls - Only for assistant messages */}
+          {!isUser && enableVoice && content.trim() && (
+            <VoiceResponse
+              text={content}
+              voice="alloy"
+              speed={1.0}
+              autoPlay={false}
+              showControls={true}
+              className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+            />
+          )}
+        </div>
       </div>
     </div>
   )

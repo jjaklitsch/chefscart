@@ -815,37 +815,22 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
   return (
     <div className="min-h-screen bg-health-gradient flex flex-col">
       {/* Header */}
-      <div className="bg-white border-b border-brand-200 px-4 py-4 shadow-sm">
+      <div className="bg-white border-b border-brand-200 px-4 py-3 shadow-sm">
         <div className="flex items-center justify-between max-w-4xl mx-auto">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-brand-600 to-fresh-500 rounded-full flex items-center justify-center">
-              <ChefHat className="w-6 h-6 text-white" />
+            <div className="w-8 h-8 bg-gradient-to-br from-brand-600 to-fresh-500 rounded-full flex items-center justify-center">
+              <ChefHat className="w-5 h-5 text-white" />
             </div>
-            <div>
-              <h1 className="text-lg font-bold text-gray-900">ChefsCart Assistant</h1>
-              <p className="text-sm text-gray-600">
-                Step {conversationState.step + 1} of {conversationSteps.length}
-              </p>
-            </div>
+            <h1 className="text-lg font-bold text-gray-900">ChefsCart Assistant</h1>
           </div>
           
           <button
             onClick={resetConversation}
-            className="btn-ghost p-2 min-h-[40px]"
+            className="btn-ghost p-2 min-h-[32px]"
             aria-label="Reset conversation"
           >
-            <RotateCcw className="w-5 h-5" />
+            <RotateCcw className="w-4 h-4" />
           </button>
-        </div>
-        
-        {/* Progress Bar */}
-        <div className="max-w-4xl mx-auto mt-3">
-          <div className="bg-brand-100 h-2 rounded-full overflow-hidden">
-            <div 
-              className="bg-gradient-to-r from-brand-600 to-fresh-500 h-full transition-all duration-500 ease-out"
-              style={{ width: `${((conversationState.step + 1) / conversationSteps.length) * 100}%` }}
-            />
-          </div>
         </div>
       </div>
 

@@ -154,3 +154,41 @@ export interface InstacartProduct {
   store: string
   availability: boolean
 }
+
+// Voice-related types
+export interface VoiceRecordingState {
+  isRecording: boolean
+  isInitialized: boolean
+  audioLevel: number
+  duration: number
+  error?: string
+}
+
+export interface VoiceTranscriptionRequest {
+  audioBlob: Blob
+  language?: string
+}
+
+export interface VoiceTranscriptionResponse {
+  text: string
+  confidence?: number
+  language?: string
+  duration?: number
+}
+
+export interface VoiceSynthesisRequest {
+  text: string
+  voice?: 'alloy' | 'echo' | 'fable' | 'onyx' | 'nova' | 'shimmer'
+  speed?: number
+}
+
+export interface VoiceSynthesisResponse {
+  audioBuffer: ArrayBuffer
+  contentType: string
+}
+
+export interface AudioPermissionState {
+  hasPermission: boolean
+  isRequesting: boolean
+  error?: string
+}

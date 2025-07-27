@@ -1,7 +1,8 @@
 "use client"
 
 import React, { useState, useRef, useEffect, useCallback } from 'react'
-import { Send, Mic, MicOff } from 'lucide-react'
+import { Send } from 'lucide-react'
+import VoiceInput from '../VoiceInput'
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void
@@ -19,7 +20,6 @@ export default function ChatInput({
   isLoading = false
 }: ChatInputProps) {
   const [message, setMessage] = useState('')
-  const [isRecording, setIsRecording] = useState(false)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const initialHeight = 44 // min-height in pixels
 
@@ -71,35 +71,34 @@ export default function ChatInput({
     }
   }, [maxLength])
 
-  const toggleRecording = useCallback(() => {
-    setIsRecording(!isRecording)
-    // Note: Voice recording implementation would go here
-    // For now, this is just a visual toggle
-  }, [isRecording])
+  const handleVoiceTranscription = useCallback((text: string) => {
+    setMessage(text)
+    // Auto-focus the textarea after voice input
+    setTimeout(() => {
+      textareaRef.current?.focus()
+    }, 100)
+  }, [])
+
+  const handleVoiceError = useCallback((error: string) => {
+    console.error('Voice input error:', error)
+    // Could show a toast notification or other user feedback here
+  }, [])
 
   const canSend = message.trim().length > 0 && !disabled && !isLoading
 
   return (
     <div className="border-t border-brand-100 bg-white px-4 py-3">
-      <form onSubmit={handleSubmit} className="flex items-end gap-3">
-        {/* Voice Recording Button */}
-        <button
-          type="button"
-          onClick={toggleRecording}
-          disabled={disabled}
-          className={`flex-shrink-0 w-11 h-11 rounded-full border-2 transition-all duration-200 focus:ring-4 focus:ring-brand-100 focus:outline-none ${
-            isRecording
-              ? 'bg-red-500 border-red-500 text-white hover:bg-red-600'
-              : 'bg-white border-brand-200 text-brand-600 hover:border-brand-300 hover:bg-brand-50'
-          } disabled:opacity-50 disabled:cursor-not-allowed`}
-          aria-label={isRecording ? 'Stop recording' : 'Start voice recording'}
-        >
-          {isRecording ? (
-            <MicOff className="w-5 h-5 mx-auto" />
-          ) : (
-            <Mic className="w-5 h-5 mx-auto" />
-          )}
-        </button>
+      <form onSubmit={handleSubmit} className="flex items-end gap-2">
+        {/* Voice Input */}
+        <div className="relative" title="Try voice input - speak your preferences instead of typing">
+          <VoiceInput
+            onTranscription={handleVoiceTranscription}
+            onError={handleVoiceError}
+            disabled={disabled}
+            showVisualFeedback={true}
+            className="w-9 h-9"
+          />
+        </div>
 
         {/* Text Input Container */}
         <div className="flex-1 relative">
@@ -157,13 +156,8 @@ export default function ChatInput({
       </form>
 
       {/* Hint Text */}
-      <div className="mt-2 text-xs text-gray-500 flex items-center justify-between">
-        <span>Press Enter to send, Shift+Enter for new line</span>
-        {isRecording && (
-          <span className="text-red-500 font-medium animate-pulse">
-            Recording...
-          </span>
-        )}
+      <div className="mt-2 text-xs text-gray-500 text-center">
+        <span>Tell me about your meal preferences - Press Enter to send or click 🎤 to speak</span>
       </div>
     </div>
   )
