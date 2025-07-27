@@ -32,6 +32,7 @@ export default function FullScreenVoiceUI({
   })
   const [audioLevels, setAudioLevels] = useState<number[]>([0, 0, 0, 0, 0])
   const [isAISpeaking, setIsAISpeaking] = useState(false)
+  const [audioError, setAudioError] = useState<string | null>(null)
 
   const [audioService, setAudioService] = useState<any>(null)
 
@@ -102,22 +103,21 @@ export default function FullScreenVoiceUI({
         },
         onError: (error: string) => {
           setIsAISpeaking(false)
+          setAudioError(error)
           console.error('AI voice synthesis error:', error)
           
-          // Show user-friendly error messages
-          if (error.includes('not allowed')) {
-            // Could show a toast or modal here
-            console.warn('Voice playback requires user interaction')
-          } else if (error.includes('timeout')) {
-            console.warn('Voice synthesis took too long')
-          } else if (error.includes('unavailable')) {
-            console.warn('Voice synthesis service is currently unavailable')
-          }
+          // Clear error after 5 seconds
+          setTimeout(() => setAudioError(null), 5000)
         }
       })
     } catch (error) {
       setIsAISpeaking(false)
+      const errorMessage = error instanceof Error ? error.message : 'Voice playback failed'
+      setAudioError(errorMessage)
       console.error('AI voice playback error:', error)
+      
+      // Clear error after 5 seconds
+      setTimeout(() => setAudioError(null), 5000)
     }
   }, [aiResponseText, audioService])
 
@@ -247,6 +247,18 @@ export default function FullScreenVoiceUI({
             <div className="mt-6 p-4 bg-white bg-opacity-10 rounded-lg max-w-lg">
               <p className="text-sm text-gray-200 leading-relaxed">
                 {aiResponseText}
+              </p>
+            </div>
+          )}
+
+          {/* Error Display */}
+          {audioError && (
+            <div className="mt-6 p-4 bg-red-500 bg-opacity-20 border border-red-400 rounded-lg max-w-lg">
+              <p className="text-sm text-red-200 leading-relaxed">
+                <strong>Audio Error:</strong> {audioError}
+              </p>
+              <p className="text-xs text-red-300 mt-2">
+                Try clicking anywhere on the page first, then use voice mode again.
               </p>
             </div>
           )}

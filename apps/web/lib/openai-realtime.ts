@@ -20,8 +20,8 @@ export class OpenAIRealtimeService extends EventEmitter {
   constructor(config: RealtimeConfig) {
     super()
     this.config = {
-      model: 'gpt-4o-realtime-preview-2024-10-01',
-      instructions: 'You are Mila, a helpful AI sous-chef assistant for ChefsCart. Help users plan meals, answer cooking questions, and guide them through the meal planning process. Be friendly, encouraging, and knowledgeable about food and cooking.',
+      model: 'gpt-4o-realtime-preview',
+      instructions: 'You are Carter, a friendly AI sous-chef assistant for ChefsCart. Keep responses concise and conversational (1-2 sentences max). Ask follow-up questions to keep the conversation flowing. When helping with meal planning, anticipate common needs like dietary restrictions, cooking skill level, time constraints, and family preferences. Be enthusiastic about food and cooking, and respond immediately when you hear the user start speaking.',
       ...config
     }
   }
@@ -97,6 +97,8 @@ export class OpenAIRealtimeService extends EventEmitter {
         voice: this.config.voice,
         input_audio_format: 'pcm16',
         output_audio_format: 'pcm16',
+        input_audio_sample_rate: 24000,
+        output_audio_sample_rate: 24000,
         input_audio_transcription: {
           model: 'whisper-1'
         },
@@ -104,12 +106,12 @@ export class OpenAIRealtimeService extends EventEmitter {
           type: 'server_vad',
           threshold: 0.5,
           prefix_padding_ms: 300,
-          silence_duration_ms: 500
+          silence_duration_ms: 300  // Reduced for faster response
         },
         tools: [],
         tool_choice: 'auto',
-        temperature: 0.8,
-        max_response_output_tokens: 4096
+        temperature: 0.9,  // Higher temperature for more natural, varied responses
+        max_response_output_tokens: 1024  // Shorter responses for faster, more conversational feel
       }
     }
 
@@ -236,6 +238,29 @@ export class OpenAIRealtimeService extends EventEmitter {
     }
 
     this.websocket.send(JSON.stringify(responseMessage))
+  }
+
+  cancelResponse(): void {
+    if (!this.websocket || !this.isConnected) return
+
+    const cancelMessage = {
+      type: 'response.cancel'
+    }
+
+    this.websocket.send(JSON.stringify(cancelMessage))
+  }
+
+  truncateItem(itemId: string): void {
+    if (!this.websocket || !this.isConnected) return
+
+    const truncateMessage = {
+      type: 'conversation.item.truncate',
+      item_id: itemId,
+      content_index: 0,
+      audio_end_ms: 0
+    }
+
+    this.websocket.send(JSON.stringify(truncateMessage))
   }
 
   isConnectedToRealtime(): boolean {

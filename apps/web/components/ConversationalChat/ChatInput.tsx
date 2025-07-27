@@ -88,15 +88,15 @@ export default function ChatInput({
 
   return (
     <div className="border-t border-brand-100 bg-white px-4 py-3">
-      <form onSubmit={handleSubmit} className="flex items-end gap-3 max-w-4xl mx-auto">
+      <form onSubmit={handleSubmit} className="flex items-center gap-3 max-w-4xl mx-auto">
         {/* Quick Voice Input */}
-        <div className="flex-shrink-0" title="Quick voice input - hold to speak, release to send">
+        <div className="flex-shrink-0 self-end mb-3" title="Quick voice input - hold to speak, release to send">
           <VoiceInput
             onTranscription={handleVoiceTranscription}
             onError={handleVoiceError}
             disabled={disabled}
             showVisualFeedback={true}
-            className="w-12 h-12 flex items-center justify-center"
+            className="w-11 h-11 flex items-center justify-center"
           />
         </div>
 
@@ -140,7 +140,7 @@ export default function ChatInput({
         <button
           type="submit"
           disabled={!canSend}
-          className={`flex-shrink-0 w-12 h-12 rounded-full transition-all duration-200 focus:ring-4 focus:ring-brand-100 focus:outline-none transform flex items-center justify-center ${
+          className={`flex-shrink-0 w-11 h-11 rounded-full transition-all duration-200 focus:ring-4 focus:ring-brand-100 focus:outline-none transform flex items-center justify-center self-end mb-3 ${
             canSend
               ? 'bg-brand-600 text-white hover:bg-brand-700 hover:shadow-green hover:-translate-y-0.5 active:translate-y-0'
               : 'bg-gray-200 text-gray-400 cursor-not-allowed'
@@ -158,7 +158,7 @@ export default function ChatInput({
       {/* Hint Text */}
       <div className="mt-2 max-w-4xl mx-auto">
         <div className="text-xs text-gray-500 text-center">
-          <span>Tell Mila about your meal preferences - Press Enter to send • 🎤 Quick voice input</span>
+          <span>Tell Carter about your meal preferences - Press Enter to send • 🎤 Quick voice input</span>
         </div>
       </div>
     </div>

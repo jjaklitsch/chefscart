@@ -8,18 +8,52 @@ export interface User {
 }
 
 export interface UserPreferences {
+  // Legacy fields for compatibility
   mealsPerWeek: number
   peoplePerMeal: number
   mealTypes: MealType[]
   diets: string[]
   allergies: string[]
-  avoidIngredients: string[]
-  organicPreference: 'preferred' | 'only_if_within_10_percent' | 'no_preference'
+  avoidIngredients?: string[]
+  organicPreference: 'preferred' | 'only_if_within_10_percent' | 'no_preference' | 'prefer' | 'required'
   maxCookTime: number
   cookingSkillLevel: 'beginner' | 'intermediate' | 'advanced'
   preferredCuisines: string[]
-  preferredRetailers: string[]
+  preferredRetailers?: string[]
   selectedMealTypes?: string[] // Temporary field used during conversation flow
+  selectedRecipes?: Recipe[] // Selected recipes from meal cards
+  
+  // New comprehensive onboarding fields
+  adults?: number
+  kids?: number
+  breakfastsPerWeek?: number
+  lunchesPerWeek?: number
+  dinnersPerWeek?: number
+  snacksPerWeek?: number
+  dessertsPerWeek?: number
+  dietaryStyle?: string[]
+  foodsToAvoid?: string[]
+  healthGoal?: 'weight_loss' | 'muscle_gain' | 'maintain' | 'family_balanced' | 'athletic'
+  maxCookingTime?: number
+  budgetSensitivity?: 'no_limit' | 'under_8' | 'under_12' | 'under_18' | 'custom'
+  customBudgetAmount?: string
+  cuisinePreferences?: string[]
+  additionalConsiderations?: string
+  dietaryStyleOther?: string
+  cuisinePreferencesOther?: string
+  favoriteFoods?: string[]
+  favoriteFoodsCustom?: string
+  mealParticipation?: 'yes' | 'no'
+  breakfastAdults?: number
+  breakfastKids?: number
+  lunchAdults?: number
+  lunchKids?: number
+  dinnerAdults?: number
+  dinnerKids?: number
+  snacksAdults?: number
+  snacksKids?: number
+  dessertsAdults?: number
+  dessertsKids?: number
 }
 
 export interface MealType {
@@ -43,6 +77,8 @@ export interface Recipe {
   difficulty: 'easy' | 'medium' | 'hard'
   cuisine: string
   tags: string[]
+  imageUrl?: string
+  selected?: boolean
 }
 
 export interface Ingredient {
@@ -191,4 +227,68 @@ export interface AudioPermissionState {
   hasPermission: boolean
   isRequesting: boolean
   error?: string
+}
+
+// Conversation Flow Types
+export interface ConversationStep {
+  id: string
+  type: 'question' | 'confirmation' | 'completion'
+  question: string
+  preferenceKey: keyof UserPreferences
+  quickReplies?: QuickReply[]
+  required: boolean
+  dependsOn?: string[]
+  validator?: (value: any) => boolean
+}
+
+export interface QuickReply {
+  id: string
+  text: string
+  value: any
+  icon?: string
+  allowMultiple?: boolean
+  selected?: boolean
+}
+
+export interface ConversationFlow {
+  currentStepId: string | null
+  completedSteps: Set<string>
+  stepData: Record<string, any>
+  isComplete: boolean
+}
+
+export type ConversationStepId = 
+  | 'meal_types' 
+  | 'dietary_restrictions' 
+  | 'cooking_time' 
+  | 'cuisine_preferences' 
+  | 'meal_selection'
+  | 'final_confirmation'
+
+// Meal Card Selection Types
+export interface MealCardSelectionState {
+  selectedMeals: Recipe[]
+  availableMeals: Recipe[]
+  minSelections: number
+  maxSelections: number
+  isLoading: boolean
+}
+
+export interface MealCardProps {
+  recipe: Recipe
+  isSelected: boolean
+  onSelect: (recipe: Recipe) => void
+  onDeselect: (recipe: Recipe) => void
+  showNutrition?: boolean
+  showIngredients?: boolean
+}
+
+export interface MealCardGridProps {
+  recipes: Recipe[]
+  selectedRecipes: Recipe[]
+  onSelectionChange: (selectedRecipes: Recipe[]) => void
+  minSelections?: number
+  maxSelections?: number
+  isLoading?: boolean
+  onRequestMore?: () => void
 }

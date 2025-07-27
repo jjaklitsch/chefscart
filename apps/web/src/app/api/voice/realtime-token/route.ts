@@ -20,8 +20,8 @@ export async function POST(request: NextRequest) {
         'OpenAI-Beta': 'realtime=v1'
       },
       body: JSON.stringify({
-        model: 'gpt-4o-realtime-preview-2024-10-01',
-        voice: 'maple'
+        model: 'gpt-4o-realtime-preview',
+        voice: 'alloy'
       })
     })
 

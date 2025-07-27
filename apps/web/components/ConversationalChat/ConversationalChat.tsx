@@ -1,15 +1,19 @@
 "use client"
 
 import React, { useState, useEffect, useCallback, useRef } from 'react'
-import { ChefHat, RotateCcw, Mic, ArrowLeft } from 'lucide-react'
+import { ChefHat, RotateCcw, Mic, ArrowLeft, MessageSquare } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import MessageBubble from './MessageBubble'
 import ChatInput from './ChatInput'
 import TypingIndicator from './TypingIndicator'
-import RealtimeVoiceUI from '../RealtimeVoiceUI'
-import ProgressTracker from '../ProgressTracker'
+import SimpleVoiceUI from '../SimpleVoiceUI'
+import ContinuousVoiceUI from '../ContinuousVoiceUI'
+import NewRealtimeVoiceUI from '../NewRealtimeVoiceUI'
+import ProgressTracker from '../ProgressTracker/ProgressTracker'
 import QuickReplyGrid from './QuickReplyGrid'
 import MealSelectionMessage from './MealSelectionMessage'
+import WelcomeScreen from './WelcomeScreen'
+import GuidedOnboarding from '../GuidedOnboarding'
 import { UserPreferences, MealType, ConversationFlow, QuickReply, Recipe } from '../../types'
 import { getVoiceRecordingService } from '../../lib/voice-recording'
 import { getStepById } from './conversationFlow'
@@ -37,6 +41,8 @@ interface ConversationState {
   selectedMeals?: Recipe[]
   isMealGenerationLoading?: boolean
   threadId?: string // For OpenAI Assistant API
+  initialChoiceMade?: boolean // Track if user has chosen voice, chat, or guided
+  showGuidedOnboarding?: boolean // Track if user chose guided onboarding
 }
 
 // localStorage utilities
@@ -174,7 +180,8 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     generatedMeals: [],
     selectedMeals: [],
     isMealGenerationLoading: false,
-    threadId: undefined
+    threadId: undefined,
+    initialChoiceMade: false
   })
   const [isTyping, setIsTyping] = useState(false)
   const [showVoiceUI, setShowVoiceUI] = useState(false)
@@ -199,12 +206,15 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
   useEffect(() => {
     const savedState = loadFromLocalStorage()
     
-    if (savedState) {
+    if (savedState && savedState.initialChoiceMade) {
+      console.log('Loading saved state:', savedState)
       setConversationState(savedState)
     } else {
-      // Start fresh conversation immediately
-      startConversation()
+      console.log('No valid saved state found or choice not made, showing welcome screen')
+      // Clear any incomplete state
+      clearLocalStorage()
     }
+    // Don't auto-start conversation - let user choose voice or chat
   }, [])
 
   // Save state whenever it changes
@@ -225,11 +235,12 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     const welcomeMessage: ConversationMessage = {
       id: 'assistant-welcome',
       role: 'assistant',
-      content: "Hi! I'm Mila, your AI sous-chef! 👨‍🍳 I'm here to create the perfect personalized meal plan just for you. Let's start with the basics - what meals would you like me to plan for you?",
+      content: "Hi! I'm Carter, your AI sous-chef here to help you plan your meals and create a shopping list in just a few minutes. How many meals are you looking to cook this week?",
       timestamp: new Date()
     }
 
-    setConversationState({
+    setConversationState(prev => ({
+      ...prev,
       preferences: {},
       awaitingResponse: false,
       messages: [welcomeMessage],
@@ -243,7 +254,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
       generatedMeals: [],
       selectedMeals: [],
       isMealGenerationLoading: false
-    })
+    }))
   }, [])
 
   const processTextInput = useCallback(async (text: string, isVoice: boolean = false) => {
@@ -587,18 +598,37 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
         stepData: {},
         isComplete: false
       },
-      threadId: undefined
+      generatedMeals: [],
+      selectedMeals: [],
+      isMealGenerationLoading: false,
+      threadId: undefined,
+      initialChoiceMade: false
     })
     setShowVoiceUI(false)
     setIsListening(false)
     setLastAIResponse('')
-    startConversation()
+    // Don't auto-start - let user choose again
   }, [startConversation, conversationState.threadId])
 
   const handleQuickReply = useCallback((reply: QuickReply) => {
+    // Handle multi-selection replies specially
+    if (reply.allowMultiple && Array.isArray(reply.value)) {
+      // For multi-selection meal types, update preferences directly
+      if (conversationState.conversationFlow.currentStepId === 'meal_types') {
+        const selectedMealTypes = reply.value.flat()
+        setConversationState(prev => ({
+          ...prev,
+          preferences: {
+            ...prev.preferences,
+            selectedMealTypes: selectedMealTypes
+          }
+        }))
+      }
+    }
+    
     // Convert the quick reply to a text message
     processTextInput(reply.text, false)
-  }, [processTextInput])
+  }, [processTextInput, conversationState.conversationFlow.currentStepId])
 
   const handleMealSelection = useCallback((selectedMeals: Recipe[]) => {
     // Update the conversation state with selected meals
@@ -673,10 +703,85 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     console.log('Edit item:', itemKey)
   }, [])
 
+  const handleChooseVoice = useCallback(() => {
+    setConversationState(prev => ({
+      ...prev,
+      initialChoiceMade: true,
+      conversationStarted: true,
+      messages: [{
+        id: 'welcome-voice',
+        role: 'assistant',
+        content: "Perfect! I'll open the voice chat now. You can speak naturally with me - no need to press any buttons!",
+        timestamp: new Date()
+      }]
+    }))
+    setTimeout(() => setShowVoiceUI(true), 500)
+  }, [])
+
+  const handleChooseGuided = useCallback(() => {
+    setConversationState(prev => ({
+      ...prev,
+      initialChoiceMade: true,
+      showGuidedOnboarding: true
+    }))
+  }, [])
+
+  const handleChooseChat = useCallback(() => {
+    console.log('=== handleChooseChat called in ConversationalChat ===')
+    console.log('Current conversationState:', conversationState)
+    
+    setConversationState(prev => {
+      console.log('Previous state:', prev)
+      const newState = {
+        ...prev,
+        initialChoiceMade: true,
+        conversationStarted: true
+      }
+      console.log('New state:', newState)
+      return newState
+    })
+    
+    console.log('About to call startConversation, function:', startConversation)
+    try {
+      startConversation()
+      console.log('startConversation called successfully')
+    } catch (error) {
+      console.error('Error calling startConversation:', error)
+    }
+    console.log('=== handleChooseChat complete ===')
+  }, [startConversation])
+
+  const handleGuidedOnboardingComplete = useCallback((preferences: UserPreferences) => {
+    // Complete the onboarding and trigger meal generation
+    onPreferencesComplete(preferences)
+  }, [onPreferencesComplete])
+
+  const handleBackFromGuided = useCallback(() => {
+    setConversationState(prev => ({
+      ...prev,
+      initialChoiceMade: false,
+      showGuidedOnboarding: false
+    }))
+  }, [])
+
+  // Show welcome screen if no initial choice has been made
+  console.log('ConversationalChat render - initialChoiceMade:', conversationState.initialChoiceMade)
+  if (!conversationState.initialChoiceMade) {
+    console.log('Rendering WelcomeScreen')
+    // Skip welcome screen and go directly to guided onboarding
+    handleChooseGuided()
+    return null
+  }
+
+  // Show guided onboarding if selected
+  if (conversationState.showGuidedOnboarding) {
+    return <GuidedOnboarding onComplete={handleGuidedOnboardingComplete} onBack={handleBackFromGuided} />
+  }
+
   return (
-    <div className="min-h-screen bg-health-gradient">
-      {/* Header - Fixed and Sticky */}
-      <header className="sticky top-0 bg-gradient-to-r from-sage-50 to-cream-50 border-b border-sage-200 px-4 py-3 shadow-soft backdrop-blur-md bg-opacity-95 z-50">
+    <div className="h-screen bg-health-gradient flex flex-col overflow-hidden">
+      {/* Header - Fixed height */}
+      <header className="flex-shrink-0 bg-gradient-to-r from-sage-50 to-cream-50 border-b border-sage-200 px-4 py-3 shadow-soft backdrop-blur-md bg-opacity-95 z-50">
         <div className="flex items-center justify-between max-w-none w-full">
           {/* Left side - Back button and title */}
           <div className="flex items-center gap-3">
@@ -691,30 +796,45 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
             <div className="w-8 h-8 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full flex items-center justify-center shadow-brand">
               <ChefHat className="w-5 h-5 text-white" />
             </div>
-            <h1 className="text-lg font-display font-bold text-neutral-800">Chef's Assistant</h1>
+            <h1 className="text-lg font-display font-bold text-neutral-800">Meet Carter, Your AI Sous-Chef</h1>
           </div>
           
           {/* Right side - Action buttons */}
           <div className="flex items-center gap-2">
-            {/* Reset Button */}
-            <button
-              onClick={resetConversation}
-              className="p-2 min-h-[32px] text-neutral-600 hover:text-brand-600 hover:bg-sage-100 rounded-lg transition-all duration-200"
-              aria-label="Reset conversation"
-              title="Start over"
-            >
-              <RotateCcw className="w-4 h-4" />
-            </button>
+            {/* Hide voice and reset buttons during guided onboarding */}
+            {!conversationState.showGuidedOnboarding && (
+              <>
+                {/* Voice Mode Button */}
+                <button
+                  onClick={() => setShowVoiceUI(true)}
+                  className="btn-accent-new inline-flex items-center gap-2 px-3 py-2 text-sm"
+                  aria-label="Try voice mode"
+                >
+                  <Mic className="w-4 h-4" />
+                  Voice Mode
+                </button>
+                
+                {/* Reset Button */}
+                <button
+                  onClick={resetConversation}
+                  className="p-2 min-h-[32px] text-neutral-600 hover:text-brand-600 hover:bg-sage-100 rounded-lg transition-all duration-200"
+                  aria-label="Reset conversation"
+                  title="Start over"
+                >
+                  <RotateCcw className="w-4 h-4" />
+                </button>
+              </>
+            )}
           </div>
         </div>
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_320px] h-[calc(100vh-80px)] relative">
+      <main className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_auto] xl:grid-cols-[1fr_auto] overflow-hidden">
         {/* Messages Area */}
-        <div className="flex flex-col h-full relative">
+        <div className="flex flex-col h-full relative min-w-0">
           {/* Messages Container - Scrollable */}
-          <div className="flex-1 overflow-y-auto px-4 py-6 pb-0">
+          <div className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 pb-0">
             <div className="max-w-4xl mx-auto">
               <div role="log" aria-live="polite" aria-label="Conversation messages">
                 {conversationState.messages.map((message) => (
@@ -730,23 +850,61 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
                 {isTyping && <TypingIndicator />}
                 
                 {/* Quick Reply Grid - Show for current conversation step */}
-                {!isTyping && !conversationState.awaitingResponse && conversationState.conversationFlow.currentStepId && (
-                  <div className="mt-4">
-                    {(() => {
-                      const currentStep = getStepById(conversationState.conversationFlow.currentStepId)
-                      if (currentStep && currentStep.quickReplies) {
-                        return (
-                          <QuickReplyGrid
-                            quickReplies={currentStep.quickReplies}
-                            onSelect={handleQuickReply}
-                            disabled={conversationState.awaitingResponse}
-                          />
-                        )
-                      }
-                      return null
-                    })()}
-                  </div>
-                )}
+                {(() => {
+                  // Don't show quick replies if we haven't made the initial choice yet
+                  if (!conversationState.initialChoiceMade) return null
+                  
+                  // Don't show quick replies if only welcome message exists (no user interaction yet)
+                  const hasUserMessages = conversationState.messages.some(msg => msg.role === 'user')
+                  
+                  // Don't show quick replies if step is already completed
+                  const currentStepCompleted = conversationState.conversationFlow.currentStepId && 
+                    conversationState.conversationFlow.completedSteps.has(conversationState.conversationFlow.currentStepId)
+                  
+                  // For meal_types step, also check if selectedMealTypes is already set
+                  const mealTypesAlreadySet = conversationState.conversationFlow.currentStepId === 'meal_types' && 
+                    conversationState.preferences.selectedMealTypes && 
+                    conversationState.preferences.selectedMealTypes.length > 0
+                  
+                  const shouldShow = !isTyping && 
+                   !conversationState.awaitingResponse && 
+                   conversationState.conversationFlow.currentStepId &&
+                   conversationState.conversationStarted &&
+                   conversationState.messages.length > 0 &&
+                   hasUserMessages &&
+                   !currentStepCompleted &&
+                   !mealTypesAlreadySet
+                  
+                  console.log('Quick replies should show?', shouldShow, {
+                    isTyping,
+                    awaitingResponse: conversationState.awaitingResponse,
+                    currentStepId: conversationState.conversationFlow.currentStepId,
+                    conversationStarted: conversationState.conversationStarted,
+                    messageCount: conversationState.messages.length,
+                    hasUserMessages,
+                    initialChoiceMade: conversationState.initialChoiceMade
+                  })
+                  
+                  if (!shouldShow) return null
+                  
+                  return (
+                    <div className="mt-4">
+                      {(() => {
+                        const currentStep = getStepById(conversationState.conversationFlow.currentStepId)
+                        if (currentStep && currentStep.quickReplies) {
+                          return (
+                            <QuickReplyGrid
+                              quickReplies={currentStep.quickReplies}
+                              onSelect={handleQuickReply}
+                              disabled={conversationState.awaitingResponse}
+                            />
+                          )
+                        }
+                        return null
+                      })()}
+                    </div>
+                  )
+                })()}
 
                 {/* Meal Selection Interface - Show when in meal selection step */}
                 {conversationState.conversationFlow.currentStepId === 'meal_selection' && (
@@ -768,22 +926,6 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
 
           {/* Fixed Bottom Section - Input Area */}
           <div className="flex-shrink-0">
-            {/* Voice Mode Button */}
-            {!isTyping && (
-              <div className="px-4 py-2 border-t border-sage-200 bg-gradient-to-r from-sage-50 to-cream-50">
-                <div className="max-w-4xl mx-auto flex justify-center">
-                  <button
-                    onClick={() => setShowVoiceUI(true)}
-                    className="btn-accent-new inline-flex items-center gap-2"
-                    aria-label="Try voice mode"
-                  >
-                    <Mic className="w-4 h-4" />
-                    Try Voice Mode
-                  </button>
-                </div>
-              </div>
-            )}
-
             {/* Chat Input - Always Visible */}
             <div className="relative bg-white border-t border-sage-200">
               <ChatInput
@@ -798,7 +940,9 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
         </div>
 
         {/* Progress Tracker - Desktop Sidebar */}
-        <aside className="hidden lg:block border-l border-sage-200 bg-white">
+        <aside className={`hidden lg:block border-l border-sage-200 bg-white overflow-y-auto transition-all duration-300 ${
+          desktopProgressTrackerCollapsed ? 'w-16' : 'w-80'
+        }`}>
           <ProgressTracker
             preferences={conversationState.preferences}
             onEditItem={handleEditProgressItem}
@@ -819,16 +963,29 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
         />
       </div>
 
-      {/* Realtime Voice UI */}
-      <RealtimeVoiceUI
+      {/* New Realtime Voice UI */}
+      <NewRealtimeVoiceUI
         isVisible={showVoiceUI}
         onClose={() => {
           setShowVoiceUI(false)
           setIsListening(false)
         }}
         onTranscript={(text, isUser) => {
-          if (isUser) {
-            handleVoiceInput(text)
+          // Add transcript messages to conversation
+          if (text.trim()) {
+            const message: ConversationMessage = {
+              id: `voice-${isUser ? 'user' : 'ai'}-${Date.now()}`,
+              role: isUser ? 'user' : 'assistant',
+              content: text,
+              timestamp: new Date(),
+              isVoiceResponse: true
+            }
+            
+            setConversationState(prev => ({
+              ...prev,
+              messages: [...prev.messages, message],
+              conversationStarted: true
+            }))
           }
         }}
       />

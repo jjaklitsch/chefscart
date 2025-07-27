@@ -71,16 +71,6 @@ export default function QuickReplyGrid({
 
   return (
     <div className="mt-4 mb-2">
-      {supportsMultiple && (
-        <div className="mb-3">
-          <p className="text-sm text-sage-600 font-medium">
-            {quickReplies[0]?.id?.includes('meal') ? 'Select all meal types you want:' : 
-             quickReplies[0]?.id?.includes('diet') ? 'Select all that apply:' :
-             quickReplies[0]?.id?.includes('cuisine') ? 'Choose your favorite cuisines:' :
-             'Select all that apply:'}
-          </p>
-        </div>
-      )}
       <div 
         className={`
           grid gap-2 
@@ -102,7 +92,7 @@ export default function QuickReplyGrid({
       {supportsMultiple && selectedItems.size > 0 && (
         <div className="mt-3">
           <p className="text-xs text-sage-500">
-            {selectedItems.size} meal type{selectedItems.size !== 1 ? 's' : ''} selected
+            {selectedItems.size} selected
           </p>
         </div>
       )}

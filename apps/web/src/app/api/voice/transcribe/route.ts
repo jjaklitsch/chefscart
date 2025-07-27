@@ -29,7 +29,19 @@ export async function POST(request: NextRequest) {
       'audio/ogg'
     ]
     
-    if (!allowedTypes.some(type => audioFile.type.startsWith(type.split('/')[0]))) {
+    if (!audioFile.type) {
+      return NextResponse.json(
+        { error: 'Invalid audio file type' },
+        { status: 400 }
+      )
+    }
+    
+    const isValidType = allowedTypes.some(type => {
+      const baseType = type.split('/')[0]
+      return baseType && audioFile.type.startsWith(baseType)
+    })
+    
+    if (!isValidType) {
       return NextResponse.json(
         { error: 'Invalid audio file type' },
         { status: 400 }
@@ -71,7 +83,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Add language if available (verbose_json format includes this)
-    if ('language' in transcription && transcription.language) {
+    if ('language' in transcription && typeof transcription.language === 'string') {
       response.language = transcription.language
     }
 

@@ -73,6 +73,7 @@ export default function ProgressTracker({
         return value && value !== 'no_preference' ? 'completed' : 'warning'
       
       case 'maxCookTime':
+      case 'mealsPerWeek':
         return typeof value === 'number' && value > 0 ? 'completed' : 'pending'
       
       case 'cookingSkillLevel':
@@ -120,6 +121,9 @@ export default function ProgressTracker({
       case 'maxCookTime':
         return typeof value === 'number' ? `${value} minutes` : 'Not set'
       
+      case 'mealsPerWeek':
+        return typeof value === 'number' ? `${value} meals per week` : 'Not set'
+      
       case 'cookingSkillLevel':
         const skillLabels = {
           'beginner': 'Beginner',
@@ -134,6 +138,13 @@ export default function ProgressTracker({
   }
 
   const progressItems: ProgressItem[] = [
+    {
+      key: 'mealsPerWeek',
+      label: 'Number of Meals',
+      description: 'How many meals to plan',
+      status: getItemStatus('mealsPerWeek', preferences.mealsPerWeek),
+      value: getValueDisplay('mealsPerWeek', preferences.mealsPerWeek)
+    },
     {
       key: 'mealTypes',
       label: 'Meal Types',
@@ -264,7 +275,6 @@ export default function ProgressTracker({
             ) : (
               <div className="flex flex-col items-center gap-1">
                 <ChevronLeft className="w-5 h-5" />
-                <div className="writing-mode-vertical-rl text-xs text-gray-500">Progress</div>
               </div>
             )}
           </button>

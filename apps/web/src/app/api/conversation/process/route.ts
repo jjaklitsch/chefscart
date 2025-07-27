@@ -129,20 +129,58 @@ export async function POST(request: NextRequest) {
       }, { status: 400 })
     }
 
-    // Build system prompt with context about meal planning assistant
-    const systemPrompt = `You are ChefsCart's AI sous-chef assistant. Your role is to help users create personalized meal plans by understanding their preferences through natural conversation.
+    // Parse context to get conversation flow state
+    let conversationContext: any = {}
+    let currentStep: string | null = null
+    let completedSteps: string[] = []
+    
+    try {
+      if (context) {
+        conversationContext = JSON.parse(context)
+        currentStep = conversationContext.currentStep || null
+        completedSteps = conversationContext.completedSteps || []
+      }
+    } catch (error) {
+      console.warn('Failed to parse conversation context:', error)
+    }
 
-Key guidelines:
-- Be friendly, conversational, and helpful
-- Extract specific meal planning preferences when mentioned
-- Ask clarifying questions when preferences are unclear
-- Use the extract_preferences function to capture structured data
-- If a user provides partial information, extract what you can and ask for missing details
-- Always acknowledge what the user has told you before asking for more information
+    // Build system prompt based on conversation flow state
+    const systemPrompt = `You are Carter, ChefsCart's friendly AI sous-chef assistant. You help users create personalized meal plans through a guided conversation flow.
+
+CONVERSATION FLOW CONTEXT:
+- Current Step: ${currentStep || 'initial'}
+- Completed Steps: ${completedSteps.join(', ') || 'none'}
+- User Preferences So Far: ${conversationContext.preferences ? JSON.stringify(conversationContext.preferences) : 'none'}
+
+IMPORTANT RULES:
+- If the user has already selected meal types (check preferences.selectedMealTypes or preferences.mealTypes), do NOT ask about meal types again
+- If a step has been completed (in completedSteps), do NOT ask that question again
+- Always check the current preferences before asking any question to avoid repetition
+
+CONVERSATION GUIDELINES:
+1. Be warm, friendly, and encouraging
+2. Ask ONE focused question at a time based on the current conversation step
+3. When a user answers, acknowledge their response and smoothly transition to the next question
+4. Extract preferences using the extract_preferences function
+5. Keep responses concise (1-2 sentences max)
+6. Use natural language that feels conversational, not robotic
+
+CURRENT CONVERSATION STEPS:
+1. meal_types: "What meals would you like me to plan for you?"
+2. dietary_restrictions: "Do you have any dietary restrictions or preferences?"
+3. cooking_time: "How much time do you typically like to spend cooking?"
+4. cuisine_preferences: "What flavors and cuisines do you enjoy most?"
+5. final_confirmation: Complete the conversation
+
+RESPONSE STRATEGY:
+- If no current step: Start with a warm welcome and ask about meal types
+- If user answers current step: Acknowledge + extract preferences + ask next question
+- If user asks questions: Answer helpfully while guiding back to current step
+- Keep the conversation moving toward completion efficiently
 
 ${context ? `Previous conversation context: ${context}` : ''}
 
-Respond naturally while extracting any meal planning preferences mentioned.`
+Respond as Mila with enthusiasm and focus on the current conversation step.`
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
@@ -166,7 +204,7 @@ Respond naturally while extracting any meal planning preferences mentioned.`
       throw new Error('No response from OpenAI')
     }
 
-    let extractedData = {}
+    let extractedData: any = {}
     
     // Process function calls if any
     if (assistantMessage.tool_calls) {
@@ -182,12 +220,68 @@ Respond naturally while extracting any meal planning preferences mentioned.`
       }
     }
 
+    // Determine next conversation step based on extracted data
+    let nextStep = currentStep
+    let updatedCompletedSteps = [...completedSteps]
+    
+    if (extractedData && Object.keys(extractedData).length > 0) {
+      // Mark current step as completed if we extracted relevant data
+      if (currentStep && !completedSteps.includes(currentStep)) {
+        updatedCompletedSteps.push(currentStep)
+      }
+      
+      // Determine next step based on conversation flow
+      if (extractedData.mealTypes || extractedData.selectedMealTypes) {
+        if (!completedSteps.includes('meal_types')) {
+          updatedCompletedSteps.push('meal_types')
+        }
+        nextStep = 'dietary_restrictions'
+      } else if (conversationContext.preferences?.selectedMealTypes && !completedSteps.includes('meal_types')) {
+        // If meal types already exist in preferences, mark as completed and move to next step
+        updatedCompletedSteps.push('meal_types')
+        nextStep = 'dietary_restrictions'
+      }
+      
+      if (extractedData.diets) {
+        nextStep = completedSteps.includes('dietary_restrictions') ? nextStep : 'cooking_time'
+        if (!completedSteps.includes('dietary_restrictions')) {
+          updatedCompletedSteps.push('dietary_restrictions')
+        }
+      }
+      
+      if (extractedData.maxCookTime) {
+        nextStep = completedSteps.includes('cooking_time') ? nextStep : 'cuisine_preferences'
+        if (!completedSteps.includes('cooking_time')) {
+          updatedCompletedSteps.push('cooking_time')
+        }
+      }
+      
+      if (extractedData.preferredCuisines) {
+        nextStep = completedSteps.includes('cuisine_preferences') ? nextStep : 'final_confirmation'
+        if (!completedSteps.includes('cuisine_preferences')) {
+          updatedCompletedSteps.push('cuisine_preferences')
+        }
+      }
+    }
+    
+    // If this is the first interaction, start with meal_types
+    if (!currentStep && !extractedData.mealTypes && !extractedData.selectedMealTypes) {
+      nextStep = 'meal_types'
+    }
+
     return NextResponse.json({
       response: assistantMessage.content || "I'd be happy to help you with meal planning!",
       extractedData,
+      conversationFlow: {
+        currentStep: nextStep,
+        completedSteps: updatedCompletedSteps,
+        isComplete: updatedCompletedSteps.includes('final_confirmation')
+      },
       conversationContext: {
         lastMessage: message,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        currentStep: nextStep,
+        completedSteps: updatedCompletedSteps
       }
     })
 

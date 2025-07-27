@@ -40,7 +40,7 @@ export class VoiceRecordingService {
 
     const isSupported = !!(
       navigator.mediaDevices &&
-      navigator.mediaDevices.getUserMedia &&
+      typeof navigator.mediaDevices.getUserMedia === 'function' &&
       window.MediaRecorder
     )
 
@@ -97,7 +97,7 @@ export class VoiceRecordingService {
       return true
     }
 
-    this.updatePermissionState({ isRequesting: true, error: undefined })
+    this.updatePermissionState({ isRequesting: true })
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ 
@@ -153,11 +153,42 @@ export class VoiceRecordingService {
       })
 
       // Set up audio context for level monitoring
-      this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
-      const source = this.audioContext.createMediaStreamSource(this.audioStream)
-      this.analyser = this.audioContext.createAnalyser()
-      this.analyser.fftSize = 256
-      source.connect(this.analyser)
+      try {
+        this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
+        console.log('AudioContext created, state:', this.audioContext.state)
+        
+        // Resume audio context if it's suspended (required by some browsers)
+        if (this.audioContext.state === 'suspended') {
+          console.log('Attempting to resume suspended AudioContext...')
+          try {
+            await this.audioContext.resume()
+            console.log('AudioContext resumed, new state:', this.audioContext.state)
+          } catch (resumeError) {
+            console.error('Failed to resume AudioContext:', resumeError)
+            // Try user interaction to resume
+            const resumeWithUserGesture = () => {
+              this.audioContext?.resume().then(() => {
+                console.log('AudioContext resumed after user gesture')
+                document.removeEventListener('click', resumeWithUserGesture)
+                document.removeEventListener('touchstart', resumeWithUserGesture)
+              })
+            }
+            document.addEventListener('click', resumeWithUserGesture)
+            document.addEventListener('touchstart', resumeWithUserGesture)
+          }
+        }
+        
+        const source = this.audioContext.createMediaStreamSource(this.audioStream)
+        this.analyser = this.audioContext.createAnalyser()
+        this.analyser.fftSize = 512 // Increase resolution for better sensitivity
+        this.analyser.smoothingTimeConstant = 0.3 // Reduce smoothing for more responsive detection
+        source.connect(this.analyser)
+        console.log('Audio analysis setup complete, FFT size:', this.analyser.fftSize)
+      } catch (error) {
+        console.error('Error setting up audio context:', error)
+        // Continue without audio level monitoring
+        this.analyser = null
+      }
 
       // Set up MediaRecorder
       const options: MediaRecorderOptions = {}
@@ -204,9 +235,16 @@ export class VoiceRecordingService {
       }
 
       this.updateState({ 
-        isInitialized: true,
-        error: undefined
+        isInitialized: true
       })
+
+      // Start audio level monitoring immediately after initialization (if analyser is available)
+      if (this.analyser) {
+        this.startAudioLevelMonitoring()
+        console.log('Audio level monitoring started')
+      } else {
+        console.warn('Audio level monitoring not available (no analyser)')
+      }
 
       return true
     } catch (error) {
@@ -239,8 +277,7 @@ export class VoiceRecordingService {
       
       this.updateState({
         isRecording: true,
-        duration: 0,
-        error: undefined
+        duration: 0
       })
 
       this.startAudioLevelMonitoring()
@@ -280,19 +317,40 @@ export class VoiceRecordingService {
     const dataArray = new Uint8Array(bufferLength)
 
     this.audioLevelInterval = setInterval(() => {
-      if (!this.analyser || !this.state.isRecording) return
+      if (!this.analyser) return
 
       this.analyser.getByteFrequencyData(dataArray)
       
       // Calculate RMS (Root Mean Square) for audio level
       let sum = 0
+      let peakValue = 0
       for (let i = 0; i < bufferLength; i++) {
-        sum += dataArray[i] * dataArray[i]
+        const value = dataArray[i] ?? 0
+        sum += value * value
+        peakValue = Math.max(peakValue, value)
       }
       const rms = Math.sqrt(sum / bufferLength)
-      const audioLevel = Math.min(100, (rms / 128) * 100) // Normalize to 0-100
+      
+      // Use a more balanced approach for audio level calculation
+      const rmsLevel = (rms / 128) * 100
+      const peakLevel = (peakValue / 255) * 100
+      
+      // Weighted combination: 70% RMS (for consistency) + 30% peak (for responsiveness)
+      const combinedLevel = (rmsLevel * 0.7) + (peakLevel * 0.3)
+      const audioLevel = Math.min(100, combinedLevel)
 
-      this.updateState({ audioLevel })
+      // Apply smoothing to reduce noise but maintain responsiveness
+      const smoothingFactor = 0.3
+      const previousLevel = this.state.audioLevel || 0
+      const smoothedLevel = (audioLevel * smoothingFactor) + (previousLevel * (1 - smoothingFactor))
+
+      // Debug audio levels more frequently during active periods
+      const shouldLog = Math.random() < 0.05 || smoothedLevel > 2.0 // Log less frequently but include active periods
+      if (shouldLog) {
+        console.log('🎵 Audio - RMS:', rms.toFixed(1), 'Peak:', peakValue, 'Combined:', combinedLevel.toFixed(1), 'Smoothed:', smoothedLevel.toFixed(1))
+      }
+
+      this.updateState({ audioLevel: smoothedLevel })
     }, 50) // Update every 50ms for smooth feedback
   }
 
@@ -350,8 +408,7 @@ export class VoiceRecordingService {
       isRecording: false,
       isInitialized: false,
       audioLevel: 0,
-      duration: 0,
-      error: undefined
+      duration: 0
     })
   }
 
@@ -361,6 +418,10 @@ export class VoiceRecordingService {
 
   public getPermissionState(): AudioPermissionState {
     return { ...this.permissionState }
+  }
+
+  public getAudioContext(): AudioContext | null {
+    return this.audioContext
   }
 }
 

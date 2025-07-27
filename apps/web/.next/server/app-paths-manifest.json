@@ -1,5 +1,3 @@
 {
-  "/api/voice/synthesize/route": "app/api/voice/synthesize/route.js",
-  "/chat/page": "app/chat/page.js",
   "/page": "app/page.js"
 }
