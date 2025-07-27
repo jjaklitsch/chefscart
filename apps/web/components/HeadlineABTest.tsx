@@ -48,7 +48,12 @@ interface HeadlineABTestProps {
 export default function HeadlineABTest({ className = "" }: HeadlineABTestProps) {
   const { variant, isLoading } = useABTest(HEADLINE_EXPERIMENT_CONFIG);
 
-  if (isLoading) {
+  // Temporarily fallback to control variant to fix loading issue
+  const variantId = variant?.variantId || 'control';
+  const content = HEADLINE_VARIANTS[variantId as keyof typeof HEADLINE_VARIANTS];
+
+  // Show content immediately if we have it, otherwise show loading
+  if (isLoading && !content) {
     return (
       <div className={className}>
         <div className="animate-pulse">
@@ -58,9 +63,6 @@ export default function HeadlineABTest({ className = "" }: HeadlineABTestProps) 
       </div>
     );
   }
-
-  const variantId = variant?.variantId || 'control';
-  const content = HEADLINE_VARIANTS[variantId as keyof typeof HEADLINE_VARIANTS];
 
   return (
     <div className={className}>

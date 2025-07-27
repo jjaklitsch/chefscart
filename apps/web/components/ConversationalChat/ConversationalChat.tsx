@@ -126,7 +126,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     if (savedState) {
       setConversationState(savedState)
     } else {
-      // Start fresh conversation
+      // Start fresh conversation immediately
       startConversation()
     }
   }, [])
