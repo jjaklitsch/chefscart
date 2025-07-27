@@ -50,11 +50,17 @@ export default function ProgressTracker({
     switch (key) {
       case 'mealTypes':
         if (Array.isArray(value) && value.length > 0) {
-          // Check if meal types are properly configured
-          const hasValidConfig = value.every((meal: MealType) => 
-            meal.days && meal.days.length > 0 && meal.adults && meal.adults > 0
-          )
-          return hasValidConfig ? 'completed' : 'warning'
+          // Handle both MealType objects and simple strings (selectedMealTypes)
+          if (typeof value[0] === 'string') {
+            // This is selectedMealTypes array
+            return 'completed'
+          } else {
+            // This is mealTypes array with MealType objects
+            const hasValidConfig = value.every((meal: MealType) => 
+              meal.days && meal.days.length > 0 && meal.adults && meal.adults > 0
+            )
+            return hasValidConfig ? 'completed' : 'warning'
+          }
         }
         return 'pending'
       
@@ -83,7 +89,14 @@ export default function ProgressTracker({
     switch (key) {
       case 'mealTypes':
         if (Array.isArray(value) && value.length > 0) {
-          return value.map((meal: MealType) => meal.type).join(', ')
+          // Handle both MealType objects and simple strings (selectedMealTypes)
+          if (typeof value[0] === 'string') {
+            // This is selectedMealTypes array
+            return value.join(', ')
+          } else {
+            // This is mealTypes array with MealType objects
+            return value.map((meal: MealType) => meal.type).join(', ')
+          }
         }
         return 'Not set'
       
@@ -125,8 +138,8 @@ export default function ProgressTracker({
       key: 'mealTypes',
       label: 'Meal Types',
       description: 'What meals to plan',
-      status: getItemStatus('mealTypes', preferences.mealTypes),
-      value: getValueDisplay('mealTypes', preferences.mealTypes)
+      status: getItemStatus('mealTypes', preferences.mealTypes || (preferences as any).selectedMealTypes),
+      value: getValueDisplay('mealTypes', preferences.mealTypes || (preferences as any).selectedMealTypes)
     },
     {
       key: 'diets',

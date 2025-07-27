@@ -6,10 +6,13 @@ import { useRouter } from 'next/navigation'
 import MessageBubble from './MessageBubble'
 import ChatInput from './ChatInput'
 import TypingIndicator from './TypingIndicator'
-import FullScreenVoiceUI from '../FullScreenVoiceUI'
+import RealtimeVoiceUI from '../RealtimeVoiceUI'
 import ProgressTracker from '../ProgressTracker'
-import { UserPreferences, MealType } from '../../types'
+import QuickReplyGrid from './QuickReplyGrid'
+import MealSelectionMessage from './MealSelectionMessage'
+import { UserPreferences, MealType, ConversationFlow, QuickReply, Recipe } from '../../types'
 import { getVoiceRecordingService } from '../../lib/voice-recording'
+import { getStepById } from './conversationFlow'
 
 interface ConversationalChatProps {
   onPreferencesComplete: (preferences: UserPreferences) => void
@@ -29,6 +32,11 @@ interface ConversationState {
   awaitingResponse: boolean
   messages: ConversationMessage[]
   conversationStarted: boolean
+  conversationFlow: ConversationFlow
+  generatedMeals?: Recipe[]
+  selectedMeals?: Recipe[]
+  isMealGenerationLoading?: boolean
+  threadId?: string // For OpenAI Assistant API
 }
 
 // localStorage utilities
@@ -40,6 +48,10 @@ const saveToLocalStorage = (state: ConversationState): void => {
     if (typeof window !== 'undefined' && window.localStorage) {
       const stateToSave = {
         ...state,
+        conversationFlow: {
+          ...state.conversationFlow,
+          completedSteps: Array.from(state.conversationFlow.completedSteps)
+        },
         version: CURRENT_SCHEMA_VERSION,
         timestamp: Date.now()
       }
@@ -73,6 +85,18 @@ const loadFromLocalStorage = (): ConversationState | null => {
         }))
       }
       
+      // Convert completedSteps array back to Set
+      if (parsed.conversationFlow && parsed.conversationFlow.completedSteps) {
+        parsed.conversationFlow.completedSteps = new Set(parsed.conversationFlow.completedSteps)
+      } else {
+        parsed.conversationFlow = {
+          currentStepId: null,
+          completedSteps: new Set<string>(),
+          stepData: {},
+          isComplete: false
+        }
+      }
+      
       return parsed as ConversationState
     }
   } catch (error) {
@@ -92,19 +116,71 @@ const clearLocalStorage = (): void => {
   }
 }
 
+// Helper function to generate meals based on preferences
+const generateMealsFromPreferences = async (preferences: Partial<UserPreferences>): Promise<Recipe[]> => {
+  try {
+    const response = await fetch('/api/generate-mealplan', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        preferences: {
+          mealsPerWeek: 7,
+          peoplePerMeal: 2,
+          mealTypes: preferences.selectedMealTypes?.map(type => ({
+            type: type as MealType['type'],
+            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'],
+            adults: 2,
+            kids: 0
+          })) || [{ type: 'dinner', days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'], adults: 2, kids: 0 }],
+          diets: preferences.diets || [],
+          allergies: preferences.allergies || [],
+          avoidIngredients: [],
+          organicPreference: preferences.organicPreference || 'no_preference',
+          maxCookTime: preferences.maxCookTime || 30,
+          cookingSkillLevel: preferences.cookingSkillLevel || 'intermediate',
+          preferredCuisines: preferences.preferredCuisines || [],
+          preferredRetailers: []
+        }
+      })
+    })
+
+    if (!response.ok) {
+      throw new Error('Failed to generate meals')
+    }
+
+    const data = await response.json()
+    return data.mealPlan?.recipes || []
+  } catch (error) {
+    console.error('Error generating meals:', error)
+    return []
+  }
+}
+
 export default function ConversationalChat({ onPreferencesComplete, onProgressUpdate }: ConversationalChatProps) {
   const router = useRouter()
   const [conversationState, setConversationState] = useState<ConversationState>({
     preferences: {},
     awaitingResponse: false,
     messages: [],
-    conversationStarted: false
+    conversationStarted: false,
+    conversationFlow: {
+      currentStepId: null,
+      completedSteps: new Set<string>(),
+      stepData: {},
+      isComplete: false
+    },
+    generatedMeals: [],
+    selectedMeals: [],
+    isMealGenerationLoading: false,
+    threadId: undefined
   })
   const [isTyping, setIsTyping] = useState(false)
   const [showVoiceUI, setShowVoiceUI] = useState(false)
   const [isListening, setIsListening] = useState(false)
-  const [showProgressTracker, setShowProgressTracker] = useState(true)
   const [progressTrackerCollapsed, setProgressTrackerCollapsed] = useState(false)
+  const [desktopProgressTrackerCollapsed, setDesktopProgressTrackerCollapsed] = useState(false)
   const [lastAIResponse, setLastAIResponse] = useState<string>('')
   
   const messagesEndRef = useRef<HTMLDivElement>(null)
@@ -149,7 +225,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     const welcomeMessage: ConversationMessage = {
       id: 'assistant-welcome',
       role: 'assistant',
-      content: "Hi! I'm Mila, your AI sous-chef 👨‍🍳 I'm here to create the perfect personalized meal plan just for you. Try voice mode below to tell me about your preferences, or start typing to let me know what you're looking for!",
+      content: "Hi! I'm Mila, your AI sous-chef! 👨‍🍳 I'm here to create the perfect personalized meal plan just for you. Let's start with the basics - what meals would you like me to plan for you?",
       timestamp: new Date()
     }
 
@@ -157,7 +233,16 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
       preferences: {},
       awaitingResponse: false,
       messages: [welcomeMessage],
-      conversationStarted: true
+      conversationStarted: true,
+      conversationFlow: {
+        currentStepId: 'meal_types',
+        completedSteps: new Set<string>(),
+        stepData: {},
+        isComplete: false
+      },
+      generatedMeals: [],
+      selectedMeals: [],
+      isMealGenerationLoading: false
     })
   }, [])
 
@@ -181,26 +266,59 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     }))
 
     try {
-      // Call the conversation processing API
-      const response = await fetch('/api/conversation/process', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          message: text,
-          context: JSON.stringify({
-            preferences: conversationState.preferences,
-            conversationHistory: conversationState.messages.slice(-3) // Last 3 messages for context
+      // Use feature flag to switch between Assistant API and legacy API
+      const useAssistantAPI = process.env.NEXT_PUBLIC_USE_ASSISTANT_API === 'true'
+      
+      let data: any
+      
+      if (useAssistantAPI) {
+        // Call the new Assistant API
+        const response = await fetch('/api/assistant/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: text,
+            threadId: conversationState.threadId,
+            context: {
+              preferences: conversationState.preferences,
+              conversationHistory: conversationState.messages.slice(-3),
+              currentStep: conversationState.conversationFlow.currentStepId,
+              completedSteps: Array.from(conversationState.conversationFlow.completedSteps)
+            }
           })
         })
-      })
-      
-      if (!response.ok) {
-        throw new Error('Failed to process message')
+        
+        if (!response.ok) {
+          throw new Error('Failed to process message with Assistant API')
+        }
+        
+        data = await response.json()
+      } else {
+        // Call the legacy conversation processing API
+        const response = await fetch('/api/conversation/process', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: text,
+            context: JSON.stringify({
+              preferences: conversationState.preferences,
+              conversationHistory: conversationState.messages.slice(-3),
+              currentStep: conversationState.conversationFlow.currentStepId,
+              completedSteps: Array.from(conversationState.conversationFlow.completedSteps)
+            })
+          })
+        })
+        
+        if (!response.ok) {
+          throw new Error('Failed to process message')
+        }
+        
+        data = await response.json()
       }
-      
-      const data = await response.json()
       
       // Add AI response
       const aiMessage: ConversationMessage = {
@@ -213,6 +331,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
       
       setConversationState(prev => {
         const newPreferences = { ...prev.preferences }
+        let updatedConversationFlow = { ...prev.conversationFlow }
         
         // Merge extracted data with current preferences
         if (data.extractedData && Object.keys(data.extractedData).length > 0) {
@@ -220,27 +339,67 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
             if (value !== undefined && value !== null) {
               // Handle arrays by merging with existing values
               if (Array.isArray(value)) {
-                const existingValue = (newPreferences as any)[key]
+                const existingValue = (newPreferences as Record<string, unknown>)[key]
                 if (Array.isArray(existingValue)) {
-                  (newPreferences as any)[key] = Array.from(
+                  (newPreferences as Record<string, unknown>)[key] = Array.from(
                     new Set([...existingValue, ...value])
                   )
                 } else {
-                  (newPreferences as any)[key] = value
+                  (newPreferences as Record<string, unknown>)[key] = value
                 }
               } else {
-                (newPreferences as any)[key] = value
+                (newPreferences as Record<string, unknown>)[key] = value
               }
             }
           })
         }
         
-        return {
+        // Update conversation flow based on API response
+        if (data.conversationFlow) {
+          updatedConversationFlow = {
+            ...updatedConversationFlow,
+            currentStepId: data.conversationFlow.currentStep,
+            completedSteps: new Set(data.conversationFlow.completedSteps),
+            isComplete: data.conversationFlow.isComplete || false
+          }
+        }
+
+        // Handle generated meals from Assistant API
+        if (data.generatedMeals && data.generatedMeals.length > 0) {
+          return {
+            ...prev,
+            messages: [...prev.messages, aiMessage],
+            preferences: newPreferences,
+            conversationFlow: updatedConversationFlow,
+            awaitingResponse: false,
+            generatedMeals: data.generatedMeals,
+            isMealGenerationLoading: false,
+            threadId: data.threadId || prev.threadId
+          }
+        }
+
+        // Check if we need to generate meals for the meal selection step
+        const shouldGenerateMeals = updatedConversationFlow.currentStepId === 'meal_selection' && 
+                                  !prev.generatedMeals?.length &&
+                                  !prev.isMealGenerationLoading
+
+        let updatedState = {
           ...prev,
           messages: [...prev.messages, aiMessage],
           preferences: newPreferences,
-          awaitingResponse: false
+          conversationFlow: updatedConversationFlow,
+          awaitingResponse: false,
+          threadId: data.threadId || prev.threadId
         }
+
+        if (shouldGenerateMeals) {
+          updatedState = {
+            ...updatedState,
+            isMealGenerationLoading: true
+          }
+        }
+        
+        return updatedState
       })
       
       // Set for voice response
@@ -253,9 +412,30 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
         onProgressUpdate({ ...conversationState.preferences, ...data.extractedData })
       }
       
-      // Check if we have enough information to complete
-      const updatedPreferences = { ...conversationState.preferences, ...data.extractedData }
-      if (checkIfReadyToComplete(updatedPreferences)) {
+      // Generate meals if we've reached the meal selection step (legacy flow)
+      if (!data.generatedMeals && data.conversationFlow && data.conversationFlow.currentStep === 'meal_selection') {
+        const currentPreferences = { ...conversationState.preferences, ...data.extractedData }
+        
+        // Generate meals in the background
+        generateMealsFromPreferences(currentPreferences).then((meals) => {
+          setConversationState(prev => ({
+            ...prev,
+            generatedMeals: meals,
+            isMealGenerationLoading: false
+          }))
+        }).catch((error) => {
+          console.error('Failed to generate meals:', error)
+          setConversationState(prev => ({
+            ...prev,
+            generatedMeals: [],
+            isMealGenerationLoading: false
+          }))
+        })
+      }
+
+      // Check if conversation flow is complete
+      if (data.conversationFlow && data.conversationFlow.isComplete) {
+        const updatedPreferences = { ...conversationState.preferences, ...data.extractedData }
         setTimeout(() => {
           completeConversation(updatedPreferences)
         }, 2000)
@@ -282,13 +462,13 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     }
   }, [conversationState, onProgressUpdate])
 
-  const checkIfReadyToComplete = (preferences: Partial<UserPreferences>): boolean => {
-    // Basic requirements: meal types and at least some other preferences
-    const hasMealTypes = preferences.selectedMealTypes && preferences.selectedMealTypes.length > 0
-    const hasOtherInfo = preferences.diets || preferences.allergies || preferences.organicPreference || preferences.maxCookTime
+  // const checkIfReadyToComplete = (preferences: Partial<UserPreferences>): boolean => {
+  //   // Basic requirements: meal types and at least some other preferences
+  //   const hasMealTypes = preferences.selectedMealTypes && preferences.selectedMealTypes.length > 0
+  //   const hasOtherInfo = preferences.diets || preferences.allergies || preferences.organicPreference || preferences.maxCookTime
     
-    return Boolean(hasMealTypes && hasOtherInfo)
-  }
+  //   return Boolean(hasMealTypes && hasOtherInfo)
+  // }
 
   const completeConversation = useCallback((preferences: Partial<UserPreferences>) => {
     const completionMessage: ConversationMessage = {
@@ -375,19 +555,118 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     }
   }, [voiceService, handleVoiceInput])
 
-  const resetConversation = useCallback(() => {
+  const resetConversation = useCallback(async () => {
+    // Clean up existing thread if using Assistant API
+    const useAssistantAPI = process.env.NEXT_PUBLIC_USE_ASSISTANT_API === 'true'
+    if (useAssistantAPI && conversationState.threadId) {
+      try {
+        await fetch('/api/assistant/thread', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            action: 'delete',
+            threadId: conversationState.threadId
+          })
+        })
+      } catch (error) {
+        console.warn('Failed to delete thread:', error)
+      }
+    }
+
     clearLocalStorage()
     setConversationState({
       preferences: {},
       awaitingResponse: false,
       messages: [],
-      conversationStarted: false
+      conversationStarted: false,
+      conversationFlow: {
+        currentStepId: null,
+        completedSteps: new Set<string>(),
+        stepData: {},
+        isComplete: false
+      },
+      threadId: undefined
     })
     setShowVoiceUI(false)
     setIsListening(false)
     setLastAIResponse('')
     startConversation()
-  }, [startConversation])
+  }, [startConversation, conversationState.threadId])
+
+  const handleQuickReply = useCallback((reply: QuickReply) => {
+    // Convert the quick reply to a text message
+    processTextInput(reply.text, false)
+  }, [processTextInput])
+
+  const handleMealSelection = useCallback((selectedMeals: Recipe[]) => {
+    // Update the conversation state with selected meals
+    setConversationState(prev => ({
+      ...prev,
+      selectedMeals,
+      preferences: {
+        ...prev.preferences,
+        selectedRecipes: selectedMeals
+      },
+      conversationFlow: {
+        ...prev.conversationFlow,
+        currentStepId: 'final_confirmation',
+        completedSteps: new Set([...Array.from(prev.conversationFlow.completedSteps), 'meal_selection'])
+      }
+    }))
+
+    // Add a confirmation message
+    const confirmationMessage: ConversationMessage = {
+      id: `assistant-meal-confirm-${Date.now()}`,
+      role: 'assistant',
+      content: `Perfect! I've got your ${selectedMeals.length} selected meals. Let me create your Instacart shopping cart now!`,
+      timestamp: new Date()
+    }
+
+    setTimeout(() => {
+      setConversationState(prev => {
+        const updatedState = {
+          ...prev,
+          messages: [...prev.messages, confirmationMessage]
+        }
+
+        // Complete the conversation after a short delay
+        setTimeout(() => {
+          const finalPreferences = {
+            ...updatedState.preferences,
+            selectedRecipes: selectedMeals
+          }
+          
+          // Complete preferences with defaults and selected meals
+          const completePreferences: UserPreferences = {
+            mealsPerWeek: finalPreferences.mealsPerWeek || 5,
+            peoplePerMeal: finalPreferences.peoplePerMeal || 2,
+            mealTypes: finalPreferences.mealTypes || finalPreferences.selectedMealTypes?.map(type => ({
+              type: type as MealType['type'],
+              days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'],
+              adults: 2,
+              kids: 0
+            })) || [{ type: 'dinner', days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'], adults: 2, kids: 0 }],
+            diets: finalPreferences.diets || [],
+            allergies: finalPreferences.allergies || [],
+            avoidIngredients: [],
+            organicPreference: finalPreferences.organicPreference || 'no_preference',
+            maxCookTime: finalPreferences.maxCookTime || 30,
+            cookingSkillLevel: finalPreferences.cookingSkillLevel || 'intermediate',
+            preferredCuisines: finalPreferences.preferredCuisines || [],
+            preferredRetailers: [],
+            selectedRecipes: selectedMeals
+          }
+
+          clearLocalStorage()
+          setTimeout(() => onPreferencesComplete(completePreferences), 1000)
+        }, 2000)
+
+        return updatedState
+      })
+    }, 500)
+  }, [onPreferencesComplete])
 
   const handleEditProgressItem = useCallback((itemKey: string) => {
     // TODO: Implement editing specific preference items
@@ -398,7 +677,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     <div className="min-h-screen bg-health-gradient">
       {/* Header - Fixed and Sticky */}
       <header className="sticky top-0 bg-gradient-to-r from-sage-50 to-cream-50 border-b border-sage-200 px-4 py-3 shadow-soft backdrop-blur-md bg-opacity-95 z-50">
-        <div className="flex items-center justify-between max-w-4xl mx-auto">
+        <div className="flex items-center justify-between max-w-none w-full">
           {/* Left side - Back button and title */}
           <div className="flex items-center gap-3">
             <button
@@ -431,11 +710,11 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_320px] min-h-[calc(100vh-80px)] relative">
+      <main className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_320px] h-[calc(100vh-80px)] relative">
         {/* Messages Area */}
-        <div className="flex flex-col overflow-hidden relative">
-          {/* Messages Container */}
-          <div className="flex-1 overflow-y-auto px-4 py-6">
+        <div className="flex flex-col h-full relative">
+          {/* Messages Container - Scrollable */}
+          <div className="flex-1 overflow-y-auto px-4 py-6 pb-0">
             <div className="max-w-4xl mx-auto">
               <div role="log" aria-live="polite" aria-label="Conversation messages">
                 {conversationState.messages.map((message) => (
@@ -450,36 +729,71 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
                 
                 {isTyping && <TypingIndicator />}
                 
+                {/* Quick Reply Grid - Show for current conversation step */}
+                {!isTyping && !conversationState.awaitingResponse && conversationState.conversationFlow.currentStepId && (
+                  <div className="mt-4">
+                    {(() => {
+                      const currentStep = getStepById(conversationState.conversationFlow.currentStepId)
+                      if (currentStep && currentStep.quickReplies) {
+                        return (
+                          <QuickReplyGrid
+                            quickReplies={currentStep.quickReplies}
+                            onSelect={handleQuickReply}
+                            disabled={conversationState.awaitingResponse}
+                          />
+                        )
+                      }
+                      return null
+                    })()}
+                  </div>
+                )}
+
+                {/* Meal Selection Interface - Show when in meal selection step */}
+                {conversationState.conversationFlow.currentStepId === 'meal_selection' && (
+                  <MealSelectionMessage
+                    id={`meal-selection-${Date.now()}`}
+                    recipes={conversationState.generatedMeals || []}
+                    onSelectionComplete={handleMealSelection}
+                    isLoading={conversationState.isMealGenerationLoading || false}
+                    timestamp={new Date()}
+                    minSelections={3}
+                    maxSelections={7}
+                  />
+                )}
+                
                 <div ref={messagesEndRef} />
               </div>
             </div>
           </div>
 
-          {/* Voice Mode Button */}
-          {!isTyping && (
-            <div className="px-4 py-2 border-t border-sage-200 bg-gradient-to-r from-sage-50 to-cream-50">
-              <div className="max-w-4xl mx-auto flex justify-center">
-                <button
-                  onClick={() => setShowVoiceUI(true)}
-                  className="btn-accent-new inline-flex items-center gap-2"
-                  aria-label="Try voice mode"
-                >
-                  <Mic className="w-4 h-4" />
-                  Try Voice Mode
-                </button>
+          {/* Fixed Bottom Section - Input Area */}
+          <div className="flex-shrink-0">
+            {/* Voice Mode Button */}
+            {!isTyping && (
+              <div className="px-4 py-2 border-t border-sage-200 bg-gradient-to-r from-sage-50 to-cream-50">
+                <div className="max-w-4xl mx-auto flex justify-center">
+                  <button
+                    onClick={() => setShowVoiceUI(true)}
+                    className="btn-accent-new inline-flex items-center gap-2"
+                    aria-label="Try voice mode"
+                  >
+                    <Mic className="w-4 h-4" />
+                    Try Voice Mode
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {/* Chat Input - Always Visible */}
-          <div className="relative">
-            <ChatInput
-              onSendMessage={handleTextInput}
-              disabled={conversationState.awaitingResponse}
-              placeholder="What's cookin?"
-              isLoading={conversationState.awaitingResponse}
-              maxLength={1000}
-            />
+            {/* Chat Input - Always Visible */}
+            <div className="relative bg-white border-t border-sage-200">
+              <ChatInput
+                onSendMessage={handleTextInput}
+                disabled={conversationState.awaitingResponse}
+                placeholder="What's cookin?"
+                isLoading={conversationState.awaitingResponse}
+                maxLength={1000}
+              />
+            </div>
           </div>
         </div>
 
@@ -488,8 +802,8 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
           <ProgressTracker
             preferences={conversationState.preferences}
             onEditItem={handleEditProgressItem}
-            isCollapsed={false}
-            onToggleCollapse={() => {}} // No-op for desktop
+            isCollapsed={desktopProgressTrackerCollapsed}
+            onToggleCollapse={() => setDesktopProgressTrackerCollapsed(!desktopProgressTrackerCollapsed)}
           />
         </aside>
       </main>
@@ -505,18 +819,18 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
         />
       </div>
 
-      {/* Full Screen Voice UI */}
-      <FullScreenVoiceUI
+      {/* Realtime Voice UI */}
+      <RealtimeVoiceUI
         isVisible={showVoiceUI}
         onClose={() => {
           setShowVoiceUI(false)
           setIsListening(false)
         }}
-        onVoiceInput={handleVoiceInput}
-        aiResponseText={lastAIResponse}
-        isListening={isListening}
-        onStartListening={handleStartListening}
-        onStopListening={handleStopListening}
+        onTranscript={(text, isUser) => {
+          if (isUser) {
+            handleVoiceInput(text)
+          }
+        }}
       />
     </div>
   )

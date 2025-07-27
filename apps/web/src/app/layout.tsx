@@ -17,6 +17,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "ChefsCart - AI-Powered Meal Planning & Grocery Shopping",
   description: "Create personalized meal plans and shop for ingredients with one click. Get custom recipes based on your dietary preferences and cooking skills.",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

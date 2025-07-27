@@ -73,6 +73,8 @@ export class AudioPlaybackService {
       speed: speed || 1.0
     }
 
+    console.log('Synthesizing speech:', { text: text.substring(0, 50) + '...', voice, speed })
+
     try {
       const response = await fetch('/api/voice/synthesize', {
         method: 'POST',
@@ -82,20 +84,26 @@ export class AudioPlaybackService {
         body: JSON.stringify(request)
       })
 
+      console.log('Synthesis response status:', response.status)
+
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({ error: 'Network error' }))
+        console.error('Synthesis API error:', errorData)
         throw new Error(errorData.error || `Voice synthesis failed: HTTP ${response.status}`)
       }
 
       const arrayBuffer = await response.arrayBuffer()
+      console.log('Audio buffer size:', arrayBuffer.byteLength, 'bytes')
+      
       if (arrayBuffer.byteLength === 0) {
         throw new Error('Empty audio response from voice synthesis')
       }
 
       return arrayBuffer
     } catch (error) {
+      console.error('Speech synthesis error:', error)
       if (error instanceof TypeError && error.message.includes('fetch')) {
-        throw new Error('Voice synthesis service unavailable')
+        throw new Error('Voice synthesis service unavailable - check network connection')
       }
       throw error
     }
@@ -104,14 +112,32 @@ export class AudioPlaybackService {
   private createAudioFromBuffer(buffer: ArrayBuffer): Promise<HTMLAudioElement> {
     return new Promise((resolve, reject) => {
       try {
+        console.log('Creating audio from buffer, size:', buffer.byteLength, 'bytes')
+        
         if (buffer.byteLength === 0) {
           reject(new Error('Empty audio buffer'))
           return
         }
 
+        // Check if we're in a browser environment
+        if (typeof window === 'undefined') {
+          reject(new Error('Audio playback not available in server environment'))
+          return
+        }
+
+        // Check if HTMLAudioElement is available
+        if (!window.HTMLAudioElement) {
+          reject(new Error('HTMLAudioElement not supported in this browser'))
+          return
+        }
+
         const blob = new Blob([buffer], { type: 'audio/mpeg' })
         const url = URL.createObjectURL(blob)
-        const audio = new HTMLAudioElement()
+        
+        // Use document.createElement instead of constructor to avoid illegal constructor error
+        const audio = document.createElement('audio') as HTMLAudioElement
+        
+        console.log('Created blob URL:', url)
         
         audio.volume = this.volume
         audio.preload = 'auto'
@@ -121,6 +147,7 @@ export class AudioPlaybackService {
         }
         
         audio.addEventListener('loadeddata', () => {
+          console.log('Audio loaded successfully, duration:', audio.duration)
           resolve(audio)
         }, { once: true })
         
@@ -131,6 +158,7 @@ export class AudioPlaybackService {
           let errorMessage = 'Failed to load audio'
           
           if (error) {
+            console.error('Audio error code:', error.code, 'message:', error.message)
             switch (error.code) {
               case error.MEDIA_ERR_ABORTED:
                 errorMessage = 'Audio loading was aborted'
@@ -139,20 +167,37 @@ export class AudioPlaybackService {
                 errorMessage = 'Network error while loading audio'
                 break
               case error.MEDIA_ERR_DECODE:
-                errorMessage = 'Error decoding audio data'
+                errorMessage = 'Error decoding audio data - invalid audio format'
                 break
               case error.MEDIA_ERR_SRC_NOT_SUPPORTED:
-                errorMessage = 'Audio format not supported'
+                errorMessage = 'Audio format not supported by browser'
                 break
             }
           }
           
+          console.error('Audio creation failed:', errorMessage)
           reject(new Error(errorMessage))
+        }, { once: true })
+        
+        // Add a timeout for audio loading
+        const loadTimeout = setTimeout(() => {
+          cleanup()
+          reject(new Error('Audio loading timeout - audio failed to load within 10 seconds'))
+        }, 10000)
+        
+        audio.addEventListener('loadeddata', () => {
+          clearTimeout(loadTimeout)
+        }, { once: true })
+        
+        audio.addEventListener('error', () => {
+          clearTimeout(loadTimeout)
         }, { once: true })
         
         audio.src = url
       } catch (error) {
-        reject(new Error(`Failed to create audio: ${error instanceof Error ? error.message : 'Unknown error'}`))
+        const errorMsg = `Failed to create audio: ${error instanceof Error ? error.message : 'Unknown error'}`
+        console.error(errorMsg, error)
+        reject(new Error(errorMsg))
       }
     })
   }
@@ -224,32 +269,42 @@ export class AudioPlaybackService {
       audio.addEventListener('error', handleError, { once: true })
 
       // Resume audio context if needed (for browsers with autoplay restrictions)
-      if (this.audioContext && this.audioContext.state === 'suspended') {
-        try {
-          await this.audioContext.resume()
-        } catch (error) {
-          console.warn('Failed to resume audio context:', error)
+      if (this.audioContext) {
+        console.log('Audio context state:', this.audioContext.state)
+        if (this.audioContext.state === 'suspended') {
+          try {
+            await this.audioContext.resume()
+            console.log('Audio context resumed successfully')
+          } catch (error) {
+            console.warn('Failed to resume audio context:', error)
+          }
         }
       }
 
       // Play audio with retry logic
       try {
+        console.log('Attempting to play audio...')
         await audio.play()
+        console.log('Audio playback started successfully')
       } catch (playError) {
+        console.error('Audio playback error:', playError)
+        
         // Handle specific play errors
         if (playError instanceof DOMException) {
           switch (playError.name) {
             case 'NotAllowedError':
-              throw new Error('Audio playback not allowed by browser. User interaction required.')
+              throw new Error('Audio playback blocked by browser - requires user interaction. Please click somewhere first, then try voice mode again.')
             case 'NotSupportedError':
-              throw new Error('Audio format not supported')
+              throw new Error('Audio format not supported by this browser')
             case 'AbortError':
               throw new Error('Audio playback was aborted')
+            case 'NetworkError':
+              throw new Error('Network error during audio playback')
             default:
               throw new Error(`Playback failed: ${playError.message}`)
           }
         }
-        throw playError
+        throw new Error(`Audio playback error: ${playError instanceof Error ? playError.message : 'Unknown error'}`)
       }
 
     } catch (error) {
