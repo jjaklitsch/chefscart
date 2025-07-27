@@ -227,6 +227,9 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         // For multi-value options, check by option ID
         const optionId = currentStepData.options?.find(opt => JSON.stringify(opt.value) === JSON.stringify(value))?.id
         isSelected = currentAnswers.includes(optionId)
+      } else if (Array.isArray(value) && value.length === 1) {
+        // For single-value arrays, check the actual value
+        isSelected = currentAnswers.includes(value[0])
       } else {
         isSelected = currentAnswers.some((item: any) => 
           Array.isArray(item) ? JSON.stringify(item) === JSON.stringify(value) : item === value
@@ -240,6 +243,9 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
           // Find and remove the option ID that corresponds to this multi-value option
           const optionId = currentStepData.options?.find(opt => JSON.stringify(opt.value) === JSON.stringify(value))?.id
           newAnswers = currentAnswers.filter((item: any) => item !== optionId)
+        } else if (Array.isArray(value) && value.length === 1) {
+          // For single-value arrays, remove the actual value
+          newAnswers = currentAnswers.filter((item: any) => item !== value[0])
         } else {
           newAnswers = currentAnswers.filter((item: any) => 
             Array.isArray(item) ? JSON.stringify(item) !== JSON.stringify(value) : item !== value
@@ -346,6 +352,19 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         selectedMealTypes: [],
         diets: answers.dietaryStyle?.flat() || [],
         allergies: answers.foodsToAvoid ? answers.foodsToAvoid.split(',').map(s => s.trim()) : [],
+        maxCookTime: answers.cookingTime || 30,
+        preferredCuisines: [
+          ...((answers.cuisinePreferences || []).reduce((acc: string[], item: string) => {
+            if (item === 'other') return acc
+            // Check if this is an option ID that needs to be expanded
+            const option = onboardingSteps.find(step => step.id === 'cuisinePreferences')?.options?.find(opt => opt.id === item)
+            if (option && Array.isArray(option.value)) {
+              return [...acc, ...option.value]
+            }
+            return [...acc, item]
+          }, [])),
+          ...(answers.cuisinePreferencesOther ? [answers.cuisinePreferencesOther] : [])
+        ],
         mealsPerWeek: (answers.mealTypes || []).length * 5, // Assume 5 days per week for each selected meal type
         peoplePerMeal: (answers.adults || 2) + ((answers.kids || 0) * 0.5),
         mealTypes: (answers.mealTypes || []).map(mealType => ({
@@ -378,10 +397,11 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
       if (Array.isArray(option.value) && option.value.length > 1) {
         return answer.includes(option.id)
       }
-      // For single-value options, check the actual value
-      if (Array.isArray(option.value)) {
-        return option.value.some((val: any) => answer.includes(val))
+      // For single-value arrays, check the actual value
+      if (Array.isArray(option.value) && option.value.length === 1) {
+        return answer.includes(option.value[0])
       }
+      // For non-array values, check directly
       return answer.includes(option.value)
     }
     return answer === option.value
