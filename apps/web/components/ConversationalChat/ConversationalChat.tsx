@@ -35,13 +35,15 @@ interface ConversationState {
   selectedReplies: string[]
   mealConfiguration: Record<string, { days: number, adults: number, kids: number }>
   awaitingResponse: boolean
+  messages?: ConversationMessage[]
+  version?: number
 }
 
 // Natural language conversation flow
 const conversationSteps = [
   {
     id: 'welcome',
-    message: "Hi! I'm your AI sous-chef 👨‍🍳 I'm here to create the perfect personalized meal plan just for you. Let's start by figuring out what types of meals you'd like me to plan. What sounds good to you?",
+    message: "Hi! I'm your AI sous-chef 👨‍🍳 I'm here to create the perfect personalized meal plan just for you. You can tell me about your preferences in your own words, or click the suggestions below. What would you like me to help you plan?",
     quickReplies: [
       { id: 'breakfast', text: 'Breakfast', value: 'breakfast' },
       { id: 'lunch', text: 'Lunch', value: 'lunch' },
@@ -135,14 +137,60 @@ const conversationSteps = [
 
 // localStorage utilities
 const STORAGE_KEY = 'chefscart_conversation_state'
+const CURRENT_SCHEMA_VERSION = 1
+
+// Validate conversation state schema (will be called after conversationSteps is defined)
+const validateConversationState = (state: any, stepsLength: number): state is ConversationState => {
+  if (!state || typeof state !== 'object') return false
+  
+  // Check required fields exist and have correct types
+  if (typeof state.step !== 'number' || state.step < 0) return false
+  if (!state.preferences || typeof state.preferences !== 'object') return false
+  if (!Array.isArray(state.selectedReplies)) return false
+  if (!state.mealConfiguration || typeof state.mealConfiguration !== 'object') return false
+  if (typeof state.awaitingResponse !== 'boolean') return false
+  
+  // Validate mealConfiguration structure
+  for (const [key, config] of Object.entries(state.mealConfiguration)) {
+    if (!config || typeof config !== 'object') return false
+    const mealConfig = config as any
+    if (typeof mealConfig.days !== 'number' || mealConfig.days < 1 || mealConfig.days > 7) return false
+    if (typeof mealConfig.adults !== 'number' || mealConfig.adults < 1) return false
+    if (typeof mealConfig.kids !== 'number' || mealConfig.kids < 0) return false
+  }
+  
+  // Check step is within valid range
+  if (state.step >= stepsLength) return false
+  
+  return true
+}
 
 const saveToLocalStorage = (state: ConversationState): void => {
   try {
     if (typeof window !== 'undefined' && window.localStorage) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+      const stateToSave = {
+        ...state,
+        version: CURRENT_SCHEMA_VERSION,
+        timestamp: Date.now()
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToSave))
     }
   } catch (error) {
+    // Handle quota exceeded or other storage errors gracefully
     console.warn('Failed to save conversation state:', error)
+    // Try to clear old data and retry once
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        localStorage.removeItem(STORAGE_KEY)
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          ...state,
+          version: CURRENT_SCHEMA_VERSION,
+          timestamp: Date.now()
+        }))
+      }
+    } catch (retryError) {
+      console.warn('Failed to save conversation state after retry:', retryError)
+    }
   }
 }
 
@@ -150,12 +198,30 @@ const loadFromLocalStorage = (): ConversationState | null => {
   try {
     if (typeof window !== 'undefined' && window.localStorage) {
       const stored = localStorage.getItem(STORAGE_KEY)
-      if (stored) {
-        return JSON.parse(stored)
+      if (!stored) return null
+      
+      const parsed = JSON.parse(stored)
+      
+      // Check version compatibility
+      if (parsed.version && parsed.version !== CURRENT_SCHEMA_VERSION) {
+        console.info('Conversation state version mismatch, starting fresh')
+        clearLocalStorage()
+        return null
       }
+      
+      // Validate the parsed state (use a reasonable max length if conversationSteps not available)
+      if (!validateConversationState(parsed, 10)) {
+        console.warn('Invalid conversation state found, starting fresh')
+        clearLocalStorage()
+        return null
+      }
+      
+      return parsed
     }
   } catch (error) {
     console.warn('Failed to load conversation state:', error)
+    // Clear corrupted data
+    clearLocalStorage()
   }
   return null
 }
@@ -215,44 +281,100 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
     scrollToBottom()
   }, [messages, isTyping, scrollToBottom])
 
+  // Async message reconstruction to avoid blocking UI
+  const reconstructMessages = useCallback(async (savedState: ConversationState): Promise<ConversationMessage[]> => {
+    return new Promise((resolve) => {
+      // Use setTimeout to avoid blocking the main thread
+      setTimeout(() => {
+        const reconstructedMessages: ConversationMessage[] = []
+        
+        // For each completed step, add both assistant and user messages
+        for (let i = 0; i <= savedState.step && i < conversationSteps.length; i++) {
+          const step = conversationSteps[i]
+          if (!step) continue
+          
+          // Add assistant message
+          const assistantMessage: ConversationMessage = {
+            id: `assistant-${i}`,
+            role: 'assistant',
+            content: step.message,
+            timestamp: new Date(),
+            quickReplies: step.quickReplies?.map(qr => ({
+              ...qr,
+              // For current step, show selection state from savedState.selectedReplies
+              // For past steps, reconstruct selection from preferences
+              selected: i === savedState.step 
+                ? savedState.selectedReplies.includes(qr.value)
+                : isQuickReplySelectedInStep(step, qr.value, savedState.preferences)
+            })),
+            waitingForInput: i === savedState.step,
+            inputType: step.inputType
+          }
+          
+          reconstructedMessages.push(assistantMessage)
+
+          // Add user response if we've moved past this step
+          if (i < savedState.step) {
+            const userResponse = generateUserResponseForStep(step, i, savedState)
+            if (userResponse) {
+              reconstructedMessages.push({
+                id: `user-${i}`,
+                role: 'user',
+                content: userResponse,
+                timestamp: new Date()
+              })
+            }
+          }
+        }
+        
+        resolve(reconstructedMessages)
+      }, 0)
+    })
+  }, [])
+  
+  // Helper function to determine if a quick reply was selected in a past step
+  const isQuickReplySelectedInStep = (step: any, value: string, preferences: any): boolean => {
+    const preferenceValue = preferences[step.key]
+    if (!preferenceValue) return false
+    
+    if (Array.isArray(preferenceValue)) {
+      return preferenceValue.includes(value)
+    }
+    
+    return preferenceValue === value
+  }
+  
+  // Generate user response for a specific completed step
+  const generateUserResponseForStep = (step: any, stepIndex: number, savedState: ConversationState): string => {
+    switch (step.key) {
+      case 'mealTypes':
+        return savedState.preferences.selectedMealTypes?.join(', ') || 'None'
+      case 'mealConfiguration':
+        return generateUserResponse(step, savedState.preferences, [], savedState.mealConfiguration)
+      case 'allergies':
+        return savedState.preferences.allergies && Array.isArray(savedState.preferences.allergies)
+          ? savedState.preferences.allergies.join(', ')
+          : 'None'
+      default:
+        const prefValue = savedState.preferences[step.key]
+        if (Array.isArray(prefValue)) {
+          const texts = prefValue.map(val => 
+            step.quickReplies?.find((qr: any) => qr.value === val)?.text || val
+          )
+          return texts.join(', ')
+        } else if (prefValue) {
+          const text = step.quickReplies?.find((qr: any) => qr.value === prefValue)?.text
+          return text || prefValue
+        }
+        return 'None'
+    }
+  }
+
   // Load saved state on mount
   useEffect(() => {
     const savedState = loadFromLocalStorage()
     
     if (savedState) {
-      setConversationState(savedState)
-      // Reconstruct messages from saved state
-      const reconstructedMessages: ConversationMessage[] = []
-      
-      for (let i = 0; i <= savedState.step && i < conversationSteps.length; i++) {
-        const step = conversationSteps[i]
-        if (!step) continue
-        
-        // Add assistant message
-        reconstructedMessages.push({
-          id: `assistant-${i}`,
-          role: 'assistant',
-          content: step.message,
-          timestamp: new Date(),
-          quickReplies: step.quickReplies?.map(qr => ({ ...qr, selected: savedState.selectedReplies.includes(qr.value) })),
-          waitingForInput: i === savedState.step,
-          inputType: step.inputType
-        })
-
-        // Add user response if we've moved past this step
-        if (i < savedState.step) {
-          const userResponse = generateUserResponse(step, savedState.preferences, savedState.selectedReplies, savedState.mealConfiguration)
-          if (userResponse) {
-            reconstructedMessages.push({
-              id: `user-${i}`,
-              role: 'user',
-              content: userResponse,
-              timestamp: new Date()
-            })
-          }
-        }
-      }
-
       // Initialize meal configuration if we have selected meal types but no configuration
       if (savedState.preferences.selectedMealTypes && Object.keys(savedState.mealConfiguration).length === 0) {
         const initialMealConfig: Record<string, { days: number, adults: number, kids: number }> = {}
@@ -262,30 +384,67 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
         savedState.mealConfiguration = initialMealConfig
       }
       
-      setMessages(reconstructedMessages)
+      setConversationState(savedState)
+      
+      // Reconstruct messages asynchronously
+      reconstructMessages(savedState).then(reconstructedMessages => {
+        setMessages(reconstructedMessages)
+      }).catch(error => {
+        console.error('Failed to reconstruct messages:', error)
+        // Fall back to starting fresh if reconstruction fails
+        startConversation()
+      })
     } else {
       // Start fresh conversation
       startConversation()
     }
-  }, [startConversation])
+  }, [startConversation, reconstructMessages])
 
-  // Save state whenever it changes
+  // Save state whenever it changes, with debouncing to improve performance
   useEffect(() => {
-    saveToLocalStorage(conversationState)
+    const timeoutId = setTimeout(() => {
+      saveToLocalStorage(conversationState)
+    }, 100) // 100ms debounce
+    
+    return () => clearTimeout(timeoutId)
   }, [conversationState])
 
   const generateUserResponse = (step: any, preferences: any, selectedReplies: string[], mealConfig: any): string => {
     switch (step.key) {
       case 'mealTypes':
-        return selectedReplies.join(', ')
+        return selectedReplies.length > 0 ? selectedReplies.join(', ') : 'None'
       case 'mealConfiguration':
+        if (!mealConfig || Object.keys(mealConfig).length === 0) return 'No configuration'
         return Object.entries(mealConfig).map(([type, config]: [string, any]) => 
           `${type}: ${config.days} days/week for ${config.adults} adults${config.kids > 0 ? ` + ${config.kids} kids` : ''}`
         ).join(', ')
       case 'allergies':
-        return preferences.allergies || 'None'
+        return preferences.allergies && Array.isArray(preferences.allergies) && preferences.allergies.length > 0 
+          ? preferences.allergies.join(', ') 
+          : 'None'
+      case 'organicPreference':
+        const organicText = step.quickReplies?.find((qr: any) => qr.value === selectedReplies[0])?.text
+        return organicText || selectedReplies[0] || 'No preference'
+      case 'maxCookTime':
+        const timeText = step.quickReplies?.find((qr: any) => qr.value === selectedReplies[0])?.text
+        return timeText || `${selectedReplies[0]} minutes` || 'No preference'
+      case 'cookingSkillLevel':
+        const skillText = step.quickReplies?.find((qr: any) => qr.value === selectedReplies[0])?.text
+        return skillText || selectedReplies[0] || 'Intermediate'
+      case 'preferredCuisines':
+        if (selectedReplies.length === 0) return 'No preference'
+        const cuisineTexts = selectedReplies.map(val => 
+          step.quickReplies?.find((qr: any) => qr.value === val)?.text || val
+        )
+        return cuisineTexts.join(', ')
+      case 'diets':
+        if (selectedReplies.length === 0) return 'None'
+        const dietTexts = selectedReplies.map(val => 
+          step.quickReplies?.find((qr: any) => qr.value === val)?.text || val
+        )
+        return dietTexts.join(', ')
       default:
-        return selectedReplies.join(', ') || 'None'
+        return selectedReplies.length > 0 ? selectedReplies.join(', ') : 'None'
     }
   }
 
@@ -329,10 +488,6 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
       setTimeout(() => processResponse(newSelectedReplies), 500)
     }
   }, [conversationState])
-
-  const handleTextInput = useCallback((text: string) => {
-    processResponse([], text)
-  }, [])
 
   const processResponse = useCallback((selectedReplies: string[] = conversationState.selectedReplies, textInput?: string) => {
     const currentStep = conversationSteps[conversationState.step]
@@ -481,6 +636,103 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
     }, 1000)
   }, [conversationState, onPreferencesComplete])
 
+  const handleTextInput = useCallback(async (text: string) => {
+    if (!text.trim()) return
+    
+    setIsTyping(true)
+    
+    try {
+      // Call the conversation processing API
+      const response = await fetch('/api/conversation/process', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: text,
+          context: JSON.stringify({
+            currentStep: conversationState.step,
+            preferences: conversationState.preferences,
+            conversationHistory: messages.slice(-3) // Last 3 messages for context
+          })
+        })
+      })
+      
+      if (!response.ok) {
+        throw new Error('Failed to process message')
+      }
+      
+      const data = await response.json()
+      
+      // Add user message
+      const userMessage: ConversationMessage = {
+        id: `user-${Date.now()}`,
+        role: 'user',
+        content: text,
+        timestamp: new Date()
+      }
+      
+      // Add AI response
+      const aiMessage: ConversationMessage = {
+        id: `assistant-${Date.now()}`,
+        role: 'assistant',
+        content: data.response,
+        timestamp: new Date()
+      }
+      
+      setMessages(prev => [...prev, userMessage, aiMessage])
+      
+      // Merge extracted data with current preferences
+      if (data.extractedData && Object.keys(data.extractedData).length > 0) {
+        const newPreferences = { ...conversationState.preferences }
+        
+        // Merge extracted data intelligently
+        Object.entries(data.extractedData).forEach(([key, value]) => {
+          if (value !== undefined && value !== null) {
+            if (Array.isArray(value) && Array.isArray(newPreferences[key as keyof typeof newPreferences])) {
+              // Merge arrays without duplicates
+              const existingArray = newPreferences[key as keyof typeof newPreferences] as any[]
+              newPreferences[key as keyof typeof newPreferences] = [...new Set([...existingArray, ...value])] as any
+            } else {
+              newPreferences[key as keyof typeof newPreferences] = value as any
+            }
+          }
+        })
+        
+        // Handle meal configuration if extracted
+        let newMealConfiguration = conversationState.mealConfiguration
+        if (data.extractedData.mealConfiguration) {
+          newMealConfiguration = { ...newMealConfiguration, ...data.extractedData.mealConfiguration }
+        }
+        
+        // Handle meal types selection
+        if (data.extractedData.mealTypes && Array.isArray(data.extractedData.mealTypes)) {
+          newPreferences.selectedMealTypes = data.extractedData.mealTypes
+          // Initialize meal configuration for new meal types
+          data.extractedData.mealTypes.forEach((mealType: string) => {
+            if (!newMealConfiguration[mealType]) {
+              newMealConfiguration[mealType] = { days: 1, adults: 2, kids: 0 }
+            }
+          })
+        }
+        
+        setConversationState(prev => ({
+          ...prev,
+          preferences: newPreferences,
+          mealConfiguration: newMealConfiguration
+        }))
+      }
+      
+    } catch (error) {
+      console.error('Error processing natural language input:', error)
+      
+      // Fallback to traditional processing
+      processResponse([], text)
+    } finally {
+      setIsTyping(false)
+    }
+  }, [conversationState, messages, processResponse])
+
   const handleContinueMultiSelect = useCallback(() => {
     processResponse()
   }, [processResponse])
@@ -591,13 +843,17 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
         </div>
       )}
 
-      {/* Text Input */}
-      {currentMessage?.inputType === 'text' && !isTyping && (
+      {/* Free-form Text Input - Always Available */}
+      {!isTyping && (
         <ChatInput
           onSendMessage={handleTextInput}
           disabled={conversationState.awaitingResponse}
-          placeholder="Type your answer..."
+          placeholder={currentMessage?.inputType === 'text' 
+            ? "Type your answer..." 
+            : "Tell me about your meal preferences, or use the suggestions below..."
+          }
           isLoading={conversationState.awaitingResponse}
+          maxLength={1000}
         />
       )}
 

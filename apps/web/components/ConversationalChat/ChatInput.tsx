@@ -118,6 +118,8 @@ export default function ChatInput({
               minHeight: `${initialHeight}px`,
               maxHeight: `${initialHeight * 4}px`
             }}
+            inputMode="text"
+            autoCapitalize="sentences"
             aria-label="Type your message"
           />
 
