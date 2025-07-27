@@ -94,7 +94,7 @@ export default function FullScreenVoiceUI({
         onEnd: () => {
           setIsAISpeaking(false)
         },
-        onError: (error) => {
+        onError: (error: any) => {
           setIsAISpeaking(false)
           console.error('AI voice synthesis error:', error)
         }
