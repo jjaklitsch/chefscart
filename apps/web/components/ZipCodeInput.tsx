@@ -206,7 +206,7 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary-new flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Joining...' : 'Join Waitlist'}
                   </button>
@@ -409,7 +409,7 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
         {validationState === 'no-coverage' && (
           <button 
             onClick={() => setShowWaitlistModal(true)}
-            className="btn-primary w-full mt-3"
+            className="btn-primary-new w-full mt-3"
           >
             Join Waitlist
           </button>

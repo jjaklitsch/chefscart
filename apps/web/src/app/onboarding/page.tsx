@@ -1,21 +1,19 @@
 "use client"
 
 import { useState, Suspense, useCallback } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
-import ConversationalChat from '../../../components/ConversationalChat/ConversationalChat'
+import { useRouter } from 'next/navigation'
+import GuidedOnboarding from '../../../components/GuidedOnboarding'
 import MealPlanPreview from '../../../components/MealPlanPreview'
 import CartPreparation from '../../../components/CartPreparation'
 import { UserPreferences, MealPlan } from '../../../types'
 
-function ChatPageContent() {
+function OnboardingPageContent() {
   const [step, setStep] = useState<'preferences' | 'mealplan' | 'cartprep' | 'cart'>('preferences')
   const [preferences, setPreferences] = useState<UserPreferences | null>(null)
   const [mealPlan, setMealPlan] = useState<MealPlan | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
-  const searchParams = useSearchParams()
-  const zipCode = searchParams?.get('zip') || ''
 
   const handlePreferencesComplete = async (userPreferences: UserPreferences) => {
     setPreferences(userPreferences)
@@ -27,6 +25,9 @@ function ChatPageContent() {
       const userId = `temp_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
       
       console.log('Calling GPT meal plan generation...')
+      
+      // Get zipCode from localStorage
+      const zipCode = localStorage.getItem('chefscart_zipcode') || ''
       
       // Call the direct OpenAI API for testing
       const response = await fetch('/api/generate-mealplan-mock', {
@@ -151,10 +152,9 @@ function ChatPageContent() {
 
   if (step === 'preferences') {
     return (
-      <ConversationalChat 
-        onPreferencesComplete={handlePreferencesComplete}
-        onBackToHome={() => router.push('/')}
-        initialPreferences={preferences || undefined}
+      <GuidedOnboarding 
+        onComplete={handlePreferencesComplete}
+        onBack={() => router.push('/')}
       />
     )
   }
@@ -201,7 +201,7 @@ function ChatPageContent() {
   return null
 }
 
-export default function ChatPage() {
+export default function OnboardingPage() {
   return (
     <Suspense fallback={
       <div className="min-h-screen bg-health-gradient flex items-center justify-center">
@@ -211,7 +211,7 @@ export default function ChatPage() {
         </div>
       </div>
     }>
-      <ChatPageContent />
+      <OnboardingPageContent />
     </Suspense>
   )
 }

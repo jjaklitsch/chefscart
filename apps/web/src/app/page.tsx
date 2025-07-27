@@ -29,7 +29,9 @@ export default function Home() {
       const userId = localStorage.getItem('chefscart_user_id') || '';
       analytics.trackButtonClick('get_started_cta', 'Get Started →', userId);
       
-      router.push(`/chat?zip=${encodeURIComponent(zipCode)}`)
+      // Store zipCode in localStorage and go directly to onboarding
+      localStorage.setItem('chefscart_zipcode', zipCode);
+      router.push(`/onboarding`)
     }
   }
 
@@ -61,7 +63,7 @@ export default function Home() {
         {/* How It Works Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-display font-bold text-center text-neutral-800 mb-12">How It Works</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
             <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group">
               <div className="bg-gradient-to-br from-brand-500 to-brand-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-700 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
                 <span className="text-2xl font-bold text-white">1</span>
@@ -89,7 +91,7 @@ export default function Home() {
         {/* Features */}
         <section className="card-hero max-w-4xl mx-auto hover-lift">
           <h2 className="text-2xl font-display font-bold text-center text-neutral-800 mb-8">Why Choose ChefsCart?</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft">
               <div className="bg-brand-600 hover:bg-brand-700 rounded-full p-3 flex-shrink-0 shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
                 <Clock className="h-6 w-6 text-white" />

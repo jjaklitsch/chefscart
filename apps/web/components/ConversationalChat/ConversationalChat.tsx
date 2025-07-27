@@ -22,6 +22,7 @@ interface ConversationalChatProps {
   onPreferencesComplete: (preferences: UserPreferences) => void
   onProgressUpdate?: (preferences: Partial<UserPreferences>) => void
   onBackToHome?: () => void
+  initialPreferences?: Partial<UserPreferences>
 }
 
 interface ConversationMessage {
@@ -165,10 +166,10 @@ const generateMealsFromPreferences = async (preferences: Partial<UserPreferences
   }
 }
 
-export default function ConversationalChat({ onPreferencesComplete, onProgressUpdate, onBackToHome }: ConversationalChatProps) {
+export default function ConversationalChat({ onPreferencesComplete, onProgressUpdate, onBackToHome, initialPreferences }: ConversationalChatProps) {
   const router = useRouter()
   const [conversationState, setConversationState] = useState<ConversationState>({
-    preferences: {},
+    preferences: initialPreferences || {},
     awaitingResponse: false,
     messages: [],
     conversationStarted: false,
@@ -773,9 +774,14 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
   console.log('ConversationalChat render - initialChoiceMade:', conversationState.initialChoiceMade)
   if (!conversationState.initialChoiceMade) {
     console.log('Rendering WelcomeScreen')
-    // Skip welcome screen and go directly to guided onboarding
-    handleChooseGuided()
-    return null
+    return (
+      <WelcomeScreen 
+        onChooseVoice={handleChooseVoice}
+        onChooseChat={handleChooseChat}
+        onChooseGuided={handleChooseGuided}
+        onBackToHome={onBackToHome}
+      />
+    )
   }
 
   // Show guided onboarding if selected
@@ -792,7 +798,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
           <div className="flex items-center gap-3">
             <button
               onClick={() => router.push('/')}
-              className="p-2 min-h-[32px] text-neutral-600 hover:text-brand-600 hover:bg-sage-100 rounded-lg transition-all duration-200"
+              className="p-2 min-h-[44px] text-neutral-600 hover:text-brand-600 hover:bg-sage-100 rounded-lg transition-all duration-200"
               aria-label="Go back to homepage"
               title="Back to homepage"
             >
@@ -822,7 +828,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
                 {/* Reset Button */}
                 <button
                   onClick={resetConversation}
-                  className="p-2 min-h-[32px] text-neutral-600 hover:text-brand-600 hover:bg-sage-100 rounded-lg transition-all duration-200"
+                  className="p-2 min-h-[44px] text-neutral-600 hover:text-brand-600 hover:bg-sage-100 rounded-lg transition-all duration-200"
                   aria-label="Reset conversation"
                   title="Start over"
                 >

@@ -78,13 +78,19 @@ export async function POST(request: NextRequest) {
     }
 
     console.log('Generating meal plan with OpenAI function calling...')
+    console.log('Meal plan parameters:', {
+      mealsPerWeek: preferences.mealsPerWeek,
+      peoplePerMeal: preferences.peoplePerMeal,
+      cookingSkillLevel: preferences.cookingSkillLevel,
+      mealTypes: preferences.mealTypes?.length || 0
+    })
 
     // Use function calling for structured output with longer timeout for better results
     const startTime = Date.now()
     const result = await generateMealPlanWithFunctionCalling({
       preferences,
       pantryItems: [], // TODO: Extract from pantry photo if provided
-      timeoutMs: 15000 // Increased timeout for better recipe generation
+      timeoutMs: 20000 // Further increased timeout for better success rate
     })
 
     const generationTime = Date.now() - startTime
@@ -120,9 +126,9 @@ export async function POST(request: NextRequest) {
     console.error('Error details:', error instanceof Error ? error.message : 'Unknown error')
     console.error('Error stack:', error instanceof Error ? error.stack : 'No stack')
     
-    // If it's a timeout or OpenAI error, return a fallback response
-    if (error instanceof Error && (error.message.includes('timeout') || error.message.includes('OpenAI')) && preferences) {
-      console.log('Returning fallback meal plan due to OpenAI error:', error.message)
+    // Only use fallback for critical system errors, not API timeouts
+    if (error instanceof Error && error.message.includes('OpenAI API key not configured') && preferences) {
+      console.log('Returning fallback meal plan due to configuration error:', error.message)
       return getFallbackMealPlan(userId || `fallback_${Date.now()}`, preferences)
     }
     

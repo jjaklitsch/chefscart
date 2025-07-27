@@ -89,6 +89,8 @@ export interface MealPlanGenerationOptions {
   preferences: UserPreferences
   pantryItems?: string[]
   timeoutMs?: number
+  excludeRecipes?: string[] // Prevent recipe duplicates
+  generationSeed?: string   // Add randomization
 }
 
 export interface MealPlanResult {
@@ -100,13 +102,16 @@ export interface MealPlanResult {
 export async function generateMealPlanWithFunctionCalling(
   options: MealPlanGenerationOptions
 ): Promise<MealPlanResult> {
-  const { preferences, pantryItems = [], timeoutMs = 4500 } = options
+  const { preferences, pantryItems = [], timeoutMs = 4500, excludeRecipes = [], generationSeed } = options
   const startTime = Date.now()
 
-  // Generate reasonable backup recipes (100% more) to avoid timeout
-  const totalRecipesToGenerate = Math.ceil(preferences.mealsPerWeek * 2)
+  // Generate only what's needed plus minimal backup to avoid timeout
+  const totalRecipesToGenerate = Math.ceil(preferences.mealsPerWeek * 1.3)
   
-  const prompt = createMealPlanPrompt(preferences, pantryItems, totalRecipesToGenerate)
+  // Add randomization to prompts for more variety
+  const randomSeed = generationSeed || Math.random().toString(36).substring(7)
+  
+  const prompt = createMealPlanPrompt(preferences, pantryItems, totalRecipesToGenerate, options)
 
   try {
     const completion = await Promise.race([
@@ -117,6 +122,8 @@ export async function generateMealPlanWithFunctionCalling(
             role: 'system',
             content: `You are a master recipe developer for Home Chef, the premium meal kit service. Create restaurant-quality recipes with the same level of detail and precision as Home Chef's instruction cards. Every recipe must be foolproof for home cooks with detailed prep work, cooking techniques, and visual cues.
 
+CREATIVITY BOOST (Seed: ${randomSeed}): Use this seed to generate completely unique, creative recipe combinations that haven't been created before. Think outside traditional recipe boundaries and create fusion dishes with unexpected but delicious flavor combinations.
+
 CRITICAL REQUIREMENTS:
 - Include ALL ingredients with precise measurements: tablespoons, teaspoons, ounces, pounds, cups, etc.
 - Include ALL pantry staples: salt, black pepper, olive oil, vegetable oil, butter, flour, sugar, etc.
@@ -124,6 +131,8 @@ CRITICAL REQUIREMENTS:
 - Write comprehensive cooking instructions with prep steps, seasoning details, doneness cues, and timing
 - Include equipment needed: "large skillet", "rimmed baking sheet", "medium saucepan", etc.
 - Always specify temperatures, cooking times, and visual/textural doneness indicators
+
+ABSOLUTE UNIQUENESS MANDATE: Every single recipe must be completely different from any typical meal kit recipe. Create dishes that would surprise and delight users with their creativity and uniqueness.
 
 Always generate exactly the requested number of recipes with Home Chef level detail.`
           },
@@ -134,8 +143,10 @@ Always generate exactly the requested number of recipes with Home Chef level det
         ],
         functions: [RECIPE_GENERATION_FUNCTION],
         function_call: { name: 'generate_recipes' },
-        temperature: 0.9, // Maximum creativity for unique, diverse recipes
-        max_tokens: 6000, // Balanced tokens for detailed recipes
+        temperature: 0.9, // Maximum creativity for uniqueness
+        max_tokens: 10000, // Further increased for detailed unique recipes
+        presence_penalty: 0.8, // Discourage repetition
+        frequency_penalty: 0.7, // Reduce repeated phrases
       }),
       new Promise<never>((_, reject) => 
         setTimeout(() => reject(new Error('OpenAI request timeout')), timeoutMs)
@@ -189,7 +200,8 @@ Always generate exactly the requested number of recipes with Home Chef level det
 function createMealPlanPrompt(
   preferences: UserPreferences, 
   pantryItems: string[], 
-  totalRecipesToGenerate: number
+  totalRecipesToGenerate: number,
+  options?: MealPlanGenerationOptions
 ): string {
   const {
     mealsPerWeek,
@@ -220,27 +232,38 @@ STRICT REQUIREMENTS:
 - Organic preference: ${organicPreference}
 - Available pantry items: ${pantryString}
 
+CRITICAL UNIQUENESS REQUIREMENTS:
+- Each recipe must use COMPLETELY different primary proteins (beef, chicken, pork, fish, vegetarian, etc.)
+- No two recipes can share the same cooking method + protein combination
+- Vary cuisine types across ALL recipes (maximum 1 recipe per cuisine type)
+- Use different base ingredients (rice vs pasta vs quinoa vs potatoes)
+- Different sauce/seasoning profiles (no two recipes with similar flavor bases)
+- Vary cooking equipment: stovetop, oven, grill, air fryer, slow cooker, etc.
+
 OPTIMIZATION GOALS:
-1. ENSURE ABSOLUTE UNIQUENESS - Never generate duplicate or similar dishes
-2. Maximize variety across cuisines, proteins, and cooking methods  
-3. Use creative, internationally-inspired recipes with unique flavor profiles
-4. Balance nutrition across all meals (aim for 400-600 calories per serving)
-5. Optimize ingredient overlap to reduce shopping complexity
+1. MAXIMUM DIVERSITY - Every recipe must be distinctly different
+2. Global cuisine variety - Asian, Mediterranean, Latin, Indian, Middle Eastern, European
+3. Protein rotation - Never repeat protein types within the meal plan
+4. Cooking method diversity - Use different techniques for each recipe
+5. Balance nutrition across all meals (aim for 400-600 calories per serving)
 6. Consider seasonal availability and cost-effectiveness
 7. Match difficulty to stated skill level
-8. Utilize pantry items when possible to reduce costs
-9. Include fusion cuisines and modern cooking techniques for creativity
+8. Include fusion cuisines and modern cooking techniques for creativity
 
 RECIPE REQUIREMENTS:
-- Generate exactly ${totalRecipesToGenerate} COMPLETELY UNIQUE recipes (no duplicates or variations)
+- Generate exactly ${totalRecipesToGenerate} COMPLETELY UNIQUE recipes with ZERO similarity
+- Each recipe must have a different primary protein (chicken, beef, pork, fish, tofu, beans, etc.)
+- Each recipe must represent a different cuisine (max 1 per cuisine type)
+- Each recipe must use different cooking methods (pan-searing, roasting, grilling, stir-frying, braising, etc.)
 - Each recipe serves ${peoplePerMeal} people
 - Include precise ingredient quantities and clear instructions
 - Provide accurate nutrition information
 - Estimate realistic ingredient costs (USD)
-- Use diverse cooking techniques (baking, grilling, stovetop, air frying, slow cooking, etc.)
 - Ensure recipes can be completed within time constraints
-- Make each recipe distinctly different in cuisine, protein, and preparation method
+- Use completely different flavor profiles (spicy, savory, tangy, herb-focused, etc.)
 - Include creative, restaurant-quality dishes with global inspiration
+${options.excludeRecipes && options.excludeRecipes.length > 0 ? `
+- STRICTLY AVOID these previously generated recipes: ${options.excludeRecipes.join(', ')}` : ''}
 
 CREATIVE PRESENTATION:
 - Write detailed titles like meal kit services: "Pan-Seared Chicken with Lemon-Herb Couscous & Roasted Brussels Sprouts"

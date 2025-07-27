@@ -13,7 +13,7 @@ interface OnboardingStep {
   id: string
   title: string
   question: string
-  type: 'single' | 'multiple' | 'pills' | 'number' | 'text'
+  type: 'single' | 'multiple' | 'pills' | 'number' | 'text' | 'meal-frequency'
   options?: Array<{ id: string; label: string; value: any; icon?: string }>
   required?: boolean
 }
@@ -27,27 +27,20 @@ const onboardingSteps: OnboardingStep[] = [
     required: true
   },
   {
-    id: 'mealTypes',
-    title: 'Meal Types',
-    question: 'Which types of meals would you like in your plan?',
-    type: 'pills',
-    options: [
-      { id: 'breakfast', label: 'Breakfast', value: ['breakfast'], icon: '🥞' },
-      { id: 'lunch', label: 'Lunch', value: ['lunch'], icon: '🥗' },
-      { id: 'dinner', label: 'Dinner', value: ['dinner'], icon: '🍽️' },
-      { id: 'snacks', label: 'Snacks', value: ['snacks'], icon: '🍿' },
-      { id: 'dessert', label: 'Dessert', value: ['dessert'], icon: '🍰' }
-    ],
+    id: 'mealFrequency',
+    title: 'Meal Planning',
+    question: 'How many meals per week would you like for each type?',
+    type: 'meal-frequency',
     required: true
   },
   {
     id: 'mealParticipation',
     title: 'Meal Participation',
-    question: 'Will everyone in the household eat each of these meals?',
+    question: 'Set serving sizes for each meal type:',
     type: 'single',
     options: [
-      { id: 'yes', label: 'Yes (Use household size)', value: 'yes', icon: '👨‍👩‍👧‍👦' },
-      { id: 'no', label: 'No (I need different counts)', value: 'no', icon: '⚙️' }
+      { id: 'yes', label: 'Use household size for all meals', value: 'yes', icon: '👨‍👩‍👧‍👦' },
+      { id: 'no', label: 'Set different amounts per meal', value: 'no', icon: '⚙️' }
     ],
     required: true
   },
@@ -220,9 +213,9 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         // Toggle "none" - if already selected (empty array), unselect it (undefined)
         // If not selected, select it (empty array)
         if (Array.isArray(currentAnswers) && currentAnswers.length === 0) {
-          setAnswers(prev => ({ ...prev, [step.id]: undefined }))
+          setAnswers(prev => ({ ...prev, [step.id]: undefined })) // Unselect by setting to undefined
         } else {
-          setAnswers(prev => ({ ...prev, [step.id]: [] }))
+          setAnswers(prev => ({ ...prev, [step.id]: [] })) // Select by setting to empty array
         }
         return
       }
@@ -285,10 +278,9 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
       return (answers.adults > 0) || (answers.kids > 0)
     }
     
-    // Special handling for meal types
-    if (currentStepData.id === 'mealTypes') {
-      const answer = answers[currentStepData.id]
-      return Array.isArray(answer) && answer.length > 0
+    // Special handling for meal frequency
+    if (currentStepData.id === 'mealFrequency') {
+      return (answers.breakfastMeals || 0) > 0 || (answers.lunchMeals || 0) > 0 || (answers.dinnerMeals || 0) > 0
     }
     
     const answer = answers[currentStepData.id]
@@ -309,12 +301,12 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         adults: answers.adults || 2,
         kids: answers.kids || 0,
         
-        // Meals per week - default to 5 days for selected meal types
-        breakfastsPerWeek: answers.mealTypes?.includes('breakfast') ? 5 : 0,
-        lunchesPerWeek: answers.mealTypes?.includes('lunch') ? 5 : 0,
-        dinnersPerWeek: answers.mealTypes?.includes('dinner') ? 5 : 0,
-        snacksPerWeek: answers.mealTypes?.includes('snacks') ? 5 : 0,
-        dessertsPerWeek: answers.mealTypes?.includes('dessert') ? 3 : 0,
+        // Meals per week - use selected frequencies
+        breakfastsPerWeek: answers.breakfastMeals || 0,
+        lunchesPerWeek: answers.lunchMeals || 0,
+        dinnersPerWeek: answers.dinnerMeals || 0,
+        snacksPerWeek: 0, // Remove snacks as requested
+        dessertsPerWeek: 0, // Remove desserts as requested
         
         // Dietary preferences
         dietaryStyle: [
@@ -398,12 +390,13 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
   const isOptionSelected = (option: any) => {
     const answer = answers[currentStepData.id]
     if (currentStepData.type === 'multiple' || currentStepData.type === 'pills') {
-      if (!Array.isArray(answer)) return false
-      
       // Special handling for "None" option with empty array value
       if (option.id === 'none' && Array.isArray(option.value) && option.value.length === 0) {
+        // Return true if answer is specifically an empty array (not undefined or other values)
         return Array.isArray(answer) && answer.length === 0
       }
+      
+      if (!Array.isArray(answer)) return false
       
       // Store and check by option ID for multi-value options to avoid cross-selection
       if (Array.isArray(option.value) && option.value.length > 1) {
@@ -503,25 +496,53 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
             </div>
           )}
 
-          {currentStepData.id === 'mealsPerWeek' && (
+          {currentStepData.type === 'meal-frequency' && (
             <div className="space-y-4">
-              {currentStepData.options?.map((option) => (
-                <div key={option.id} className="flex items-center justify-between p-4 border-2 border-neutral-200 rounded-lg">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">{option.icon}</span>
-                    <span className="font-medium">{option.label}</span>
-                  </div>
-                  <input
-                    type="number"
-                    min="0"
-                    max="7"
-                    value={answers[option.id] || ''}
-                    onChange={(e) => setAnswers(prev => ({ ...prev, [option.id]: parseInt(e.target.value) || 0 }))}
-                    className="w-20 p-2 border border-neutral-300 rounded text-center"
-                    placeholder="0"
-                  />
+              <div className="flex items-center justify-between p-4 border-2 border-neutral-200 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">🥞</span>
+                  <span className="font-medium">Breakfast</span>
                 </div>
-              ))}
+                <input
+                  type="number"
+                  min="0"
+                  max="7"
+                  value={answers.breakfastMeals || ''}
+                  onChange={(e) => setAnswers(prev => ({ ...prev, breakfastMeals: parseInt(e.target.value) || 0 }))}
+                  className="w-20 p-2 border border-neutral-300 rounded text-center"
+                  placeholder="0"
+                />
+              </div>
+              <div className="flex items-center justify-between p-4 border-2 border-neutral-200 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">🥗</span>
+                  <span className="font-medium">Lunch</span>
+                </div>
+                <input
+                  type="number"
+                  min="0"
+                  max="7"
+                  value={answers.lunchMeals || ''}
+                  onChange={(e) => setAnswers(prev => ({ ...prev, lunchMeals: parseInt(e.target.value) || 0 }))}
+                  className="w-20 p-2 border border-neutral-300 rounded text-center"
+                  placeholder="0"
+                />
+              </div>
+              <div className="flex items-center justify-between p-4 border-2 border-neutral-200 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">🍽️</span>
+                  <span className="font-medium">Dinner</span>
+                </div>
+                <input
+                  type="number"
+                  min="0"
+                  max="7"
+                  value={answers.dinnerMeals || ''}
+                  onChange={(e) => setAnswers(prev => ({ ...prev, dinnerMeals: parseInt(e.target.value) || 0 }))}
+                  className="w-20 p-2 border border-neutral-300 rounded text-center"
+                  placeholder="0"
+                />
+              </div>
             </div>
           )}
 
@@ -530,8 +551,8 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
             <div className="mt-6 p-4 bg-neutral-50 rounded-lg border">
               <h4 className="font-medium text-neutral-800 mb-4">Set serving sizes for each meal type:</h4>
               <div className="space-y-4">
-                {/* Only show meal types that were selected */}
-                {answers.mealTypes?.includes('breakfast') && (
+                {/* Only show meal types that have meals per week > 0 */}
+                {(answers.breakfastMeals || 0) > 0 && (
                   <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                     <div className="flex items-center gap-2">
                       <span className="text-xl">🥞</span>
@@ -566,7 +587,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
                   </div>
                 )}
                 
-                {answers.mealTypes?.includes('lunch') && (
+                {(answers.lunchMeals || 0) > 0 && (
                   <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                     <div className="flex items-center gap-2">
                       <span className="text-xl">🥗</span>
@@ -601,7 +622,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
                   </div>
                 )}
 
-                {answers.mealTypes?.includes('dinner') && (
+                {(answers.dinnerMeals || 0) > 0 && (
                   <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                     <div className="flex items-center gap-2">
                       <span className="text-xl">🍽️</span>

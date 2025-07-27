@@ -15,7 +15,7 @@ export interface UserPreferences {
   diets: string[]
   allergies: string[]
   avoidIngredients?: string[]
-  organicPreference: 'preferred' | 'only_if_within_10_percent' | 'no_preference' | 'prefer' | 'required'
+  organicPreference: 'preferred' | 'only_if_within_10_percent' | 'no_preference'
   maxCookTime: number
   cookingSkillLevel: 'beginner' | 'intermediate' | 'advanced'
   preferredCuisines: string[]

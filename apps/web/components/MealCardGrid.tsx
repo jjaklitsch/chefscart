@@ -126,7 +126,7 @@ const MealCardGrid: React.FC<MealCardGridProps> = ({
         {onRequestMore && (
           <button
             onClick={onRequestMore}
-            className="btn-primary inline-flex items-center gap-2"
+            className="btn-primary-new inline-flex items-center gap-2"
           >
             <RefreshCw className="w-4 h-4" />
             Try Different Options
@@ -213,7 +213,7 @@ const MealCardGrid: React.FC<MealCardGridProps> = ({
         
         {hasMinimumSelections && (
           <button
-            className="btn-primary inline-flex items-center gap-2 px-8"
+            className="btn-primary-new inline-flex items-center gap-2 px-8"
             onClick={() => {
               // This will be handled by the parent component
               // The button is just for visual feedback

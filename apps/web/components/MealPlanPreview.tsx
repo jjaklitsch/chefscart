@@ -125,12 +125,20 @@ function RecipeModal({ recipe, isOpen, onClose }: { recipe: Recipe; isOpen: bool
 
 export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferences }: MealPlanPreviewProps) {
   const [selectedRecipes, setSelectedRecipes] = useState<Recipe[]>(mealPlan.recipes)
+  const [expandedIngredients, setExpandedIngredients] = useState<Record<string, boolean>>({})
+  const [expandedInstructions, setExpandedInstructions] = useState<Record<string, boolean>>({})
   const [imageUrls, setImageUrls] = useState<Record<string, string>>({})
   const [imageLoading, setImageLoading] = useState<Record<string, boolean>>({})
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
   const [modalRecipe, setModalRecipe] = useState<Recipe | null>(null)
   const [replacingRecipes, setReplacingRecipes] = useState<Set<string>>(new Set())
+  const [toastMessage, setToastMessage] = useState<string | null>(null)
   const generatedImages = useRef<Set<string>>(new Set())
+
+  const showToast = (message: string) => {
+    setToastMessage(message)
+    setTimeout(() => setToastMessage(null), 3000)
+  }
 
   // Group recipes by meal type
   const groupedRecipes = selectedRecipes.reduce((groups: Record<string, Recipe[]>, recipe) => {
@@ -181,7 +189,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
       )
     } catch (error) {
       console.error('Error replacing recipe:', error)
-      alert('Failed to generate a replacement recipe. Please try again.')
+      showToast('Failed to generate a replacement recipe. Please try again.')
     } finally {
       setReplacingRecipes(prev => {
         const next = new Set(prev)
@@ -494,50 +502,74 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                           </div>
                         </div>
 
-                        {/* Desktop recipe details - improved design */}
-                        <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-                          {/* Ingredients Card */}
-                          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
-                            <div className="flex items-center justify-between mb-4">
-                              <h4 className="text-lg font-bold text-green-800 flex items-center">
+                        {/* Recipe details - vertical collapsed sections */}
+                        <div className="mt-6 space-y-4">
+                          {/* Ingredients Section */}
+                          <div className="border border-gray-200 rounded-xl overflow-hidden">
+                            <button
+                              onClick={() => setExpandedIngredients(prev => ({ ...prev, [recipe.id]: !prev[recipe.id] }))}
+                              className="w-full p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-100 flex items-center justify-between hover:from-green-100 hover:to-emerald-100 transition-colors"
+                            >
+                              <div className="flex items-center">
                                 <span className="text-2xl mr-3">🛒</span>
-                                Complete Ingredients
-                              </h4>
-                              <span className="text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full">
-                                {recipe.ingredients?.length} items
-                              </span>
-                            </div>
-                            <div className="space-y-3 max-h-64 overflow-y-auto pr-2">
-                              {recipe.ingredients?.map((ingredient, idx) => (
-                                <div key={idx} className="flex justify-between items-center p-3 bg-white/70 rounded-lg hover:bg-white/90 transition-colors">
-                                  <span className="font-medium text-gray-800">{ingredient.name}</span>
-                                  <span className="text-green-700 font-semibold">{ingredient.amount} {ingredient.unit}</span>
+                                <h4 className="text-lg font-bold text-green-800">Complete Ingredients</h4>
+                                <span className="ml-3 text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full">
+                                  {recipe.ingredients?.length} items
+                                </span>
+                              </div>
+                              {expandedIngredients[recipe.id] ? (
+                                <ChevronUp className="w-5 h-5 text-green-600" />
+                              ) : (
+                                <ChevronDown className="w-5 h-5 text-green-600" />
+                              )}
+                            </button>
+                            {expandedIngredients[recipe.id] && (
+                              <div className="p-4 bg-white">
+                                <div className="space-y-3 max-h-64 overflow-y-auto">
+                                  {recipe.ingredients?.map((ingredient, idx) => (
+                                    <div key={idx} className="flex justify-between items-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
+                                      <span className="font-medium text-gray-800">{ingredient.name}</span>
+                                      <span className="text-green-700 font-semibold">{ingredient.amount} {ingredient.unit}</span>
+                                    </div>
+                                  ))}
                                 </div>
-                              ))}
-                            </div>
+                              </div>
+                            )}
                           </div>
 
-                          {/* Instructions Card */}
-                          <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6 border border-orange-100">
-                            <div className="flex items-center justify-between mb-4">
-                              <h4 className="text-lg font-bold text-orange-800 flex items-center">
+                          {/* Instructions Section */}
+                          <div className="border border-gray-200 rounded-xl overflow-hidden">
+                            <button
+                              onClick={() => setExpandedInstructions(prev => ({ ...prev, [recipe.id]: !prev[recipe.id] }))}
+                              className="w-full p-4 bg-gradient-to-r from-orange-50 to-amber-50 border-b border-orange-100 flex items-center justify-between hover:from-orange-100 hover:to-amber-100 transition-colors"
+                            >
+                              <div className="flex items-center">
                                 <span className="text-2xl mr-3">👨‍🍳</span>
-                                Cooking Steps
-                              </h4>
-                              <span className="text-sm text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
-                                {recipe.instructions?.length} steps
-                              </span>
-                            </div>
-                            <div className="space-y-4 max-h-64 overflow-y-auto pr-2">
-                              {recipe.instructions?.map((instruction, idx) => (
-                                <div key={idx} className="flex gap-4 p-3 bg-white/70 rounded-lg hover:bg-white/90 transition-colors">
-                                  <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                                    {idx + 1}
-                                  </div>
-                                  <p className="text-sm text-gray-700 leading-relaxed pt-1">{instruction}</p>
+                                <h4 className="text-lg font-bold text-orange-800">Cooking Steps</h4>
+                                <span className="ml-3 text-sm text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
+                                  {recipe.instructions?.length} steps
+                                </span>
+                              </div>
+                              {expandedInstructions[recipe.id] ? (
+                                <ChevronUp className="w-5 h-5 text-orange-600" />
+                              ) : (
+                                <ChevronDown className="w-5 h-5 text-orange-600" />
+                              )}
+                            </button>
+                            {expandedInstructions[recipe.id] && (
+                              <div className="p-4 bg-white">
+                                <div className="space-y-4 max-h-64 overflow-y-auto">
+                                  {recipe.instructions?.map((instruction, idx) => (
+                                    <div key={idx} className="flex gap-4 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
+                                      <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                                        {idx + 1}
+                                      </div>
+                                      <p className="text-sm text-gray-700 leading-relaxed pt-1">{instruction}</p>
+                                    </div>
+                                  ))}
                                 </div>
-                              ))}
-                            </div>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -552,7 +584,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         {/* Simplified Action Buttons */}
         <div className="flex flex-col gap-3 md:gap-4 justify-center items-center mb-8">
           <button
-            onClick={() => alert('Generate more ideas feature coming soon!')}
+            onClick={() => showToast('Generate more ideas feature coming soon!')}
             className="px-6 md:px-8 py-2.5 md:py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base"
           >
             Generate More Ideas
@@ -593,6 +625,13 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         isOpen={!!modalRecipe} 
         onClose={() => setModalRecipe(null)} 
       />
+
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div className="fixed top-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in">
+          {toastMessage}
+        </div>
+      )}
     </div>
   )
 }
