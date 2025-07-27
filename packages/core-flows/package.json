@@ -1,0 +1,33 @@
+{
+  "name": "@chefscart/core-flows",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@chefscart/core-ai": "workspace:*",
+    "resend": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@vitest/coverage-v8": "^2.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5",
+    "vitest": "^2.0.0"
+  }
+}

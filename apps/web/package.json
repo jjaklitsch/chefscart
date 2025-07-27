@@ -4,6 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "./start-dev.sh --clean",
+    "dev:safe": "./start-dev.sh",
+    "dev:monitor": "./monitor-dev-server.sh monitor",
+    "dev:status": "./monitor-dev-server.sh status",
+    "dev:restart": "./monitor-dev-server.sh restart",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

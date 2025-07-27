@@ -1,16 +1,11 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendConfirmationEmail = sendConfirmationEmail;
 const firestore_1 = require("firebase-admin/firestore");
-const mail_1 = __importDefault(require("@sendgrid/mail"));
+const resend_1 = require("resend");
 const db = (0, firestore_1.getFirestore)();
-// Initialize SendGrid
-if (process.env.SENDGRID_API_KEY) {
-    mail_1.default.setApiKey(process.env.SENDGRID_API_KEY);
-}
+// Initialize Resend
+const resend = process.env.RESEND_API_KEY ? new resend_1.Resend(process.env.RESEND_API_KEY) : null;
 async function sendConfirmationEmail(req, res) {
     var _a, _b;
     try {
@@ -51,10 +46,7 @@ async function sendConfirmationEmail(req, res) {
         });
         const emailData = {
             to: email,
-            from: {
-                email: process.env.SENDGRID_FROM_EMAIL || 'support@chefscart.ai',
-                name: 'ChefsCart'
-            },
+            from: process.env.RESEND_FROM_EMAIL || 'ChefsCart <support@chefscart.ai>',
             subject: '🛒 Your ChefsCart shopping list is ready!',
             html: emailHtml,
             text: createEmailText({
@@ -64,13 +56,13 @@ async function sendConfirmationEmail(req, res) {
                 matchedItems: ((_b = listData.matchedItems) === null || _b === void 0 ? void 0 : _b.length) || 0
             })
         };
-        // Send email via SendGrid
-        if (process.env.SENDGRID_API_KEY) {
-            await mail_1.default.send(emailData);
+        // Send email via Resend
+        if (resend) {
+            await resend.emails.send(emailData);
             console.log('Email sent successfully to:', email);
         }
         else {
-            console.log('SendGrid not configured, email content:', emailHtml);
+            console.log('Resend not configured, email content:', emailHtml);
         }
         return res.status(200).json({
             success: true,

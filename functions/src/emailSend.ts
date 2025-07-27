@@ -1,13 +1,11 @@
 import { Request, Response } from 'firebase-functions'
 import { getFirestore } from 'firebase-admin/firestore'
-import sgMail from '@sendgrid/mail'
+import { Resend } from 'resend'
 
 const db = getFirestore()
 
-// Initialize SendGrid
-if (process.env.SENDGRID_API_KEY) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-}
+// Initialize Resend
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 interface EmailRequest {
   listId: string
@@ -63,10 +61,7 @@ export async function sendConfirmationEmail(req: Request, res: Response) {
 
     const emailData = {
       to: email,
-      from: {
-        email: process.env.SENDGRID_FROM_EMAIL || 'support@chefscart.ai',
-        name: 'ChefsCart'
-      },
+      from: process.env.RESEND_FROM_EMAIL || 'ChefsCart <support@chefscart.ai>',
       subject: '🛒 Your ChefsCart shopping list is ready!',
       html: emailHtml,
       text: createEmailText({
@@ -77,12 +72,12 @@ export async function sendConfirmationEmail(req: Request, res: Response) {
       })
     }
 
-    // Send email via SendGrid
-    if (process.env.SENDGRID_API_KEY) {
-      await sgMail.send(emailData)
+    // Send email via Resend
+    if (resend) {
+      await resend.emails.send(emailData)
       console.log('Email sent successfully to:', email)
     } else {
-      console.log('SendGrid not configured, email content:', emailHtml)
+      console.log('Resend not configured, email content:', emailHtml)
     }
 
     return res.status(200).json({

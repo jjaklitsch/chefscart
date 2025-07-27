@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"../components/FullScreenVoiceUI.tsx -> ../lib/audio-playback\":{\"id\":\"../components/FullScreenVoiceUI.tsx -> ../lib/audio-playback\",\"files\":[]},\"../components/VoiceInput.tsx -> ../lib/voice-recording\":{\"id\":\"../components/VoiceInput.tsx -> ../lib/voice-recording\",\"files\":[]}}"

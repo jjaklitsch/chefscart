@@ -41,25 +41,28 @@ export default function VoiceInput({
   useEffect(() => {
     setIsClient(true)
     
+    let unsubscribeRecording: (() => void) | null = null
+    let unsubscribePermission: (() => void) | null = null
+    
     // Dynamically import and initialize the voice service
     import('../lib/voice-recording').then(({ getVoiceRecordingService }) => {
       voiceServiceRef.current = getVoiceRecordingService()
       
       // Subscribe to service state changes
       if (voiceServiceRef.current) {
-        const unsubscribeRecording = voiceServiceRef.current.onStateChange(setRecordingState)
-        const unsubscribePermission = voiceServiceRef.current.onPermissionChange(setPermissionState)
-        
-        // Store unsubscribe functions for cleanup
-        return () => {
-          unsubscribeRecording()
-          unsubscribePermission()
-        }
+        unsubscribeRecording = voiceServiceRef.current.onStateChange(setRecordingState)
+        unsubscribePermission = voiceServiceRef.current.onPermissionChange(setPermissionState)
       }
     }).catch(error => {
       console.error('Failed to load voice recording service:', error)
       setTranscriptionError('Voice recording not available')
     })
+    
+    // Return cleanup function
+    return () => {
+      if (unsubscribeRecording) unsubscribeRecording()
+      if (unsubscribePermission) unsubscribePermission()
+    }
   }, [])
 
 

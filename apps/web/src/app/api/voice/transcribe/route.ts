@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
-import { VoiceTranscriptionResponse } from '../../../../types'
+import { VoiceTranscriptionResponse } from '../../../../../types'
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -68,7 +68,11 @@ export async function POST(request: NextRequest) {
     const response: VoiceTranscriptionResponse = {
       text: transcription.text,
       duration,
-      language: transcription.language || undefined,
+    }
+
+    // Add language if available (verbose_json format includes this)
+    if ('language' in transcription && transcription.language) {
+      response.language = transcription.language
     }
 
     // Add confidence if available (some response formats include this)

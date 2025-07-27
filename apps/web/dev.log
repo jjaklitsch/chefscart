@@ -6,47 +6,287 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 1338ms
+ ✓ Ready in 1381ms
+ ✓ Compiled /api/voice/transcribe in 416ms (202 modules)
+ ⨯ OpenAIError: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).
+    at new OpenAI (webpack-internal:///(rsc)/../../../node_modules/openai/client.mjs:123:19)
+    at eval (webpack-internal:///(rsc)/./src/app/api/voice/transcribe/route.ts:10:16)
+    at (rsc)/./src/app/api/voice/transcribe/route.ts (/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/.next/server/app/api/voice/transcribe/route.js:52:1)
+    at __webpack_require__ (/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/.next/server/webpack-runtime.js:33:42)
+    at eval (webpack-internal:///(rsc)/../../../node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fvoice%2Ftranscribe%2Froute&page=%2Fapi%2Fvoice%2Ftranscribe%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fvoice%2Ftranscribe%2Froute.ts&appDir=%2FUsers%2Fjonathanjaklitsch%2Fchefscart%2Fchefscart%2Fapps%2Fweb%2Fsrc%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2FUsers%2Fjonathanjaklitsch%2Fchefscart%2Fchefscart%2Fapps%2Fweb&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!:15:149)
+    at (rsc)/../../../node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fvoice%2Ftranscribe%2Froute&page=%2Fapi%2Fvoice%2Ftranscribe%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fvoice%2Ftranscribe%2Froute.ts&appDir=%2FUsers%2Fjonathanjaklitsch%2Fchefscart%2Fchefscart%2Fapps%2Fweb%2Fsrc%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2FUsers%2Fjonathanjaklitsch%2Fchefscart%2Fchefscart%2Fapps%2Fweb&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D! (/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/.next/server/app/api/voice/transcribe/route.js:42:1)
+    at __webpack_require__ (/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/.next/server/webpack-runtime.js:33:42)
+    at __webpack_exec__ (/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/.next/server/app/api/voice/transcribe/route.js:62:39)
+    at /Users/jonathanjaklitsch/chefscart/chefscart/apps/web/.next/server/app/api/voice/transcribe/route.js:63:137
+    at __webpack_require__.X (/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/.next/server/webpack-runtime.js:121:21)
+    at /Users/jonathanjaklitsch/chefscart/chefscart/apps/web/.next/server/app/api/voice/transcribe/route.js:63:47
+    at Object.<anonymous> (/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/.next/server/app/api/voice/transcribe/route.js:66:3)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at mod.require (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at requirePage (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/require.js:109:84)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:1910:24)
+    at async DevServer.renderToResponseImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:818:17)
+    at async /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/router-server.js:179:21)
+    at async handleRequest (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/router-server.js:359:24)
+    at async requestHandlerImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/router-server.js:383:13)
+    at async Server.requestListener (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  page: '/api/voice/transcribe'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 807ms (632 modules)
+Error: Objects are not valid as a React child (found: object with keys {$$typeof, type, key, props, _owner, _store}). If you meant to render a collection of children, use an array instead.
+    at renderNodeDestructiveImpl (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6190:11)
+    at renderNodeDestructive (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at finishClassComponent (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5688:3)
+    at renderClassComponent (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5696:3)
+    at renderElement (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5954:7)
+    at renderNodeDestructiveImpl (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at renderContextProvider (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5931:3)
+    at renderElement (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6028:11)
+    at renderNodeDestructiveImpl (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at renderContextProvider (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5931:3)
+    at renderElement (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6028:11)
+    at renderNodeDestructiveImpl (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at retryTask (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6539:5)
+    at performWork (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6587:7)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6913:12
+    at scheduleWork (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:77:3)
+    at startWork (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6912:3)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:7007:5
+    at new Promise (<anonymous>)
+    at Object.renderToReadableStream (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6960:10)
+    at e0 (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/pages.runtime.dev.js:8:21476)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/pages.runtime.dev.js:26:4814
+    at NextTracerImpl.trace (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/trace/tracer.js:105:20)
+    at e8 (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/pages.runtime.dev.js:26:4778)
+    at async doRender (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:1414:30)
+    at async cacheEntry.responseCache.get.routeKind (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:1496:28)
+    at async DevServer.renderErrorToResponseImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:2182:24)
+    at async pipe.req.req (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/next-server.js:287:21)
+    at async DevServer.handleRequestImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:818:17)
+    at async /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/router-server.js:179:21)
+    at async handleRequest (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/router-server.js:359:24)
+    at async requestHandlerImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/router-server.js:383:13)
+    at async Server.requestListener (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/start-server.js:141:13)
+ ⨯ Error: Objects are not valid as a React child (found: object with keys {$$typeof, type, key, props, _owner, _store}). If you meant to render a collection of children, use an array instead.
+    at renderNodeDestructiveImpl (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6190:11)
+    at renderNodeDestructive (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at finishClassComponent (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5688:3)
+    at renderClassComponent (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5696:3)
+    at renderElement (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5954:7)
+    at renderNodeDestructiveImpl (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at renderContextProvider (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5931:3)
+    at renderElement (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6028:11)
+    at renderNodeDestructiveImpl (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at renderContextProvider (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5931:3)
+    at renderElement (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6028:11)
+    at renderNodeDestructiveImpl (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at retryTask (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6539:5)
+    at performWork (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6587:7)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6913:12
+    at scheduleWork (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:77:3)
+    at startWork (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6912:3)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:7007:5
+    at new Promise (<anonymous>)
+    at Object.renderToReadableStream (/Users/jonathanjaklitsch/chefscart/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6960:10)
+    at e0 (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/pages.runtime.dev.js:8:21476)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/pages.runtime.dev.js:26:4814
+    at NextTracerImpl.trace (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/trace/tracer.js:105:20)
+    at e8 (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/pages.runtime.dev.js:26:4778)
+    at async doRender (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:1414:30)
+    at async cacheEntry.responseCache.get.routeKind (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:1496:28)
+    at async DevServer.renderErrorToResponseImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:2182:24)
+    at async pipe.req.req (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/next-server.js:287:21)
+    at async DevServer.handleRequestImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/base-server.js:818:17)
+    at async /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/router-server.js:179:21)
+    at async handleRequest (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/router-server.js:359:24)
+    at async requestHandlerImpl (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/router-server.js:383:13)
+    at async Server.requestListener (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/server/lib/start-server.js:141:13)
+ GET /api/voice/transcribe 500 in 1561ms
+   Reload env: .env.local
+ ✓ Compiled in 898ms (632 modules)
+ GET /api/voice/transcribe 200 in 49ms
+ ✓ Compiled /api/voice/synthesize in 46ms (245 modules)
+ GET /api/voice/synthesize 200 in 80ms
  ○ Compiling /chat ...
- ✓ Compiled /chat in 1477ms (603 modules)
- GET /chat?zip=12345 200 in 1598ms
- ✓ Compiled in 178ms (273 modules)
- GET /chat?zip=12345 200 in 20ms
- ✓ Compiled / in 401ms (617 modules)
- GET / 200 in 509ms
- ✓ Compiled /api/geo-ip in 253ms (373 modules)
- GET /api/geo-ip 200 in 340ms
+ ✓ Compiled /chat in 1250ms (859 modules)
+ ⨯ components/ConversationalChat/ConversationalChat.tsx (628:26) @ messages
+ ⨯ ReferenceError: messages is not defined
+    at ConversationalChat (./components/ConversationalChat/ConversationalChat.tsx:596:9)
+digest: "2362000993"
+[0m [90m 626 |[39m       setIsTyping([36mfalse[39m)[0m
+[0m [90m 627 |[39m     }[0m
+[0m[31m[1m>[22m[39m[90m 628 |[39m   }[33m,[39m [conversationState[33m,[39m messages[33m,[39m processResponse])[0m
+[0m [90m     |[39m                          [31m[1m^[22m[39m[0m
+[0m [90m 629 |[39m[0m
+[0m [90m 630 |[39m   [36mconst[39m handleContinueMultiSelect [33m=[39m useCallback(() [33m=>[39m {[0m
+[0m [90m 631 |[39m     processResponse()[0m
+ GET /chat?zip=10010 200 in 1483ms
+ ✓ Compiled in 208ms (465 modules)
+ ✓ Compiled /favicon.ico in 77ms (408 modules)
+ GET /favicon.ico 200 in 122ms
+ GET /favicon.ico 200 in 3ms
+ ✓ Compiled / in 266ms (885 modules)
+ GET / 200 in 352ms
+ ✓ Compiled /api/geo-ip in 88ms (447 modules)
+ GET /api/geo-ip 200 in 143ms
  GET /api/geo-ip 200 in 5ms
- ✓ Compiled /api/validate-zip in 94ms (375 modules)
+ ✓ Compiled /api/validate-zip in 59ms (449 modules)
 USPS API key not configured, falling back to format validation only
 USPS API key not configured, falling back to format validation only
- POST /api/validate-zip 200 in 136ms
- POST /api/validate-zip 200 in 136ms
- GET /chat?zip=12345 200 in 71ms
- ✓ Compiled in 500ms (616 modules)
- ✓ Compiled in 227ms (616 modules)
- GET /chat?zip=12345 200 in 45ms
- GET /chat?zip=10001 200 in 26ms
- ✓ Compiled in 311ms (616 modules)
+ POST /api/validate-zip 200 in 107ms
+ POST /api/validate-zip 200 in 112ms
+ ✓ Compiled in 136ms (477 modules)
+ ⨯ ./components/ConversationalChat/ConversationalChat.tsx
+Error: Failed to read source code from /Users/jonathanjaklitsch/chefscart/chefscart/apps/web/components/ConversationalChat/ConversationalChat.tsx
+
+Caused by:
+    No such file or directory (os error 2)
+
+Import trace for requested module:
+./components/ConversationalChat/ConversationalChat.tsx
+./src/app/chat/page.tsx
+ ✓ Compiled in 272ms (946 modules)
+AudioContext not supported: ReferenceError: window is not defined
+    at AudioPlaybackService.initializeAudioContext (webpack-internal:///(ssr)/./lib/audio-playback.ts:24:38)
+    at new AudioPlaybackService (webpack-internal:///(ssr)/./lib/audio-playback.ts:20:14)
+    at getAudioPlaybackService (webpack-internal:///(ssr)/./lib/audio-playback.ts:293:40)
+    at FullScreenVoiceUI (webpack-internal:///(ssr)/./components/FullScreenVoiceUI.tsx:33:102)
+    at au (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:10446)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:15122
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42336
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:42822)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:43940
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:44618)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:46505)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at aj (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aj (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:53793)
+    at aC (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:52874)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:50095)
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:45321)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ab (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11808)
+    at /Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16871
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:16908)
+    at a_ (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:49776)
+    at ac (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:11400)
+    at aw (/Users/jonathanjaklitsch/chefscart/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:14707)
  ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- ⨯ components/ConversationalChat/ConversationalChat.tsx (241:7) @ startConversation
- ⨯ ReferenceError: Cannot access 'startConversation' before initialization
-    at ConversationalChat (./components/ConversationalChat/ConversationalChat.tsx:339:9)
-digest: "2507928994"
-[0m [90m 239 |[39m       startConversation()[0m
-[0m [90m 240 |[39m     }[0m
-[0m[31m[1m>[22m[39m[90m 241 |[39m   }[33m,[39m [startConversation])[0m
-[0m [90m     |[39m       [31m[1m^[22m[39m[0m
-[0m [90m 242 |[39m[0m
-[0m [90m 243 |[39m   [36mconst[39m startConversation [33m=[39m useCallback(() [33m=>[39m {[0m
-[0m [90m 244 |[39m     console[33m.[39mlog([32m'ConversationalChat: startConversation called'[39m)[0m
- GET /chat?zip=10001 200 in 165ms
- ✓ Compiled in 238ms (616 modules)
- GET /chat?zip=10001 200 in 57ms
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- ✓ Compiled in 264ms (616 modules)
- GET /chat?zip=12345 200 in 35ms
- GET /chat?zip=12345 200 in 17ms
- GET /chat?zip=12345 200 in 34ms
- ✓ Compiled in 268ms (616 modules)
- ✓ Compiled in 232ms (616 modules)
+ GET /chat?zip=10001 200 in 115ms
+ GET /favicon.ico 200 in 14ms
+ GET /favicon.ico 200 in 2ms
+ ✓ Compiled in 196ms (946 modules)
+ ✓ Compiled in 253ms (919 modules)
+ ✓ Compiled in 215ms (919 modules)
+ ✓ Compiled in 166ms (887 modules)
+ GET /chat?zip=10001 200 in 68ms
+ ✓ Compiled /favicon.ico in 93ms (432 modules)
+ GET /favicon.ico 200 in 135ms
+ GET /favicon.ico 200 in 3ms
+ GET /chat?zip=10001 200 in 63ms
+ GET /favicon.ico 200 in 8ms
+ GET /favicon.ico 200 in 8ms
+ GET / 200 in 21ms
+ ✓ Compiled /api/geo-ip in 155ms (457 modules)
+ GET /favicon.ico 200 in 254ms
+ GET /api/geo-ip 200 in 263ms
+ GET /favicon.ico 200 in 4ms
+ GET /api/geo-ip 200 in 7ms
+ ✓ Compiled /api/validate-zip in 52ms (459 modules)
+USPS API key not configured, falling back to format validation only
+USPS API key not configured, falling back to format validation only
+ POST /api/validate-zip 200 in 70ms
+ POST /api/validate-zip 200 in 82ms
+ HEAD /chat 200 in 49ms
+ GET /chat?zip=10001 200 in 29ms
+ GET /favicon.ico 200 in 15ms
+ GET /favicon.ico 200 in 4ms
+ ✓ Compiled /api/conversation/process in 127ms (560 modules)
+ POST /api/conversation/process 200 in 1933ms
+ GET /chat?zip=10001 200 in 74ms
+ GET /favicon.ico 200 in 17ms
+ GET /favicon.ico 200 in 5ms
+ GET / 200 in 55ms
+ GET /api/geo-ip 200 in 13ms
+ GET /favicon.ico 200 in 14ms
+ GET /api/geo-ip 200 in 9ms
+USPS API key not configured, falling back to format validation only
+ POST /api/validate-zip 200 in 14ms
+ GET /favicon.ico 200 in 13ms
+USPS API key not configured, falling back to format validation only
+ POST /api/validate-zip 200 in 10ms
+ GET / 200 in 26ms
+ GET /api/geo-ip 200 in 8ms
+ GET /favicon.ico 200 in 10ms
+ GET /api/geo-ip 200 in 10ms
+USPS API key not configured, falling back to format validation only
+ POST /api/validate-zip 200 in 9ms
+ GET /favicon.ico 200 in 10ms
+USPS API key not configured, falling back to format validation only
+ POST /api/validate-zip 200 in 7ms
+ GET /chat?zip=10001 200 in 30ms
+ GET /favicon.ico 200 in 6ms
+ GET /favicon.ico 200 in 7ms
+ GET /chat?zip=10001 200 in 53ms
+ GET /favicon.ico 200 in 52ms
+ GET /favicon.ico 200 in 4ms

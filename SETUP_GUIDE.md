@@ -8,7 +8,7 @@ The ChefsCart application is fully built with:
 - 10-step conversational preferences wizard  
 - GPT-4o-mini meal plan generation
 - Instacart integration (mock for demo)
-- Email notifications via SendGrid
+- Email notifications via Resend
 - Firebase backend with Firestore & Cloud Functions
 
 ## 🔧 Required API Keys & Setup
@@ -34,13 +34,13 @@ The ChefsCart application is fully built with:
    ```
 **Cost:** ~$0.002 per meal plan (very cheap!)
 
-### 3. SendGrid API Key (Optional)
-1. Sign up at [SendGrid](https://sendgrid.com) - 100 emails/day free
+### 3. Resend API Key (Optional)
+1. Sign up at [Resend](https://resend.com) - 100 emails/day free
 2. Create API key with full access
 3. Add to `.env.local`:
    ```bash
-   SENDGRID_API_KEY=SG.your-key-here
-   SENDGRID_FROM_EMAIL=noreply@chefscart.ai
+   RESEND_API_KEY=re_your-key-here
+   RESEND_FROM_EMAIL=ChefsCart <noreply@chefscart.ai>
    ```
 
 ### 4. Instacart IDP (Currently Mock)
@@ -101,7 +101,7 @@ chefscart/
 ├── functions/src/
 │   ├── gptPlan.ts           # OpenAI meal generation
 │   ├── createList.ts        # Instacart integration
-│   └── emailSend.ts         # SendGrid notifications
+│   └── emailSend.ts         # Resend notifications
 ├── firebase.json             # Firebase configuration
 ├── firestore.rules          # Database security
 └── .env.local               # Environment variables
