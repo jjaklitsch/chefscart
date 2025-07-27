@@ -1,8 +1,6 @@
 {
-  "/chat/page": "app/chat/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/conversation/process/route": "app/api/conversation/process/route.js",
   "/page": "app/page.js",
-  "/api/validate-zip/route": "app/api/validate-zip/route.js",
-  "/api/geo-ip/route": "app/api/geo-ip/route.js"
+  "/chat/page": "app/chat/page.js",
+  "/api/geo-ip/route": "app/api/geo-ip/route.js",
+  "/api/validate-zip/route": "app/api/validate-zip/route.js"
 }

@@ -140,6 +140,9 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
       
       return () => clearTimeout(timeoutId)
     }
+    
+    // Return empty cleanup function for else case
+    return () => {}
   }, [conversationState])
 
   const startConversation = useCallback(() => {
@@ -216,10 +219,15 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
           Object.entries(data.extractedData).forEach(([key, value]) => {
             if (value !== undefined && value !== null) {
               // Handle arrays by merging with existing values
-              if (Array.isArray(value) && Array.isArray(newPreferences[key as keyof typeof newPreferences])) {
-                newPreferences[key as keyof typeof newPreferences] = Array.from(
-                  new Set([...newPreferences[key as keyof typeof newPreferences] as any[], ...value])
-                ) as any
+              if (Array.isArray(value)) {
+                const existingValue = (newPreferences as any)[key]
+                if (Array.isArray(existingValue)) {
+                  (newPreferences as any)[key] = Array.from(
+                    new Set([...existingValue, ...value])
+                  )
+                } else {
+                  (newPreferences as any)[key] = value
+                }
               } else {
                 (newPreferences as any)[key] = value
               }
