@@ -10,6 +10,7 @@ import { UserPreferences, MealType } from '../../types'
 
 interface ConversationalChatProps {
   onPreferencesComplete: (preferences: UserPreferences) => void
+  onProgressUpdate?: (preferences: Partial<UserPreferences>) => void
 }
 
 interface ConversationMessage {
@@ -236,7 +237,7 @@ const clearLocalStorage = (): void => {
   }
 }
 
-export default function ConversationalChat({ onPreferencesComplete }: ConversationalChatProps) {
+export default function ConversationalChat({ onPreferencesComplete, onProgressUpdate }: ConversationalChatProps) {
   const [messages, setMessages] = useState<ConversationMessage[]>([])
   const [conversationState, setConversationState] = useState<ConversationState>({
     step: 0,
@@ -581,6 +582,11 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
       }
 
       setConversationState(newState)
+      
+      // Notify parent of progress update
+      if (onProgressUpdate) {
+        onProgressUpdate(newPreferences)
+      }
 
       // Check if conversation is complete
       if (newState.step >= conversationSteps.length) {
@@ -721,6 +727,11 @@ export default function ConversationalChat({ onPreferencesComplete }: Conversati
           preferences: newPreferences,
           mealConfiguration: newMealConfiguration
         }))
+        
+        // Notify parent of progress update
+        if (onProgressUpdate) {
+          onProgressUpdate(newPreferences)
+        }
       }
       
     } catch (error) {
