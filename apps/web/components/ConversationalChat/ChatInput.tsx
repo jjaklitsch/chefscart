@@ -110,7 +110,7 @@ export default function ChatInput({
             placeholder={placeholder}
             disabled={disabled}
             rows={1}
-            className={`w-full px-4 py-3 pr-12 border-2 border-brand-200 rounded-2xl resize-none transition-all duration-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-100 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed placeholder-gray-400 ${
+            className={`w-full px-4 py-3 pr-12 border-2 border-brand-200 rounded-2xl resize-none transition-all duration-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-100 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed placeholder-gray-500 text-gray-900 ${
               message.length > maxLength * 0.8 ? 'border-warning focus:border-warning' : ''
             }`}
             style={{ 
@@ -157,7 +157,7 @@ export default function ChatInput({
 
       {/* Hint Text */}
       <div className="mt-2 text-xs text-gray-500 text-center">
-        <span>Tell me about your meal preferences - Press Enter to send • 🎤 Quick voice input • Header 🎤 Full-screen voice mode</span>
+        <span>Tell Mila about your meal preferences - Press Enter to send • 🎤 Quick voice input</span>
       </div>
     </div>
   )

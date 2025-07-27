@@ -149,7 +149,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
     const welcomeMessage: ConversationMessage = {
       id: 'assistant-welcome',
       role: 'assistant',
-      content: "Hi! I'm your AI sous-chef 👨‍🍳 I'm here to create the perfect personalized meal plan just for you. You can either type or speak to tell me about your meal preferences. What types of meals would you like me to plan for you?",
+      content: "Hi! I'm Mila, your AI sous-chef 👨‍🍳 I'm here to create the perfect personalized meal plan just for you. Try voice mode below to tell me about your preferences, or start typing to let me know what you're looking for!",
       timestamp: new Date()
     }
 
@@ -412,21 +412,11 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
             <div className="w-8 h-8 bg-gradient-to-br from-brand-600 to-fresh-500 rounded-full flex items-center justify-center">
               <ChefHat className="w-5 h-5 text-white" />
             </div>
-            <h1 className="text-lg font-bold text-gray-900">ChefsCart Assistant</h1>
+            <h1 className="text-lg font-bold text-gray-900 text-left">ChefsCart Assistant</h1>
           </div>
           
           {/* Right side - Action buttons */}
           <div className="flex items-center gap-2">
-            {/* Voice Mode Button - Full-screen voice interface */}
-            <button
-              onClick={() => setShowVoiceUI(true)}
-              className="btn-ghost p-2 min-h-[32px]"
-              aria-label="Open full-screen voice mode"
-              title="Full-screen voice mode - speak hands-free"
-            >
-              <Mic className="w-4 h-4" />
-            </button>
-            
             {/* Reset Button */}
             <button
               onClick={resetConversation}
@@ -443,7 +433,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
       {/* Main Content with Progress Tracker */}
       <div className="flex-1 flex relative">
         {/* Messages Area */}
-        <div className={`flex-1 overflow-y-auto px-4 py-6 ${showProgressTracker && !progressTrackerCollapsed ? 'mr-80' : ''}`}>
+        <div className={`flex-1 overflow-y-auto px-4 py-6 relative z-10 ${showProgressTracker ? (progressTrackerCollapsed ? 'mr-12' : 'mr-80') : ''}`}>
           <div className="max-w-4xl mx-auto">
             <div role="log" aria-live="polite" aria-label="Conversation messages">
               {conversationState.messages.map((message) => (
@@ -474,13 +464,29 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
         )}
       </div>
 
+      {/* Voice Mode Button - Try Voice Mode */}
+      {!isTyping && (
+        <div className={`px-4 py-2 border-t border-brand-100 relative z-10 ${showProgressTracker ? (progressTrackerCollapsed ? 'mr-12' : 'mr-80') : ''}`}>
+          <div className="max-w-4xl mx-auto flex justify-center">
+            <button
+              onClick={() => setShowVoiceUI(true)}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-lg transition-all duration-200 focus:ring-4 focus:ring-brand-100 focus:outline-none shadow-sm hover:shadow-md"
+              aria-label="Try voice mode"
+            >
+              <Mic className="w-4 h-4" />
+              Try Voice Mode
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Chat Input */}
       {!isTyping && (
-        <div className={`${showProgressTracker && !progressTrackerCollapsed ? 'mr-80' : ''}`}>
+        <div className={`relative z-10 ${showProgressTracker ? (progressTrackerCollapsed ? 'mr-12' : 'mr-80') : ''}`}>
           <ChatInput
             onSendMessage={handleTextInput}
             disabled={conversationState.awaitingResponse}
-            placeholder="Tell me about your meal preferences..."
+            placeholder="What's cookin?"
             isLoading={conversationState.awaitingResponse}
             maxLength={1000}
           />

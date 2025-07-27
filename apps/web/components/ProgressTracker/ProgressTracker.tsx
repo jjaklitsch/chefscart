@@ -190,7 +190,7 @@ export default function ProgressTracker({
     bg-white border-l border-brand-200 shadow-lg transition-all duration-300 ease-in-out
     ${isMobileView 
       ? 'fixed bottom-0 left-0 right-0 z-40 border-t border-l-0 rounded-t-2xl' 
-      : 'fixed top-0 right-0 h-full z-30'
+      : 'fixed top-0 right-0 h-full z-20'
     }
   `
 
