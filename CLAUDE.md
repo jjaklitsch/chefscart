@@ -7,9 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Development
 ```bash
 # Frontend development
-npm run dev        # Start Next.js dev server on http://localhost:3000
-npm run lint       # Run ESLint checks
-npm run build      # Build production Next.js app
+cd apps/web && npm run dev  # Start Next.js dev server (runs on localhost:3001)
+npm run lint                # Run ESLint checks
+npm run build              # Build production Next.js app
 
 # Firebase Functions (from /functions directory)
 cd functions

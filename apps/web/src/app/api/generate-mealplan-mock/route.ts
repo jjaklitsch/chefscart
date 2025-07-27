@@ -79,12 +79,12 @@ export async function POST(request: NextRequest) {
 
     console.log('Generating meal plan with OpenAI function calling...')
 
-    // Use function calling for structured output with 4.5s timeout for <5s total response
+    // Use function calling for structured output with longer timeout for better results
     const startTime = Date.now()
     const result = await generateMealPlanWithFunctionCalling({
       preferences,
       pantryItems: [], // TODO: Extract from pantry photo if provided
-      timeoutMs: 4500
+      timeoutMs: 15000 // Increased timeout for better recipe generation
     })
 
     const generationTime = Date.now() - startTime
@@ -117,10 +117,12 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error('Error generating meal plan:', error)
+    console.error('Error details:', error instanceof Error ? error.message : 'Unknown error')
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack')
     
     // If it's a timeout or OpenAI error, return a fallback response
     if (error instanceof Error && (error.message.includes('timeout') || error.message.includes('OpenAI')) && preferences) {
-      console.log('Returning fallback meal plan due to OpenAI error')
+      console.log('Returning fallback meal plan due to OpenAI error:', error.message)
       return getFallbackMealPlan(userId || `fallback_${Date.now()}`, preferences)
     }
     

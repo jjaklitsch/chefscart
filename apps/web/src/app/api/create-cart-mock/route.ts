@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { planId, userId } = body
+    const { planId, userId, email, additionalItems = [] } = body
 
     if (!planId || !userId) {
       return NextResponse.json({
@@ -23,11 +23,12 @@ export async function POST(request: NextRequest) {
     const cartUrl = `https://www.instacart.com/store/checkout?cart_id=${cartId}&partner=chefscart`
 
     // Mock 92% success rate
-    const totalItems = Math.floor(Math.random() * 15) + 10 // 10-25 items
+    const baseItems = Math.floor(Math.random() * 15) + 10 // 10-25 items
+    const totalItems = baseItems + additionalItems.length
     const matchedItems = Math.floor(totalItems * 0.92)
     const outOfStockItems = ['Premium olive oil', 'Organic quinoa'] // Mock out of stock
 
-    console.log(`Mock cart created: ${matchedItems}/${totalItems} items matched`)
+    console.log(`Mock cart created: ${matchedItems}/${totalItems} items matched (${additionalItems.length} additional items)`)
 
     // Send confirmation email
     try {
@@ -35,9 +36,9 @@ export async function POST(request: NextRequest) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: 'support@chefscart.ai',
+          to: email || 'support@chefscart.ai',
           subject: '🛒 Your ChefsCart shopping list is ready!',
-          html: createConfirmationEmail({ cartUrl, totalItems, matchedItems, outOfStockItems }),
+          html: createConfirmationEmail({ cartUrl, totalItems, matchedItems, outOfStockItems, additionalItems }),
           text: `Your ChefsCart shopping list is ready! Cart: ${cartUrl}`
         })
       })
@@ -73,6 +74,7 @@ function createConfirmationEmail(data: {
   totalItems: number
   matchedItems: number
   outOfStockItems: string[]
+  additionalItems?: string[]
 }): string {
   const { cartUrl, totalItems, matchedItems, outOfStockItems } = data
 

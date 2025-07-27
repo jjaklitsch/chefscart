@@ -217,7 +217,13 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
       
       // Handle "none" option specially for dietary style
       if (step.id === 'dietaryStyle' && Array.isArray(value) && value.length === 0) {
-        setAnswers(prev => ({ ...prev, [step.id]: [] }))
+        // Toggle "none" - if already selected (empty array), unselect it (undefined)
+        // If not selected, select it (empty array)
+        if (Array.isArray(currentAnswers) && currentAnswers.length === 0) {
+          setAnswers(prev => ({ ...prev, [step.id]: undefined }))
+        } else {
+          setAnswers(prev => ({ ...prev, [step.id]: [] }))
+        }
         return
       }
       
@@ -393,6 +399,12 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
     const answer = answers[currentStepData.id]
     if (currentStepData.type === 'multiple' || currentStepData.type === 'pills') {
       if (!Array.isArray(answer)) return false
+      
+      // Special handling for "None" option with empty array value
+      if (option.id === 'none' && Array.isArray(option.value) && option.value.length === 0) {
+        return Array.isArray(answer) && answer.length === 0
+      }
+      
       // Store and check by option ID for multi-value options to avoid cross-selection
       if (Array.isArray(option.value) && option.value.length > 1) {
         return answer.includes(option.id)
@@ -746,21 +758,17 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
                   {answers.favoriteFoods?.filter(food => !currentStepData.options?.some(opt => opt.value.includes(food))).length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-2">
                       {answers.favoriteFoods.filter(food => !currentStepData.options?.some(opt => opt.value.includes(food))).map((food, index) => (
-                        <span
+                        <button
                           key={index}
-                          className="inline-flex items-center gap-1 px-3 py-1 bg-brand-100 text-brand-700 rounded-full text-sm"
+                          onClick={() => {
+                            const updatedFoods = answers.favoriteFoods?.filter(f => f !== food) || []
+                            setAnswers(prev => ({ ...prev, favoriteFoods: updatedFoods }))
+                          }}
+                          className="inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 border-brand-500 bg-brand-50 text-brand-700 text-sm transition-all duration-200"
                         >
-                          {food}
-                          <button
-                            onClick={() => {
-                              const updatedFoods = answers.favoriteFoods?.filter(f => f !== food) || []
-                              setAnswers(prev => ({ ...prev, favoriteFoods: updatedFoods }))
-                            }}
-                            className="w-4 h-4 text-brand-500 hover:text-brand-700"
-                          >
-                            ×
-                          </button>
-                        </span>
+                          <span className="font-medium">{food}</span>
+                          <Check className="w-4 h-4 text-brand-600" />
+                        </button>
                       ))}
                     </div>
                   )}

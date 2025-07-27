@@ -103,8 +103,8 @@ export async function generateMealPlanWithFunctionCalling(
   const { preferences, pantryItems = [], timeoutMs = 4500 } = options
   const startTime = Date.now()
 
-  // Generate 40% more recipes than needed for backups
-  const totalRecipesToGenerate = Math.ceil(preferences.mealsPerWeek * 1.4)
+  // Generate reasonable backup recipes (100% more) to avoid timeout
+  const totalRecipesToGenerate = Math.ceil(preferences.mealsPerWeek * 2)
   
   const prompt = createMealPlanPrompt(preferences, pantryItems, totalRecipesToGenerate)
 
@@ -115,7 +115,17 @@ export async function generateMealPlanWithFunctionCalling(
         messages: [
           {
             role: 'system',
-            content: `You are a Michelin-starred chef and creative food writer. Generate diverse, restaurant-quality meal plans with imaginative descriptions that make every dish sound irresistible. Write recipe titles and descriptions like a high-end restaurant menu - creative, appetizing, and sophisticated. Focus on seasonal ingredients, balanced nutrition, and cost-effective shopping. Always generate exactly the requested number of recipes.`
+            content: `You are a master recipe developer for Home Chef, the premium meal kit service. Create restaurant-quality recipes with the same level of detail and precision as Home Chef's instruction cards. Every recipe must be foolproof for home cooks with detailed prep work, cooking techniques, and visual cues.
+
+CRITICAL REQUIREMENTS:
+- Include ALL ingredients with precise measurements: tablespoons, teaspoons, ounces, pounds, cups, etc.
+- Include ALL pantry staples: salt, black pepper, olive oil, vegetable oil, butter, flour, sugar, etc.
+- Specify exact preparation for each ingredient: "diced", "minced", "chopped", "sliced thin", "cut into 1-inch pieces"
+- Write comprehensive cooking instructions with prep steps, seasoning details, doneness cues, and timing
+- Include equipment needed: "large skillet", "rimmed baking sheet", "medium saucepan", etc.
+- Always specify temperatures, cooking times, and visual/textural doneness indicators
+
+Always generate exactly the requested number of recipes with Home Chef level detail.`
           },
           {
             role: 'user',
@@ -124,8 +134,8 @@ export async function generateMealPlanWithFunctionCalling(
         ],
         functions: [RECIPE_GENERATION_FUNCTION],
         function_call: { name: 'generate_recipes' },
-        temperature: 0.8, // Higher creativity for more diverse recipes
-        max_tokens: 4000,
+        temperature: 0.9, // Maximum creativity for unique, diverse recipes
+        max_tokens: 6000, // Balanced tokens for detailed recipes
       }),
       new Promise<never>((_, reject) => 
         setTimeout(() => reject(new Error('OpenAI request timeout')), timeoutMs)
@@ -211,28 +221,49 @@ STRICT REQUIREMENTS:
 - Available pantry items: ${pantryString}
 
 OPTIMIZATION GOALS:
-1. Maximize variety across cuisines, proteins, and cooking methods
-2. Balance nutrition across all meals (aim for 400-600 calories per serving)
-3. Optimize ingredient overlap to reduce shopping complexity
-4. Consider seasonal availability and cost-effectiveness
-5. Match difficulty to stated skill level
-6. Utilize pantry items when possible to reduce costs
+1. ENSURE ABSOLUTE UNIQUENESS - Never generate duplicate or similar dishes
+2. Maximize variety across cuisines, proteins, and cooking methods  
+3. Use creative, internationally-inspired recipes with unique flavor profiles
+4. Balance nutrition across all meals (aim for 400-600 calories per serving)
+5. Optimize ingredient overlap to reduce shopping complexity
+6. Consider seasonal availability and cost-effectiveness
+7. Match difficulty to stated skill level
+8. Utilize pantry items when possible to reduce costs
+9. Include fusion cuisines and modern cooking techniques for creativity
 
 RECIPE REQUIREMENTS:
-- Generate exactly ${totalRecipesToGenerate} complete recipes
+- Generate exactly ${totalRecipesToGenerate} COMPLETELY UNIQUE recipes (no duplicates or variations)
 - Each recipe serves ${peoplePerMeal} people
 - Include precise ingredient quantities and clear instructions
 - Provide accurate nutrition information
 - Estimate realistic ingredient costs (USD)
-- Use diverse cooking techniques (baking, grilling, stovetop, etc.)
+- Use diverse cooking techniques (baking, grilling, stovetop, air frying, slow cooking, etc.)
 - Ensure recipes can be completed within time constraints
+- Make each recipe distinctly different in cuisine, protein, and preparation method
+- Include creative, restaurant-quality dishes with global inspiration
 
 CREATIVE PRESENTATION:
-- Write enticing titles that sound like restaurant menu items (e.g., "Pan-Seared Herb-Crusted Salmon with Lemon Butter Quinoa")
-- Create appetizing descriptions that highlight key flavors, textures, and techniques
-- Use sophisticated culinary language but keep it accessible
-- Mention cooking methods, key ingredients, and flavor profiles
-- Make each dish sound like a special restaurant creation
+- Write detailed titles like meal kit services: "Pan-Seared Chicken with Lemon-Herb Couscous & Roasted Brussels Sprouts"
+- Include primary protein, cooking method, accompaniments, and key flavor profiles in titles
+- Create descriptions that highlight flavors, textures, and what makes the dish special (e.g., "Tender chicken breast seasoned with thyme and rosemary, served over fluffy couscous tossed with fresh herbs and lemon zest, alongside caramelized Brussels sprouts")
+- Focus on the eating experience and flavor combinations
+- Be specific about herbs, spices, and special ingredients
+
+INGREDIENT REQUIREMENTS (Home Chef Standard):
+- List EVERY ingredient including pantry staples: salt, black pepper, olive oil, butter, flour, etc.
+- Use precise measurements: "2 tablespoons extra-virgin olive oil", "1 teaspoon kosher salt", "1/2 teaspoon freshly ground black pepper"
+- Include exact prep in ingredient name: "1 large yellow onion, diced", "3 cloves garlic, minced", "1 lb boneless skinless chicken breasts, cut into 1-inch pieces"
+- Specify produce details: "2 medium zucchini (about 1 lb), sliced into half-moons", "1 large lemon, zested and juiced"
+- Include package specifications: "1 (14.5 oz) can diced tomatoes, drained", "8 oz block cream cheese, softened"
+
+COOKING INSTRUCTIONS (Home Chef Detail Level):
+- Start with prep work: "Preheat oven to 425°F. Line a rimmed baking sheet with parchment paper."
+- Include equipment for each step: "In a large skillet over medium-high heat", "Using a wooden spoon"
+- Specify exact cooking techniques: "Add chicken and cook, stirring occasionally, 6-8 minutes until golden brown and cooked through (internal temperature of 165°F)"
+- Include seasoning details: "Season chicken with 1/2 teaspoon salt and 1/4 teaspoon pepper"
+- Provide visual and textural cues: "Cook onions 3-4 minutes until softened and translucent", "Simmer 2-3 minutes until sauce thickens and coats the back of a spoon"
+- Add finishing touches: "Remove from heat and stir in 2 tablespoons fresh chopped parsley"
+- Include plating instructions: "Divide rice among plates and top with chicken mixture. Garnish with remaining parsley and serve with lemon wedges."
 
 Focus on creating a cohesive meal plan that's exciting, nutritious, and practical for the specified preferences.`
 }
