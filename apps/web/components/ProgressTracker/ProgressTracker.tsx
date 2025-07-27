@@ -187,10 +187,10 @@ export default function ProgressTracker({
   }
 
   const baseClasses = `
-    bg-white border-l border-brand-200 shadow-lg transition-all duration-300 ease-in-out
+    bg-white transition-all duration-300 ease-in-out
     ${isMobileView 
-      ? 'fixed bottom-0 left-0 right-0 z-40 border-t border-l-0 rounded-t-2xl' 
-      : 'fixed top-0 right-0 h-full z-20'
+      ? 'fixed bottom-0 left-0 right-0 z-40 border-t border-brand-200 rounded-t-2xl shadow-lg' 
+      : 'relative h-full border-l border-brand-200'
     }
   `
 
@@ -198,7 +198,7 @@ export default function ProgressTracker({
     ? ''
     : isCollapsed 
       ? 'w-12' 
-      : 'w-80'
+      : 'w-full'
 
   const heightClasses = isMobileView
     ? isCollapsed 
@@ -229,9 +229,9 @@ export default function ProgressTracker({
               <button
                 onClick={onToggleCollapse}
                 className="p-1 text-gray-400 hover:text-gray-600 transition-colors hover:bg-gray-100 rounded"
-                aria-label="Collapse progress tracker"
+                aria-label={isCollapsed ? 'Expand progress tracker' : 'Collapse progress tracker'}
               >
-                <ChevronRight className="w-5 h-5" />
+                {isCollapsed ? <ChevronLeft className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
               </button>
             )}
           </>
@@ -240,7 +240,7 @@ export default function ProgressTracker({
         {isCollapsed && (
           <button
             onClick={onToggleCollapse}
-            className="p-1 text-gray-400 hover:text-gray-600 transition-colors mx-auto hover:bg-gray-100 rounded"
+            className="p-1 text-gray-400 hover:text-gray-600 transition-colors mx-auto hover:bg-gray-100 rounded w-full flex items-center justify-center"
             aria-label="Expand progress tracker"
           >
             {isMobileView ? (
@@ -249,7 +249,10 @@ export default function ProgressTracker({
                 <span className="text-xs">Progress</span>
               </div>
             ) : (
-              <ChevronLeft className="w-5 h-5" />
+              <div className="flex flex-col items-center gap-1">
+                <ChevronLeft className="w-5 h-5" />
+                <div className="writing-mode-vertical-rl text-xs text-gray-500">Progress</div>
+              </div>
             )}
           </button>
         )}

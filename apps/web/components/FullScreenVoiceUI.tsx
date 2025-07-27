@@ -38,8 +38,14 @@ export default function FullScreenVoiceUI({
   // Initialize audio service on client side only
   useEffect(() => {
     import('../lib/audio-playback').then(({ getAudioPlaybackService }) => {
-      const service = getAudioPlaybackService()
-      setAudioService(service)
+      try {
+        const service = getAudioPlaybackService()
+        setAudioService(service)
+      } catch (error) {
+        console.error('Failed to initialize audio service:', error)
+      }
+    }).catch(error => {
+      console.error('Failed to import audio-playback module:', error)
     })
   }, [])
 
@@ -94,12 +100,23 @@ export default function FullScreenVoiceUI({
         onEnd: () => {
           setIsAISpeaking(false)
         },
-        onError: (error: any) => {
+        onError: (error: string) => {
           setIsAISpeaking(false)
           console.error('AI voice synthesis error:', error)
+          
+          // Show user-friendly error messages
+          if (error.includes('not allowed')) {
+            // Could show a toast or modal here
+            console.warn('Voice playback requires user interaction')
+          } else if (error.includes('timeout')) {
+            console.warn('Voice synthesis took too long')
+          } else if (error.includes('unavailable')) {
+            console.warn('Voice synthesis service is currently unavailable')
+          }
         }
       })
     } catch (error) {
+      setIsAISpeaking(false)
       console.error('AI voice playback error:', error)
     }
   }, [aiResponseText, audioService])
@@ -110,7 +127,11 @@ export default function FullScreenVoiceUI({
     } else {
       // Stop AI speech when user wants to speak
       if (isAISpeaking && audioService) {
-        audioService.stop()
+        try {
+          audioService.stop()
+        } catch (error) {
+          console.error('Error stopping audio:', error)
+        }
       }
       onStartListening()
     }
@@ -119,8 +140,13 @@ export default function FullScreenVoiceUI({
   const handleClose = useCallback(() => {
     // Stop any ongoing audio
     if (audioService) {
-      audioService.stop()
+      try {
+        audioService.stop()
+      } catch (error) {
+        console.error('Error stopping audio on close:', error)
+      }
     }
+    setIsAISpeaking(false)
     onClose()
   }, [audioService, onClose])
 

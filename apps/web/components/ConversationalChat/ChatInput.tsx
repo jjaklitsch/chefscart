@@ -88,15 +88,15 @@ export default function ChatInput({
 
   return (
     <div className="border-t border-brand-100 bg-white px-4 py-3">
-      <form onSubmit={handleSubmit} className="flex items-end gap-2">
+      <form onSubmit={handleSubmit} className="flex items-end gap-3 max-w-4xl mx-auto">
         {/* Quick Voice Input */}
-        <div className="relative" title="Quick voice input - hold to speak, release to send">
+        <div className="flex-shrink-0" title="Quick voice input - hold to speak, release to send">
           <VoiceInput
             onTranscription={handleVoiceTranscription}
             onError={handleVoiceError}
             disabled={disabled}
             showVisualFeedback={true}
-            className="w-11 h-11"
+            className="w-12 h-12 flex items-center justify-center"
           />
         </div>
 
@@ -110,7 +110,7 @@ export default function ChatInput({
             placeholder={placeholder}
             disabled={disabled}
             rows={1}
-            className={`w-full px-4 py-3 pr-12 border-2 border-brand-200 rounded-2xl resize-none transition-all duration-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-100 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed placeholder-gray-500 text-gray-900 ${
+            className={`w-full px-4 py-3 pr-16 border-2 border-brand-200 rounded-2xl resize-none transition-all duration-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-100 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed placeholder-gray-500 text-gray-900 ${
               message.length > maxLength * 0.8 ? 'border-warning focus:border-warning' : ''
             }`}
             style={{ 
@@ -124,7 +124,7 @@ export default function ChatInput({
 
           {/* Character count */}
           {message.length > maxLength * 0.7 && (
-            <div className={`absolute bottom-1 right-14 text-xs transition-colors ${
+            <div className={`absolute bottom-2 right-16 text-xs transition-colors ${
               message.length > maxLength * 0.9 
                 ? 'text-red-500' 
                 : message.length > maxLength * 0.8 
@@ -140,7 +140,7 @@ export default function ChatInput({
         <button
           type="submit"
           disabled={!canSend}
-          className={`flex-shrink-0 w-12 h-12 rounded-full transition-all duration-200 focus:ring-4 focus:ring-brand-100 focus:outline-none transform ${
+          className={`flex-shrink-0 w-12 h-12 rounded-full transition-all duration-200 focus:ring-4 focus:ring-brand-100 focus:outline-none transform flex items-center justify-center ${
             canSend
               ? 'bg-brand-600 text-white hover:bg-brand-700 hover:shadow-green hover:-translate-y-0.5 active:translate-y-0'
               : 'bg-gray-200 text-gray-400 cursor-not-allowed'
@@ -148,16 +148,18 @@ export default function ChatInput({
           aria-label="Send message"
         >
           {isLoading ? (
-            <div className="loading-spinner mx-auto" />
+            <div className="loading-spinner" />
           ) : (
-            <Send className="w-6 h-6 mx-auto" />
+            <Send className="w-5 h-5" />
           )}
         </button>
       </form>
 
       {/* Hint Text */}
-      <div className="mt-2 text-xs text-gray-500 text-center">
-        <span>Tell Mila about your meal preferences - Press Enter to send • 🎤 Quick voice input</span>
+      <div className="mt-2 max-w-4xl mx-auto">
+        <div className="text-xs text-gray-500 text-center">
+          <span>Tell Mila about your meal preferences - Press Enter to send • 🎤 Quick voice input</span>
+        </div>
       </div>
     </div>
   )

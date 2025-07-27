@@ -395,24 +395,24 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
   }, [])
 
   return (
-    <div className="min-h-screen bg-health-gradient flex flex-col">
-      {/* Header */}
-      <div className="bg-white border-b border-brand-200 px-4 py-3 shadow-sm relative z-10">
+    <div className="min-h-screen bg-health-gradient">
+      {/* Header - Fixed and Sticky */}
+      <header className="sticky top-0 bg-gradient-to-r from-sage-50 to-cream-50 border-b border-sage-200 px-4 py-3 shadow-soft backdrop-blur-md bg-opacity-95 z-50">
         <div className="flex items-center justify-between max-w-4xl mx-auto">
           {/* Left side - Back button and title */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => router.push('/')}
-              className="btn-ghost p-2 min-h-[32px]"
+              className="p-2 min-h-[32px] text-neutral-600 hover:text-brand-600 hover:bg-sage-100 rounded-lg transition-all duration-200"
               aria-label="Go back to homepage"
               title="Back to homepage"
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <div className="w-8 h-8 bg-gradient-to-br from-brand-600 to-fresh-500 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full flex items-center justify-center shadow-brand">
               <ChefHat className="w-5 h-5 text-white" />
             </div>
-            <h1 className="text-lg font-bold text-gray-900 text-left">ChefsCart Assistant</h1>
+            <h1 className="text-lg font-display font-bold text-neutral-800">Chef's Assistant</h1>
           </div>
           
           {/* Right side - Action buttons */}
@@ -420,7 +420,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
             {/* Reset Button */}
             <button
               onClick={resetConversation}
-              className="btn-ghost p-2 min-h-[32px]"
+              className="p-2 min-h-[32px] text-neutral-600 hover:text-brand-600 hover:bg-sage-100 rounded-lg transition-all duration-200"
               aria-label="Reset conversation"
               title="Start over"
             >
@@ -428,70 +428,82 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
             </button>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Main Content with Progress Tracker */}
-      <div className="flex-1 flex relative">
+      {/* Main Content Area */}
+      <main className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_320px] min-h-[calc(100vh-80px)] relative">
         {/* Messages Area */}
-        <div className={`flex-1 overflow-y-auto px-4 py-6 relative z-10 ${showProgressTracker ? (progressTrackerCollapsed ? 'mr-12' : 'mr-80') : ''}`}>
-          <div className="max-w-4xl mx-auto">
-            <div role="log" aria-live="polite" aria-label="Conversation messages">
-              {conversationState.messages.map((message) => (
-                <MessageBubble
-                  key={message.id}
-                  id={message.id}
-                  role={message.role}
-                  content={message.content}
-                  timestamp={message.timestamp}
-                />
-              ))}
-              
-              {isTyping && <TypingIndicator />}
-              
-              <div ref={messagesEndRef} />
+        <div className="flex flex-col overflow-hidden relative">
+          {/* Messages Container */}
+          <div className="flex-1 overflow-y-auto px-4 py-6">
+            <div className="max-w-4xl mx-auto">
+              <div role="log" aria-live="polite" aria-label="Conversation messages">
+                {conversationState.messages.map((message) => (
+                  <MessageBubble
+                    key={message.id}
+                    id={message.id}
+                    role={message.role}
+                    content={message.content}
+                    timestamp={message.timestamp}
+                  />
+                ))}
+                
+                {isTyping && <TypingIndicator />}
+                
+                <div ref={messagesEndRef} />
+              </div>
             </div>
+          </div>
+
+          {/* Voice Mode Button */}
+          {!isTyping && (
+            <div className="px-4 py-2 border-t border-sage-200 bg-gradient-to-r from-sage-50 to-cream-50">
+              <div className="max-w-4xl mx-auto flex justify-center">
+                <button
+                  onClick={() => setShowVoiceUI(true)}
+                  className="btn-accent-new inline-flex items-center gap-2"
+                  aria-label="Try voice mode"
+                >
+                  <Mic className="w-4 h-4" />
+                  Try Voice Mode
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Chat Input - Always Visible */}
+          <div className="relative">
+            <ChatInput
+              onSendMessage={handleTextInput}
+              disabled={conversationState.awaitingResponse}
+              placeholder="What's cookin?"
+              isLoading={conversationState.awaitingResponse}
+              maxLength={1000}
+            />
           </div>
         </div>
 
-        {/* Progress Tracker */}
-        {showProgressTracker && (
+        {/* Progress Tracker - Desktop Sidebar */}
+        <aside className="hidden lg:block border-l border-sage-200 bg-white">
           <ProgressTracker
             preferences={conversationState.preferences}
             onEditItem={handleEditProgressItem}
-            isCollapsed={progressTrackerCollapsed}
-            onToggleCollapse={() => setProgressTrackerCollapsed(!progressTrackerCollapsed)}
+            isCollapsed={false}
+            onToggleCollapse={() => {}} // No-op for desktop
           />
-        )}
+        </aside>
+      </main>
+
+      {/* Mobile Progress Tracker */}
+      <div className="lg:hidden">
+        <ProgressTracker
+          preferences={conversationState.preferences}
+          onEditItem={handleEditProgressItem}
+          isCollapsed={progressTrackerCollapsed}
+          onToggleCollapse={() => setProgressTrackerCollapsed(!progressTrackerCollapsed)}
+          isMobile={true}
+        />
       </div>
-
-      {/* Voice Mode Button - Try Voice Mode */}
-      {!isTyping && (
-        <div className={`px-4 py-2 border-t border-brand-100 relative z-10 ${showProgressTracker ? (progressTrackerCollapsed ? 'mr-12' : 'mr-80') : ''}`}>
-          <div className="max-w-4xl mx-auto flex justify-center">
-            <button
-              onClick={() => setShowVoiceUI(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-lg transition-all duration-200 focus:ring-4 focus:ring-brand-100 focus:outline-none shadow-sm hover:shadow-md"
-              aria-label="Try voice mode"
-            >
-              <Mic className="w-4 h-4" />
-              Try Voice Mode
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Chat Input */}
-      {!isTyping && (
-        <div className={`relative z-10 ${showProgressTracker ? (progressTrackerCollapsed ? 'mr-12' : 'mr-80') : ''}`}>
-          <ChatInput
-            onSendMessage={handleTextInput}
-            disabled={conversationState.awaitingResponse}
-            placeholder="What's cookin?"
-            isLoading={conversationState.awaitingResponse}
-            maxLength={1000}
-          />
-        </div>
-      )}
 
       {/* Full Screen Voice UI */}
       <FullScreenVoiceUI
