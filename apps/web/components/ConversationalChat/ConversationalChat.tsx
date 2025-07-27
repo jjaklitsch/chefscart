@@ -1,7 +1,8 @@
 "use client"
 
 import React, { useState, useEffect, useCallback, useRef } from 'react'
-import { ChefHat, RotateCcw, Mic } from 'lucide-react'
+import { ChefHat, RotateCcw, Mic, ArrowLeft } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import MessageBubble from './MessageBubble'
 import ChatInput from './ChatInput'
 import TypingIndicator from './TypingIndicator'
@@ -92,6 +93,7 @@ const clearLocalStorage = (): void => {
 }
 
 export default function ConversationalChat({ onPreferencesComplete, onProgressUpdate }: ConversationalChatProps) {
+  const router = useRouter()
   const [conversationState, setConversationState] = useState<ConversationState>({
     preferences: {},
     awaitingResponse: false,
@@ -389,20 +391,30 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
       {/* Header */}
       <div className="bg-white border-b border-brand-200 px-4 py-3 shadow-sm relative z-10">
         <div className="flex items-center justify-between max-w-4xl mx-auto">
+          {/* Left side - Back button and title */}
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => router.push('/')}
+              className="btn-ghost p-2 min-h-[32px]"
+              aria-label="Go back to homepage"
+              title="Back to homepage"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
             <div className="w-8 h-8 bg-gradient-to-br from-brand-600 to-fresh-500 rounded-full flex items-center justify-center">
               <ChefHat className="w-5 h-5 text-white" />
             </div>
             <h1 className="text-lg font-bold text-gray-900">ChefsCart Assistant</h1>
           </div>
           
+          {/* Right side - Action buttons */}
           <div className="flex items-center gap-2">
-            {/* Voice Mode Button */}
+            {/* Voice Mode Button - Full-screen voice interface */}
             <button
               onClick={() => setShowVoiceUI(true)}
               className="btn-ghost p-2 min-h-[32px]"
-              aria-label="Switch to voice mode"
-              title="Switch to voice mode"
+              aria-label="Open full-screen voice mode"
+              title="Full-screen voice mode - speak hands-free"
             >
               <Mic className="w-4 h-4" />
             </button>
@@ -412,6 +424,7 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
               onClick={resetConversation}
               className="btn-ghost p-2 min-h-[32px]"
               aria-label="Reset conversation"
+              title="Start over"
             >
               <RotateCcw className="w-4 h-4" />
             </button>

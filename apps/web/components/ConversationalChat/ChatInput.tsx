@@ -89,14 +89,14 @@ export default function ChatInput({
   return (
     <div className="border-t border-brand-100 bg-white px-4 py-3">
       <form onSubmit={handleSubmit} className="flex items-end gap-2">
-        {/* Voice Input */}
-        <div className="relative" title="Try voice input - speak your preferences instead of typing">
+        {/* Quick Voice Input */}
+        <div className="relative" title="Quick voice input - hold to speak, release to send">
           <VoiceInput
             onTranscription={handleVoiceTranscription}
             onError={handleVoiceError}
             disabled={disabled}
             showVisualFeedback={true}
-            className="w-7 h-7"
+            className="w-11 h-11"
           />
         </div>
 
@@ -140,7 +140,7 @@ export default function ChatInput({
         <button
           type="submit"
           disabled={!canSend}
-          className={`flex-shrink-0 w-11 h-11 rounded-full transition-all duration-200 focus:ring-4 focus:ring-brand-100 focus:outline-none transform ${
+          className={`flex-shrink-0 w-12 h-12 rounded-full transition-all duration-200 focus:ring-4 focus:ring-brand-100 focus:outline-none transform ${
             canSend
               ? 'bg-brand-600 text-white hover:bg-brand-700 hover:shadow-green hover:-translate-y-0.5 active:translate-y-0'
               : 'bg-gray-200 text-gray-400 cursor-not-allowed'
@@ -150,14 +150,14 @@ export default function ChatInput({
           {isLoading ? (
             <div className="loading-spinner mx-auto" />
           ) : (
-            <Send className="w-5 h-5 mx-auto" />
+            <Send className="w-6 h-6 mx-auto" />
           )}
         </button>
       </form>
 
       {/* Hint Text */}
       <div className="mt-2 text-xs text-gray-500 text-center">
-        <span>Tell me about your meal preferences - Press Enter to send or click 🎤 to speak</span>
+        <span>Tell me about your meal preferences - Press Enter to send • 🎤 Quick voice input • Header 🎤 Full-screen voice mode</span>
       </div>
     </div>
   )

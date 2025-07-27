@@ -350,6 +350,12 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
     }
   }
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && zipCode.length === 5) {
+      validateZipCode(zipCode)
+    }
+  }
+
   const getInputBorderColor = () => {
     switch (validationState) {
       case 'valid':
@@ -374,9 +380,11 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
             type="text"
             value={zipCode}
             onChange={handleZipChange}
+            onKeyPress={handleKeyPress}
             placeholder="12345"
-            className={`w-full pl-12 pr-12 py-3 border-2 rounded-xl text-lg font-medium transition-all duration-200 ease-out focus:outline-none focus:ring-4 ${getInputBorderColor()}`}
+            className={`w-full pl-12 pr-12 py-3 border-2 rounded-xl text-lg font-medium transition-all duration-200 ease-out focus:outline-none focus:ring-4 text-text-primary caret-brand-600 ${getInputBorderColor()}`}
             maxLength={5}
+            autoComplete="postal-code"
           />
           <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
             <MapPin className="h-5 w-5 text-neutral-400" />

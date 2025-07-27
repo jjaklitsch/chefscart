@@ -228,7 +228,7 @@ export default function ProgressTracker({
             {!isMobileView && (
               <button
                 onClick={onToggleCollapse}
-                className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+                className="p-1 text-gray-400 hover:text-gray-600 transition-colors hover:bg-gray-100 rounded"
                 aria-label="Collapse progress tracker"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -240,7 +240,7 @@ export default function ProgressTracker({
         {isCollapsed && (
           <button
             onClick={onToggleCollapse}
-            className="p-1 text-gray-400 hover:text-gray-600 transition-colors mx-auto"
+            className="p-1 text-gray-400 hover:text-gray-600 transition-colors mx-auto hover:bg-gray-100 rounded"
             aria-label="Expand progress tracker"
           >
             {isMobileView ? (
@@ -270,8 +270,8 @@ export default function ProgressTracker({
       {/* Progress Items */}
       {!isCollapsed && (
         <div className={`
-          overflow-y-auto flex-1
-          ${isMobileView ? 'max-h-64' : ''}
+          overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-brand-300 scrollbar-track-brand-50
+          ${isMobileView ? 'max-h-64' : 'max-h-[calc(100vh-12rem)]'}
         `}>
           <div className="p-4 space-y-3">
             {progressItems.map((item) => (

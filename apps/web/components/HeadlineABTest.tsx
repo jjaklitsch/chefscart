@@ -52,8 +52,8 @@ export default function HeadlineABTest({ className = "" }: HeadlineABTestProps) 
     return (
       <div className={className}>
         <div className="animate-pulse">
-          <div className="h-8 bg-brand-100 rounded mb-4"></div>
-          <div className="h-4 bg-brand-100 rounded w-3/4"></div>
+          <div className="h-8 bg-brand-100 rounded mb-4 max-w-2xl mx-auto"></div>
+          <div className="h-4 bg-brand-100 rounded w-3/4 max-w-xl mx-auto"></div>
         </div>
       </div>
     );
