@@ -145,6 +145,7 @@ function ChatPageContent() {
     return (
       <ConversationalChat 
         onPreferencesComplete={handlePreferencesComplete}
+        onBackToHome={() => router.push('/')}
       />
     )
   }

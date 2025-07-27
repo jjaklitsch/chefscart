@@ -27,16 +27,16 @@ const onboardingSteps: OnboardingStep[] = [
     required: true
   },
   {
-    id: 'mealsPerWeek',
-    title: 'Meals per Week',
-    question: 'How many meals per week do you want for each type?',
-    type: 'multiple',
+    id: 'mealTypes',
+    title: 'Meal Types',
+    question: 'Which types of meals would you like in your plan?',
+    type: 'pills',
     options: [
-      { id: 'breakfasts', label: 'Breakfasts per week', value: 'breakfasts', icon: '🥞' },
-      { id: 'lunches', label: 'Lunches per week', value: 'lunches', icon: '🥗' },
-      { id: 'dinners', label: 'Dinners per week', value: 'dinners', icon: '🍽️' },
-      { id: 'snacks', label: 'Snacks per week', value: 'snacks', icon: '🍿' },
-      { id: 'desserts', label: 'Desserts per week', value: 'desserts', icon: '🍰' }
+      { id: 'breakfast', label: 'Breakfast', value: ['breakfast'], icon: '🥞' },
+      { id: 'lunch', label: 'Lunch', value: ['lunch'], icon: '🥗' },
+      { id: 'dinner', label: 'Dinner', value: ['dinner'], icon: '🍽️' },
+      { id: 'snacks', label: 'Snacks', value: ['snacks'], icon: '🍿' },
+      { id: 'dessert', label: 'Dessert', value: ['dessert'], icon: '🍰' }
     ],
     required: true
   },
@@ -138,8 +138,8 @@ const onboardingSteps: OnboardingStep[] = [
     question: 'What\'s your preference for organic ingredients?',
     type: 'single',
     options: [
-      { id: 'prefer', label: 'Prefer organic when available', value: 'prefer', icon: '🌱' },
-      { id: 'required', label: 'Organic required', value: 'required', icon: '✅' },
+      { id: 'preferred', label: 'Prefer organic when available', value: 'preferred', icon: '🌱' },
+      { id: 'only_if_within_10_percent', label: 'Only if within 10% of regular price', value: 'only_if_within_10_percent', icon: '💰' },
       { id: 'no_preference', label: 'No preference', value: 'no_preference', icon: '🤷‍♂️' }
     ],
     required: true
@@ -216,24 +216,41 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
       const currentAnswers = answers[step.id] || []
       
       // Handle "none" option specially for dietary style
-      if (step.id === 'dietaryStyle' && value.length === 0) {
+      if (step.id === 'dietaryStyle' && Array.isArray(value) && value.length === 0) {
         setAnswers(prev => ({ ...prev, [step.id]: [] }))
         return
       }
       
       // Toggle selection for multiple choice
-      const isSelected = currentAnswers.some((item: any) => 
-        Array.isArray(item) ? JSON.stringify(item) === JSON.stringify(value) : item === value
-      )
+      let isSelected
+      if (Array.isArray(value) && value.length > 1) {
+        // For multi-value options, check by option ID
+        const optionId = currentStepData.options?.find(opt => JSON.stringify(opt.value) === JSON.stringify(value))?.id
+        isSelected = currentAnswers.includes(optionId)
+      } else {
+        isSelected = currentAnswers.some((item: any) => 
+          Array.isArray(item) ? JSON.stringify(item) === JSON.stringify(value) : item === value
+        )
+      }
       
       let newAnswers
       if (isSelected) {
-        newAnswers = currentAnswers.filter((item: any) => 
-          Array.isArray(item) ? JSON.stringify(item) !== JSON.stringify(value) : item !== value
-        )
+        // Remove by option ID for multi-value options, by value for others
+        if (Array.isArray(value) && value.length > 1) {
+          // Find and remove the option ID that corresponds to this multi-value option
+          const optionId = currentStepData.options?.find(opt => JSON.stringify(opt.value) === JSON.stringify(value))?.id
+          newAnswers = currentAnswers.filter((item: any) => item !== optionId)
+        } else {
+          newAnswers = currentAnswers.filter((item: any) => 
+            Array.isArray(item) ? JSON.stringify(item) !== JSON.stringify(value) : item !== value
+          )
+        }
       } else {
-        // For pills, flatten arrays when adding
-        if (Array.isArray(value) && value.length === 1) {
+        // For multi-value pills (like Global Mix), store the option ID instead of expanding
+        if (Array.isArray(value) && value.length > 1) {
+          const optionId = currentStepData.options?.find(opt => JSON.stringify(opt.value) === JSON.stringify(value))?.id
+          newAnswers = [...currentAnswers, optionId]
+        } else if (Array.isArray(value) && value.length === 1) {
           newAnswers = [...currentAnswers, value[0]]
         } else if (Array.isArray(value)) {
           newAnswers = [...currentAnswers, ...value]
@@ -256,10 +273,10 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
       return (answers.adults > 0) || (answers.kids > 0)
     }
     
-    // Special handling for meals per week
-    if (currentStepData.id === 'mealsPerWeek') {
-      const mealCounts = ['breakfasts', 'lunches', 'dinners', 'snacks', 'desserts']
-      return mealCounts.some(meal => (answers[meal] || 0) > 0)
+    // Special handling for meal types
+    if (currentStepData.id === 'mealTypes') {
+      const answer = answers[currentStepData.id]
+      return Array.isArray(answer) && answer.length > 0
     }
     
     const answer = answers[currentStepData.id]
@@ -280,12 +297,12 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         adults: answers.adults || 2,
         kids: answers.kids || 0,
         
-        // Meals per week
-        breakfastsPerWeek: answers.breakfasts || 0,
-        lunchesPerWeek: answers.lunches || 0,
-        dinnersPerWeek: answers.dinners || 0,
-        snacksPerWeek: answers.snacks || 0,
-        dessertsPerWeek: answers.desserts || 0,
+        // Meals per week - default to 5 days for selected meal types
+        breakfastsPerWeek: answers.mealTypes?.includes('breakfast') ? 5 : 0,
+        lunchesPerWeek: answers.mealTypes?.includes('lunch') ? 5 : 0,
+        dinnersPerWeek: answers.mealTypes?.includes('dinner') ? 5 : 0,
+        snacksPerWeek: answers.mealTypes?.includes('snacks') ? 5 : 0,
+        dessertsPerWeek: answers.mealTypes?.includes('dessert') ? 3 : 0,
         
         // Dietary preferences
         dietaryStyle: [
@@ -303,9 +320,17 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         customBudgetAmount: answers.customBudgetAmount || '',
         organicPreference: answers.organicPreference || 'no_preference',
         
-        // Cuisine preferences
+        // Cuisine preferences - expand option IDs to actual values
         cuisinePreferences: [
-          ...(answers.cuisinePreferences?.filter(cuisine => cuisine !== 'other') || []),
+          ...((answers.cuisinePreferences || []).reduce((acc: string[], item: string) => {
+            if (item === 'other') return acc
+            // Check if this is an option ID that needs to be expanded
+            const option = onboardingSteps.find(step => step.id === 'cuisinePreferences')?.options?.find(opt => opt.id === item)
+            if (option && Array.isArray(option.value)) {
+              return [...acc, ...option.value]
+            }
+            return [...acc, item]
+          }, [])),
           ...(answers.cuisinePreferencesOther ? [answers.cuisinePreferencesOther] : [])
         ],
         
@@ -321,41 +346,14 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         selectedMealTypes: [],
         diets: answers.dietaryStyle?.flat() || [],
         allergies: answers.foodsToAvoid ? answers.foodsToAvoid.split(',').map(s => s.trim()) : [],
-        mealsPerWeek: (answers.breakfasts || 0) + (answers.lunches || 0) + (answers.dinners || 0),
+        mealsPerWeek: (answers.mealTypes || []).length * 5, // Assume 5 days per week for each selected meal type
         peoplePerMeal: (answers.adults || 2) + ((answers.kids || 0) * 0.5),
-        mealTypes: [
-          // Create meal types based on selected counts
-          ...(answers.breakfasts > 0 ? [{
-            type: 'breakfast' as const,
-            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].slice(0, answers.breakfasts),
-            adults: answers.adults || 2,
-            kids: answers.kids || 0
-          }] : []),
-          ...(answers.lunches > 0 ? [{
-            type: 'lunch' as const,
-            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].slice(0, answers.lunches),
-            adults: answers.adults || 2,
-            kids: answers.kids || 0
-          }] : []),
-          ...(answers.dinners > 0 ? [{
-            type: 'dinner' as const,
-            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].slice(0, answers.dinners),
-            adults: answers.adults || 2,
-            kids: answers.kids || 0
-          }] : []),
-          ...(answers.snacks > 0 ? [{
-            type: 'snacks' as const,
-            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].slice(0, answers.snacks),
-            adults: answers.adults || 2,
-            kids: answers.kids || 0
-          }] : []),
-          ...(answers.desserts > 0 ? [{
-            type: 'dessert' as const,
-            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].slice(0, answers.desserts),
-            adults: answers.adults || 2,
-            kids: answers.kids || 0
-          }] : [])
-        ]
+        mealTypes: (answers.mealTypes || []).map(mealType => ({
+          type: mealType as 'breakfast' | 'lunch' | 'dinner' | 'snacks' | 'dessert',
+          days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'],
+          adults: answers.adults || 2,
+          kids: answers.kids || 0
+        }))
       }
       
       onComplete(preferences)
@@ -376,7 +374,11 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
     const answer = answers[currentStepData.id]
     if (currentStepData.type === 'multiple' || currentStepData.type === 'pills') {
       if (!Array.isArray(answer)) return false
-      // For pills, check if any of the option values are in the answer array
+      // Store and check by option ID for multi-value options to avoid cross-selection
+      if (Array.isArray(option.value) && option.value.length > 1) {
+        return answer.includes(option.id)
+      }
+      // For single-value options, check the actual value
       if (Array.isArray(option.value)) {
         return option.value.some((val: any) => answer.includes(val))
       }
@@ -496,9 +498,9 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
             <div className="mt-6 p-4 bg-neutral-50 rounded-lg border">
               <h4 className="font-medium text-neutral-800 mb-4">Set serving sizes for each meal type:</h4>
               <div className="space-y-4">
-                {/* Only show meal types that have a count > 0 */}
-                {answers.breakfasts > 0 && (
-                  <div className="grid grid-cols-3 gap-4 items-center">
+                {/* Only show meal types that were selected */}
+                {answers.mealTypes?.includes('breakfast') && (
+                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                     <div className="flex items-center gap-2">
                       <span className="text-xl">🥞</span>
                       <span className="font-medium">Breakfast</span>
@@ -515,23 +517,25 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
                       />
                       <span className="text-sm text-neutral-500">{answers.breakfastAdults || answers.adults || 2}</span>
                     </div>
-                    <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="10"
-                        value={answers.breakfastKids || answers.kids || 0}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, breakfastKids: parseInt(e.target.value) }))}
-                        className="w-full"
-                      />
-                      <span className="text-sm text-neutral-500">{answers.breakfastKids || answers.kids || 0}</span>
-                    </div>
+                    {(answers.kids || 0) > 0 && (
+                      <div>
+                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
+                        <input
+                          type="range"
+                          min="0"
+                          max="10"
+                          value={answers.breakfastKids || answers.kids || 0}
+                          onChange={(e) => setAnswers(prev => ({ ...prev, breakfastKids: parseInt(e.target.value) }))}
+                          className="w-full"
+                        />
+                        <span className="text-sm text-neutral-500">{answers.breakfastKids || answers.kids || 0}</span>
+                      </div>
+                    )}
                   </div>
                 )}
                 
-                {answers.lunches > 0 && (
-                  <div className="grid grid-cols-3 gap-4 items-center">
+                {answers.mealTypes?.includes('lunch') && (
+                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                     <div className="flex items-center gap-2">
                       <span className="text-xl">🥗</span>
                       <span className="font-medium">Lunch</span>
@@ -548,23 +552,25 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
                       />
                       <span className="text-sm text-neutral-500">{answers.lunchAdults || answers.adults || 2}</span>
                     </div>
-                    <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="10"
-                        value={answers.lunchKids || answers.kids || 0}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, lunchKids: parseInt(e.target.value) }))}
-                        className="w-full"
-                      />
-                      <span className="text-sm text-neutral-500">{answers.lunchKids || answers.kids || 0}</span>
-                    </div>
+                    {(answers.kids || 0) > 0 && (
+                      <div>
+                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
+                        <input
+                          type="range"
+                          min="0"
+                          max="10"
+                          value={answers.lunchKids || answers.kids || 0}
+                          onChange={(e) => setAnswers(prev => ({ ...prev, lunchKids: parseInt(e.target.value) }))}
+                          className="w-full"
+                        />
+                        <span className="text-sm text-neutral-500">{answers.lunchKids || answers.kids || 0}</span>
+                      </div>
+                    )}
                   </div>
                 )}
 
-                {answers.dinners > 0 && (
-                  <div className="grid grid-cols-3 gap-4 items-center">
+                {answers.mealTypes?.includes('dinner') && (
+                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                     <div className="flex items-center gap-2">
                       <span className="text-xl">🍽️</span>
                       <span className="font-medium">Dinner</span>
@@ -581,23 +587,25 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
                       />
                       <span className="text-sm text-neutral-500">{answers.dinnerAdults || answers.adults || 2}</span>
                     </div>
-                    <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="10"
-                        value={answers.dinnerKids || answers.kids || 0}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, dinnerKids: parseInt(e.target.value) }))}
-                        className="w-full"
-                      />
-                      <span className="text-sm text-neutral-500">{answers.dinnerKids || answers.kids || 0}</span>
-                    </div>
+                    {(answers.kids || 0) > 0 && (
+                      <div>
+                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
+                        <input
+                          type="range"
+                          min="0"
+                          max="10"
+                          value={answers.dinnerKids || answers.kids || 0}
+                          onChange={(e) => setAnswers(prev => ({ ...prev, dinnerKids: parseInt(e.target.value) }))}
+                          className="w-full"
+                        />
+                        <span className="text-sm text-neutral-500">{answers.dinnerKids || answers.kids || 0}</span>
+                      </div>
+                    )}
                   </div>
                 )}
 
-                {answers.snacks > 0 && (
-                  <div className="grid grid-cols-3 gap-4 items-center">
+                {answers.mealTypes?.includes('snacks') && (
+                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                     <div className="flex items-center gap-2">
                       <span className="text-xl">🍿</span>
                       <span className="font-medium">Snacks</span>
@@ -614,23 +622,25 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
                       />
                       <span className="text-sm text-neutral-500">{answers.snacksAdults || answers.adults || 2}</span>
                     </div>
-                    <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="10"
-                        value={answers.snacksKids || answers.kids || 0}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, snacksKids: parseInt(e.target.value) }))}
-                        className="w-full"
-                      />
-                      <span className="text-sm text-neutral-500">{answers.snacksKids || answers.kids || 0}</span>
-                    </div>
+                    {(answers.kids || 0) > 0 && (
+                      <div>
+                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
+                        <input
+                          type="range"
+                          min="0"
+                          max="10"
+                          value={answers.snacksKids || answers.kids || 0}
+                          onChange={(e) => setAnswers(prev => ({ ...prev, snacksKids: parseInt(e.target.value) }))}
+                          className="w-full"
+                        />
+                        <span className="text-sm text-neutral-500">{answers.snacksKids || answers.kids || 0}</span>
+                      </div>
+                    )}
                   </div>
                 )}
 
-                {answers.desserts > 0 && (
-                  <div className="grid grid-cols-3 gap-4 items-center">
+                {answers.mealTypes?.includes('dessert') && (
+                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                     <div className="flex items-center gap-2">
                       <span className="text-xl">🍰</span>
                       <span className="font-medium">Desserts</span>
@@ -647,18 +657,20 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
                       />
                       <span className="text-sm text-neutral-500">{answers.dessertsAdults || answers.adults || 2}</span>
                     </div>
-                    <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="10"
-                        value={answers.dessertsKids || answers.kids || 0}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, dessertsKids: parseInt(e.target.value) }))}
-                        className="w-full"
-                      />
-                      <span className="text-sm text-neutral-500">{answers.dessertsKids || answers.kids || 0}</span>
-                    </div>
+                    {(answers.kids || 0) > 0 && (
+                      <div>
+                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
+                        <input
+                          type="range"
+                          min="0"
+                          max="10"
+                          value={answers.dessertsKids || answers.kids || 0}
+                          onChange={(e) => setAnswers(prev => ({ ...prev, dessertsKids: parseInt(e.target.value) }))}
+                          className="w-full"
+                        />
+                        <span className="text-sm text-neutral-500">{answers.dessertsKids || answers.kids || 0}</span>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -832,7 +844,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
             className="flex items-center gap-2 px-6 py-3 text-neutral-600 hover:text-neutral-800 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            {currentStep === 0 ? 'Back to options' : 'Previous'}
+            {currentStep === 0 ? 'Back to homepage' : 'Previous'}
           </button>
 
           <button

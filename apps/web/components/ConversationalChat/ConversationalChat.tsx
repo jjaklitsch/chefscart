@@ -21,6 +21,7 @@ import { getStepById } from './conversationFlow'
 interface ConversationalChatProps {
   onPreferencesComplete: (preferences: UserPreferences) => void
   onProgressUpdate?: (preferences: Partial<UserPreferences>) => void
+  onBackToHome?: () => void
 }
 
 interface ConversationMessage {
@@ -164,7 +165,7 @@ const generateMealsFromPreferences = async (preferences: Partial<UserPreferences
   }
 }
 
-export default function ConversationalChat({ onPreferencesComplete, onProgressUpdate }: ConversationalChatProps) {
+export default function ConversationalChat({ onPreferencesComplete, onProgressUpdate, onBackToHome }: ConversationalChatProps) {
   const router = useRouter()
   const [conversationState, setConversationState] = useState<ConversationState>({
     preferences: {},
@@ -757,12 +758,16 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
   }, [onPreferencesComplete])
 
   const handleBackFromGuided = useCallback(() => {
-    setConversationState(prev => ({
-      ...prev,
-      initialChoiceMade: false,
-      showGuidedOnboarding: false
-    }))
-  }, [])
+    if (onBackToHome) {
+      onBackToHome()
+    } else {
+      setConversationState(prev => ({
+        ...prev,
+        initialChoiceMade: false,
+        showGuidedOnboarding: false
+      }))
+    }
+  }, [onBackToHome])
 
   // Show welcome screen if no initial choice has been made
   console.log('ConversationalChat render - initialChoiceMade:', conversationState.initialChoiceMade)
