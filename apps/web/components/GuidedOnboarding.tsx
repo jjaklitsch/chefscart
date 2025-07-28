@@ -174,7 +174,19 @@ const cuisinePreferenceOptions = [
   { id: 'indian', label: 'Indian', value: ['indian'], icon: '🍛' },
   { id: 'thai', label: 'Thai', value: ['thai'], icon: '🌶️' },
   { id: 'chinese', label: 'Chinese', value: ['chinese'], icon: '🥡' },
-  { id: 'variety', label: 'Mix it up!', value: ['italian', 'mexican', 'asian', 'american'], icon: '🌍' },
+  { id: 'japanese', label: 'Japanese', value: ['japanese'], icon: '🍣' },
+  { id: 'korean', label: 'Korean', value: ['korean'], icon: '🇰🇷' },
+  { id: 'french', label: 'French', value: ['french'], icon: '🇫🇷' },
+  { id: 'greek', label: 'Greek', value: ['greek'], icon: '🇬🇷' },
+  { id: 'spanish', label: 'Spanish', value: ['spanish'], icon: '🇪🇸' },
+  { id: 'middle_eastern', label: 'Middle Eastern', value: ['middle_eastern'], icon: '🧆' },
+  { id: 'moroccan', label: 'Moroccan', value: ['moroccan'], icon: '🇲🇦' },
+  { id: 'vietnamese', label: 'Vietnamese', value: ['vietnamese'], icon: '🇻🇳' },
+  { id: 'brazilian', label: 'Brazilian', value: ['brazilian'], icon: '🇧🇷' },
+  { id: 'peruvian', label: 'Peruvian', value: ['peruvian'], icon: '🇵🇪' },
+  { id: 'ethiopian', label: 'Ethiopian', value: ['ethiopian'], icon: '🇪🇹' },
+  { id: 'jamaican', label: 'Jamaican', value: ['jamaican'], icon: '🇯🇲' },
+  { id: 'variety', label: 'Mix it up!', value: ['italian', 'mexican', 'asian', 'american', 'indian', 'mediterranean'], icon: '🌍' },
   { id: 'other', label: 'Other', value: 'other', icon: '✏️' }
 ]
 

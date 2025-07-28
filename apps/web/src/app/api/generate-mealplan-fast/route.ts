@@ -101,44 +101,51 @@ export async function POST(request: NextRequest) {
     }
 
     console.log('Generating meal plan using 2-phase approach...')
+    console.log('Received preferences:', JSON.stringify(preferences, null, 2))
     const startTime = Date.now()
 
     // Create meal requests from preferences
     const mealRequests: string[] = []
+    
+    // Debug: Check the structure of mealTypes
+    console.log('preferences.mealTypes:', preferences.mealTypes)
+    
     preferences.mealTypes?.forEach((mealType: any) => {
+      console.log('Processing mealType:', mealType)
       mealType.days.forEach(() => {
         mealRequests.push(mealType.type)
       })
     })
 
     const totalMeals = mealRequests.length
+    console.log(`Meal requests array:`, mealRequests)
     console.log(`Phase 1: Generating ${totalMeals} meal ideas`)
 
     // Phase 1: Generate basic meal ideas only
     const ideasPrompt = createMealIdeasPrompt(preferences, mealRequests)
+    console.log('Generated prompt:', ideasPrompt)
     
-    const ideasCompletion = await Promise.race([
-      getOpenAIClient().chat.completions.create({
-        model: 'gpt-4o-mini',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a meal planning expert. Generate diverse, appealing meal ideas with basic information. Focus on variety and user preferences.'
-          },
-          {
-            role: 'user',
-            content: ideasPrompt
-          }
-        ],
-        functions: [MEAL_IDEAS_FUNCTION],
-        function_call: { name: 'generate_meal_ideas' },
-        temperature: 0.9,
-        max_tokens: 3000,
-      }),
-      new Promise<never>((_, reject) => 
-        setTimeout(() => reject(new Error('Meal ideas generation timeout')), 8000)
-      )
-    ])
+    console.log('About to make OpenAI API call for meal ideas...')
+    
+    const ideasCompletion = await getOpenAIClient().chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [
+        {
+          role: 'system',
+          content: 'You are a meal planning expert. Generate diverse, appealing meal ideas with basic information. Focus on variety and user preferences.'
+        },
+        {
+          role: 'user',
+          content: ideasPrompt
+        }
+      ],
+      functions: [MEAL_IDEAS_FUNCTION],
+      function_call: { name: 'generate_meal_ideas' },
+      temperature: 0.9,
+      max_tokens: 3000,
+    })
+
+    console.log('OpenAI API call completed successfully')
 
     const ideasFunctionCall = ideasCompletion.choices[0]?.message?.function_call
     if (!ideasFunctionCall || ideasFunctionCall.name !== 'generate_meal_ideas') {
@@ -158,6 +165,7 @@ export async function POST(request: NextRequest) {
     }
 
     console.log(`Phase 1 complete: Generated ${mealIdeas.length} meal ideas`)
+    console.log('Meal ideas:', JSON.stringify(mealIdeas, null, 2))
     
     // Phase 2: Generate detailed ingredients and instructions in parallel
     console.log(`Phase 2: Generating details for ${mealIdeas.length} recipes in parallel`)
@@ -166,28 +174,23 @@ export async function POST(request: NextRequest) {
       try {
         const detailPrompt = createRecipeDetailPrompt(meal, preferences)
         
-        const detailCompletion = await Promise.race([
-          getOpenAIClient().chat.completions.create({
-            model: 'gpt-4o-mini',
-            messages: [
-              {
-                role: 'system',
-                content: 'You are a professional chef. Generate detailed, accurate ingredients and step-by-step cooking instructions.'
-              },
-              {
-                role: 'user',
-                content: detailPrompt
-              }
-            ],
-            functions: [RECIPE_DETAILS_FUNCTION],
-            function_call: { name: 'generate_recipe_details' },
-            temperature: 0.7,
-            max_tokens: 1500,
-          }),
-          new Promise<never>((_, reject) => 
-            setTimeout(() => reject(new Error('Recipe detail timeout')), 10000)
-          )
-        ])
+        const detailCompletion = await getOpenAIClient().chat.completions.create({
+          model: 'gpt-4o-mini',
+          messages: [
+            {
+              role: 'system',
+              content: 'You are a professional chef. Generate detailed, accurate ingredients and step-by-step cooking instructions.'
+            },
+            {
+              role: 'user',
+              content: detailPrompt
+            }
+          ],
+          functions: [RECIPE_DETAILS_FUNCTION],
+          function_call: { name: 'generate_recipe_details' },
+          temperature: 0.7,
+          max_tokens: 1500,
+        })
 
         const detailFunctionCall = detailCompletion.choices[0]?.message?.function_call
         if (!detailFunctionCall || detailFunctionCall.name !== 'generate_recipe_details') {
