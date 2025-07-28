@@ -3,7 +3,7 @@ import OpenAI from 'openai'
 import { VoiceSynthesisRequest } from '../../../../../types'
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY || 'placeholder-key-for-build',
 })
 
 export async function POST(request: NextRequest) {

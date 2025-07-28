@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 
 // Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY || 'placeholder-key-for-build',
 })
 
 export async function POST(request: NextRequest) {

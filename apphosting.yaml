@@ -15,9 +15,14 @@ runConfig:
   
   # Environment variables available at build time and runtime
   env:
-    # OpenAI API configuration
+    # Placeholder API keys for build time (will be overridden at runtime)
     - variable: OPENAI_API_KEY
-      secret: OPENAI_API_KEY
+      value: "placeholder-key-for-build"
+      availability: [BUILD]
+    
+    - variable: RESEND_API_KEY
+      value: "placeholder-key-for-build"
+      availability: [BUILD]
     
     # Firebase configuration (automatically provided by Firebase)
     - variable: FIREBASE_CONFIG
@@ -25,10 +30,6 @@ runConfig:
     
     - variable: FIREBASE_WEBAPP_CONFIG
       availability: [BUILD]
-    
-    # Email service configuration
-    - variable: RESEND_API_KEY
-      secret: RESEND_API_KEY
     
     # Application environment
     - variable: NODE_ENV

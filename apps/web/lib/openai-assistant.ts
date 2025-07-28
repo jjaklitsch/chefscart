@@ -9,7 +9,7 @@ import {
 } from '../types/assistant'
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY || 'placeholder-key-for-build',
 })
 
 // Validation and error handling utilities
