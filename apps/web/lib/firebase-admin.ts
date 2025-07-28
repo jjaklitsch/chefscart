@@ -14,17 +14,16 @@ if (getApps().length === 0) {
                        clientEmail === 'placeholder@firebase.iam.gserviceaccount.com' ||
                        privateKey?.includes('placeholder-key')
   
-  if (!projectId || !clientEmail || !privateKey || isPlaceholder) {
-    // During build time, create a minimal app without credentials
-    if (process.env.NODE_ENV === 'production' && isPlaceholder) {
-      // This is a build-time placeholder - create mock app
-      app = initializeApp({
-        projectId: 'build-placeholder',
-      })
-    } else {
-      throw new Error('Missing required Firebase environment variables')
-    }
+  // During build time with placeholders, create a minimal app without credentials
+  if (isPlaceholder) {
+    app = initializeApp({
+      projectId: 'build-placeholder',
+    })
+  } else if (!projectId || !clientEmail || !privateKey) {
+    // Only throw error if we're not in build mode with placeholders
+    throw new Error('Missing required Firebase environment variables')
   } else {
+    // Normal initialization with real credentials
     app = initializeApp({
       credential: cert({
         projectId,
