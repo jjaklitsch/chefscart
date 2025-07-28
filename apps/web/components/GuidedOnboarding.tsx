@@ -1,8 +1,9 @@
 "use client"
 
-import React, { useState, useRef, useCallback } from 'react'
-import { ChefHat, ArrowRight, ArrowLeft, Check, Upload, X, Camera, Plus } from 'lucide-react'
+import React, { useState, useRef, useCallback, useEffect } from 'react'
+import { ChefHat, ArrowRight, ArrowLeft, Check, Upload, X, Camera, Plus, Menu, CheckCircle } from 'lucide-react'
 import { UserPreferences } from '../types'
+import Header from './Header'
 
 interface GuidedOnboardingProps {
   onComplete: (preferences: UserPreferences) => void
@@ -39,25 +40,25 @@ const onboardingSteps: OnboardingStep[] = [
     id: 'healthGoal',
     title: 'Health goals',
     question: 'What is your primary health goal?',
-    required: false
+    required: true
   },
   {
     id: 'cookingTime',
     title: 'Cooking time',
     question: 'How much time do you prefer to spend cooking?',
-    required: false
+    required: true
   },
   {
     id: 'cookingSkill',
     title: 'Cooking skill',
     question: 'How would you describe your cooking experience?',
-    required: false
+    required: true
   },
   {
     id: 'budgetSensitivity',
     title: 'Budget preference',
     question: 'What is your budget preference for meals?',
-    required: false
+    required: true
   },
   {
     id: 'organicPreference',
@@ -176,8 +177,47 @@ const cuisinePreferenceOptions = [
   { id: 'other', label: 'Other', value: 'other', icon: '✏️' }
 ]
 
+// LocalStorage utilities for preference persistence
+const STORAGE_KEY = 'chefscart_preferences'
+
+const savePreferencesToStorage = (preferences: Record<string, any>) => {
+  try {
+    const dataToSave = {
+      ...preferences,
+      lastUpdated: Date.now()
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave))
+  } catch (error) {
+    console.warn('Failed to save preferences to localStorage:', error)
+  }
+}
+
+const loadPreferencesFromStorage = () => {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY)
+    if (stored) {
+      const parsed = JSON.parse(stored)
+      // Remove lastUpdated timestamp from the actual preferences
+      const { lastUpdated, ...preferences } = parsed
+      return preferences
+    }
+  } catch (error) {
+    console.warn('Failed to load preferences from localStorage:', error)
+  }
+  return null
+}
+
+const clearStoredPreferences = () => {
+  try {
+    localStorage.removeItem(STORAGE_KEY)
+  } catch (error) {
+    console.warn('Failed to clear stored preferences:', error)
+  }
+}
+
 export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardingProps) {
   const [currentStep, setCurrentStep] = useState(0)
+  const [isInitialized, setIsInitialized] = useState(false)
   const [answers, setAnswers] = useState<Record<string, any>>({
     // Default values for Plan Selector
     servingsPerMeal: 3,
@@ -190,6 +230,47 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
   const [showIngredientConfirmation, setShowIngredientConfirmation] = useState(false)
   const [identifiedIngredients, setIdentifiedIngredients] = useState<string[]>([])
   const [manualIngredientInput, setManualIngredientInput] = useState('')
+  const [showChecklist, setShowChecklist] = useState(false)
+  const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set())
+
+  // Load preferences from localStorage on component mount
+  useEffect(() => {
+    const storedPreferences = loadPreferencesFromStorage()
+    if (storedPreferences) {
+      setAnswers(prevAnswers => ({
+        ...prevAnswers,
+        ...storedPreferences
+      }))
+    }
+    setIsInitialized(true)
+  }, [])
+
+  // Save preferences to localStorage whenever answers change (after initial load)
+  useEffect(() => {
+    if (isInitialized) {
+      savePreferencesToStorage(answers)
+    }
+  }, [answers, isInitialized])
+
+  // Auto-mark steps as completed when they become valid
+  useEffect(() => {
+    if (isInitialized) {
+      const newCompletedSteps = new Set(completedSteps)
+      let hasChanges = false
+      
+      // Check all previous steps and current step
+      for (let i = 0; i <= currentStep; i++) {
+        if (!completedSteps.has(i) && isStepComplete(i)) {
+          newCompletedSteps.add(i)
+          hasChanges = true
+        }
+      }
+      
+      if (hasChanges) {
+        setCompletedSteps(newCompletedSteps)
+      }
+    }
+  }, [answers, currentStep, isInitialized, completedSteps])
 
   const currentStepData = onboardingSteps[currentStep]
   const isLastStep = currentStep === onboardingSteps.length - 1
@@ -204,7 +285,9 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
     
     // Handle "none" option specially for dietary style
     if (field === 'dietaryStyle' && Array.isArray(value) && value.length === 0) {
-      if (Array.isArray(currentAnswers) && currentAnswers.length === 0) {
+      // If "None" is currently selected (either undefined or empty array), toggle it off by setting to undefined
+      // If other options are selected, set to empty array (selecting "None")
+      if (!answers[field] || (Array.isArray(currentAnswers) && currentAnswers.length === 0)) {
         setAnswers(prev => ({ ...prev, [field]: undefined }))
       } else {
         setAnswers(prev => ({ ...prev, [field]: [] }))
@@ -256,12 +339,14 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
   // Check if a pill option is selected
   const isPillSelected = (field: string, option: any, options: any[]) => {
     const answer = answers[field]
-    if (!Array.isArray(answer)) return false
     
     // Special handling for "None" option with empty array value
     if (option.id === 'none' && Array.isArray(option.value) && option.value.length === 0) {
-      return Array.isArray(answer) && answer.length === 0
+      // "None" is selected when answer is undefined, null, or empty array
+      return !answer || (Array.isArray(answer) && answer.length === 0)
     }
+    
+    if (!Array.isArray(answer)) return false
     
     // Store and check by option ID for multi-value options
     if (Array.isArray(option.value) && option.value.length > 1) {
@@ -283,7 +368,27 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
       return (answers.breakfastMeals || 0) > 0 || (answers.lunchMeals || 0) > 0 || (answers.dinnerMeals || 0) > 0
     }
     
-    // All other steps are optional
+    // Health Goal - must select a health goal
+    if (currentStepData?.id === 'healthGoal') {
+      return answers.healthGoal && answers.healthGoal.trim() !== ''
+    }
+    
+    // Cooking Time - must select a time preference
+    if (currentStepData?.id === 'cookingTime') {
+      return answers.cookingTime && answers.cookingTime > 0
+    }
+    
+    // Cooking Skill - must select a skill level
+    if (currentStepData?.id === 'cookingSkill') {
+      return answers.cookingSkill && answers.cookingSkill.trim() !== ''
+    }
+    
+    // Budget Sensitivity - must select a budget preference
+    if (currentStepData?.id === 'budgetSensitivity') {
+      return answers.budgetSensitivity && answers.budgetSensitivity.trim() !== ''
+    }
+    
+    // All other steps are optional (dietaryStyle, foodsToAvoid, organicPreference, favoriteFoods, cuisinePreferences, additionalConsiderations, fridgePantryPhotos)
     return true
   }
 
@@ -473,8 +578,12 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
         pantryItems: [...identifiedIngredients, ...(answers.manuallyAddedIngredients || [])]
       }
       
+      // Clear stored preferences since we're completing the flow
+      clearStoredPreferences()
+      
       onComplete(preferences)
     } else {
+      setCompletedSteps(prev => new Set(prev).add(currentStep))
       setCurrentStep(prev => prev + 1)
     }
   }
@@ -490,6 +599,48 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
       onBack()
     } else {
       setCurrentStep(prev => prev - 1)
+    }
+  }
+
+  // Check if a specific step is valid (has required fields filled)
+  const isStepComplete = (stepIndex: number) => {
+    if (stepIndex >= onboardingSteps.length) return false
+    
+    const stepData = onboardingSteps[stepIndex]
+    if (!stepData.required) return true // Optional steps are always "complete"
+    
+    // Check validation for each required step
+    if (stepData.id === 'planSelector') {
+      return (answers.breakfastMeals || 0) > 0 || (answers.lunchMeals || 0) > 0 || (answers.dinnerMeals || 0) > 0
+    }
+    if (stepData.id === 'healthGoal') {
+      return answers.healthGoal && answers.healthGoal.trim() !== ''
+    }
+    if (stepData.id === 'cookingTime') {
+      return answers.cookingTime && answers.cookingTime > 0
+    }
+    if (stepData.id === 'cookingSkill') {
+      return answers.cookingSkill && answers.cookingSkill.trim() !== ''
+    }
+    if (stepData.id === 'budgetSensitivity') {
+      return answers.budgetSensitivity && answers.budgetSensitivity.trim() !== ''
+    }
+    
+    return true // Default to true for unknown steps
+  }
+
+  const navigateToStep = (stepIndex: number) => {
+    // Can only navigate to:
+    // 1. Completed steps (marked as completed)
+    // 2. Current step  
+    // 3. Next step IF current step is complete
+    const canGoToStep = completedSteps.has(stepIndex) || 
+                       stepIndex === currentStep || 
+                       (stepIndex === currentStep + 1 && isStepComplete(currentStep))
+    
+    if (canGoToStep) {
+      setCurrentStep(stepIndex)
+      setShowChecklist(false)
     }
   }
 
@@ -613,11 +764,127 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
   }, [answers.fridgePantryPhotos, isLastStep, handleNext])
 
   return (
-    <div className="min-h-screen bg-health-gradient flex items-center justify-center p-4">
+    <div className="min-h-screen bg-health-gradient">
+      <Header />
+      <div className="flex items-start justify-center p-4">
+      {/* Checklist Sidebar */}
+      {showChecklist && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-50 lg:hidden"
+          onClick={() => setShowChecklist(false)}
+        />
+      )}
+      
+      <div className={`fixed left-0 top-16 h-full bg-white shadow-xl z-40 transition-transform duration-300 ${
+        showChecklist ? 'translate-x-0' : '-translate-x-full'
+      } lg:relative lg:top-0 lg:translate-x-0 lg:shadow-none lg:mr-4 w-80 lg:w-64 lg:z-auto`}>
+        <div className="p-6 h-full overflow-y-auto pt-6 lg:pt-6">
+          <div className="flex items-center justify-between mb-6 lg:hidden">
+            <h3 className="text-lg font-semibold">Progress Checklist</h3>
+            <button
+              onClick={() => setShowChecklist(false)}
+              className="p-2 hover:bg-gray-100 rounded-lg"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+          
+          <div className="hidden lg:block mb-6">
+            <h3 className="text-lg font-semibold">Progress</h3>
+            
+            {/* Progress bar moved to sidebar */}
+            <div className="mt-4">
+              <div className="relative">
+                <div className="w-full h-2 bg-neutral-200 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-gradient-to-r from-brand-500 to-brand-600 rounded-full transition-all duration-500 ease-out"
+                    style={{ 
+                      width: `${((currentStep + 1) / onboardingSteps.length) * 100}%` 
+                    }}
+                  />
+                </div>
+                <div className="flex justify-between items-center mt-2">
+                  <span className="text-xs text-neutral-500">
+                    Step {currentStep + 1}
+                  </span>
+                  <span className="text-xs text-neutral-500">
+                    {Math.round(((currentStep + 1) / onboardingSteps.length) * 100)}% complete
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="space-y-2">
+            {onboardingSteps.map((step, index) => {
+              const isCompleted = completedSteps.has(index)
+              const isCurrent = currentStep === index
+              const canNavigate = isCompleted || 
+                                 index === currentStep || 
+                                 (index === currentStep + 1 && isStepComplete(currentStep))
+              
+              return (
+                <button
+                  key={step.id}
+                  onClick={() => canNavigate && navigateToStep(index)}
+                  disabled={!canNavigate}
+                  className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
+                    isCurrent 
+                      ? 'bg-orange-100 border-2 border-orange-500' 
+                      : canNavigate
+                        ? 'hover:bg-gray-100 cursor-pointer'
+                        : 'opacity-50 cursor-not-allowed'
+                  }`}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center ${
+                      isCompleted 
+                        ? 'bg-green-500 text-white' 
+                        : isCurrent
+                          ? 'bg-orange-500 text-white'
+                          : 'bg-gray-300'
+                    }`}>
+                      {isCompleted ? (
+                        <Check className="h-3 w-3" />
+                      ) : (
+                        <span className="text-xs font-bold">{index + 1}</span>
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <p className={`text-sm font-medium ${
+                        isCurrent ? 'text-orange-700' : 'text-gray-700'
+                      }`}>
+                        {step.title}
+                        {step.required && <span className="text-red-500 ml-1">*</span>}
+                      </p>
+                      {step.required && (
+                        <p className="text-xs text-gray-500 mt-0.5">Required</p>
+                      )}
+                    </div>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+          
+          <div className="mt-8 p-4 bg-gray-50 rounded-lg">
+            <p className="text-xs text-gray-600">
+              Complete all required steps to generate your personalized meal plan.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-white rounded-2xl shadow-soft max-w-2xl w-full p-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => setShowChecklist(true)}
+              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
             <div className="w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full flex items-center justify-center">
               <ChefHat className="w-6 h-6 text-white" />
             </div>
@@ -632,27 +899,6 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
           </div>
         </div>
 
-        {/* Progress Bar */}
-        <div className="mb-8">
-          <div className="relative">
-            <div className="w-full h-2 bg-neutral-200 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-gradient-to-r from-brand-500 to-brand-600 rounded-full transition-all duration-500 ease-out"
-                style={{ 
-                  width: `${((currentStep + 1) / onboardingSteps.length) * 100}%` 
-                }}
-              />
-            </div>
-            <div className="flex justify-between items-center mt-2">
-              <span className="text-xs text-neutral-500">
-                Step {currentStep + 1}
-              </span>
-              <span className="text-xs text-neutral-500">
-                {Math.round(((currentStep + 1) / onboardingSteps.length) * 100)}% complete
-              </span>
-            </div>
-          </div>
-        </div>
 
         {/* Question */}
         <div className="mb-8">
@@ -1280,20 +1526,11 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
           )}
         </div>
 
-        {/* Live Footer with Totals */}
-        <div className="bg-neutral-50 rounded-lg p-4 mb-6">
-          <div className="text-center">
-            <span className="text-lg font-semibold text-neutral-800">
-              Total meals: {totalMeals} | Total servings: {totalServings}
-            </span>
-          </div>
-        </div>
-
         {/* Navigation */}
         <div className="flex justify-between">
           <button
             onClick={handlePrevious}
-            className="flex items-center gap-2 px-6 py-3 text-neutral-600 hover:text-neutral-800 transition-colors text-left"
+            className="flex items-center gap-2 px-3 py-2 text-neutral-600 hover:text-neutral-800 hover:bg-gray-100 rounded-lg transition-colors text-left"
           >
             <ArrowLeft className="w-4 h-4" />
             {currentStep === 0 ? 'Back to homepage' : 
@@ -1327,6 +1564,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
             </button>
           )}
         </div>
+      </div>
       </div>
     </div>
   )

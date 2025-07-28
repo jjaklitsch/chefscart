@@ -73,6 +73,7 @@ export interface Recipe {
   id: string
   title: string
   description: string
+  mealType?: string
   ingredients: Ingredient[]
   instructions: string[]
   nutrition: NutritionInfo
@@ -84,6 +85,8 @@ export interface Recipe {
   cuisine: string
   tags: string[]
   imageUrl?: string
+  imageLoading?: boolean
+  imageError?: boolean
   selected?: boolean
 }
 

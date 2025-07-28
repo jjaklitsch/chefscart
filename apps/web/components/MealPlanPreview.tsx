@@ -16,16 +16,16 @@ function ExpandableSection({ title, children, defaultOpen = false }: { title: st
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
+    <div className="border border-gray-200 rounded-lg overflow-hidden -mx-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center"
+        className="w-full px-10 py-3 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center"
       >
         <span className="font-semibold text-gray-900">{title}</span>
         {isOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
       </button>
       {isOpen && (
-        <div className="p-4 bg-white">
+        <div className="px-10 py-4 bg-white">
           {children}
         </div>
       )}
@@ -133,6 +133,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
   const [modalRecipe, setModalRecipe] = useState<Recipe | null>(null)
   const [replacingRecipes, setReplacingRecipes] = useState<Set<string>>(new Set())
   const [toastMessage, setToastMessage] = useState<string | null>(null)
+  const [dismissedRecipes, setDismissedRecipes] = useState<string[]>([]) // Track dismissed recipes
   const generatedImages = useRef<Set<string>>(new Set())
 
   const showToast = (message: string) => {
@@ -142,9 +143,13 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
 
   // Group recipes by meal type
   const groupedRecipes = selectedRecipes.reduce((groups: Record<string, Recipe[]>, recipe) => {
-    const mealType = recipe.tags?.find(tag => 
+    // Use the mealType property directly, fallback to tags, then 'other'
+    let mealType = recipe.mealType?.toLowerCase() || recipe.tags?.find(tag => 
       ['breakfast', 'lunch', 'dinner', 'snack'].includes(tag.toLowerCase())
     ) || 'other'
+    
+    // Normalize meal type names
+    if (mealType === 'snacks') mealType = 'snack'
     
     if (!groups[mealType]) {
       groups[mealType] = []
@@ -158,11 +163,14 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
   const orderedMealTypes = mealTypeOrder.filter(type => groupedRecipes && groupedRecipes[type] && groupedRecipes[type].length > 0)
 
   const handleReplaceRecipe = async (recipeToReplace: Recipe) => {
+    // Add to dismissed recipes list
+    setDismissedRecipes(prev => [...prev, recipeToReplace.title])
+    
     // Mark recipe as being replaced
     setReplacingRecipes(prev => new Set(prev).add(recipeToReplace.id))
     
     try {
-      // Generate a new recipe by calling the API
+      // Generate a new recipe by calling the API with dismissed recipes
       const response = await fetch('/api/generate-replacement-recipe', {
         method: 'POST',
         headers: {
@@ -171,7 +179,8 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         body: JSON.stringify({
           recipeToReplace,
           currentRecipes: selectedRecipes,
-          preferences: preferences
+          preferences: preferences,
+          dismissedRecipes: [...dismissedRecipes, recipeToReplace.title] // Include previously dismissed
         })
       })
 
@@ -187,15 +196,75 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
           recipe.id === recipeToReplace.id ? newRecipe : recipe
         )
       )
+
+      // Generate image for new recipe in background
+      generateSingleImageInBackground(newRecipe)
+      
+      showToast(`Replaced "${recipeToReplace.title}" with "${newRecipe.title}"`)
     } catch (error) {
       console.error('Error replacing recipe:', error)
       showToast('Failed to generate a replacement recipe. Please try again.')
+      // Remove from dismissed list if replacement failed
+      setDismissedRecipes(prev => prev.filter(title => title !== recipeToReplace.title))
     } finally {
       setReplacingRecipes(prev => {
         const next = new Set(prev)
         next.delete(recipeToReplace.id)
         return next
       })
+    }
+  }
+
+  const generateSingleImageInBackground = async (recipe: any) => {
+    try {
+      // Race against timeout for single image generation
+      const response = await Promise.race([
+        fetch('/api/generate-dish-image', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            dishName: recipe.title,
+            description: recipe.description,
+            cuisine: recipe.cuisine,
+            thumbnail: true // Flag for optimized thumbnail prompts
+          })
+        }),
+        new Promise<never>((_, reject) => 
+          setTimeout(() => reject(new Error('Replacement image timeout')), 10000) // 10s timeout
+        )
+      ])
+
+      if (response.ok) {
+        const data = await response.json()
+        console.log(`✅ Generated replacement image for ${recipe.title}`)
+        setSelectedRecipes(prev => 
+          prev.map(r => 
+            r.id === recipe.id 
+              ? { ...r, imageUrl: data.imageUrl, imageLoading: false }
+              : r
+          )
+        )
+      } else {
+        console.warn(`❌ Failed to generate replacement image for ${recipe.title}`)
+        setSelectedRecipes(prev => 
+          prev.map(r => 
+            r.id === recipe.id 
+              ? { ...r, imageLoading: false, imageError: true }
+              : r
+          )
+        )
+      }
+    } catch (error) {
+      console.warn(`❌ Replacement image timeout for ${recipe.title}:`, error.message)
+      setSelectedRecipes(prev => 
+        prev.map(r => 
+          r.id === recipe.id 
+            ? { ...r, imageLoading: false, imageError: true }
+            : r
+        )
+      )
     }
   }
 
@@ -248,8 +317,8 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
     generateImages()
   }, [selectedRecipes])
 
-  // Calculate totals
-  const totalCost = selectedRecipes.reduce((sum, recipe) => sum + ((recipe.estimatedCost || 0) * (recipe.servings || 1)), 0)
+  // Calculate totals (will update automatically when selectedRecipes changes)
+  const totalCost = selectedRecipes.reduce((sum, recipe) => sum + ((recipe.estimatedCost || 8) * (recipe.servings || 1)), 0)
   const totalServings = selectedRecipes.reduce((sum, recipe) => sum + (recipe.servings || 0), 0)
 
   return (
@@ -315,7 +384,11 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
           {orderedMealTypes.map((mealType) => (
             <div key={mealType}>
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6 capitalize">
-                {mealType === 'other' ? 'Other Meals' : `${mealType}s`}
+                {mealType === 'breakfast' ? 'Breakfast' :
+                 mealType === 'lunch' ? 'Lunch' :
+                 mealType === 'dinner' ? 'Dinner' :
+                 mealType === 'snack' ? 'Snacks' :
+                 'Other Meals'}
               </h2>
               <div className="space-y-4 md:space-y-6">
                 {groupedRecipes[mealType]?.map((recipe) => (
@@ -324,19 +397,19 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                     <div className="md:hidden">
                       {/* Recipe Image */}
                       <div className="w-full h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center overflow-hidden">
-                        {imageLoading[recipe.id] ? (
+                        {recipe.imageLoading || imageLoading[recipe.id] ? (
                           <div className="flex flex-col items-center text-center p-4">
                             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-600 mb-2"></div>
                             <p className="text-xs text-gray-600">Generating image...</p>
                           </div>
-                        ) : imageUrls[recipe.id] ? (
+                        ) : recipe.imageUrl || imageUrls[recipe.id] ? (
                           <img 
-                            src={imageUrls[recipe.id]} 
+                            src={recipe.imageUrl || imageUrls[recipe.id]} 
                             alt={recipe.title}
                             className="w-full h-full object-cover"
                             onError={() => setImageErrors(prev => ({ ...prev, [recipe.id]: true }))}
                           />
-                        ) : imageErrors[recipe.id] ? (
+                        ) : recipe.imageError || imageErrors[recipe.id] ? (
                           <div className="flex flex-col items-center text-center p-4">
                             <div className="text-4xl opacity-60 mb-1">🍽️</div>
                             <p className="text-xs text-gray-500">Image unavailable</p>
@@ -369,7 +442,12 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                           </span>
                           <span className="flex items-center">
                             <DollarSign className="h-3 w-3 mr-1" />
-                            ${((recipe.estimatedCost || 0) * (recipe.servings || 1)).toFixed(2)} total
+                            {(() => {
+                              const baseCost = (recipe.estimatedCost || 8) * (recipe.servings || 1)
+                              const lowEnd = Math.max(baseCost * 0.8, baseCost - 15)
+                              const highEnd = baseCost * 1.3 + 10
+                              return `${lowEnd.toFixed(0)} - ${highEnd.toFixed(0)} total`
+                            })()}
                           </span>
                         </div>
 
@@ -411,7 +489,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                                 Replacing...
                               </>
                             ) : (
-                              'Replace Recipe'
+                              'Replace Meal'
                             )}
                           </button>
                           <button
@@ -428,19 +506,19 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                     <div className="hidden md:flex">
                       {/* Recipe Image */}
                       <div className="w-48 h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                        {imageLoading[recipe.id] ? (
+                        {recipe.imageLoading || imageLoading[recipe.id] ? (
                           <div className="flex flex-col items-center text-center p-4">
                             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-600 mb-2"></div>
                             <p className="text-xs text-gray-600">Generating image...</p>
                           </div>
-                        ) : imageUrls[recipe.id] ? (
+                        ) : recipe.imageUrl || imageUrls[recipe.id] ? (
                           <img 
-                            src={imageUrls[recipe.id]} 
+                            src={recipe.imageUrl || imageUrls[recipe.id]} 
                             alt={recipe.title}
                             className="w-full h-full object-cover"
                             onError={() => setImageErrors(prev => ({ ...prev, [recipe.id]: true }))}
                           />
-                        ) : imageErrors[recipe.id] ? (
+                        ) : recipe.imageError || imageErrors[recipe.id] ? (
                           <div className="flex flex-col items-center text-center p-4">
                             <div className="text-4xl opacity-60 mb-1">🍽️</div>
                             <p className="text-xs text-gray-500">Image unavailable</p>
@@ -474,13 +552,12 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                               </span>
                               <span className="flex items-center">
                                 <DollarSign className="h-4 w-4 mr-1" />
-                                ${((recipe.estimatedCost || 0) * (recipe.servings || 1)).toFixed(2)} total
-                              </span>
-                              <span className="px-2 py-1 bg-gray-100 rounded-full text-xs">
-                                {recipe.difficulty}
-                              </span>
-                              <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
-                                {recipe.cuisine}
+                                {(() => {
+                                  const baseCost = (recipe.estimatedCost || 8) * (recipe.servings || 1)
+                                  const lowEnd = Math.max(baseCost * 0.8, baseCost - 15)
+                                  const highEnd = baseCost * 1.3 + 10
+                                  return `${lowEnd.toFixed(0)} - ${highEnd.toFixed(0)}`
+                                })()}
                               </span>
                             </div>
                           </div>
@@ -496,7 +573,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                                   Replacing...
                                 </>
                               ) : (
-                                'Replace Recipe'
+                                'Replace Meal'
                               )}
                             </button>
                           </div>
@@ -508,7 +585,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                           <div className="border border-gray-200 rounded-xl overflow-hidden">
                             <button
                               onClick={() => setExpandedIngredients(prev => ({ ...prev, [recipe.id]: !prev[recipe.id] }))}
-                              className="w-full p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-100 flex items-center justify-between hover:from-green-100 hover:to-emerald-100 transition-colors"
+                              className="w-full px-8 py-4 bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-100 flex items-center justify-between hover:from-green-100 hover:to-emerald-100 transition-colors"
                             >
                               <div className="flex items-center">
                                 <span className="text-2xl mr-3">🛒</span>
@@ -524,12 +601,14 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                               )}
                             </button>
                             {expandedIngredients[recipe.id] && (
-                              <div className="p-4 bg-white">
-                                <div className="space-y-3 max-h-64 overflow-y-auto">
-                                  {recipe.ingredients?.map((ingredient, idx) => (
-                                    <div key={idx} className="flex justify-between items-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
-                                      <span className="font-medium text-gray-800">{ingredient.name}</span>
-                                      <span className="text-green-700 font-semibold">{ingredient.amount} {ingredient.unit}</span>
+                              <div className="px-8 py-4 bg-white">
+                                <div className="space-y-2 max-h-64 overflow-y-auto">
+                                  {recipe.ingredients?.filter(ingredient => ingredient.name && ingredient.name.trim() !== '').map((ingredient, idx) => (
+                                    <div key={idx} className="flex justify-between items-center py-2 px-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
+                                      <span className="font-medium text-gray-800 flex-1">{ingredient.name}</span>
+                                      <span className="text-green-700 font-semibold ml-4 whitespace-nowrap">
+                                        {ingredient.amount} {ingredient.unit}
+                                      </span>
                                     </div>
                                   ))}
                                 </div>
@@ -541,7 +620,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                           <div className="border border-gray-200 rounded-xl overflow-hidden">
                             <button
                               onClick={() => setExpandedInstructions(prev => ({ ...prev, [recipe.id]: !prev[recipe.id] }))}
-                              className="w-full p-4 bg-gradient-to-r from-orange-50 to-amber-50 border-b border-orange-100 flex items-center justify-between hover:from-orange-100 hover:to-amber-100 transition-colors"
+                              className="w-full px-8 py-4 bg-gradient-to-r from-orange-50 to-amber-50 border-b border-orange-100 flex items-center justify-between hover:from-orange-100 hover:to-amber-100 transition-colors"
                             >
                               <div className="flex items-center">
                                 <span className="text-2xl mr-3">👨‍🍳</span>
@@ -557,14 +636,14 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                               )}
                             </button>
                             {expandedInstructions[recipe.id] && (
-                              <div className="p-4 bg-white">
-                                <div className="space-y-4 max-h-64 overflow-y-auto">
-                                  {recipe.instructions?.map((instruction, idx) => (
+                              <div className="px-8 py-4 bg-white">
+                                <div className="space-y-3 max-h-64 overflow-y-auto">
+                                  {recipe.instructions?.filter(instruction => instruction && instruction.trim() !== '').map((instruction, idx) => (
                                     <div key={idx} className="flex gap-4 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
                                       <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
                                         {idx + 1}
                                       </div>
-                                      <p className="text-sm text-gray-700 leading-relaxed pt-1">{instruction}</p>
+                                      <p className="text-gray-700 leading-relaxed pt-1 flex-1">{instruction}</p>
                                     </div>
                                   ))}
                                 </div>
@@ -584,16 +663,10 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         {/* Simplified Action Buttons */}
         <div className="flex flex-col gap-3 md:gap-4 justify-center items-center mb-8">
           <button
-            onClick={() => showToast('Generate more ideas feature coming soon!')}
-            className="px-6 md:px-8 py-2.5 md:py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base"
-          >
-            Generate More Ideas
-          </button>
-          <button
             onClick={onBack}
             className="px-6 md:px-8 py-2.5 md:py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-200 border border-gray-300 text-sm md:text-base"
           >
-            Modify Preferences
+            Edit Preferences
           </button>
         </div>
 
