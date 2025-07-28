@@ -19,14 +19,14 @@ function getOpenAIClient(): OpenAI {
   return openai
 }
 
-// Fast recipe generation function schema
-const FAST_RECIPE_FUNCTION = {
-  name: 'generate_fast_recipes',
-  description: 'Generate recipes quickly without images',
+// Phase 1: Generate basic meal ideas only
+const MEAL_IDEAS_FUNCTION = {
+  name: 'generate_meal_ideas',
+  description: 'Generate basic meal ideas with core information',
   parameters: {
     type: 'object',
     properties: {
-      recipes: {
+      meals: {
         type: 'array',
         items: {
           type: 'object',
@@ -40,41 +40,53 @@ const FAST_RECIPE_FUNCTION = {
             cookTime: { type: 'number' },
             prepTime: { type: 'number' },
             difficulty: { type: 'string', enum: ['easy', 'medium', 'hard'] },
-            cuisine: { type: 'string' },
-            ingredients: {
-              type: 'array',
-              items: {
-                type: 'object',
-                properties: {
-                  name: { type: 'string' },
-                  amount: { type: 'number' },
-                  unit: { type: 'string' },
-                  category: { type: 'string' }
-                },
-                required: ['name', 'amount', 'unit']
-              }
-            },
-            instructions: {
-              type: 'array',
-              items: { type: 'string' }
-            },
-            nutrition: {
-              type: 'object',
-              properties: {
-                calories: { type: 'number' },
-                protein: { type: 'number' },
-                carbs: { type: 'number' },
-                fat: { type: 'number' },
-                fiber: { type: 'number' },
-                sugar: { type: 'number' }
-              }
-            }
+            cuisine: { type: 'string' }
           },
-          required: ['id', 'title', 'description', 'mealType', 'servings', 'estimatedCost', 'ingredients', 'instructions']
+          required: ['id', 'title', 'description', 'mealType', 'servings', 'estimatedCost', 'cookTime', 'prepTime', 'difficulty', 'cuisine']
         }
       }
     },
-    required: ['recipes']
+    required: ['meals']
+  }
+}
+
+// Phase 2: Generate detailed ingredients and instructions
+const RECIPE_DETAILS_FUNCTION = {
+  name: 'generate_recipe_details',
+  description: 'Generate detailed ingredients and instructions for a specific recipe',
+  parameters: {
+    type: 'object',
+    properties: {
+      ingredients: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            name: { type: 'string' },
+            amount: { type: 'number' },
+            unit: { type: 'string' },
+            category: { type: 'string' }
+          },
+          required: ['name', 'amount', 'unit']
+        }
+      },
+      instructions: {
+        type: 'array',
+        items: { type: 'string' }
+      },
+      nutrition: {
+        type: 'object',
+        properties: {
+          calories: { type: 'number' },
+          protein: { type: 'number' },
+          carbs: { type: 'number' },
+          fat: { type: 'number' },
+          fiber: { type: 'number' },
+          sugar: { type: 'number' }
+        }
+      }
+    },
+    required: ['ingredients', 'instructions', 'nutrition']
   }
 }
 
@@ -88,7 +100,7 @@ export async function POST(request: NextRequest) {
       }, { status: 400 })
     }
 
-    console.log('Generating fast meal plan (text only)...')
+    console.log('Generating meal plan using 2-phase approach...')
     const startTime = Date.now()
 
     // Create meal requests from preferences
@@ -100,58 +112,115 @@ export async function POST(request: NextRequest) {
     })
 
     const totalMeals = mealRequests.length
-    console.log(`Generating ${totalMeals} meals`)
+    console.log(`Phase 1: Generating ${totalMeals} meal ideas`)
 
-    // Create optimized prompt for fast generation
-    const prompt = createFastMealPrompt(preferences, mealRequests)
-
-    // Single OpenAI call with aggressive timeout - using fastest model
-    const completion = await Promise.race([
+    // Phase 1: Generate basic meal ideas only
+    const ideasPrompt = createMealIdeasPrompt(preferences, mealRequests)
+    
+    const ideasCompletion = await Promise.race([
       getOpenAIClient().chat.completions.create({
-        model: 'gpt-4o-mini', // Fastest available model
+        model: 'gpt-4o-mini',
         messages: [
           {
             role: 'system',
-            content: 'You are a fast recipe generator. Create diverse, practical recipes quickly. Focus on variety and user preferences.'
+            content: 'You are a meal planning expert. Generate diverse, appealing meal ideas with basic information. Focus on variety and user preferences.'
           },
           {
             role: 'user',
-            content: prompt
+            content: ideasPrompt
           }
         ],
-        functions: [FAST_RECIPE_FUNCTION],
-        function_call: { name: 'generate_fast_recipes' },
-        temperature: 0.9, // High creativity for variety
-        max_tokens: 3500, // Optimized for speed
+        functions: [MEAL_IDEAS_FUNCTION],
+        function_call: { name: 'generate_meal_ideas' },
+        temperature: 0.9,
+        max_tokens: 3000,
       }),
       new Promise<never>((_, reject) => 
-        setTimeout(() => reject(new Error('Fast generation timeout')), 6000) // 6 second max for speed
+        setTimeout(() => reject(new Error('Meal ideas generation timeout')), 8000)
       )
     ])
 
-    const functionCall = completion.choices[0]?.message?.function_call
-    if (!functionCall || functionCall.name !== 'generate_fast_recipes') {
-      throw new Error('No function call in response')
+    const ideasFunctionCall = ideasCompletion.choices[0]?.message?.function_call
+    if (!ideasFunctionCall || ideasFunctionCall.name !== 'generate_meal_ideas') {
+      throw new Error('No function call in meal ideas response')
     }
 
-    const generationTime = Date.now() - startTime
-    console.log(`Fast recipes generated in ${generationTime}ms`)
-
-    let parsedRecipes: { recipes: any[] }
+    let parsedIdeas: { meals: any[] }
     try {
-      parsedRecipes = JSON.parse(functionCall.arguments)
+      parsedIdeas = JSON.parse(ideasFunctionCall.arguments)
     } catch (parseError) {
-      throw new Error('Invalid JSON in function response')
+      throw new Error('Invalid JSON in meal ideas response')
     }
 
-    const recipes = parsedRecipes.recipes || []
-
-    if (recipes.length === 0) {
-      throw new Error('No recipes generated')
+    const mealIdeas = parsedIdeas.meals || []
+    if (mealIdeas.length === 0) {
+      throw new Error('No meal ideas generated')
     }
+
+    console.log(`Phase 1 complete: Generated ${mealIdeas.length} meal ideas`)
+    
+    // Phase 2: Generate detailed ingredients and instructions in parallel
+    console.log(`Phase 2: Generating details for ${mealIdeas.length} recipes in parallel`)
+    
+    const detailPromises = mealIdeas.map(async (meal: any) => {
+      try {
+        const detailPrompt = createRecipeDetailPrompt(meal, preferences)
+        
+        const detailCompletion = await Promise.race([
+          getOpenAIClient().chat.completions.create({
+            model: 'gpt-4o-mini',
+            messages: [
+              {
+                role: 'system',
+                content: 'You are a professional chef. Generate detailed, accurate ingredients and step-by-step cooking instructions.'
+              },
+              {
+                role: 'user',
+                content: detailPrompt
+              }
+            ],
+            functions: [RECIPE_DETAILS_FUNCTION],
+            function_call: { name: 'generate_recipe_details' },
+            temperature: 0.7,
+            max_tokens: 1500,
+          }),
+          new Promise<never>((_, reject) => 
+            setTimeout(() => reject(new Error('Recipe detail timeout')), 10000)
+          )
+        ])
+
+        const detailFunctionCall = detailCompletion.choices[0]?.message?.function_call
+        if (!detailFunctionCall || detailFunctionCall.name !== 'generate_recipe_details') {
+          throw new Error(`No function call in recipe details response for ${meal.title}`)
+        }
+
+        const parsedDetails = JSON.parse(detailFunctionCall.arguments)
+        
+        return {
+          ...meal,
+          ingredients: parsedDetails.ingredients || [],
+          instructions: parsedDetails.instructions || [],
+          nutrition: parsedDetails.nutrition || getDefaultNutrition()
+        }
+      } catch (error) {
+        console.warn(`Failed to generate details for ${meal.title}:`, error)
+        return {
+          ...meal,
+          ingredients: getDefaultIngredients(),
+          instructions: getDefaultInstructions(),
+          nutrition: getDefaultNutrition()
+        }
+      }
+    })
+
+    // Wait for all detail generation to complete
+    const recipesWithDetails = await Promise.all(detailPromises)
+    
+    const generationTime = Date.now() - startTime
+    console.log(`2-phase generation complete: ${recipesWithDetails.length} recipes in ${generationTime}ms`)
 
     // Add progressive loading properties (no images initially)
-    const recipesWithLoadingState = recipes.map(recipe => ({
+    const recipesWithLoadingState = recipesWithDetails.map(recipe => ({
       ...recipe,
       tags: [recipe.mealType, recipe.cuisine],
       imageUrl: null,
@@ -201,7 +270,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-function createFastMealPrompt(preferences: UserPreferences, mealRequests: string[]): string {
+function createMealIdeasPrompt(preferences: UserPreferences, mealRequests: string[]): string {
   const skillLevel = getFlexibleSkillLevel(preferences.cookingSkillLevel)
   const mealCounts = mealRequests.reduce((counts: Record<string, number>, meal: string) => {
     counts[meal] = (counts[meal] || 0) + 1
@@ -212,25 +281,83 @@ function createFastMealPrompt(preferences: UserPreferences, mealRequests: string
     .map(([type, count]) => `${count} ${type}`)
     .join(', ')
 
-  return `Generate ${mealRequests.length} diverse recipes for meal planning.
+  return `CRITICAL: You must generate exactly ${mealRequests.length} meal ideas. No more, no less.
 
-DISTRIBUTION: ${mealDistribution}
+MEAL PLAN REQUEST:
+Generate ${mealRequests.length} diverse, appealing meal ideas with basic information only.
+
+EXACT DISTRIBUTION REQUIRED: ${mealDistribution}
 
 REQUIREMENTS:
 - Servings: ${preferences.peoplePerMeal || 2} per recipe
-- Max cooking time: ${preferences.maxCookTime || 30} minutes total  
+- Max cooking time: ${preferences.maxCookTime || 30} minutes total (prep + cook combined)
 - Skill level: ${skillLevel}
 - Dietary restrictions: ${preferences.diets?.join(', ') || 'None'}
 - Allergies: ${preferences.allergies?.join(', ') || 'None'}
 - Preferred cuisines: ${preferences.preferredCuisines?.join(', ') || 'Any'}
+- Organic preference: ${preferences.organicPreference || 'no_preference'}
 
-GOALS:
-- Maximum variety in proteins, cuisines, cooking methods
-- Balanced nutrition (400-600 calories per serving)
-- Cost-effective ingredients ($6-12 per serving)
-- Practical recipes for busy schedules
+FOCUS ON:
+- Creative, unique meal titles
+- Appetizing 2-3 sentence descriptions
+- Diverse cuisines and cooking methods
+- Realistic timing and cost estimates
+- Appropriate difficulty levels
 
-Generate exactly ${mealRequests.length} complete recipes with ingredients and step-by-step instructions.`
+Generate exactly ${mealRequests.length} meal ideas with basic info only (no ingredients or instructions).`
+}
+
+function createRecipeDetailPrompt(meal: any, preferences: UserPreferences): string {
+  return `Generate detailed ingredients and cooking instructions for this meal:
+
+MEAL: ${meal.title}
+DESCRIPTION: ${meal.description}
+CUISINE: ${meal.cuisine}
+SERVINGS: ${meal.servings}
+COOKING TIME: ${meal.prepTime + meal.cookTime} minutes total
+DIFFICULTY: ${meal.difficulty}
+
+USER REQUIREMENTS:
+- Dietary restrictions: ${preferences.diets?.join(', ') || 'None'}
+- Allergies: ${preferences.allergies?.join(', ') || 'None'}
+- Organic preference: ${preferences.organicPreference || 'no_preference'}
+
+REQUIREMENTS:
+1. Generate 8-15 specific ingredients with exact amounts and units
+2. Create 4-8 detailed cooking steps
+3. Include realistic nutrition information for ${meal.servings} servings
+4. Use proper ingredient categories (Meat, Vegetables, Pantry, Dairy, etc.)
+5. Make instructions clear and professional
+
+Generate complete ingredients list, step-by-step instructions, and nutrition data.`
+}
+
+function getDefaultIngredients() {
+  return [
+    { name: 'main protein', amount: 1, unit: 'lb', category: 'Meat' },
+    { name: 'vegetables', amount: 2, unit: 'cups', category: 'Vegetables' },
+    { name: 'seasoning', amount: 1, unit: 'tsp', category: 'Spices' }
+  ]
+}
+
+function getDefaultInstructions() {
+  return [
+    'Prepare all ingredients according to recipe requirements.',
+    'Cook the main components following proper techniques.',
+    'Combine ingredients and finish cooking.',
+    'Serve hot and enjoy!'
+  ]
+}
+
+function getDefaultNutrition() {
+  return {
+    calories: 500,
+    protein: 25,
+    carbs: 45,
+    fat: 20,
+    fiber: 5,
+    sugar: 8
+  }
 }
 
 function getFlexibleSkillLevel(cookingSkillLevel: string): string {

@@ -4,13 +4,15 @@ import { useState, Suspense, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import GuidedOnboarding from '../../../components/GuidedOnboarding'
 import MealPlanPreview from '../../../components/MealPlanPreview'
+import CartBuilder from '../../../components/CartBuilder'
 import CartPreparation from '../../../components/CartPreparation'
 import { UserPreferences, MealPlan } from '../../../types'
 
 function OnboardingPageContent() {
-  const [step, setStep] = useState<'preferences' | 'mealplan' | 'cartprep' | 'cart'>('preferences')
+  const [step, setStep] = useState<'preferences' | 'mealplan' | 'cartbuilder' | 'cartprep' | 'cart'>('preferences')
   const [preferences, setPreferences] = useState<UserPreferences | null>(null)
   const [mealPlan, setMealPlan] = useState<MealPlan | null>(null)
+  const [consolidatedCart, setConsolidatedCart] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
@@ -24,13 +26,13 @@ function OnboardingPageContent() {
       // Generate a temporary user ID for anonymous users
       const userId = `temp_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
       
-      console.log('Calling GPT meal plan generation...')
+      console.log('Starting progressive meal plan generation...')
       
       // Get zipCode from localStorage
       const zipCode = localStorage.getItem('chefscart_zipcode') || ''
       
-      // Call the direct OpenAI API for testing
-      const response = await fetch('/api/generate-mealplan-mock', {
+      // Step 1: Generate basic meal plan (fast) - text only
+      const response = await fetch('/api/generate-mealplan-fast', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,20 +50,119 @@ function OnboardingPageContent() {
       }
 
       const data = await response.json()
-      console.log('Meal plan generated:', data)
+      console.log('Basic meal plan generated:', data)
       
+      // Show meal plan immediately with loading states
       setMealPlan(data.mealPlan)
       setStep('mealplan')
+      setIsLoading(false)
+
+      // Step 2: Generate images in background (non-blocking)
+      generateImagesInBackground(data.mealPlan.recipes)
 
     } catch (err) {
       console.error('Error generating meal plan:', err)
       setError(err instanceof Error ? err.message : 'Failed to generate meal plan')
-    } finally {
       setIsLoading(false)
     }
   }
 
+  const generateImagesInBackground = async (recipes: any[]) => {
+    try {
+      console.log('Generating images in background...')
+      
+      // Generate all images in true parallel with aggressive timeouts
+      console.log(`Starting parallel image generation for ${recipes.length} recipes...`)
+      const imageStartTime = Date.now()
+      
+      const imagePromises = recipes.map(async (recipe) => {
+        try {
+          // Race against timeout for each individual image
+          const response = await Promise.race([
+            fetch('/api/generate-dish-image', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                dishName: recipe.title,
+                description: recipe.description,
+                cuisine: recipe.cuisine,
+                thumbnail: true
+              })
+            }),
+            new Promise<never>((_, reject) => 
+              setTimeout(() => reject(new Error('Individual image timeout')), 12000) // 12s per image
+            )
+          ])
+          
+          if (response.ok) {
+            const data = await response.json()
+            console.log(`✅ Generated image for ${recipe.title}`)
+            return { id: recipe.id, url: data.imageUrl, success: true }
+          }
+        } catch (error) {
+          console.warn(`❌ Failed to generate image for ${recipe.title}:`, error.message)
+        }
+        return { id: recipe.id, url: '/images/placeholder-meal.webp', success: false }
+      })
+
+      // Wait for ALL images to complete or timeout (true parallel)
+      const imageResults = await Promise.allSettled(imagePromises)
+      const imageMap: Record<string, string> = {}
+      let successCount = 0
+      
+      imageResults.forEach((result, index) => {
+        if (result.status === 'fulfilled') {
+          imageMap[result.value.id] = result.value.url
+          if (result.value.success) successCount++
+        } else {
+          imageMap[recipes[index].id] = '/images/placeholder-meal.webp'
+        }
+      })
+
+      const imageTime = Date.now() - imageStartTime
+      console.log(`🎨 Image generation complete: ${successCount}/${recipes.length} successful in ${imageTime}ms`)
+
+      // Update meal plan with generated images
+      setMealPlan(prevPlan => {
+        if (!prevPlan) return null
+        
+        return {
+          ...prevPlan,
+          recipes: prevPlan.recipes.map(recipe => ({
+            ...recipe,
+            imageUrl: imageMap[recipe.id] || recipe.imageUrl,
+            imageLoading: false
+          }))
+        }
+      })
+      
+      console.log('Images loaded successfully')
+    } catch (error) {
+      console.error('Background image generation failed:', error)
+      // Mark all images as failed to load
+      setMealPlan(prevPlan => {
+        if (!prevPlan) return null
+        
+        return {
+          ...prevPlan,
+          recipes: prevPlan.recipes.map(recipe => ({
+            ...recipe,
+            imageLoading: false,
+            imageError: true
+          }))
+        }
+      })
+    }
+  }
+
   const handleMealPlanApprove = () => {
+    setStep('cartbuilder')
+  }
+
+  const handleCartBuilderComplete = (finalCart: any[]) => {
+    setConsolidatedCart(finalCart)
     setStep('cartprep')
   }
 
@@ -118,6 +219,7 @@ function OnboardingPageContent() {
           <div className="loading-spinner mx-auto mb-4 w-12 h-12"></div>
           <h2 className="text-xl font-semibold text-gray-900 mb-2">
             {step === 'preferences' ? 'Generating your meal plan...' : 
+             step === 'cartbuilder' ? 'Building your cart...' :
              step === 'cartprep' ? 'Creating your cart...' : 'Creating your cart...'}
           </h2>
           <p className="text-gray-600">This may take a few moments</p>
@@ -155,6 +257,7 @@ function OnboardingPageContent() {
       <GuidedOnboarding 
         onComplete={handlePreferencesComplete}
         onBack={() => router.push('/')}
+        initialPreferences={preferences}
       />
     )
   }
@@ -164,8 +267,23 @@ function OnboardingPageContent() {
       <MealPlanPreview 
         mealPlan={mealPlan} 
         onApprove={handleMealPlanApprove}
-        onBack={() => setStep('preferences')}
+        onBack={() => {
+          setStep('preferences')
+          // Clear meal plan so user can regenerate with updated preferences
+          setMealPlan(null)
+        }}
         preferences={preferences}
+      />
+    )
+  }
+
+  if (step === 'cartbuilder' && mealPlan) {
+    return (
+      <CartBuilder
+        recipes={mealPlan.recipes}
+        pantryItems={preferences?.pantryItems || []}
+        onProceedToCheckout={handleCartBuilderComplete}
+        onBack={() => setStep('mealplan')}
       />
     )
   }
@@ -174,7 +292,7 @@ function OnboardingPageContent() {
     return (
       <CartPreparation 
         onContinue={handleCartPreparation}
-        onBack={() => setStep('mealplan')}
+        onBack={() => setStep('cartbuilder')}
       />
     )
   }

@@ -8,6 +8,7 @@ import Header from './Header'
 interface GuidedOnboardingProps {
   onComplete: (preferences: UserPreferences) => void
   onBack: () => void
+  initialPreferences?: UserPreferences | null
 }
 
 interface OnboardingStep {
@@ -64,7 +65,7 @@ const onboardingSteps: OnboardingStep[] = [
     id: 'organicPreference',
     title: 'Organic preference',
     question: 'How do you feel about organic ingredients?',
-    required: false
+    required: true
   },
   {
     id: 'favoriteFoods',
@@ -215,7 +216,35 @@ const clearStoredPreferences = () => {
   }
 }
 
-export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardingProps) {
+const convertPreferencesToAnswers = (preferences: UserPreferences): Record<string, any> => {
+  return {
+    // Plan selector
+    servingsPerMeal: preferences.peoplePerMeal || 3,
+    breakfastMeals: preferences.breakfastsPerWeek || 0,
+    lunchMeals: preferences.lunchesPerWeek || 0,
+    dinnerMeals: preferences.dinnersPerWeek || 0,
+    
+    // Other preferences
+    dietaryStyle: preferences.diets || [],
+    foodsToAvoid: preferences.avoidIngredients || [],
+    healthGoal: preferences.healthGoal || 'maintain',
+    cookingTime: preferences.maxCookingTime || 30,
+    cookingSkill: preferences.cookingSkillLevel || 'intermediate',
+    budgetSensitivity: preferences.budgetSensitivity || 'no_limit',
+    customBudgetAmount: preferences.customBudgetAmount || '',
+    organicPreference: preferences.organicPreference || 'no_preference',
+    favoriteFoods: preferences.favoriteFoods || [],
+    cuisinePreferences: preferences.cuisinePreferences || [],
+    additionalConsiderations: preferences.additionalConsiderations || '',
+    
+    // Photo upload related
+    identifiedIngredients: preferences.identifiedIngredients || [],
+    manuallyAddedIngredients: preferences.manuallyAddedIngredients || [],
+    skipPhotoUpload: preferences.skipPhotoUpload || false
+  }
+}
+
+export default function GuidedOnboarding({ onComplete, onBack, initialPreferences }: GuidedOnboardingProps) {
   const [currentStep, setCurrentStep] = useState(0)
   const [isInitialized, setIsInitialized] = useState(false)
   const [answers, setAnswers] = useState<Record<string, any>>({
@@ -233,17 +262,25 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
   const [showChecklist, setShowChecklist] = useState(false)
   const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set())
 
-  // Load preferences from localStorage on component mount
+  // Load preferences from localStorage or initialPreferences on component mount
   useEffect(() => {
-    const storedPreferences = loadPreferencesFromStorage()
-    if (storedPreferences) {
+    let preferencesToLoad = null
+    
+    // Priority: initialPreferences > stored preferences
+    if (initialPreferences) {
+      preferencesToLoad = convertPreferencesToAnswers(initialPreferences)
+    } else {
+      preferencesToLoad = loadPreferencesFromStorage()
+    }
+    
+    if (preferencesToLoad) {
       setAnswers(prevAnswers => ({
         ...prevAnswers,
-        ...storedPreferences
+        ...preferencesToLoad
       }))
     }
     setIsInitialized(true)
-  }, [])
+  }, [initialPreferences])
 
   // Save preferences to localStorage whenever answers change (after initial load)
   useEffect(() => {
@@ -624,6 +661,9 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
     }
     if (stepData.id === 'budgetSensitivity') {
       return answers.budgetSensitivity && answers.budgetSensitivity.trim() !== ''
+    }
+    if (stepData.id === 'organicPreference') {
+      return answers.organicPreference && answers.organicPreference.trim() !== ''
     }
     
     return true // Default to true for unknown steps
