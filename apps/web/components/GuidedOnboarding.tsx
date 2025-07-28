@@ -13,7 +13,7 @@ interface OnboardingStep {
   id: string
   title: string
   question: string
-  type: 'single' | 'multiple' | 'pills' | 'number' | 'text' | 'meal-frequency'
+  type: 'single' | 'multiple' | 'pills' | 'number' | 'text' | 'meal-frequency' | 'meal-servings'
   options?: Array<{ id: string; label: string; value: any; icon?: string }>
   required?: boolean
 }
@@ -36,12 +36,8 @@ const onboardingSteps: OnboardingStep[] = [
   {
     id: 'mealParticipation',
     title: 'Meal Participation',
-    question: 'Set serving sizes for each meal type:',
-    type: 'single',
-    options: [
-      { id: 'yes', label: 'Use household size for all meals', value: 'yes', icon: '👨‍👩‍👧‍👦' },
-      { id: 'no', label: 'Set different amounts per meal', value: 'no', icon: '⚙️' }
-    ],
+    question: 'Who will be eating each meal?',
+    type: 'meal-servings',
     required: true
   },
   {
@@ -284,6 +280,15 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
       return (answers.breakfastMeals || 0) > 0 || (answers.lunchMeals || 0) > 0 || (answers.dinnerMeals || 0) > 0
     }
     
+    // Special handling for meal participation
+    if (currentStepData?.id === 'mealParticipation') {
+      // At least one meal type must have some participation
+      const hasBreakfastParticipation = (answers.breakfastMeals || 0) === 0 || ((answers.breakfastAdults || answers.adults || 0) + (answers.breakfastKids || answers.kids || 0)) > 0
+      const hasLunchParticipation = (answers.lunchMeals || 0) === 0 || ((answers.lunchAdults || answers.adults || 0) + (answers.lunchKids || answers.kids || 0)) > 0
+      const hasDinnerParticipation = (answers.dinnerMeals || 0) === 0 || ((answers.dinnerAdults || answers.adults || 0) + (answers.dinnerKids || answers.kids || 0)) > 0
+      return hasBreakfastParticipation && hasLunchParticipation && hasDinnerParticipation
+    }
+    
     const answer = answers[currentStepData?.id || '']
     if (currentStepData?.type === 'multiple' || currentStepData?.type === 'pills') {
       return Array.isArray(answer) && answer.length > 0
@@ -364,14 +369,28 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
           }, [])),
           ...(answers.cuisinePreferencesOther ? [answers.cuisinePreferencesOther] : [])
         ],
-        mealsPerWeek: (answers.mealTypes || []).length * 5, // Assume 5 days per week for each selected meal type
+        mealsPerWeek: (answers.breakfastMeals || 0) + (answers.lunchMeals || 0) + (answers.dinnerMeals || 0),
         peoplePerMeal: (answers.adults || 2) + ((answers.kids || 0) * 0.5),
-        mealTypes: (answers.mealTypes || []).map((mealType: string) => ({
-          type: mealType as 'breakfast' | 'lunch' | 'dinner' | 'snacks' | 'dessert',
-          days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'],
-          adults: answers.adults || 2,
-          kids: answers.kids || 0
-        }))
+        mealTypes: [
+          ...(answers.breakfastMeals > 0 ? [{
+            type: 'breakfast' as const,
+            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, answers.breakfastMeals),
+            adults: answers.breakfastAdults || answers.adults || 2,
+            kids: answers.breakfastKids || answers.kids || 0
+          }] : []),
+          ...(answers.lunchMeals > 0 ? [{
+            type: 'lunch' as const,
+            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, answers.lunchMeals),
+            adults: answers.lunchAdults || answers.adults || 2,
+            kids: answers.lunchKids || answers.kids || 0
+          }] : []),
+          ...(answers.dinnerMeals > 0 ? [{
+            type: 'dinner' as const,
+            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, answers.dinnerMeals),
+            adults: answers.dinnerAdults || answers.adults || 2,
+            kids: answers.dinnerKids || answers.kids || 0
+          }] : [])
+        ]
       }
       
       onComplete(preferences)
@@ -551,187 +570,184 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
             </div>
           )}
 
-          {/* Per-meal sliders when meal participation is "no" */}
-          {currentStepData?.id === 'mealParticipation' && answers.mealParticipation === 'no' && (
-            <div className="mt-6 p-4 bg-neutral-50 rounded-lg border">
-              <h4 className="font-medium text-neutral-800 mb-4">Set serving sizes for each meal type:</h4>
-              <div className="space-y-4">
-                {/* Only show meal types that have meals per week > 0 */}
-                {(answers.breakfastMeals || 0) > 0 && (
-                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">🥞</span>
-                      <span className="font-medium">Breakfast</span>
-                    </div>
+          {/* Meal servings step - always show sliders */}
+          {currentStepData?.type === 'meal-servings' && (
+            <div className="space-y-4">
+              {/* Only show meal types that have meals per week > 0 */}
+              {(answers.breakfastMeals || 0) > 0 && (
+                <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">🥞</span>
+                    <span className="font-medium">Breakfast</span>
+                  </div>
+                  <div>
+                    <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                    <input
+                      type="range"
+                      min="0"
+                      max="10"
+                      value={answers.breakfastAdults || answers.adults || 2}
+                      onChange={(e) => setAnswers(prev => ({ ...prev, breakfastAdults: parseInt(e.target.value) }))}
+                      className="w-full"
+                    />
+                    <span className="text-sm text-neutral-500">{answers.breakfastAdults || answers.adults || 2}</span>
+                  </div>
+                  {(answers.kids || 0) > 0 && (
                     <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
                       <input
                         type="range"
                         min="0"
                         max="10"
-                        value={answers.breakfastAdults || answers.adults || 2}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, breakfastAdults: parseInt(e.target.value) }))}
+                        value={answers.breakfastKids || answers.kids || 0}
+                        onChange={(e) => setAnswers(prev => ({ ...prev, breakfastKids: parseInt(e.target.value) }))}
                         className="w-full"
                       />
-                      <span className="text-sm text-neutral-500">{answers.breakfastAdults || answers.adults || 2}</span>
+                      <span className="text-sm text-neutral-500">{answers.breakfastKids || answers.kids || 0}</span>
                     </div>
-                    {(answers.kids || 0) > 0 && (
-                      <div>
-                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                        <input
-                          type="range"
-                          min="0"
-                          max="10"
-                          value={answers.breakfastKids || answers.kids || 0}
-                          onChange={(e) => setAnswers(prev => ({ ...prev, breakfastKids: parseInt(e.target.value) }))}
-                          className="w-full"
-                        />
-                        <span className="text-sm text-neutral-500">{answers.breakfastKids || answers.kids || 0}</span>
-                      </div>
-                    )}
+                  )}
+                </div>
+              )}
+              
+              {(answers.lunchMeals || 0) > 0 && (
+                <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">🥗</span>
+                    <span className="font-medium">Lunch</span>
                   </div>
-                )}
-                
-                {(answers.lunchMeals || 0) > 0 && (
-                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">🥗</span>
-                      <span className="font-medium">Lunch</span>
-                    </div>
+                  <div>
+                    <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                    <input
+                      type="range"
+                      min="0"
+                      max="10"
+                      value={answers.lunchAdults || answers.adults || 2}
+                      onChange={(e) => setAnswers(prev => ({ ...prev, lunchAdults: parseInt(e.target.value) }))}
+                      className="w-full"
+                    />
+                    <span className="text-sm text-neutral-500">{answers.lunchAdults || answers.adults || 2}</span>
+                  </div>
+                  {(answers.kids || 0) > 0 && (
                     <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
                       <input
                         type="range"
                         min="0"
                         max="10"
-                        value={answers.lunchAdults || answers.adults || 2}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, lunchAdults: parseInt(e.target.value) }))}
+                        value={answers.lunchKids || answers.kids || 0}
+                        onChange={(e) => setAnswers(prev => ({ ...prev, lunchKids: parseInt(e.target.value) }))}
                         className="w-full"
                       />
-                      <span className="text-sm text-neutral-500">{answers.lunchAdults || answers.adults || 2}</span>
+                      <span className="text-sm text-neutral-500">{answers.lunchKids || answers.kids || 0}</span>
                     </div>
-                    {(answers.kids || 0) > 0 && (
-                      <div>
-                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                        <input
-                          type="range"
-                          min="0"
-                          max="10"
-                          value={answers.lunchKids || answers.kids || 0}
-                          onChange={(e) => setAnswers(prev => ({ ...prev, lunchKids: parseInt(e.target.value) }))}
-                          className="w-full"
-                        />
-                        <span className="text-sm text-neutral-500">{answers.lunchKids || answers.kids || 0}</span>
-                      </div>
-                    )}
-                  </div>
-                )}
+                  )}
+                </div>
+              )}
 
-                {(answers.dinnerMeals || 0) > 0 && (
-                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">🍽️</span>
-                      <span className="font-medium">Dinner</span>
-                    </div>
+              {(answers.dinnerMeals || 0) > 0 && (
+                <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">🍽️</span>
+                    <span className="font-medium">Dinner</span>
+                  </div>
+                  <div>
+                    <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                    <input
+                      type="range"
+                      min="0"
+                      max="10"
+                      value={answers.dinnerAdults || answers.adults || 2}
+                      onChange={(e) => setAnswers(prev => ({ ...prev, dinnerAdults: parseInt(e.target.value) }))}
+                      className="w-full"
+                    />
+                    <span className="text-sm text-neutral-500">{answers.dinnerAdults || answers.adults || 2}</span>
+                  </div>
+                  {(answers.kids || 0) > 0 && (
                     <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
                       <input
                         type="range"
                         min="0"
                         max="10"
-                        value={answers.dinnerAdults || answers.adults || 2}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, dinnerAdults: parseInt(e.target.value) }))}
+                        value={answers.dinnerKids || answers.kids || 0}
+                        onChange={(e) => setAnswers(prev => ({ ...prev, dinnerKids: parseInt(e.target.value) }))}
                         className="w-full"
                       />
-                      <span className="text-sm text-neutral-500">{answers.dinnerAdults || answers.adults || 2}</span>
+                      <span className="text-sm text-neutral-500">{answers.dinnerKids || answers.kids || 0}</span>
                     </div>
-                    {(answers.kids || 0) > 0 && (
-                      <div>
-                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                        <input
-                          type="range"
-                          min="0"
-                          max="10"
-                          value={answers.dinnerKids || answers.kids || 0}
-                          onChange={(e) => setAnswers(prev => ({ ...prev, dinnerKids: parseInt(e.target.value) }))}
-                          className="w-full"
-                        />
-                        <span className="text-sm text-neutral-500">{answers.dinnerKids || answers.kids || 0}</span>
-                      </div>
-                    )}
-                  </div>
-                )}
+                  )}
+                </div>
+              )}
 
-                {answers.mealTypes?.includes('snacks') && (
-                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">🍿</span>
-                      <span className="font-medium">Snacks</span>
-                    </div>
+              {(answers.snacksPerWeek || 0) > 0 && (
+                <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">🍿</span>
+                    <span className="font-medium">Snacks</span>
+                  </div>
+                  <div>
+                    <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                    <input
+                      type="range"
+                      min="0"
+                      max="10"
+                      value={answers.snacksAdults || answers.adults || 2}
+                      onChange={(e) => setAnswers(prev => ({ ...prev, snacksAdults: parseInt(e.target.value) }))}
+                      className="w-full"
+                    />
+                    <span className="text-sm text-neutral-500">{answers.snacksAdults || answers.adults || 2}</span>
+                  </div>
+                  {(answers.kids || 0) > 0 && (
                     <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
                       <input
                         type="range"
                         min="0"
                         max="10"
-                        value={answers.snacksAdults || answers.adults || 2}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, snacksAdults: parseInt(e.target.value) }))}
+                        value={answers.snacksKids || answers.kids || 0}
+                        onChange={(e) => setAnswers(prev => ({ ...prev, snacksKids: parseInt(e.target.value) }))}
                         className="w-full"
                       />
-                      <span className="text-sm text-neutral-500">{answers.snacksAdults || answers.adults || 2}</span>
+                      <span className="text-sm text-neutral-500">{answers.snacksKids || answers.kids || 0}</span>
                     </div>
-                    {(answers.kids || 0) > 0 && (
-                      <div>
-                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                        <input
-                          type="range"
-                          min="0"
-                          max="10"
-                          value={answers.snacksKids || answers.kids || 0}
-                          onChange={(e) => setAnswers(prev => ({ ...prev, snacksKids: parseInt(e.target.value) }))}
-                          className="w-full"
-                        />
-                        <span className="text-sm text-neutral-500">{answers.snacksKids || answers.kids || 0}</span>
-                      </div>
-                    )}
-                  </div>
-                )}
+                  )}
+                </div>
+              )}
 
-                {answers.mealTypes?.includes('dessert') && (
-                  <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">🍰</span>
-                      <span className="font-medium">Desserts</span>
-                    </div>
+              {(answers.dessertsPerWeek || 0) > 0 && (
+                <div className={`grid gap-4 items-center ${(answers.kids || 0) > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">🍰</span>
+                    <span className="font-medium">Desserts</span>
+                  </div>
+                  <div>
+                    <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                    <input
+                      type="range"
+                      min="0"
+                      max="10"
+                      value={answers.dessertsAdults || answers.adults || 2}
+                      onChange={(e) => setAnswers(prev => ({ ...prev, dessertsAdults: parseInt(e.target.value) }))}
+                      className="w-full"
+                    />
+                    <span className="text-sm text-neutral-500">{answers.dessertsAdults || answers.adults || 2}</span>
+                  </div>
+                  {(answers.kids || 0) > 0 && (
                     <div>
-                      <label className="block text-sm text-neutral-600 mb-1">Adults</label>
+                      <label className="block text-sm text-neutral-600 mb-1">Kids</label>
                       <input
                         type="range"
                         min="0"
                         max="10"
-                        value={answers.dessertsAdults || answers.adults || 2}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, dessertsAdults: parseInt(e.target.value) }))}
+                        value={answers.dessertsKids || answers.kids || 0}
+                        onChange={(e) => setAnswers(prev => ({ ...prev, dessertsKids: parseInt(e.target.value) }))}
                         className="w-full"
                       />
-                      <span className="text-sm text-neutral-500">{answers.dessertsAdults || answers.adults || 2}</span>
+                      <span className="text-sm text-neutral-500">{answers.dessertsKids || answers.kids || 0}</span>
                     </div>
-                    {(answers.kids || 0) > 0 && (
-                      <div>
-                        <label className="block text-sm text-neutral-600 mb-1">Kids</label>
-                        <input
-                          type="range"
-                          min="0"
-                          max="10"
-                          value={answers.dessertsKids || answers.kids || 0}
-                          onChange={(e) => setAnswers(prev => ({ ...prev, dessertsKids: parseInt(e.target.value) }))}
-                          className="w-full"
-                        />
-                        <span className="text-sm text-neutral-500">{answers.dessertsKids || answers.kids || 0}</span>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
+              )}
             </div>
           )}
 
@@ -830,7 +846,7 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
           )}
 
           {/* Regular grid layout for single/multiple choice options */}
-          {currentStepData?.type !== 'number' && currentStepData?.type !== 'text' && currentStepData?.type !== 'pills' && currentStepData?.id !== 'mealsPerWeek' && currentStepData?.id !== 'mealParticipation' && (
+          {currentStepData?.type !== 'number' && currentStepData?.type !== 'text' && currentStepData?.type !== 'pills' && currentStepData?.type !== 'meal-frequency' && currentStepData?.type !== 'meal-servings' && (
             <div className="space-y-4">
               <div className="grid gap-3">
                 {currentStepData?.options?.map((option) => (
