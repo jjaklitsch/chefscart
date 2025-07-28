@@ -1,0 +1,61 @@
+# Firebase App Hosting configuration
+# See: https://firebase.google.com/docs/app-hosting/configure
+
+# Build configuration
+runConfig:
+  # Specify build command
+  buildCommand: npm run build
+  
+  # Set runtime environment (Node.js 20)
+  runtime: nodejs20
+  
+  # Resource configuration
+  cpu: 1
+  memory: 2Gi
+  
+  # Environment variables available at build time and runtime
+  env:
+    # OpenAI API configuration
+    - variable: OPENAI_API_KEY
+      secret: OPENAI_API_KEY
+    
+    # Firebase configuration (automatically provided by Firebase)
+    - variable: FIREBASE_CONFIG
+      availability: [BUILD, RUNTIME]
+    
+    - variable: FIREBASE_WEBAPP_CONFIG
+      availability: [BUILD]
+    
+    # Email service configuration
+    - variable: RESEND_API_KEY
+      secret: RESEND_API_KEY
+    
+    # Application environment
+    - variable: NODE_ENV
+      value: production
+      availability: [BUILD, RUNTIME]
+    
+    # Next.js configuration
+    - variable: NEXT_TELEMETRY_DISABLED
+      value: "1"
+      availability: [BUILD]
+
+# Build framework detection (Next.js)
+framework: nextjs
+
+# Static asset serving configuration
+headers:
+  - source: "**/*"
+    headers:
+      - key: "X-Content-Type-Options"
+        value: "nosniff"
+      - key: "X-Frame-Options"
+        value: "DENY"
+      - key: "X-XSS-Protection"
+        value: "1; mode=block"
+
+# Redirect configuration
+redirects:
+  - source: "/home"
+    destination: "/"
+    type: 301

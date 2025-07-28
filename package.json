@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter @chefscart/web dev",
-    "build": "cd apps/web && npm run build",
+    "build": "cd apps/web && npm install && npm run build",
     "build:pnpm": "pnpm -r build",
     "start": "pnpm --filter @chefscart/web start",
     "lint": "pnpm -r lint",
