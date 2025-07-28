@@ -99,40 +99,42 @@ export async function POST(request: NextRequest) {
     // Validate ZIP code with USPS
     const uspsData = await validateZipWithUSPS(zipCode)
     
-    // In development or when USPS fails, use mock data for supported ZIPs
+    // In development or when USPS fails, use mock data
     if (!uspsData) {
-      // Check if it's in our supported list for development
+      // Check if it's in our supported list
       const hasInstacartCoverage = INSTACART_COVERAGE_ZIPS.has(zipCode)
       
-      if (hasInstacartCoverage || process.env.NODE_ENV === 'development') {
-        // Mock city/state data for known ZIPs
-        const mockCityState: Record<string, { city: string; state: string }> = {
-          '10001': { city: 'New York', state: 'NY' },
-          '90210': { city: 'Beverly Hills', state: 'CA' },
-          '94102': { city: 'San Francisco', state: 'CA' },
-          '60601': { city: 'Chicago', state: 'IL' },
-          '02101': { city: 'Boston', state: 'MA' },
-          '12345': { city: 'Schenectady', state: 'NY' },
-          '54321': { city: 'Madison', state: 'WI' },
-        }
-        
-        const mockData = mockCityState[zipCode] || { city: 'Unknown City', state: 'Unknown State' }
+      // Mock city/state data for known ZIPs
+      const mockCityState: Record<string, { city: string; state: string }> = {
+        '10001': { city: 'New York', state: 'NY' },
+        '90210': { city: 'Beverly Hills', state: 'CA' },
+        '94102': { city: 'San Francisco', state: 'CA' },
+        '60601': { city: 'Chicago', state: 'IL' },
+        '02101': { city: 'Boston', state: 'MA' },
+        '12345': { city: 'Schenectady', state: 'NY' },
+        '54321': { city: 'Madison', state: 'WI' },
+      }
+      
+      // In development, treat all 5-digit numbers as valid ZIPs
+      if (process.env.NODE_ENV === 'development') {
+        const mockData = mockCityState[zipCode]
         
         return NextResponse.json({
           isValid: true,
           hasInstacartCoverage,
-          city: mockData.city,
-          state: mockData.state,
+          city: mockData?.city || `City for ${zipCode}`,
+          state: mockData?.state || 'State',
           message: hasInstacartCoverage 
             ? 'Instacart delivers to this area'
             : 'Instacart does not deliver to this area yet'
         })
       }
       
+      // In production without USPS data, we can't validate the ZIP
       return NextResponse.json({
         isValid: false,
         hasInstacartCoverage: false,
-        message: 'Invalid ZIP code'
+        message: 'Unable to validate ZIP code'
       }, { status: 400 })
     }
 

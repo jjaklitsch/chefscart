@@ -292,7 +292,7 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
         analytics.trackZipCompletion(zip, true, userId);
       } else if (data.isValid) {
         setValidationState('no-coverage')
-        setMessage('Sorry, Instacart doesn\'t deliver to this area yet. Join our waitlist!')
+        setMessage('Sorry, ChefsCart isn\'t available in your area yet. Join our waitlist!')
         setValidationData({ 
           ...(data.city && { city: data.city }),
           ...(data.state && { state: data.state })

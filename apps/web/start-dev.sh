@@ -33,10 +33,10 @@ cleanup_processes() {
 
 # Function to check port availability
 check_port() {
-    if lsof -Pi :3000 -sTCP:LISTEN -t >/dev/null ; then
-        echo -e "${RED}Port 3000 is already in use${NC}"
+    if lsof -Pi :3001 -sTCP:LISTEN -t >/dev/null ; then
+        echo -e "${RED}Port 3001 is already in use${NC}"
         echo "Attempting to free up the port..."
-        lsof -ti:3000 | xargs kill -9 2>/dev/null
+        lsof -ti:3001 | xargs kill -9 2>/dev/null
         sleep 2
     fi
 }
