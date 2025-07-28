@@ -46,31 +46,16 @@ interface HeadlineABTestProps {
 }
 
 export default function HeadlineABTest({ className = "" }: HeadlineABTestProps) {
-  const { variant, isLoading } = useABTest(HEADLINE_EXPERIMENT_CONFIG);
-
-  // Temporarily fallback to control variant to fix loading issue
-  const variantId = variant?.variantId || 'control';
-  const content = HEADLINE_VARIANTS[variantId as keyof typeof HEADLINE_VARIANTS];
-
-  // Show content immediately if we have it, otherwise show loading
-  if (isLoading && !content) {
-    return (
-      <div className={className}>
-        <div className="animate-pulse">
-          <div className="h-8 bg-brand-100 rounded mb-4 max-w-2xl mx-auto"></div>
-          <div className="h-4 bg-brand-100 rounded w-3/4 max-w-xl mx-auto"></div>
-        </div>
-      </div>
-    );
-  }
-
+  // Temporarily disable A/B testing to fix server-side rendering issues
+  // TODO: Re-enable once SSR issues are resolved
+  
   return (
     <div className={className}>
       <p className="text-xl text-text-primary max-w-2xl mx-auto mb-4">
-        {content.h1}
+        Your AI sous-chef that turns personal meal plans into a ready-to-checkout Instacart cart in ≤ 5 min.
       </p>
       <p className="text-lg text-text-secondary max-w-xl mx-auto">
-        {content.subtext}
+        Stop spending hours planning meals and shopping. Get personalized recipes and a complete grocery cart in minutes.
       </p>
     </div>
   );

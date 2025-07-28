@@ -101,7 +101,7 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
 
   if (!isOpen) return null
 
-  const location = city && state ? `${city}, ${state}` : `ZIP code ${zipCode}`
+  const location = `ZIP code ${zipCode}`
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -232,23 +232,7 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
   const [validationData, setValidationData] = useState<{ city?: string; state?: string }>({})
   const [showWaitlistModal, setShowWaitlistModal] = useState(false)
 
-  // Auto-fill with geo-IP detection on component mount
-  useEffect(() => {
-    const detectLocation = async () => {
-      try {
-        const response = await fetch('/api/geo-ip')
-        const data = await response.json()
-        if (data.zipCode) {
-          setZipCode(data.zipCode)
-          validateZipCode(data.zipCode)
-        }
-      } catch (error) {
-        console.error('Failed to detect location:', error)
-      }
-    }
-
-    detectLocation()
-  }, [])
+  // Component starts with empty ZIP code input
 
   const validateZipCode = async (zip: string) => {
     if (zip.length !== 5 || !/^\d{5}$/.test(zip)) {
@@ -281,22 +265,16 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
       
       if (data.hasInstacartCoverage) {
         setValidationState('valid')
-        setMessage('Great! Instacart delivers to your area.')
-        setValidationData({ 
-          ...(data.city && { city: data.city }),
-          ...(data.state && { state: data.state })
-        })
+        setMessage(data.message || 'Great! Instacart delivers to your area.')
+        setValidationData({})
         onZipValidation(zip, true)
         
         // Track successful ZIP completion - key conversion event
         analytics.trackZipCompletion(zip, true, userId);
       } else if (data.isValid) {
         setValidationState('no-coverage')
-        setMessage('Sorry, ChefsCart isn\'t available in your area yet. Join our waitlist!')
-        setValidationData({ 
-          ...(data.city && { city: data.city }),
-          ...(data.state && { state: data.state })
-        })
+        setMessage(data.message || 'Sorry, ChefsCart isn\'t available in your area yet. Join our waitlist!')
+        setValidationData({})
         onZipValidation(zip, false)
         
         // Track ZIP with no coverage

@@ -25,7 +25,7 @@ export function useABTest(config: ABTestConfig) {
       if (typeof window !== 'undefined') {
         userId = localStorage.getItem('chefscart_user_id') || '';
         if (!userId) {
-          userId = `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+          userId = `user_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
           localStorage.setItem('chefscart_user_id', userId);
         }
       }

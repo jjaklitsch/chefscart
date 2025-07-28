@@ -54,6 +54,12 @@ export interface UserPreferences {
   snacksKids?: number
   dessertsAdults?: number
   dessertsKids?: number
+  // Fridge/pantry photo upload fields
+  fridgePantryPhotos?: File[]
+  identifiedIngredients?: string[]
+  manuallyAddedIngredients?: string[]
+  skipPhotoUpload?: boolean
+  pantryItems?: string[] // Legacy compatibility field
 }
 
 export interface MealType {

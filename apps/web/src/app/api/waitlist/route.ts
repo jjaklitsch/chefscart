@@ -33,28 +33,9 @@ function isValidZipCode(zipCode: string): boolean {
   return /^\d{5}$/.test(zipCode)
 }
 
-async function validateZipCodeExists(zipCode: string): Promise<{ city?: string; state?: string } | null> {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/validate-zip`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ zipCode }),
-    })
-
-    const data = await response.json()
-    
-    if (data.isValid) {
-      return {
-        city: data.city,
-        state: data.state,
-      }
-    }
-
-    return null
-  } catch (error) {
-    console.error('Error validating ZIP code:', error)
-    return null
-  }
+async function validateZipCodeFormat(zipCode: string): Promise<boolean> {
+  // Just validate 5-digit format
+  return /^\d{5}$/.test(zipCode)
 }
 
 async function checkExistingWaitlistEntry(email: string, zipCode: string): Promise<boolean> {
@@ -206,11 +187,11 @@ export async function POST(request: NextRequest) {
     // Normalize email
     const normalizedEmail = email.toLowerCase().trim()
 
-    // Validate that ZIP code exists
-    const zipValidation = await validateZipCodeExists(zipCode)
-    if (!zipValidation) {
+    // Validate ZIP code format
+    const isValidZipFormat = await validateZipCodeFormat(zipCode)
+    if (!isValidZipFormat) {
       return NextResponse.json({
-        error: 'ZIP code does not exist'
+        error: 'Invalid ZIP code format'
       }, { status: 400 })
     }
 
@@ -229,8 +210,6 @@ export async function POST(request: NextRequest) {
       zipCode,
       ...(firstName?.trim() && { firstName: firstName.trim() }),
       ...(lastName?.trim() && { lastName: lastName.trim() }),
-      ...(zipValidation.city && { city: zipValidation.city }),
-      ...(zipValidation.state && { state: zipValidation.state }),
       createdAt: new Date(),
       source: 'manual',
     }
@@ -243,8 +222,7 @@ export async function POST(request: NextRequest) {
       await sendWaitlistConfirmationEmail(
         normalizedEmail,
         firstName,
-        zipValidation.city,
-        zipValidation.state
+        zipCode
       )
     } catch (emailError) {
       console.error('Failed to send confirmation email:', emailError)

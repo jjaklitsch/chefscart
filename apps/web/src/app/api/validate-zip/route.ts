@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 export const dynamic = 'force-dynamic'
 
 // Mock ZIP codes with Instacart coverage for demonstration
-// In production, this would integrate with Instacart's coverage API
+// Later we'll integrate with Instacart's delivery API
 const INSTACART_COVERAGE_ZIPS = new Set([
   // New York
   '10001', '10002', '10003', '10004', '10005', '10010', '10011', '10012', '10013', '10014',
@@ -29,126 +29,28 @@ const INSTACART_COVERAGE_ZIPS = new Set([
   '12345', '54321',
 ])
 
-interface USPSCityStateResponse {
-  zip5: string
-  city: string
-  state: string
-}
-
-async function validateZipWithUSPS(zipCode: string): Promise<USPSCityStateResponse | null> {
-  try {
-    const uspsApiKey = process.env.USPS_API_KEY
-    if (!uspsApiKey) {
-      console.warn('USPS API key not configured, falling back to format validation only')
-      return null
-    }
-
-    const apiUrl = `https://secure.shippingapis.com/ShippingAPI.dll?API=CityStateLookup&XML=<CityStateLookupRequest USERID="${uspsApiKey}"><ZipCode ID="0"><Zip5>${zipCode}</Zip5></ZipCode></CityStateLookupRequest>`
-
-    const response = await fetch(apiUrl, {
-      method: 'GET',
-      headers: {
-        'User-Agent': 'ChefsCart/1.0',
-      },
-    })
-
-    if (!response.ok) {
-      throw new Error(`USPS API returned ${response.status}`)
-    }
-
-    const xmlText = await response.text()
-    
-    // Check for error in response
-    if (xmlText.includes('<Error>') || xmlText.includes('Invalid Zip Code')) {
-      return null
-    }
-
-    // Simple XML parsing (in production, use a proper XML parser)
-    const zip5Match = xmlText.match(/<Zip5>([^<]+)<\/Zip5>/)
-    const cityMatch = xmlText.match(/<City>([^<]+)<\/City>/)
-    const stateMatch = xmlText.match(/<State>([^<]+)<\/State>/)
-
-    if (zip5Match && cityMatch && stateMatch && zip5Match[1] && cityMatch[1] && stateMatch[1]) {
-      return {
-        zip5: zip5Match[1],
-        city: cityMatch[1],
-        state: stateMatch[1],
-      }
-    }
-
-    return null
-  } catch (error) {
-    console.error('USPS validation error:', error)
-    return null
-  }
-}
-
 export async function POST(request: NextRequest) {
   try {
     const { zipCode } = await request.json()
 
-    // Validate ZIP code format
+    // Validate ZIP code format (just 5 digits)
     if (!zipCode || !/^\d{5}$/.test(zipCode)) {
       return NextResponse.json({
         isValid: false,
         hasInstacartCoverage: false,
-        message: 'Invalid ZIP code format'
+        message: 'Please enter a valid 5-digit ZIP code'
       }, { status: 400 })
     }
 
-    // Validate ZIP code with USPS
-    const uspsData = await validateZipWithUSPS(zipCode)
-    
-    // In development or when USPS fails, use mock data
-    if (!uspsData) {
-      // Check if it's in our supported list
-      const hasInstacartCoverage = INSTACART_COVERAGE_ZIPS.has(zipCode)
-      
-      // Mock city/state data for known ZIPs
-      const mockCityState: Record<string, { city: string; state: string }> = {
-        '10001': { city: 'New York', state: 'NY' },
-        '90210': { city: 'Beverly Hills', state: 'CA' },
-        '94102': { city: 'San Francisco', state: 'CA' },
-        '60601': { city: 'Chicago', state: 'IL' },
-        '02101': { city: 'Boston', state: 'MA' },
-        '12345': { city: 'Schenectady', state: 'NY' },
-        '54321': { city: 'Madison', state: 'WI' },
-      }
-      
-      // In development, treat all 5-digit numbers as valid ZIPs
-      if (process.env.NODE_ENV === 'development') {
-        const mockData = mockCityState[zipCode]
-        
-        return NextResponse.json({
-          isValid: true,
-          hasInstacartCoverage,
-          city: mockData?.city || `City for ${zipCode}`,
-          state: mockData?.state || 'State',
-          message: hasInstacartCoverage 
-            ? 'Instacart delivers to this area'
-            : 'Instacart does not deliver to this area yet'
-        })
-      }
-      
-      // In production without USPS data, we can't validate the ZIP
-      return NextResponse.json({
-        isValid: false,
-        hasInstacartCoverage: false,
-        message: 'Unable to validate ZIP code'
-      }, { status: 400 })
-    }
-
-    // Check if ZIP code has Instacart coverage
+    // Check if ZIP code has Instacart coverage (mock for now)
     const hasInstacartCoverage = INSTACART_COVERAGE_ZIPS.has(zipCode)
 
     return NextResponse.json({
       isValid: true,
       hasInstacartCoverage,
-      city: uspsData.city,
-      state: uspsData.state,
       message: hasInstacartCoverage 
-        ? 'Instacart delivers to this area'
-        : 'Instacart does not deliver to this area yet'
+        ? 'Great! Instacart delivers to your area.'
+        : 'ChefsCart isn\'t available in your area yet.'
     })
 
   } catch (error) {

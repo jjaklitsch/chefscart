@@ -72,32 +72,28 @@ const mockDb = {
   }),
 } as any
 
-// Export lazy getters
-export let adminAuth: any
-export let adminDb: any
-export let adminApp: App | null
+// Export with simple direct approach to avoid property redefinition issues
+let _adminAuth: any = null
+let _adminDb: any = null
+let _adminApp: App | null = null
 
-if (isBuildTime) {
-  adminAuth = mockAuth
-  adminDb = mockDb
-  adminApp = null
-} else {
-  // Initialize lazily
-  Object.defineProperty(exports, 'adminAuth', {
-    get: () => getAuth(getAdminApp()),
-    enumerable: true,
-    configurable: true
-  })
-  
-  Object.defineProperty(exports, 'adminDb', {
-    get: () => getFirestore(getAdminApp()),
-    enumerable: true,
-    configurable: true
-  })
-  
-  Object.defineProperty(exports, 'adminApp', {
-    get: () => getAdminApp(),
-    enumerable: true,
-    configurable: true
-  })
-}
+export const adminAuth = isBuildTime ? mockAuth : (() => {
+  if (!_adminAuth) {
+    _adminAuth = getAuth(getAdminApp())
+  }
+  return _adminAuth
+})()
+
+export const adminDb = isBuildTime ? mockDb : (() => {
+  if (!_adminDb) {
+    _adminDb = getFirestore(getAdminApp())
+  }
+  return _adminDb
+})()
+
+export const adminApp = isBuildTime ? null : (() => {
+  if (!_adminApp) {
+    _adminApp = getAdminApp()
+  }
+  return _adminApp
+})()
