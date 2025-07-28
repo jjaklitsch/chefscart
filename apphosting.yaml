@@ -24,6 +24,19 @@ runConfig:
       value: "placeholder-key-for-build"
       availability: [BUILD]
     
+    # Firebase Admin SDK configuration (placeholders for build)
+    - variable: FIREBASE_PROJECT_ID
+      value: "placeholder-project-id"
+      availability: [BUILD]
+    
+    - variable: FIREBASE_CLIENT_EMAIL
+      value: "placeholder@firebase.iam.gserviceaccount.com"
+      availability: [BUILD]
+    
+    - variable: FIREBASE_PRIVATE_KEY
+      value: "-----BEGIN PRIVATE KEY-----\nplaceholder-key\n-----END PRIVATE KEY-----\n"
+      availability: [BUILD]
+    
     # Firebase configuration (automatically provided by Firebase)
     - variable: FIREBASE_CONFIG
       availability: [BUILD, RUNTIME]
