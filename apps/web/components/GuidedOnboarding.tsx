@@ -500,6 +500,9 @@ export default function GuidedOnboarding({ onComplete, onBack }: GuidedOnboardin
 
           {currentStepData?.type === 'meal-frequency' && (
             <div className="space-y-4">
+              <p className="text-sm text-neutral-600 mb-4">
+                Don't worry, you'll be able to add snacks, drinks, and other groceries after choosing your meals.
+              </p>
               <div className="flex items-center justify-between p-4 border-2 border-neutral-200 rounded-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">🥞</span>

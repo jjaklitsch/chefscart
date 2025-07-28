@@ -1,27 +1,4 @@
 {
-  "/api/analytics/route": "app/api/analytics/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/assistant/thread/route": "app/api/assistant/thread/route.js",
-  "/api/conversation/process/route": "app/api/conversation/process/route.js",
-  "/api/assistant/tools/route": "app/api/assistant/tools/route.js",
-  "/api/assistant/chat/route": "app/api/assistant/chat/route.js",
-  "/api/create-cart/route": "app/api/create-cart/route.js",
-  "/api/generate-mealplan/route": "app/api/generate-mealplan/route.js",
-  "/api/voice/continuous-chat/route": "app/api/voice/continuous-chat/route.js",
-  "/api/voice/realtime-simple/route": "app/api/voice/realtime-simple/route.js",
-  "/api/voice/synthesize/route": "app/api/voice/synthesize/route.js",
-  "/api/voice/transcribe/route": "app/api/voice/transcribe/route.js",
-  "/api/voice/realtime-token/route": "app/api/voice/realtime-token/route.js",
-  "/icon.svg/route": "app/icon.svg/route.js",
-  "/chat/page": "app/chat/page.js",
   "/page": "app/page.js",
-  "/api/generate-mealplan-mock/route": "app/api/generate-mealplan-mock/route.js",
-  "/api/generate-dish-image/route": "app/api/generate-dish-image/route.js",
-  "/api/generate-replacement-recipe/route": "app/api/generate-replacement-recipe/route.js",
-  "/api/create-cart-mock/route": "app/api/create-cart-mock/route.js",
-  "/api/send-email/route": "app/api/send-email/route.js",
-  "/onboarding/page": "app/onboarding/page.js",
-  "/api/geo-ip/route": "app/api/geo-ip/route.js",
-  "/api/validate-zip/route": "app/api/validate-zip/route.js",
-  "/api/waitlist/route": "app/api/waitlist/route.js"
+  "/onboarding/page": "app/onboarding/page.js"
 }

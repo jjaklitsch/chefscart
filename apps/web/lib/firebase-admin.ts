@@ -2,41 +2,102 @@ import { initializeApp, getApps, cert, App } from 'firebase-admin/app'
 import { getFirestore } from 'firebase-admin/firestore'
 import { getAuth } from 'firebase-admin/auth'
 
-let app: App
+// Check if we're in build mode
+const isBuildTime = process.env.NODE_ENV === 'production' && 
+                   process.env.FIREBASE_PROJECT_ID === 'placeholder-project-id'
 
-if (getApps().length === 0) {
+let app: App | null = null
+
+function initFirebaseAdmin(): App {
+  // Return existing app if already initialized
+  if (getApps().length > 0) {
+    return getApps()[0]!
+  }
+
+  // During build time, create a mock app that won't actually connect
+  if (isBuildTime) {
+    return initializeApp({
+      projectId: 'build-placeholder',
+    })
+  }
+
   const projectId = process.env.FIREBASE_PROJECT_ID
   const clientEmail = process.env.FIREBASE_CLIENT_EMAIL
   const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n')
   
-  // Check if we're in build mode with placeholder values
-  const isPlaceholder = projectId === 'placeholder-project-id' || 
-                       clientEmail === 'placeholder@firebase.iam.gserviceaccount.com' ||
-                       privateKey?.includes('placeholder-key')
-  
-  // During build time with placeholders, create a minimal app without credentials
-  if (isPlaceholder) {
-    app = initializeApp({
-      projectId: 'build-placeholder',
-    })
-  } else if (!projectId || !clientEmail || !privateKey) {
-    // Only throw error if we're not in build mode with placeholders
+  if (!projectId || !clientEmail || !privateKey) {
     throw new Error('Missing required Firebase environment variables')
-  } else {
-    // Normal initialization with real credentials
-    app = initializeApp({
-      credential: cert({
-        projectId,
-        clientEmail,
-        privateKey,
-      }),
-      projectId,
-    })
   }
-} else {
-  app = getApps()[0]!
+
+  return initializeApp({
+    credential: cert({
+      projectId,
+      clientEmail,
+      privateKey,
+    }),
+    projectId,
+  })
 }
 
-export const adminAuth = getAuth(app)
-export const adminDb = getFirestore(app)
-export { app as adminApp }
+// Lazy initialization - only initialize when actually used
+function getAdminApp(): App {
+  if (!app) {
+    app = initFirebaseAdmin()
+  }
+  return app
+}
+
+// Mock functions for build time
+const mockAuth = {
+  verifyIdToken: () => Promise.reject(new Error('Firebase not available during build')),
+  createUser: () => Promise.reject(new Error('Firebase not available during build')),
+  updateUser: () => Promise.reject(new Error('Firebase not available during build')),
+  deleteUser: () => Promise.reject(new Error('Firebase not available during build')),
+} as any
+
+const mockDb = {
+  collection: () => ({
+    add: () => Promise.reject(new Error('Firebase not available during build')),
+    doc: () => ({
+      get: () => Promise.reject(new Error('Firebase not available during build')),
+      set: () => Promise.reject(new Error('Firebase not available during build')),
+      update: () => Promise.reject(new Error('Firebase not available during build')),
+      delete: () => Promise.reject(new Error('Firebase not available during build')),
+    }),
+    where: () => ({
+      limit: () => ({
+        get: () => Promise.reject(new Error('Firebase not available during build')),
+      }),
+    }),
+  }),
+} as any
+
+// Export lazy getters
+export let adminAuth: any
+export let adminDb: any
+export let adminApp: App | null
+
+if (isBuildTime) {
+  adminAuth = mockAuth
+  adminDb = mockDb
+  adminApp = null
+} else {
+  // Initialize lazily
+  Object.defineProperty(exports, 'adminAuth', {
+    get: () => getAuth(getAdminApp()),
+    enumerable: true,
+    configurable: true
+  })
+  
+  Object.defineProperty(exports, 'adminDb', {
+    get: () => getFirestore(getAdminApp()),
+    enumerable: true,
+    configurable: true
+  })
+  
+  Object.defineProperty(exports, 'adminApp', {
+    get: () => getAdminApp(),
+    enumerable: true,
+    configurable: true
+  })
+}
