@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { adminDb as db } from '@/lib/firebase-admin'
 
 export const dynamic = 'force-dynamic'
 
@@ -40,6 +39,7 @@ async function validateZipCodeFormat(zipCode: string): Promise<boolean> {
 
 async function checkExistingWaitlistEntry(email: string, zipCode: string): Promise<boolean> {
   try {
+    const db = (await import('@/lib/firebase-admin')).adminDb()
     const waitlistRef = db.collection('waitlist')
     const query = await waitlistRef
       .where('email', '==', email.toLowerCase())
@@ -56,6 +56,7 @@ async function checkExistingWaitlistEntry(email: string, zipCode: string): Promi
 
 async function addToWaitlist(entry: WaitlistEntry): Promise<string> {
   try {
+    const db = (await import('@/lib/firebase-admin')).adminDb()
     const waitlistRef = db.collection('waitlist')
     const docRef = await waitlistRef.add(entry)
     return docRef.id

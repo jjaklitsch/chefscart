@@ -2,9 +2,11 @@ import { initializeApp, getApps, cert, App } from 'firebase-admin/app'
 import { getFirestore } from 'firebase-admin/firestore'
 import { getAuth } from 'firebase-admin/auth'
 
-// Check if we're in build mode
-const isBuildTime = process.env.NODE_ENV === 'production' && 
-                   process.env.FIREBASE_PROJECT_ID === 'placeholder-project-id'
+// Check if we're in build mode - more robust detection
+const isBuildTime = process.env.VERCEL_ENV === 'preview' || 
+                   process.env.NEXT_PHASE === 'phase-production-build' ||
+                   process.env.NODE_ENV === 'production' && 
+                   !process.env.FIREBASE_PROJECT_ID
 
 let app: App | null = null
 
@@ -72,28 +74,37 @@ const mockDb = {
   }),
 } as any
 
-// Export with simple direct approach to avoid property redefinition issues
+// Cached instances
 let _adminAuth: any = null
 let _adminDb: any = null
 let _adminApp: App | null = null
 
-export const adminAuth = isBuildTime ? mockAuth : (() => {
+// Export functions that return services (truly lazy)
+export function getAdminAuth() {
+  if (isBuildTime) return mockAuth
   if (!_adminAuth) {
     _adminAuth = getAuth(getAdminApp())
   }
   return _adminAuth
-})()
+}
 
-export const adminDb = isBuildTime ? mockDb : (() => {
+export function getAdminDb() {
+  if (isBuildTime) return mockDb
   if (!_adminDb) {
     _adminDb = getFirestore(getAdminApp())
   }
   return _adminDb
-})()
+}
 
-export const adminApp = isBuildTime ? null : (() => {
+export function getAdminAppInstance() {
+  if (isBuildTime) return null
   if (!_adminApp) {
     _adminApp = getAdminApp()
   }
   return _adminApp
-})()
+}
+
+// Legacy exports for backward compatibility (but now they're functions)
+export const adminAuth = getAdminAuth
+export const adminDb = getAdminDb
+export const adminApp = getAdminAppInstance
