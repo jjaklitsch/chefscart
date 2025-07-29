@@ -72,7 +72,8 @@ class DalleRateLimiter {
         request.resolve(imageUrl)
         console.log(`✅ DALLE request completed: ${request.id}`)
       } catch (error) {
-        console.error(`❌ DALLE request failed: ${request.id}`, error)
+        const errorMessage = error instanceof Error ? error.message : 'Image generation failed'
+        console.error(`❌ DALLE request failed: ${request.id} - ${errorMessage}`)
         request.reject(error instanceof Error ? error : new Error('Image generation failed'))
       }
 
@@ -117,6 +118,10 @@ class DalleRateLimiter {
   private async makeActualRequest(prompt: string, size: string): Promise<string> {
     // Use standard fetch instead of manual HTTPS for better reliability
     try {
+      // Add timeout to the fetch request - DALLE can be slow
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 30000) // 30 second timeout
+      
       const response = await fetch('https://api.openai.com/v1/images/generations', {
         method: 'POST',
         headers: {
@@ -129,7 +134,10 @@ class DalleRateLimiter {
           n: 1,
           size
         }),
+        signal: controller.signal
       })
+
+      clearTimeout(timeoutId)
 
       if (!response.ok) {
         const errorText = await response.text()
@@ -149,6 +157,9 @@ class DalleRateLimiter {
       
       return imageUrl
     } catch (error) {
+      if (error.name === 'AbortError') {
+        throw new Error('Individual image timeout')
+      }
       console.error('DALL-E request failed:', error)
       throw error
     }

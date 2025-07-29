@@ -232,7 +232,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
           })
         }),
         new Promise<never>((_, reject) => 
-          setTimeout(() => reject(new Error('Replacement image timeout')), 10000) // 10s timeout
+          setTimeout(() => reject(new Error('Replacement image timeout')), 45000) // 45s timeout for DALLE
         )
       ])
 
@@ -271,6 +271,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
   // Generate images for all recipes on component mount (only once per recipe)
   useEffect(() => {
     const abortController = new AbortController()
+    const startTime = Date.now()
     
     const generateImages = async () => {
       for (const recipe of selectedRecipes) {
@@ -323,7 +324,8 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
           }
         } catch (error) {
           if (!abortController.signal.aborted) {
-            console.error('Error generating image for', recipe.title, ':', error)
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+            console.error(`❌ Failed to generate image for ${recipe.title}: ${errorMessage}`)
             setImageErrors(prev => ({ ...prev, [recipe.id]: true }))
             // Update the recipe's imageLoading state on error
             setSelectedRecipes(prev => 
@@ -342,7 +344,17 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
       }
     }
 
-    generateImages()
+    generateImages().then(() => {
+      // Log final results
+      const totalRecipes = selectedRecipes.length
+      const successfulImages = selectedRecipes.filter(r => r.imageUrl || imageUrls[r.id]).length
+      const failedImages = Object.keys(imageErrors).length + selectedRecipes.filter(r => r.imageError).length
+      
+      console.log(`🎨 Image generation complete: ${successfulImages}/${totalRecipes} successful in ${Date.now() - startTime}ms`)
+      if (failedImages > 0) {
+        console.warn(`⚠️  ${failedImages} images failed to generate`)
+      }
+    })
     
     return () => {
       abortController.abort()

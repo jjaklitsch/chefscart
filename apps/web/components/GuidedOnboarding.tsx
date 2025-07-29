@@ -704,21 +704,31 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   // Real ingredient identification function using GPT-4 Vision
   const identifyIngredientsFromPhotos = useCallback(async (photos: File[]): Promise<Array<{ name: string; quantity: number; unit: string }>> => {
     try {
+      console.log(`📤 Sending ${photos.length} photos to API for analysis`)
+      photos.forEach((photo, index) => {
+        console.log(`  Photo ${index + 1}: ${photo.name} (${photo.type || 'no-type'}, ${(photo.size / 1024 / 1024).toFixed(1)}MB)`)
+      })
+      
       const formData = new FormData()
       photos.forEach((photo, index) => {
         formData.append('photos', photo)
       })
 
+      console.log('🌐 Making API request to /api/identify-pantry-items')
       const response = await fetch('/api/identify-pantry-items', {
         method: 'POST',
         body: formData
       })
 
       if (!response.ok) {
-        throw new Error('Failed to analyze photos')
+        const errorText = await response.text()
+        console.error(`❌ API response not ok: ${response.status} - ${errorText}`)
+        throw new Error(`Failed to analyze photos: ${response.status} - ${errorText}`)
       }
 
+      console.log('📥 Received API response, parsing JSON...')
       const data = await response.json()
+      console.log('🔍 API response data:', data)
       
       if (data.fallback) {
         console.warn('AI analysis fallback:', data.message)
@@ -753,6 +763,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
 
   // File upload handlers
   const handleFileSelect = useCallback((files: FileList | null) => {
+    console.log('📁 handleFileSelect called with:', files ? files.length : 0, 'files')
     if (!files) return
     
     const validFiles = Array.from(files).filter(file => {
@@ -766,26 +777,36 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                          file.name.toLowerCase().endsWith('.png') ||
                          file.name.toLowerCase().endsWith('.webp')
       const isValidSize = file.size <= 10 * 1024 * 1024 // 10MB limit
+      
+      console.log(`  File: ${file.name} (${file.type || 'no-type'}, ${(file.size / 1024 / 1024).toFixed(1)}MB) - Valid: ${isValidType && isValidSize}`)
       return isValidType && isValidSize
     })
     
+    console.log(`✅ ${validFiles.length} valid files out of ${files.length} total`)
     if (validFiles.length === 0) return
     
-    const currentPhotos = answers.fridgePantryPhotos || []
-    const newPhotos = [...currentPhotos, ...validFiles].slice(0, 5) // Max 5 photos
-    
-    setAnswers(prev => ({ ...prev, fridgePantryPhotos: newPhotos }))
+    let allPhotos: File[] = []
+    setAnswers(prev => {
+      const currentPhotos = prev.fridgePantryPhotos || []
+      const newPhotos = [...currentPhotos, ...validFiles].slice(0, 5) // Max 5 photos
+      allPhotos = newPhotos // Store for analysis
+      return { ...prev, fridgePantryPhotos: newPhotos }
+    })
     
     // Identify ingredients from all photos
+    console.log(`🔍 Starting ingredient analysis for ${allPhotos.length} photos`)
     setIsAnalyzingPhotos(true)
-    identifyIngredientsFromPhotos(newPhotos).then(ingredients => {
+    identifyIngredientsFromPhotos(allPhotos).then(ingredients => {
+      console.log(`✅ Ingredient analysis complete: ${ingredients.length} items identified`)
       setIdentifiedIngredients(ingredients)
       setIsAnalyzingPhotos(false)
     }).catch(error => {
-      console.error('Error analyzing photos:', error)
+      console.error('❌ Error analyzing photos:', error)
       setIsAnalyzingPhotos(false)
+      // Show user-friendly error message
+      alert('Unable to analyze photos. Please try again or add items manually.')
     })
-  }, [answers.fridgePantryPhotos, identifyIngredientsFromPhotos])
+  }, [identifyIngredientsFromPhotos])
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault()
@@ -804,14 +825,18 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   }, [handleFileSelect])
 
   const removePhoto = useCallback((index: number) => {
-    const currentPhotos = answers.fridgePantryPhotos || []
-    const newPhotos = currentPhotos.filter((_: File, i: number) => i !== index)
-    setAnswers(prev => ({ ...prev, fridgePantryPhotos: newPhotos }))
+    let updatedPhotos: File[] = []
+    setAnswers(prev => {
+      const currentPhotos = prev.fridgePantryPhotos || []
+      const newPhotos = currentPhotos.filter((_: File, i: number) => i !== index)
+      updatedPhotos = newPhotos
+      return { ...prev, fridgePantryPhotos: newPhotos }
+    })
     
     // Re-identify ingredients
-    if (newPhotos.length > 0) {
+    if (updatedPhotos.length > 0) {
       setIsAnalyzingPhotos(true)
-      identifyIngredientsFromPhotos(newPhotos).then(ingredients => {
+      identifyIngredientsFromPhotos(updatedPhotos).then(ingredients => {
         setIdentifiedIngredients(ingredients)
         setIsAnalyzingPhotos(false)
       }).catch(error => {
@@ -821,7 +846,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     } else {
       setIdentifiedIngredients([])
     }
-  }, [answers.fridgePantryPhotos, identifyIngredientsFromPhotos])
+  }, [identifyIngredientsFromPhotos])
 
   const addManualIngredient = useCallback(() => {
     const ingredient = manualIngredientInput.trim()

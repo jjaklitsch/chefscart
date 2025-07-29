@@ -56,7 +56,7 @@ export interface UserPreferences {
   dessertsKids?: number
   // Fridge/pantry photo upload fields
   fridgePantryPhotos?: File[]
-  identifiedIngredients?: string[]
+  identifiedIngredients?: Array<{ name: string; quantity: number; unit: string }>
   manuallyAddedIngredients?: string[]
   skipPhotoUpload?: boolean
   pantryItems?: string[] // Legacy compatibility field

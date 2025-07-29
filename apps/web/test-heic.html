@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test HEIC Upload</title>
+</head>
+<body>
+    <h1>Test HEIC Photo Upload</h1>
+    <input type="file" id="fileInput" accept="image/*" multiple>
+    <button onclick="testUpload()">Test Upload</button>
+    <div id="results"></div>
+
+    <script>
+    async function testUpload() {
+        const fileInput = document.getElementById('fileInput');
+        const files = fileInput.files;
+        
+        if (files.length === 0) {
+            alert('Please select files first');
+            return;
+        }
+        
+        const formData = new FormData();
+        Array.from(files).forEach(file => {
+            console.log('Adding file:', file.name, file.type, file.size);
+            formData.append('photos', file);
+        });
+        
+        try {
+            const response = await fetch('/api/identify-pantry-items', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const data = await response.json();
+            document.getElementById('results').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            
+            console.log('Response:', data);
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('results').innerHTML = 'Error: ' + error.message;
+        }
+    }
+    </script>
+</body>
+</html>
