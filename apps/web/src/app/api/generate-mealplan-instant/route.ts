@@ -3,6 +3,123 @@ import type { UserPreferences } from '../../../../types'
 // Note: We'll inline the makeOpenAIRequest function here to avoid importing the full library
 import https from 'https'
 
+// Pure HTTP OpenAI API call with retry logic
+async function makeOpenAIRequest(
+  messages: any[], 
+  functions?: any[], 
+  functionCall?: any,
+  maxRetries: number = 2
+): Promise<any> {
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      const result = await new Promise<any>((resolve, reject) => {
+        const postData = JSON.stringify({
+          model: 'gpt-4.1-mini',
+          messages,
+          ...(functions && { functions }),
+          ...(functionCall && { function_call: functionCall }),
+          temperature: 0.7,
+          max_tokens: 1000
+        })
+
+        const options = {
+          hostname: 'api.openai.com',
+          port: 443,
+          path: '/v1/chat/completions',
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+            'Content-Type': 'application/json',
+            'Content-Length': Buffer.byteLength(postData),
+            'Connection': 'close' // Force new connection for true parallel
+          },
+          timeout: 30000 // Reasonable 30s timeout
+        }
+
+        const req = https.request(options, (res) => {
+          let data = ''
+          res.on('data', (chunk) => { data += chunk })
+          res.on('end', () => {
+            try {
+              const parsed = JSON.parse(data)
+              
+              // Check for OpenAI API errors
+              if (parsed.error) {
+                reject(new Error(`OpenAI API error: ${parsed.error.message || 'Unknown error'}`))
+                return
+              }
+              
+              resolve(parsed)
+            } catch (e) {
+              reject(new Error(`JSON parse error: ${e instanceof Error ? e.message : e}`))
+            }
+          })
+        })
+
+        req.on('error', reject)
+        req.on('timeout', () => {
+          req.destroy()
+          reject(new Error('Request timeout'))
+        })
+        
+        req.setTimeout(30000) // 30s timeout
+        req.write(postData)
+        req.end()
+      })
+      
+      return result // Success, return result
+      
+    } catch (error) {
+      const isLastAttempt = attempt === maxRetries
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+      
+      console.log(`OpenAI request attempt ${attempt + 1}/${maxRetries + 1} failed: ${errorMessage}`)
+      
+      if (isLastAttempt) {
+        throw error // Final attempt failed, throw error
+      }
+      
+      // Retry with exponential backoff
+      const backoffMs = Math.min(1000 * Math.pow(2, attempt), 5000)
+      console.log(`Retrying in ${backoffMs}...`)
+      await new Promise(resolve => setTimeout(resolve, backoffMs))
+    }
+  }
+  
+  throw new Error('All retry attempts failed')
+}
+
+const MEAL_IDEAS_FUNCTION = {
+  name: 'generate_meal_ideas',
+  description: 'Generate unique meal ideas',
+  parameters: {
+    type: 'object',
+    properties: {
+      meals: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            id: { type: 'string' },
+            title: { type: 'string' },
+            description: { type: 'string' },
+            mealType: { type: 'string' },
+            cuisine: { type: 'string' },
+            mainProtein: { type: 'string' },
+            difficulty: { type: 'string' },
+            cookTime: { type: 'number' },
+            prepTime: { type: 'number' },
+            servings: { type: 'number' },
+            estimatedCost: { type: 'number' }
+          },
+          required: ['id', 'title', 'description', 'mealType', 'cuisine', 'mainProtein']
+        }
+      }
+    },
+    required: ['meals']
+  }
+}
+
 export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
@@ -20,9 +137,9 @@ export async function POST(request: NextRequest) {
     const overallStart = Date.now()
 
     // Create meal requests
-    const requests = []
-    preferences.mealTypes?.forEach(mealType => {
-      mealType.days.forEach(day => {
+    const requests: Array<{mealType: string, day: string, servings: number}> = []
+    preferences.mealTypes?.forEach((mealType: any) => {
+      mealType.days.forEach((day: any) => {
         requests.push({
           mealType: mealType.type,
           day,
@@ -42,7 +159,7 @@ export async function POST(request: NextRequest) {
 
     const mealTypeGroups = requests.reduce((groups: Record<string, any[]>, req) => {
       if (!groups[req.mealType]) groups[req.mealType] = []
-      groups[req.mealType].push(req)
+      groups[req.mealType]!.push(req)
       return groups
     }, {})
 
@@ -111,7 +228,7 @@ Requirements:
       id: `plan_${Date.now()}`,
       userId: `temp_${Date.now()}`,
       recipes: recipes,
-      subtotalEstimate: recipes.reduce((sum, recipe) => sum + (recipe.estimatedCost * recipe.servings), 0),
+      subtotalEstimate: recipes.reduce((sum: number, recipe: any) => sum + (recipe.estimatedCost * recipe.servings), 0),
       ingredientMatchPct: 95,
       status: 'partial', // Indicate this is partial data
       preferences,

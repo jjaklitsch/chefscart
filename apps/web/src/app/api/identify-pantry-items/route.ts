@@ -104,8 +104,8 @@ export async function POST(request: NextRequest) {
           } catch (convertError) {
             console.error(`❌ Failed to convert HEIF/HEIC file ${file.name}:`, convertError)
             console.error('Error details:', {
-              message: convertError.message,
-              stack: convertError.stack?.toString(),
+              message: convertError instanceof Error ? convertError.message : convertError,
+              stack: convertError instanceof Error ? convertError.stack?.toString() : undefined,
               fileSize: buffer.byteLength,
               fileName: file.name,
               mimeType: file.type
@@ -122,7 +122,7 @@ export async function POST(request: NextRequest) {
               mimeType = 'image/png'
               console.log(`✅ Successfully converted on retry: ${file.name}`)
             } catch (retryError) {
-              console.error(`❌ Retry also failed:`, retryError.message)
+              console.error(`❌ Retry also failed:`, retryError instanceof Error ? retryError.message : retryError)
               console.warn(`⚠️  Skipping HEIF/HEIC file ${file.name} due to conversion failure`)
               return null
             }

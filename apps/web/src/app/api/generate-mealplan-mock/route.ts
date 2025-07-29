@@ -126,7 +126,6 @@ export async function POST(request: NextRequest) {
       id: `plan_${Date.now()}`,
       userId: userId || `anonymous_${Date.now()}`,
       recipes: result.recipes,
-      backupRecipes: result.backupRecipes,
       subtotalEstimate,
       ingredientMatchPct: 95,
       status: 'draft' as const,

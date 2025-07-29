@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     }
 
     console.log('⚡ Starting PURE HTTP meal generation (TRUE PARALLEL!)...')
-    console.log(`📊 Request: ${JSON.stringify({mealTypes: preferences.mealTypes?.map(mt => ({type: mt.type, days: mt.days.length}))})}`)
+    console.log(`📊 Request: ${JSON.stringify({mealTypes: preferences.mealTypes?.map((mt: any) => ({type: mt.type, days: mt.days.length}))})}`)
     
     const overallStart = Date.now()
 

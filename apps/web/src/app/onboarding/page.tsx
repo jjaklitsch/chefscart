@@ -56,7 +56,7 @@ function OnboardingPageContent() {
       // Show meal plan immediately with loading states for images
       const mealPlanWithLoadingImages = {
         ...data.mealPlan,
-        recipes: data.mealPlan.recipes.map(recipe => {
+        recipes: data.mealPlan.recipes.map((recipe: any) => {
           console.log(`🔍 Recipe from API:`, { id: recipe.id, title: recipe.title })
           return {
             ...recipe,
@@ -116,7 +116,7 @@ function OnboardingPageContent() {
             return { id: recipe.id, url: data.imageUrl, success: true }
           }
         } catch (error) {
-          console.warn(`❌ Failed to generate image for ${recipe.title}:`, error.message)
+          console.warn(`❌ Failed to generate image for ${recipe.title}:`, error instanceof Error ? error.message : error)
         }
         return { id: recipe.id, url: '/images/placeholder-meal.webp', success: false }
       })

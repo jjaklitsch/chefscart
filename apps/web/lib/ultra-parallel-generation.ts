@@ -360,14 +360,26 @@ export async function generateMealPlanProgressive(
         : { instructions: ['Instructions not available'] }
 
       const completeRecipe: Recipe = {
-        ...result!,
+        id: result!.id || `recipe-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        title: result!.title || 'Untitled Recipe',
+        description: result!.description || 'A delicious recipe',
+        ...(result!.mealType && { mealType: result!.mealType }),
         ingredients,
         instructions: instructionData.instructions,
         nutrition: instructionData.nutrition || {
           calories: 400, protein: 25, carbs: 35, fat: 15, fiber: 5, sugar: 8
         },
+        estimatedCost: result!.estimatedCost || 12,
+        cookTime: result!.cookTime || 30,
+        prepTime: result!.prepTime || 15,
+        servings: request.servings,
+        difficulty: (result!.difficulty as 'easy' | 'medium' | 'hard') || 'medium',
+        cuisine: result!.cuisine || 'general',
         tags: [result!.cuisine || 'general', result!.difficulty || 'medium'],
-        servings: request.servings
+        ...(result!.imageUrl && { imageUrl: result!.imageUrl }),
+        ...(result!.imageLoading !== undefined && { imageLoading: result!.imageLoading }),
+        ...(result!.imageError !== undefined && { imageError: result!.imageError }),
+        ...(result!.selected !== undefined && { selected: result!.selected })
       }
 
       finalRecipes.push(completeRecipe)
