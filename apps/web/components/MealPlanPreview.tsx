@@ -203,7 +203,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
       showToast(`Replaced "${recipeToReplace.title}" with "${newRecipe.title}"`)
     } catch (error) {
       console.error('Error replacing recipe:', error)
-      showToast('Failed to generate a replacement recipe. Please try again.')
+      showToast('Unable to find a replacement recipe right now. Please try again in a moment.')
       // Remove from dismissed list if replacement failed
       setDismissedRecipes(prev => prev.filter(title => title !== recipeToReplace.title))
     } finally {
@@ -270,15 +270,19 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
 
   // Generate images for all recipes on component mount (only once per recipe)
   useEffect(() => {
+    const abortController = new AbortController()
+    
     const generateImages = async () => {
       for (const recipe of selectedRecipes) {
+        if (abortController.signal.aborted) break
+        
         // Skip if image already generated for this recipe ID
         if (generatedImages.current.has(recipe.id)) {
           continue
         }
         
-        // Skip if image already exists, is loading, or has error
-        if (recipe.imageUrl || imageUrls[recipe.id] || recipe.imageLoading || imageLoading[recipe.id] || recipe.imageError || imageErrors[recipe.id]) {
+        // Skip if image already exists or has error (but not if just marked as loading from generation)
+        if (recipe.imageUrl || imageUrls[recipe.id] || imageLoading[recipe.id] || recipe.imageError || imageErrors[recipe.id]) {
           continue
         }
 
@@ -296,7 +300,8 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
               dishName: recipe.title,
               description: recipe.description,
               cuisine: recipe.cuisine
-            })
+            }),
+            signal: abortController.signal
           })
 
           if (!response.ok) {
@@ -304,38 +309,47 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
           }
 
           const data = await response.json()
-          setImageUrls(prev => ({ ...prev, [recipe.id]: data.imageUrl }))
-          // Update the recipe's imageLoading state
-          setSelectedRecipes(prev => 
-            prev.map(r => 
-              r.id === recipe.id 
-                ? { ...r, imageUrl: data.imageUrl, imageLoading: false }
-                : r
+          
+          if (!abortController.signal.aborted) {
+            setImageUrls(prev => ({ ...prev, [recipe.id]: data.imageUrl }))
+            // Update the recipe's imageLoading state
+            setSelectedRecipes(prev => 
+              prev.map(r => 
+                r.id === recipe.id 
+                  ? { ...r, imageUrl: data.imageUrl, imageLoading: false }
+                  : r
+              )
             )
-          )
+          }
         } catch (error) {
-          console.error('Error generating image for', recipe.title, ':', error)
-          setImageErrors(prev => ({ ...prev, [recipe.id]: true }))
-          // Update the recipe's imageLoading state on error
-          setSelectedRecipes(prev => 
-            prev.map(r => 
-              r.id === recipe.id 
-                ? { ...r, imageLoading: false, imageError: true }
-                : r
+          if (!abortController.signal.aborted) {
+            console.error('Error generating image for', recipe.title, ':', error)
+            setImageErrors(prev => ({ ...prev, [recipe.id]: true }))
+            // Update the recipe's imageLoading state on error
+            setSelectedRecipes(prev => 
+              prev.map(r => 
+                r.id === recipe.id 
+                  ? { ...r, imageLoading: false, imageError: true }
+                  : r
+              )
             )
-          )
+          }
         } finally {
-          setImageLoading(prev => ({ ...prev, [recipe.id]: false }))
+          if (!abortController.signal.aborted) {
+            setImageLoading(prev => ({ ...prev, [recipe.id]: false }))
+          }
         }
       }
     }
 
     generateImages()
+    
+    return () => {
+      abortController.abort()
+    }
   }, [selectedRecipes])
 
-  // Calculate totals (will update automatically when selectedRecipes changes)
-  // estimatedCost is the total cost for all servings of the recipe, not per-serving
-  const totalCost = selectedRecipes.reduce((sum, recipe) => sum + (recipe.estimatedCost || 12), 0)
+  // Calculate totals (servings only now)
   const totalServings = selectedRecipes.reduce((sum, recipe) => sum + (recipe.servings || 0), 0)
 
   return (
@@ -359,8 +373,8 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
           <p className="text-gray-600 text-sm md:text-base">Review and customize your recipes</p>
         </div>
 
-        {/* Summary Stats - reordered: meals, servings, cost */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
+        {/* Summary Stats - meals and servings only */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
           <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
             <div className="flex items-center">
               <div className="bg-orange-100 rounded-full p-2 md:p-3 mr-3 md:mr-4">
@@ -380,17 +394,6 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
               <div>
                 <p className="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wide">Servings</p>
                 <p className="text-xl md:text-2xl font-bold text-gray-900">{totalServings}</p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
-            <div className="flex items-center">
-              <div className="bg-green-100 rounded-full p-2 md:p-3 mr-3 md:mr-4">
-                <DollarSign className="h-5 w-5 md:h-6 md:w-6 text-green-600" />
-              </div>
-              <div>
-                <p className="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wide">Est. Cost</p>
-                <p className="text-xl md:text-2xl font-bold text-gray-900">${Math.max(totalCost * 0.8, totalCost - 15).toFixed(0)}-${(totalCost * 1.2 + 20).toFixed(0)}</p>
               </div>
             </div>
           </div>
@@ -451,21 +454,11 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                         <div className="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
                           <span className="flex items-center">
                             <Clock className="h-3 w-3 mr-1" />
-                            {recipe.prepTime + recipe.cookTime}min
+                            {(recipe.prepTime || 0) + (recipe.cookTime || 0)}min
                           </span>
                           <span className="flex items-center">
                             <Users className="h-3 w-3 mr-1" />
                             {recipe.servings} servings
-                          </span>
-                          <span className="flex items-center">
-                            <DollarSign className="h-3 w-3 mr-1" />
-                            {(() => {
-                              // estimatedCost is already the total cost for all servings
-                              const baseCost = recipe.estimatedCost || 12
-                              const lowEnd = Math.max(baseCost * 0.75, baseCost - 5)
-                              const highEnd = baseCost * 1.25 + 8
-                              return `$${lowEnd.toFixed(0)}-${highEnd.toFixed(0)}`
-                            })()}
                           </span>
                         </div>
 
@@ -562,21 +555,11 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                             <div className="flex flex-wrap gap-6 text-sm text-gray-500">
                               <span className="flex items-center">
                                 <Clock className="h-4 w-4 mr-1" />
-                                {recipe.prepTime + recipe.cookTime}min
+                                {(recipe.prepTime || 0) + (recipe.cookTime || 0)}min
                               </span>
                               <span className="flex items-center">
                                 <Users className="h-4 w-4 mr-1" />
                                 {recipe.servings} servings
-                              </span>
-                              <span className="flex items-center">
-                                <DollarSign className="h-4 w-4 mr-1" />
-                                {(() => {
-                                  // estimatedCost is already the total cost for all servings
-                                  const baseCost = recipe.estimatedCost || 12
-                                  const lowEnd = Math.max(baseCost * 0.75, baseCost - 5)
-                                  const highEnd = baseCost * 1.25 + 8
-                                  return `$${lowEnd.toFixed(0)}-${highEnd.toFixed(0)}`
-                                })()}
                               </span>
                             </div>
                           </div>

@@ -95,6 +95,11 @@ export default function GroceryListPage() {
                   placeholder="Enter your ZIP code"
                   value={zipCode}
                   onChange={(e) => setZipCode(e.target.value.replace(/\D/g, '').slice(0, 5))}
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter' && zipCode.length === 5 && !isValidatingZip) {
+                      handleGetStarted()
+                    }
+                  }}
                   className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-0 transition-colors ${
                     zipError 
                       ? 'border-red-500 focus:border-red-500' 

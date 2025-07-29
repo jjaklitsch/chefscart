@@ -105,6 +105,13 @@ function convertToPurchasableUnits(name: string, amount: number, unit: string): 
     enhancedName = capitalizedName + ' - 32oz container'
   }
   
+  // Define packaged items that come in specific package sizes
+  const isPackagedItem = lowerName.includes('tortilla') || lowerName.includes('wrap') ||
+                        lowerName.includes('bread') || lowerName.includes('bagel') ||
+                        lowerName.includes('bun') || lowerName.includes('roll') ||
+                        lowerName.includes('pita') || lowerName.includes('naan') ||
+                        lowerName.includes('taco shell') || lowerName.includes('hot dog')
+  
   // Convert cooking measurements to shopping quantities
   if (unitLower.includes('teaspoon') || unitLower.includes('tsp') || 
       unitLower.includes('tablespoon') || unitLower.includes('tbsp')) {
@@ -164,6 +171,25 @@ function convertToPurchasableUnits(name: string, amount: number, unit: string): 
   
   // Handle individual items (fruits, vegetables, etc.)
   if (unitLower.includes('piece') || unitLower.includes('item') || unitLower === '' || unitLower === 'each') {
+    // For packaged items, show package info
+    if (isPackagedItem) {
+      if (lowerName.includes('tortilla') || lowerName.includes('wrap')) {
+        const packages = Math.ceil(bufferedAmount / 8) // Assume 8 per package
+        return { name: `${enhancedName} (pack of 8)`, amount: packages, unit: '' }
+      } else if (lowerName.includes('bread') || lowerName.includes('bagel')) {
+        const loaves = Math.ceil(bufferedAmount / 12) // Assume 12 slices/pieces per loaf/bag
+        return { name: `${enhancedName} (1 loaf/bag)`, amount: loaves, unit: '' }
+      } else if (lowerName.includes('bun') || lowerName.includes('roll')) {
+        const packages = Math.ceil(bufferedAmount / 6) // Assume 6 per package
+        return { name: `${enhancedName} (pack of 6)`, amount: packages, unit: '' }
+      } else if (lowerName.includes('pita') || lowerName.includes('naan')) {
+        const packages = Math.ceil(bufferedAmount / 4) // Assume 4 per package
+        return { name: `${enhancedName} (pack of 4)`, amount: packages, unit: '' }
+      } else if (lowerName.includes('taco shell')) {
+        const packages = Math.ceil(bufferedAmount / 12) // Assume 12 per package
+        return { name: `${enhancedName} (pack of 12)`, amount: packages, unit: '' }
+      }
+    }
     return { name: enhancedName, amount: Math.ceil(bufferedAmount), unit: '' }
   }
   
@@ -378,15 +404,15 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
       let unit = 'pieces'
       let name = trimmedLine
 
-      if (match) {
+      if (match && match[1]) {
         amount = parseFloat(match[1])
         if (match.length === 4) {
           // Has unit: "2 lbs chicken"
           unit = match[2] || 'pieces'
-          name = match[3]
+          name = match[3] || trimmedLine
         } else {
           // No unit: "5 bananas"
-          name = match[2]
+          name = match[2] || trimmedLine
         }
       }
 
@@ -419,11 +445,15 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
 
   const updateQuantity = (ingredientName: string, delta: number) => {
     setConsolidatedIngredients(prev => 
-      prev.map(ing => 
-        ing.name === ingredientName 
-          ? { ...ing, amount: Math.max(0, ing.amount + delta) }
-          : ing
-      )
+      prev.map(ing => {
+        if (ing.name === ingredientName) {
+          const newAmount = ing.amount + delta
+          // Validate quantity: minimum 0, maximum 999 for safety
+          const validatedAmount = Math.max(0, Math.min(999, newAmount))
+          return { ...ing, amount: validatedAmount }
+        }
+        return ing
+      })
     )
   }
 
@@ -540,34 +570,34 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
           <p className="text-gray-600 text-sm md:text-base">Review and customize your grocery list before checkout</p>
         </div>
 
-        {/* Summary Stats */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+        {/* Summary Stats - Mobile Optimized */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
+          <div className="bg-white rounded-xl p-3 sm:p-4 shadow-sm border border-gray-100">
             <div className="flex items-center">
-              <ShoppingCart className="h-5 w-5 text-orange-600 mr-3" />
+              <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5 text-orange-600 mr-2 sm:mr-3" />
               <div>
                 <p className="text-xs text-gray-500 uppercase">Total Items</p>
-                <p className="text-xl font-bold text-gray-900">{totalItems}</p>
+                <p className="text-lg sm:text-xl font-bold text-gray-900">{totalItems}</p>
               </div>
             </div>
           </div>
-          <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <div className="flex items-center">
-              <span className="text-green-600 text-xl mr-3">$</span>
-              <div>
+          <div className="bg-white rounded-xl p-3 sm:p-4 shadow-sm border border-gray-100">
+            <div className="flex items-start">
+              <span className="text-green-600 text-lg sm:text-xl mr-2 sm:mr-3">$</span>
+              <div className="min-w-0 flex-1">
                 <p className="text-xs text-gray-500 uppercase">
                   Est. Cost {isEstimatingCosts && '(Updating...)'}
                 </p>
                 {isEstimatingCosts ? (
                   <div className="flex items-center">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-green-600 mr-2"></div>
-                    <p className="text-lg font-semibold text-gray-600">Calculating...</p>
+                    <div className="animate-spin rounded-full h-3 w-3 sm:h-4 sm:w-4 border-b-2 border-green-600 mr-2"></div>
+                    <p className="text-sm sm:text-lg font-semibold text-gray-600">Calculating...</p>
                   </div>
                 ) : (
-                  <p className="text-xl font-bold text-gray-900">${costRange.low}-{costRange.high}</p>
+                  <p className="text-lg sm:text-xl font-bold text-gray-900">${costRange.low}-${costRange.high}</p>
                 )}
                 {costEstimationError && (
-                  <p className="text-xs text-orange-600 mt-1">{costEstimationError}</p>
+                  <p className="text-xs text-orange-600 mt-1 leading-tight">{costEstimationError}</p>
                 )}
               </div>
             </div>

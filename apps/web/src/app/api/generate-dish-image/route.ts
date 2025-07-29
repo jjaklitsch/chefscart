@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { generateImageHTTP } from '../../../../lib/pure-http-dalle'
+import { dalleRateLimiter } from '../../../../lib/dalle-rate-limiter'
 
 export const dynamic = 'force-dynamic'
 
@@ -30,9 +30,9 @@ Shot from a 45-degree angle on a clean white background.
 Bright, natural lighting. High-quality, appetizing presentation. 
 Restaurant-quality plating with garnish. Photorealistic style.`
 
-    // Generate image using pure HTTP with retry logic
-    console.log(`Generating image using pure HTTP for: ${dishName}`)
-    const imageUrl = await generateImageHTTP(
+    // Generate image using rate-limited queue
+    console.log(`Generating image with rate limiting for: ${dishName}`)
+    const imageUrl = await dalleRateLimiter.generateImage(
       imagePrompt,
       "512x512" // DALL-E 2 supports 256x256, 512x512, or 1024x1024
     )

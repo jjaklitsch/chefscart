@@ -699,8 +699,58 @@ export default function ConversationalChat({ onPreferencesComplete, onProgressUp
   }, [onPreferencesComplete])
 
   const handleEditProgressItem = useCallback((itemKey: string) => {
-    // TODO: Implement editing specific preference items
-    console.log('Edit item:', itemKey)
+    // Map progress tracker keys to conversation step IDs
+    const stepMapping: Record<string, string> = {
+      'mealTypes': 'meal_types',
+      'diets': 'dietary_restrictions', 
+      'maxCookTime': 'cooking_time',
+      'preferredCuisines': 'cuisine_preferences',
+      // Skip items that don't have direct conversation steps
+      'mealsPerWeek': '',
+      'allergies': '',
+      'organicPreference': '',
+      'cookingSkillLevel': ''
+    }
+    
+    const stepId = stepMapping[itemKey]
+    if (!stepId) {
+      console.log('No conversation step for item:', itemKey)
+      return
+    }
+    
+    // Navigate back to the specific step
+    setConversationState(prev => {
+      const step = getStepById(stepId)
+      if (!step) {
+        console.log('Step not found:', stepId)
+        return prev
+      }
+      
+      // Remove the step from completed steps so it can be re-asked
+      const newCompletedSteps = new Set(prev.conversationFlow.completedSteps)
+      newCompletedSteps.delete(stepId)
+      
+      // Add a message indicating we're going back to edit
+      const editMessage = {
+        id: `edit-${Date.now()}`,
+        role: 'assistant' as const,
+        content: `Let's update your ${step.question.toLowerCase().replace('?', '')}. ${step.question}`,
+        timestamp: new Date(),
+        quickReplies: step.quickReplies || []
+      }
+      
+      return {
+        ...prev,
+        messages: [...prev.messages, editMessage],
+        conversationFlow: {
+          ...prev.conversationFlow,
+          currentStep: stepId,
+          completedSteps: newCompletedSteps,
+          isComplete: false
+        },
+        awaitingResponse: true
+      }
+    })
   }, [])
 
   const handleChooseVoice = useCallback(() => {

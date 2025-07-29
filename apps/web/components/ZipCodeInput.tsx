@@ -7,6 +7,7 @@ import analytics from '../lib/analytics'
 
 interface ZipCodeInputProps {
   onZipValidation: (zip: string, isValid: boolean) => void
+  onSubmit?: () => void
 }
 
 interface WaitlistModalProps {
@@ -224,7 +225,7 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
   )
 }
 
-export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
+export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInputProps) {
   const [zipCode, setZipCode] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [validationState, setValidationState] = useState<'idle' | 'valid' | 'invalid' | 'no-coverage'>('idle')
@@ -330,7 +331,11 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && zipCode.length === 5) {
-      validateZipCode(zipCode)
+      if (validationState === 'valid' && onSubmit) {
+        onSubmit()
+      } else {
+        validateZipCode(zipCode)
+      }
     }
   }
 

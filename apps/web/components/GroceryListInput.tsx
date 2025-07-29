@@ -177,7 +177,7 @@ export default function GroceryListInput({ onBack }: GroceryListInputProps) {
 
     } catch (error) {
       console.error('Error creating cart:', error)
-      setEmailError('Failed to create cart. Please try again.')
+      setEmailError('Unable to create your cart right now. Please check your connection and try again.')
     } finally {
       setIsProcessing(false)
     }

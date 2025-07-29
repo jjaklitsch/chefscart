@@ -184,11 +184,32 @@ export async function generateMealPlanPureHTTP(
       `${i+1}. ${req.mealType} for ${req.day} (serves ${req.servings})`
     ).join('\n')
 
+    // Group requests by meal type for better AI organization
+    const mealTypeGroups = requests.reduce((groups: Record<string, any[]>, req) => {
+      if (!groups[req.mealType]) groups[req.mealType] = []
+      groups[req.mealType].push(req)
+      return groups
+    }, {})
+
+    const mealTypeBreakdown = Object.entries(mealTypeGroups)
+      .map(([type, reqs]) => `${reqs.length} ${type} meals (serves ${reqs[0].servings} each)`)
+      .join(', ')
+
     const ideasResponse = await makeOpenAIRequest(
       [
-        { role: 'system', content: 'Generate unique meal ideas with different proteins and cuisines. Provide realistic cost estimates based on current 2024-2025 grocery prices.' },
-        { role: 'user', content: `Generate ${requests.length} unique meals:\n${mealBreakdown}\n\nRequirements:
-- Each must have different protein, cuisine, cooking method
+        { role: 'system', content: 'Generate unique meal ideas with different proteins and cuisines. Provide realistic cost estimates based on current 2024-2025 grocery prices. Ensure meal types are clearly defined and appropriate for the time of day.' },
+        { role: 'user', content: `Generate ${requests.length} unique meals organized by type: ${mealTypeBreakdown}
+
+Individual meal requests:
+${mealBreakdown}
+
+Requirements:
+- Each must have different protein, cuisine, cooking method within its meal type
+- mealType field must match exactly: breakfast, lunch, dinner, or snack
+- Breakfast: Focus on morning foods (eggs, pancakes, oatmeal, yogurt bowls)
+- Lunch: Light-to-moderate meals (salads, sandwiches, soups, wraps)  
+- Dinner: Heartier meals (proteins with sides, casseroles, full plates)
+- Snack: Light bites (smoothies, trail mix, fruit with nuts)
 - estimatedCost should be the TOTAL cost for all servings (not per-serving)
 - Base cost estimates on realistic US grocery store prices:
   * Simple meals (pasta, rice dishes): $8-15 total
@@ -196,6 +217,8 @@ export async function generateMealPlanPureHTTP(
   * Beef meals: $18-28 total
   * Seafood meals: $20-35 total
   * Vegetarian meals: $6-12 total
+  * Breakfast meals: $6-18 total
+  * Snacks: $3-10 total
 - Consider ingredients needed, seasonal availability, and mainstream grocery store pricing
 - Account for the number of servings when calculating total cost` }
       ],
@@ -223,7 +246,7 @@ export async function generateMealPlanPureHTTP(
       return makeOpenAIRequest(
         [
           { role: 'system', content: 'Generate ingredients and instructions efficiently.' },
-          { role: 'user', content: `Generate complete ingredients and instructions for: "${idea.title}"\n\nDescription: ${idea.description}\nServes: ${idea.servings} people\nCuisine: ${idea.cuisine}\nDifficulty: ${idea.difficulty}\n\nProvide:\n- Complete ingredients list (include everything needed)\n- Clear cooking instructions (no more than 20 steps)\n- Accurate nutrition information\n\nMake it realistic and practical for home cooking.` }
+          { role: 'user', content: `Generate complete ingredients and instructions for: "${idea.title}"\n\nDescription: ${idea.description}\nServes: ${idea.servings} people\nCuisine: ${idea.cuisine}\nDifficulty: ${idea.difficulty}\n\nProvide:\n- Complete ingredients list (include everything needed)\n- For meat/protein items, include both piece count and weight (e.g., "2 chicken breasts, 0.5 lb each" or "1 lb ground beef")\n- For other ingredients, use practical cooking measurements\n- Clear cooking instructions (no more than 20 steps)\n- Accurate nutrition information\n\nMake it realistic and practical for home cooking with proper portion sizes.` }
         ],
         [MEAL_DETAILS_FUNCTION],
         { name: 'generate_meal_details' },
@@ -266,13 +289,72 @@ export async function generateMealPlanPureHTTP(
     const recipes = await Promise.all(detailPromises)
     const step2Time = Date.now() - step2Start
     
-    const generationTime = Date.now() - startTime
-    console.log(`⚡ Step 2 COMPLETE: Details in ${step2Time}ms`)
-    console.log(`✅ PURE HTTP COMPLETE: ${recipes.length} recipes in ${generationTime}ms`)
-    console.log(`📊 Breakdown: Ideas=${step1Time}ms, Details=${step2Time}ms (TRUE PARALLEL!)`)
-    console.log(`🎉 Average: ${Math.round(generationTime / recipes.length)}ms per recipe`)
+    // STEP 3: Add cost estimation to recipes (optional for better UX)
+    const step3Start = Date.now()
+    console.log(`💰 Step 3: Adding cost estimates to ${recipes.length} recipes...`)
+    
+    try {
+      // Add cost estimation in parallel for all recipes
+      const recipesWithCosts = await Promise.all(
+        recipes.map(async (recipe) => {
+          try {
+            // Skip if recipe has no ingredients (fallback case)
+            if (!recipe.ingredients || recipe.ingredients.length === 0) {
+              return recipe
+            }
+            
+            // Call cost estimation API with proper URL handling
+            const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3001'
+            const response = await fetch(`${baseUrl}/api/estimate-ingredient-costs`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                ingredients: recipe.ingredients.map(ing => ({
+                  name: ing.name,
+                  amount: ing.amount,
+                  unit: ing.unit
+                })),
+                zipCode: '' // Could be passed as parameter
+              })
+            })
+            
+            if (response.ok) {
+              const costData = await response.json()
+              if (costData.success && costData.estimates) {
+                // Calculate total estimated cost
+                const totalCost = costData.estimates.reduce((sum: number, est: any) => sum + est.estimatedCost, 0)
+                return { ...recipe, estimatedCost: Math.round(totalCost) }
+              }
+            }
+            
+            // Fallback to original cost if API fails
+            return recipe
+          } catch (error) {
+            console.warn(`Cost estimation failed for ${recipe.title}:`, error)
+            return recipe
+          }
+        })
+      )
+      
+      const step3Time = Date.now() - step3Start
+      console.log(`💰 Step 3 COMPLETE: Cost estimates in ${step3Time}ms`)
+      
+      const generationTime = Date.now() - startTime
+      console.log(`✅ PURE HTTP COMPLETE: ${recipesWithCosts.length} recipes in ${generationTime}ms`)
+      console.log(`📊 Breakdown: Ideas=${step1Time}ms, Details=${step2Time}ms, Costs=${step3Time}ms`)
+      console.log(`🎉 Average: ${Math.round(generationTime / recipesWithCosts.length)}ms per recipe`)
 
-    return { recipes, generationTime }
+      return { recipes: recipesWithCosts, generationTime }
+      
+    } catch (error) {
+      console.warn('Cost estimation step failed, continuing without costs:', error)
+      const generationTime = Date.now() - startTime
+      console.log(`✅ PURE HTTP COMPLETE: ${recipes.length} recipes in ${generationTime}ms`)
+      console.log(`📊 Breakdown: Ideas=${step1Time}ms, Details=${step2Time}ms (TRUE PARALLEL!)`)
+      console.log(`🎉 Average: ${Math.round(generationTime / recipes.length)}ms per recipe`)
+
+      return { recipes, generationTime }
+    }
 
   } catch (error) {
     console.error('Pure HTTP meal generation failed:', error)

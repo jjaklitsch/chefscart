@@ -107,7 +107,7 @@ const MealCard: React.FC<MealCardProps> = ({
         <div className="flex items-center justify-between text-xs text-neutral-500 mb-4">
           <div className="flex items-center gap-1">
             <Clock className="w-3 h-3" />
-            <span>{recipe.prepTime + recipe.cookTime}min</span>
+            <span>{(recipe.prepTime || 0) + (recipe.cookTime || 0)}min</span>
           </div>
           <div className="flex items-center gap-1">
             <Users className="w-3 h-3" />
@@ -115,7 +115,7 @@ const MealCard: React.FC<MealCardProps> = ({
           </div>
           <div className="flex items-center gap-1">
             <DollarSign className="w-3 h-3" />
-            <span>${recipe.estimatedCost?.toFixed(0)}</span>
+            <span>{recipe.estimatedCost?.toFixed(0)}</span>
           </div>
         </div>
 

@@ -2,6 +2,8 @@
   "/page": "app/page.js",
   "/onboarding/page": "app/onboarding/page.js",
   "/grocery-list/page": "app/grocery-list/page.js",
+  "/api/generate-dish-image/route": "app/api/generate-dish-image/route.js",
   "/login/page": "app/login/page.js",
-  "/api/estimate-ingredient-costs/route": "app/api/estimate-ingredient-costs/route.js"
+  "/api/identify-pantry-items/route": "app/api/identify-pantry-items/route.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }

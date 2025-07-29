@@ -63,7 +63,7 @@ function OnboardingPageContent() {
 
     } catch (err) {
       console.error('Error generating meal plan:', err)
-      setError(err instanceof Error ? err.message : 'Failed to generate meal plan')
+      setError('We\'re having trouble creating your meal plan. Please check your internet connection and try again.')
       setIsLoading(false)
     }
   }
@@ -93,7 +93,7 @@ function OnboardingPageContent() {
               })
             }),
             new Promise<never>((_, reject) => 
-              setTimeout(() => reject(new Error('Individual image timeout')), 12000) // 12s per image
+              setTimeout(() => reject(new Error('Individual image timeout')), 8000) // 8s per image with faster paid tier
             )
           ])
           
@@ -238,7 +238,7 @@ function OnboardingPageContent() {
 
     } catch (err) {
       console.error('Error in cart preparation:', err)
-      setError(err instanceof Error ? err.message : 'Failed to save data and create cart')
+      setError('Unable to create your Instacart cart. Please try again or contact support if the problem persists.')
     } finally {
       setIsLoading(false)
     }

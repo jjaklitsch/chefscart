@@ -12,6 +12,13 @@ interface IngredientCostResponse {
   name: string
   estimatedCost: number
   reasoning: string
+  nutrition?: {
+    calories: number
+    protein: number
+    carbs: number
+    fat: number
+    fiber: number
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -49,16 +56,25 @@ Consider:
 - Seasonal availability
 - Average quality (not premium, not budget)
 
+Also provide basic nutrition information per serving of each ingredient.
+
 Return a JSON array with exact format:
 [
   {
     "name": "ingredient name",
     "estimatedCost": 4.99,
-    "reasoning": "brief explanation of pricing logic"
+    "reasoning": "brief explanation of pricing logic",
+    "nutrition": {
+      "calories": 150,
+      "protein": 8,
+      "carbs": 12,
+      "fat": 5,
+      "fiber": 2
+    }
   }
 ]
 
-Be precise with decimal pricing. Account for the actual quantities requested, not just unit prices.`
+Be precise with decimal pricing and nutrition values. Account for the actual quantities requested, not just unit prices.`
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',

@@ -135,6 +135,11 @@ export default function Home() {
                     setIsValidZip(false)
                   }
                 }}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter' && isValidZip) {
+                    handleGetStarted()
+                  }
+                }}
                 className="w-full px-4 py-3 border-2 border-gray-200 focus:border-green-500 rounded-lg focus:ring-0 transition-colors text-lg"
               />
             </div>

@@ -42,7 +42,12 @@ export async function POST(request: NextRequest) {
       }, { status: 400 })
     }
 
-    // Check if ZIP code has Instacart coverage (mock for now)
+    // TODO: INSTACART API INTEGRATION
+    // Replace this hardcoded ZIP lookup with real-time Instacart coverage API
+    // This should check actual service availability for the specific ZIP code
+    // including store availability, delivery windows, and service zones
+    // API endpoint: https://www.instacart.com/v3/retailers/availability
+    // For now, using mock data:
     const hasInstacartCoverage = INSTACART_COVERAGE_ZIPS.has(zipCode)
 
     return NextResponse.json({
