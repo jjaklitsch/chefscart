@@ -21,6 +21,94 @@ interface ConsolidatedIngredient {
   userAdded?: boolean
 }
 
+// Function to intelligently suggest unit based on item name
+function getRecommendedUnit(itemName: string): string {
+  const name = itemName.toLowerCase()
+  
+  // Deli/meat items - by pound
+  if (name.includes('deli') || name.includes('sliced') || name.includes('cold cut') ||
+      name.includes('turkey breast') || name.includes('ham') || name.includes('salami') ||
+      name.includes('pastrami') || name.includes('prosciutto') || name.includes('roast beef')) {
+    return 'lbs'
+  }
+  
+  // Fish/seafood - by pound
+  if (name.includes('salmon') || name.includes('tuna') || name.includes('cod') || 
+      name.includes('shrimp') || name.includes('crab') || name.includes('lobster')) {
+    return 'lbs' 
+  }
+  
+  // Meat - by pound
+  if (name.includes('ground beef') || name.includes('ground turkey') || name.includes('steak') ||
+      name.includes('pork chop') || name.includes('chicken breast') || name.includes('chicken thigh')) {
+    return 'lbs'
+  }
+  
+  // Produce items that are typically weighed
+  if (name.includes('banana') || name.includes('apple') || name.includes('orange') ||
+      name.includes('grape') || name.includes('cherry') || name.includes('berry')) {
+    return 'lbs'
+  }
+  
+  // Bulk vegetables
+  if (name.includes('potato') || name.includes('onion') || name.includes('carrot') || 
+      name.includes('sweet potato')) {
+    return 'lbs'
+  }
+  
+  // Liquids - by volume
+  if (name.includes('milk') || name.includes('juice') || name.includes('oil') ||
+      name.includes('vinegar') || name.includes('sauce') || name.includes('broth')) {
+    return 'bottles'
+  }
+  
+  // Canned goods
+  if (name.includes('canned') || name.includes('tomato paste') || name.includes('beans') ||
+      name.includes('corn') || name.includes('peas')) {
+    return 'cans'
+  }
+  
+  // Boxed items
+  if (name.includes('cereal') || name.includes('pasta') || name.includes('rice') ||
+      name.includes('crackers') || name.includes('tea')) {
+    return 'boxes'
+  }
+  
+  // Default to pieces/items
+  return 'pieces'
+}
+
+// Common units of measure for grocery items
+const COMMON_UNITS = [
+  // Count-based
+  { value: 'pieces', label: 'pieces', category: 'Count' },
+  { value: 'items', label: 'items', category: 'Count' },
+  { value: 'each', label: 'each', category: 'Count' },
+  
+  // Weight-based  
+  { value: 'lbs', label: 'pounds (lbs)', category: 'Weight' },
+  { value: 'oz', label: 'ounces (oz)', category: 'Weight' },
+  { value: 'kg', label: 'kilograms (kg)', category: 'Weight' },
+  { value: 'g', label: 'grams (g)', category: 'Weight' },
+  
+  // Volume-based
+  { value: 'cups', label: 'cups', category: 'Volume' },
+  { value: 'tbsp', label: 'tablespoons', category: 'Volume' },
+  { value: 'tsp', label: 'teaspoons', category: 'Volume' },
+  { value: 'fl oz', label: 'fluid ounces', category: 'Volume' },
+  { value: 'ml', label: 'milliliters (ml)', category: 'Volume' },
+  { value: 'liters', label: 'liters', category: 'Volume' },
+  
+  // Package-based
+  { value: 'packages', label: 'packages', category: 'Packaging' },
+  { value: 'boxes', label: 'boxes', category: 'Packaging' },
+  { value: 'cans', label: 'cans', category: 'Packaging' },
+  { value: 'bottles', label: 'bottles', category: 'Packaging' },
+  { value: 'jars', label: 'jars', category: 'Packaging' },
+  { value: 'bags', label: 'bags', category: 'Packaging' },
+  { value: 'containers', label: 'containers', category: 'Packaging' },
+]
+
 // Normalize category names to prevent duplicates and ensure proper capitalization
 function normalizeCategory(category: string): string {
   const normalized = category.toLowerCase().trim()
@@ -190,6 +278,25 @@ function convertToPurchasableUnits(name: string, amount: number, unit: string): 
         return { name: `${enhancedName} (pack of 12)`, amount: packages, unit: '' }
       }
     }
+    
+    // For produce items, use smart quantity logic
+    if (lowerName.includes('sweet potato') || lowerName.includes('potato')) {
+      // Potatoes: assume 1 medium potato per 2 servings, minimum 2
+      return { name: enhancedName, amount: Math.max(2, Math.ceil(bufferedAmount * 1.5)), unit: '' }
+    } else if (lowerName.includes('onion')) {
+      // Onions: typically bought in 3lb bags, assume 1 onion per 4 servings  
+      return { name: `${enhancedName} (3 lb bag)`, amount: Math.max(1, Math.ceil(bufferedAmount / 6)), unit: '' }
+    } else if (lowerName.includes('carrot')) {
+      // Carrots: typically bought in bags
+      return { name: `${enhancedName} (2 lb bag)`, amount: Math.max(1, Math.ceil(bufferedAmount / 8)), unit: '' }
+    } else if (lowerName.includes('apple') || lowerName.includes('orange') || lowerName.includes('banana')) {
+      // Fruit: typically bought in quantities, minimum 3-4
+      return { name: enhancedName, amount: Math.max(3, Math.ceil(bufferedAmount * 1.5)), unit: '' }
+    } else if (lowerName.includes('bell pepper') || lowerName.includes('pepper')) {
+      // Bell peppers: often bought 3-pack
+      return { name: `${enhancedName} (3-pack)`, amount: Math.max(1, Math.ceil(bufferedAmount / 3)), unit: '' }
+    }
+    
     return { name: enhancedName, amount: Math.ceil(bufferedAmount), unit: '' }
   }
   
@@ -366,16 +473,36 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
 
   const handleAddItem = () => {
     if (newItemName && newItemAmount && newItemUnit) {
-      const newIngredient: ConsolidatedIngredient = {
-        name: newItemName,
-        amount: parseFloat(newItemAmount),
-        unit: newItemUnit,
-        category: normalizeCategory('Other'),
-        fromRecipes: ['User Added'],
-        userAdded: true
+      const itemName = newItemName.trim()
+      const amount = parseFloat(newItemAmount)
+      
+      // Check for existing ingredient with same name and unit
+      const existingIndex = consolidatedIngredients.findIndex(ing => 
+        ing.name.toLowerCase() === itemName.toLowerCase() && ing.unit === newItemUnit
+      )
+      
+      if (existingIndex >= 0) {
+        // Update existing ingredient
+        setConsolidatedIngredients(prev => 
+          prev.map((ing, index) => 
+            index === existingIndex 
+              ? { ...ing, amount: ing.amount + amount, fromRecipes: [...ing.fromRecipes, 'User Added'] }
+              : ing
+          )
+        )
+      } else {
+        // Add new ingredient
+        const newIngredient: ConsolidatedIngredient = {
+          name: itemName,
+          amount: amount,
+          unit: newItemUnit,
+          category: normalizeCategory('Other'),
+          fromRecipes: ['User Added'],
+          userAdded: true
+        }
+        setConsolidatedIngredients([...consolidatedIngredients, newIngredient])
       }
       
-      setConsolidatedIngredients([...consolidatedIngredients, newIngredient])
       setNewItemName('')
       setNewItemAmount('')
       setNewItemUnit('')
@@ -441,6 +568,7 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
       newExcluded.add(ingredientName)
     }
     setExcludedItems(newExcluded)
+    // Cost calculation will be instant using cached estimates - no API needed
   }
 
   const updateQuantity = (ingredientName: string, delta: number) => {
@@ -535,13 +663,17 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
 
   const totalItems = getFinalCart().length
   
-  // Estimate costs when ingredients change
+  // Estimate costs only when new ingredients are added, not when items are excluded
   useEffect(() => {
     const finalCart = getFinalCart()
     if (finalCart.length > 0) {
-      estimateIngredientCosts(finalCart)
+      // Only estimate if we don't have cost estimates for some ingredients
+      const needsEstimation = finalCart.some(ing => !(ing.name in costEstimates))
+      if (needsEstimation) {
+        estimateIngredientCosts(finalCart)
+      }
     }
-  }, [consolidatedIngredients, excludedItems])
+  }, [consolidatedIngredients]) // Removed excludedItems to prevent unnecessary API calls
   
   const totalCost = getFinalCart().reduce((sum, ing) => sum + getItemCost(ing), 0)
   const costRange = {
@@ -583,7 +715,6 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
           </div>
           <div className="bg-white rounded-xl p-3 sm:p-4 shadow-sm border border-gray-100">
             <div className="flex items-start">
-              <span className="text-green-600 text-lg sm:text-xl mr-2 sm:mr-3">$</span>
               <div className="min-w-0 flex-1">
                 <p className="text-xs text-gray-500 uppercase">
                   Est. Cost {isEstimatingCosts && '(Updating...)'}
@@ -667,7 +798,14 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
                   type="text"
                   placeholder="Item name"
                   value={newItemName}
-                  onChange={(e) => setNewItemName(e.target.value)}
+                  onChange={(e) => {
+                    const itemName = e.target.value
+                    setNewItemName(itemName)
+                    // Auto-suggest unit based on item name if unit is empty
+                    if (itemName && !newItemUnit) {
+                      setNewItemUnit(getRecommendedUnit(itemName))
+                    }
+                  }}
                   className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent md:col-span-2"
                 />
                 <input
@@ -677,13 +815,41 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
                   onChange={(e) => setNewItemAmount(e.target.value)}
                   className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 />
-                <input
-                  type="text"
-                  placeholder="Unit (e.g. pieces)"
+                <select
                   value={newItemUnit}
                   onChange={(e) => setNewItemUnit(e.target.value)}
-                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                />
+                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
+                >
+                  <option value="">Select unit...</option>
+                  <optgroup label="Count">
+                    <option value="pieces">pieces</option>
+                    <option value="items">items</option>
+                    <option value="each">each</option>
+                  </optgroup>
+                  <optgroup label="Weight">
+                    <option value="lbs">pounds (lbs)</option>
+                    <option value="oz">ounces (oz)</option>
+                    <option value="kg">kilograms (kg)</option>
+                    <option value="g">grams (g)</option>
+                  </optgroup>
+                  <optgroup label="Volume">
+                    <option value="cups">cups</option>
+                    <option value="tbsp">tablespoons</option>
+                    <option value="tsp">teaspoons</option>
+                    <option value="fl oz">fluid ounces</option>
+                    <option value="ml">milliliters (ml)</option>
+                    <option value="liters">liters</option>
+                  </optgroup>
+                  <optgroup label="Packaging">
+                    <option value="packages">packages</option>
+                    <option value="boxes">boxes</option>
+                    <option value="cans">cans</option>
+                    <option value="bottles">bottles</option>
+                    <option value="jars">jars</option>
+                    <option value="bags">bags</option>
+                    <option value="containers">containers</option>
+                  </optgroup>
+                </select>
               </div>
             ) : (
               <div>
