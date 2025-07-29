@@ -3,7 +3,10 @@ import { Resend } from 'resend'
 
 export const dynamic = 'force-dynamic'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Lazy initialization to prevent build-time issues
+function getResendClient() {
+  return new Resend(process.env.RESEND_API_KEY)
+}
 
 interface WaitlistEntry {
   email: string
@@ -138,6 +141,7 @@ Visit us at: https://chefscart.ai
 Questions? Reply to this email or contact us at support@chefscart.ai
     `
 
+    const resend = getResendClient()
     const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'ChefsCart <noreply@chefscart.ai>',
       to: [email],
