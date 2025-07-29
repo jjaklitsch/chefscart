@@ -56,23 +56,8 @@ function getRecommendedUnit(itemName: string): string {
     return 'lbs'
   }
   
-  // Liquids - by volume
-  if (name.includes('milk') || name.includes('juice') || name.includes('oil') ||
-      name.includes('vinegar') || name.includes('sauce') || name.includes('broth')) {
-    return 'bottles'
-  }
-  
-  // Canned goods
-  if (name.includes('canned') || name.includes('tomato paste') || name.includes('beans') ||
-      name.includes('corn') || name.includes('peas')) {
-    return 'cans'
-  }
-  
-  // Boxed items
-  if (name.includes('cereal') || name.includes('pasta') || name.includes('rice') ||
-      name.includes('crackers') || name.includes('tea')) {
-    return 'boxes'
-  }
+  // Only suggest weight-based units for items typically sold by weight  
+  // Other items default to pieces (quantity=1)
   
   // Default to pieces/items
   return 'pieces'
@@ -211,12 +196,7 @@ function convertToPurchasableUnits(name: string, amount: number, unit: string): 
         lowerName.includes('rosemary') || lowerName.includes('cinnamon') || lowerName.includes('vanilla')) {
       return { name: enhancedName, amount: 1, unit: '' }
     }
-    // Oils, vinegars, sauces become bottles
-    if (lowerName.includes('oil') || lowerName.includes('vinegar') || lowerName.includes('sauce') ||
-        lowerName.includes('honey') || lowerName.includes('maple syrup')) {
-      return { name: enhancedName, amount: 1, unit: '' }
-    }
-    // Other liquid ingredients become bottles/containers
+    // All small quantity ingredients become 1 item
     return { name: enhancedName, amount: 1, unit: '' }
   }
   
@@ -224,14 +204,12 @@ function convertToPurchasableUnits(name: string, amount: number, unit: string): 
   if (unitLower.includes('cup')) {
     if (lowerName.includes('rice') || lowerName.includes('pasta') || lowerName.includes('flour') ||
         lowerName.includes('sugar') || lowerName.includes('oats')) {
-      // Dry goods - convert to boxes/bags
-      const boxes = Math.ceil(bufferedAmount / 4) // Assume 4 cups per box/bag
-      return { name: enhancedName, amount: boxes, unit: '' }
+      // Dry goods - keep as 1 item
+      return { name: enhancedName, amount: 1, unit: '' }
     }
     if (lowerName.includes('broth') || lowerName.includes('stock')) {
-      // Liquids - convert to containers
-      const containers = Math.ceil(bufferedAmount / 4) // 32oz = 4 cups
-      return { name: enhancedName, amount: containers, unit: '' }
+      // Liquids - keep as 1 item  
+      return { name: enhancedName, amount: 1, unit: '' }
     }
     return { name: enhancedName, amount: Math.ceil(bufferedAmount), unit: '' }
   }
@@ -246,7 +224,7 @@ function convertToPurchasableUnits(name: string, amount: number, unit: string): 
         return { name: enhancedName, amount: Math.ceil(bufferedAmount), unit: 'oz' }
       }
     }
-    // Non-weight items - convert to containers/packages
+    // Non-weight items - keep as 1 item
     return { name: enhancedName, amount: 1, unit: '' }
   }
   
@@ -279,23 +257,7 @@ function convertToPurchasableUnits(name: string, amount: number, unit: string): 
       }
     }
     
-    // For produce items, use smart quantity logic
-    if (lowerName.includes('sweet potato') || lowerName.includes('potato')) {
-      // Potatoes: assume 1 medium potato per 2 servings, minimum 2
-      return { name: enhancedName, amount: Math.max(2, Math.ceil(bufferedAmount * 1.5)), unit: '' }
-    } else if (lowerName.includes('onion')) {
-      // Onions: typically bought in 3lb bags, assume 1 onion per 4 servings  
-      return { name: `${enhancedName} (3 lb bag)`, amount: Math.max(1, Math.ceil(bufferedAmount / 6)), unit: '' }
-    } else if (lowerName.includes('carrot')) {
-      // Carrots: typically bought in bags
-      return { name: `${enhancedName} (2 lb bag)`, amount: Math.max(1, Math.ceil(bufferedAmount / 8)), unit: '' }
-    } else if (lowerName.includes('apple') || lowerName.includes('orange') || lowerName.includes('banana')) {
-      // Fruit: typically bought in quantities, minimum 3-4
-      return { name: enhancedName, amount: Math.max(3, Math.ceil(bufferedAmount * 1.5)), unit: '' }
-    } else if (lowerName.includes('bell pepper') || lowerName.includes('pepper')) {
-      // Bell peppers: often bought 3-pack
-      return { name: `${enhancedName} (3-pack)`, amount: Math.max(1, Math.ceil(bufferedAmount / 3)), unit: '' }
-    }
+    // Keep simple: use actual quantity unless it's extremely small
     
     return { name: enhancedName, amount: Math.ceil(bufferedAmount), unit: '' }
   }

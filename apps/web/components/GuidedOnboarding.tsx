@@ -299,6 +299,23 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     setIsInitialized(true)
   }, [initialPreferences])
 
+  // Mark completed steps when in edit mode (initialPreferences provided)
+  useEffect(() => {
+    if (isInitialized && initialPreferences) {
+      // We're in edit mode - mark all valid steps as completed
+      const newCompletedSteps = new Set<number>()
+      
+      for (let i = 0; i < onboardingSteps.length; i++) {
+        if (isStepComplete(i)) {
+          newCompletedSteps.add(i)
+        }
+      }
+      
+      setCompletedSteps(newCompletedSteps)
+      console.log('🔄 Edit mode: marked completed steps:', Array.from(newCompletedSteps))
+    }
+  }, [isInitialized, initialPreferences])
+
   // Save preferences to localStorage whenever answers change (after initial load)
   useEffect(() => {
     if (isInitialized) {
@@ -687,17 +704,29 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   }
 
   const navigateToStep = (stepIndex: number) => {
-    // Can only navigate to:
-    // 1. Completed steps (marked as completed)
-    // 2. Current step  
-    // 3. Next step IF current step is complete
-    const canGoToStep = completedSteps.has(stepIndex) || 
-                       stepIndex === currentStep || 
-                       (stepIndex === currentStep + 1 && isStepComplete(currentStep))
+    const isEditMode = Boolean(initialPreferences)
     
-    if (canGoToStep) {
-      setCurrentStep(stepIndex)
-      setShowChecklist(false)
+    if (isEditMode) {
+      // In edit mode: allow navigation to any completed step
+      const canGoToStep = completedSteps.has(stepIndex) || stepIndex === currentStep
+      if (canGoToStep) {
+        setCurrentStep(stepIndex)
+        setShowChecklist(false)
+      }
+    } else {
+      // Initial onboarding: sequential navigation only
+      // Can only navigate to:
+      // 1. Completed steps (marked as completed)
+      // 2. Current step  
+      // 3. Next step IF current step is complete
+      const canGoToStep = completedSteps.has(stepIndex) || 
+                         stepIndex === currentStep || 
+                         (stepIndex === currentStep + 1 && isStepComplete(currentStep))
+      
+      if (canGoToStep) {
+        setCurrentStep(stepIndex)
+        setShowChecklist(false)
+      }
     }
   }
 
@@ -988,9 +1017,11 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
             {onboardingSteps.map((step, index) => {
               const isCompleted = completedSteps.has(index)
               const isCurrent = currentStep === index
-              const canNavigate = isCompleted || 
-                                 index === currentStep || 
-                                 (index === currentStep + 1 && isStepComplete(currentStep))
+              const isEditMode = Boolean(initialPreferences)
+              
+              const canNavigate = isEditMode 
+                ? (isCompleted || index === currentStep) // Edit mode: navigate to completed steps + current
+                : (isCompleted || index === currentStep || (index === currentStep + 1 && isStepComplete(currentStep))) // Initial: sequential
               
               return (
                 <button

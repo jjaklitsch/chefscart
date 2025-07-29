@@ -53,8 +53,20 @@ function OnboardingPageContent() {
       const data = await response.json()
       console.log('Basic meal plan generated:', data)
       
-      // Show meal plan immediately with loading states
-      setMealPlan(data.mealPlan)
+      // Show meal plan immediately with loading states for images
+      const mealPlanWithLoadingImages = {
+        ...data.mealPlan,
+        recipes: data.mealPlan.recipes.map(recipe => {
+          console.log(`🔍 Recipe from API:`, { id: recipe.id, title: recipe.title })
+          return {
+            ...recipe,
+            imageLoading: true,
+            imageError: false
+          }
+        })
+      }
+      
+      setMealPlan(mealPlanWithLoadingImages)
       setStep('mealplan')
       setIsLoading(false)
 
@@ -76,6 +88,7 @@ function OnboardingPageContent() {
       console.log(`Starting parallel image generation for ${recipes.length} recipes...`)
       const imageStartTime = Date.now()
       
+      console.log(`🔍 All recipes being processed for images:`, recipes.map(r => ({ id: r.id, title: r.title })))
       const imagePromises = recipes.map(async (recipe) => {
         try {
           // Race against timeout for each individual image
@@ -93,7 +106,7 @@ function OnboardingPageContent() {
               })
             }),
             new Promise<never>((_, reject) => 
-              setTimeout(() => reject(new Error('Individual image timeout')), 8000) // 8s per image with faster paid tier
+              setTimeout(() => reject(new Error('Individual image timeout')), 45000) // 45s timeout to match replacement images
             )
           ])
           
@@ -108,36 +121,69 @@ function OnboardingPageContent() {
         return { id: recipe.id, url: '/images/placeholder-meal.webp', success: false }
       })
 
-      // Wait for ALL images to complete or timeout (true parallel)
-      const imageResults = await Promise.allSettled(imagePromises)
-      const imageMap: Record<string, string> = {}
-      let successCount = 0
+      // Process ALL images simultaneously (true parallel execution)
+      console.log(`🚀 Starting ${imagePromises.length} parallel image requests simultaneously...`)
       
-      imageResults.forEach((result, index) => {
-        if (result.status === 'fulfilled') {
-          imageMap[result.value.id] = result.value.url
-          if (result.value.success) successCount++
-        } else {
-          imageMap[recipes[index].id] = '/images/placeholder-meal.webp'
-        }
+      imagePromises.forEach((imagePromise, index) => {
+        // Don't await here - let all promises run simultaneously
+        imagePromise
+          .then(result => {
+            console.log(`✅ Image ${index + 1}/${recipes.length} completed for: ${recipes[index].title}`)
+            console.log(`🔗 Image URL:`, result.url)
+            console.log(`🆔 Recipe ID:`, result.id)
+            
+            // Update this specific recipe's image immediately
+            setMealPlan(prevPlan => {
+              if (!prevPlan) return null
+              
+              console.log(`🔍 Trying to update recipe with ID: ${result.id}`)
+              console.log(`🔍 Available recipe IDs:`, prevPlan.recipes.map(r => r.id))
+              
+              let foundMatch = false
+              const updatedPlan = {
+                ...prevPlan,
+                recipes: prevPlan.recipes.map(recipe => {
+                  const isMatch = recipe.id === result.id
+                  if (isMatch) {
+                    foundMatch = true
+                    console.log(`✅ Found matching recipe: ${recipe.title} (ID: ${recipe.id})`)
+                  }
+                  return isMatch 
+                    ? { ...recipe, imageUrl: result.url, imageLoading: false }
+                    : recipe
+                })
+              }
+              
+              if (!foundMatch) {
+                console.warn(`❌ No matching recipe found for ID: ${result.id}`)
+              }
+              
+              console.log(`🔄 Updated recipe ${result.id} with image in meal plan`)
+              return updatedPlan
+            })
+          })
+          .catch(error => {
+            console.warn(`❌ Image ${index + 1} failed for ${recipes[index].title}:`, error.message)
+            
+            // Mark this specific recipe's image as failed
+            setMealPlan(prevPlan => {
+              if (!prevPlan) return null
+              
+              return {
+                ...prevPlan,
+                recipes: prevPlan.recipes.map(recipe => 
+                  recipe.id === recipes[index].id 
+                    ? { ...recipe, imageLoading: false, imageError: true }
+                    : recipe
+                )
+              }
+            })
+          })
       })
 
+      // Log the start of parallel processing
       const imageTime = Date.now() - imageStartTime
-      console.log(`🎨 Image generation complete: ${successCount}/${recipes.length} successful in ${imageTime}ms`)
-
-      // Update meal plan with generated images
-      setMealPlan(prevPlan => {
-        if (!prevPlan) return null
-        
-        return {
-          ...prevPlan,
-          recipes: prevPlan.recipes.map(recipe => ({
-            ...recipe,
-            imageUrl: imageMap[recipe.id] || recipe.imageUrl,
-            imageLoading: false
-          }))
-        }
-      })
+      console.log(`🎨 Started ${recipes.length} parallel image generations at ${imageTime}ms`)
       
       console.log('Images loaded successfully')
     } catch (error) {

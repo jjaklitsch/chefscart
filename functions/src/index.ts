@@ -20,6 +20,9 @@ const corsHandler = cors({ origin: true })
 
 // Import individual function modules
 import { generateMealPlan } from './gptPlan'
+import { generateProgressiveMealPlan } from './gptPlanProgressive'
+import { generateReplacementRecipe } from './generateReplacementRecipe'
+import { generateDishImageBatch } from './generateDishImageBatch'
 import { createInstacartList } from './createList'
 import { sendConfirmationEmail } from './emailSend'
 
@@ -30,6 +33,30 @@ export const gptPlan = onRequest(
     memory: '1GiB',
   },
   (req, res) => corsHandler(req, res, () => generateMealPlan(req, res))
+)
+
+export const gptPlanProgressive = onRequest(
+  {
+    timeoutSeconds: 15, // Shorter timeout for basic recipes only
+    memory: '512MiB',
+  },
+  (req, res) => corsHandler(req, res, () => generateProgressiveMealPlan(req, res))
+)
+
+export const generateReplacementRecipe = onRequest(
+  {
+    timeoutSeconds: 10, // Very short timeout for single recipe
+    memory: '256MiB',
+  },
+  (req, res) => corsHandler(req, res, () => generateReplacementRecipe(req, res))
+)
+
+export const generateDishImageBatch = onRequest(
+  {
+    timeoutSeconds: 120, // Longer timeout for image generation
+    memory: '1GiB',
+  },
+  (req, res) => corsHandler(req, res, () => generateDishImageBatch(req, res))
 )
 
 export const createList = onRequest(

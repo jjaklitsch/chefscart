@@ -119,7 +119,7 @@ export default function Home() {
 
         {/* ZIP Code Section */}
         <div className="max-w-lg mx-auto mb-16 animate-slide-up">
-          <div className="flex gap-3 mb-3">
+          <div className="flex flex-col sm:flex-row gap-3 mb-3">
             <div className="flex-1">
               <input
                 type="text"
@@ -146,7 +146,7 @@ export default function Home() {
             <button 
               onClick={handleGetStarted}
               disabled={!isValidZip}
-              className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors flex items-center whitespace-nowrap"
+              className="w-full sm:w-auto px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center sm:whitespace-nowrap"
             >
               Get Started →
             </button>

@@ -3,18 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter @chefscart/web dev",
+    "dev": "cd apps/web && npm run dev",
     "build": "cd apps/web && npm install && npm run build",
-    "build:pnpm": "pnpm -r build",
-    "start": "pnpm --filter @chefscart/web start",
-    "lint": "pnpm -r lint",
-    "test": "pnpm -r test",
-    "test:ui": "pnpm --filter @chefscart/web test:ui",
-    "test:coverage": "pnpm -r test:coverage",
-    "test:run": "pnpm -r test:run",
-    "type-check": "pnpm -r type-check",
-    "clean": "pnpm -r clean",
-    "setup": "pnpm install && pnpm build"
+    "start": "cd apps/web && npm start",
+    "lint": "cd apps/web && npm run lint",
+    "test": "cd apps/web && npm test",
+    "setup": "cd apps/web && npm install"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
@@ -31,7 +25,6 @@
     "vitest": "^3.2.4"
   },
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
+    "node": ">=18"
   }
 }

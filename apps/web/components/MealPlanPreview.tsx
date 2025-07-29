@@ -268,25 +268,33 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
     }
   }
 
-  // Generate images for all recipes on component mount (only once per recipe)
+  // Generate images for recipes that don't have them yet (only on initial load)
   useEffect(() => {
     const abortController = new AbortController()
     const startTime = Date.now()
     
     const generateImages = async () => {
-      for (const recipe of selectedRecipes) {
+      // Only generate images for recipes that truly don't have them and aren't already being generated
+      const recipesNeedingImages = selectedRecipes.filter(recipe => 
+        !recipe.imageUrl && 
+        !recipe.imageLoading && 
+        !recipe.imageError && 
+        !imageUrls[recipe.id] && 
+        !imageLoading[recipe.id] && 
+        !imageErrors[recipe.id] &&
+        !generatedImages.current.has(recipe.id)
+      )
+
+      if (recipesNeedingImages.length === 0) {
+        console.log('🎨 All images already generated or in progress')
+        return
+      }
+
+      console.log(`🎨 Generating images for ${recipesNeedingImages.length} recipes that need them`)
+
+      for (const recipe of recipesNeedingImages) {
         if (abortController.signal.aborted) break
         
-        // Skip if image already generated for this recipe ID
-        if (generatedImages.current.has(recipe.id)) {
-          continue
-        }
-        
-        // Skip if image already exists or has error (but not if just marked as loading from generation)
-        if (recipe.imageUrl || imageUrls[recipe.id] || imageLoading[recipe.id] || recipe.imageError || imageErrors[recipe.id]) {
-          continue
-        }
-
         // Mark as generated to prevent regeneration
         generatedImages.current.add(recipe.id)
         setImageLoading(prev => ({ ...prev, [recipe.id]: true }))
@@ -300,7 +308,8 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
             body: JSON.stringify({
               dishName: recipe.title,
               description: recipe.description,
-              cuisine: recipe.cuisine
+              cuisine: recipe.cuisine,
+              thumbnail: true
             }),
             signal: abortController.signal
           })
@@ -350,16 +359,18 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
       const successfulImages = selectedRecipes.filter(r => r.imageUrl || imageUrls[r.id]).length
       const failedImages = Object.keys(imageErrors).length + selectedRecipes.filter(r => r.imageError).length
       
-      console.log(`🎨 Image generation complete: ${successfulImages}/${totalRecipes} successful in ${Date.now() - startTime}ms`)
-      if (failedImages > 0) {
-        console.warn(`⚠️  ${failedImages} images failed to generate`)
+      if (selectedRecipes.length > 0) {
+        console.log(`🎨 MealPlanPreview image generation complete: ${successfulImages}/${totalRecipes} successful in ${Date.now() - startTime}ms`)
+        if (failedImages > 0) {
+          console.warn(`⚠️  ${failedImages} images failed to generate`)
+        }
       }
     })
     
     return () => {
       abortController.abort()
     }
-  }, [selectedRecipes])
+  }, [selectedRecipes.length]) // Only trigger when number of recipes changes, not on recipe updates
 
   // Calculate totals (servings only now)
   const totalServings = selectedRecipes.reduce((sum, recipe) => sum + (recipe.servings || 0), 0)
@@ -475,28 +486,42 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                         </div>
 
                         <div className="space-y-3">
-                          <ExpandableSection title="Ingredients">
-                            <div className="space-y-2">
-                              {recipe.ingredients?.map((ingredient, idx) => (
-                                <div key={idx} className="flex justify-between items-center py-1">
-                                  <span className="text-sm">{ingredient.name}</span>
-                                  <span className="text-sm text-gray-600">{ingredient.amount} {ingredient.unit}</span>
-                                </div>
-                              ))}
-                            </div>
+                          <ExpandableSection title={`Ingredients ${recipe.ingredients?.length ? `(${recipe.ingredients.length})` : '(Loading...)'}`}>
+                            {recipe.ingredients?.length ? (
+                              <div className="space-y-2">
+                                {recipe.ingredients.map((ingredient, idx) => (
+                                  <div key={idx} className="flex justify-between items-center py-1">
+                                    <span className="text-sm">{ingredient.name}</span>
+                                    <span className="text-sm text-gray-600">{ingredient.amount} {ingredient.unit}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            ) : (
+                              <div className="flex items-center justify-center py-6">
+                                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-green-600 mr-2"></div>
+                                <span className="text-green-600 text-sm">Loading ingredients...</span>
+                              </div>
+                            )}
                           </ExpandableSection>
                           
-                          <ExpandableSection title="Cooking Instructions">
-                            <div className="space-y-3">
-                              {recipe.instructions?.map((instruction, idx) => (
-                                <div key={idx} className="flex gap-3">
-                                  <div className="flex-shrink-0 w-6 h-6 bg-orange-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
-                                    {idx + 1}
+                          <ExpandableSection title={`Cooking Instructions ${recipe.instructions?.length ? `(${recipe.instructions.length})` : '(Loading...)'}`}>
+                            {recipe.instructions?.length ? (
+                              <div className="space-y-3">
+                                {recipe.instructions.map((instruction, idx) => (
+                                  <div key={idx} className="flex gap-3">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-orange-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                                      {idx + 1}
+                                    </div>
+                                    <p className="text-sm text-gray-700 leading-relaxed">{instruction}</p>
                                   </div>
-                                  <p className="text-sm text-gray-700 leading-relaxed">{instruction}</p>
-                                </div>
-                              ))}
-                            </div>
+                                ))}
+                              </div>
+                            ) : (
+                              <div className="flex items-center justify-center py-6">
+                                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-orange-600 mr-2"></div>
+                                <span className="text-orange-600 text-sm">Loading instructions...</span>
+                              </div>
+                            )}
                           </ExpandableSection>
                         </div>
 
@@ -604,9 +629,13 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                               <div className="flex items-center">
                                 <span className="text-2xl mr-3">🛒</span>
                                 <h4 className="text-lg font-bold text-green-800">Complete Ingredients</h4>
-                                <span className="ml-3 text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full">
-                                  {recipe.ingredients?.length} items
-                                </span>
+                                {recipe.ingredients?.length ? (
+                                  <span className="ml-3 text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full">
+                                    {recipe.ingredients.length} items
+                                  </span>
+                                ) : (
+                                  <span className="ml-3 text-xs text-green-500">Loading...</span>
+                                )}
                               </div>
                               {expandedIngredients[recipe.id] ? (
                                 <ChevronUp className="w-5 h-5 text-green-600" />
@@ -616,16 +645,23 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                             </button>
                             {expandedIngredients[recipe.id] && (
                               <div className="px-8 py-4 bg-white">
-                                <div className="space-y-2 max-h-64 overflow-y-auto">
-                                  {recipe.ingredients?.filter(ingredient => ingredient.name && ingredient.name.trim() !== '').map((ingredient, idx) => (
-                                    <div key={idx} className="flex justify-between items-center py-2 px-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
-                                      <span className="font-medium text-gray-800 flex-1">{ingredient.name}</span>
-                                      <span className="text-green-700 font-semibold ml-4 whitespace-nowrap">
-                                        {ingredient.amount} {ingredient.unit}
-                                      </span>
-                                    </div>
-                                  ))}
-                                </div>
+                                {recipe.ingredients?.length ? (
+                                  <div className="space-y-2 max-h-64 overflow-y-auto">
+                                    {recipe.ingredients.filter(ingredient => ingredient.name && ingredient.name.trim() !== '').map((ingredient, idx) => (
+                                      <div key={idx} className="flex justify-between items-center py-2 px-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
+                                        <span className="font-medium text-gray-800 flex-1">{ingredient.name}</span>
+                                        <span className="text-green-700 font-semibold ml-4 whitespace-nowrap">
+                                          {ingredient.amount} {ingredient.unit}
+                                        </span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                ) : (
+                                  <div className="flex items-center justify-center py-8">
+                                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-green-600 mr-3"></div>
+                                    <span className="text-green-600">Loading ingredients...</span>
+                                  </div>
+                                )}
                               </div>
                             )}
                           </div>
@@ -639,9 +675,13 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                               <div className="flex items-center">
                                 <span className="text-2xl mr-3">👨‍🍳</span>
                                 <h4 className="text-lg font-bold text-orange-800">Cooking Steps</h4>
-                                <span className="ml-3 text-sm text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
-                                  {recipe.instructions?.length} steps
-                                </span>
+                                {recipe.instructions?.length ? (
+                                  <span className="ml-3 text-sm text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
+                                    {recipe.instructions.length} steps
+                                  </span>
+                                ) : (
+                                  <span className="ml-3 text-xs text-orange-500">Loading...</span>
+                                )}
                               </div>
                               {expandedInstructions[recipe.id] ? (
                                 <ChevronUp className="w-5 h-5 text-orange-600" />
@@ -651,16 +691,23 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                             </button>
                             {expandedInstructions[recipe.id] && (
                               <div className="px-8 py-4 bg-white">
-                                <div className="space-y-3 max-h-64 overflow-y-auto">
-                                  {recipe.instructions?.filter(instruction => instruction && instruction.trim() !== '').map((instruction, idx) => (
-                                    <div key={idx} className="flex gap-4 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
-                                      <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                                        {idx + 1}
+                                {recipe.instructions?.length ? (
+                                  <div className="space-y-3 max-h-64 overflow-y-auto">
+                                    {recipe.instructions.filter(instruction => instruction && instruction.trim() !== '').map((instruction, idx) => (
+                                      <div key={idx} className="flex gap-4 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
+                                        <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                                          {idx + 1}
+                                        </div>
+                                        <p className="text-gray-700 leading-relaxed pt-1 flex-1">{instruction}</p>
                                       </div>
-                                      <p className="text-gray-700 leading-relaxed pt-1 flex-1">{instruction}</p>
-                                    </div>
-                                  ))}
-                                </div>
+                                    ))}
+                                  </div>
+                                ) : (
+                                  <div className="flex items-center justify-center py-8">
+                                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-600 mr-3"></div>
+                                    <span className="text-orange-600">Loading cooking instructions...</span>
+                                  </div>
+                                )}
                               </div>
                             )}
                           </div>

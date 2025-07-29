@@ -1,14 +1,15 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#c2410c;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
     </linearGradient>
   </defs>
   <rect width="32" height="32" rx="8" fill="url(#gradient)"/>
-  <g transform="translate(6, 6) scale(1.25)">
-    <circle cx="6.4" cy="16.8" r="0.8" fill="white"/>
-    <circle cx="15.2" cy="16.8" r="0.8" fill="white"/>
-    <path d="m1.64 1.64h1.6l2.128 9.936a1.6 1.6 0 0 0 1.6 1.264h7.824a1.6 1.6 0 0 0 1.56-1.256l1.32-5.944H4.096" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Lucide Shopping Cart Icon - centered and scaled properly -->
+  <g transform="translate(6, 6) scale(0.8)">
+    <circle cx="9" cy="20" r="2" fill="white"/>
+    <circle cx="20" cy="20" r="2" fill="white"/>
+    <path d="m1 2h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 7H6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   </g>
 </svg>

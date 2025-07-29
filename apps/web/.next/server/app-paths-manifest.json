@@ -1,6 +1,8 @@
 {
-  "/page": "app/page.js",
   "/onboarding/page": "app/onboarding/page.js",
+  "/page": "app/page.js",
+  "/api/generate-mealplan-mock/route": "app/api/generate-mealplan-mock/route.js",
   "/grocery-list/page": "app/grocery-list/page.js",
-  "/login/page": "app/login/page.js"
+  "/api/generate-dish-image/route": "app/api/generate-dish-image/route.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }
