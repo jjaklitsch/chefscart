@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
       isValid: true,
       hasInstacartCoverage,
       message: hasInstacartCoverage 
-        ? 'Great! Instacart delivers to your area.'
+        ? 'Great! ChefsCart is available in your area.'
         : 'ChefsCart isn\'t available in your area yet.'
     })
 

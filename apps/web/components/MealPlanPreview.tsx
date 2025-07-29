@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react'
-import { Clock, Users, DollarSign, ChefHat, ArrowLeft, ShoppingCart, ChevronDown, ChevronUp, X, RefreshCw } from 'lucide-react'
+import { Clock, Users, DollarSign, ShoppingCart, ArrowLeft, ChevronDown, ChevronUp, X, RefreshCw } from 'lucide-react'
 import { MealPlan, Recipe } from '../types'
 
 interface MealPlanPreviewProps {
@@ -278,7 +278,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         }
         
         // Skip if image already exists, is loading, or has error
-        if (imageUrls[recipe.id] || imageLoading[recipe.id] || imageErrors[recipe.id]) {
+        if (recipe.imageUrl || imageUrls[recipe.id] || recipe.imageLoading || imageLoading[recipe.id] || recipe.imageError || imageErrors[recipe.id]) {
           continue
         }
 
@@ -305,9 +305,25 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
 
           const data = await response.json()
           setImageUrls(prev => ({ ...prev, [recipe.id]: data.imageUrl }))
+          // Update the recipe's imageLoading state
+          setSelectedRecipes(prev => 
+            prev.map(r => 
+              r.id === recipe.id 
+                ? { ...r, imageUrl: data.imageUrl, imageLoading: false }
+                : r
+            )
+          )
         } catch (error) {
           console.error('Error generating image for', recipe.title, ':', error)
           setImageErrors(prev => ({ ...prev, [recipe.id]: true }))
+          // Update the recipe's imageLoading state on error
+          setSelectedRecipes(prev => 
+            prev.map(r => 
+              r.id === recipe.id 
+                ? { ...r, imageLoading: false, imageError: true }
+                : r
+            )
+          )
         } finally {
           setImageLoading(prev => ({ ...prev, [recipe.id]: false }))
         }
@@ -318,7 +334,8 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
   }, [selectedRecipes])
 
   // Calculate totals (will update automatically when selectedRecipes changes)
-  const totalCost = selectedRecipes.reduce((sum, recipe) => sum + ((recipe.estimatedCost || 8) * (recipe.servings || 1)), 0)
+  // estimatedCost is the total cost for all servings of the recipe, not per-serving
+  const totalCost = selectedRecipes.reduce((sum, recipe) => sum + (recipe.estimatedCost || 12), 0)
   const totalServings = selectedRecipes.reduce((sum, recipe) => sum + (recipe.servings || 0), 0)
 
   return (
@@ -347,7 +364,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
           <div className="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
             <div className="flex items-center">
               <div className="bg-orange-100 rounded-full p-2 md:p-3 mr-3 md:mr-4">
-                <ChefHat className="h-5 w-5 md:h-6 md:w-6 text-orange-600" />
+                <ShoppingCart className="h-5 w-5 md:h-6 md:w-6 text-orange-600" />
               </div>
               <div>
                 <p className="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wide">Meals</p>
@@ -373,7 +390,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
               </div>
               <div>
                 <p className="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wide">Est. Cost</p>
-                <p className="text-xl md:text-2xl font-bold text-gray-900">${Math.max(totalCost - 20, 0).toFixed(0)} - ${(totalCost + 25).toFixed(0)}</p>
+                <p className="text-xl md:text-2xl font-bold text-gray-900">${Math.max(totalCost * 0.8, totalCost - 15).toFixed(0)}-${(totalCost * 1.2 + 20).toFixed(0)}</p>
               </div>
             </div>
           </div>
@@ -443,10 +460,11 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                           <span className="flex items-center">
                             <DollarSign className="h-3 w-3 mr-1" />
                             {(() => {
-                              const baseCost = (recipe.estimatedCost || 8) * (recipe.servings || 1)
-                              const lowEnd = Math.max(baseCost * 0.8, baseCost - 15)
-                              const highEnd = baseCost * 1.3 + 10
-                              return `${lowEnd.toFixed(0)} - ${highEnd.toFixed(0)} total`
+                              // estimatedCost is already the total cost for all servings
+                              const baseCost = recipe.estimatedCost || 12
+                              const lowEnd = Math.max(baseCost * 0.75, baseCost - 5)
+                              const highEnd = baseCost * 1.25 + 8
+                              return `$${lowEnd.toFixed(0)}-${highEnd.toFixed(0)}`
                             })()}
                           </span>
                         </div>
@@ -553,10 +571,11 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                               <span className="flex items-center">
                                 <DollarSign className="h-4 w-4 mr-1" />
                                 {(() => {
-                                  const baseCost = (recipe.estimatedCost || 8) * (recipe.servings || 1)
-                                  const lowEnd = Math.max(baseCost * 0.8, baseCost - 15)
-                                  const highEnd = baseCost * 1.3 + 10
-                                  return `${lowEnd.toFixed(0)} - ${highEnd.toFixed(0)}`
+                                  // estimatedCost is already the total cost for all servings
+                                  const baseCost = recipe.estimatedCost || 12
+                                  const lowEnd = Math.max(baseCost * 0.75, baseCost - 5)
+                                  const highEnd = baseCost * 1.25 + 8
+                                  return `$${lowEnd.toFixed(0)}-${highEnd.toFixed(0)}`
                                 })()}
                               </span>
                             </div>

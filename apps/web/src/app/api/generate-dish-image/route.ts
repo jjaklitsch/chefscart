@@ -1,22 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import OpenAI from 'openai'
+import { generateImageHTTP } from '../../../../lib/pure-http-dalle'
 
 export const dynamic = 'force-dynamic'
-
-let openai: OpenAI | null = null
-
-function getOpenAIClient(): OpenAI {
-  if (!openai && process.env.OPENAI_API_KEY) {
-    openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-      timeout: 10000, // Shorter timeout for speed
-    })
-  }
-  if (!openai) {
-    throw new Error('OpenAI API key not configured')
-  }
-  return openai
-}
 
 export async function POST(request: NextRequest) {
   try {
@@ -45,25 +30,12 @@ Shot from a 45-degree angle on a clean white background.
 Bright, natural lighting. High-quality, appetizing presentation. 
 Restaurant-quality plating with garnish. Photorealistic style.`
 
-    // Race against timeout for speed
-    const response = await Promise.race([
-      getOpenAIClient().images.generate({
-        model: "dall-e-3",
-        prompt: imagePrompt,
-        n: 1,
-        size: thumbnail ? "512x512" : "1024x1024", // Smaller size for thumbnails
-        quality: "standard", // Standard quality for speed
-        style: "natural"
-      }),
-      new Promise<never>((_, reject) => 
-        setTimeout(() => reject(new Error('DALL-E generation timeout')), 8000) // 8s timeout
-      )
-    ])
-
-    const imageUrl = response.data[0]?.url
-    if (!imageUrl) {
-      throw new Error('No image URL returned from OpenAI')
-    }
+    // Generate image using pure HTTP with retry logic
+    console.log(`Generating image using pure HTTP for: ${dishName}`)
+    const imageUrl = await generateImageHTTP(
+      imagePrompt,
+      "512x512" // DALL-E 2 supports 256x256, 512x512, or 1024x1024
+    )
 
     return NextResponse.json({
       success: true,

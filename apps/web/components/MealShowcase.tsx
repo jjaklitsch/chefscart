@@ -48,7 +48,15 @@ export default function MealShowcase() {
         <div className="text-center mt-12">
           <p className="text-neutral-600 text-lg">
             Ready to discover your next favorite meal?{' '}
-            <span className="text-brand-600 font-semibold">Start planning now!</span>
+            <button 
+              onClick={() => {
+                // Scroll to top of page where ZIP input is located
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
+              className="text-brand-600 font-semibold hover:text-brand-700 transition-colors duration-200 cursor-pointer underline decoration-brand-300 hover:decoration-brand-500"
+            >
+              Start planning now!
+            </button>
           </p>
         </div>
       </div>

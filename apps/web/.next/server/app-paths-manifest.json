@@ -1,4 +1,7 @@
 {
   "/page": "app/page.js",
-  "/onboarding/page": "app/onboarding/page.js"
+  "/onboarding/page": "app/onboarding/page.js",
+  "/grocery-list/page": "app/grocery-list/page.js",
+  "/login/page": "app/login/page.js",
+  "/api/estimate-ingredient-costs/route": "app/api/estimate-ingredient-costs/route.js"
 }

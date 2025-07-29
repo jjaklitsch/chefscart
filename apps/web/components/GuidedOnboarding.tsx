@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useRef, useCallback, useEffect } from 'react'
-import { ChefHat, ArrowRight, ArrowLeft, Check, Upload, X, Camera, Plus, Menu, CheckCircle } from 'lucide-react'
+import { ShoppingCart, ArrowRight, ArrowLeft, Check, Upload, X, Camera, Plus, Menu, CheckCircle } from 'lucide-react'
 import { UserPreferences } from '../types'
 import Header from './Header'
 
@@ -269,10 +269,15 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [showIngredientConfirmation, setShowIngredientConfirmation] = useState(false)
-  const [identifiedIngredients, setIdentifiedIngredients] = useState<string[]>([])
+  const [identifiedIngredients, setIdentifiedIngredients] = useState<Array<{ name: string; quantity: number; unit: string }>>([])
   const [manualIngredientInput, setManualIngredientInput] = useState('')
   const [showChecklist, setShowChecklist] = useState(false)
   const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set())
+  const [isAnalyzingPhotos, setIsAnalyzingPhotos] = useState(false)
+  const [editingItem, setEditingItem] = useState<{ index: number; type: 'identified' | 'manual' } | null>(null)
+  const [editingValue, setEditingValue] = useState('')
+  const [showPasteModal, setShowPasteModal] = useState(false)
+  const [pasteText, setPasteText] = useState('')
 
   // Load preferences from localStorage or initialPreferences on component mount
   useEffect(() => {
@@ -696,21 +701,54 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     }
   }
 
-  // Mock ingredient identification function
-  const identifyIngredientsFromPhotos = useCallback((photos: File[]): string[] => {
-    // Mock realistic ingredient identification
-    const mockIngredients = [
-      'Eggs', 'Milk', 'Butter', 'Onions', 'Garlic', 'Rice', 'Pasta', 
-      'Chicken breast', 'Ground beef', 'Bell peppers', 'Tomatoes', 
-      'Cheese', 'Bread', 'Carrots', 'Potatoes', 'Olive oil', 
-      'Salt', 'Black pepper', 'Flour', 'Sugar', 'Yogurt', 'Spinach',
-      'Broccoli', 'Bananas', 'Apples', 'Lemons'
-    ]
-    
-    // Return a random subset based on number of photos
-    const numIngredients = Math.min(photos.length * 3 + Math.floor(Math.random() * 5), mockIngredients.length)
-    const shuffled = [...mockIngredients].sort(() => 0.5 - Math.random())
-    return shuffled.slice(0, numIngredients)
+  // Real ingredient identification function using GPT-4 Vision
+  const identifyIngredientsFromPhotos = useCallback(async (photos: File[]): Promise<Array<{ name: string; quantity: number; unit: string }>> => {
+    try {
+      const formData = new FormData()
+      photos.forEach((photo, index) => {
+        formData.append('photos', photo)
+      })
+
+      const response = await fetch('/api/identify-pantry-items', {
+        method: 'POST',
+        body: formData
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to analyze photos')
+      }
+
+      const data = await response.json()
+      
+      if (data.fallback) {
+        console.warn('AI analysis fallback:', data.message)
+        // Show user a message that they'll need to add items manually
+      }
+      
+      if (data.message && data.message.includes('No supported image formats')) {
+        console.warn('Image format issue:', data.message)
+      }
+      
+      // Handle both old format (string array) and new format (object array)
+      if (data.items && Array.isArray(data.items) && data.items.length > 0) {
+        if (typeof data.items[0] === 'string') {
+          // Convert old format to new format
+          return data.items.map((item: string) => ({
+            name: item,
+            quantity: 1,
+            unit: 'item'
+          }))
+        }
+        // Already in new format
+        return data.items
+      }
+      
+      return []
+    } catch (error) {
+      console.error('Error identifying ingredients:', error)
+      // Fallback to empty array if API fails
+      return []
+    }
   }, [])
 
   // File upload handlers
@@ -718,7 +756,15 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     if (!files) return
     
     const validFiles = Array.from(files).filter(file => {
-      const isValidType = file.type.startsWith('image/')
+      const isValidType = file.type.startsWith('image/') || 
+                         file.type === 'image/heic' || 
+                         file.type === 'image/heif' ||
+                         file.name.toLowerCase().endsWith('.heic') ||
+                         file.name.toLowerCase().endsWith('.heif') ||
+                         file.name.toLowerCase().endsWith('.jpg') ||
+                         file.name.toLowerCase().endsWith('.jpeg') ||
+                         file.name.toLowerCase().endsWith('.png') ||
+                         file.name.toLowerCase().endsWith('.webp')
       const isValidSize = file.size <= 10 * 1024 * 1024 // 10MB limit
       return isValidType && isValidSize
     })
@@ -731,8 +777,14 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     setAnswers(prev => ({ ...prev, fridgePantryPhotos: newPhotos }))
     
     // Identify ingredients from all photos
-    const ingredients = identifyIngredientsFromPhotos(newPhotos)
-    setIdentifiedIngredients(ingredients)
+    setIsAnalyzingPhotos(true)
+    identifyIngredientsFromPhotos(newPhotos).then(ingredients => {
+      setIdentifiedIngredients(ingredients)
+      setIsAnalyzingPhotos(false)
+    }).catch(error => {
+      console.error('Error analyzing photos:', error)
+      setIsAnalyzingPhotos(false)
+    })
   }, [answers.fridgePantryPhotos, identifyIngredientsFromPhotos])
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -758,8 +810,14 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     
     // Re-identify ingredients
     if (newPhotos.length > 0) {
-      const ingredients = identifyIngredientsFromPhotos(newPhotos)
-      setIdentifiedIngredients(ingredients)
+      setIsAnalyzingPhotos(true)
+      identifyIngredientsFromPhotos(newPhotos).then(ingredients => {
+        setIdentifiedIngredients(ingredients)
+        setIsAnalyzingPhotos(false)
+      }).catch(error => {
+        console.error('Error analyzing photos:', error)
+        setIsAnalyzingPhotos(false)
+      })
     } else {
       setIdentifiedIngredients([])
     }
@@ -770,10 +828,11 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     if (!ingredient) return
     
     const currentManual = answers.manuallyAddedIngredients || []
-    if (!currentManual.includes(ingredient) && !identifiedIngredients.includes(ingredient)) {
+    const identifiedNames = identifiedIngredients.map(item => item.name)
+    if (!currentManual.includes(ingredient) && !identifiedNames.includes(ingredient)) {
       setAnswers(prev => ({ 
         ...prev, 
-        manuallyAddedIngredients: [...currentManual, ingredient] 
+        manuallyAddedIngredients: [ingredient, ...currentManual] // Add at beginning
       }))
     }
     setManualIngredientInput('')
@@ -787,9 +846,42 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         manuallyAddedIngredients: currentManual.filter((i: string) => i !== ingredient) 
       }))
     } else {
-      setIdentifiedIngredients(prev => prev.filter((i: string) => i !== ingredient))
+      setIdentifiedIngredients(prev => prev.filter(item => item.name !== ingredient))
     }
   }, [answers.manuallyAddedIngredients])
+
+  const startEditingItem = useCallback((index: number, type: 'identified' | 'manual', currentValue: string) => {
+    setEditingItem({ index, type })
+    setEditingValue(currentValue)
+  }, [])
+
+  const saveEditedItem = useCallback(() => {
+    if (!editingItem || !editingValue.trim()) {
+      setEditingItem(null)
+      setEditingValue('')
+      return
+    }
+
+    const newValue = editingValue.trim()
+    
+    if (editingItem.type === 'identified') {
+      setIdentifiedIngredients(prev => {
+        const updated = [...prev]
+        updated[editingItem.index] = { ...updated[editingItem.index], name: newValue }
+        return updated
+      })
+    } else {
+      setAnswers(prev => {
+        const currentManual = prev.manuallyAddedIngredients || []
+        const updated = [...currentManual]
+        updated[editingItem.index] = newValue
+        return { ...prev, manuallyAddedIngredients: updated }
+      })
+    }
+    
+    setEditingItem(null)
+    setEditingValue('')
+  }, [editingItem, editingValue])
 
   const handleSkipPhotoUpload = useCallback(() => {
     setAnswers(prev => ({ ...prev, skipPhotoUpload: true }))
@@ -842,7 +934,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           </div>
           
           <div className="hidden lg:block mb-6">
-            <h3 className="text-lg font-semibold">Progress</h3>
+            <h3 className="text-lg font-semibold text-neutral-800">Progress</h3>
             
             {/* Progress bar moved to sidebar */}
             <div className="mt-4">
@@ -938,7 +1030,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
               <Menu className="h-5 w-5" />
             </button>
             <div className="w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full flex items-center justify-center">
-              <ChefHat className="w-6 h-6 text-white" />
+              <ShoppingCart className="w-6 h-6 text-white" />
             </div>
             <div>
               <h1 className="text-2xl font-display font-bold text-neutral-800">
@@ -1380,7 +1472,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                 <>
                   {/* Description */}
                   <p className="text-sm text-neutral-600 mb-6">
-                    Our AI will identify existing ingredients and suggest meals that make use of what you already have. This step is optional and can be skipped.
+                    Our AI will identify existing items and suggest meals that make use of what you already have. This step is optional and can be skipped.
                   </p>
 
                   {/* File Upload Area */}
@@ -1399,7 +1491,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                       ref={fileInputRef}
                       type="file"
                       multiple
-                      accept="image/*"
+                      accept="image/*,.heic,.heif"
                       onChange={(e) => handleFileSelect(e.target.files)}
                       className="hidden"
                     />
@@ -1431,11 +1523,42 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                         {answers.fridgePantryPhotos?.map((file: File, index: number) => (
                           <div key={index} className="relative group">
                             <div className="aspect-square bg-neutral-100 rounded-lg overflow-hidden">
-                              <img
-                                src={URL.createObjectURL(file)}
-                                alt={`Upload ${index + 1}`}
-                                className="w-full h-full object-cover"
-                              />
+                              {file && file instanceof File ? (
+                                file.type === 'image/heic' || file.type === 'image/heif' || file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif') ? (
+                                  <div className="w-full h-full flex flex-col items-center justify-center text-neutral-600 p-4">
+                                    <div className="text-3xl mb-2">📷</div>
+                                    <div className="text-xs text-center">
+                                      <div className="font-medium">HEIC Photo</div>
+                                      <div className="text-green-600 mt-1">✓ AI Analysis Supported</div>
+                                      <div className="text-neutral-400 mt-1">{(file.size / 1024 / 1024).toFixed(1)}MB</div>
+                                    </div>
+                                  </div>
+                                ) : (
+                                  <img
+                                    src={URL.createObjectURL(file)}
+                                    alt={`Upload ${index + 1}`}
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                      // Fallback for unsupported formats
+                                      const target = e.target as HTMLImageElement
+                                      target.style.display = 'none'
+                                      target.parentElement!.innerHTML = `
+                                        <div class="w-full h-full flex flex-col items-center justify-center text-neutral-600 p-4">
+                                          <div class="text-3xl mb-2">🖼️</div>
+                                          <div class="text-xs text-center">
+                                            <div class="font-medium">Image File</div>
+                                            <div class="text-neutral-400 mt-1">${(file.size / 1024 / 1024).toFixed(1)}MB</div>
+                                          </div>
+                                        </div>
+                                      `
+                                    }}
+                                  />
+                                )
+                              ) : (
+                                <div className="w-full h-full flex items-center justify-center text-neutral-400">
+                                  Invalid file
+                                </div>
+                              )}
                             </div>
                             <button
                               onClick={(e) => {
@@ -1456,15 +1579,24 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                   <div className="flex flex-col sm:flex-row gap-3">
                     <button
                       onClick={handleContinueWithPhotos}
-                      disabled={(answers.fridgePantryPhotos?.length || 0) === 0}
+                      disabled={(answers.fridgePantryPhotos?.length || 0) === 0 || isAnalyzingPhotos}
                       className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
-                        (answers.fridgePantryPhotos?.length || 0) > 0
+                        (answers.fridgePantryPhotos?.length || 0) > 0 && !isAnalyzingPhotos
                           ? 'bg-brand-600 text-white hover:bg-brand-700'
                           : 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
                       }`}
                     >
-                      <Upload className="w-4 h-4" />
-                      Continue with {answers.fridgePantryPhotos?.length || 0} photo{(answers.fridgePantryPhotos?.length || 0) !== 1 ? 's' : ''}
+                      {isAnalyzingPhotos ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                          Analyzing photos...
+                        </>
+                      ) : (
+                        <>
+                          <Upload className="w-4 h-4" />
+                          Continue with {answers.fridgePantryPhotos?.length || 0} photo{(answers.fridgePantryPhotos?.length || 0) !== 1 ? 's' : ''}
+                        </>
+                      )}
                     </button>
                     
                     <button
@@ -1486,75 +1618,173 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                       </p>
                     </div>
 
-                    {/* Identified Ingredients */}
+                    {/* Pantry Items List */}
                     <div className="space-y-4">
-                      <h4 className="font-semibold text-neutral-800">Identified Ingredients</h4>
-                      {identifiedIngredients.length > 0 ? (
-                        <div className="flex flex-wrap gap-2">
-                          {identifiedIngredients.map((ingredient, index) => (
-                            <div
-                              key={index}
-                              className="inline-flex items-center gap-2 px-3 py-2 bg-green-50 border border-green-200 rounded-full text-sm"
-                            >
-                              <span className="text-green-800">{ingredient}</span>
-                              <button
-                                onClick={() => removeIngredient(ingredient, false)}
-                                className="text-green-600 hover:text-green-800 transition-colors"
-                              >
-                                <X className="w-3 h-3" />
-                              </button>
-                            </div>
-                          ))}
+                      <div className="flex items-center justify-between">
+                        <h4 className="font-semibold text-neutral-800">Your Pantry Items</h4>
+                      </div>
+
+                      {isAnalyzingPhotos ? (
+                        <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg">
+                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+                          <span className="text-blue-800">Analyzing your photos...</span>
                         </div>
                       ) : (
-                        <p className="text-neutral-500 text-sm">No ingredients identified from photos.</p>
-                      )}
-                    </div>
+                        <>
+                          {/* Items List */}
+                          {(identifiedIngredients.length > 0 || (answers.manuallyAddedIngredients?.length || 0) > 0) ? (
+                            <div className="bg-white border border-neutral-200 rounded-lg">
+                              {/* Header */}
+                              <div className="grid grid-cols-[1fr,80px,40px] gap-4 p-3 bg-neutral-50 border-b border-neutral-200 text-sm font-medium text-neutral-700">
+                                <div>Item Name</div>
+                                <div className="text-center">Qty</div>
+                                <div></div>
+                              </div>
+                              
+                              {/* Scrollable Items List */}
+                              <div className="max-h-60 overflow-y-auto">
+                                {/* Manual ingredients (shown first) */}
+                                {(answers.manuallyAddedIngredients || []).map((ingredient: string, index: number) => (
+                                  <div key={`manual-${index}`} className="grid grid-cols-[1fr,80px,40px] gap-4 p-3 border-b border-neutral-100 items-center hover:bg-neutral-50 transition-colors">
+                                    <div className="flex items-center gap-2">
+                                      <div className="w-2 h-2 bg-blue-500 rounded-full" title="Added manually"></div>
+                                      {editingItem?.type === 'manual' && editingItem.index === index ? (
+                                        <input
+                                          type="text"
+                                          value={editingValue}
+                                          onChange={(e) => setEditingValue(e.target.value)}
+                                          onKeyDown={(e) => {
+                                            if (e.key === 'Enter') saveEditedItem()
+                                            if (e.key === 'Escape') {
+                                              setEditingItem(null)
+                                              setEditingValue('')
+                                            }
+                                          }}
+                                          onBlur={saveEditedItem}
+                                          className="flex-1 px-2 py-1 border border-brand-500 rounded text-sm focus:outline-none focus:ring-2 focus:ring-brand-200"
+                                          autoFocus
+                                        />
+                                      ) : (
+                                        <span 
+                                          className="text-neutral-800 cursor-pointer hover:text-brand-600"
+                                          onClick={() => startEditingItem(index, 'manual', ingredient)}
+                                        >
+                                          {ingredient}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="flex items-center justify-center">
+                                      <input
+                                        type="number"
+                                        min="1"
+                                        defaultValue="1"
+                                        className="w-16 px-2 py-1 text-center border border-neutral-200 rounded text-sm focus:border-brand-500 focus:ring-0"
+                                      />
+                                    </div>
+                                    <button
+                                      onClick={() => removeIngredient(ingredient, true)}
+                                      className="text-neutral-400 hover:text-red-500 transition-colors p-1"
+                                    >
+                                      <X className="w-4 h-4" />
+                                    </button>
+                                  </div>
+                                ))}
+                                
+                                {/* Identified ingredients (shown after manual) */}
+                                {identifiedIngredients.map((item, index) => (
+                                  <div key={`identified-${index}`} className="grid grid-cols-[1fr,80px,40px] gap-4 p-3 border-b border-neutral-100 items-center hover:bg-neutral-50 transition-colors">
+                                    <div className="flex items-center gap-2">
+                                      <div className="w-2 h-2 bg-green-500 rounded-full" title="From photo"></div>
+                                      {editingItem?.type === 'identified' && editingItem.index === index ? (
+                                        <input
+                                          type="text"
+                                          value={editingValue}
+                                          onChange={(e) => setEditingValue(e.target.value)}
+                                          onKeyDown={(e) => {
+                                            if (e.key === 'Enter') saveEditedItem()
+                                            if (e.key === 'Escape') {
+                                              setEditingItem(null)
+                                              setEditingValue('')
+                                            }
+                                          }}
+                                          onBlur={saveEditedItem}
+                                          className="flex-1 px-2 py-1 border border-brand-500 rounded text-sm focus:outline-none focus:ring-2 focus:ring-brand-200"
+                                          autoFocus
+                                        />
+                                      ) : (
+                                        <span 
+                                          className="text-neutral-800 cursor-pointer hover:text-brand-600"
+                                          onClick={() => startEditingItem(index, 'identified', item.name)}
+                                        >
+                                          {item.name} 
+                                          {item.unit !== 'item' && (
+                                            <span className="text-neutral-500 text-xs ml-1">({item.unit})</span>
+                                          )}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="flex items-center justify-center">
+                                      <input
+                                        type="number"
+                                        min="1"
+                                        defaultValue={item.quantity}
+                                        className="w-16 px-2 py-1 text-center border border-neutral-200 rounded text-sm focus:border-brand-500 focus:ring-0"
+                                      />
+                                    </div>
+                                    <button
+                                      onClick={() => removeIngredient(item.name, false)}
+                                      className="text-neutral-400 hover:text-red-500 transition-colors p-1"
+                                    >
+                                      <X className="w-4 h-4" />
+                                    </button>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="text-center py-8 text-neutral-500 bg-neutral-50 rounded-lg border-2 border-dashed border-neutral-200">
+                              <p className="text-sm">No items added yet.</p>
+                              <p className="text-xs mt-1">Upload photos or add items manually below.</p>
+                            </div>
+                          )}
 
-                    {/* Manual Ingredient Addition */}
-                    <div className="space-y-4">
-                      <h4 className="font-semibold text-neutral-800">Add More Ingredients</h4>
-                      <div className="flex gap-2">
-                        <input
-                          type="text"
-                          value={manualIngredientInput}
-                          onChange={(e) => setManualIngredientInput(e.target.value)}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter') {
-                              e.preventDefault()
-                              addManualIngredient()
-                            }
-                          }}
-                          className="flex-1 p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
-                          placeholder="Type ingredient name..."
-                        />
-                        <button
-                          onClick={addManualIngredient}
-                          className="px-4 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors flex items-center gap-2"
-                        >
-                          <Plus className="w-4 h-4" />
-                          Add
-                        </button>
-                      </div>
-                      
-                      {/* Manually Added Ingredients */}
-                      {(answers.manuallyAddedIngredients?.length || 0) > 0 && (
-                        <div className="flex flex-wrap gap-2">
-                          {answers.manuallyAddedIngredients?.map((ingredient: string, index: number) => (
-                            <div
-                              key={index}
-                              className="inline-flex items-center gap-2 px-3 py-2 bg-blue-50 border border-blue-200 rounded-full text-sm"
-                            >
-                              <span className="text-blue-800">{ingredient}</span>
+                          {/* Add Item Input */}
+                          <div className="space-y-3">
+                            <div className="flex gap-2">
+                              <input
+                                type="text"
+                                value={manualIngredientInput}
+                                onChange={(e) => setManualIngredientInput(e.target.value)}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter') {
+                                    e.preventDefault()
+                                    addManualIngredient()
+                                  }
+                                }}
+                                className="flex-1 p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
+                                placeholder="Type item name..."
+                              />
                               <button
-                                onClick={() => removeIngredient(ingredient, true)}
-                                className="text-blue-600 hover:text-blue-800 transition-colors"
+                                onClick={addManualIngredient}
+                                className="px-4 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors flex items-center gap-2"
                               >
-                                <X className="w-3 h-3" />
+                                <Plus className="w-4 h-4" />
+                                Add
                               </button>
                             </div>
-                          ))}
-                        </div>
+                            
+                            {/* Paste List Option */}
+                            <div className="text-center">
+                              <button
+                                onClick={() => setShowPasteModal(true)}
+                                className="text-sm text-brand-600 hover:text-brand-700 font-medium inline-flex items-center gap-1"
+                              >
+                                <Plus className="w-4 h-4" />
+                                Or paste a list of items
+                              </button>
+                            </div>
+                          </div>
+                        </>
                       )}
                     </div>
 
@@ -1562,7 +1792,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                     <div className="bg-neutral-50 rounded-lg p-4">
                       <p className="text-sm text-neutral-700">
                         <span className="font-medium">
-                          Total ingredients: {identifiedIngredients.length + (answers.manuallyAddedIngredients?.length || 0)}
+                          Total items: {identifiedIngredients.length + (answers.manuallyAddedIngredients?.length || 0)}
                         </span>
                         {(identifiedIngredients.length + (answers.manuallyAddedIngredients?.length || 0)) > 0 && (
                           <span className="block mt-1">
@@ -1571,6 +1801,60 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                         )}
                       </p>
                     </div>
+                    
+                    {/* Paste Modal */}
+                    {showPasteModal && (
+                      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+                        <div className="bg-white rounded-lg max-w-md w-full p-6">
+                          <h3 className="text-lg font-semibold text-neutral-800 mb-4">Paste Your Items</h3>
+                          <p className="text-sm text-neutral-600 mb-4">Enter one item per line</p>
+                          <textarea
+                            value={pasteText}
+                            onChange={(e) => setPasteText(e.target.value)}
+                            className="w-full h-40 p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0 resize-none"
+                            placeholder="Milk&#10;Eggs&#10;Bread&#10;Chicken breast&#10;..."
+                            autoFocus
+                          />
+                          <div className="flex gap-3 mt-4">
+                            <button
+                              onClick={() => {
+                                setShowPasteModal(false)
+                                setPasteText('')
+                              }}
+                              className="flex-1 px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              onClick={() => {
+                                const items = pasteText.split('\n')
+                                  .map(item => item.trim())
+                                  .filter(item => item.length > 0)
+                                
+                                const currentManual = answers.manuallyAddedIngredients || []
+                                const identifiedNames = identifiedIngredients.map(item => item.name)
+                                const newItems = items.filter(item => 
+                                  !currentManual.includes(item) && !identifiedNames.includes(item)
+                                )
+                                
+                                if (newItems.length > 0) {
+                                  setAnswers(prev => ({
+                                    ...prev,
+                                    manuallyAddedIngredients: [...newItems, ...currentManual]
+                                  }))
+                                }
+                                
+                                setShowPasteModal(false)
+                                setPasteText('')
+                              }}
+                              className="flex-1 px-4 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700"
+                            >
+                              Add Items
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </>
               )}

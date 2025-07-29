@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { generateMealPlanWithFunctionCalling } from '../../../../lib/openai-function-calling'
+import { generateMealPlanParallel } from '../../../../lib/parallel-meal-generation'
+import { generateMealPlanProgressive } from '../../../../lib/ultra-parallel-generation'
 import type { UserPreferences } from '../../../../types'
 
 export const dynamic = 'force-dynamic'
@@ -63,8 +65,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate preferences structure
+    console.log('Validating preferences:', JSON.stringify(preferences, null, 2))
     const validationError = validatePreferences(preferences)
     if (validationError) {
+      console.log('Validation failed:', validationError)
       return NextResponse.json({
         error: validationError
       }, { status: 400 })
@@ -77,21 +81,38 @@ export async function POST(request: NextRequest) {
       }, { status: 500 })
     }
 
-    console.log('Generating meal plan with OpenAI function calling...')
+    console.log('Generating meal plan with ultra-parallel OpenAI calls...')
     console.log('Meal plan parameters:', {
       mealsPerWeek: preferences.mealsPerWeek,
       peoplePerMeal: preferences.peoplePerMeal,
       cookingSkillLevel: preferences.cookingSkillLevel,
-      mealTypes: preferences.mealTypes?.length || 0
+      totalMeals: preferences.mealTypes?.reduce((sum, mt) => sum + mt.days.length, 0) || 0
     })
 
-    // Use function calling for structured output with longer timeout for better results
+    // Try ultra-parallel generation first (separate calls per meal + ingredient/instruction separation)
     const startTime = Date.now()
-    const result = await generateMealPlanWithFunctionCalling({
-      preferences,
-      pantryItems: [], // TODO: Extract from pantry photo if provided
-      timeoutMs: 20000 // Further increased timeout for better success rate
-    })
+    let result
+    
+    try {
+      result = await generateMealPlanProgressive(preferences, (update) => {
+        console.log(`Progress: ${update.stage} - ${update.completed}/${update.total} meals`)
+      })
+      console.log('Ultra-parallel generation succeeded!')
+    } catch (ultraError) {
+      console.log('Ultra-parallel failed, trying standard parallel:', ultraError)
+      try {
+        result = await generateMealPlanParallel(preferences)
+        console.log('Standard parallel generation succeeded!')
+      } catch (parallelError) {
+        console.log('Both parallel methods failed, falling back to single call:', parallelError)
+        // Final fallback to original method
+        result = await generateMealPlanWithFunctionCalling({
+          preferences,
+          pantryItems: [], // TODO: Extract from pantry photo if provided
+          timeoutMs: 25000 // Reduced timeout since this is final fallback
+        })
+      }
+    }
 
     const generationTime = Date.now() - startTime
     console.log(`Meal plan generated successfully in ${generationTime}ms`)
@@ -126,9 +147,13 @@ export async function POST(request: NextRequest) {
     console.error('Error details:', error instanceof Error ? error.message : 'Unknown error')
     console.error('Error stack:', error instanceof Error ? error.stack : 'No stack')
     
-    // Only use fallback for critical system errors, not API timeouts
-    if (error instanceof Error && error.message.includes('OpenAI API key not configured') && preferences) {
-      console.log('Returning fallback meal plan due to configuration error:', error.message)
+    // Use fallback for API errors including timeouts
+    if (error instanceof Error && (
+      error.message.includes('OpenAI API key not configured') ||
+      error.message.includes('timeout') ||
+      error.message.includes('OpenAI generation failed')
+    ) && preferences) {
+      console.log('Returning fallback meal plan due to API error:', error.message)
       return getFallbackMealPlan(userId || `fallback_${Date.now()}`, preferences)
     }
     

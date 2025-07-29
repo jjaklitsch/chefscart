@@ -7,6 +7,7 @@ import MealPlanPreview from '../../../components/MealPlanPreview'
 import CartBuilder from '../../../components/CartBuilder'
 import CartPreparation from '../../../components/CartPreparation'
 import { UserPreferences, MealPlan } from '../../../types'
+import { FirestoreService } from '../../../lib/firestore'
 
 function OnboardingPageContent() {
   const [step, setStep] = useState<'preferences' | 'mealplan' | 'cartbuilder' | 'cartprep' | 'cart'>('preferences')
@@ -166,16 +167,44 @@ function OnboardingPageContent() {
     setStep('cartprep')
   }
 
-  const handleCartPreparation = async (email: string, additionalItems: string[]) => {
-    if (!mealPlan) return
+  const handleCartPreparation = async (email: string) => {
+    if (!mealPlan || !preferences) return
 
     setIsLoading(true)
     setError(null)
 
     try {
-      console.log('Creating Instacart cart...')
+      console.log('Saving user data to Firestore...')
       
-      // Call the mock cart creation API with email and additional items
+      // Get zipCode from localStorage
+      const zipCode = localStorage.getItem('chefscart_zipcode') || ''
+      
+      // Create user and save data to Firestore
+      const userId = await FirestoreService.createUser(email, zipCode, preferences)
+      
+      // Also save user data locally for login system
+      const userData = {
+        email,
+        zipCode,
+        preferences,
+        completedOnboarding: true,
+        lastLogin: new Date().toISOString()
+      }
+      localStorage.setItem(`chefscart_user_${email}`, JSON.stringify(userData))
+      localStorage.setItem('chefscart_current_user', email)
+      
+      // Save meal plan and shopping list
+      const mealPlanId = await FirestoreService.saveMealPlan(
+        userId, 
+        email, 
+        zipCode, 
+        mealPlan, 
+        consolidatedCart
+      )
+      
+      console.log('User data saved successfully. Creating Instacart cart...')
+      
+      // Call the mock cart creation API
       const response = await fetch('/api/create-cart-mock', {
         method: 'POST',
         headers: {
@@ -183,9 +212,9 @@ function OnboardingPageContent() {
         },
         body: JSON.stringify({
           planId: mealPlan.id,
-          userId: mealPlan.userId,
+          userId: userId,
           email,
-          additionalItems
+          firestoreMealPlanId: mealPlanId
         })
       })
 
@@ -197,6 +226,9 @@ function OnboardingPageContent() {
       const data = await response.json()
       console.log('Cart created:', data)
       
+      // Update meal plan status to indicate cart was created
+      await FirestoreService.updateMealPlanStatus(mealPlanId, 'cart_created')
+      
       // Redirect to Instacart cart
       if (data.cartUrl) {
         window.open(data.cartUrl, '_blank')
@@ -205,8 +237,8 @@ function OnboardingPageContent() {
       setStep('cart')
 
     } catch (err) {
-      console.error('Error creating cart:', err)
-      setError(err instanceof Error ? err.message : 'Failed to create cart')
+      console.error('Error in cart preparation:', err)
+      setError(err instanceof Error ? err.message : 'Failed to save data and create cart')
     } finally {
       setIsLoading(false)
     }
@@ -301,9 +333,9 @@ function OnboardingPageContent() {
     return (
       <div className="min-h-screen bg-health-gradient flex items-center justify-center">
         <div className="text-center max-w-md mx-auto px-4">
-          <div className="alert-success mb-4">
-            <h2 className="text-xl font-bold mb-2">🎉 Success!</h2>
-            <p>Your cart has been created and opened in Instacart. Check your email for the confirmation and shopping details.</p>
+          <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
+            <h2 className="text-xl font-bold mb-2 text-green-800">🎉 Success!</h2>
+            <p className="text-green-700">Your cart has been created and opened in Instacart. Check your email for the confirmation and shopping details.</p>
           </div>
           <button
             onClick={() => router.push('/')}

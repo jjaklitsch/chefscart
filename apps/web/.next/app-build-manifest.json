@@ -5,10 +5,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/global-error.js"
     ],
-    "/page": [
+    "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/not-found.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -21,15 +26,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/error.js"
     ],
-    "/not-found": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/app/page.js"
     ],
     "/onboarding/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/onboarding/page.js"
+    ],
+    "/grocery-list/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/grocery-list/page.js"
+    ],
+    "/login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/login/page.js"
     ]
   }
 }

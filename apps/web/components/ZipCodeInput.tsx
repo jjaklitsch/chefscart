@@ -265,7 +265,7 @@ export default function ZipCodeInput({ onZipValidation }: ZipCodeInputProps) {
       
       if (data.hasInstacartCoverage) {
         setValidationState('valid')
-        setMessage(data.message || 'Great! Instacart delivers to your area.')
+        setMessage(data.message || 'Great! ChefsCart is available in your area.')
         setValidationData({})
         onZipValidation(zip, true)
         

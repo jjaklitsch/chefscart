@@ -1,23 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import OpenAI from 'openai'
 import type { Recipe, UserPreferences } from '../../../../types'
+import { generateReplacementRecipeHTTP } from '../../../../lib/pure-http-generation'
 
 export const dynamic = 'force-dynamic'
-
-let openai: OpenAI | null = null
-
-function getOpenAIClient(): OpenAI {
-  if (!openai && process.env.OPENAI_API_KEY) {
-    openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-      timeout: 8000, // Fast timeout for replacements
-    })
-  }
-  if (!openai) {
-    throw new Error('OpenAI API key not configured')
-  }
-  return openai
-}
 
 // Replacement recipe generation function schema
 const REPLACEMENT_RECIPE_FUNCTION = {
@@ -96,41 +81,13 @@ export async function POST(request: NextRequest) {
     // Create replacement prompt
     const prompt = createReplacementPrompt(recipeToReplace, preferences, allAvoidTitles)
 
-    // Generate replacement recipe using OpenAI
-    const completion = await Promise.race([
-      getOpenAIClient().chat.completions.create({
-        model: 'gpt-4o-mini',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a recipe replacement generator. Create a completely different, detailed recipe as an alternative to the one being replaced. Ensure variety and follow user preferences.'
-          },
-          {
-            role: 'user',
-            content: prompt
-          }
-        ],
-        functions: [REPLACEMENT_RECIPE_FUNCTION],
-        function_call: { name: 'generate_replacement_recipe' },
-        temperature: 0.9,
-        max_tokens: 1500
-      }),
-      new Promise<never>((_, reject) => 
-        setTimeout(() => reject(new Error('Replacement generation timeout')), 8000)
-      )
-    ])
-
-    const functionCall = completion.choices[0]?.message?.function_call
-    if (!functionCall || functionCall.name !== 'generate_replacement_recipe') {
-      throw new Error('No function call in response')
-    }
-
-    let parsedResponse: { recipe: any }
-    try {
-      parsedResponse = JSON.parse(functionCall.arguments)
-    } catch (parseError) {
-      throw new Error('Invalid JSON in function response')
-    }
+    // Generate replacement recipe using pure HTTP with retry logic
+    console.log(`Generating replacement recipe using pure HTTP for: ${recipeToReplace.title}`)
+    const parsedResponse = await generateReplacementRecipeHTTP(
+      prompt,
+      REPLACEMENT_RECIPE_FUNCTION,
+      'generate_replacement_recipe'
+    )
 
     const newRecipe = parsedResponse.recipe
     if (!newRecipe) {

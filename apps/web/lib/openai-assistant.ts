@@ -114,7 +114,7 @@ const withRetry = async <T>(
 // Assistant configuration
 const ASSISTANT_CONFIG = {
   name: "Carter - ChefsCart Sous Chef",
-  model: "gpt-4o",
+  model: "gpt-4.1-mini",
   description: "A friendly AI sous-chef that helps users create personalized meal plans through natural conversation",
   instructions: `You are Carter, ChefsCart's friendly AI sous-chef assistant. You help users create personalized meal plans through a natural, engaging conversation.
 

@@ -8,6 +8,7 @@ function getOpenAIClient(): OpenAI {
   if (!openai && process.env.OPENAI_API_KEY) {
     openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
+      timeout: 60000, // Set 60 second timeout for OpenAI client
     })
   }
   if (!openai) {
@@ -102,11 +103,11 @@ export interface MealPlanResult {
 export async function generateMealPlanWithFunctionCalling(
   options: MealPlanGenerationOptions
 ): Promise<MealPlanResult> {
-  const { preferences, pantryItems = [], timeoutMs = 4500, excludeRecipes = [], generationSeed } = options
+  const { preferences, pantryItems = [], timeoutMs = 45000, excludeRecipes = [], generationSeed } = options
   const startTime = Date.now()
 
   // Generate only what's needed plus minimal backup to avoid timeout
-  const totalRecipesToGenerate = Math.ceil(preferences.mealsPerWeek * 1.3)
+  const totalRecipesToGenerate = Math.min(preferences.mealsPerWeek + 2, 8) // Cap at 8 recipes for faster generation
   
   // Add randomization to prompts for more variety
   const randomSeed = generationSeed || Math.random().toString(36).substring(7)
@@ -116,7 +117,7 @@ export async function generateMealPlanWithFunctionCalling(
   try {
     const completion = await Promise.race([
       getOpenAIClient().chat.completions.create({
-        model: 'gpt-4o-mini',
+        model: 'gpt-4.1-mini',
         messages: [
           {
             role: 'system',
@@ -143,10 +144,10 @@ Always generate exactly the requested number of recipes with Home Chef level det
         ],
         functions: [RECIPE_GENERATION_FUNCTION],
         function_call: { name: 'generate_recipes' },
-        temperature: 0.9, // Maximum creativity for uniqueness
-        max_tokens: 10000, // Further increased for detailed unique recipes
-        presence_penalty: 0.8, // Discourage repetition
-        frequency_penalty: 0.7, // Reduce repeated phrases
+        temperature: 0.7, // Balanced creativity and consistency
+        max_tokens: 6000, // Reduced tokens for faster generation
+        presence_penalty: 0.6, // Moderate repetition control
+        frequency_penalty: 0.5, // Moderate phrase variety
       }),
       new Promise<never>((_, reject) => 
         setTimeout(() => reject(new Error('OpenAI request timeout')), timeoutMs)

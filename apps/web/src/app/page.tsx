@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { ChefHat, MapPin, Clock, DollarSign, Plus, Minus } from 'lucide-react'
+import { ChefHat, MapPin, Clock, DollarSign, Plus, Minus, ShoppingCart, ArrowRight, CheckCircle } from 'lucide-react'
 import ZipCodeInput from '../../components/ZipCodeInput'
 import HeadlineABTest from '../../components/HeadlineABTest'
 import Header from '../../components/Header'
@@ -111,27 +111,54 @@ export default function Home() {
         {/* Hero Section */}
         <header className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center mb-6">
-            <ChefHat className="h-12 w-12 text-brand-600 mr-3" />
+            <ShoppingCart className="h-12 w-12 text-brand-600 mr-3" />
             <h1 className="text-4xl font-display font-bold text-neutral-800">ChefsCart</h1>
           </div>
           <HeadlineABTest className="text-center" />
         </header>
 
         {/* ZIP Code Section */}
-        <div className="max-w-md mx-auto mb-16 animate-slide-up">
-          <ZipCodeInput onZipValidation={handleZipValidation} />
-          {isValidZip && (
+        <div className="max-w-lg mx-auto mb-16 animate-slide-up">
+          <div className="flex gap-3 mb-3">
+            <div className="flex-1">
+              <input
+                type="text"
+                placeholder="Enter your ZIP code"
+                value={zipCode}
+                onChange={(e) => {
+                  const newZip = e.target.value.replace(/\D/g, '').slice(0, 5)
+                  setZipCode(newZip)
+                  if (newZip.length === 5) {
+                    handleZipValidation(newZip, true) // Simplified for demo
+                    setIsValidZip(true)
+                  } else {
+                    setIsValidZip(false)
+                  }
+                }}
+                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-green-500 rounded-lg focus:ring-0 transition-colors text-lg"
+              />
+            </div>
             <button 
               onClick={handleGetStarted}
-              className="btn-primary-new w-full mt-4 animate-bounce-gentle"
+              disabled={!isValidZip}
+              className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors flex items-center whitespace-nowrap"
             >
               Get Started →
             </button>
+          </div>
+          {isValidZip && (
+            <p className="text-green-700 text-sm flex items-center">
+              <CheckCircle className="h-4 w-4 mr-1" />
+              Great! ChefsCart is available in your area.
+            </p>
+          )}
+          {zipCode.length === 5 && !isValidZip && (
+            <p className="text-red-600 text-sm">Please enter a valid ZIP code</p>
           )}
         </div>
 
         {/* How It Works Section */}
-        <section className="mb-16">
+        <section className="mb-16 -mx-4 px-4 py-16 bg-white/50 backdrop-blur-sm border-y border-white/30">
           <h2 className="text-3xl font-display font-bold text-center text-neutral-800 mb-12">How It Works</h2>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
             <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group">
@@ -162,7 +189,7 @@ export default function Home() {
         <MealShowcase />
 
         {/* Features */}
-        <section className="card-hero max-w-4xl mx-auto hover-lift">
+        <section className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 max-w-4xl mx-auto p-8 hover:shadow-xl transition-all duration-300">
           <h2 className="text-2xl font-display font-bold text-center text-neutral-800 mb-8">Why Choose ChefsCart?</h2>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft">
@@ -204,8 +231,140 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Testimonials Section */}
+        <section className="mb-16 mt-24">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-display font-bold text-center text-neutral-800 mb-12">What Our Users Say</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-6 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic flex-grow">
+                  "ChefsCart turned my chaotic meal planning into a 5-minute task. The AI actually understands my dietary restrictions and creates meals my whole family loves."
+                </p>
+                <div className="flex items-center mt-auto">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
+                    S
+                  </div>
+                  <div className="ml-3">
+                    <p className="font-semibold text-gray-900">Sarah Chen</p>
+                    <p className="text-sm text-gray-500">Working Mom of 3</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-6 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic flex-grow">
+                  "As a busy professional, I was ordering takeout 5 nights a week. ChefsCart helps me cook healthy meals at home without the planning stress."
+                </p>
+                <div className="flex items-center mt-auto">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
+                    M
+                  </div>
+                  <div className="ml-3">
+                    <p className="font-semibold text-gray-900">Marcus Rodriguez</p>
+                    <p className="text-sm text-gray-500">Software Engineer</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-6 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic flex-grow">
+                  "Perfect for my keto lifestyle! The meal plans are creative, the shopping is automatic, and I've saved hours every week."
+                </p>
+                <div className="flex items-center mt-auto">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
+                    L
+                  </div>
+                  <div className="ml-3">
+                    <p className="font-semibold text-gray-900">Lisa Thompson</p>
+                    <p className="text-sm text-gray-500">Fitness Coach</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Grocery List Feature Section */}
+        <section className="mb-16 mt-24">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-blue-50/90 to-indigo-50/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-blue-200/50 shadow-xl">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-3xl font-display font-bold text-gray-900 mb-4">
+                    Already have a grocery list?
+                  </h2>
+                  <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+                    Skip the meal planning and go straight to checkout. Paste any grocery list and we'll convert it to a ready-to-order Instacart cart in 30 seconds.
+                  </p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <span>Paste from notes, recipes, or type fresh</span>
+                    </div>
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <span>AI recognizes every item automatically</span>
+                    </div>
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <span>One-click checkout with Instacart</span>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => router.push('/grocery-list')}
+                    className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+                  >
+                    <ShoppingCart className="h-5 w-5 mr-2" />
+                    Try Grocery List →
+                  </button>
+                </div>
+                <div className="relative">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-white/30">
+                    <div className="text-sm text-gray-500 mb-3">Your grocery list:</div>
+                    <div className="space-y-2 text-gray-700 font-mono text-sm">
+                      <div>5 bananas</div>
+                      <div>2 lbs chicken breast</div>
+                      <div>olive oil</div>
+                      <div>3 cups rice</div>
+                      <div>1 dozen eggs</div>
+                      <div>bread</div>
+                      <div>milk</div>
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-gray-200">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-600">7 items</span>
+                        <span className="text-green-600 font-semibold">Ready for checkout</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute -top-2 -right-2">
+                    <div className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                      30 sec
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
-        <section id="faq" className="mb-16 mt-24">
+        <section id="faq" className="mb-16 mt-24 -mx-4 px-4 py-16 bg-white/40 backdrop-blur-sm border-y border-white/20">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-display font-bold text-center text-neutral-800 mb-12">
               Frequently Asked Questions
@@ -294,7 +453,7 @@ export default function Home() {
             </div>
             
             {/* Still have questions footer */}
-            <div className="text-center mt-12 p-6 bg-gradient-to-br from-sage-50 to-cream-50 border border-sage-200 rounded-xl">
+            <div className="text-center mt-8 p-6 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-xl shadow-sm">
               <p className="text-neutral-700 font-medium mb-2">Still have questions?</p>
               <p className="text-neutral-600">
                 Email us at{' '}

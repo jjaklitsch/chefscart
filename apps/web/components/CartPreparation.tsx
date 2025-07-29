@@ -1,18 +1,16 @@
 "use client"
 
 import { useState } from 'react'
-import { ShoppingCart, Plus, X, Mail, ArrowLeft } from 'lucide-react'
+import { ShoppingCart, Mail, ArrowLeft } from 'lucide-react'
 
 interface CartPreparationProps {
-  onContinue: (email: string, additionalItems: string[]) => void
+  onContinue: (email: string) => void
   onBack: () => void
 }
 
 export default function CartPreparation({ onContinue, onBack }: CartPreparationProps) {
   const [email, setEmail] = useState('')
   const [emailError, setEmailError] = useState('')
-  const [additionalItems, setAdditionalItems] = useState<string[]>([])
-  const [currentItem, setCurrentItem] = useState('')
 
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -27,17 +25,6 @@ export default function CartPreparation({ onContinue, onBack }: CartPreparationP
     }
   }
 
-  const addItem = () => {
-    if (currentItem.trim() && !additionalItems.includes(currentItem.trim())) {
-      setAdditionalItems([...additionalItems, currentItem.trim()])
-      setCurrentItem('')
-    }
-  }
-
-  const removeItem = (index: number) => {
-    setAdditionalItems(additionalItems.filter((_, i) => i !== index))
-  }
-
   const handleContinue = () => {
     if (!email) {
       setEmailError('Email is required')
@@ -47,14 +34,7 @@ export default function CartPreparation({ onContinue, onBack }: CartPreparationP
       setEmailError('Please enter a valid email address')
       return
     }
-    onContinue(email, additionalItems)
-  }
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      e.preventDefault()
-      addItem()
-    }
+    onContinue(email)
   }
 
   return (
@@ -89,7 +69,9 @@ export default function CartPreparation({ onContinue, onBack }: CartPreparationP
               <Mail className="h-5 w-5 inline mr-2" />
               Email Address
             </label>
-            <p className="text-gray-600 mb-4">We'll send you the cart link and cooking instructions</p>
+            <p className="text-gray-600 mb-4">
+              We'll send you the cart link and cooking instructions. This will also create your account to save your preferences and get more personalized meal suggestions in the future.
+            </p>
             <input
               type="email"
               value={email}
@@ -107,54 +89,6 @@ export default function CartPreparation({ onContinue, onBack }: CartPreparationP
             )}
           </div>
 
-          {/* Additional Items */}
-          <div>
-            <label className="block text-lg font-semibold text-gray-900 mb-2">
-              <Plus className="h-5 w-5 inline mr-2" />
-              Additional Items (Optional)
-            </label>
-            <p className="text-gray-600 mb-4">Add any other groceries you need to your cart</p>
-            
-            <div className="space-y-4">
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={currentItem}
-                  onChange={(e) => setCurrentItem(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  className="flex-1 p-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-0"
-                  placeholder="e.g., Bananas, Milk, Bread..."
-                />
-                <button
-                  onClick={addItem}
-                  disabled={!currentItem.trim()}
-                  className="px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
-                >
-                  Add
-                </button>
-              </div>
-
-              {/* Added Items */}
-              {additionalItems.length > 0 && (
-                <div>
-                  <h4 className="font-medium text-gray-900 mb-3">Added to your cart:</h4>
-                  <div className="space-y-2">
-                    {additionalItems.map((item, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <span className="font-medium">{item}</span>
-                        <button
-                          onClick={() => removeItem(index)}
-                          className="p-1 text-gray-500 hover:text-red-600 transition-colors"
-                        >
-                          <X className="h-4 w-4" />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
 
           {/* Continue Button */}
           <div className="pt-4">

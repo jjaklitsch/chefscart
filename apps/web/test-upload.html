@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .preview { max-width: 200px; max-height: 200px; margin: 10px; border: 1px solid #ccc; }
+        .upload-area { border: 2px dashed #ccc; padding: 20px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Image Upload Test</h1>
+    <div class="upload-area">
+        <input type="file" id="fileInput" multiple accept="image/*,.heic,.heif">
+        <p>Select images to test preview functionality</p>
+    </div>
+    <div id="previews"></div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const files = e.target.files;
+            const previewDiv = document.getElementById('previews');
+            previewDiv.innerHTML = '';
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const div = document.createElement('div');
+                div.style.display = 'inline-block';
+                div.style.margin = '10px';
+                div.style.textAlign = 'center';
+
+                // Check if it's HEIC
+                if (file.type === 'image/heic' || file.type === 'image/heif' || 
+                    file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif')) {
+                    div.innerHTML = `
+                        <div style="width: 150px; height: 150px; border: 1px solid #ccc; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f5f5f5;">
+                            <div style="font-size: 30px;">📷</div>
+                            <div style="font-size: 12px; margin-top: 5px;">HEIC Photo</div>
+                            <div style="font-size: 10px; color: #666;">${(file.size / 1024 / 1024).toFixed(1)}MB</div>
+                        </div>
+                        <div style="margin-top: 5px; font-size: 12px;">${file.name}</div>
+                    `;
+                } else {
+                    // Try to create preview for other formats
+                    const img = document.createElement('img');
+                    img.className = 'preview';
+                    img.onload = function() {
+                        console.log('✅ Preview loaded successfully for:', file.name, file.type);
+                    };
+                    img.onerror = function() {
+                        console.log('❌ Preview failed for:', file.name, file.type);
+                        img.style.display = 'none';
+                        div.innerHTML = `
+                            <div style="width: 150px; height: 150px; border: 1px solid #ccc; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f5f5f5;">
+                                <div style="font-size: 30px;">🖼️</div>
+                                <div style="font-size: 12px; margin-top: 5px;">Image File</div>
+                                <div style="font-size: 10px; color: #666;">${(file.size / 1024 / 1024).toFixed(1)}MB</div>
+                            </div>
+                            <div style="margin-top: 5px; font-size: 12px;">${file.name}</div>
+                        `;
+                    };
+                    
+                    try {
+                        img.src = URL.createObjectURL(file);
+                        div.appendChild(img);
+                        const label = document.createElement('div');
+                        label.style.marginTop = '5px';
+                        label.style.fontSize = '12px';
+                        label.textContent = file.name;
+                        div.appendChild(label);
+                    } catch (error) {
+                        console.log('❌ createObjectURL failed for:', file.name, error);
+                        div.innerHTML = `
+                            <div style="width: 150px; height: 150px; border: 1px solid #ccc; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f5f5f5;">
+                                <div style="font-size: 30px;">❌</div>
+                                <div style="font-size: 12px; margin-top: 5px;">Error</div>
+                            </div>
+                            <div style="margin-top: 5px; font-size: 12px;">${file.name}</div>
+                        `;
+                    }
+                }
+
+                previewDiv.appendChild(div);
+                
+                console.log('File info:', {
+                    name: file.name,
+                    type: file.type,
+                    size: file.size,
+                    lastModified: new Date(file.lastModified)
+                });
+            }
+        });
+    </script>
+</body>
+</html>
