@@ -309,7 +309,7 @@ export async function generateMealPlanProgressive(
     
     // Generate recipes sequentially to prevent duplicates
     for (let i = 0; i < requests.length; i++) {
-      const request = requests[i]
+      const request = requests[i]!
       try {
         const result = await generateBasicRecipe(request, preferences, existingTitles)
         if (result?.title) {
@@ -317,7 +317,7 @@ export async function generateMealPlanProgressive(
           basicRecipes.push({ result, request })
         }
       } catch (error) {
-        console.warn(`Basic recipe failed for ${request.mealType}:`, error.message)
+        console.warn(`Basic recipe failed for ${request.mealType}:`, error instanceof Error ? error.message : error)
       }
     }
 
@@ -341,10 +341,10 @@ export async function generateMealPlanProgressive(
     // STAGE 3: Generate ALL instructions in parallel  
     console.log('👨‍🍳 Stage 3: Instructions...')
     const instructionPromises = basicRecipes.map(({ result }, index) => {
-      const ingredients = ingredientResults[index].status === 'fulfilled' 
-        ? ingredientResults[index].value 
+      const ingredients = ingredientResults[index]!.status === 'fulfilled' 
+        ? ingredientResults[index]!.value 
         : []
-      return generateInstructions(result!, ingredients, basicRecipes[index].request)
+      return generateInstructions(result!, ingredients, basicRecipes[index]!.request)
     })
 
     const instructionResults = await Promise.allSettled(instructionPromises)
@@ -352,11 +352,11 @@ export async function generateMealPlanProgressive(
     // STAGE 4: Combine everything
     console.log('🔧 Stage 4: Assembly...')
     basicRecipes.forEach(({ result, request }, index) => {
-      const ingredients = ingredientResults[index].status === 'fulfilled' 
-        ? ingredientResults[index].value 
+      const ingredients = ingredientResults[index]!.status === 'fulfilled' 
+        ? ingredientResults[index]!.value 
         : []
-      const instructionData = instructionResults[index].status === 'fulfilled'
-        ? instructionResults[index].value
+      const instructionData = instructionResults[index]!.status === 'fulfilled'
+        ? instructionResults[index]!.value
         : { instructions: ['Instructions not available'] }
 
       const completeRecipe: Recipe = {

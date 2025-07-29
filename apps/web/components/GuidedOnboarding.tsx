@@ -678,7 +678,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     if (stepIndex >= onboardingSteps.length) return false
     
     const stepData = onboardingSteps[stepIndex]
-    if (!stepData.required) return true // Optional steps are always "complete"
+    if (!stepData || !stepData.required) return true // Optional steps are always "complete"
     
     // Check validation for each required step
     if (stepData.id === 'planSelector') {
@@ -921,7 +921,14 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     if (editingItem.type === 'identified') {
       setIdentifiedIngredients(prev => {
         const updated = [...prev]
-        updated[editingItem.index] = { ...updated[editingItem.index], name: newValue }
+        const currentItem = updated[editingItem.index]
+        if (currentItem) {
+          updated[editingItem.index] = { 
+            name: newValue,
+            quantity: currentItem.quantity,
+            unit: currentItem.unit
+          }
+        }
         return updated
       })
     } else {

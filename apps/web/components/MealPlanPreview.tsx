@@ -154,7 +154,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
     if (!groups[mealType]) {
       groups[mealType] = []
     }
-    groups[mealType].push(recipe)
+    groups[mealType]!.push(recipe)
     return groups
   }, {})
 
@@ -257,7 +257,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         )
       }
     } catch (error) {
-      console.warn(`❌ Replacement image timeout for ${recipe.title}:`, error.message)
+      console.warn(`❌ Replacement image timeout for ${recipe.title}:`, error instanceof Error ? error.message : error)
       setSelectedRecipes(prev => 
         prev.map(r => 
           r.id === recipe.id 

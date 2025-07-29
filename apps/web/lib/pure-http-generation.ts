@@ -49,7 +49,7 @@ async function makeOpenAIRequest(
               
               resolve(parsed)
             } catch (e) {
-              reject(new Error(`JSON parse error: ${e.message}`))
+              reject(new Error(`JSON parse error: ${e instanceof Error ? e.message : e}`))
             }
           })
         })
@@ -158,7 +158,7 @@ export async function generateMealPlanPureHTTP(
   const startTime = Date.now()
   
   // Create meal requests
-  const requests = []
+  const requests: Array<{mealType: string, day: string, servings: number}> = []
   preferences.mealTypes?.forEach(mealType => {
     mealType.days.forEach(day => {
       requests.push({
@@ -187,7 +187,7 @@ export async function generateMealPlanPureHTTP(
     // Group requests by meal type for better AI organization
     const mealTypeGroups = requests.reduce((groups: Record<string, any[]>, req) => {
       if (!groups[req.mealType]) groups[req.mealType] = []
-      groups[req.mealType].push(req)
+      groups[req.mealType]!.push(req)
       return groups
     }, {})
 
@@ -309,7 +309,7 @@ Requirements:
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
-                ingredients: recipe.ingredients.map(ing => ({
+                ingredients: recipe.ingredients.map((ing: any) => ({
                   name: ing.name,
                   amount: ing.amount,
                   unit: ing.unit

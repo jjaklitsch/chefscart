@@ -157,7 +157,7 @@ class DalleRateLimiter {
       
       return imageUrl
     } catch (error) {
-      if (error.name === 'AbortError') {
+      if (error instanceof Error && error.name === 'AbortError') {
         throw new Error('Individual image timeout')
       }
       console.error('DALL-E request failed:', error)

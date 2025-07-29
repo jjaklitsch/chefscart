@@ -207,7 +207,9 @@ Quick: 8 ingredients, 5 steps, nutrition.`
           calories: 450, protein: 25, carbs: 40, fat: 18, fiber: 6, sugar: 8
         },
         tags: [mealIdea.mealType, mealIdea.cuisine],
-        imageUrl: null,
+        difficulty: (result.difficulty && ['easy', 'medium', 'hard'].includes(result.difficulty)) 
+          ? result.difficulty as 'easy' | 'medium' | 'hard'
+          : 'medium',
         imageLoading: true,
         imageError: false
       }
@@ -222,7 +224,7 @@ Quick: 8 ingredients, 5 steps, nutrition.`
       instructions: ['Recipe details will be available shortly'],
       nutrition: { calories: 450, protein: 25, carbs: 40, fat: 18, fiber: 6, sugar: 8 },
       tags: [mealIdea.mealType, mealIdea.cuisine],
-      imageUrl: null,
+      difficulty: 'medium' as const,
       imageLoading: true,
       imageError: false
     }
@@ -278,7 +280,7 @@ export async function generateMealPlanHybrid(
           setTimeout(() => reject(new Error(`Details timeout for ${idea.title}`)), 8000) // Realistic 8s timeout
         )
       ]).catch(error => {
-        console.warn(`Failed to generate details for ${idea.title}:`, error.message)
+        console.warn(`Failed to generate details for ${idea.title}:`, error instanceof Error ? error.message : error)
         // Return basic meal if details fail
         return {
           ...idea,
@@ -286,7 +288,7 @@ export async function generateMealPlanHybrid(
           instructions: ['Recipe instructions will be available shortly'],
           nutrition: { calories: 450, protein: 25, carbs: 40, fat: 18, fiber: 6, sugar: 8 },
           tags: [idea.mealType, idea.cuisine],
-          imageUrl: null,
+          difficulty: 'medium' as const,
           imageLoading: true,
           imageError: false
         } as Recipe

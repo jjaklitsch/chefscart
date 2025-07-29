@@ -44,7 +44,7 @@ export async function generateImageHTTP(
               
               resolve(parsed)
             } catch (e) {
-              reject(new Error(`JSON parse error: ${e.message}`))
+              reject(new Error(`JSON parse error: ${e instanceof Error ? e.message : e}`))
             }
           })
         })

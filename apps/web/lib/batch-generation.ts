@@ -82,7 +82,7 @@ export async function generateMealPlanBatched(
   const startTime = Date.now()
   
   // Create meal requests
-  const requests = []
+  const requests: Array<{mealType: string, day: string, servings: number}> = []
   preferences.mealTypes?.forEach(mealType => {
     mealType.days.forEach(day => {
       requests.push({
@@ -101,7 +101,7 @@ export async function generateMealPlanBatched(
 
   // Split into batches of 4 recipes each
   const batchSize = 4
-  const batches = []
+  const batches: Array<Array<{mealType: string, day: string, servings: number}>> = []
   for (let i = 0; i < requests.length; i += batchSize) {
     batches.push(requests.slice(i, i + batchSize))
   }
@@ -110,10 +110,10 @@ export async function generateMealPlanBatched(
 
   try {
     // Generate each batch sequentially (but each batch contains multiple recipes)
-    const allRecipes = []
+    const allRecipes: Recipe[] = []
     
     for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
-      const batch = batches[batchIndex]
+      const batch = batches[batchIndex]!
       const batchStart = Date.now()
       
       console.log(`🔄 Batch ${batchIndex + 1}/${batches.length}: Generating ${batch.length} recipes...`)
