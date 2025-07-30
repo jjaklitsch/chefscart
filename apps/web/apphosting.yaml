@@ -1,0 +1,55 @@
+runConfig:
+  runtime: nodejs20
+  
+env:
+  # Firebase Configuration (client-side)
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyDvf_07-IA3zl_tqeE5NVEqPY4HzC1Vclc
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: chefscart-e0744.firebaseapp.com
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: chefscart-e0744
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: chefscart-e0744.firebasestorage.app
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "503930804409"
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: 1:503930804409:web:bb794dc6fa39c4a7a5e368
+
+  # Firebase Admin SDK (server-side) - Configure these secrets in Firebase App Hosting
+  - variable: FIREBASE_PRIVATE_KEY
+    secret: firebase_private_key
+  - variable: FIREBASE_CLIENT_EMAIL
+    value: firebase-adminsdk-fbsvc@chefscart-e0744.iam.gserviceaccount.com
+  - variable: FIREBASE_PROJECT_ID
+    value: chefscart-e0744
+
+  # OpenAI Configuration - Configure this secret in Firebase App Hosting
+  - variable: OPENAI_API_KEY
+    secret: openai_api_key
+  - variable: NEXT_PUBLIC_USE_ASSISTANT_API
+    value: "true"
+
+  # Resend Configuration - Configure this secret in Firebase App Hosting
+  - variable: RESEND_API_KEY
+    secret: resend_api_key
+  - variable: RESEND_FROM_EMAIL
+    value: support@chefscart.ai
+
+  # Instacart IDP Configuration
+  - variable: INSTACART_CLIENT_ID
+    value: ""
+  - variable: INSTACART_CLIENT_SECRET
+    value: ""
+  - variable: INSTACART_IDP_BASE_URL
+    value: https://connect.instacart.com
+
+  # Sentry Configuration
+  - variable: SENTRY_DSN
+    value: ""
+
+  # App Configuration
+  - variable: NEXT_PUBLIC_APP_URL
+    value: https://chefscart.ai
+  - variable: NODE_ENV
+    value: production
