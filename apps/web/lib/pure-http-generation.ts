@@ -12,7 +12,7 @@ async function makeOpenAIRequest(
     try {
       const result = await new Promise<any>((resolve, reject) => {
         const postData = JSON.stringify({
-          model: 'gpt-4o-mini',
+          model: 'gpt-4.1-mini',
           messages,
           ...(functions && { functions }),
           ...(functionCall && { function_call: functionCall }),
