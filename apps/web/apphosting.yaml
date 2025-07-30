@@ -4,7 +4,7 @@ runConfig:
 env:
   # Firebase Configuration (client-side)
   - variable: NEXT_PUBLIC_FIREBASE_API_KEY
-    value: AIzaSyDvf_07-IA3zl_tqeE5NVEqPY4HzC1Vclc
+    secret: firebase_api_key
   - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
     value: chefscart-e0744.firebaseapp.com
   - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID

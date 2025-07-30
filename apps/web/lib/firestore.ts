@@ -7,7 +7,7 @@ import {
   serverTimestamp,
   Timestamp 
 } from 'firebase/firestore'
-import { db } from './firebase'
+import { getFirebaseDb } from './firebase'
 import { UserPreferences, MealPlan } from '../types'
 
 export interface UserData {
@@ -33,6 +33,7 @@ export interface SavedMealPlan {
 export const FirestoreService = {
   async createUser(email: string, zipCode: string, preferences: UserPreferences): Promise<string> {
     try {
+      const db = getFirebaseDb()
       const userDoc = await addDoc(collection(db, 'users'), {
         email,
         zipCode,
@@ -68,6 +69,7 @@ export const FirestoreService = {
     shoppingList: any[]
   ): Promise<string> {
     try {
+      const db = getFirebaseDb()
       const mealPlanDoc = await addDoc(collection(db, 'mealPlans'), {
         userId,
         email,
@@ -113,6 +115,7 @@ export const FirestoreService = {
 
   async updateMealPlanStatus(mealPlanId: string, status: 'generated' | 'cart_created' | 'completed'): Promise<void> {
     try {
+      const db = getFirebaseDb()
       const mealPlanRef = doc(db, 'mealPlans', mealPlanId)
       await setDoc(mealPlanRef, { 
         status,
