@@ -36,21 +36,14 @@
       "static/chunks/main-app-8d6d69cab0fe252d.js",
       "static/chunks/app/global-error-e30b25a0d5c0a88a.js"
     ],
-    "/grocery-list/page": [
+    "/page": [
       "static/chunks/webpack-f3a82216dbbfa6a7.js",
       "static/chunks/fd9d1056-8f02fde8f1d9ed66.js",
       "static/chunks/117-61129290ea621957.js",
       "static/chunks/main-app-8d6d69cab0fe252d.js",
       "static/chunks/709-9e431eeabe76e719.js",
-      "static/chunks/app/grocery-list/page-937ded7920d5f748.js"
-    ],
-    "/login/page": [
-      "static/chunks/webpack-f3a82216dbbfa6a7.js",
-      "static/chunks/fd9d1056-8f02fde8f1d9ed66.js",
-      "static/chunks/117-61129290ea621957.js",
-      "static/chunks/main-app-8d6d69cab0fe252d.js",
-      "static/chunks/709-9e431eeabe76e719.js",
-      "static/chunks/app/login/page-931c9893282efa8a.js"
+      "static/chunks/177-7038c793612ecc4a.js",
+      "static/chunks/app/page-79b0d0720bd0bc6a.js"
     ],
     "/onboarding/page": [
       "static/chunks/webpack-f3a82216dbbfa6a7.js",
@@ -60,17 +53,24 @@
       "static/chunks/261b60bd-c8de85159f8e063c.js",
       "static/chunks/7508b87c-bd4c4b033ff73bf3.js",
       "static/chunks/709-9e431eeabe76e719.js",
-      "static/chunks/168-0f27661310a66696.js",
-      "static/chunks/app/onboarding/page-b092720bce793f99.js"
+      "static/chunks/168-41fdafbf79fb33e5.js",
+      "static/chunks/app/onboarding/page-c2c4dea81db0c16f.js"
     ],
-    "/page": [
+    "/login/page": [
       "static/chunks/webpack-f3a82216dbbfa6a7.js",
       "static/chunks/fd9d1056-8f02fde8f1d9ed66.js",
       "static/chunks/117-61129290ea621957.js",
       "static/chunks/main-app-8d6d69cab0fe252d.js",
       "static/chunks/709-9e431eeabe76e719.js",
-      "static/chunks/177-8630470362c43af2.js",
-      "static/chunks/app/page-79b0d0720bd0bc6a.js"
+      "static/chunks/app/login/page-931c9893282efa8a.js"
+    ],
+    "/grocery-list/page": [
+      "static/chunks/webpack-f3a82216dbbfa6a7.js",
+      "static/chunks/fd9d1056-8f02fde8f1d9ed66.js",
+      "static/chunks/117-61129290ea621957.js",
+      "static/chunks/main-app-8d6d69cab0fe252d.js",
+      "static/chunks/709-9e431eeabe76e719.js",
+      "static/chunks/app/grocery-list/page-937ded7920d5f748.js"
     ],
     "/privacy-policy/page": [
       "static/chunks/webpack-f3a82216dbbfa6a7.js",

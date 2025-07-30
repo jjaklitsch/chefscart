@@ -12,7 +12,7 @@ async function makeOpenAIRequest(
     try {
       const result = await new Promise<any>((resolve, reject) => {
         const postData = JSON.stringify({
-          model: 'gpt-4.1-mini',
+          model: 'gpt-4o-mini',
           messages,
           ...(functions && { functions }),
           ...(functionCall && { function_call: functionCall }),
@@ -289,72 +289,14 @@ Requirements:
     const recipes = await Promise.all(detailPromises)
     const step2Time = Date.now() - step2Start
     
-    // STEP 3: Add cost estimation to recipes (optional for better UX)
-    const step3Start = Date.now()
-    console.log(`💰 Step 3: Adding cost estimates to ${recipes.length} recipes...`)
-    
-    try {
-      // Add cost estimation in parallel for all recipes
-      const recipesWithCosts = await Promise.all(
-        recipes.map(async (recipe) => {
-          try {
-            // Skip if recipe has no ingredients (fallback case)
-            if (!recipe.ingredients || recipe.ingredients.length === 0) {
-              return recipe
-            }
-            
-            // Call cost estimation API with proper URL handling
-            const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3001'
-            const response = await fetch(`${baseUrl}/api/estimate-ingredient-costs`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                ingredients: recipe.ingredients.map((ing: any) => ({
-                  name: ing.name,
-                  amount: ing.amount,
-                  unit: ing.unit
-                })),
-                zipCode: '' // Could be passed as parameter
-              })
-            })
-            
-            if (response.ok) {
-              const costData = await response.json()
-              if (costData.success && costData.estimates) {
-                // Calculate total estimated cost
-                const totalCost = costData.estimates.reduce((sum: number, est: any) => sum + est.estimatedCost, 0)
-                return { ...recipe, estimatedCost: Math.round(totalCost) }
-              }
-            }
-            
-            // Fallback to original cost if API fails
-            return recipe
-          } catch (error) {
-            console.warn(`Cost estimation failed for ${recipe.title}:`, error)
-            return recipe
-          }
-        })
-      )
-      
-      const step3Time = Date.now() - step3Start
-      console.log(`💰 Step 3 COMPLETE: Cost estimates in ${step3Time}ms`)
-      
-      const generationTime = Date.now() - startTime
-      console.log(`✅ PURE HTTP COMPLETE: ${recipesWithCosts.length} recipes in ${generationTime}ms`)
-      console.log(`📊 Breakdown: Ideas=${step1Time}ms, Details=${step2Time}ms, Costs=${step3Time}ms`)
-      console.log(`🎉 Average: ${Math.round(generationTime / recipesWithCosts.length)}ms per recipe`)
+    // Use the existing estimated costs from Step 1 (from GPT ideas generation)
+    // Remove the problematic self-referencing API call for production reliability
+    const generationTime = Date.now() - startTime
+    console.log(`✅ PURE HTTP COMPLETE: ${recipes.length} recipes in ${generationTime}ms`)
+    console.log(`📊 Breakdown: Ideas=${step1Time}ms, Details=${step2Time}ms (TRUE PARALLEL!)`)
+    console.log(`🎉 Average: ${Math.round(generationTime / recipes.length)}ms per recipe`)
 
-      return { recipes: recipesWithCosts, generationTime }
-      
-    } catch (error) {
-      console.warn('Cost estimation step failed, continuing without costs:', error)
-      const generationTime = Date.now() - startTime
-      console.log(`✅ PURE HTTP COMPLETE: ${recipes.length} recipes in ${generationTime}ms`)
-      console.log(`📊 Breakdown: Ideas=${step1Time}ms, Details=${step2Time}ms (TRUE PARALLEL!)`)
-      console.log(`🎉 Average: ${Math.round(generationTime / recipes.length)}ms per recipe`)
-
-      return { recipes, generationTime }
-    }
+    return { recipes, generationTime }
 
   } catch (error) {
     console.error('Pure HTTP meal generation failed:', error)
