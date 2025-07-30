@@ -57,8 +57,39 @@ npm run deploy     # Deploy functions to Firebase
 #### Configuration
 - `.env.local` - Frontend and API environment variables (located at project root)
 - `functions/.env` - Backend environment variables for Firebase Functions
+- `apps/web/apphosting.yaml` - Firebase App Hosting deployment configuration
 - Copy from `.env.local.example` and `functions/.env.example`
 - Note: Server restart required after .env.local changes
+
+#### Firebase App Hosting Secrets Management
+The `apps/web/apphosting.yaml` file configures environment variables and secrets for production deployment.
+
+**Current configured secrets:**
+- `firebase_api_key` → `NEXT_PUBLIC_FIREBASE_API_KEY`
+- `firebase_private_key` → `FIREBASE_PRIVATE_KEY`
+- `openai_api_key` → `OPENAI_API_KEY`
+- `resend_api_key` → `RESEND_API_KEY`
+
+**To add a new secret:**
+1. Add to `apphosting.yaml`:
+   ```yaml
+   - variable: NEW_ENV_VAR_NAME
+     secret: new_secret_name
+   ```
+2. Set the secret value:
+   ```bash
+   echo "SECRET_VALUE" | firebase apphosting:secrets:set new_secret_name --data-file -
+   ```
+3. Grant access to the backend:
+   ```bash
+   firebase apphosting:secrets:grantaccess new_secret_name --backend chefscart
+   ```
+4. Deploy to apply changes:
+   ```bash
+   git commit -am "Add new secret" && git push origin main
+   ```
+
+**Important:** Never commit actual secret values to git. Always use secret references in `apphosting.yaml`.
 
 ### Working with the Chat Wizard
 The chat wizard (`PreferencesChat.tsx`) uses a step-based flow:
