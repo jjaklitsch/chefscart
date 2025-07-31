@@ -274,6 +274,8 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   const [showChecklist, setShowChecklist] = useState(false)
   const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set())
   const [isAnalyzingPhotos, setIsAnalyzingPhotos] = useState(false)
+  const [analysisTimer, setAnalysisTimer] = useState<NodeJS.Timeout | null>(null)
+  const [isWaitingForAnalysis, setIsWaitingForAnalysis] = useState(false)
   const [editingItem, setEditingItem] = useState<{ index: number; type: 'identified' | 'manual' } | null>(null)
   const [editingValue, setEditingValue] = useState('')
   const [showPasteModal, setShowPasteModal] = useState(false)
@@ -341,6 +343,15 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       }
     }
   }, [answers, currentStep, isInitialized, completedSteps])
+
+  // Cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (analysisTimer) {
+        clearTimeout(analysisTimer)
+      }
+    }
+  }, [analysisTimer])
 
   const currentStepData = onboardingSteps[currentStep]
   const isLastStep = currentStep === onboardingSteps.length - 1
@@ -729,6 +740,41 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     }
   }
 
+  // Function to trigger analysis with debouncing
+  const triggerPhotoAnalysis = useCallback((photos: File[]) => {
+    // Clear existing timer
+    if (analysisTimer) {
+      clearTimeout(analysisTimer)
+    }
+    
+    // Set waiting state
+    setIsWaitingForAnalysis(photos.length > 0)
+    
+    // Set new timer for debounced analysis (3 seconds after last upload)
+    const timer = setTimeout(() => {
+      if (photos.length > 0) {
+        console.log(`🔍 Starting debounced ingredient analysis for ${photos.length} photos`)
+        setIsWaitingForAnalysis(false)
+        setIsAnalyzingPhotos(true)
+        identifyIngredientsFromPhotos(photos).then(ingredients => {
+          console.log(`✅ Ingredient analysis complete: ${ingredients.length} items identified`)
+          setIdentifiedIngredients(ingredients)
+          setIsAnalyzingPhotos(false)
+        }).catch(error => {
+          console.error('❌ Error analyzing photos:', error)
+          setIsAnalyzingPhotos(false)
+          setIsWaitingForAnalysis(false)
+          // Show user-friendly error message
+          alert('Unable to analyze photos. Please try again or add items manually.')
+        })
+      } else {
+        setIsWaitingForAnalysis(false)
+      }
+    }, 3000) // 3 second delay
+    
+    setAnalysisTimer(timer)
+  }, [analysisTimer, identifyIngredientsFromPhotos])
+
   // Real ingredient identification function using GPT-4 Vision
   const identifyIngredientsFromPhotos = useCallback(async (photos: File[]): Promise<Array<{ name: string; quantity: number; unit: string }>> => {
     try {
@@ -869,22 +915,12 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       return { ...prev, fridgePantryPhotos: newPhotos }
     })
     
-    // Identify ingredients from all photos - use the newPhotos array directly
+    // Trigger debounced analysis for all photos
     const currentPhotos = answers.fridgePantryPhotos || []
     const newPhotos = [...currentPhotos, ...validFiles].slice(0, 5)
-    console.log(`🔍 Starting ingredient analysis for ${newPhotos.length} photos`)
-    setIsAnalyzingPhotos(true)
-    identifyIngredientsFromPhotos(newPhotos).then(ingredients => {
-      console.log(`✅ Ingredient analysis complete: ${ingredients.length} items identified`)
-      setIdentifiedIngredients(ingredients)
-      setIsAnalyzingPhotos(false)
-    }).catch(error => {
-      console.error('❌ Error analyzing photos:', error)
-      setIsAnalyzingPhotos(false)
-      // Show user-friendly error message
-      alert('Unable to analyze photos. Please try again or add items manually.')
-    })
-  }, [identifyIngredientsFromPhotos])
+    console.log(`📁 Added ${validFiles.length} photo(s), total: ${newPhotos.length}. Analysis will start in 3 seconds...`)
+    triggerPhotoAnalysis(newPhotos)
+  }, [triggerPhotoAnalysis, answers.fridgePantryPhotos])
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault()
@@ -1691,9 +1727,9 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                   <div className="flex flex-col sm:flex-row gap-3">
                     <button
                       onClick={handleContinueWithPhotos}
-                      disabled={(answers.fridgePantryPhotos?.length || 0) === 0 || isAnalyzingPhotos}
+                      disabled={(answers.fridgePantryPhotos?.length || 0) === 0 || isAnalyzingPhotos || isWaitingForAnalysis}
                       className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
-                        (answers.fridgePantryPhotos?.length || 0) > 0 && !isAnalyzingPhotos
+                        (answers.fridgePantryPhotos?.length || 0) > 0 && !isAnalyzingPhotos && !isWaitingForAnalysis
                           ? 'bg-brand-600 text-white hover:bg-brand-700'
                           : 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
                       }`}
@@ -1702,6 +1738,11 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                         <>
                           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                           Analyzing photos...
+                        </>
+                      ) : isWaitingForAnalysis ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                          Analysis starting in 3s...
                         </>
                       ) : (
                         <>
