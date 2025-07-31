@@ -5,6 +5,9 @@ env:
   # Firebase Configuration (client-side)
   - variable: NEXT_PUBLIC_FIREBASE_API_KEY
     secret: firebase_api_key
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
     value: chefscart-e0744.firebaseapp.com
   - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
@@ -19,6 +22,8 @@ env:
   # Firebase Admin SDK (server-side) - Configure these secrets in Firebase App Hosting
   - variable: FIREBASE_PRIVATE_KEY
     secret: firebase_private_key
+    availability:
+      - RUNTIME
   - variable: FIREBASE_CLIENT_EMAIL
     value: firebase-adminsdk-fbsvc@chefscart-e0744.iam.gserviceaccount.com
   - variable: FIREBASE_PROJECT_ID
@@ -27,12 +32,17 @@ env:
   # OpenAI Configuration - Configure this secret in Firebase App Hosting
   - variable: OPENAI_API_KEY
     secret: openai_api_key
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_USE_ASSISTANT_API
     value: "true"
 
   # Resend Configuration - Configure this secret in Firebase App Hosting
   - variable: RESEND_API_KEY
     secret: resend_api_key
+    availability:
+      - RUNTIME
   - variable: RESEND_FROM_EMAIL
     value: support@chefscart.ai
 
