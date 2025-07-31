@@ -136,6 +136,11 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
   const [dismissedRecipes, setDismissedRecipes] = useState<string[]>([]) // Track dismissed recipes
   const generatedImages = useRef<Set<string>>(new Set())
 
+  // Sync selectedRecipes with mealPlan prop changes (for image updates from parent)
+  useEffect(() => {
+    setSelectedRecipes(mealPlan.recipes)
+  }, [mealPlan.recipes])
+
   const showToast = (message: string) => {
     setToastMessage(message)
     setTimeout(() => setToastMessage(null), 3000)

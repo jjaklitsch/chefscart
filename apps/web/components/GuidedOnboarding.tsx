@@ -773,7 +773,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     }, 3000) // 3 second delay
     
     setAnalysisTimer(timer)
-  }, [analysisTimer, identifyIngredientsFromPhotos])
+  }, [analysisTimer])
 
   // Real ingredient identification function using GPT-4 Vision
   const identifyIngredientsFromPhotos = useCallback(async (photos: File[]): Promise<Array<{ name: string; quantity: number; unit: string }>> => {
@@ -907,17 +907,18 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     
     if (validFiles.length === 0) return
     
-    let allPhotos: File[] = []
+    // Calculate the new photos array for analysis
+    const currentPhotos = answers.fridgePantryPhotos || []
+    const newPhotos = [...currentPhotos, ...validFiles].slice(0, 5)
+    
+    // Update state
     setAnswers(prev => {
       const currentPhotos = prev.fridgePantryPhotos || []
-      const newPhotos = [...currentPhotos, ...validFiles].slice(0, 5) // Max 5 photos
-      allPhotos = newPhotos // Store for analysis
-      return { ...prev, fridgePantryPhotos: newPhotos }
+      const updatedPhotos = [...currentPhotos, ...validFiles].slice(0, 5) // Max 5 photos
+      return { ...prev, fridgePantryPhotos: updatedPhotos }
     })
     
     // Trigger debounced analysis for all photos
-    const currentPhotos = answers.fridgePantryPhotos || []
-    const newPhotos = [...currentPhotos, ...validFiles].slice(0, 5)
     console.log(`📁 Added ${validFiles.length} photo(s), total: ${newPhotos.length}. Analysis will start in 3 seconds...`)
     triggerPhotoAnalysis(newPhotos)
   }, [triggerPhotoAnalysis, answers.fridgePantryPhotos])
