@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, Suspense, useCallback } from 'react'
+import { useState, Suspense, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import GuidedOnboarding from '../../../components/GuidedOnboarding'
 import MealPlanPreview from '../../../components/MealPlanPreview'
@@ -17,6 +17,25 @@ function OnboardingPageContent() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
+
+  // Load existing preferences from localStorage when component mounts
+  useEffect(() => {
+    try {
+      const currentUser = localStorage.getItem('chefscart_current_user')
+      if (currentUser) {
+        const userData = localStorage.getItem(`chefscart_user_${currentUser}`)
+        if (userData) {
+          const parsedData = JSON.parse(userData)
+          if (parsedData.preferences) {
+            console.log('Loading existing preferences for user:', currentUser)
+            setPreferences(parsedData.preferences)
+          }
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to load existing preferences:', error)
+    }
+  }, [])
 
   const handlePreferencesComplete = async (userPreferences: UserPreferences) => {
     setPreferences(userPreferences)
