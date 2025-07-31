@@ -6,6 +6,16 @@ export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
   try {
+    // Check for OpenAI API key first
+    if (!process.env.OPENAI_API_KEY) {
+      console.error('❌ OPENAI_API_KEY environment variable not found')
+      return NextResponse.json({
+        error: 'OpenAI API key not configured'
+      }, { status: 500 })
+    }
+
+    console.log('✅ OpenAI API key found, length:', process.env.OPENAI_API_KEY.length)
+
     const { preferences } = await request.json()
 
     if (!preferences) {

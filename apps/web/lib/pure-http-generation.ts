@@ -20,6 +20,12 @@ async function makeOpenAIRequest(
           max_tokens: 1000
         })
 
+        // Validate API key before making request
+        if (!process.env.OPENAI_API_KEY) {
+          reject(new Error('OPENAI_API_KEY environment variable not found'))
+          return
+        }
+
         const options = {
           hostname: 'api.openai.com',
           port: 443,
@@ -39,25 +45,40 @@ async function makeOpenAIRequest(
           res.on('data', (chunk) => { data += chunk })
           res.on('end', () => {
             try {
+              console.log(`OpenAI API response status: ${res.statusCode}`)
+              
+              // Check for HTTP errors
+              if (res.statusCode && res.statusCode >= 400) {
+                console.error(`OpenAI API HTTP error ${res.statusCode}:`, data)
+                reject(new Error(`OpenAI API HTTP error ${res.statusCode}: ${data}`))
+                return
+              }
+              
               const parsed = JSON.parse(data)
               
               // Check for OpenAI API errors
               if (parsed.error) {
+                console.error('OpenAI API error response:', parsed.error)
                 reject(new Error(`OpenAI API error: ${parsed.error.message || 'Unknown error'}`))
                 return
               }
               
               resolve(parsed)
             } catch (e) {
+              console.error('JSON parse error with data:', data)
               reject(new Error(`JSON parse error: ${e instanceof Error ? e.message : e}`))
             }
           })
         })
 
-        req.on('error', reject)
+        req.on('error', (error) => {
+          console.error('OpenAI HTTPS request error:', error)
+          reject(new Error(`HTTPS request error: ${error.message}`))
+        })
         req.on('timeout', () => {
+          console.error('OpenAI request timeout after 30s')
           req.destroy()
-          reject(new Error('Request timeout'))
+          reject(new Error('Request timeout after 30 seconds'))
         })
         
         req.setTimeout(30000) // 30s timeout
