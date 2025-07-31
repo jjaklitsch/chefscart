@@ -869,10 +869,12 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       return { ...prev, fridgePantryPhotos: newPhotos }
     })
     
-    // Identify ingredients from all photos
-    console.log(`🔍 Starting ingredient analysis for ${allPhotos.length} photos`)
+    // Identify ingredients from all photos - use the newPhotos array directly
+    const currentPhotos = answers.fridgePantryPhotos || []
+    const newPhotos = [...currentPhotos, ...validFiles].slice(0, 5)
+    console.log(`🔍 Starting ingredient analysis for ${newPhotos.length} photos`)
     setIsAnalyzingPhotos(true)
-    identifyIngredientsFromPhotos(allPhotos).then(ingredients => {
+    identifyIngredientsFromPhotos(newPhotos).then(ingredients => {
       console.log(`✅ Ingredient analysis complete: ${ingredients.length} items identified`)
       setIdentifiedIngredients(ingredients)
       setIsAnalyzingPhotos(false)
