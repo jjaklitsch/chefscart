@@ -236,17 +236,17 @@ const convertPreferencesToAnswers = (preferences: UserPreferences): Record<strin
     lunchMeals: preferences.lunchesPerWeek || 0,
     dinnerMeals: preferences.dinnersPerWeek || 0,
     
-    // Other preferences
-    dietaryStyle: preferences.diets || [],
-    foodsToAvoid: preferences.avoidIngredients || [],
+    // Other preferences - fix field mappings
+    dietaryStyle: preferences.dietaryStyle || preferences.diets || [],
+    foodsToAvoid: preferences.foodsToAvoid || preferences.avoidIngredients || [],
     healthGoal: preferences.healthGoal || 'maintain',
-    cookingTime: preferences.maxCookingTime || 30,
+    cookingTime: preferences.maxCookingTime || preferences.maxCookTime || 30,
     cookingSkill: preferences.cookingSkillLevel || 'intermediate',
     budgetSensitivity: preferences.budgetSensitivity || 'no_limit',
     customBudgetAmount: preferences.customBudgetAmount || '',
     organicPreference: preferences.organicPreference || 'no_preference',
     favoriteFoods: preferences.favoriteFoods || [],
-    cuisinePreferences: preferences.cuisinePreferences || [],
+    cuisinePreferences: preferences.cuisinePreferences || preferences.preferredCuisines || [],
     additionalConsiderations: preferences.additionalConsiderations || '',
     
     // Photo upload related
@@ -312,9 +312,8 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       }
       
       setCompletedSteps(newCompletedSteps)
-      console.log('🔄 Edit mode: marked completed steps:', Array.from(newCompletedSteps))
     }
-  }, [isInitialized, initialPreferences])
+  }, [isInitialized, initialPreferences, answers])
 
   // Save preferences to localStorage whenever answers change (after initial load)
   useEffect(() => {
@@ -796,22 +795,70 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     if (!files) return
     
     const validFiles = Array.from(files).filter(file => {
-      const isValidType = file.type.startsWith('image/') || 
-                         file.type === 'image/heic' || 
-                         file.type === 'image/heif' ||
-                         file.name.toLowerCase().endsWith('.heic') ||
-                         file.name.toLowerCase().endsWith('.heif') ||
-                         file.name.toLowerCase().endsWith('.jpg') ||
-                         file.name.toLowerCase().endsWith('.jpeg') ||
-                         file.name.toLowerCase().endsWith('.png') ||
-                         file.name.toLowerCase().endsWith('.webp')
+      // Detailed logging for debugging
+      console.log(`🔍 Processing file: ${file.name}`)
+      console.log(`  - Size: ${file.size} bytes (${(file.size / 1024 / 1024).toFixed(2)}MB)`)
+      console.log(`  - Type: "${file.type}" (${file.type ? 'has type' : 'NO TYPE SET'})`)
+      console.log(`  - Last modified: ${new Date(file.lastModified).toISOString()}`)
+      
+      // Check file extension first (more reliable for HEIC/HEIF)
+      const fileName = file.name.toLowerCase()
+      const isHeicFile = fileName.endsWith('.heic') || fileName.endsWith('.heif')
+      const isStandardImageFile = fileName.endsWith('.jpg') || fileName.endsWith('.jpeg') || 
+                                 fileName.endsWith('.png') || fileName.endsWith('.webp') ||
+                                 fileName.endsWith('.gif') || fileName.endsWith('.bmp')
+      
+      console.log(`  - File extension check: HEIC=${isHeicFile}, StandardImage=${isStandardImageFile}`)
+      
+      // Check MIME type (may be empty/incorrect for HEIC on some browsers)
+      const hasImageMimeType = file.type.startsWith('image/') ||
+                              file.type === 'image/heic' || 
+                              file.type === 'image/heif' ||
+                              file.type === '' // Some browsers don't set MIME type for HEIC
+      
+      console.log(`  - MIME type check: hasImageMimeType=${hasImageMimeType}`)
+      
+      const isValidType = isHeicFile || isStandardImageFile || hasImageMimeType
       const isValidSize = file.size <= 10 * 1024 * 1024 // 10MB limit
       
-      console.log(`  File: ${file.name} (${file.type || 'no-type'}, ${(file.size / 1024 / 1024).toFixed(1)}MB) - Valid: ${isValidType && isValidSize}`)
-      return isValidType && isValidSize
+      console.log(`  - Validation: type=${isValidType}, size=${isValidSize} (limit: 10MB)`)
+      
+      if (isHeicFile) {
+        console.log(`📱 HEIC/HEIF file detected: ${file.name}`)
+        console.log(`  - Browser MIME type: "${file.type}" (may be empty on some browsers)`)
+        console.log(`  - File size: ${(file.size / 1024 / 1024).toFixed(2)}MB`)
+      }
+      
+      const isValid = isValidType && isValidSize
+      console.log(`✅ File ${file.name}: ${isValid ? 'VALID' : 'REJECTED'}`)
+      
+      return isValid
     })
     
     console.log(`✅ ${validFiles.length} valid files out of ${files.length} total`)
+    
+    // Show helpful message if some files were rejected
+    if (validFiles.length < files.length) {
+      const rejectedCount = files.length - validFiles.length
+      const rejectedFiles = Array.from(files).filter(file => !validFiles.includes(file))
+      const hasLargeFiles = rejectedFiles.some(file => file.size > 10 * 1024 * 1024)
+      const hasUnsupportedFiles = rejectedFiles.some(file => {
+        const fileName = file.name.toLowerCase()
+        return !fileName.endsWith('.heic') && !fileName.endsWith('.heif') && 
+               !fileName.endsWith('.jpg') && !fileName.endsWith('.jpeg') && 
+               !fileName.endsWith('.png') && !fileName.endsWith('.webp') &&
+               !file.type.startsWith('image/')
+      })
+      
+      let message = `${rejectedCount} file(s) were skipped. `
+      if (hasLargeFiles) message += 'Some files exceed 10MB. '
+      if (hasUnsupportedFiles) message += 'Some files are not supported image formats. '
+      message += 'Supported: JPG, PNG, HEIC/HEIF from iPhone.'
+      
+      console.warn(message)
+      // You could show a toast notification here
+    }
+    
     if (validFiles.length === 0) return
     
     let allPhotos: File[] = []
@@ -1554,7 +1601,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                       ref={fileInputRef}
                       type="file"
                       multiple
-                      accept="image/*,.heic,.heif"
+                      accept="image/*,.heic,.heif,image/heic,image/heif"
                       onChange={(e) => handleFileSelect(e.target.files)}
                       className="hidden"
                     />
@@ -1572,7 +1619,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                           or <span className="text-brand-600 font-medium cursor-pointer">click to browse</span>
                         </p>
                         <p className="text-sm text-neutral-500">
-                          Upload up to 5 photos (JPG, PNG, HEIC). Max 10MB each.
+                          Upload up to 5 photos (JPG, PNG, HEIC/HEIF from iPhone). Max 10MB each.
                         </p>
                       </div>
                     </div>

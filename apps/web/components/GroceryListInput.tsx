@@ -24,6 +24,89 @@ export default function GroceryListInput({ onBack }: GroceryListInputProps) {
   const [showAddInReview, setShowAddInReview] = useState(false)
   const [newReviewItem, setNewReviewItem] = useState('')
 
+  // Unit classification for intelligent conversion (same as CartBuilder)
+  const RECIPE_UNITS = new Set(['cups', 'cup', 'tbsp', 'tablespoon', 'tsp', 'teaspoon', 'fl oz', 'fluid oz', 'pint', 'quart', 'gallon'])
+  const PURCHASE_UNITS = new Set(['lbs', 'lb', 'oz', 'kg', 'g', 'can', 'jar', 'bottle', 'bag', 'box', 'package', 'bunch', 'head', 'clove', 'slice'])
+  const COUNT_UNITS = new Set(['piece', 'pieces', 'each', 'whole'])
+
+  // Function to convert recipe units to appropriate purchase units
+  const convertRecipeUnitToPurchaseUnit = (amount: number, unit: string, itemName: string): { amount: number; unit: string } => {
+    const lowerUnit = unit.toLowerCase()
+    const lowerItem = itemName.toLowerCase()
+    
+    if (!RECIPE_UNITS.has(lowerUnit)) {
+      // Already a purchase unit or count unit, keep as is
+      return { amount, unit }
+    }
+    
+    // Convert recipe units to purchase units based on item type
+    
+    // Dry goods (buy in bags/boxes)
+    if (lowerItem.includes('rice') || lowerItem.includes('flour') || lowerItem.includes('sugar') || 
+        lowerItem.includes('pasta') || lowerItem.includes('cereal') || lowerItem.includes('oats') ||
+        lowerItem.includes('quinoa') || lowerItem.includes('barley') || lowerItem.includes('lentil')) {
+      return { amount: 1, unit: 'bag' }
+    }
+    
+    // Liquids (buy in bottles/cartons)
+    if (lowerItem.includes('oil') || lowerItem.includes('vinegar') || lowerItem.includes('sauce') ||
+        lowerItem.includes('dressing') || lowerItem.includes('syrup')) {
+      return { amount: 1, unit: 'bottle' }
+    }
+    
+    // Dairy (buy in cartons/containers)
+    if (lowerItem.includes('milk') || lowerItem.includes('cream') || lowerItem.includes('yogurt') ||
+        lowerItem.includes('butter')) {
+      if (lowerUnit.includes('cup') && amount >= 2) {
+        return { amount: 1, unit: 'half-gallon' }
+      }
+      return { amount: 1, unit: 'container' }
+    }
+    
+    // Spices/herbs (buy in small containers)
+    if (lowerUnit.includes('tsp') || lowerUnit.includes('tbsp')) {
+      return { amount: 1, unit: 'container' }
+    }
+    
+    // Default: convert to weight or container
+    if (amount >= 2 && (lowerUnit.includes('cup') || lowerUnit.includes('pint'))) {
+      return { amount: Math.ceil(amount / 4), unit: 'lbs' } // Rough conversion
+    }
+    
+    return { amount: 1, unit: 'container' }
+  }
+
+  // Function to get recommended purchase unit for items without units
+  const getRecommendedPurchaseUnit = (itemName: string): string => {
+    const name = itemName.toLowerCase()
+    
+    // Produce items that are typically counted
+    if (name.includes('banana') || name.includes('apple') || name.includes('orange') ||
+        name.includes('lemon') || name.includes('lime') || name.includes('avocado')) {
+      return 'each'
+    }
+    
+    // Items typically sold by weight
+    if (name.includes('chicken') || name.includes('beef') || name.includes('pork') ||
+        name.includes('fish') || name.includes('salmon') || name.includes('ground')) {
+      return 'lbs'
+    }
+    
+    // Dry goods
+    if (name.includes('rice') || name.includes('pasta') || name.includes('flour') ||
+        name.includes('sugar') || name.includes('cereal')) {
+      return 'bag'
+    }
+    
+    // Liquids
+    if (name.includes('oil') || name.includes('vinegar') || name.includes('sauce')) {
+      return 'bottle'
+    }
+    
+    // Default to generic container
+    return 'package'
+  }
+
   const parseGroceryList = (text: string): ParsedItem[] => {
     const lines = text.trim().split('\n').filter(line => line.trim())
     const items: ParsedItem[] = []
@@ -35,22 +118,27 @@ export default function GroceryListInput({ onBack }: GroceryListInputProps) {
       // Remove common list formatting (bullets, numbers, dashes)
       const cleanLine = trimmedLine.replace(/^[-•*\d+\.\)]\s*/, '').trim()
       
-      // Try to parse different formats:
-      // "5 bananas" -> amount: 5, name: bananas, unit: ''
-      // "2 lbs chicken breast" -> amount: 2, name: chicken breast, unit: lbs  
-      // "olive oil" -> amount: 1, name: olive oil, unit: ''
-      
-      // First try to match number + unit + name (e.g., "2 lbs chicken")
-      let match = cleanLine.match(/^(\d+(?:\.\d+)?)\s+([a-zA-Z]+)\s+(.+)$/)
       let amount = 1
       let unit = ''
       let name = cleanLine
 
+      // First try to match number + unit + name (e.g., "2 lbs chicken")
+      let match = cleanLine.match(/^(\d+(?:\.\d+)?)\s+([a-zA-Z]+)\s+(.+)$/)
+
       if (match) {
         // Has unit: "2 lbs chicken"
         amount = parseFloat(match[1] || '1')
-        unit = match[2] || ''
+        const potentialUnit = match[2] || ''
         name = match[3] || cleanLine
+        
+        // All recognized units (recipe + purchase + count)
+        const allUnits = [...RECIPE_UNITS, ...PURCHASE_UNITS, ...COUNT_UNITS]
+        if (allUnits.includes(potentialUnit.toLowerCase())) {
+          unit = potentialUnit
+        } else {
+          // If it's not a recognized unit, treat it as part of the name
+          name = `${potentialUnit} ${name}`
+        }
       } else {
         // Try to match number + name (e.g., "5 bananas")
         match = cleanLine.match(/^(\d+(?:\.\d+)?)\s+(.+)$/)
@@ -64,10 +152,22 @@ export default function GroceryListInput({ onBack }: GroceryListInputProps) {
       // Capitalize first letter of name
       name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
 
+      // Convert recipe units to purchase units if needed
+      if (unit) {
+        const converted = convertRecipeUnitToPurchaseUnit(amount, unit, name)
+        amount = converted.amount
+        unit = converted.unit
+      }
+
+      // If no unit specified, infer appropriate purchase unit
+      if (!unit) {
+        unit = getRecommendedPurchaseUnit(name)
+      }
+
       items.push({
         name,
         amount,
-        unit,
+        unit: unit || 'package', // fallback unit
         originalText: trimmedLine
       })
     })

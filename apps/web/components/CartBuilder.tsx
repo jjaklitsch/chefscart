@@ -21,6 +21,115 @@ interface ConsolidatedIngredient {
   userAdded?: boolean
 }
 
+// Unit classification for intelligent conversion
+const RECIPE_UNITS = new Set(['cups', 'cup', 'tbsp', 'tablespoon', 'tsp', 'teaspoon', 'fl oz', 'fluid oz', 'pint', 'quart', 'gallon'])
+const PURCHASE_UNITS = new Set(['lbs', 'lb', 'oz', 'kg', 'g', 'can', 'jar', 'bottle', 'bag', 'box', 'package', 'bunch', 'head', 'clove', 'slice'])
+const COUNT_UNITS = new Set(['piece', 'pieces', 'each', 'whole'])
+
+// Function to convert recipe units to appropriate purchase units
+function convertRecipeUnitToPurchaseUnit(amount: number, unit: string, itemName: string): { amount: number; unit: string } {
+  const lowerUnit = unit.toLowerCase()
+  const lowerItem = itemName.toLowerCase()
+  
+  if (!RECIPE_UNITS.has(lowerUnit)) {
+    // Already a purchase unit or count unit, keep as is
+    return { amount, unit }
+  }
+  
+  // Convert recipe units to purchase units based on item type
+  
+  // Dry goods (buy in bags/boxes)
+  if (lowerItem.includes('rice') || lowerItem.includes('flour') || lowerItem.includes('sugar') || 
+      lowerItem.includes('pasta') || lowerItem.includes('cereal') || lowerItem.includes('oats') ||
+      lowerItem.includes('quinoa') || lowerItem.includes('barley') || lowerItem.includes('lentil')) {
+    return { amount: 1, unit: 'bag' }
+  }
+  
+  // Liquids (buy in bottles/cartons)
+  if (lowerItem.includes('oil') || lowerItem.includes('vinegar') || lowerItem.includes('sauce') ||
+      lowerItem.includes('dressing') || lowerItem.includes('syrup')) {
+    return { amount: 1, unit: 'bottle' }
+  }
+  
+  // Dairy (buy in cartons/containers)
+  if (lowerItem.includes('milk') || lowerItem.includes('cream') || lowerItem.includes('yogurt') ||
+      lowerItem.includes('butter')) {
+    if (lowerUnit.includes('cup') && amount >= 2) {
+      return { amount: 1, unit: 'half-gallon' }
+    }
+    return { amount: 1, unit: 'container' }
+  }
+  
+  // Spices/herbs (buy in small containers)
+  if (lowerUnit.includes('tsp') || lowerUnit.includes('tbsp')) {
+    return { amount: 1, unit: 'container' }
+  }
+  
+  // Default: convert to weight or container
+  if (amount >= 2 && (lowerUnit.includes('cup') || lowerUnit.includes('pint'))) {
+    return { amount: Math.ceil(amount / 4), unit: 'lbs' } // Rough conversion
+  }
+  
+  return { amount: 1, unit: 'container' }
+}
+
+// Function to parse grocery list items with quantities
+function parseGroceryItem(line: string): { name: string; amount: number; unit: string } {
+  const trimmedLine = line.trim()
+  if (!trimmedLine) return { name: '', amount: 1, unit: '' }
+
+  // Remove common list formatting (bullets, numbers, dashes)
+  const cleanLine = trimmedLine.replace(/^[-•*\d+\.\)]\s*/, '').trim()
+  
+  let amount = 1
+  let unit = ''
+  let name = cleanLine
+
+  // First try to match number + unit + name (e.g., "2 lbs chicken")
+  let match = cleanLine.match(/^(\d+(?:\.\d+)?)\s+([a-zA-Z]+)\s+(.+)$/)
+  
+  if (match) {
+    // Has unit: "2 lbs chicken"
+    amount = parseFloat(match[1] || '1')
+    const potentialUnit = match[2] || ''
+    name = match[3] || cleanLine
+    
+    // All recognized units (recipe + purchase + count)
+    const allUnits = [...RECIPE_UNITS, ...PURCHASE_UNITS, ...COUNT_UNITS]
+    if (allUnits.includes(potentialUnit.toLowerCase())) {
+      unit = potentialUnit
+    } else {
+      // If it's not a recognized unit, treat it as part of the name
+      name = `${potentialUnit} ${name}`
+    }
+  } else {
+    // Try to match number + name (e.g., "6 bananas")
+    match = cleanLine.match(/^(\d+(?:\.\d+)?)\s+(.+)$/)
+    if (match) {
+      amount = parseFloat(match[1] || '1')
+      name = match[2] || cleanLine
+      unit = ''
+    }
+  }
+
+  // Capitalize first letter of name
+  name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+
+  // Convert recipe units to purchase units if needed
+  if (unit) {
+    const converted = convertRecipeUnitToPurchaseUnit(amount, unit, name)
+    amount = converted.amount
+    unit = converted.unit
+  }
+
+  // If no unit specified, infer appropriate purchase unit
+  if (!unit) {
+    unit = getRecommendedUnit(name)
+  }
+
+  return { name, amount, unit }
+}
+
 // Function to intelligently suggest unit based on item name
 function getRecommendedUnit(itemName: string): string {
   const name = itemName.toLowerCase()
@@ -482,33 +591,13 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
       const trimmedLine = line.trim()
       if (!trimmedLine) return
 
-      // Try to parse different formats:
-      // "5 bananas" -> amount: 5, name: bananas, unit: pieces
-      // "2 lbs chicken" -> amount: 2, name: chicken, unit: lbs  
-      // "olive oil" -> amount: 1, name: olive oil, unit: bottle
-      const match = trimmedLine.match(/^(\d+(?:\.\d+)?)\s*([a-zA-Z]*)\s+(.+)$/) || 
-                   trimmedLine.match(/^(\d+(?:\.\d+)?)\s+(.+)$/)
-
-      let amount = 1
-      let unit = 'pieces'
-      let name = trimmedLine
-
-      if (match && match[1]) {
-        amount = parseFloat(match[1])
-        if (match.length === 4) {
-          // Has unit: "2 lbs chicken"
-          unit = match[2] || 'pieces'
-          name = match[3] || trimmedLine
-        } else {
-          // No unit: "5 bananas"
-          name = match[2] || trimmedLine
-        }
-      }
+      const parsed = parseGroceryItem(trimmedLine)
+      if (!parsed.name) return
 
       newIngredients.push({
-        name: name,
-        amount: amount,
-        unit: unit,
+        name: parsed.name,
+        amount: parsed.amount,
+        unit: parsed.unit || getRecommendedUnit(parsed.name),
         category: normalizeCategory('Other'),
         fromRecipes: ['User Added'],
         userAdded: true
@@ -600,10 +689,13 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
       const trimmedLine = line.trim()
       if (!trimmedLine) return
 
+      const parsed = parseGroceryItem(trimmedLine)
+      if (!parsed.name) return
+
       newIngredients.push({
-        name: trimmedLine.charAt(0).toUpperCase() + trimmedLine.slice(1).toLowerCase(),
-        amount: 1,
-        unit: '',
+        name: parsed.name,
+        amount: parsed.amount,
+        unit: parsed.unit || getRecommendedUnit(parsed.name),
         category: normalizeCategory('Other'),
         fromRecipes: ['User Added'],
         userAdded: true
@@ -816,7 +908,7 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
             ) : (
               <div>
                 <textarea
-                  placeholder="Paste your shopping list here, one item per line:&#10;5 bananas&#10;2 lbs chicken breast&#10;olive oil&#10;3 cups rice"
+                  placeholder="Paste your shopping list here, one item per line:&#10;6 bananas&#10;2 lbs chicken breast&#10;olive oil&#10;1.5 cups rice (→ 1 bag rice)&#10;2 tbsp salt (→ 1 container salt)"
                   value={bulkItems}
                   onChange={(e) => setBulkItems(e.target.value)}
                   rows={6}
@@ -980,7 +1072,7 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
                   value={upsellBulkItems}
                   onChange={(e) => setUpsellBulkItems(e.target.value)}
                   className="w-full h-24 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
-                  placeholder="Add items one per line:&#10;Toilet paper&#10;Paper towels&#10;Laundry detergent"
+                  placeholder="Add items one per line:&#10;6 bananas&#10;2 lbs ground beef&#10;Toilet paper&#10;3 bottles olive oil"
                 />
                 {upsellBulkItems.trim() && (
                   <button

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test HEIC Upload with Logging</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .log { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 4px; white-space: pre-wrap; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+        input[type="file"] { margin: 10px 0; }
+        button { padding: 10px 20px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Test HEIC Upload with Enhanced Logging</h1>
+    <p>Select the IMG_3488.HEIC file to test the upload:</p>
+    
+    <input type="file" id="fileInput" accept="image/*,.heic,.heif,image/heic,image/heif">
+    <br>
+    <button onclick="testUpload()">Test Upload</button>
+    <br>
+    <div id="log"></div>
+
+    <script>
+    function log(message, type = 'info') {
+        const logDiv = document.getElementById('log');
+        const logEntry = document.createElement('div');
+        logEntry.className = `log ${type}`;
+        logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+        logDiv.appendChild(logEntry);
+        console.log(message);
+    }
+
+    async function testUpload() {
+        const fileInput = document.getElementById('fileInput');
+        const files = fileInput.files;
+        
+        if (files.length === 0) {
+            log('Please select a file first', 'error');
+            return;
+        }
+        
+        const file = files[0];
+        log(`Selected file: ${file.name}`, 'info');
+        log(`- Size: ${file.size} bytes (${(file.size / 1024 / 1024).toFixed(2)}MB)`, 'info');
+        log(`- Type: "${file.type}" (${file.type ? 'has type' : 'NO TYPE SET'})`, 'info');
+        log(`- Last modified: ${new Date(file.lastModified).toISOString()}`, 'info');
+        
+        // Test file validation logic (same as component)
+        const fileName = file.name.toLowerCase();
+        const isHeicFile = fileName.endsWith('.heic') || fileName.endsWith('.heif');
+        const isStandardImageFile = fileName.endsWith('.jpg') || fileName.endsWith('.jpeg') || 
+                                   fileName.endsWith('.png') || fileName.endsWith('.webp') ||
+                                   fileName.endsWith('.gif') || fileName.endsWith('.bmp');
+        
+        const hasImageMimeType = file.type.startsWith('image/') ||
+                                file.type === 'image/heic' || 
+                                file.type === 'image/heif' ||
+                                file.type === '';
+        
+        const isValidType = isHeicFile || isStandardImageFile || hasImageMimeType;
+        const isValidSize = file.size <= 10 * 1024 * 1024;
+        
+        log(`Client-side validation:`, 'info');
+        log(`- HEIC file: ${isHeicFile}`, 'info');
+        log(`- Standard image: ${isStandardImageFile}`, 'info');
+        log(`- Valid MIME type: ${hasImageMimeType}`, 'info');
+        log(`- Valid size: ${isValidSize} (${file.size} <= 10MB)`, 'info');
+        log(`- Overall valid: ${isValidType && isValidSize}`, isValidType && isValidSize ? 'success' : 'error');
+        
+        if (!isValidType || !isValidSize) {
+            log('File failed client-side validation', 'error');
+            return;
+        }
+        
+        // Create FormData and upload
+        const formData = new FormData();
+        formData.append('photos', file);
+        
+        log('Uploading to API...', 'info');
+        
+        try {
+            const response = await fetch('/api/identify-pantry-items', {
+                method: 'POST',
+                body: formData
+            });
+            
+            log(`API Response status: ${response.status} ${response.statusText}`, response.ok ? 'success' : 'error');
+            
+            const data = await response.json();
+            log('API Response data:', 'info');
+            log(JSON.stringify(data, null, 2), 'info');
+            
+            if (data.items && data.items.length > 0) {
+                log(`Successfully identified ${data.items.length} items!`, 'success');
+                data.items.forEach((item, i) => {
+                    log(`${i + 1}. ${item.name} (${item.quantity} ${item.unit})`, 'success');
+                });
+            } else if (data.message) {
+                log(`API message: ${data.message}`, 'info');
+            }
+            
+        } catch (error) {
+            log(`Upload failed: ${error.message}`, 'error');
+            console.error('Full error:', error);
+        }
+    }
+    </script>
+</body>
+</html>

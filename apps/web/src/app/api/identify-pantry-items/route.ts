@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import sharp from 'sharp'
+import convert from 'heic-convert'
 
 export const dynamic = 'force-dynamic'
 
@@ -15,41 +16,48 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate that all files are actual File objects and are images
+    console.log(`🔍 API: Starting validation of ${files.length} files`)
+    
     const validFiles = files.filter(file => {
       if (!(file instanceof File)) {
-        console.warn('Invalid file object:', file)
+        console.warn('❌ Invalid file object:', file)
         return false
       }
       
-      // Log file info for debugging
-      console.log('Validating file:', {
-        name: file.name,
-        type: file.type,
-        size: file.size,
-        lastModified: file.lastModified
-      })
+      // Detailed logging for debugging
+      console.log(`🔍 API: Validating file: ${file.name}`)
+      console.log(`  - Size: ${file.size} bytes (${(file.size / 1024 / 1024).toFixed(2)}MB)`)
+      console.log(`  - Type: "${file.type}" (${file.type ? 'has type' : 'NO TYPE SET'})`)
+      console.log(`  - Last modified: ${file.lastModified}`)
       
+      const fileName = file.name.toLowerCase()
       const isHeic = file.type === 'image/heic' || file.type === 'image/heif' ||
-                    file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif')
+                    fileName.endsWith('.heic') || fileName.endsWith('.heif')
       
-      if (!file.type.startsWith('image/') && 
-          !isHeic &&
-          !file.name.toLowerCase().endsWith('.jpg') &&
-          !file.name.toLowerCase().endsWith('.jpeg') &&
-          !file.name.toLowerCase().endsWith('.png') &&
-          !file.name.toLowerCase().endsWith('.webp')) {
-        console.warn('Non-image file:', file.type, file.name)
+      console.log(`  - HEIC detection: type="${file.type}", extension=${fileName.endsWith('.heic') || fileName.endsWith('.heif')}, isHEIC=${isHeic}`)
+      
+      const hasValidImageType = file.type.startsWith('image/') || isHeic
+      const hasValidExtension = fileName.endsWith('.jpg') || fileName.endsWith('.jpeg') || 
+                               fileName.endsWith('.png') || fileName.endsWith('.webp') || 
+                               fileName.endsWith('.heic') || fileName.endsWith('.heif')
+      
+      console.log(`  - Type validation: hasValidImageType=${hasValidImageType}, hasValidExtension=${hasValidExtension}`)
+      
+      if (!hasValidImageType && !hasValidExtension) {
+        console.warn(`❌ Non-image file rejected: type="${file.type}", name="${file.name}"`)
         return false
       }
+      
       if (file.size > 10 * 1024 * 1024) { // 10MB limit
-        console.warn('File too large:', file.size)
+        console.warn(`❌ File too large: ${file.size} bytes (${(file.size / 1024 / 1024).toFixed(2)}MB)`)
         return false
       }
       
       if (isHeic) {
-        console.log('✅ HEIC file detected and validated:', file.name)
+        console.log(`✅ HEIC file detected and validated: ${file.name}`)
       }
       
+      console.log(`✅ File ${file.name}: VALID`)
       return true
     })
 
@@ -81,12 +89,30 @@ export async function POST(request: NextRequest) {
                       file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif')
         
         if (isHeic) {
-          console.log(`🔄 Converting HEIF/HEIC file to PNG using Sharp: ${file.name} (${(buffer.byteLength / 1024 / 1024).toFixed(1)}MB)`)
+          console.log(`🔄 Converting HEIF/HEIC file to PNG using Sharp: ${file.name}`)
+          console.log(`  - Original size: ${(buffer.byteLength / 1024 / 1024).toFixed(2)}MB`)
+          console.log(`  - Original MIME type: "${file.type}"`)
+          console.log(`  - Sharp version: ${require('sharp').versions.sharp}`)
+          
           try {
+            // Check if Sharp can read the file first
+            console.log(`🔍 Checking if Sharp can read HEIC file...`)
+            const metadata = await sharp(Buffer.from(buffer)).metadata()
+            console.log(`✅ Sharp metadata:`, {
+              format: metadata.format,
+              width: metadata.width,
+              height: metadata.height,
+              channels: metadata.channels,
+              density: metadata.density
+            })
+            
             // Use sharp to convert HEIF/HEIC to PNG
+            console.log(`🔄 Starting Sharp conversion to PNG...`)
             const pngBuffer = await sharp(Buffer.from(buffer))
               .png({ quality: 90, compressionLevel: 6 })
               .toBuffer()
+            
+            console.log(`📊 Conversion result: ${pngBuffer.byteLength} bytes (${(pngBuffer.byteLength / 1024 / 1024).toFixed(2)}MB)`)
             
             if (!pngBuffer || pngBuffer.byteLength === 0) {
               throw new Error('Sharp conversion returned empty buffer')
@@ -94,37 +120,70 @@ export async function POST(request: NextRequest) {
             
             // Validate the converted buffer is actually a valid PNG
             const pngHeader = pngBuffer.toString('hex', 0, 8)
+            console.log(`🔍 PNG header check: ${pngHeader} (should start with 89504e47)`)
             if (!pngHeader.startsWith('89504e47')) { // PNG magic number
               throw new Error('Converted buffer is not a valid PNG')
             }
             
             processedBuffer = pngBuffer
             mimeType = 'image/png'
-            console.log(`✅ Successfully converted HEIF/HEIC to PNG: ${file.name} (${(buffer.byteLength / 1024 / 1024).toFixed(1)}MB → ${(pngBuffer.byteLength / 1024 / 1024).toFixed(1)}MB)`)
+            console.log(`✅ Successfully converted HEIF/HEIC to PNG: ${file.name}`)
+            console.log(`  - Size change: ${(buffer.byteLength / 1024 / 1024).toFixed(2)}MB → ${(pngBuffer.byteLength / 1024 / 1024).toFixed(2)}MB`)
           } catch (convertError) {
             console.error(`❌ Failed to convert HEIF/HEIC file ${file.name}:`, convertError)
-            console.error('Error details:', {
+            console.error('Detailed error information:', {
               message: convertError instanceof Error ? convertError.message : convertError,
-              stack: convertError instanceof Error ? convertError.stack?.toString() : undefined,
+              stack: convertError instanceof Error ? convertError.stack : undefined,
               fileSize: buffer.byteLength,
               fileName: file.name,
-              mimeType: file.type
+              originalMimeType: file.type,
+              bufferType: typeof buffer,
+              bufferConstructor: buffer.constructor.name
             })
             
-            // Try one more time with sharp's HEIF input format explicitly
+            // Try one more time with different Sharp options
             try {
-              console.log(`🔄 Retry: Attempting conversion with explicit HEIF input format`)
+              console.log(`🔄 Retry: Attempting conversion with failOnError=false`)
               const pngBuffer = await sharp(Buffer.from(buffer), { failOnError: false })
                 .png()
                 .toBuffer()
-                
-              processedBuffer = pngBuffer
-              mimeType = 'image/png'
-              console.log(`✅ Successfully converted on retry: ${file.name}`)
+              
+              console.log(`📊 Retry result: ${pngBuffer.byteLength} bytes`)
+              
+              if (pngBuffer.byteLength > 0) {
+                processedBuffer = pngBuffer
+                mimeType = 'image/png'
+                console.log(`✅ Successfully converted on retry: ${file.name}`)
+              } else {
+                throw new Error('Retry also produced empty buffer')
+              }
             } catch (retryError) {
-              console.error(`❌ Retry also failed:`, retryError instanceof Error ? retryError.message : retryError)
-              console.warn(`⚠️  Skipping HEIF/HEIC file ${file.name} due to conversion failure`)
-              return null
+              console.error(`❌ Sharp retry also failed:`, retryError instanceof Error ? retryError.message : retryError)
+              
+              // Try heic-convert as final fallback
+              try {
+                console.log(`🔄 Final fallback: Trying heic-convert library for ${file.name}`)
+                const jpegBuffer = await convert({
+                  buffer: Buffer.from(buffer),
+                  format: 'JPEG',
+                  quality: 0.9
+                })
+                
+                console.log(`📊 heic-convert result: ${jpegBuffer.length} bytes (${(jpegBuffer.length / 1024 / 1024).toFixed(2)}MB)`)
+                
+                if (jpegBuffer.length > 0) {
+                  processedBuffer = jpegBuffer
+                  mimeType = 'image/jpeg'
+                  console.log(`✅ Successfully converted with heic-convert: ${file.name}`)
+                  console.log(`  - Size change: ${(buffer.byteLength / 1024 / 1024).toFixed(2)}MB → ${(jpegBuffer.length / 1024 / 1024).toFixed(2)}MB`)
+                } else {
+                  throw new Error('heic-convert produced empty buffer')
+                }
+              } catch (heicConvertError) {
+                console.error(`❌ heic-convert also failed:`, heicConvertError instanceof Error ? heicConvertError.message : heicConvertError)
+                console.warn(`⚠️  Skipping HEIF/HEIC file ${file.name} - all conversion methods failed`)
+                return null
+              }
             }
           }
         }
@@ -180,7 +239,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         success: true,
         items: [],
-        message: 'Unable to process the uploaded images. If uploading HEIC files, please try converting them to JPG first, or try uploading JPG/PNG files.'
+        message: 'Unable to process the uploaded images. This can happen with some HEIC files that use unsupported compression. Try converting your HEIC files to JPG/PNG first, or use a different image format.',
+        failedFiles: failedFiles,
+        conversionAttempted: true
       })
     }
 
