@@ -1,0 +1,267 @@
+{
+  "slug": "huaraches-with-chorizo",
+  "title": "Huaraches with Chorizo",
+  "description": "Thick oval masa cakes grilled until crisp at the edges and topped with spicy Mexican chorizo, refried beans, crumbled queso fresco and pickled onion for bright contrast. A hand-held, street-style meal balancing smoky, spicy and tangy flavors with a tender masa interior.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "masa harina",
+  "ingredient_tags": [
+    "masa harina",
+    "water",
+    "chorizo",
+    "refried beans",
+    "onion",
+    "pickled onion",
+    "tomato",
+    "cilantro",
+    "lime",
+    "queso fresco",
+    "lettuce",
+    "vegetable oil",
+    "salt",
+    "garlic",
+    "chili powder"
+  ],
+  "spice_level": 3,
+  "time_total_min": 80,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "grain",
+    "gluten"
+  ],
+  "search_keywords": [
+    "huaraches",
+    "chorizo",
+    "masa harina",
+    "mexican street food",
+    "grilled masa",
+    "refried beans",
+    "queso fresco",
+    "pickled onions",
+    "handheld",
+    "spicy pork",
+    "tortilla alternative",
+    "lime",
+    "cilantro",
+    "weeknight dinner",
+    "comfort food",
+    "savory masa",
+    "homemade",
+    "pan-fried",
+    "grill"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "masa harina (for tortillas)",
+        "quantity": 320,
+        "unit": "g",
+        "grams": 320,
+        "ml": null,
+        "optional": false,
+        "notes": "for dough"
+      },
+      {
+        "display_name": "warm water",
+        "quantity": 480,
+        "unit": "ml",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "adjust to dough consistency"
+      },
+      {
+        "display_name": "fine salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divide between dough and finishing"
+      },
+      {
+        "display_name": "vegetable oil (for frying/griddle)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 56,
+        "ml": 60,
+        "optional": false,
+        "notes": "for cooking huaraches and frying onions if desired"
+      },
+      {
+        "display_name": "fresh Mexican chorizo (uncased removed)",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "remove casing and crumble"
+      },
+      {
+        "display_name": "refried beans (canned or homemade)",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "warmed"
+      },
+      {
+        "display_name": "white onion (thinly sliced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "for pickling and topping"
+      },
+      {
+        "display_name": "white vinegar",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "for quick pickling onions"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "for pickling brine"
+      },
+      {
+        "display_name": "roma tomatoes (diced)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "for fresh topping"
+      },
+      {
+        "display_name": "garlic cloves (minced)",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "optional in bean warming"
+      },
+      {
+        "display_name": "fresh cilantro (chopped)",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "lime (cut into wedges)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "queso fresco (crumbled)",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "for topping"
+      },
+      {
+        "display_name": "shredded iceberg lettuce",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "optional crunchy topping"
+      },
+      {
+        "display_name": "dried chili powder (ancho or chile de arbol blend)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "to add to chorizo or sprinkle"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "season chorizo if needed"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 80,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make pickled onions: combine thinly sliced onion, vinegar, sugar and a pinch of salt in a bowl; press down so onions are submerged and let sit at room temperature while you prepare other components.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare masa dough: in a large bowl, mix masa harina and salt, then gradually add warm water, stirring until it forms a soft, pliable dough that doesn't crack when pressed; rest covered for 10 minutes.",
+        "time_min": 15
+      },
+      {
+        "step_no": 3,
+        "text": "Portion and shape huaraches: divide dough into even pieces (about 120–130 g each for 4 servings), flatten into oval discs roughly 6–8 inches long and 1/4–1/2 inch thick, smoothing edges with damp fingers.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Cook huaraches on hot griddle or skillet: heat oil in a large skillet or griddle over medium-high heat; add huaraches and cook until golden and crisp at the edges about 3–4 minutes per side, reducing heat if they brown too fast.",
+        "time_min": 16
+      },
+      {
+        "step_no": 5,
+        "text": "Cook chorizo: while huaraches cook, crumble chorizo into a skillet over medium heat and cook until fully browned and cooked through, breaking into small pieces; drain excess fat if desired and keep warm.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Warm refried beans: heat beans in a saucepan with a splash of water or oil and optional minced garlic, stirring until smooth and warm; adjust seasoning with salt and pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble huaraches: spread a layer of warm refried beans onto each masa oval, top with a generous scoop of chorizo, diced tomatoes, pickled onions, crumbled queso fresco, chopped cilantro and shredded lettuce if using; finish with lime wedges.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Serve immediately while huaraches are warm and slightly crisp, offering extra hot sauce or chili powder at the table.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

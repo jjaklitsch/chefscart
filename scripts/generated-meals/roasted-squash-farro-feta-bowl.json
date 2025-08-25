@@ -1,0 +1,279 @@
+{
+  "slug": "roasted-squash-farro-feta-bowl",
+  "title": "Roasted Squash, Farro & Feta Bowl",
+  "description": "A hearty grain bowl featuring sweet roasted winter squash, chewy farro, tangy feta and a bright lemon-herb vinaigrette. Toasted pumpkin seeds and baby arugula add crunch and peppery freshness for a balanced vegetarian meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "squash",
+  "ingredient_tags": [
+    "squash",
+    "farro",
+    "feta",
+    "arugula",
+    "pumpkin seeds",
+    "lemon",
+    "olive oil",
+    "honey",
+    "thyme",
+    "rosemary",
+    "garlic",
+    "red onion",
+    "salt",
+    "black pepper",
+    "red wine vinegar"
+  ],
+  "spice_level": 1,
+  "time_total_min": 80,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "roasted squash",
+    "farro bowl",
+    "feta",
+    "grain bowl",
+    "vegetarian bowl",
+    "mediterranean salad",
+    "autumn vegetables",
+    "pumpkin seeds",
+    "toasted farro",
+    "lemon vinaigrette",
+    "weeknight dinner",
+    "meal prep bowl",
+    "arugula",
+    "rosemary",
+    "thyme",
+    "olive oil",
+    "honey dressing",
+    "healthy lunch",
+    "comforting grain bowl",
+    "oven roasted"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "butternut squash, peeled and cut into 1-inch cubes",
+        "quantity": 700,
+        "unit": "g",
+        "grams": 700,
+        "ml": null,
+        "optional": false,
+        "notes": "or use equivalent winter squash (butternut or kabocha), remove seeds"
+      },
+      {
+        "display_name": "farro, pearled",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed"
+      },
+      {
+        "display_name": "vegetable broth or water (for cooking farro)",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": null,
+        "ml": 720,
+        "optional": false,
+        "notes": "use low-sodium broth for more flavor"
+      },
+      {
+        "display_name": "feta cheese, crumbled",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "use sheep/goat blend or cow feta as preferred"
+      },
+      {
+        "display_name": "baby arugula",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly packed"
+      },
+      {
+        "display_name": "pumpkin seeds (pepitas), toasted",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "toast in dry skillet until fragrant"
+      },
+      {
+        "display_name": "extra-virgin olive oil (for roasting)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt (kosher or sea)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "fresh thyme leaves, chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tsp dried thyme"
+      },
+      {
+        "display_name": "fresh rosemary, finely chopped",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "remove stems"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lemon"
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "extra-virgin olive oil (for dressing)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "whisk with lemon and vinegar"
+      },
+      {
+        "display_name": "honey or maple syrup",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": "maple for vegan preference (note: feta makes dish not vegan)"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "for dressing"
+      },
+      {
+        "display_name": "red onion, thinly sliced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, soak in cold water briefly to mellow"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for a smoky note"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 80,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 425°F (220°C). Line a rimmed baking sheet with parchment or lightly oil it.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Toss the cubed squash with olive oil, half the salt, black pepper, chopped thyme and rosemary (and smoked paprika if using) on the prepared sheet in a single layer.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Roast squash in the preheated oven until tender and caramelized at edges, turning once halfway through to promote browning.",
+        "time_min": 30
+      },
+      {
+        "step_no": 4,
+        "text": "While squash roasts, rinse the farro. Combine farro and broth in a medium saucepan, bring to a boil, then reduce to a simmer, cover and cook until tender but chewy (pearled farro typically 20–25 minutes); drain any excess and fluff with a fork.",
+        "time_min": 25
+      },
+      {
+        "step_no": 5,
+        "text": "Toast pumpkin seeds in a small dry skillet over medium heat, stirring, until they pop and are fragrant; remove from heat and set aside.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Whisk together lemon juice, red wine vinegar, minced garlic, honey or maple syrup, remaining salt and olive oil for the dressing; taste and adjust seasoning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble bowls: divide arugula among bowls, top with warm farro, roasted squash, crumbled feta, toasted pumpkin seeds and sliced red onion if using.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Drizzle dressing over each bowl and gently toss or leave layered. Finish with a final crack of black pepper and serve warm or at room temperature.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

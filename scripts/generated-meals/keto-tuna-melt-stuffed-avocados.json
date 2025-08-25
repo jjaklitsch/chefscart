@@ -1,0 +1,228 @@
+{
+  "slug": "keto-tuna-melt-stuffed-avocados",
+  "title": "Keto Tuna Melt Stuffed Avocados",
+  "description": "Creamy avocado halves are stuffed with a savory tuna salad, topped with melted cheddar and broiled to golden perfection for a quick keto-friendly meal. Bright lemon, crisp celery, and a touch of Dijon balance the richness while optional jalapeño adds a gentle heat.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb",
+    "pescatarian"
+  ],
+  "primary_ingredient": "tuna",
+  "ingredient_tags": [
+    "tuna",
+    "avocado",
+    "cheddar",
+    "mayonnaise",
+    "lemon",
+    "celery",
+    "red onion",
+    "dijon mustard",
+    "jalapeño",
+    "parsley",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 20,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "seafood"
+  ],
+  "search_keywords": [
+    "keto",
+    "low carb",
+    "tuna melt",
+    "stuffed avocado",
+    "broiled",
+    "quick lunch",
+    "pescatarian",
+    "gluten free",
+    "high fat",
+    "ketogenic",
+    "cheddar",
+    "mayonnaise",
+    "lemon zest",
+    "dijon",
+    "celery",
+    "red onion",
+    "jalapeño",
+    "meal prep",
+    "healthy fats"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "ripe avocados (halved, pits removed)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "halve and remove pits, reserve shells for stuffing"
+      },
+      {
+        "display_name": "canned tuna in water (drained and flaked)",
+        "quantity": 10,
+        "unit": "oz",
+        "grams": 284,
+        "ml": null,
+        "optional": false,
+        "notes": "drain thoroughly and flake with fork"
+      },
+      {
+        "display_name": "full-fat mayonnaise",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "use keto-friendly mayonnaise"
+      },
+      {
+        "display_name": "sharp cheddar cheese (grated)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 112,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a little for topping"
+      },
+      {
+        "display_name": "celery (finely diced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "small stalk, diced finely"
+      },
+      {
+        "display_name": "red onion (finely minced)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/8 small onion"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lemon"
+      },
+      {
+        "display_name": "dijon mustard",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley (chopped)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "for freshness and garnish"
+      },
+      {
+        "display_name": "jalapeño (finely minced)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "remove seeds for milder heat"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 3,
+        "unit": "pinch",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 6,
+        "unit": "g",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "butter or olive oil (for broiler pan, optional brush)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": true,
+        "notes": "helps cheese brown; can use oil for dairy-free"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the broiler and position the oven rack about 6 inches below the element; line a baking sheet with foil or use a broiler-safe dish.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare avocados: halve and remove pits, scoop out a small extra cavity if needed to create space for filling; lightly season flesh with a pinch of salt and a few cracks of black pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Make the tuna salad: in a bowl combine drained flaked tuna, mayonnaise, dijon mustard, lemon juice, finely diced celery, minced red onion, optional jalapeño, chopped parsley, salt and pepper; mix until evenly combined.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Fill each avocado half generously with the prepared tuna mixture, mounding slightly to create a top for the cheese to adhere to.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Top each stuffed avocado with grated cheddar, brushing the exposed avocado edges or foil with a little butter or olive oil if using to encourage browning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Broil: place the baking sheet under the broiler and broil until the cheese is melted and lightly golden, watching closely to prevent burning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Remove from oven, let rest 1 minute, garnish with extra parsley and an extra squeeze of lemon if desired, then serve warm.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

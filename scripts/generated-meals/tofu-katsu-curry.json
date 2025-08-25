@@ -1,0 +1,343 @@
+{
+  "slug": "tofu-katsu-curry",
+  "title": "Tofu Katsu Curry",
+  "description": "Crispy panko-coated tofu cutlets served with a savory Japanese-style curry sauce over steamed rice. The dish balances crunchy, umami-rich katsu with a slightly sweet, aromatic curry for a satisfying plant-based meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "tofu",
+  "ingredient_tags": [
+    "tofu",
+    "panko",
+    "rice",
+    "onion",
+    "carrot",
+    "potato",
+    "apple",
+    "vegetable broth",
+    "soy sauce",
+    "flour",
+    "cornstarch",
+    "oil",
+    "garlic",
+    "ginger",
+    "curry powder"
+  ],
+  "spice_level": 2,
+  "time_total_min": 105,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "gluten",
+    "soy"
+  ],
+  "search_keywords": [
+    "tofu",
+    "katsu",
+    "curry",
+    "japanese",
+    "plant-based",
+    "vegan",
+    "panko",
+    "crispy tofu",
+    "rice bowl",
+    "comfort food",
+    "vegetable curry",
+    "weeknight dinner",
+    "easy",
+    "umami",
+    "curry roux",
+    "onion",
+    "carrot",
+    "potato",
+    "apple",
+    "breaded"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "extra-firm tofu, pressed and drained (approx. 14 oz block)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "press for 20-30 minutes, then cut into 8 slabs (~1 cm thick)"
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "for dusting and dredge"
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "mixed with water for slurry if needed"
+      },
+      {
+        "display_name": "unsweetened plant milk (soy or oat)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "for batter - use soy milk for extra binding"
+      },
+      {
+        "display_name": "panko breadcrumbs",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "for crunchy coating"
+      },
+      {
+        "display_name": "neutral oil for frying (vegetable or canola)",
+        "quantity": 500,
+        "unit": "ml",
+        "grams": null,
+        "ml": 500,
+        "optional": false,
+        "notes": "enough for shallow frying (~1/2 inch) or adjust for pan size"
+      },
+      {
+        "display_name": "uncooked short-grain rice",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": 480,
+        "optional": false,
+        "notes": "yields ~4 cups cooked"
+      },
+      {
+        "display_name": "vegetable oil (for curry base)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for sautéing vegetables"
+      },
+      {
+        "display_name": "yellow onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1 tbsp"
+      },
+      {
+        "display_name": "carrots, peeled and diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "medium carrots"
+      },
+      {
+        "display_name": "russet potato, peeled and diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 250,
+        "ml": null,
+        "optional": false,
+        "notes": "or yukon gold"
+      },
+      {
+        "display_name": "apple, peeled and grated (prefer Fuji or Gala)",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "adds subtle sweetness"
+      },
+      {
+        "display_name": "vegetable broth",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": null,
+        "ml": 960,
+        "optional": false,
+        "notes": "low-sodium preferred"
+      },
+      {
+        "display_name": "soy sauce (or tamari for gluten-free)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "curry powder (mild Japanese-style or medium)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 30,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds depth"
+      },
+      {
+        "display_name": "brown sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": 15,
+        "optional": false,
+        "notes": "balances flavors"
+      },
+      {
+        "display_name": "apple cider vinegar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": "brightens the sauce"
+      },
+      {
+        "display_name": "cornstarch slurry (cornstarch + cold water)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 30,
+        "optional": false,
+        "notes": "to thicken curry if needed"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "plus more to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon wedges, for serving (optional)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "brighten fried tofu if desired"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 105,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Press and drain the tofu: wrap tofu blocks in clean towels or paper towels and place a weighted object on top for 20-30 minutes to remove excess water, then slice into four equal slabs per block.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare coating station: put flour in one shallow bowl, plant milk in a second bowl, and panko in a third bowl; season flour with a pinch of salt and pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Dredge tofu: lightly dust each tofu slab in flour, dip into plant milk, then press into panko to fully coat; set on a tray and let rest 5 minutes to adhere.",
+        "time_min": 7
+      },
+      {
+        "step_no": 4,
+        "text": "Start rice: rinse rice until water runs mostly clear, then cook in a pot or rice cooker with the appropriate amount of water until tender (follow rice cooker instructions or simmer 15-18 minutes and rest 10 minutes off heat).",
+        "time_min": 30
+      },
+      {
+        "step_no": 5,
+        "text": "Heat oil in a wide skillet to 170-180°C (340-355°F) or medium-high for shallow frying; fry coated tofu in batches without crowding until golden brown on both sides, about 3-4 minutes per side, then transfer to a paper-towel-lined rack to drain.",
+        "time_min": 12
+      },
+      {
+        "step_no": 6,
+        "text": "Make curry base: in a separate pot, heat oil and sauté chopped onion until translucent (3-4 minutes), then add garlic and grated ginger and cook 1 minute until fragrant.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Add diced carrots and potato to the pot, stir to coat, then add grated apple, curry powder, and tomato paste; cook 2-3 minutes to bloom the spices.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Pour in vegetable broth and bring to a simmer; add soy sauce, brown sugar, and vinegar, then simmer gently until vegetables are tender, about 12-15 minutes.",
+        "time_min": 15
+      },
+      {
+        "step_no": 9,
+        "text": "Finish curry: if desired, blend the curry partially (use an immersion blender) for a smoother texture, then stir in cornstarch slurry a little at a time until sauce reaches desired thickness; adjust seasoning and simmer 1-2 minutes to thicken.",
+        "time_min": 3
+      },
+      {
+        "step_no": 10,
+        "text": "Assemble and serve: slice tofu katsu into strips, spoon curry over steamed rice, place tofu on top, and garnish with lemon wedge or additional panko if desired.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

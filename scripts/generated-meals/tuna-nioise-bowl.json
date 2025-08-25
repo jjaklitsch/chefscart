@@ -1,0 +1,253 @@
+{
+  "slug": "tuna-nioise-bowl",
+  "title": "Tuna Niçoise Bowl",
+  "description": "A vibrant modern take on the classic Niçoise salad served as a layered bowl: seared tuna, crisp green beans, tender new potatoes, olives and a lemony Dijon vinaigrette. Bright, savory and texturally varied — quick to assemble for a satisfying lunch or dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "french",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "tuna",
+  "ingredient_tags": [
+    "tuna",
+    "potatoes",
+    "green beans",
+    "eggs",
+    "tomatoes",
+    "lettuce",
+    "kalamata olives",
+    "anchovy",
+    "dijon mustard",
+    "olive oil",
+    "lemon",
+    "capers",
+    "red onion",
+    "garlic",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 45,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "egg",
+    "seafood"
+  ],
+  "search_keywords": [
+    "tuna niçoise",
+    "niçoise bowl",
+    "seared tuna",
+    "salad bowl",
+    "mediterranean salad",
+    "pescatarian meal",
+    "lemon dijon vinaigrette",
+    "green beans",
+    "new potatoes",
+    "kalamata olives",
+    "hard-boiled eggs",
+    "quick dinner",
+    "lunch bowl",
+    "protein bowl",
+    "summer salad",
+    "anchovy dressing",
+    "capers",
+    "seared fish",
+    "healthy lunch",
+    "low spice"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "fresh tuna steak (about 1-1.25 inch thick)",
+        "quantity": 10,
+        "unit": "oz",
+        "grams": 284,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature, pat dry"
+      },
+      {
+        "display_name": "small new potatoes",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "halved if large"
+      },
+      {
+        "display_name": "green beans, trimmed",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "trim ends"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "for hard-boiling"
+      },
+      {
+        "display_name": "mixed lettuce or baby greens",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "washed and spun dry"
+      },
+      {
+        "display_name": "cherry tomatoes, halved",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kalamata olives, pitted, halved",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "capers, drained",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": 15,
+        "optional": true,
+        "notes": "rinsed if very salty"
+      },
+      {
+        "display_name": "extra-virgin olive oil (for vinaigrette)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 40,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lemon"
+      },
+      {
+        "display_name": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil (for searing)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "for vinaigrette or rub"
+      },
+      {
+        "display_name": "anchovy fillet, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "optional in vinaigrette for umami"
+      },
+      {
+        "display_name": "fine sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus additional to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "plus additional to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a medium pot of salted water to a boil. Add the new potatoes and cook until tender when pierced with a knife, about 12–15 minutes depending on size; drain and set aside to steam-dry.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "While potatoes cook, add eggs to a small saucepan and cover with cold water. Bring to a gentle boil, then cover, remove from heat and let sit for 9 minutes for firm yolks. Transfer to an ice bath to stop cooking, then peel and halve.",
+        "time_min": 12
+      },
+      {
+        "step_no": 3,
+        "text": "Trim green beans and blanch in the same boiling water used for potatoes for 2–3 minutes until bright green and crisp-tender, then transfer to ice bath to retain color and texture; drain and pat dry.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Whisk together lemon juice, Dijon mustard, minced garlic (if using), chopped anchovy (if using), salt and pepper; slowly whisk in olive oil to emulsify into a vinaigrette. Taste and adjust seasoning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Heat a heavy skillet over medium-high heat with oil for searing. Season tuna on both sides with salt and pepper. Sear tuna 1.5–2 minutes per side for rare/medium-rare depending on thickness; adjust time for desired doneness. Rest tuna 2 minutes, then slice crosswise.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Toss warm potatoes in a little vinaigrette to glaze. Build bowls by arranging mixed greens, glazed potatoes, blanched green beans, halved eggs, cherry tomatoes, olives and capers. Place sliced seared tuna on top and drizzle remaining vinaigrette over the bowl.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,252 @@
+{
+  "slug": "keto-caprese-chicken-no-balsamic",
+  "title": "Keto Caprese Chicken (No Balsamic)",
+  "description": "Pan-seared chicken breasts topped with melted fresh mozzarella, ripe tomatoes, and fragrant basil for a low-carb take on Caprese flavors. Finished with a garlic-herb olive oil drizzle instead of balsamic to keep it keto-friendly and bright.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "american",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb",
+    "mediterranean",
+    "paleo"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "mozzarella",
+    "tomato",
+    "basil",
+    "olive oil",
+    "garlic",
+    "parmesan",
+    "oregano",
+    "salt",
+    "pepper",
+    "lemon",
+    "butter"
+  ],
+  "spice_level": 1,
+  "time_total_min": 26,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "keto caprese chicken",
+    "no balsamic",
+    "low carb caprese",
+    "caprese chicken keto",
+    "chicken mozzarella basil",
+    "pan seared chicken",
+    "garlic herb olive oil",
+    "tomato mozzarella chicken",
+    "keto dinner",
+    "low carb dinner",
+    "italian chicken",
+    "mediterranean chicken",
+    "easy weeknight",
+    "gluten free",
+    "paleo friendly",
+    "mozzarella chicken",
+    "caprese salad chicken",
+    "lemon garlic chicken",
+    "quick 30 minute meal",
+    "family friendly"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "about 6 oz (170 g) each; patted dry"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil (for searing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "use extra-virgin for flavor"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "adds browning and flavor"
+      },
+      {
+        "display_name": "fresh mozzarella, sliced",
+        "quantity": 8,
+        "unit": "oz",
+        "grams": 224,
+        "ml": null,
+        "optional": false,
+        "notes": "sliced into 4 pieces (2 oz/56 g per breast)"
+      },
+      {
+        "display_name": "ripe roma or vine tomatoes, sliced 1/4-inch",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "medium tomatoes, about 150 g each"
+      },
+      {
+        "display_name": "fresh basil leaves",
+        "quantity": 20,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "whole leaves for topping (approx 5 per breast)"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for the herb drizzle"
+      },
+      {
+        "display_name": "fresh garlic, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "extra virgin olive oil (herb drizzle)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": "whisked with lemon, garlic and oregano"
+      },
+      {
+        "display_name": "grated Parmesan cheese",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "optional garnish for extra umami"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, for a touch of heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 26,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep the chicken by trimming any excess fat and patting the breasts dry. Place each breast between plastic wrap and pound gently to an even thickness of about 1/2 inch so they cook evenly.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Season both sides of the chicken evenly with salt, pepper and garlic powder.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large skillet over medium-high heat until hot, add olive oil and butter. When butter is foaming, add chicken in a single layer without crowding.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Sear the chicken undisturbed for 4 minutes to develop a golden crust, then flip and sear the second side for 3 minutes.",
+        "time_min": 7
+      },
+      {
+        "step_no": 5,
+        "text": "Reduce heat to medium-low. Top each seared breast with sliced tomato and then place mozzarella slices on top. Cover the skillet with a lid to melt the cheese, about 3 minutes, until internal temperature reaches 165°F (74°C).",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "While cheese is melting, whisk together lemon juice, minced garlic, dried oregano and extra virgin olive oil with a pinch of salt and pepper to make the herb drizzle.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Remove the skillet from heat. Transfer chicken to a serving platter, spoon the lemon-garlic herb drizzle over each breast, then tuck fresh basil leaves around and on top of the melted mozzarella. Sprinkle optional grated Parmesan or red pepper flakes if using.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Let the plated chicken rest for 2 minutes to allow juices to settle, then serve immediately.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

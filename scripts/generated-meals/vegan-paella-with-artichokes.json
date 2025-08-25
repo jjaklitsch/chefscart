@@ -1,0 +1,287 @@
+{
+  "slug": "vegan-paella-with-artichokes",
+  "title": "Vegan Paella with Artichokes",
+  "description": "A vibrant, comforting vegan paella with tender artichoke hearts, smoky paprika, saffron-scented short-grain rice and a medley of roasted vegetables. Cooked in one wide pan to develop a flavorful socarrat, it balances briny capers and lemon brightness for a satisfying plant-based centerpiece.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "rice",
+  "ingredient_tags": [
+    "rice",
+    "artichokes",
+    "bell pepper",
+    "tomato",
+    "peas",
+    "onion",
+    "garlic",
+    "olive oil",
+    "saffron",
+    "smoked paprika",
+    "lemon",
+    "vegetable broth",
+    "capers",
+    "parsley"
+  ],
+  "spice_level": 2,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "grain"
+  ],
+  "search_keywords": [
+    "vegan paella",
+    "artichoke paella",
+    "spanish rice",
+    "saffron rice",
+    "smoky paprika",
+    "one-pan meal",
+    "mediterranean vegan",
+    "short-grain rice",
+    "socarrat",
+    "vegetable paella",
+    "plant-based dinner",
+    "capers and lemon",
+    "olive oil",
+    "party dish",
+    "gluten-free",
+    "weeknight dinner",
+    "roasted peppers",
+    "peas and tomatoes",
+    "easy paella",
+    "stovetop paella"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "short-grain rice (preferably bomba or calasparra)",
+        "quantity": 320,
+        "unit": "g",
+        "grams": 320,
+        "ml": null,
+        "optional": false,
+        "notes": "dry, uncooked"
+      },
+      {
+        "display_name": "vegetable broth",
+        "quantity": 960,
+        "unit": "ml",
+        "grams": null,
+        "ml": 960,
+        "optional": false,
+        "notes": "hot, divided"
+      },
+      {
+        "display_name": "artichoke hearts",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "canned or jarred, drained and halved if large"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, finely diced"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "red bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "seeded and cut into 1/2-inch strips"
+      },
+      {
+        "display_name": "tomato",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "ripe medium tomatoes, finely chopped (or 1 cup canned crushed tomatoes)"
+      },
+      {
+        "display_name": "frozen peas",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "thawed"
+      },
+      {
+        "display_name": "saffron threads",
+        "quantity": 0.2,
+        "unit": "g",
+        "grams": 0.2,
+        "ml": null,
+        "optional": false,
+        "notes": "about 20-30 threads, steeped in warm broth"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": "preferably Spanish pimentón"
+      },
+      {
+        "display_name": "ground turmeric",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, for color if saffron is limited"
+      },
+      {
+        "display_name": "capers",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "rinsed"
+      },
+      {
+        "display_name": "lemon",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into wedges for serving; zest 1 tsp"
+      },
+      {
+        "display_name": "flat-leaf parsley",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped for garnish"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste, divided"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "water (if needed)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": true,
+        "notes": "to adjust liquid if rice absorbs quickly"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: rinse rice briefly and drain; drain and halve artichoke hearts if large; chop onion, mince garlic, slice red pepper, chop tomatoes, measure out spices and heat the vegetable broth and steep saffron threads in a small portion of the hot broth.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a wide paella pan or large sauté pan over medium heat and add olive oil. When shimmering, add diced onion and cook, stirring occasionally, until softened and translucent.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic and sliced red pepper to the pan and sauté until fragrant and the pepper begins to soften.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in chopped tomatoes, smoked paprika, optional turmeric, half the salt and some black pepper. Simmer until tomatoes break down and mixture becomes slightly thickened, about a short simmer to concentrate flavors.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Add the rice to the pan and stir thoroughly to coat each grain with the tomato-spice mixture; toast the rice for a couple of minutes to develop flavor.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Pour in the hot vegetable broth with the steeped saffron (reserve any sediment) and distribute rice evenly. Stir gently once to level, then stop stirring to allow a crust (socarrat) to form later. Adjust heat to maintain a steady simmer.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Arrange artichoke hearts on top of the rice and tuck in the peas; do not stir. Simmer uncovered at medium-low so liquid gently bubbles and rice absorbs, maintaining an even simmer.",
+        "time_min": 20
+      },
+      {
+        "step_no": 8,
+        "text": "About five minutes before the rice is fully cooked, scatter capers over the surface and check liquid level; add small amounts of hot water or broth if the rice appears dry but not yet tender.",
+        "time_min": 5
+      },
+      {
+        "step_no": 9,
+        "text": "Increase heat briefly for 1–2 minutes to encourage socarrat (a toasted bottom crust), then remove from heat and cover the pan loosely with a lid or foil. Let rest so steam finishes cooking the rice and flavors meld.",
+        "time_min": 5
+      },
+      {
+        "step_no": 10,
+        "text": "Uncover, sprinkle chopped parsley and lemon zest, adjust seasoning with remaining salt and pepper, and serve with lemon wedges alongside.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

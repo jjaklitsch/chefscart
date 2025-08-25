@@ -1,0 +1,267 @@
+{
+  "slug": "lamb-souvlaki-with-tzatziki",
+  "title": "Lamb Souvlaki with Tzatziki",
+  "description": "Juicy marinated lamb cubes seared on skewers and served with a cool, bright tzatziki sauce. The dish balances herb-forward Mediterranean flavors with a citrusy garlic marinade and quick-grilled char for a weeknight or weekend centerpiece.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "lamb",
+  "ingredient_tags": [
+    "lamb",
+    "yogurt",
+    "cucumber",
+    "garlic",
+    "lemon",
+    "olive oil",
+    "oregano",
+    "thyme",
+    "red onion",
+    "tomato",
+    "pita",
+    "salt",
+    "black pepper",
+    "cumin",
+    "mint"
+  ],
+  "spice_level": 2,
+  "time_total_min": 80,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "lamb souvlaki",
+    "tzatziki",
+    "greek skewers",
+    "grilled lamb",
+    "mediterranean",
+    "yogurt sauce",
+    "cucumber tzatziki",
+    "lemon garlic marinade",
+    "pita sandwich",
+    "weeknight dinner",
+    "summer grilling",
+    "herb marinade",
+    "oregano thyme",
+    "red onion tomato",
+    "middle eastern inspired",
+    "meal prep skewers",
+    "protein rich",
+    "easy grilling",
+    "family dinner",
+    "barbecue"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless lamb leg or shoulder, trimmed and cut into 1-inch cubes",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into uniform 1-inch (2.5 cm) cubes"
+      },
+      {
+        "display_name": "plain full-fat Greek yogurt (for tzatziki)",
+        "quantity": 250,
+        "unit": "g",
+        "grams": 250,
+        "ml": null,
+        "optional": false,
+        "notes": "strain for 10 minutes if very watery"
+      },
+      {
+        "display_name": "cucumber, seeded and grated (for tzatziki)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "seed, grate, and squeeze out excess water"
+      },
+      {
+        "display_name": "garlic cloves, divided",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced, reserve some for marinade and some for tzatziki"
+      },
+      {
+        "display_name": "extra-virgin olive oil, divided",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 54,
+        "ml": 60,
+        "optional": false,
+        "notes": "used in marinade and for brushing"
+      },
+      {
+        "display_name": "fresh lemon juice, divided",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "one tbsp for marinade, one tbsp for tzatziki and finishing"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1.5 tbsp fresh chopped oregano"
+      },
+      {
+        "display_name": "fresh thyme leaves, chopped",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1/2 tsp dried thyme"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adds warm depth"
+      },
+      {
+        "display_name": "kosher salt, divided",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "divide between marinade, lamb seasoning, and tzatziki"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "fresh mint, finely chopped (for tzatziki)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "optional but recommended"
+      },
+      {
+        "display_name": "red onion, thinly sliced (for serving)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "soak in cold water briefly to mellow bite"
+      },
+      {
+        "display_name": "tomato, sliced (for serving)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": true,
+        "notes": "ripe, medium tomatoes"
+      },
+      {
+        "display_name": "pita bread or flatbreads, warmed (for serving)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 320,
+        "ml": null,
+        "optional": true,
+        "notes": "use pita pockets or flatbreads"
+      },
+      {
+        "display_name": "wooden or metal skewers",
+        "quantity": 8,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "if using wooden skewers, soak in water 30 minutes before grilling"
+      },
+      {
+        "display_name": "olive oil spray or brush (for grill)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "to prevent sticking"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 80,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare marinade: in a bowl combine olive oil, minced garlic, lemon juice, dried oregano, chopped thyme, ground cumin, half the kosher salt and half the black pepper. Whisk until emulsified.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Marinate lamb: place cubed lamb in a shallow dish or resealable bag, pour marinade over meat, toss to coat thoroughly, cover and refrigerate for at least 30 minutes and up to 4 hours (shorter if pressed for time).",
+        "time_min": 35
+      },
+      {
+        "step_no": 3,
+        "text": "Prepare tzatziki: grate the seeded cucumber and squeeze out excess liquid. In a bowl combine Greek yogurt, grated cucumber, minced garlic, chopped mint, remaining lemon juice, remaining salt and pepper. Stir to combine and chill until serving.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Preheat grill or grill pan to medium-high heat and lightly oil grates or pan. If using wooden skewers, ensure they have been soaked ahead of time.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Thread marinated lamb onto skewers, leaving a small gap between pieces for even cooking. Discard excess marinade left in the dish to avoid flare-ups.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Grill skewers over direct heat: place skewers on preheated grill or hot pan, cook until well browned and slightly charred, turning every 2-3 minutes for even cooking. Target medium doneness or internal temperature ~140-145°F (60-63°C) for slightly pink, about 8-10 minutes total depending on cube size. Brush with a little oil if needed while cooking.",
+        "time_min": 10
+      },
+      {
+        "step_no": 7,
+        "text": "Rest meat: remove skewers from heat and transfer to a tray. Tent loosely with foil and rest for 5 minutes to allow juices to redistribute.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Warm pita and assemble: warm pita bread briefly on the grill or in a hot pan. Serve skewers whole or slide meat from skewers into warmed pita with sliced tomato, red onion, a generous spoonful of tzatziki, and a drizzle of extra lemon juice and olive oil if desired.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

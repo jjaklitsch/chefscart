@@ -1,0 +1,307 @@
+{
+  "slug": "vegetarian-bnh-m-tofu",
+  "title": "Vegetarian Bánh Mì (Tofu)",
+  "description": "A crunchy, flavorful vegetarian take on the classic Vietnamese sandwich featuring marinated and pan-fried tofu, tangy pickled vegetables, fresh herbs, and a creamy spicy mayo on a crisp baguette. Bright vinegar pickles, savory-sweet soy marinade, and crunchy cucumber and carrot make every bite layered and satisfying.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "vietnamese"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "tofu",
+  "ingredient_tags": [
+    "tofu",
+    "bread",
+    "baguette",
+    "carrot",
+    "daikon",
+    "cucumber",
+    "cilantro",
+    "jalapeno",
+    "mayonnaise",
+    "soy sauce",
+    "rice vinegar",
+    "sugar",
+    "lime",
+    "garlic",
+    "sesame oil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "soy",
+    "egg",
+    "sesame"
+  ],
+  "search_keywords": [
+    "vegetarian bánh mì",
+    "tofu banh mi",
+    "viet sandwich",
+    "pickled carrots",
+    "daikon",
+    "crispy tofu",
+    "marinated tofu",
+    "spicy mayo",
+    "cilantro",
+    "baguette sandwich",
+    "quick lunch",
+    "weeknight dinner",
+    "plant-based sandwich",
+    "asian pickles",
+    "soy marinade",
+    "rice vinegar pickles",
+    "cilantro jalapeno",
+    "street food",
+    "crunchy cucumber",
+    "tofu recipe"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "extra-firm tofu, pressed and drained",
+        "quantity": 454,
+        "unit": "g",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "press 20-30 minutes to remove excess water, cut into four 1cm-thick slabs"
+      },
+      {
+        "display_name": "baguettes, preferably day-old or crusty",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "split lengthwise into 4 sandwich portions"
+      },
+      {
+        "display_name": "carrot, julienned",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 medium carrots"
+      },
+      {
+        "display_name": "daikon radish, julienned",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 130,
+        "ml": null,
+        "optional": false,
+        "notes": "about 150g peeled daikon"
+      },
+      {
+        "display_name": "rice vinegar (for pickles)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "1/2 cup"
+      },
+      {
+        "display_name": "water (for pickles)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "1/2 cup"
+      },
+      {
+        "display_name": "granulated sugar (for pickles)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt (for pickles)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cucumber, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "English or Persian cucumber preferred"
+      },
+      {
+        "display_name": "firm tofu marinade: low-sodium soy sauce",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "1/4 cup"
+      },
+      {
+        "display_name": "firm tofu marinade: water",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "1/4 cup"
+      },
+      {
+        "display_name": "firm tofu marinade: maple syrup or brown sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "adds caramelized sweetness"
+      },
+      {
+        "display_name": "firm tofu marinade: minced garlic",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "firm tofu marinade: toasted sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cornstarch (for coating tofu)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "neutral oil (for pan-frying, e.g., vegetable or canola)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "mayonnaise (regular or vegan)",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": 90,
+        "ml": 90,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sriracha or chili paste (for mayo)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "adjust heat to taste"
+      },
+      {
+        "display_name": "lime juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "for mayo"
+      },
+      {
+        "display_name": "fresh cilantro leaves",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "loose packed, for garnish"
+      },
+      {
+        "display_name": "jalapeno, thinly sliced (optional)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 20,
+        "ml": null,
+        "optional": true,
+        "notes": "remove ribs/seeds for less heat"
+      },
+      {
+        "display_name": "salt and black pepper",
+        "quantity": null,
+        "unit": null,
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste for tofu and sandwich"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare quick pickles: combine rice vinegar, water, sugar, and salt in a bowl until sugar dissolves; add julienned carrot and daikon, press to submerge and let sit at room temperature while you prepare other components.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Press and slice tofu into sandwich-width slabs; pat dry with paper towels to remove surface moisture before coating.",
+        "time_min": 7
+      },
+      {
+        "step_no": 3,
+        "text": "Make marinade: whisk soy sauce, water, maple syrup (or brown sugar), minced garlic, and toasted sesame oil in a shallow dish; add tofu slabs and let marinate 5 minutes per side, turning once to soak evenly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Drain tofu briefly from marinade, coat both sides with cornstarch, then heat neutral oil in a nonstick or cast-iron skillet over medium-high heat and pan-fry tofu until golden and crisp on both sides, about 3-4 minutes per side; remove and set aside.",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "While tofu cooks, mix spicy mayo by combining mayonnaise, sriracha, and lime juice; taste and adjust heat or acidity.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Assemble sandwiches: split baguettes, lightly toast if desired; spread a generous layer of spicy mayo, place fried tofu slabs, drain pickled vegetables and arrange carrots and daikon, add cucumber slices, fresh cilantro, and sliced jalapeno if using; season with a light sprinkle of salt and pepper and a squeeze of lime if desired.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

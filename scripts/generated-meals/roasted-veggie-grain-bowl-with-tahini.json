@@ -1,0 +1,290 @@
+{
+  "slug": "roasted-veggie-grain-bowl-with-tahini",
+  "title": "Roasted Veggie Grain Bowl with Tahini",
+  "description": "A hearty, colorful grain bowl featuring caramelized roasted vegetables, nutty whole grains, and a creamy lemon-tahini dressing. Bright herbs and a touch of warm spice balance the richness for an easy, make-ahead plant-forward meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegan",
+    "vegetarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "grains",
+  "ingredient_tags": [
+    "quinoa",
+    "farro",
+    "brown rice",
+    "bell pepper",
+    "zucchini",
+    "eggplant",
+    "carrot",
+    "red onion",
+    "chickpeas",
+    "tahini",
+    "lemon",
+    "olive oil",
+    "garlic",
+    "parsley",
+    "sumac"
+  ],
+  "spice_level": 2,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "sesame",
+    "grain"
+  ],
+  "search_keywords": [
+    "roasted vegetables",
+    "grain bowl",
+    "tahini dressing",
+    "vegan bowl",
+    "mediterranean grain bowl",
+    "quinoa bowl",
+    "farro bowl",
+    "make-ahead lunch",
+    "healthy dinner",
+    "chickpeas",
+    "lemon tahini",
+    "roasted eggplant",
+    "roasted zucchini",
+    "sheet pan vegetables",
+    "meal prep bowl",
+    "herb garnish",
+    "sumac",
+    "olive oil roasted",
+    "plant-forward meals",
+    "vegetarian lunch"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "quinoa (dry)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "seeded and cut into 1-inch pieces"
+      },
+      {
+        "display_name": "zucchini",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1/2-inch half-moons"
+      },
+      {
+        "display_name": "eggplant",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, cut into 1-inch cubes"
+      },
+      {
+        "display_name": "carrots",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 140,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and cut into 1/2-inch coins"
+      },
+      {
+        "display_name": "red onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1-inch wedges"
+      },
+      {
+        "display_name": "canned chickpeas (rinsed & drained)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 standard 15 oz can drained"
+      },
+      {
+        "display_name": "tahini",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "well-stirred"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1-1/2 lemons"
+      },
+      {
+        "display_name": "warm water (to thin tahini)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "adjust for desired dressing consistency"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "minced (for dressing)"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for dressing"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for vegetables"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground, divided"
+      },
+      {
+        "display_name": "fresh parsley",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "chopped"
+      },
+      {
+        "display_name": "sumac",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "toasted pine nuts or pumpkin seeds",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": true,
+        "notes": "for topping"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Line two sheet pans with parchment or a light coating of oil to prevent sticking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Toss prepared bell pepper, zucchini, eggplant, carrots, and red onion in a large bowl with half the olive oil, smoked paprika, half the salt, and a pinch of black pepper; spread in an even layer on one sheet pan.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "On the second sheet pan, toss rinsed chickpeas with remaining olive oil, a pinch of salt, and a little paprika; spread out to crisp.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Roast vegetables and chickpeas in the preheated oven: roast vegetables until caramelized and tender (turn once), and roast chickpeas until slightly crisp; check vegetables at about halfway and stir to promote even browning.",
+        "time_min": 25
+      },
+      {
+        "step_no": 5,
+        "text": "While vegetables roast, rinse quinoa under cold water, then combine with water (or broth) in a saucepan, bring to a boil, reduce to a simmer, cover and cook until liquid is absorbed; remove from heat and let steam covered.",
+        "time_min": 15
+      },
+      {
+        "step_no": 6,
+        "text": "Prepare the tahini dressing: whisk tahini, lemon juice, minced garlic, ground cumin, warm water (add gradually), remaining salt and pepper until smooth and pourable; adjust acidity and water to desired consistency.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "When roasted vegetables and chickpeas are done, transfer to a large bowl, season to taste with additional salt and pepper, and toss with chopped parsley.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble bowls by dividing grains among bowls, topping with roasted vegetables and chickpeas, drizzling with tahini dressing, and finishing with sumac and toasted seeds or pine nuts if using.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,321 @@
+{
+  "slug": "buttermilk-fried-chicken-sandwich",
+  "title": "Buttermilk Fried Chicken Sandwich",
+  "description": "Crisp, golden buttermilk-marinated chicken breast piled on a toasted brioche bun with tangy slaw and a spicy mayonnaise. The long marinade and double-dredge create extra-crispy crust while the slaw and pickles balance richness.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american",
+    "southern"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "buttermilk",
+    "flour",
+    "brioche",
+    "mayonnaise",
+    "cabbage",
+    "pickle",
+    "hot sauce",
+    "egg",
+    "spices",
+    "vegetable oil",
+    "lemon"
+  ],
+  "spice_level": 3,
+  "time_total_min": 315,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "fried chicken",
+    "buttermilk marinade",
+    "crispy chicken sandwich",
+    "brioche bun",
+    "spicy mayo",
+    "southern fried chicken",
+    "double dredge",
+    "quick pickle",
+    "coleslaw",
+    "weeknight dinner",
+    "restaurant-style",
+    "comfort food",
+    "hot sauce",
+    "deep fry",
+    "pan fry",
+    "sandwich",
+    "chicken breast",
+    "marinated chicken",
+    "crunchy crust",
+    "family friendly"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts (about 6-8 oz each), halved lengthwise to make cutlets",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "halved to 4 thin cutlets (approx 170g each)"
+      },
+      {
+        "display_name": "buttermilk",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": 480,
+        "optional": false,
+        "notes": "for marinade"
+      },
+      {
+        "display_name": "hot sauce (for marinade and sauce)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "large eggs (for dredge)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "beaten"
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "for dredge"
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "adds extra crispness"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "divided between marinade and dredge"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": null,
+        "optional": false,
+        "notes": "for dredge"
+      },
+      {
+        "display_name": "onion powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": null,
+        "optional": false,
+        "notes": "for dredge"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for dredge"
+      },
+      {
+        "display_name": "vegetable oil (or peanut oil) for frying",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 325,
+        "ml": 360,
+        "optional": false,
+        "notes": "enough for shallow frying (~1-1.5 inches in pan)"
+      },
+      {
+        "display_name": "brioche or soft burger buns",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "split"
+      },
+      {
+        "display_name": "mayonnaise",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 115,
+        "ml": 120,
+        "optional": false,
+        "notes": "for spicy mayo"
+      },
+      {
+        "display_name": "pickle slices (dill)",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "2 per sandwich"
+      },
+      {
+        "display_name": "green cabbage, finely shredded",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "for quick slaw"
+      },
+      {
+        "display_name": "carrot, grated",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 55,
+        "ml": null,
+        "optional": false,
+        "notes": "for slaw"
+      },
+      {
+        "display_name": "apple cider vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "for slaw dressing"
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "for slaw"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "stops oxidation and brightens slaw"
+      },
+      {
+        "display_name": "butter (for toasting buns)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "softened or melted"
+      },
+      {
+        "display_name": "sugar (for marinade balance)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional in marinade to balance acidity"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 315,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make the marinade: Whisk together buttermilk, half the hot sauce, 1 tsp salt, 1/2 tsp pepper and optional sugar in a bowl large enough to submerge the chicken.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare the chicken: Trim and halve each breast into cutlets, lightly score thick parts for even cooking, then place in marinade ensuring fully coated. Cover and refrigerate at least 4 hours or up to 16 hours for best flavor.",
+        "time_min": 240
+      },
+      {
+        "step_no": 3,
+        "text": "Make the slaw: In a bowl combine shredded cabbage, grated carrot, apple cider vinegar, lemon juice, sugar, a pinch of salt and 1 tbsp mayonnaise; toss and chill until assembly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Prepare dredge station: In one shallow bowl beat eggs with remaining hot sauce; in a second bowl combine flour, cornstarch, remaining salt, garlic powder, onion powder, smoked paprika and pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Dredge the chicken: Remove one cutlet from marinade, let excess drip, coat in flour mixture, dip in egg wash, then press again into flour mixture for a double dredge. Set on a wire rack and repeat for remaining pieces.",
+        "time_min": 15
+      },
+      {
+        "step_no": 6,
+        "text": "Heat oil: Pour oil into a heavy skillet to a depth of about 1-1.5 inches and heat over medium-high until an instant-read thermometer reads 350°F (175°C) or a small piece of bread sizzles and browns in ~60 seconds.",
+        "time_min": 8
+      },
+      {
+        "step_no": 7,
+        "text": "Fry the chicken: Fry cutlets in batches without crowding, cook 3-4 minutes per side until golden brown and internal temperature reaches 165°F (74°C). Transfer to a wire rack over a baking sheet and keep warm in a 200°F (95°C) oven while finishing remaining pieces.",
+        "time_min": 16
+      },
+      {
+        "step_no": 8,
+        "text": "Make spicy mayo and toast buns: Stir remaining mayonnaise with a splash of hot sauce; spread butter on bun cut sides and toast in a skillet or oven until golden, about 1-2 minutes per side.",
+        "time_min": 6
+      },
+      {
+        "step_no": 9,
+        "text": "Assemble sandwiches: Spread spicy mayo on both bun halves, place a warm fried chicken cutlet on the bottom, top with quick slaw and 2 pickle slices, then crown with the top bun.",
+        "time_min": 5
+      },
+      {
+        "step_no": 10,
+        "text": "Rest and serve: Let sandwiches rest 2 minutes so juices redistribute, then serve immediately while hot and crisp.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

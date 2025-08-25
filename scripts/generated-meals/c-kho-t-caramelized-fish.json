@@ -1,0 +1,245 @@
+{
+  "slug": "c-kho-t-caramelized-fish",
+  "title": "Cá Kho Tộ (Caramelized Fish)",
+  "description": "A classic Vietnamese clay-pot style caramelized fish simmered in a rich sweet-salty sauce with aromatic shallots, garlic, and black pepper. Fish fillets are seared and gently braised until the sauce is deeply caramelized and glossy, perfect over steamed rice.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "vietnamese"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "fish",
+  "ingredient_tags": [
+    "fish",
+    "pork belly",
+    "shallot",
+    "garlic",
+    "scallion",
+    "fish sauce",
+    "sugar",
+    "caramel",
+    "pepper",
+    "chili",
+    "oil",
+    "water",
+    "rice"
+  ],
+  "spice_level": 2,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "seafood",
+    "soy"
+  ],
+  "search_keywords": [
+    "cá kho tộ",
+    "caramelized fish",
+    "vietnamese fish",
+    "clay pot fish",
+    "fish braised",
+    "sweet salty fish",
+    "fish sauce",
+    "braised in caramel",
+    "shallot garlic",
+    "black pepper",
+    "pescatarian",
+    "weeknight dinner",
+    "serve with rice",
+    "one pot",
+    "comfort food",
+    "caramel sauce",
+    "fish fillet",
+    "hoisin substitute",
+    "home-style vietnamese",
+    "stovetop simmer"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "firm white fish fillets (catfish, cod, or basa), cut into 6-8 pieces",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "skin on or off, cut into 6-8 portions"
+      },
+      {
+        "display_name": "pork belly, small dice (traditional addition for richness)",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "optional but traditional; cut into small cubes"
+      },
+      {
+        "display_name": "shallots, thinly sliced",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "about 4 medium shallots"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "scallions/green onions, sliced (white + green parts separated)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "white parts used in braise, green for garnish"
+      },
+      {
+        "display_name": "granulated sugar (for caramel) or rock sugar",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 50,
+        "ml": 60,
+        "optional": false,
+        "notes": "for making caramel; adjust to taste"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for searing and caramelizing sugar"
+      },
+      {
+        "display_name": "fish sauce",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "adjust saltiness to taste"
+      },
+      {
+        "display_name": "light soy sauce (small amount for color, optional)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": true,
+        "notes": "optional for extra color and umami"
+      },
+      {
+        "display_name": "water or low-sodium stock",
+        "quantity": 250,
+        "unit": "ml",
+        "grams": null,
+        "ml": 250,
+        "optional": false,
+        "notes": "enough to partially cover fish"
+      },
+      {
+        "display_name": "coarse ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "fresh red bird's eye chili (sliced) or 1 small red chili",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "for mild heat; optional"
+      },
+      {
+        "display_name": "vegetable oil for searing",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "additional oil if needed"
+      },
+      {
+        "display_name": "steamed jasmine rice (to serve)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 960,
+        "ml": null,
+        "optional": true,
+        "notes": "approximate cooked rice for 4 servings"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: pat fish pieces dry, slice shallots, mince garlic, slice scallions separating white and green parts, and cut pork belly if using.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a wide heavy-bottomed pot or clay pot over medium heat; add sugar and a tablespoon of oil. Melt sugar into an amber caramel, swirling the pan but not burning it.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Once caramel is amber, immediately add the white parts of scallions, shallots, and minced garlic; stir briefly to coat and release aroma, then add diced pork belly (if using) and sear for color.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Add fish pieces in a single layer and sear gently for 1–2 minutes per side to set color without breaking the fillets.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Pour in fish sauce, optional soy sauce, and enough water or stock to come about halfway up the fish pieces; bring to a gentle simmer. Scrape any browned bits into the liquid.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Reduce heat to low; cover with a loose lid and simmer gently for 12–15 minutes so the fish cooks through and the sauce concentrates. Spoon sauce over fish occasionally.",
+        "time_min": 15
+      },
+      {
+        "step_no": 7,
+        "text": "Remove lid and simmer uncovered for another 6–8 minutes to thicken and caramelize the sauce to a glossy coating; adjust heat to avoid burning. Taste and adjust saltiness with more fish sauce if needed and stir in black pepper and sliced chili if using.",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "Turn off heat and sprinkle green parts of scallions over the fish. Let rest 2 minutes in the pot for flavors to settle.",
+        "time_min": 1
+      },
+      {
+        "step_no": 9,
+        "text": "Serve hot directly from the pot or transfer to a serving dish with steamed rice alongside, spooning extra caramel sauce over rice.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

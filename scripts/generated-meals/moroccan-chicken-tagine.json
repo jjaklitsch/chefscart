@@ -1,0 +1,325 @@
+{
+  "slug": "moroccan-chicken-tagine",
+  "title": "Moroccan Chicken Tagine",
+  "description": "A fragrant, slow-simmered Moroccan chicken stew with warm spices, preserved lemon, olives and tender vegetables. Braising in a covered pot concentrates citrusy, savory and slightly sweet flavors for a deeply comforting meal.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "onion",
+    "garlic",
+    "ginger",
+    "carrot",
+    "potato",
+    "tomato",
+    "preserved lemon",
+    "green olive",
+    "cilantro",
+    "parsley",
+    "olive oil",
+    "chicken stock",
+    "honey",
+    "cumin",
+    "turmeric",
+    "paprika",
+    "cinnamon",
+    "saffron",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 91,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "moroccan chicken",
+    "tagine",
+    "braised chicken",
+    "preserved lemon",
+    "green olives",
+    "warm spices",
+    "cumin",
+    "turmeric",
+    "paprika",
+    "cinnamon",
+    "saffron",
+    "north african",
+    "one-pot",
+    "stew",
+    "mediterranean",
+    "slow simmer",
+    "weeknight dinner",
+    "comfort food",
+    "braise",
+    "olive oil"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in, skin-on chicken thighs",
+        "quantity": 1.2,
+        "unit": "lb",
+        "grams": 545,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, leave skin on for browning"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, thinly sliced"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh ginger",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground turmeric",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sweet paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": "smoked paprika can be used for depth"
+      },
+      {
+        "display_name": "ground cinnamon",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "saffron threads",
+        "quantity": 0.05,
+        "unit": "tsp",
+        "grams": 0.1,
+        "ml": null,
+        "optional": true,
+        "notes": "soaked in warm water or stock"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 34,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "diced tomatoes (canned)",
+        "quantity": 14,
+        "unit": "oz",
+        "grams": 396,
+        "ml": null,
+        "optional": false,
+        "notes": "one 14 oz can"
+      },
+      {
+        "display_name": "chicken stock",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "low-sodium preferred"
+      },
+      {
+        "display_name": "medium carrots",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and cut into 2-inch pieces"
+      },
+      {
+        "display_name": "small potatoes or baby potatoes",
+        "quantity": 10,
+        "unit": "oz",
+        "grams": 283,
+        "ml": null,
+        "optional": true,
+        "notes": "halved if large"
+      },
+      {
+        "display_name": "preserved lemon",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 25,
+        "ml": null,
+        "optional": true,
+        "notes": "rind only, rinsed and thinly sliced"
+      },
+      {
+        "display_name": "green olives",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "pitted"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 21,
+        "ml": 15,
+        "optional": false,
+        "notes": "balances acidity"
+      },
+      {
+        "display_name": "fresh cilantro",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "chopped, include stems"
+      },
+      {
+        "display_name": "fresh parsley",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "chopped"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 91,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: pat the chicken dry, slice the onion, mince garlic, grate ginger, cut carrots and potatoes, rinse and thinly slice preserved lemon rind if using; measure spices and soak saffron in a tablespoon of warm stock or water.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a heavy-bottomed braiser or tagine over medium-high heat; add olive oil. When shimmering, brown chicken skin-side down until golden, 4–5 minutes per side; work in batches if needed. Remove and set aside.",
+        "time_min": 12
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to medium, add sliced onion to the pan and cook, stirring, until softened and beginning to caramelize, about 6–8 minutes; add garlic and ginger and cook 1 minute until fragrant.",
+        "time_min": 9
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in ground spices (cumin, turmeric, paprika, cinnamon) and tomato paste; cook 1–2 minutes to bloom the spices and deepen flavors.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Add diced tomatoes, chicken stock, honey and soaked saffron with its liquid; scrape up any browned bits from the bottom of the pan and bring to a simmer.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Return browned chicken to the pan, nestle pieces into the sauce, add carrots and potatoes, season with salt and pepper. Cover with a lid (or tagine lid) and reduce heat to low to maintain a gentle simmer.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Simmer gently, covered, until chicken is cooked through and vegetables are tender, about 30–35 minutes; check once halfway and spoon sauce over chicken to baste.",
+        "time_min": 35
+      },
+      {
+        "step_no": 8,
+        "text": "Uncover, add olives and preserved lemon rind, adjust seasoning with salt and pepper, and simmer uncovered 5 minutes to meld flavors and thicken the sauce slightly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 9,
+        "text": "Turn off heat and stir in chopped cilantro and parsley; let rest for 5 minutes before serving so flavors settle.",
+        "time_min": 5
+      },
+      {
+        "step_no": 10,
+        "text": "Serve the tagine family-style over couscous, rice or with crusty bread, spooning plenty of sauce over the chicken and vegetables.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

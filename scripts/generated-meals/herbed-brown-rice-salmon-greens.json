@@ -1,0 +1,264 @@
+{
+  "slug": "herbed-brown-rice-salmon-greens",
+  "title": "Herbed Brown Rice Salmon & Greens",
+  "description": "Pan-seared salmon fillets served over a bed of herb-studded brown rice with sautéed garlic greens. Bright lemon-herb dressing and a crisp finish make this a healthy, balanced weeknight dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "salmon",
+  "ingredient_tags": [
+    "salmon",
+    "brown rice",
+    "spinach",
+    "kale",
+    "lemon",
+    "olive oil",
+    "garlic",
+    "parsley",
+    "dill",
+    "butter",
+    "salt",
+    "black pepper",
+    "red pepper flakes",
+    "onion",
+    "vegetable broth"
+  ],
+  "spice_level": 2,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "dairy"
+  ],
+  "search_keywords": [
+    "salmon",
+    "brown rice",
+    "herbed rice",
+    "garlic greens",
+    "spinach",
+    "kale",
+    "pan seared salmon",
+    "lemon herb",
+    "weeknight dinner",
+    "pescatarian",
+    "mediterranean",
+    "healthy",
+    "one-pan",
+    "meal prep",
+    "whole grain",
+    "olive oil",
+    "butter",
+    "parsley",
+    "dill"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "skin-on salmon fillets",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "about 170 g (6 oz) each, pin-bones removed"
+      },
+      {
+        "display_name": "long-grain brown rice (uncooked)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed"
+      },
+      {
+        "display_name": "low-sodium vegetable or chicken broth",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": null,
+        "ml": 720,
+        "optional": false,
+        "notes": "hot"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 40,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "medium yellow onion, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "packed"
+      },
+      {
+        "display_name": "fresh dill, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lemon"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "baby spinach",
+        "quantity": 5,
+        "unit": "oz",
+        "grams": 142,
+        "ml": null,
+        "optional": false,
+        "notes": "or a mix of spinach and tender kale"
+      },
+      {
+        "display_name": "lacinato or curly kale, stems removed and chopped",
+        "quantity": 4,
+        "unit": "oz",
+        "grams": 113,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for a little heat"
+      },
+      {
+        "display_name": "white wine (optional, for rice deglaze)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "or use extra broth"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse the brown rice under cold water until water runs clear; combine rice and hot broth in a medium saucepan, bring to a simmer, reduce heat to low, cover and cook until tender (follow package timing for brown rice, typically 30–35 minutes) then remove from heat and let rest covered.",
+        "time_min": 35
+      },
+      {
+        "step_no": 2,
+        "text": "While rice cooks, pat salmon dry and season both sides with half the salt and pepper; zest and juice the lemon and set aside the mixed lemon-herb components.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Heat 1 tablespoon olive oil in a large nonstick or cast-iron skillet over medium-high heat; sear salmon skin-side down without moving until skin is crisp, about 4–5 minutes, then flip and cook remaining 2–3 minutes until just cooked through; transfer to a warm plate and tent loosely with foil.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "In the same skillet, add remaining olive oil and 1 tablespoon butter, reduce heat to medium, add diced onion and cook until translucent, then add garlic and cook until fragrant, about 1 minute; if using, deglaze with white wine and let it reduce briefly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Add chopped kale to skillet and cook 2–3 minutes until beginning to soften, then add spinach and cook until wilted; season the greens with remaining salt, pepper and optional red pepper flakes, and finish with lemon juice and half the chopped herbs.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Fluff the cooked brown rice with a fork, stir in remaining butter, lemon zest, remaining chopped parsley and dill, and adjust seasoning; keep warm.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "To serve, divide herbed brown rice among plates, top with a portion of sautéed greens and a salmon fillet; spoon any resting juices from the salmon over the top and garnish with additional chopped herbs and a wedge of lemon.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

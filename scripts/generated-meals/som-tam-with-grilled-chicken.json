@@ -1,0 +1,271 @@
+{
+  "slug": "som-tam-with-grilled-chicken",
+  "title": "Som Tam with Grilled Chicken",
+  "description": "A vibrant Thai green papaya salad (som tam) tossed with a tangy, spicy lime-chili dressing and served alongside juicy, char-grilled chicken. Bright, crunchy, and balanced with savory fish sauce, palm sugar, and fresh herbs for a refreshing lunch or light dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "green papaya",
+    "chicken",
+    "lime",
+    "garlic",
+    "bird's eye chili",
+    "fish sauce",
+    "palm sugar",
+    "tomato",
+    "green bean",
+    "peanut",
+    "cilantro",
+    "carrot",
+    "shallot",
+    "vegetable oil"
+  ],
+  "spice_level": 4,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "peanut",
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "som tam",
+    "green papaya salad",
+    "thai salad",
+    "grilled chicken",
+    "lime dressing",
+    "spicy salad",
+    "peanut topping",
+    "fish sauce",
+    "fresh herbs",
+    "weeknight dinner",
+    "light lunch",
+    "gluten free",
+    "high protein",
+    "chargrilled",
+    "street food",
+    "palm sugar",
+    "bird's eye chili",
+    "carrot",
+    "cilantro",
+    "easy thai"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skin-on chicken thighs",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "vegetable oil (for marinade and grilling)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fish sauce (for marinade and dressing)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "soy sauce (light)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for marinade"
+      },
+      {
+        "display_name": "lime juice, fresh",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": "about 4-5 limes, divided"
+      },
+      {
+        "display_name": "palm sugar (or light brown sugar)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "for dressing"
+      },
+      {
+        "display_name": "green (unripe) papaya, peeled and shredded",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium papaya"
+      },
+      {
+        "display_name": "carrot, peeled and shredded",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "1 medium"
+      },
+      {
+        "display_name": "green beans, trimmed and cut into 2.5 cm pieces",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "about 12-15 beans"
+      },
+      {
+        "display_name": "cherry tomatoes, halved",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "about 12-14"
+      },
+      {
+        "display_name": "bird's eye chilies, thinly sliced",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "garlic cloves, smashed",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "roasted peanuts, coarsely chopped",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "unsalted or lightly salted"
+      },
+      {
+        "display_name": "shallot, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cilantro leaves, roughly chopped",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "neutral oil for grill (optional brush)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for chicken seasoning"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the chicken: pat dry and season with salt, pepper, 1 tablespoon fish sauce, 1 tablespoon soy sauce and 1 tablespoon vegetable oil; let marinate at room temperature or refrigerate for 15 minutes to 2 hours depending on schedule.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Preheat a grill or grill pan to medium-high heat (around 200–230°C / 400–450°F); brush grates with oil to prevent sticking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Grill the chicken thighs skin-side down first for 6–8 minutes until nicely charred, then flip and cook 6–8 minutes more until internal temperature reaches 74°C (165°F); rest the chicken for 5 minutes before slicing.",
+        "time_min": 20
+      },
+      {
+        "step_no": 4,
+        "text": "While chicken grills, prepare the dressing: in a bowl combine remaining fish sauce, lime juice, palm sugar and smashed garlic; stir until sugar dissolves and adjust balance of sweet-sour-salty.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Using a mortar and pestle or a small mixing bowl and pestle/wooden spoon, lightly pound or press the sliced chilies and shallot with a pinch of salt to release aromatics; add to the dressing and mix.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Toss shredded green papaya and carrot with trimmed green beans and halved cherry tomatoes in a large bowl; pour the dressing over and toss gently to combine, allowing papaya to slightly bruise and absorb flavors.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Plate the salad, sprinkle chopped roasted peanuts and cilantro on top, and serve with the grilled chicken sliced on the side or atop the salad.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

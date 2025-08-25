@@ -1,0 +1,306 @@
+{
+  "slug": "green-chili-steak-quinoa-bowl",
+  "title": "Green Chili Steak & Quinoa Bowl",
+  "description": "A vibrant, protein-packed bowl featuring tender seared flank steak tossed in a tangy cilantro-green chili sauce over fluffy quinoa, with roasted corn, black beans, avocado and pickled red onion for brightness. Fast weeknight searing and simple roasting make this bowl bold, fresh and satisfying.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "flank steak",
+    "quinoa",
+    "corn",
+    "black beans",
+    "avocado",
+    "cilantro",
+    "lime",
+    "green chili",
+    "jalapeño",
+    "red onion",
+    "garlic",
+    "olive oil",
+    "cumin",
+    "salt",
+    "pepper",
+    "feta",
+    "tomato"
+  ],
+  "spice_level": 3,
+  "time_total_min": 61,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "green chili steak",
+    "quinoa bowl",
+    "steak bowl",
+    "cilantro lime",
+    "roasted corn",
+    "black beans",
+    "weeknight dinner",
+    "high protein",
+    "mexican inspired",
+    "bowl recipe",
+    "flank steak",
+    "grilled steak",
+    "pickled red onion",
+    "avocado",
+    "easy meal prep",
+    "spicy",
+    "healthy",
+    "whole grain",
+    "summer",
+    "quick roast"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "flank steak, trimmed",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim visible fat, room temperature"
+      },
+      {
+        "display_name": "quinoa, rinsed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed under cold water"
+      },
+      {
+        "display_name": "water or low-sodium chicken broth",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "for cooking quinoa"
+      },
+      {
+        "display_name": "fresh cilantro (leaves and tender stems)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "packed"
+      },
+      {
+        "display_name": "jalapeño or serrano pepper, stemmed (seeds optional)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for green chili sauce; remove seeds to reduce heat"
+      },
+      {
+        "display_name": "garlic cloves, peeled",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for sauce"
+      },
+      {
+        "display_name": "lime juice (about 1 large lime)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "olive oil, divided",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": "for searing and dressing"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for steak rub"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for smokiness"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided between steak, quinoa, and vegetables"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "frozen or fresh corn kernels",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 165,
+        "ml": null,
+        "optional": false,
+        "notes": "thawed if frozen"
+      },
+      {
+        "display_name": "black beans, drained and rinsed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "canned"
+      },
+      {
+        "display_name": "avocado, sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "ripe"
+      },
+      {
+        "display_name": "red onion, thinly sliced and quick-pickled",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 55,
+        "ml": null,
+        "optional": true,
+        "notes": "see notes for pickling"
+      },
+      {
+        "display_name": "white vinegar or apple cider vinegar (for quick-pickling)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "for pickling onion"
+      },
+      {
+        "display_name": "sugar (for pickling)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "for pickling onion"
+      },
+      {
+        "display_name": "crumbled feta or cotija cheese",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 38,
+        "ml": null,
+        "optional": true,
+        "notes": "optional topping"
+      },
+      {
+        "display_name": "cherry tomatoes, halved",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "optional"
+      },
+      {
+        "display_name": "lime wedges (to serve)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 61,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Toss corn with 1 tablespoon oil, a pinch of salt and pepper on a rimmed baking sheet; spread in a single layer and roast until edges brown, about 12 minutes, stirring halfway through.",
+        "time_min": 12
+      },
+      {
+        "step_no": 2,
+        "text": "While corn roasts, cook the quinoa: bring water or broth and a pinch of salt to a boil in a small saucepan, add rinsed quinoa, reduce to a simmer, cover and cook until water is absorbed; fluff with a fork and keep covered off heat to steam.",
+        "time_min": 18
+      },
+      {
+        "step_no": 3,
+        "text": "Make the green chili-cilantro sauce by combining cilantro, jalapeño, garlic, lime juice, 2 tablespoons olive oil, 1/2 teaspoon salt and a few grinds of pepper in a blender or food processor; blend until smooth and adjust heat/salt to taste.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Season the flank steak on both sides with remaining salt, pepper, cumin and optional smoked paprika. Heat a large skillet or grill pan over high heat with 1 tablespoon oil until shimmering.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Sear the steak: place steak in the hot pan and cook without moving until a browned crust forms, about 3-4 minutes per side for medium-rare depending on thickness. Use an instant-read thermometer if desired (130-135°F for medium-rare). Transfer to a cutting board and rest 7 minutes.",
+        "time_min": 12
+      },
+      {
+        "step_no": 6,
+        "text": "While steak rests, prepare quick-pickled red onion by combining vinegar, sugar and a pinch of salt in a bowl; add thinly sliced red onion and let sit at least 5 minutes (longer for more mellow flavor).",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Slice the rested steak thinly against the grain and toss with a few tablespoons of the green chili-cilantro sauce to coat lightly. Warm black beans briefly in a small saucepan or microwave and season to taste.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble bowls: divide quinoa among bowls, top with roasted corn, black beans, sliced steak, avocado slices, pickled red onion and cherry tomatoes if using. Drizzle remaining green chili sauce over bowls and sprinkle with crumbled feta or cotija if desired. Serve with lime wedges.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

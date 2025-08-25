@@ -1,0 +1,298 @@
+{
+  "slug": "shrimp-veg-stir-fry-with-brown-rice",
+  "title": "Shrimp & Veg Stir-Fry with Brown Rice",
+  "description": "A vibrant, quick stir-fry of tender shrimp and crisp seasonal vegetables tossed in a savory ginger-soy glaze, served over nutty brown rice. Bright aromatics and a touch of sesame create a satisfying weeknight meal ready in under 40 minutes.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "shrimp",
+  "ingredient_tags": [
+    "shrimp",
+    "brown rice",
+    "broccoli",
+    "bell pepper",
+    "carrot",
+    "snap peas",
+    "garlic",
+    "ginger",
+    "soy sauce",
+    "sesame oil",
+    "vegetable oil",
+    "green onion",
+    "cornstarch",
+    "lime",
+    "sesame seeds"
+  ],
+  "spice_level": 2,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "soy",
+    "sesame",
+    "grain"
+  ],
+  "search_keywords": [
+    "shrimp stir-fry",
+    "brown rice",
+    "quick weeknight",
+    "ginger garlic",
+    "soy glaze",
+    "sesame",
+    "pescatarian dinner",
+    "healthy stir-fry",
+    "vegetable medley",
+    "broccoli",
+    "bell pepper",
+    "snap peas",
+    "carrots",
+    "easy rice bowl",
+    "30 minute meal",
+    "low spice",
+    "high protein",
+    "stir fry sauce",
+    "meal prep",
+    "one pan"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "raw large shrimp, peeled and deveined",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "tails removed"
+      },
+      {
+        "display_name": "uncooked brown rice",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 185,
+        "ml": null,
+        "optional": false,
+        "notes": "yields about 3 cups cooked"
+      },
+      {
+        "display_name": "broccoli florets",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "bite-sized"
+      },
+      {
+        "display_name": "red bell pepper, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "carrot, julienned or thinly sliced",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "snap peas, trimmed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for extra crunch"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "vegetable oil (or neutral oil) for wok",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "low-sodium soy sauce",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "oyster sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "adds depth; omit for strict pescatarian-vegetarian if needed"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "mixed with water to make slurry"
+      },
+      {
+        "display_name": "water (for sauce and slurry)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "divided: part for sauce, part for cornstarch slurry"
+      },
+      {
+        "display_name": "granulated sugar or honey",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "balances salt"
+      },
+      {
+        "display_name": "lime, cut into wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "green onions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": 15,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "for rice water and seasoning"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse the brown rice and combine with water and a pinch of salt in a pot; bring to a boil, reduce to low, cover and simmer until tender, then remove from heat and let steam off for a few minutes.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "While rice starts, pat shrimp dry and season lightly with salt and pepper; toss shrimp with half of the cornstarch to give a light coating.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Mix the sauce in a small bowl: combine soy sauce, oyster sauce if using, sugar or honey, grated ginger, minced garlic, and the reserved water; set aside and whisk a separate small cornstarch slurry with a little water.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Heat a large wok or wide skillet over high heat until very hot, add the neutral oil, then add shrimp in a single layer and sear just until pink and opaque (about half cooked), 1 minute per side; remove shrimp to a plate.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Add a touch more oil to the wok if needed, then stir-fry the firmer vegetables (carrots, broccoli) for 2–3 minutes until they begin to soften; add bell pepper and snap peas and continue stir-frying until crisp-tender.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Return the shrimp to the wok along with the prepared sauce; stir continuously and bring sauce to a simmer, then add the cornstarch slurry and cook until the sauce thickens and coats the shrimp and vegetables.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Turn off the heat, drizzle sesame oil, toss in sliced green onions and adjust seasoning with salt or lime juice to taste.",
+        "time_min": 1
+      },
+      {
+        "step_no": 8,
+        "text": "Fluff the cooked brown rice with a fork, divide among plates or bowls, top with the shrimp and vegetable stir-fry, and garnish with toasted sesame seeds and extra green onion; serve immediately.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,329 @@
+{
+  "slug": "chicken-tikka-masala",
+  "title": "Chicken Tikka Masala",
+  "description": "Tender pieces of marinated chicken seared and simmered in a creamy, spiced tomato sauce. Aromatic spices, garlic, ginger, and a touch of cream create a rich, balanced curry best served with rice or naan.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "yogurt",
+    "tomato",
+    "onion",
+    "garlic",
+    "ginger",
+    "cream",
+    "butter",
+    "garam masala",
+    "cumin",
+    "paprika",
+    "cilantro",
+    "lemon",
+    "rice",
+    "naan"
+  ],
+  "spice_level": 3,
+  "time_total_min": 71,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "chicken tikka masala",
+    "chicken curry",
+    "tikka",
+    "masala",
+    "indian",
+    "spiced tomato sauce",
+    "garam masala",
+    "yogurt marinated chicken",
+    "ginger garlic",
+    "creamy curry",
+    "naan",
+    "basmati rice",
+    "weeknight dinner",
+    "comfort food",
+    "restaurant-style",
+    "moderate spice",
+    "grilled chicken",
+    "seared chicken",
+    "one-pot sauce",
+    "slow simmer"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "skinless boneless chicken thighs, cut into 1-inch pieces",
+        "quantity": 680,
+        "unit": "g",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "about 4-5 thighs; bite-size pieces"
+      },
+      {
+        "display_name": "plain full-fat yogurt (for marinade)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 245,
+        "ml": 240,
+        "optional": false,
+        "notes": "use thick yogurt"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "garlic, minced (for marinade)",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh ginger, grated (for marinade)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "grated"
+      },
+      {
+        "display_name": "garam masala (for marinade)",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 10,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin (for marinade)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "paprika (sweet or mild)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt (divide between marinade and sauce)",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "vegetable oil (for searing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium onion"
+      },
+      {
+        "display_name": "garlic, minced (for sauce)",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh ginger, minced (for sauce)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin (for sauce)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": 5,
+        "optional": false,
+        "notes": "or sweet paprika"
+      },
+      {
+        "display_name": "cayenne pepper",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": 1.25,
+        "optional": true,
+        "notes": "optional for extra heat"
+      },
+      {
+        "display_name": "tomato passata or crushed tomatoes",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "or one 14 oz can blended"
+      },
+      {
+        "display_name": "water or low-sodium chicken stock",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "adjust for desired sauce thickness"
+      },
+      {
+        "display_name": "heavy cream",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "can substitute coconut cream for dairy-free (not accounted in allergens)"
+      },
+      {
+        "display_name": "fresh cilantro, chopped (for garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": 30,
+        "optional": true,
+        "notes": "chopped"
+      },
+      {
+        "display_name": "fenugreek leaves (kasuri methi), crushed",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": true,
+        "notes": "adds authentic aroma"
+      },
+      {
+        "display_name": "sugar or honey (to balance acidity)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": true,
+        "notes": "adjust to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 71,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Mix the yogurt, lemon juice, minced garlic, grated ginger, garam masala, ground cumin, paprika and half the salt in a bowl. Add the chicken pieces and coat thoroughly. Cover and refrigerate to marinate for at least 30 minutes (or up to 4 hours).",
+        "time_min": 30
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil in a heavy skillet or grill pan over medium-high heat. Remove chicken from marinade, shake off excess, and sear in batches until browned on all sides but not fully cooked. Transfer seared chicken to a plate and set aside.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to medium, melt butter in the same pan, add chopped onion and cook, stirring occasionally, until softened and translucent.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Add the minced garlic and ginger and cook 1 minute until fragrant. Stir in ground coriander, ground cumin, smoked paprika and optional cayenne, cooking briefly to bloom the spices.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Pour in the tomato passata or crushed tomatoes and water or stock, scraping up any browned bits from the pan. Simmer uncovered 8–10 minutes until the sauce thickens slightly and deepens in color.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Return the seared chicken and any accumulated juices to the pan. Stir to combine, cover, and simmer gently 8–10 minutes until the chicken is cooked through (internal temperature 165°F/74°C) and tender.",
+        "time_min": 9
+      },
+      {
+        "step_no": 7,
+        "text": "Stir in the heavy cream, crushed fenugreek if using, remaining salt and optional sugar. Simmer uncovered 2–3 minutes to meld flavors and warm through. Adjust seasoning to taste.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Garnish with chopped cilantro and serve hot with basmati rice or naan.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

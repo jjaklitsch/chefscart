@@ -1,0 +1,249 @@
+{
+  "slug": "mediterranean-tuna-white-bean-salad",
+  "title": "Mediterranean Tuna & White Bean Salad",
+  "description": "A bright, hearty salad combining flaky tuna, creamy white beans, crisp vegetables and a lemon-herb vinaigrette. Ready in under 20 minutes, it’s a protein-packed Mediterranean-style meal perfect for lunch or light dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "mediterranean",
+    "pescatarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "tuna",
+  "ingredient_tags": [
+    "tuna",
+    "white beans",
+    "cannellini beans",
+    "cherry tomatoes",
+    "red onion",
+    "cucumber",
+    "kalamata olives",
+    "parsley",
+    "lemon",
+    "olive oil",
+    "capers",
+    "garlic",
+    "mixed greens",
+    "black pepper",
+    "salt"
+  ],
+  "spice_level": 1,
+  "time_total_min": 18,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "tuna",
+    "white bean salad",
+    "cannellini",
+    "mediterranean salad",
+    "lemon vinaigrette",
+    "pescatarian",
+    "quick lunch",
+    "light dinner",
+    "bean salad",
+    "olive oil",
+    "capers",
+    "cherry tomatoes",
+    "kalamata olives",
+    "fresh herbs",
+    "make ahead",
+    "high protein",
+    "no cook",
+    "healthy",
+    "gluten free"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "canned tuna in olive oil, drained",
+        "quantity": 14,
+        "unit": "oz",
+        "grams": 397,
+        "ml": null,
+        "optional": false,
+        "notes": "drain and flake with fork"
+      },
+      {
+        "display_name": "canned cannellini (white) beans, rinsed and drained",
+        "quantity": 15,
+        "unit": "oz",
+        "grams": 425,
+        "ml": null,
+        "optional": false,
+        "notes": "rinse under cold water and drain well"
+      },
+      {
+        "display_name": "cherry tomatoes, halved",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 225,
+        "ml": null,
+        "optional": false,
+        "notes": "halve for bite-sized pieces"
+      },
+      {
+        "display_name": "cucumber, seeded and diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "seed if very watery, then dice"
+      },
+      {
+        "display_name": "red onion, thinly sliced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "slice thin and separate rings"
+      },
+      {
+        "display_name": "kalamata olives, pitted and halved",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "pit and halve for easier eating"
+      },
+      {
+        "display_name": "capers, drained",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": 30,
+        "optional": true,
+        "notes": "rinse if very salty"
+      },
+      {
+        "display_name": "flat-leaf parsley, finely chopped",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "chop leaves, discard thick stems"
+      },
+      {
+        "display_name": "mixed salad greens (optional base)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "use as a bed for serving"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 54,
+        "ml": 60,
+        "optional": false,
+        "notes": "use good-quality oil for flavor"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "juice of about 1 large lemon"
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds brightness"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "mince finely"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": "or substitute with fresh oregano"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 4.5,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "lemon zest (optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "finely grated for extra brightness"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 18,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare and measure ingredients: drain tuna and beans; rinse and drain beans; halve cherry tomatoes; seed and dice cucumber; thinly slice red onion; pit and halve olives if using; chop parsley and zest and juice lemon.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Make the vinaigrette: whisk together olive oil, lemon juice, red wine vinegar, minced garlic, dried oregano, salt and pepper in a small bowl or jar until emulsified. Taste and adjust seasoning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Combine salad components: in a large bowl gently toss drained beans, flaked tuna, halved cherry tomatoes, diced cucumber, sliced red onion, olives and capers. Pour vinaigrette over and fold carefully to coat without breaking the beans and tuna.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Finish and rest: sprinkle chopped parsley and optional lemon zest over the salad, adjust salt and pepper to taste, and let sit 3–5 minutes to allow flavors to meld. Serve on a bed of mixed greens or as-is.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

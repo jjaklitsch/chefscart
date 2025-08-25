@@ -1,0 +1,295 @@
+{
+  "slug": "mediterranean-veggie-paella",
+  "title": "Mediterranean Veggie Paella",
+  "description": "A vibrant, vegetable-forward take on classic Spanish paella featuring saffron-scented short-grain rice, roasted peppers, artichokes and peas cooked in a wide skillet for a crisp socarrat. Bright lemon and smoked paprika lift the Mediterranean flavors for a satisfying one-pan lunch or dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward",
+    "mediterranean"
+  ],
+  "primary_ingredient": "rice",
+  "ingredient_tags": [
+    "rice",
+    "red bell pepper",
+    "yellow bell pepper",
+    "tomato",
+    "peas",
+    "artichoke",
+    "onion",
+    "garlic",
+    "olive oil",
+    "vegetable broth",
+    "saffron",
+    "smoked paprika",
+    "lemon",
+    "parsley"
+  ],
+  "spice_level": 2,
+  "time_total_min": 58,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "paella",
+    "vegetarian paella",
+    "mediterranean",
+    "saffron",
+    "smoked paprika",
+    "one-pan",
+    "rice skillet",
+    "socarrat",
+    "artichokes",
+    "roasted peppers",
+    "peas",
+    "lemon parsley",
+    "weeknight dinner",
+    "plant-forward",
+    "lunch",
+    "dinner",
+    "comfort food",
+    "olive oil",
+    "vegetable broth",
+    "easy paella"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "short-grain rice (bomba or arborio)",
+        "quantity": 320,
+        "unit": "g",
+        "grams": 320,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed and drained"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "finely diced"
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "red bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "seeded and sliced into strips"
+      },
+      {
+        "display_name": "yellow bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "seeded and sliced into strips"
+      },
+      {
+        "display_name": "ripe tomato",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, grated or finely chopped"
+      },
+      {
+        "display_name": "marinated artichoke hearts",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "halved if large"
+      },
+      {
+        "display_name": "frozen peas",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "thawed"
+      },
+      {
+        "display_name": "vegetable broth (low-sodium)",
+        "quantity": 900,
+        "unit": "ml",
+        "grams": null,
+        "ml": 900,
+        "optional": false,
+        "notes": "kept hot"
+      },
+      {
+        "display_name": "saffron threads",
+        "quantity": 0.15,
+        "unit": "g",
+        "grams": 0.15,
+        "ml": null,
+        "optional": false,
+        "notes": "infused in a little warm broth"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 10,
+        "optional": false,
+        "notes": "preferably Spanish pimentón"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "lemon",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "zested and juiced"
+      },
+      {
+        "display_name": "flat-leaf parsley",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "chopped for garnish"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for added aroma"
+      },
+      {
+        "display_name": "water (reserve, if needed)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": true,
+        "notes": "only if rice needs extra liquid"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 58,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare mise en place: rinse and drain the rice, mince garlic, dice onion, slice peppers, grate tomatoes, halve artichokes, thaw peas, warm the vegetable broth and steep saffron threads in a few tablespoons of the hot broth.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a wide paella pan or large low-sided skillet over medium heat, add the olive oil and sauté the diced onion until translucent and soft using a spatula.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Add the minced garlic and smoked paprika and cook briefly until fragrant, taking care not to burn the garlic.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add the sliced bell peppers and cook until they begin to soften and blister, stirring occasionally to brown evenly.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in the grated or chopped tomatoes, dried oregano, bay leaf if using, and cook until the mixture thickens slightly and concentrates in flavor.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Add the rinsed rice to the pan and toast briefly, stirring to coat each grain in the sofrito so the rice becomes translucent at the edges.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Pour in the hot vegetable broth and the saffron-infused liquid, distribute rice evenly, do not stir from this point; season with salt and pepper and gently nestle the artichoke halves and peas into the surface.",
+        "time_min": 1
+      },
+      {
+        "step_no": 8,
+        "text": "Bring to a steady simmer over medium-high heat for a few minutes, then reduce to medium-low and let cook uncovered, gently shaking the pan occasionally to prevent sticking and to promote even cooking.",
+        "time_min": 20
+      },
+      {
+        "step_no": 9,
+        "text": "Check for doneness near the end of cook time: if rice is al dente but liquid is almost gone, increase heat briefly to create a light socarrat (crispy bottom) for 1–2 minutes, watching closely to avoid burning; add reserved water if rice is undercooked and liquid fully absorbed.",
+        "time_min": 2
+      },
+      {
+        "step_no": 10,
+        "text": "Remove from heat, squeeze lemon juice over the paella, sprinkle with lemon zest and chopped parsley, cover loosely with foil or a clean towel and rest for 5 minutes to allow flavors to settle.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

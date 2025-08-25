@@ -1,0 +1,233 @@
+{
+  "slug": "duck-lorange-mini",
+  "title": "Duck à l'Orange (Mini)",
+  "description": "A concentrated, elegant rendition of classic French Duck à l'Orange: seared duck breasts with a glossy orange-citrus sauce, finished with a touch of honey and pan juices for balance. Fast enough for a special weeknight, this mini version focuses on crisp skin, tender meat and bright, lightly sweetened orange notes.",
+  "courses": [
+    "dinner"
+  ],
+  "cuisines": [
+    "french"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "duck",
+  "ingredient_tags": [
+    "duck",
+    "duck breast",
+    "orange",
+    "orange juice",
+    "orange zest",
+    "chicken stock",
+    "shallot",
+    "honey",
+    "butter",
+    "white wine",
+    "red wine vinegar",
+    "cornstarch",
+    "salt",
+    "black pepper",
+    "olive oil"
+  ],
+  "spice_level": 1,
+  "time_total_min": 55,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy"
+  ],
+  "search_keywords": [
+    "duck",
+    "duck breast",
+    "orange sauce",
+    "duck a l'orange",
+    "french",
+    "citrus glaze",
+    "pan-seared",
+    "mini",
+    "honeysweet",
+    "weeknight special",
+    "restaurant style",
+    "crispskin",
+    "shallots",
+    "red wine vinegar",
+    "glazed duck",
+    "low spice",
+    "special occasion",
+    "quick roast",
+    "easy gourmet",
+    "sauce reduction"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "duck breast, skin-on, boneless",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "about 170 g (6 oz) each, score skin in a crosshatch without cutting meat"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13.5,
+        "ml": 15,
+        "optional": false,
+        "notes": "for searing"
+      },
+      {
+        "display_name": "shallot, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "small shallot"
+      },
+      {
+        "display_name": "fresh orange juice",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": null,
+        "ml": 180,
+        "optional": false,
+        "notes": "about 2 medium oranges"
+      },
+      {
+        "display_name": "orange zest",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "from one orange, finely grated"
+      },
+      {
+        "display_name": "dry white wine",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "can substitute extra stock"
+      },
+      {
+        "display_name": "chicken stock (low-sodium)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "warm"
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for brightness"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 21,
+        "ml": 15,
+        "optional": false,
+        "notes": "or maple syrup"
+      },
+      {
+        "display_name": "unsalted butter, cold and cubed",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": null,
+        "optional": false,
+        "notes": "to finish sauce (mount)"
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "mixed with splash of water to thicken if needed"
+      },
+      {
+        "display_name": "fresh thyme or parsley, chopped",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring duck breasts to room temperature, pat skin dry and score skin in a crosshatch pattern; season both sides with about half the salt and pepper.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Preheat oven to 200°C (400°F). Heat a large ovenproof skillet over medium; add olive oil and place duck breasts skin-side down. Render the fat, pressing gently, until skin is deep golden and crisp, about 8-10 minutes. Spoon off excess fat into a container as it accumulates.",
+        "time_min": 12
+      },
+      {
+        "step_no": 3,
+        "text": "Flip breasts and sear meat side for 1 minute to brown. Transfer skillet to the preheated oven and roast until internal temperature reaches 57–60°C (135–140°F) for medium-rare, about 6-8 minutes depending on thickness. Remove duck to a cutting board, tent loosely with foil and rest.",
+        "time_min": 12
+      },
+      {
+        "step_no": 4,
+        "text": "Pour off most of the fat from the skillet, leaving any fond. Return skillet to medium heat on the stovetop, add chopped shallot and sauté until softened, about 1-2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Deglaze with white wine (or a splash of stock) scraping up browned bits, then add orange juice, orange zest, chicken stock and red wine vinegar. Bring to a simmer and reduce by about half until slightly syrupy, about 6-8 minutes.",
+        "time_min": 8
+      },
+      {
+        "step_no": 6,
+        "text": "Whisk in honey, then swirl in cold cubed butter off heat to emulsify the sauce; season with remaining salt and pepper to taste. If sauce needs thickening, stir in cornstarch slurry and simmer 30–60 seconds until glossy.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Slice rested duck breasts crosswise into medallions. Spoon warm orange sauce over the sliced duck, garnish with chopped thyme or parsley and a little extra orange zest, and serve immediately.",
+        "time_min": 6
+      }
+    ]
+  },
+  "image_url": null
+}

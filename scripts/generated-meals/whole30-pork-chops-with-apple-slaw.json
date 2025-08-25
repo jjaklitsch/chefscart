@@ -1,0 +1,277 @@
+{
+  "slug": "whole30-pork-chops-with-apple-slaw",
+  "title": "Whole30 Pork Chops with Apple Slaw",
+  "description": "Juicy pan-seared pork chops seasoned with a warm spice rub served alongside a crisp, tangy apple and cabbage slaw dressed with a mustard-apple vinaigrette. Bright, savory, and Whole30-compliant for a quick weeknight dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "whole30",
+    "paleo",
+    "low-carb"
+  ],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "pork chops",
+    "apple",
+    "green apple",
+    "cabbage",
+    "carrot",
+    "shallot",
+    "dijon mustard",
+    "olive oil",
+    "apple cider vinegar",
+    "garlic",
+    "fresh thyme",
+    "salt",
+    "black pepper",
+    "smoked paprika"
+  ],
+  "spice_level": 1,
+  "time_total_min": 42,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "whole30 pork chops",
+    "apple slaw",
+    "pan seared pork",
+    "apple cider vinaigrette",
+    "paleo pork",
+    "low carb dinner",
+    "gluten free pork chops",
+    "weeknight meal",
+    "mustard vinaigrette",
+    "crunchy slaw",
+    "green apple slaw",
+    "dijon apple dressing",
+    "smoked paprika pork",
+    "quick pork chop recipe",
+    "healthy dinner",
+    "summer slaw",
+    "fall flavors",
+    "whole30 dinner",
+    "simple weeknight",
+    "family dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in pork chops (about 1 inch thick)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 1800,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat if desired"
+      },
+      {
+        "display_name": "olive oil (for searing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh thyme (leaves, chopped) or 1 tsp dried",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "use leaves only"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided: 1 tsp for chops, remainder for slaw/dressing"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "green apple (granny smith), julienned",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "toss in acid to prevent browning"
+      },
+      {
+        "display_name": "napa or green cabbage, thinly shredded",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "packed cups"
+      },
+      {
+        "display_name": "carrot, peeled and julienned or shredded",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "shallot, very thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "apple cider vinegar (for dressing)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil (for dressing)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "use extra virgin for flavor"
+      },
+      {
+        "display_name": "whole30-compliant dijon-style mustard (check ingredients) or mustard powder reconstituted",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "must be compliant without sugar"
+      },
+      {
+        "display_name": "honey or maple syrup (omit for strict Whole30) - optional",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 7,
+        "ml": 5,
+        "optional": true,
+        "notes": "optional for slight sweetness; omit to remain strict Whole30"
+      },
+      {
+        "display_name": "lemon juice (fresh)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "or extra apple cider vinegar"
+      },
+      {
+        "display_name": "black pepper (to taste for dressing/slaw)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, chopped (for garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 42,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Remove pork chops from refrigerator 20 minutes before cooking to come to room temperature; pat dry and season both sides with the smoked paprika, 1 teaspoon kosher salt, and 1/2 teaspoon black pepper.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "Meanwhile, assemble the slaw: in a large bowl combine shredded cabbage, julienned apple, shredded carrot, and thinly sliced shallot; toss to mix.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Whisk the dressing: combine apple cider vinegar, olive oil, mustard, lemon juice, remaining salt, remaining black pepper and optional sweetener until emulsified; taste and adjust seasoning.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Toss the dressing with the slaw just before serving so it stays crisp; set dressed slaw aside at room temperature while cooking chops.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Heat a large heavy skillet over medium-high heat until hot, add 1 tablespoon olive oil and swirl; place pork chops in skillet without crowding and sear undisturbed until a deep golden crust forms (about 3-4 minutes).",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Flip chops, add remaining 1 tablespoon olive oil if pan is dry and reduce heat to medium; add minced garlic and fresh thyme around the chops and continue to cook until internal temperature reaches 145°F (63°C) for medium (about 3-5 minutes depending on thickness).",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Transfer pork chops to a plate and tent loosely with foil; rest for 5 minutes to allow juices to redistribute while finishing plating.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Slice or serve whole pork chops with a generous portion of apple slaw alongside; garnish with chopped parsley and an extra drizzle of dressing if desired.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

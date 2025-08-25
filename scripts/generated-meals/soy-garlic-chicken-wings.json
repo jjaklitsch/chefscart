@@ -1,0 +1,251 @@
+{
+  "slug": "soy-garlic-chicken-wings",
+  "title": "Soy-Garlic Chicken Wings",
+  "description": "Crispy oven-baked chicken wings tossed in a glossy soy-garlic glaze with a touch of honey and toasted sesame. Balanced salty, sweet, and umami flavors with a quick broil finish for sticky caramelized edges.",
+  "courses": [
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "american",
+    "korean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "soy sauce",
+    "garlic",
+    "honey",
+    "sesame oil",
+    "ginger",
+    "scallion",
+    "rice vinegar",
+    "cornstarch",
+    "black pepper",
+    "salt",
+    "vegetable oil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 73,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "chicken wings",
+    "soy garlic",
+    "sticky wings",
+    "oven-baked",
+    "honey soy",
+    "korean-style",
+    "appetizer",
+    "game day",
+    "crispy skin",
+    "garlic sauce",
+    "marinated wings",
+    "broil finish",
+    "easy weeknight",
+    "party snack",
+    "umami",
+    "sweet and salty",
+    "scallion garnish",
+    "toasted sesame",
+    "cornstarch coating"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "chicken wings (split into drumette and flat)",
+        "quantity": 1.6,
+        "unit": "lb",
+        "grams": 726.4,
+        "ml": null,
+        "optional": false,
+        "notes": "patted very dry"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cornstarch (for light coating)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "toss wings to coat evenly"
+      },
+      {
+        "display_name": "vegetable oil (for tossing before baking)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "low-sodium soy sauce",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 48,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "honey",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh garlic (minced)",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced fine"
+      },
+      {
+        "display_name": "fresh ginger (minced)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4.5,
+        "ml": 5,
+        "optional": false,
+        "notes": "toasted sesame oil for flavor"
+      },
+      {
+        "display_name": "water",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "to loosen sauce for glazing"
+      },
+      {
+        "display_name": "scallions (thinly sliced, for garnish)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "toasted sesame seeds (for garnish)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "lightly toasted"
+      },
+      {
+        "display_name": "red pepper flakes (optional for heat)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1.8,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 73,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 425°F (220°C). Line a rimmed baking sheet with foil and set a wire rack on top; lightly oil the rack to prevent sticking.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Pat the chicken wings very dry with paper towels. Season evenly with salt and pepper, then toss with cornstarch until lightly coated.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Toss the coated wings with the vegetable oil and arrange them in a single layer on the wire rack, skin-side up with space between pieces.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Bake the wings on the middle rack for 30 minutes without disturbing, then flip each wing and continue baking until skin is crisp and browned, about 10 minutes more.",
+        "time_min": 40
+      },
+      {
+        "step_no": 5,
+        "text": "While wings bake, combine soy sauce, honey, rice vinegar, minced garlic, minced ginger, sesame oil, and water in a small saucepan. Bring to a simmer over medium heat.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Simmer the sauce until slightly thickened and glossy, about 3–4 minutes; remove from heat. If a thicker glaze is desired, mix a slurry of cornstarch and water and whisk in, simmering 30–60 seconds until glossy.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "When wings are fully cooked and crisp, transfer them to a large bowl. Pour the warm soy-garlic glaze over the wings and toss gently to coat evenly.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Return glazed wings to the baking sheet and broil on high for 1–2 minutes to caramelize the glaze, watching carefully to avoid burning.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Transfer wings to a serving platter and garnish with sliced scallions and toasted sesame seeds. Serve immediately.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

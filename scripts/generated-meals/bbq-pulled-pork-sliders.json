@@ -1,0 +1,313 @@
+{
+  "slug": "bbq-pulled-pork-sliders",
+  "title": "BBQ Pulled Pork Sliders",
+  "description": "Slow-braised, smoky pulled pork tossed in a tangy-sweet barbecue sauce and piled onto soft mini buns with crisp coleslaw for contrast. Uses a low-and-slow braise to break down the pork shoulder into tender shreds, finished with a caramelized pan sauce for extra depth.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "southern",
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "pork shoulder",
+    "bbq sauce",
+    "brown sugar",
+    "apple cider vinegar",
+    "smoked paprika",
+    "onion",
+    "garlic",
+    "ketchup",
+    "mustard",
+    "worcestershire sauce",
+    "chicken broth",
+    "slider buns",
+    "coleslaw",
+    "mayonnaise",
+    "cabbage",
+    "carrot",
+    "butter",
+    "salt",
+    "black pepper",
+    "olive oil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 315,
+  "servings_default": 8,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "gluten",
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "pulled pork",
+    "bbq",
+    "sliders",
+    "slow braise",
+    "pork shoulder",
+    "smoky",
+    "caramelized",
+    "coleslaw",
+    "mini burgers",
+    "game day",
+    "sandwich",
+    "party food",
+    "leftovers",
+    "comfort food",
+    "american",
+    "southern",
+    "oven braised",
+    "slow cooker",
+    "grill finish",
+    "tangy"
+  ],
+  "ingredients_json": {
+    "servings": 8,
+    "ingredients": [
+      {
+        "display_name": "pork shoulder (bone-in or boneless), trimmed",
+        "quantity": 3,
+        "unit": "lb",
+        "grams": 1362,
+        "ml": null,
+        "optional": false,
+        "notes": "leave some fat for flavor; trim excess"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 36,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "brown sugar, packed",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 26,
+        "ml": null,
+        "optional": false,
+        "notes": "light or dark both fine"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, large, quartered",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into large wedges"
+      },
+      {
+        "display_name": "garlic cloves, smashed",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "apple cider vinegar",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "divided: some for braise, some for sauce/coleslaw"
+      },
+      {
+        "display_name": "ketchup",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "worcestershire sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow mustard",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "apple juice or chicken broth",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "for braising liquid; chicken broth for savory depth"
+      },
+      {
+        "display_name": "butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": null,
+        "optional": false,
+        "notes": "for toasting buns"
+      },
+      {
+        "display_name": "slider buns (mini brioche or plain), about 8-12",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 720,
+        "ml": null,
+        "optional": false,
+        "notes": "use 2 buns per serving if desired"
+      },
+      {
+        "display_name": "prepared coleslaw (cabbage and carrot) or ingredients to make fresh",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 300,
+        "ml": 720,
+        "optional": false,
+        "notes": "see notes for quick slaw: shredded cabbage, shredded carrot, mayo, vinegar, salt"
+      },
+      {
+        "display_name": "mayonnaise (for slaw)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 220,
+        "ml": 240,
+        "optional": false,
+        "notes": "or use yogurt for lighter slaw (changes allergen profile)"
+      },
+      {
+        "display_name": "brown sugar (for sauce)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 26,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt (additional to taste)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "black pepper (additional to taste)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 315,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 300°F (150°C). Pat the pork shoulder dry and rub all over with kosher salt, black pepper, smoked paprika and brown sugar; let rest at room temperature while preparing other components.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "Heat olive oil in a large Dutch oven or oven-safe braising pot over medium-high heat. Sear the pork on all sides until deeply browned, about several minutes per side, then transfer pork to a plate.",
+        "time_min": 15
+      },
+      {
+        "step_no": 3,
+        "text": "Add quartered onion and smashed garlic to the pot and cook until softened and aromatic, deglazing the pan with a portion of the apple cider vinegar, scraping browned bits from the bottom.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Return the pork to the pot. Add apple juice or chicken broth and remaining apple cider vinegar, then bring liquid to a gentle simmer. Cover the pot with a tight-fitting lid and transfer to the preheated oven.",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "Braise the pork low and slow in the oven until fork-tender and easily shreddable, about 3 to 3.5 hours, checking once midway to baste and ensure liquid remains at least 1/2 inch in the pan.",
+        "time_min": 210
+      },
+      {
+        "step_no": 6,
+        "text": "Remove the pot from the oven and transfer the pork to a cutting board. Reserve braising liquid and strain solids if desired. Using two forks or meat claws, shred the pork into bite-sized pieces, discarding excess fat and bone.",
+        "time_min": 12
+      },
+      {
+        "step_no": 7,
+        "text": "Make the barbecue sauce by combining ketchup, remaining apple cider vinegar, brown sugar, worcestershire sauce and mustard in a saucepan. Simmer briefly until slightly thickened, then taste and adjust seasoning.",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "Combine shredded pork with the prepared barbecue sauce in the pot and warm over medium-low heat, adding a few tablespoons of reserved braising liquid if needed to achieve a saucy but not watery consistency; simmer 6–8 minutes to marry flavors and caramelize edges slightly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 9,
+        "text": "While pork finishes, prepare quick coleslaw: toss shredded cabbage and carrots with mayonnaise, a splash of apple cider vinegar, a pinch of salt and pepper. Chill or hold at cool room temperature until assembly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 10,
+        "text": "Split slider buns and toast cut sides in a skillet with butter until golden and slightly crisp. Pile warm BBQ pulled pork onto each bun, top with coleslaw, close sliders and serve immediately.",
+        "time_min": 12
+      }
+    ]
+  },
+  "image_url": null
+}

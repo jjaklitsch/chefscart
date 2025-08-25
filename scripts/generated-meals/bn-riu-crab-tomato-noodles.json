@@ -1,0 +1,334 @@
+{
+  "slug": "bn-riu-crab-tomato-noodles",
+  "title": "Bún Riêu (Crab & Tomato Noodles)",
+  "description": "A bright, savory Vietnamese noodle soup with tender rice vermicelli, a fragrant tomato-crab broth, and airy crab-tomato patties. Tangy tomatoes, umami fish sauce, and fresh herbs create a lively, comforting bowl served with shredded lettuce and lime.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "vietnamese"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "crab",
+  "ingredient_tags": [
+    "crab",
+    "pork",
+    "tomatoes",
+    "rice noodles",
+    "tofu",
+    "fish sauce",
+    "garlic",
+    "shallot",
+    "egg",
+    "scallion",
+    "lime",
+    "herbs",
+    "shrimp paste",
+    "vegetable"
+  ],
+  "spice_level": 2,
+  "time_total_min": 70,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "seafood",
+    "egg",
+    "soy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "bun rieu",
+    "crab noodle soup",
+    "vietnamese soup",
+    "tomato broth",
+    "rice vermicelli",
+    "crab paste",
+    "seafood soup",
+    "pescatarian meal",
+    "herb garnish",
+    "tangy soup",
+    "comfort food",
+    "fish sauce",
+    "shrimp paste",
+    "tomato crab patties",
+    "easy weeknight",
+    "savory broth",
+    "garlic shallot",
+    "lime and herbs",
+    "bun rieu recipe",
+    "crispy tofu topping"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "fresh lump crab meat",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "picked free of shells"
+      },
+      {
+        "display_name": "lean ground pork (for mixture and stock base)",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "adds richness; optional for strict pescatarians"
+      },
+      {
+        "display_name": "firm tofu, drained and cubed (for topping)",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "pan-fried until golden"
+      },
+      {
+        "display_name": "ripe tomatoes, coarsely chopped",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "about 5 medium tomatoes"
+      },
+      {
+        "display_name": "canned crushed tomatoes",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "adds body to broth"
+      },
+      {
+        "display_name": "pork or chicken bones (for stock) or 1.2 liters water",
+        "quantity": 1200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 1200,
+        "optional": true,
+        "notes": "use vegetable stock for pescatarian; can substitute water"
+      },
+      {
+        "display_name": "dried shrimp (soaked and minced)",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "soak 10 minutes then mince"
+      },
+      {
+        "display_name": "shrimp paste (mắm tôm)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": "adjust to taste; contributes authentic aroma"
+      },
+      {
+        "display_name": "fish sauce (nước mắm)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "to season broth"
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "balances acidity"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for sautéing"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "shallots, thinly sliced",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "about 90g total"
+      },
+      {
+        "display_name": "eggs (for crab-tomato patties)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "beaten"
+      },
+      {
+        "display_name": "annatto oil (or paprika)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": true,
+        "notes": "for color; optional"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "rice vermicelli (bun), soaked or blanched",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "dried weight"
+      },
+      {
+        "display_name": "lettuce, shredded (optional topping)",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "typically iceberg or romaine"
+      },
+      {
+        "display_name": "fresh herbs (perilla, cilantro, Thai basil)",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "assorted"
+      },
+      {
+        "display_name": "bean sprouts",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "lime, cut into wedges",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "chili (optional, for heat)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "sliced bird's eye or serrano"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 70,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare stock: combine bones or water with a third of the chopped tomatoes and simmer gently to create a light broth, skimming foam, about 25 minutes to extract flavor.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "Meanwhile, make crab-tomato mixture: pulse crab meat (and ground pork if using) with soaked minced dried shrimp, half the shallots, beaten eggs, a pinch of salt and pepper until slightly coarse and sticky; set aside chilled.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Caramelize aromatics and tomatoes: heat oil in a wide pot, sauté remaining shallots and garlic until translucent, add chopped tomatoes and canned crushed tomatoes, cook until tomatoes break down and become saucy, about 8 minutes.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Combine tomato base with stock: pour the simmered stock into the pot with tomatoes, bring to a gentle simmer, add fish sauce, shrimp paste, sugar and adjust seasoning; simmer 8 minutes to meld flavors.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Form and cook crab patties in broth: spoon heaping tablespoons of the crab-tomato mixture into the simmering broth to poach until set and cooked through, about 5 minutes per batch; remove gently and keep warm in broth.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Finish broth: skim any impurities, stir in annatto oil or paprika for color if using, adjust salt, fish sauce and lime acidity, and keep broth at a bare simmer while preparing noodles and toppings.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Prepare noodles and toppings: blanch rice vermicelli in boiling water until tender, drain and divide among bowls; quickly pan-fry tofu cubes until golden if using; arrange shredded lettuce, bean sprouts and herbs on the side.",
+        "time_min": 6
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble bowls: place crab patties into bowls over noodles, ladle hot tomato-crab broth over, garnish with scallions, fresh herbs, fried shallots or tofu, sliced chili and a lime wedge; serve immediately.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

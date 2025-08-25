@@ -1,0 +1,250 @@
+{
+  "slug": "herbed-orzo-with-halloumi",
+  "title": "Herbed Orzo with Halloumi",
+  "description": "Toasty orzo tossed with bright lemon, fresh herbs and sautéed halloumi for a crisp, salty finish. Quick one-pan cooking keeps the pasta al dente while herbs and olive oil provide a vibrant Mediterranean lift.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "orzo",
+    "halloumi",
+    "lemon",
+    "olive oil",
+    "garlic",
+    "parsley",
+    "mint",
+    "thyme",
+    "cherry tomatoes",
+    "spinach",
+    "salt",
+    "black pepper",
+    "red pepper flakes",
+    "vegetable broth",
+    "feta"
+  ],
+  "spice_level": 1,
+  "time_total_min": 32,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "orzo",
+    "halloumi",
+    "herbed orzo",
+    "lemon orzo",
+    "mediterranean pasta",
+    "quick vegetarian dinner",
+    "one pan orzo",
+    "toasted orzo",
+    "seared halloumi",
+    "garlic and herb",
+    "mint parsley",
+    "weeknight meal",
+    "spinach orzo",
+    "cherry tomatoes",
+    "lemon zest",
+    "olive oil",
+    "light pasta",
+    "salty cheese",
+    "pan fry halloumi",
+    "fresh herbs"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "orzo",
+        "quantity": 320,
+        "unit": "g",
+        "grams": 320,
+        "ml": null,
+        "optional": false,
+        "notes": "dry"
+      },
+      {
+        "display_name": "halloumi cheese",
+        "quantity": 280,
+        "unit": "g",
+        "grams": 280,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1cm slices or 1/2-inch"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "divided (1 tbsp for toasting, 3 tbsp for finishing and frying)"
+      },
+      {
+        "display_name": "vegetable broth (or water + bouillon)",
+        "quantity": 960,
+        "unit": "ml",
+        "grams": null,
+        "ml": 960,
+        "optional": false,
+        "notes": "hot"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh parsley",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "fresh mint",
+        "quantity": 8,
+        "unit": "g",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "finely chopped (optional, for brightness)"
+      },
+      {
+        "display_name": "fresh thyme leaves",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 10,
+        "optional": false,
+        "notes": "or 1 tsp dried thyme"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "zest of 1 lemon"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "cherry tomatoes",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "halved"
+      },
+      {
+        "display_name": "baby spinach",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "roughly chopped"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "adjust to taste; for cooking liquid"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": 1.25,
+        "optional": true,
+        "notes": "for a mild bite"
+      },
+      {
+        "display_name": "feta cheese (optional garnish)",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "crumbled"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 32,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep ingredients: measure orzo, chop herbs, zest and juice lemon, halve cherry tomatoes if using, mince garlic and slice halloumi. Have hot broth ready.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Heat 1 tablespoon olive oil in a wide sauté pan over medium heat. Add the orzo and toast, stirring frequently, until edges are golden and aromatic.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Carefully pour the hot vegetable broth into the pan with the toasted orzo, stir to combine, bring to a simmer, then reduce heat to medium-low. Cook uncovered, stirring occasionally to prevent sticking, until orzo is tender and liquid is mostly absorbed.",
+        "time_min": 12
+      },
+      {
+        "step_no": 4,
+        "text": "While orzo simmers, heat a nonstick skillet over medium-high and add 1 tablespoon olive oil. Add halloumi slices and fry until golden brown and crisp on both sides, about 2–3 minutes per side. Transfer to paper towel-lined plate.",
+        "time_min": 7
+      },
+      {
+        "step_no": 5,
+        "text": "When orzo is nearly done, stir in minced garlic, chopped herbs, lemon zest, lemon juice, remaining olive oil, cherry tomatoes and spinach if using. Season with salt, pepper and red pepper flakes, and cook 1–2 minutes more until greens wilt and tomatoes warm.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Adjust seasoning to taste. Plate the herbed orzo and top with seared halloumi slices and optional crumbled feta. Serve immediately.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

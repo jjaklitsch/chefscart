@@ -1,0 +1,229 @@
+{
+  "slug": "smash-burger-with-special-sauce",
+  "title": "Smash Burger with Special Sauce",
+  "description": "Crispy-edged smash burgers with a tender, juicy center topped with melty American cheese and a tangy, creamy special sauce. Cooked on a hot flat top or skillet to create maximum crust and layered with pickles and shredded lettuce for classic balance.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "ground beef",
+    "buns",
+    "american cheese",
+    "mayonnaise",
+    "ketchup",
+    "yellow mustard",
+    "dill pickles",
+    "onion",
+    "butter",
+    "lettuce",
+    "salt",
+    "black pepper",
+    "neutral oil"
+  ],
+  "spice_level": 1,
+  "time_total_min": 23,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "smash burger",
+    "special sauce",
+    "seared crust",
+    "flat top",
+    "skillet",
+    "ground beef",
+    "american cheese",
+    "crispy edges",
+    "quick weeknight",
+    "burger recipe",
+    "homemade sauce",
+    "pickles",
+    "onion",
+    "buttered buns",
+    "juicy burger",
+    "assembly",
+    "grill-style",
+    "fast-cook",
+    "comfort food"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ground beef, 80/20",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "divide into 4 equal loose balls (~113g each), do not overwork"
+      },
+      {
+        "display_name": "potato buns or soft hamburger buns",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "split and lightly buttered"
+      },
+      {
+        "display_name": "american cheese slices",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 56,
+        "ml": null,
+        "optional": false,
+        "notes": "one slice per patty"
+      },
+      {
+        "display_name": "mayonnaise (for sauce)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 115,
+        "ml": 120,
+        "optional": false,
+        "notes": "use full-fat mayo for best texture"
+      },
+      {
+        "display_name": "ketchup (for sauce)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 38,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow mustard (for sauce)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dill pickle slices",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "2 per burger, adjust to taste"
+      },
+      {
+        "display_name": "yellow onion, thinly sliced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 55,
+        "ml": null,
+        "optional": false,
+        "notes": "slice very thin for quick crisping"
+      },
+      {
+        "display_name": "shredded iceberg lettuce",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 50,
+        "ml": 240,
+        "optional": false,
+        "notes": "dry and chilled"
+      },
+      {
+        "display_name": "unsalted butter, softened (for buns)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "for toasting buns"
+      },
+      {
+        "display_name": "neutral oil (canola or vegetable)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "oil the griddle/skillet so patties don't stick"
+      },
+      {
+        "display_name": "fine salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "to season beef; use half during cooking if preferred"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to season beef"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 23,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make the special sauce: whisk mayonnaise, ketchup and yellow mustard in a bowl until smooth; cover and chill while you prepare the rest.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Portion the beef into loose balls (no compacting) and season lightly with half the salt and pepper just before cooking; warm a large cast-iron skillet or flat top over high heat until smoking-hot.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Add neutral oil to the hot surface, place 2 beef balls spaced apart, and immediately smash each ball flat with a heavy spatula or burger press until very thin; hold pressure for 10–15 seconds to set the crust.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Season the exposed patty tops with remaining salt and pepper; cook without moving until deep brown crust forms, about 2 minutes, then flip and cook the second side for 30–45 seconds.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Place a slice of American cheese on each flipped patty and cover the skillet or press gently to melt the cheese for 20–30 seconds; remove patties to a warm plate and repeat with remaining beef balls.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "While remaining patties cook, butter the cut sides of buns and toast them on the skillet until golden, about 30–60 seconds per side.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble burgers: spread special sauce on both bun halves, place shredded lettuce on the bottom bun, add the hot cheeseburger patty, top with pickles and thin sliced onion, then crown with the top bun.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Serve immediately while patties are hot and crusty; provide napkins as these burgers are juicy and the sauce is creamy.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

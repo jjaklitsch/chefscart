@@ -1,0 +1,191 @@
+{
+  "slug": "watermelonfetamint-salad-lime-vinaigrette",
+  "title": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+  "description": "A bright, refreshing salad that pairs sweet, juicy watermelon with salty feta and cooling mint, finished with a zesty lime vinaigrette. Quick to assemble, this no-cook salad is perfect for warm-weather lunches, barbecues, or a crisp side dish.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "watermelon",
+  "ingredient_tags": [
+    "watermelon",
+    "feta",
+    "mint",
+    "lime",
+    "olive oil",
+    "red onion",
+    "cucumber",
+    "black pepper",
+    "salt",
+    "honey"
+  ],
+  "spice_level": 1,
+  "time_total_min": 15,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "watermelon",
+    "feta",
+    "mint",
+    "lime vinaigrette",
+    "summer salad",
+    "no cook",
+    "quick",
+    "refreshing",
+    "barbecue side",
+    "vegetarian",
+    "melon salad",
+    "cucumber",
+    "red onion",
+    "honey lime",
+    "olive oil",
+    "salt and pepper",
+    "picnic",
+    "light lunch",
+    "mediterranean",
+    "bright flavors"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "seedless watermelon, cut into 1-inch cubes",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "trim rind and cut into uniform 1-inch cubes"
+      },
+      {
+        "display_name": "feta cheese, crumbled",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "use block feta and crumble by hand for texture"
+      },
+      {
+        "display_name": "fresh mint leaves, stems removed and roughly chopped",
+        "quantity": 12,
+        "unit": "g",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a few whole leaves for garnish"
+      },
+      {
+        "display_name": "english cucumber, halved lengthwise, seeded and sliced into half-moons",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for extra crunch"
+      },
+      {
+        "display_name": "small red onion, thinly sliced",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "soak briefly in cold water to mellow if desired"
+      },
+      {
+        "display_name": "fresh lime juice (about 2 limes)",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "strain seeds"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "prefer mild fruity olive oil"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 10,
+        "unit": "ml",
+        "grams": null,
+        "ml": 10,
+        "optional": false,
+        "notes": "adjust to taste for acidity balance; substitute agave for vegan"
+      },
+      {
+        "display_name": "fine sea salt or kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly cracked black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "or to taste"
+      },
+      {
+        "display_name": "lime zest (optional, for garnish)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "finely grated from 1 lime"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 15,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare produce: trim rind from watermelon and cut into 1-inch cubes; thinly slice red onion; halve and seed cucumber and slice into half-moons; pick and roughly chop mint leaves.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Make vinaigrette: in a small bowl or jar, combine fresh lime juice, honey, and a pinch of salt; whisk or shake while streaming in olive oil until emulsified. Taste and adjust salt, honey, or lime for balance.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Assemble salad: in a large bowl, gently toss watermelon cubes with cucumber, red onion, and chopped mint. Pour vinaigrette over the salad and toss lightly to coat without breaking the watermelon.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Finish and serve: sprinkle crumbled feta over the salad, add cracked black pepper and lime zest if using, and garnish with whole mint leaves. Serve immediately or chill briefly for up to 20 minutes before serving.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

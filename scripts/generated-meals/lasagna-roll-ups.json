@@ -1,0 +1,276 @@
+{
+  "slug": "lasagna-roll-ups",
+  "title": "Lasagna Roll-Ups",
+  "description": "Cheesy ricotta and spinach-filled lasagna noodles are rolled, arranged in a flavorful tomato-meat sauce, topped with more cheese, and baked until bubbly. Bright basil and garlic complement rich tomato and melted mozzarella for a comforting, make-ahead dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "pasta",
+    "lasagna noodles",
+    "ricotta",
+    "mozzarella",
+    "parmesan",
+    "spinach",
+    "ground beef",
+    "ground pork",
+    "tomato sauce",
+    "garlic",
+    "onion",
+    "eggs",
+    "basil",
+    "olive oil",
+    "salt",
+    "pepper",
+    "italian seasoning"
+  ],
+  "spice_level": 2,
+  "time_total_min": 75,
+  "servings_default": 6,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "lasagna",
+    "roll-ups",
+    "ricotta",
+    "spinach",
+    "mozzarella",
+    "baked pasta",
+    "comfort food",
+    "italian",
+    "make-ahead",
+    "family dinner",
+    "tomato sauce",
+    "garlic",
+    "ground beef",
+    "vegetarian option",
+    "party dish",
+    "easy weeknight",
+    "cheesy",
+    "basil",
+    "meat sauce",
+    "single-serve portions"
+  ],
+  "ingredients_json": {
+    "servings": 6,
+    "ingredients": [
+      {
+        "display_name": "dry lasagna noodles (regular, not no-boil)",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "boil until al dente and cool on a towel"
+      },
+      {
+        "display_name": "ricotta cheese",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "whole-milk ricotta preferred"
+      },
+      {
+        "display_name": "shredded mozzarella cheese",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "divided: 1 cup for filling, 1 cup for topping"
+      },
+      {
+        "display_name": "grated parmesan cheese",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly grated if possible"
+      },
+      {
+        "display_name": "fresh spinach (packed)",
+        "quantity": 6,
+        "unit": "cup",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "sauté and squeeze out excess moisture"
+      },
+      {
+        "display_name": "large egg",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "binds the filling"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion (finely chopped)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium onion"
+      },
+      {
+        "display_name": "garlic cloves (minced)",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lean ground beef",
+        "quantity": 0.5,
+        "unit": "lb",
+        "grams": 227,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for meat version; can substitute more veggies"
+      },
+      {
+        "display_name": "tomato sauce (marinara)",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 720,
+        "ml": 720,
+        "optional": false,
+        "notes": "use a robust marinara or homemade sauce"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 34,
+        "ml": 30,
+        "optional": false,
+        "notes": "optional to deepen tomato flavor"
+      },
+      {
+        "display_name": "fresh basil (chopped)",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a little for garnish"
+      },
+      {
+        "display_name": "dried italian seasoning",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; includes for sauce and pasta water"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for mild heat"
+      },
+      {
+        "display_name": "nonstick cooking spray or extra olive oil (for baking dish)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 75,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: preheat oven to 375°F (190°C), finely chop onion and garlic, wash and roughly chop spinach, grate cheeses, and set out a 9x13-inch baking dish lightly oiled.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Make the sauce: heat oil in a skillet over medium heat, sauté chopped onion until translucent, add minced garlic and optional ground beef and cook until browned; drain excess fat if needed, stir in tomato paste, marinara, italian seasoning, half the basil, salt, pepper and simmer gently to meld flavors.",
+        "time_min": 15
+      },
+      {
+        "step_no": 3,
+        "text": "Cook lasagna noodles in a large pot of salted boiling water until al dente according to package instructions, drain and lay noodles flat on a clean towel to cool so they are easy to roll.",
+        "time_min": 12
+      },
+      {
+        "step_no": 4,
+        "text": "Make the filling: in a bowl combine ricotta, half of the shredded mozzarella, grated parmesan, egg, sautéed and squeezed-dry spinach, chopped basil, salt, pepper and optional red pepper flakes, mixing until uniform and creamy.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Assemble roll-ups: spread a thin layer of sauce in the bottom of the prepared baking dish; place a cooled noodle on a work surface, spread an even layer of filling across the noodle leaving a small border, then roll tightly from one short end to the other and place seam-side down in the dish; repeat for all noodles in rows in the dish.",
+        "time_min": 12
+      },
+      {
+        "step_no": 6,
+        "text": "Top and bake: spoon remaining sauce over the assembled roll-ups, sprinkle with remaining shredded mozzarella and extra parmesan, cover loosely with foil and bake until heated through and cheese is melted, then remove foil and bake briefly to brown the top.",
+        "time_min": 12
+      },
+      {
+        "step_no": 7,
+        "text": "Rest and serve: let the dish rest 6 minutes after baking to set, garnish with remaining fresh basil, slice into individual roll-ups and serve warm.",
+        "time_min": 6
+      }
+    ]
+  },
+  "image_url": null
+}

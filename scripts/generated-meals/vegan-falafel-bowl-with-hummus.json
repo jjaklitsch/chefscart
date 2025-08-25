@@ -1,0 +1,347 @@
+{
+  "slug": "vegan-falafel-bowl-with-hummus",
+  "title": "Vegan Falafel Bowl with Hummus",
+  "description": "Crisp herbaceous falafel served over lemony quinoa with creamy tahini hummus, crunchy vegetables, and a bright parsley-tahini drizzle. This plant-powered bowl balances textures and Mediterranean flavors while staying entirely vegan and made from pantry-friendly ingredients.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "chickpeas",
+    "garlic",
+    "onion",
+    "parsley",
+    "cilantro",
+    "quinoa",
+    "cucumber",
+    "tomato",
+    "red onion",
+    "lemon",
+    "tahini",
+    "olive oil",
+    "cumin",
+    "coriander",
+    "paprika",
+    "salt",
+    "pepper",
+    "flour",
+    "baking powder"
+  ],
+  "spice_level": 2,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "sesame",
+    "grain",
+    "gluten"
+  ],
+  "search_keywords": [
+    "vegan falafel bowl",
+    "hummus bowl",
+    "chickpea falafel",
+    "mediterranean vegan",
+    "tahini hummus",
+    "quinoa bowl",
+    "meal prep",
+    "plant-based protein",
+    "crunchy falafel",
+    "lemon parsley dressing",
+    "gluten-free option",
+    "baked falafel",
+    "fried falafel",
+    "easy vegan dinner",
+    "healthy bowl",
+    "middle eastern flavors",
+    "garlic hummus",
+    "weeknight recipe",
+    "vegan lunch",
+    "herb falafel"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "dried chickpeas (soaked overnight)",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "soaked 8-12 hours then drained"
+      },
+      {
+        "display_name": "onion (medium, rough chopped)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "rough chopped for food processor"
+      },
+      {
+        "display_name": "garlic cloves (peeled)",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley (packed)",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "stems trimmed"
+      },
+      {
+        "display_name": "fresh cilantro (packed)",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, for added herbal brightness"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "baking powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": null,
+        "optional": false,
+        "notes": "helps lighten texture"
+      },
+      {
+        "display_name": "all-purpose flour (or chickpea flour for gluten-free)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 28.5,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust if mixture too wet"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil (for frying or roasting)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 54,
+        "ml": 60,
+        "optional": false,
+        "notes": "use less if baking"
+      },
+      {
+        "display_name": "quinoa (uncooked, rinsed)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "yields ~3 cups cooked"
+      },
+      {
+        "display_name": "water (for quinoa)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cucumber (diced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "english or Persian"
+      },
+      {
+        "display_name": "cherry tomatoes (halved)",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red onion (thinly sliced)",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": true,
+        "notes": "soak in cold water to mellow"
+      },
+      {
+        "display_name": "lemon (juice and zest)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "juice for dressing and hummus"
+      },
+      {
+        "display_name": "store-bought or homemade hummus",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "about 240 g"
+      },
+      {
+        "display_name": "tahini (for drizzle and hummus)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "mixed into hummus and dressing"
+      },
+      {
+        "display_name": "extra-virgin olive oil (for dressing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "water (to loosen hummus/dressing)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "add as needed"
+      },
+      {
+        "display_name": "sumac (optional garnish)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "for sprinkling"
+      },
+      {
+        "display_name": "fresh parsley (for garnish)",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "chopped"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Soak dried chickpeas in plenty of cold water overnight (8-12 hours); drain and rinse before using.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare quinoa by rinsing, then combine with measured water in a saucepan, bring to a boil, reduce to simmer, cover and cook until water is absorbed and quinoa is tender; let rest covered off heat.",
+        "time_min": 20
+      },
+      {
+        "step_no": 3,
+        "text": "Make falafel mixture: pulse drained chickpeas, chopped onion, garlic, parsley (and cilantro if using) in a food processor in batches until coarsely ground — avoid turning into a paste; scrape bowl as needed.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Transfer to a mixing bowl, add spices, baking powder, flour, salt and pepper; mix and test texture by forming a small patty — it should hold together; chill mixture 15 minutes if too loose.",
+        "time_min": 7
+      },
+      {
+        "step_no": 5,
+        "text": "Form falafel into uniform balls or patties using about 1.5 tablespoons of mixture each and place on a tray while heating oil or preparing baking sheet.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Cook falafel: pan-fry in a skillet with olive oil over medium heat, turning to brown evenly until crisp (about 3-4 minutes per side), or bake on a parchment-lined sheet at 200°C/400°F for 20-25 minutes, flipping halfway.",
+        "time_min": 12
+      },
+      {
+        "step_no": 7,
+        "text": "Prepare hummus/tahini drizzle: if using store hummus, loosen with a little lemon juice, tahini and water to desired creamy consistency; whisk tahini with lemon, olive oil, water and salt for drizzle, adjust seasoning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble bowls: divide cooked quinoa among bowls, top with hummus, arrange falafel, diced cucumber, halved tomatoes, and red onion; drizzle with tahini dressing and scatter chopped parsley and a pinch of sumac.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

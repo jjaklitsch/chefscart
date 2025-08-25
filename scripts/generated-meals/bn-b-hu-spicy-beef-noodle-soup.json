@@ -1,0 +1,326 @@
+{
+  "slug": "bn-b-hu-spicy-beef-noodle-soup",
+  "title": "Bún Bò Huế (Spicy Beef Noodle Soup)",
+  "description": "A fragrant, spicy Vietnamese beef noodle soup from Huế featuring rich beef-and-pork bone broth infused with lemongrass, shrimp paste, and chile oil. Served with thick rice vermicelli, tender brisket, and fresh herbs for a balanced savory, hot, and tangy bowl.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "vietnamese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "pork",
+    "rice noodles",
+    "lemongrass",
+    "shrimp paste",
+    "garlic",
+    "shallot",
+    "chile",
+    "lime",
+    "herbs",
+    "bean sprouts",
+    "fish sauce",
+    "annatto",
+    "sugar"
+  ],
+  "spice_level": 4,
+  "time_total_min": 250,
+  "servings_default": 6,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "soy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "bun bo hue",
+    "spicy beef noodle soup",
+    "vietnamese soup",
+    "lemongrass broth",
+    "annatto oil",
+    "shrimp paste",
+    "beef brisket",
+    "rice vermicelli",
+    "huế style",
+    "chili oil",
+    "herb garnish",
+    "bean sprouts",
+    "fish sauce",
+    "slow simmered broth",
+    "comfort food",
+    "street food",
+    "spicy soup",
+    "sour lime",
+    "garlic shallot",
+    "pork bones"
+  ],
+  "ingredients_json": {
+    "servings": 6,
+    "ingredients": [
+      {
+        "display_name": "beef shank or brisket, bone-in",
+        "quantity": 1200,
+        "unit": "g",
+        "grams": 1200,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat; keep bones for flavor"
+      },
+      {
+        "display_name": "pork neck bones or pork trotters",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "for richer broth"
+      },
+      {
+        "display_name": "shallots, peeled",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "halved and charred"
+      },
+      {
+        "display_name": "garlic cloves, peeled",
+        "quantity": 8,
+        "unit": "clove",
+        "grams": 24,
+        "ml": null,
+        "optional": false,
+        "notes": "crushed lightly"
+      },
+      {
+        "display_name": "lemongrass stalks",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "bruise and tie in bundle; white parts only"
+      },
+      {
+        "display_name": "ginger, halved",
+        "quantity": 50,
+        "unit": "g",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly smashed"
+      },
+      {
+        "display_name": "water",
+        "quantity": 5000,
+        "unit": "ml",
+        "grams": null,
+        "ml": 5000,
+        "optional": false,
+        "notes": "or enough to cover bones in stockpot"
+      },
+      {
+        "display_name": "annatto (achiote) seeds",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": 30,
+        "optional": false,
+        "notes": "for oil color"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 56,
+        "ml": 60,
+        "optional": false,
+        "notes": "for making annatto oil"
+      },
+      {
+        "display_name": "shrimp paste (mam tom)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 36,
+        "ml": null,
+        "optional": false,
+        "notes": "use high-quality paste"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 36,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste during simmering"
+      },
+      {
+        "display_name": "fish sauce (nuoc mam)",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": 90,
+        "ml": 90,
+        "optional": false,
+        "notes": "add gradually to season"
+      },
+      {
+        "display_name": "rock sugar or granulated sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "balances flavors"
+      },
+      {
+        "display_name": "dried or fresh red chiles (bird's eye or fresno), chopped",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "for chili oil"
+      },
+      {
+        "display_name": "thick rice vermicelli (bún bò huế noodles) or wide rice vermicelli",
+        "quantity": 900,
+        "unit": "g",
+        "grams": 900,
+        "ml": null,
+        "optional": false,
+        "notes": "fresh or dried; cook per package"
+      },
+      {
+        "display_name": "blood jelly (optional traditional), cubed",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "omit for vegetarian or if unavailable"
+      },
+      {
+        "display_name": "green onions, sliced",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly sliced on bias"
+      },
+      {
+        "display_name": "cilantro leaves",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 16,
+        "ml": 240,
+        "optional": false,
+        "notes": "roughly chopped for garnish"
+      },
+      {
+        "display_name": "sawtooth coriander or Thai basil",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 20,
+        "ml": 240,
+        "optional": false,
+        "notes": "garnish"
+      },
+      {
+        "display_name": "lime wedges",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "bean sprouts",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "blanched briefly if preferred"
+      },
+      {
+        "display_name": "sliced red onion or pickled shallot",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 100,
+        "ml": 240,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "white pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "for broth seasoning"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 250,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Blanch meats and bones: place beef shank/brisket and pork bones in a large stockpot, cover with cold water, bring to a rolling boil for 8 minutes, then drain and rinse meat and bones to remove scum.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Char aromatics: while boiling, char shallots, garlic, ginger and the white parts of lemongrass over an open flame or hot skillet until blackened on edges, about 6–8 minutes; set aside.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Build the broth: return cleaned bones and meat to the stockpot, add fresh water to cover, add charred aromatics and bruised lemongrass, bring to a gentle simmer, skim any foam, and maintain a low simmer.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Simmer the broth: simmer gently, uncovered or partially covered, for 2 to 2.5 hours until meat is tender and broth is flavorful, skimming foam occasionally.",
+        "time_min": 150
+      },
+      {
+        "step_no": 5,
+        "text": "Prepare annatto oil and chili oil: heat neutral oil in a small saucepan, add annatto seeds and gently fry until oil is orange (about 1–2 minutes), strain out seeds and reserve oil; in the same pan, add chopped chiles and cook briefly to infuse another portion of oil if desired, then set aside.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Flavor the broth: once broth is done, remove bones and large aromatics, strain the broth through a fine-mesh sieve into a clean pot, add shrimp paste dissolved in a bit of warm broth, fish sauce, sugar, salt, and white pepper; simmer 5–10 minutes and adjust seasoning to taste.",
+        "time_min": 15
+      },
+      {
+        "step_no": 7,
+        "text": "Cook and slice meats: remove beef from the pot when fork-tender, let rest until cool enough to slice thinly across the grain; if using blood jelly or other add-ins, warm separately in simmering broth briefly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 8,
+        "text": "Prepare noodles and garnishes: cook rice vermicelli per package instructions (usually soak or boil briefly), drain and divide into bowls; arrange bean sprouts, herbs, lime wedges, and sliced onions on a platter for assembly.",
+        "time_min": 15
+      },
+      {
+        "step_no": 9,
+        "text": "Assemble bowls: bring broth to a rolling simmer, add a spoonful of annatto oil and chili oil to each bowl of noodles, top with sliced beef, optional pork or blood cubes, ladle hot broth over, then finish with green onions, cilantro, sawtooth coriander or basil, bean sprouts and a lime wedge.",
+        "time_min": 15
+      }
+    ]
+  },
+  "image_url": null
+}

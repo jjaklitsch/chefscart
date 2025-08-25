@@ -1,0 +1,274 @@
+{
+  "slug": "black-pepper-beef",
+  "title": "Black Pepper Beef",
+  "description": "A wok-seared black pepper beef with tender strips of marinated sirloin, crisp onions and bell peppers, finished in a savory soy-based sauce with a bold cracked black pepper kick. Quick to cook and piled over steamed rice or noodles for a satisfying weeknight dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "sirloin",
+    "soy sauce",
+    "onion",
+    "bell pepper",
+    "garlic",
+    "ginger",
+    "black pepper",
+    "cornstarch",
+    "rice",
+    "vegetable oil",
+    "green onion",
+    "brown sugar"
+  ],
+  "spice_level": 3,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "black pepper beef",
+    "pepper beef stir-fry",
+    "chinese beef",
+    "stir-fry",
+    "sirloin beef",
+    "cracked black pepper",
+    "soy sauce",
+    "weeknight dinner",
+    "quick meal",
+    "rice bowl",
+    "noodles",
+    "garlic ginger",
+    "bell pepper",
+    "onion",
+    "cornstarch",
+    "marinated beef",
+    "wok sear",
+    "asian flavors",
+    "savory sauce",
+    "brown sugar"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "sirloin steak, thinly sliced against the grain",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "slice 3-4 mm thick"
+      },
+      {
+        "display_name": "cornstarch (for marinade)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "helps tenderize and create a velvety coating"
+      },
+      {
+        "display_name": "soy sauce (regular or low-sodium)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "2 tbsp for marinade, 1 tbsp for sauce"
+      },
+      {
+        "display_name": "Shaoxing wine or dry sherry",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for marinade (can substitute water if unavailable)"
+      },
+      {
+        "display_name": "vegetable oil (neutral oil) divided",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "for stir-frying"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, minced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 thumb-sized piece minced"
+      },
+      {
+        "display_name": "large yellow onion, sliced into wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red bell pepper, sliced into strips",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "green bell pepper, sliced into strips",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for color and sweetness"
+      },
+      {
+        "display_name": "dark soy sauce (for color) or additional regular soy",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "optional"
+      },
+      {
+        "display_name": "oyster sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "adds umami; omit for strict vegetarian but recipe contains beef"
+      },
+      {
+        "display_name": "brown sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "balances savory flavors"
+      },
+      {
+        "display_name": "freshly cracked black pepper",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "use coarse-cracked for texture"
+      },
+      {
+        "display_name": "beef or low-sodium chicken stock",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "for sauce deglazing"
+      },
+      {
+        "display_name": "green onions, sliced on bias for garnish",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "toasted sesame oil",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 2.5,
+        "optional": true,
+        "notes": "finish for aroma"
+      },
+      {
+        "display_name": "steamed jasmine rice or noodles (to serve)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": null,
+        "ml": 960,
+        "optional": false,
+        "notes": "amount is cooked rice; adjust per serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the beef by slicing thinly against the grain and place in a bowl; add cornstarch, 2 tbsp soy sauce and Shaoxing wine, toss to coat and let sit while you prep vegetables.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Mix the sauce in a small bowl with remaining soy sauce, oyster sauce (if using), brown sugar, stock and dark soy (if using); set aside.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large wok or heavy skillet over high heat until smoking slightly, add 1 tbsp vegetable oil and spread; sear beef in a single layer in two quick batches without overcrowding until just browned but not fully cooked, about 45-60 seconds per side, then remove to a plate.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Add remaining 2 tbsp oil to the wok, reduce heat to medium-high, add minced garlic and ginger and stir-fry until aromatic, about 30 seconds.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add sliced onion and bell peppers, stir-fry until edges begin to char and vegetables are tender-crisp, about 2-3 minutes.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Return the seared beef and any accumulated juices to the wok, sprinkle in the freshly cracked black pepper, pour the prepared sauce over, and toss to combine; cook until sauce thickens and beef is cooked through, about 2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "If sauce needs gloss, stir a small slurry of cornstarch and water into the wok to thicken for 30-60 seconds; finish with a drizzle of toasted sesame oil and toss with sliced green onions.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Taste and adjust seasoning with extra soy or cracked pepper as desired, then serve immediately over steamed rice or noodles.",
+        "time_min": 6
+      }
+    ]
+  },
+  "image_url": null
+}

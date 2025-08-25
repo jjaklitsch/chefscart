@@ -1,0 +1,243 @@
+{
+  "slug": "tomatowhite-bean-skillet",
+  "title": "Tomato–White Bean Skillet",
+  "description": "A hearty, one-pan skillet of tender white beans simmered in a bright tomato-garlic sauce with aromatic herbs and a splash of lemon. Ready in under 40 minutes, it’s a comforting, protein-rich vegetarian main or side that pairs well with crusty bread or a green salad.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "white beans",
+    "cannellini",
+    "navy beans",
+    "tomatoes",
+    "olive oil",
+    "garlic",
+    "onion",
+    "lemon",
+    "parsley",
+    "thyme",
+    "red pepper flakes",
+    "salt",
+    "pepper",
+    "broth",
+    "bread"
+  ],
+  "spice_level": 2,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "tomato white bean skillet",
+    "cannellini beans",
+    "one pan dinner",
+    "vegetarian skillet",
+    "plant-forward",
+    "mediterranean beans",
+    "quick weeknight",
+    "garlic tomato sauce",
+    "lemon parsley",
+    "healthy protein",
+    "comfort food",
+    "bean stew",
+    "white bean ragout",
+    "serve with bread",
+    "easy skillet meal",
+    "olive oil sauté",
+    "herbed beans",
+    "30 minute recipe",
+    "meatless dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "crushed red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": true,
+        "notes": "adjust for heat"
+      },
+      {
+        "display_name": "canned diced tomatoes with juices",
+        "quantity": 14,
+        "unit": "oz",
+        "grams": 396,
+        "ml": 414,
+        "optional": false,
+        "notes": "one 14-15 oz can"
+      },
+      {
+        "display_name": "canned cannellini (white) beans, rinsed and drained",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "about two 15-oz cans total"
+      },
+      {
+        "display_name": "low-sodium vegetable broth",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "or water"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about juice of 1/2 lemon"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "loosely packed, for garnish and brightness"
+      },
+      {
+        "display_name": "fresh thyme leaves (or 1 tsp dried thyme)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": "or 1 tsp dried"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": true,
+        "notes": "adds warmth, optional"
+      },
+      {
+        "display_name": "salt (to taste)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "start with this amount and adjust"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "baby spinach or kale (optional, roughly chopped)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "adds greens for variation"
+      },
+      {
+        "display_name": "crusty bread or crostini, for serving",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": true,
+        "notes": "slices for serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: finely chop the onion, mince the garlic, rinse and drain the canned beans, measure spices, and chop parsley. If using greens, roughly chop them and set aside.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large 12-inch skillet over medium heat and add the olive oil. Once shimmering, add the chopped onion and sauté until soft and translucent, stirring occasionally.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Add the minced garlic and crushed red pepper flakes (if using) to the skillet and cook, stirring, until fragrant but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Pour in the diced tomatoes with their juices and stir to deglaze the pan, scraping up any browned bits. Simmer until the tomatoes soften and the sauce reduces slightly.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Add the rinsed and drained white beans and the vegetable broth, then sprinkle in the thyme, smoked paprika (if using), salt, and pepper. Stir to combine, bring to a gentle simmer, and cook so the flavors meld.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "If using greens, stir them into the skillet now and cook until wilted and incorporated. Adjust seasoning, add the lemon juice, and remove from heat.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Stir in chopped parsley, taste and adjust salt and pepper, then serve hot straight from the skillet with crusty bread or over grains.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

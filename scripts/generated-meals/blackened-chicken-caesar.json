@@ -1,0 +1,330 @@
+{
+  "slug": "blackened-chicken-caesar",
+  "title": "Blackened Chicken Caesar",
+  "description": "Juicy chicken breasts coated in a smoky, herb-forward blackening spice, seared to form a crisp crust and served over crisp romaine with a creamy, tangy Caesar dressing and crisped croutons. Bright lemon and anchovy umami balance the heat for a bold, restaurant-style Caesar salad.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "romaine",
+    "parmesan",
+    "anchovy",
+    "garlic",
+    "lemon",
+    "olive oil",
+    "mayonnaise",
+    "bread",
+    "butter",
+    "paprika",
+    "cumin",
+    "thyme",
+    "oregano",
+    "black pepper",
+    "salt"
+  ],
+  "spice_level": 3,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "blackened chicken",
+    "chicken caesar",
+    "blackened seasoning",
+    "caesar salad",
+    "grilled chicken salad",
+    "anchovy dressing",
+    "parmesan",
+    "romaine lettuce",
+    "lemon caesar",
+    "croutons",
+    "smoky spice rub",
+    "weeknight dinner",
+    "low-carb caesar",
+    "protein salad",
+    "quick dinner",
+    "restaurant-style salad",
+    "garlic dressing",
+    "olive oil",
+    "pan-seared chicken",
+    "crispy crust"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim to even thickness or butterfly if thick"
+      },
+      {
+        "display_name": "olive oil (for chicken and dressing)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "divide between chicken sear and dressing"
+      },
+      {
+        "display_name": "unsalted butter (for searing and croutons)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": null,
+        "optional": false,
+        "notes": "melted, divided"
+      },
+      {
+        "display_name": "paprika (preferably smoked)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "onion powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cayenne pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust for heat preference"
+      },
+      {
+        "display_name": "coarse salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus more to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "romaine lettuce, hearts",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "washed and torn into bite-sized pieces"
+      },
+      {
+        "display_name": "parmesan cheese, grated",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a little for garnish"
+      },
+      {
+        "display_name": "anchovy fillets in oil",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped or mashed"
+      },
+      {
+        "display_name": "mayonnaise (base for dressing)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 225,
+        "ml": 240,
+        "optional": false,
+        "notes": "use full-fat for creamier texture"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lemon"
+      },
+      {
+        "display_name": "Worcestershire sauce",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves (minced, for dressing)",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "finely minced or mashed to a paste"
+      },
+      {
+        "display_name": "day-old bread (for croutons), cut into 1/2-inch cubes",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 160,
+        "ml": null,
+        "optional": false,
+        "notes": "use sourdough or baguette"
+      },
+      {
+        "display_name": "extra virgin olive oil (for croutons)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt (for croutons and salad)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning croutons"
+      },
+      {
+        "display_name": "fresh lemon wedges (for serving)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare blackening spice by combining paprika, smoked paprika if available, onion powder, garlic powder, dried thyme, dried oregano, ground cumin, cayenne pepper, salt, and black pepper in a small bowl; mix well.",
+        "time_min": 3
+      },
+      {
+        "step_no": 2,
+        "text": "Pat chicken dry with paper towels and, if uneven, butterfly or pound to an even thickness; brush both sides lightly with olive oil to help spice adhere.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Generously coat both sides of each chicken breast with the blackening spice, pressing the rub into the meat to form an even layer.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Heat a large heavy skillet (cast-iron preferred) over medium-high heat until very hot; add 1 tablespoon olive oil and 1 tablespoon butter and let the butter foam.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Sear the chicken breasts without moving them for 4-5 minutes per side until a dark crust forms and internal temperature reaches 165°F (74°C). Reduce heat slightly if crust is charring too quickly. Transfer to a cutting board and rest 5 minutes.",
+        "time_min": 14
+      },
+      {
+        "step_no": 6,
+        "text": "While chicken cooks, make croutons: toss bread cubes with melted butter and a drizzle of olive oil, season with a pinch of salt, then spread on a sheet pan and toast in a 400°F (205°C) oven or skillet until golden and crisp, about 6-8 minutes, turning once.",
+        "time_min": 8
+      },
+      {
+        "step_no": 7,
+        "text": "Make Caesar dressing by combining mayonnaise, finely chopped anchovy fillets, minced garlic, lemon juice, Worcestershire sauce, grated parmesan, and a splash of olive oil; whisk until smooth and taste for seasoning, adjusting salt, lemon, or anchovy as needed.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Tear romaine into a large bowl, add most of the dressing and toss to coat evenly; reserve a little dressing for serving. Add croutons and most of the grated parmesan and toss gently.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Slice rested blackened chicken on the diagonal and arrange over tossed romaine; finish with remaining parmesan, a squeeze of lemon if desired, and additional cracked black pepper. Serve immediately.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

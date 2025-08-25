@@ -1,0 +1,320 @@
+{
+  "slug": "green-goddess-chicken-cobb",
+  "title": "Green Goddess Chicken Cobb",
+  "description": "A vibrant take on the classic Cobb salad featuring herbaceous green goddess dressing, grilled chicken breast, crisp greens, avocado and tangy feta. Bright, creamy, and crunchy textures make this a satisfying lunch or dinner that's easy to scale.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "low-carb",
+    "mediterranean"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "romaine",
+    "mixed greens",
+    "avocado",
+    "egg",
+    "bacon",
+    "feta",
+    "green goddess dressing",
+    "lemon",
+    "olive oil",
+    "chives",
+    "parsley",
+    "tarragon",
+    "garlic",
+    "shallot",
+    "capers"
+  ],
+  "spice_level": 1,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg"
+  ],
+  "search_keywords": [
+    "green goddess",
+    "cobb salad",
+    "grilled chicken",
+    "avocado salad",
+    "low-carb lunch",
+    "mediterranean",
+    "herb dressing",
+    "feta cheese",
+    "hard boiled eggs",
+    "crisp bacon",
+    "lemon vinaigrette",
+    "summer salad",
+    "weeknight dinner",
+    "meal prep",
+    "gluten free",
+    "green dressing",
+    "chives",
+    "parsley",
+    "tarragon",
+    "healthy"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning chicken"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning chicken"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided: for chicken and dressing"
+      },
+      {
+        "display_name": "bacon strips, cooked crisp and chopped",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "large eggs (for hard-boiled)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "see instructions for cooking"
+      },
+      {
+        "display_name": "romaine hearts, chopped",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 medium hearts"
+      },
+      {
+        "display_name": "mixed baby greens",
+        "quantity": 4,
+        "unit": "oz",
+        "grams": 113,
+        "ml": null,
+        "optional": false,
+        "notes": "optional mix of spinach and arugula included"
+      },
+      {
+        "display_name": "avocados, ripe",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and sliced"
+      },
+      {
+        "display_name": "crumbled feta cheese",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "or goat cheese"
+      },
+      {
+        "display_name": "lemon juice, fresh",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lemon"
+      },
+      {
+        "display_name": "shallot, peeled and chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "for dressing"
+      },
+      {
+        "display_name": "garlic cloves, peeled",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for dressing"
+      },
+      {
+        "display_name": "mayonnaise (full-fat)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 115,
+        "ml": 120,
+        "optional": false,
+        "notes": "base for green goddess"
+      },
+      {
+        "display_name": "plain Greek yogurt",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 60,
+        "ml": 60,
+        "optional": false,
+        "notes": "adds creaminess"
+      },
+      {
+        "display_name": "fresh parsley, packed",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 30,
+        "ml": 120,
+        "optional": false,
+        "notes": "stems removed"
+      },
+      {
+        "display_name": "fresh chives, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh tarragon leaves",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": 30,
+        "optional": false,
+        "notes": "or 1 tsp dried tarragon"
+      },
+      {
+        "display_name": "capers, drained",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds briny pop"
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": "for dressing balance"
+      },
+      {
+        "display_name": "black pepper (for dressing)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt (for dressing)",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional garnish for chicken"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring eggs to room temperature, place in a medium pot, cover with cold water by 1 inch; bring to a gentle boil over medium-high heat, then turn off heat and cover. Let sit 10 minutes for hard-boiled eggs.",
+        "time_min": 12
+      },
+      {
+        "step_no": 2,
+        "text": "While eggs cook, pat chicken dry and season both sides with salt and pepper. Preheat a grill pan or outdoor grill to medium-high and brush with a small amount of oil.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Grill chicken breasts 5-6 minutes per side until internal temperature reaches 165°F (74°C); rest on a cutting board for 5 minutes before slicing thinly against the grain.",
+        "time_min": 15
+      },
+      {
+        "step_no": 4,
+        "text": "Make the green goddess dressing by combining mayonnaise, Greek yogurt, chopped parsley, chives, tarragon, shallot, garlic, capers, lemon juice, red wine vinegar, olive oil, salt and pepper in a blender; puree until smooth and adjust seasoning.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Drain and peel the eggs, then quarter or slice. Toss chopped romaine and mixed greens in a large bowl with a light drizzle of olive oil and a pinch of salt to dress the base lightly.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Assemble the Cobb by arranging greens on a platter or four plates. Create rows or sections of sliced grilled chicken, avocado slices, chopped bacon, quartered eggs, and crumbled feta. Spoon or drizzle the green goddess dressing over the salad, or serve on the side.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Finish with an optional sprinkle of smoked paprika and additional chopped chives, then serve immediately.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

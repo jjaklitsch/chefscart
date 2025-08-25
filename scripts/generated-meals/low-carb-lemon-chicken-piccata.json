@@ -1,0 +1,246 @@
+{
+  "slug": "low-carb-lemon-chicken-piccata",
+  "title": "Low-Carb Lemon-Chicken Piccata",
+  "description": "A bright, tangy low-carb take on classic chicken piccata featuring pan-seared chicken cutlets finished in a lemon-caper butter sauce. Quick to make, high in protein, and suitable for low-carb and keto meal plans without sacrificing restaurant-style flavor.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "low-carb",
+    "keto"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "lemon",
+    "capers",
+    "butter",
+    "olive oil",
+    "garlic",
+    "parsley",
+    "almond flour",
+    "parmesan",
+    "chicken broth",
+    "cream",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 28,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "grain",
+    "soy"
+  ],
+  "search_keywords": [
+    "low-carb",
+    "keto",
+    "lemon chicken",
+    "piccata",
+    "chicken cutlets",
+    "almond flour dredge",
+    "capers",
+    "garlic butter sauce",
+    "quick dinner",
+    "weeknight meal",
+    "high protein",
+    "gluten-free alternative",
+    "mediterranean",
+    "pan-seared",
+    "lemon butter",
+    "cream optional",
+    "parsley garnish",
+    "light sauce",
+    "low-carb dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts (halved horizontally into cutlets)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim and halve each breast to form 6-8 thin cutlets (about 4 cutlets per lb depending on size)"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "eggs (light egg wash)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "beat until homogenous"
+      },
+      {
+        "display_name": "almond flour (for dredging)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 24,
+        "ml": null,
+        "optional": false,
+        "notes": "finely ground blanched almond flour for low-carb crust"
+      },
+      {
+        "display_name": "grated parmesan cheese (mixed into dredge)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly grated for best texture"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for pan-searing"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": null,
+        "optional": false,
+        "notes": "divided (use salted if preferred and reduce added salt)"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1 large lemon"
+      },
+      {
+        "display_name": "chicken broth (low-sodium)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "or use dry white wine for a more classic flavor (same volume)"
+      },
+      {
+        "display_name": "capers (rinse and drain)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "drain to avoid excess brine"
+      },
+      {
+        "display_name": "heavy cream (optional, for a slightly richer sauce)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": true,
+        "notes": "omit for strict keto/low-calorie version or to keep brighter lemon flavor"
+      },
+      {
+        "display_name": "fresh flat-leaf parsley (chopped)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "lemon slices (for serving)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "thin slices or wedges"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 28,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare chicken: pat cutlets dry and season both sides with salt and pepper, set a shallow bowl with beaten eggs and another with almond flour mixed with grated parmesan for dredging.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Dredge each cutlet first in the egg wash, letting excess drip off, then press into the almond flour-parmesan mixture to coat evenly; place on a tray while heating the pan.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large skillet over medium-high heat, add olive oil and 1 tablespoon butter. When butter foams, add chicken cutlets in a single layer without crowding and sear until golden brown, about 3 minutes per side depending on thickness; work in batches if necessary. Transfer cooked cutlets to a warm plate and tent with foil.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Reduce heat to medium, add remaining butter to the skillet, then sauté minced garlic briefly until fragrant but not browned (about 30 seconds).",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Deglaze the pan with chicken broth (or white wine) scraping up browned bits, then add lemon juice and drained capers; simmer and reduce the sauce for 2–3 minutes to concentrate flavor.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "If using, stir in heavy cream and simmer 1 minute to bind the sauce; return chicken and any accumulated juices to the skillet and spoon sauce over to rewarm and finish cooking through for 1–2 minutes until internal temperature reaches 165°F (74°C).",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Remove from heat, stir in chopped parsley, adjust seasoning to taste, and serve chicken topped with pan sauce and lemon slices.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

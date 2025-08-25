@@ -1,0 +1,227 @@
+{
+  "slug": "mushroom-pecorino-soft-scramble",
+  "title": "Mushroom & Pecorino Soft Scramble",
+  "description": "A silky, creamy soft-scrambled egg finished with nutty pecorino and sautéed mushrooms. Quick to make, gentle heat preserves a custardy texture while umami mushrooms and bright herbs lift the dish.",
+  "courses": [
+    "breakfast",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "eggs",
+  "ingredient_tags": [
+    "eggs",
+    "mushrooms",
+    "pecorino",
+    "butter",
+    "olive oil",
+    "shallot",
+    "garlic",
+    "chives",
+    "cream",
+    "salt",
+    "pepper",
+    "bread",
+    "lemon"
+  ],
+  "spice_level": 1,
+  "time_total_min": 18,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 4,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "soft scramble",
+    "mushroom scramble",
+    "pecorino eggs",
+    "creamy scrambled eggs",
+    "italian breakfast",
+    "brunch recipe",
+    "custardy eggs",
+    "sautéed mushrooms",
+    "chives",
+    "shallot",
+    "garlic",
+    "quick breakfast",
+    "vegetarian breakfast",
+    "comfort food",
+    "eggs and cheese",
+    "breakfast on toast",
+    "easy brunch",
+    "one skillet",
+    "low spice",
+    "simple ingredients"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "large eggs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "pecorino romano, finely grated",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a little for finishing"
+      },
+      {
+        "display_name": "mixed mushrooms (cremini + shiitake), sliced",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "sliced about 5mm thick"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "divided (see steps)"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for mushroom sauté"
+      },
+      {
+        "display_name": "shallot, finely minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic clove, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "heavy cream (or whole milk)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "for extra creaminess, optional"
+      },
+      {
+        "display_name": "fresh chives, finely snipped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for garnish"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 2.5,
+        "optional": true,
+        "notes": "optional brightening splash for mushrooms"
+      },
+      {
+        "display_name": "fine sea salt",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 4.5,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus more to finish"
+      },
+      {
+        "display_name": "thick-sliced bread or toast, for serving",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for plating"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 18,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: clean and slice mushrooms, mince shallot and garlic, snip chives, grate pecorino, and bring eggs to room temperature. Crack eggs into a mixing bowl but do not add salt yet.",
+        "time_min": 4
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a nonstick skillet over medium-high heat with olive oil. Add sliced mushrooms and a pinch of salt and sauté, stirring occasionally, until they release moisture and begin to brown, about 5–6 minutes. During the last minute add shallot and garlic and cook until fragrant. Finish with a small squeeze of lemon if using, then transfer mushrooms to a bowl and keep warm.",
+        "time_min": 7
+      },
+      {
+        "step_no": 3,
+        "text": "Whisk eggs gently in the bowl until mixture is uniform; stir in cream if using. In a separate small bowl mix the grated pecorino with a light grind of black pepper so cheese is ready to fold.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Reduce heat to low. In a clean medium nonstick skillet melt half the butter over low heat until foaming but not browned. Pour in the eggs and let sit undisturbed for 10–15 seconds until edges begin to set.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Using a silicone spatula, gently push set edges toward the center and tilt the pan so uncooked egg flows to the edges. Continue gentle folding and moving the eggs over low heat until soft curds form but eggs remain glossy and slightly runny — about 1.5–2 minutes total cooking time for the eggs.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Remove pan from heat while eggs are still slightly underdone, add remaining butter and most of the pecorino, and fold gently to finish cooking in residual heat until custardy. Taste and season with remaining salt and pepper.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Fold the warm sautéed mushrooms into the soft scramble or spoon them on top. Garnish with chives and remaining pecorino. Serve immediately on toasted bread or plates.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

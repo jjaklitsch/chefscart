@@ -1,0 +1,297 @@
+{
+  "slug": "paleo-bbq-pulled-chicken-bowl",
+  "title": "Paleo BBQ Pulled Chicken Bowl",
+  "description": "A bright, grain-free bowl featuring tender slow-cooked pulled chicken tossed in a tangy paleo-friendly BBQ sauce, served over roasted sweet potato and crisp cabbage with avocado crema. Balanced savory, smoky, and fresh citrus notes make this bowl hearty yet light.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "paleo",
+    "whole30",
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "sweet potato",
+    "cabbage",
+    "avocado",
+    "tomato",
+    "onion",
+    "garlic",
+    "apple cider vinegar",
+    "olive oil",
+    "maple syrup",
+    "smoked paprika",
+    "cumin",
+    "lime",
+    "cilantro",
+    "salt",
+    "black pepper",
+    "chili flakes"
+  ],
+  "spice_level": 2,
+  "time_total_min": 190,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "paleo",
+    "bbq",
+    "pulled chicken",
+    "bowl",
+    "whole30",
+    "low-carb option",
+    "sweet potato",
+    "avocado crema",
+    "smoky",
+    "slow-cooked",
+    "rotisserie style",
+    "meal prep",
+    "gluten-free",
+    "grain-free",
+    "easy dinner",
+    "cilantro lime",
+    "apple cider vinegar",
+    "maple bbq",
+    "cabbage slaw",
+    "healthy comfort food"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs",
+        "quantity": 1.5,
+        "unit": "lb",
+        "grams": 681,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "olive oil (for searing and roasting)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "medium sweet potatoes, peeled and cubed",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "about 300g each"
+      },
+      {
+        "display_name": "red cabbage, thinly sliced",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "packed cups"
+      },
+      {
+        "display_name": "red onion, thinly sliced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "paleo BBQ sauce (homemade)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "see separate ingredients below"
+      },
+      {
+        "display_name": "tomato paste (for BBQ sauce)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 54,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "apple cider vinegar (for BBQ sauce)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "maple syrup (pure, for BBQ sauce)",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": 31,
+        "ml": 22.5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "chili flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to heat preference"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1.25,
+        "unit": "tsp",
+        "grams": 7.5,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "avocado, ripe",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "for crema"
+      },
+      {
+        "display_name": "lime, juiced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 tbsp each"
+      },
+      {
+        "display_name": "water (to thin crema or sauce)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish and crema"
+      },
+      {
+        "display_name": "extra lime wedges",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 190,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Toss cubed sweet potatoes with 1 tablespoon olive oil, 0.5 teaspoon salt, and 0.25 teaspoon black pepper on a rimmed baking sheet and roast until tender and edges caramelize.",
+        "time_min": 30
+      },
+      {
+        "step_no": 2,
+        "text": "While potatoes roast, season chicken thighs with 0.5 teaspoon salt, 0.25 teaspoon black pepper, smoked paprika and cumin. Heat 1 tablespoon olive oil in a heavy skillet over medium-high heat and sear chicken 2-3 minutes per side until golden.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Transfer seared chicken to a small slow cooker or covered ovenproof pot. In a bowl combine tomato paste, apple cider vinegar, maple syrup, remaining olive oil, minced garlic, chili flakes, remaining salt, and a splash of water; whisk into a smooth paleo BBQ sauce and pour over chicken.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Cook chicken in slow cooker on low for 2 hours (or in oven at 325°F/160°C covered for 60–75 minutes) until internal temperature reaches 165°F and meat is very tender.",
+        "time_min": 120
+      },
+      {
+        "step_no": 5,
+        "text": "Remove chicken and shred with two forks in a bowl; return shredded chicken to sauce and toss to coat. Adjust seasoning with salt, pepper, or a squeeze of lime to taste.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Prepare cabbage slaw by tossing sliced red cabbage and red onion with a pinch of salt, lime juice from one lime, and 1 tablespoon chopped cilantro; let sit to soften slightly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Make avocado crema by blending avocado flesh with lime juice, remaining cilantro, a pinch of salt and optional water to reach a smooth pourable consistency.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble bowls: divide roasted sweet potatoes and cabbage slaw among bowls, top with a generous portion of pulled BBQ chicken, drizzle avocado crema and garnish with extra cilantro and lime wedges.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

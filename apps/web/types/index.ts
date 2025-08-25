@@ -20,6 +20,7 @@ export interface UserPreferences {
   cookingSkillLevel: 'beginner' | 'intermediate' | 'advanced'
   preferredCuisines: string[]
   preferredRetailers?: string[]
+  preferredRetailer?: InstacartRetailer // Selected retailer from available options
   selectedMealTypes?: string[] // Temporary field used during conversation flow
   selectedRecipes?: Recipe[] // Selected recipes from meal cards
   
@@ -60,6 +61,10 @@ export interface UserPreferences {
   manuallyAddedIngredients?: string[]
   skipPhotoUpload?: boolean
   pantryItems?: string[] // Legacy compatibility field
+  
+  // New preference fields
+  spiceTolerance?: string // 1-5 scale as string
+  cookingTimePreference?: string // time_pref_bucket: ≤15, ≤30, ≤45, no_preference
 }
 
 export interface MealType {
@@ -191,6 +196,18 @@ export interface IPAPIResponse {
   message?: string
 }
 
+export interface InstacartRetailer {
+  retailer_key: string
+  name: string
+  retailer_logo_url: string
+}
+
+export interface RetailersResponse {
+  success: boolean
+  retailers: InstacartRetailer[]
+  message: string
+}
+
 export interface InstacartProduct {
   id: string
   name: string
@@ -300,4 +317,19 @@ export interface MealCardGridProps {
   maxSelections?: number
   isLoading?: boolean
   onRequestMore?: () => void
+}
+
+// Meal recommendation types
+export interface MealRecommendationRequest {
+  preferences: UserPreferences
+  limit?: number
+}
+
+export interface MealRecommendationResponse {
+  success: boolean
+  meals: Recipe[]
+  total_count: number
+  message?: string
+  error?: string
+  details?: string
 }

@@ -1,0 +1,328 @@
+{
+  "slug": "birria-quesadilla-dip",
+  "title": "Birria Quesadilla Dip",
+  "description": "Rich, cheesy, and deeply savory birria folded into a gooey quesadilla-style dip: shredded stewed beef in a fragrant ancho-guajillo chili broth combined with melty cheeses and browned tortillas for scooping. Slow-simmered spices and aromatics give this communal dip a complex, smoky, slightly tangy flavor perfect for parties or game day.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "ancho chile",
+    "guajillo chile",
+    "tomato",
+    "onion",
+    "garlic",
+    "bay leaf",
+    "cumin",
+    "oregano",
+    "beef broth",
+    "cheddar",
+    "monterey jack",
+    "cream cheese",
+    "corn tortillas",
+    "lime",
+    "cilantro",
+    "oil",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 3,
+  "time_total_min": 210,
+  "servings_default": 6,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten",
+    "grain"
+  ],
+  "search_keywords": [
+    "birria",
+    "quesadilla",
+    "dip",
+    "cheesy dip",
+    "beef birria",
+    "ancho",
+    "guajillo",
+    "party appetizer",
+    "game day",
+    "melted cheese",
+    "consommé",
+    "slow cooked",
+    "shredded beef",
+    "tortilla chips",
+    "sheet pan",
+    "party dip",
+    "spicy",
+    "smoky",
+    "comfort food",
+    "mexican appetizer"
+  ],
+  "ingredients_json": {
+    "servings": 6,
+    "ingredients": [
+      {
+        "display_name": "beef chuck roast, trimmed and cut into 2-inch pieces",
+        "quantity": 2,
+        "unit": "lb",
+        "grams": 908,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into large chunks for even braising"
+      },
+      {
+        "display_name": "dried ancho chiles, stems and seeds removed",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 24,
+        "ml": null,
+        "optional": false,
+        "notes": "toast briefly before rehydrating"
+      },
+      {
+        "display_name": "dried guajillo chiles, stems and seeds removed",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "toast briefly before rehydrating"
+      },
+      {
+        "display_name": "roma tomatoes, halved",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 260,
+        "ml": null,
+        "optional": false,
+        "notes": "char for deeper flavor"
+      },
+      {
+        "display_name": "white onion, quartered",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "use half for braise, reserve half for topping if desired"
+      },
+      {
+        "display_name": "garlic cloves, peeled",
+        "quantity": 6,
+        "unit": "clove",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "roast or sauté briefly"
+      },
+      {
+        "display_name": "beef broth (low-sodium)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": null,
+        "ml": 960,
+        "optional": false,
+        "notes": "hot when adding to rehydrated chiles"
+      },
+      {
+        "display_name": "white vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adds brightness to the braising liquid"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "prefer Mexican oregano if available"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "toasted for extra aroma if desired"
+      },
+      {
+        "display_name": "bay leaves",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "remove before shredding"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for searing beef"
+      },
+      {
+        "display_name": "cream cheese, softened",
+        "quantity": 8,
+        "unit": "oz",
+        "grams": 227,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature for easy mixing"
+      },
+      {
+        "display_name": "monterey jack cheese, shredded",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 113,
+        "ml": null,
+        "optional": false,
+        "notes": "use freshly shredded for best melt"
+      },
+      {
+        "display_name": "sharp cheddar cheese, shredded",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 113,
+        "ml": null,
+        "optional": false,
+        "notes": "prefer aged cheddar for flavor"
+      },
+      {
+        "display_name": "lime, juiced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 44,
+        "ml": 30,
+        "optional": false,
+        "notes": "for finishing and dipping"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "corn tortillas, small (6-inch)",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into wedges for browning and scooping"
+      },
+      {
+        "display_name": "butter or oil for pan-frying tortillas",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for crisping tortilla wedges"
+      },
+      {
+        "display_name": "consommé from braise (reserved)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "use to thin dip and serve for dunking"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 210,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Toast dried chiles in a dry skillet over medium heat for 20–30 seconds per side until aromatic but not burned; then remove stems and seeds and transfer to a bowl of hot water to rehydrate for 15 minutes.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "Meanwhile, pat beef dry and season with salt and pepper; heat oil in a heavy Dutch oven over medium-high heat and brown beef pieces on all sides in batches to develop color, about 3 minutes per side per batch.",
+        "time_min": 12
+      },
+      {
+        "step_no": 3,
+        "text": "Char tomatoes and onion halves on a hot skillet or under a broiler until blackened in spots, about 6–8 minutes total; peel if desired and set aside.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Drain rehydrated chiles, reserve soaking liquid if desired, and blend chiles with charred tomatoes, onion, garlic, vinegar, oregano, cumin and a cup of hot beef broth until very smooth to create the birria sauce.",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "Return browned beef to the Dutch oven, add blended sauce, remaining beef broth, bay leaves and any reserved chile soaking liquid as needed to mostly cover meat; bring to a simmer, then reduce heat to low, cover and braise until beef is very tender and shreds easily, about 2 hours.",
+        "time_min": 120
+      },
+      {
+        "step_no": 6,
+        "text": "When beef is tender, remove meat and shred with forks, discard bay leaves; skim fat from braising liquid and reserve 1 cup of consommé for serving; fold shredded beef back into remaining sauce and adjust seasoning with salt and lime juice.",
+        "time_min": 8
+      },
+      {
+        "step_no": 7,
+        "text": "Preheat oven to 425°F (220°C). In a medium bowl, beat softened cream cheese until smooth, then stir in shredded monterey jack and cheddar and fold in a portion of the shredded birria to achieve a thick, scoopable mixture.",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "Spoon dip into an oven-safe skillet or shallow casserole, smooth top and sprinkle with remaining cheese; bake until cheese is bubbly and golden at edges, about 10–12 minutes.",
+        "time_min": 12
+      },
+      {
+        "step_no": 9,
+        "text": "While dip bakes, brush tortilla wedges with butter or oil and pan-fry in a skillet over medium heat until crisp and golden, about 1–2 minutes per side; keep warm.",
+        "time_min": 12
+      },
+      {
+        "step_no": 10,
+        "text": "Remove dip from oven, garnish with chopped cilantro and a squeeze of lime; serve hot with reserved consommé for dipping and crisped tortilla wedges for scooping.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

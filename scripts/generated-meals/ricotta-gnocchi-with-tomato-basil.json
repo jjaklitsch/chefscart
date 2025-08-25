@@ -1,0 +1,233 @@
+{
+  "slug": "ricotta-gnocchi-with-tomato-basil",
+  "title": "Ricotta Gnocchi with Tomato Basil",
+  "description": "Light, pillowy ricotta gnocchi tossed in a bright fresh tomato-basil sauce with garlic and olive oil. Quick pan-seared finish gives the gnocchi a tender interior and lightly crisp edges for a comforting Italian-style weeknight meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "ricotta",
+    "flour",
+    "egg",
+    "tomato",
+    "basil",
+    "garlic",
+    "olive oil",
+    "parmesan",
+    "salt",
+    "pepper",
+    "lemon",
+    "butter"
+  ],
+  "spice_level": 1,
+  "time_total_min": 61,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten",
+    "grain"
+  ],
+  "search_keywords": [
+    "ricotta gnocchi",
+    "homemade gnocchi",
+    "tomato basil sauce",
+    "italian vegetarian",
+    "pan seared gnocchi",
+    "fresh basil",
+    "easy weeknight dinner",
+    "light gnocchi",
+    "pillowy gnocchi",
+    "ricotta pasta",
+    "garlic tomato",
+    "parmesan finish",
+    "olive oil",
+    "quick gnocchi",
+    "comfort food",
+    "spring dinner",
+    "summer tomatoes",
+    "fresh herbs",
+    "simple sauce",
+    "cheese gnocchi"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "whole-milk ricotta",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "well drained (place in fine sieve or cheesecloth for 20–30 minutes beforehand)"
+      },
+      {
+        "display_name": "all-purpose flour, plus extra for dusting",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "start with measured amount, add more if dough is sticky"
+      },
+      {
+        "display_name": "large egg",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "beaten"
+      },
+      {
+        "display_name": "grated parmesan (or pecorino), plus extra for serving",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided (for dough and pasta water)"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "ripe tomatoes (roma or plum), diced",
+        "quantity": 500,
+        "unit": "g",
+        "grams": 500,
+        "ml": null,
+        "optional": false,
+        "notes": "or 2 cups cherry tomatoes halved"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided (sauce and finishing)"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced fine"
+      },
+      {
+        "display_name": "fresh basil leaves, torn",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for garnish"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for richer sauce"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, brightens flavor"
+      },
+      {
+        "display_name": "coarse salt for pasta water",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "for 4-6 liters of water"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 61,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Drain ricotta thoroughly: place ricotta in a fine-mesh sieve lined with cheesecloth over a bowl and let drain for 20–30 minutes (or press gently) until much of the liquid is removed.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "Meanwhile, make the tomato-basil sauce: heat 2 tbsp olive oil in a sauté pan over medium heat, add minced garlic and cook until fragrant but not browned, about 30 seconds to 1 minute.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add diced tomatoes and 1/2 tsp salt to the pan, bring to a gentle simmer, and cook, stirring occasionally, until tomatoes break down and sauce thickens slightly, about 10 minutes. Stir in torn basil and optional butter and lemon zest near the end; keep warm off heat.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Combine gnocchi dough: transfer drained ricotta to a large bowl, add beaten egg, grated parmesan, remaining salt and pepper, then sprinkle in about half the flour and gently fold to combine. Add remaining flour a little at a time until a soft, slightly sticky dough forms—do not overwork.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Shape gnocchi: dust work surface with flour, divide dough into portions, roll each into a 1-inch diameter rope, then cut into 1-inch pieces. If desired, roll pieces over a fork or gnocchi board to create ridges; lightly dust with flour to prevent sticking.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Bring a large pot of salted water to a rolling boil. Cook gnocchi in batches: drop pieces into boiling water and cook until they float and are tender, about 2–3 minutes per batch. Remove with a slotted spoon into a colander and reserve.",
+        "time_min": 8
+      },
+      {
+        "step_no": 7,
+        "text": "Finish gnocchi in the pan: heat remaining 1 tbsp olive oil in a large sauté pan over medium-high heat. Add cooked gnocchi in a single layer and sear until lightly golden on one side, 2–3 minutes, then toss gently to brown other sides, about 1–2 more minutes.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Toss gnocchi with warm tomato-basil sauce in the pan to coat, adjust seasoning with salt and pepper, and serve immediately topped with extra grated parmesan and torn basil.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

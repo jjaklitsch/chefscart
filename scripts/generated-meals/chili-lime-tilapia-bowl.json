@@ -1,0 +1,285 @@
+{
+  "slug": "chili-lime-tilapia-bowl",
+  "title": "Chili-Lime Tilapia Bowl",
+  "description": "Bright, zesty chili-lime tilapia fillets served over cilantro-lime rice with black beans, crunchy cabbage slaw and avocado. Quick pan-searing and a tangy dressing deliver fresh Mexican-inspired flavors in a balanced bowl.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "tilapia",
+  "ingredient_tags": [
+    "tilapia",
+    "rice",
+    "black beans",
+    "avocado",
+    "lime",
+    "cabbage",
+    "cilantro",
+    "chili powder",
+    "olive oil",
+    "garlic",
+    "red onion",
+    "corn",
+    "salt",
+    "black pepper",
+    "cumin"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "tilapia",
+    "chili lime",
+    "cilantro lime rice",
+    "black beans",
+    "avocado bowl",
+    "pan seared fish",
+    "mexican inspired",
+    "quick weeknight",
+    "healthy bowl",
+    "low prep",
+    "protein bowl",
+    "fresh slaw",
+    "lime dressing",
+    "garlic",
+    "cumin",
+    "meal prep",
+    "pescatarian",
+    "budget friendly",
+    "light dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "tilapia fillets",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "skinless, about 4 fillets (approx 4 oz / 115 g each)"
+      },
+      {
+        "display_name": "long-grain white rice",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "uncooked"
+      },
+      {
+        "display_name": "water",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 360,
+        "optional": false,
+        "notes": "for cooking rice"
+      },
+      {
+        "display_name": "black beans",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "cooked or canned, drained and rinsed"
+      },
+      {
+        "display_name": "avocado",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "ripe, sliced"
+      },
+      {
+        "display_name": "green cabbage",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly shredded"
+      },
+      {
+        "display_name": "fresh cilantro",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "chopped, packed"
+      },
+      {
+        "display_name": "lime juice",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "about 2 limes"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "divided: cooking and dressing"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "chili powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning fish"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning fish and rice"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for smoky depth"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground, divided"
+      },
+      {
+        "display_name": "red onion",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 55,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly sliced"
+      },
+      {
+        "display_name": "fresh corn kernels",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "fresh or thawed frozen"
+      },
+      {
+        "display_name": "honey or agave",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 7,
+        "ml": 5,
+        "optional": true,
+        "notes": "to balance dressing acidity"
+      },
+      {
+        "display_name": "lime zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "zest of 1 lime, for rice or garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse the rice under cold water and combine with water, a pinch of salt and half the lime zest in a saucepan; bring to a boil, then reduce to low, cover and simmer until tender.",
+        "time_min": 18
+      },
+      {
+        "step_no": 2,
+        "text": "While rice cooks, prepare the chili-lime marinade: mix lime juice, 2 tbsp olive oil, minced garlic, chili powder, cumin, smoked paprika (if using), half the salt and half the pepper in a bowl.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Pat the tilapia fillets dry, brush or toss with the marinade and let sit at room temperature briefly while you prepare the slaw and beans.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Combine shredded cabbage, sliced red onion, chopped cilantro, corn (if using), remaining lime juice, 1 tbsp olive oil, honey (if using), remaining salt and pepper to make the slaw; toss and refrigerate until serving.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Heat a large nonstick or cast-iron skillet over medium-high heat with remaining 1 tbsp olive oil; when shimmering, add tilapia and sear 3-4 minutes per side until opaque and flaky (internal temperature ~145°F/63°C).",
+        "time_min": 8
+      },
+      {
+        "step_no": 6,
+        "text": "Fluff cooked rice with a fork, stir in remaining chopped cilantro and lime zest and adjust seasoning with salt to taste; keep warm.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Warm or re-season black beans briefly in a small pan with a splash of water, a pinch of cumin and salt, just until heated through.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble bowls: spoon cilantro-lime rice into bowls, top with black beans, a tilapia fillet, cabbage slaw and sliced avocado. Drizzle any reserved pan juices or extra lime if desired and serve immediately.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

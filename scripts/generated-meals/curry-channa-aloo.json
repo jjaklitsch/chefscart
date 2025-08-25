@@ -1,0 +1,268 @@
+{
+  "slug": "curry-channa-aloo",
+  "title": "Curry Channa & Aloo",
+  "description": "A hearty Indian-style curry of chickpeas (channa) and potatoes (aloo) simmered in a fragrant tomato-onion gravy with warm spices. Bright lemon and fresh cilantro finish the dish for a comforting, protein-rich vegetarian meal served with rice or flatbread.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "chickpeas",
+    "potatoes",
+    "tomato",
+    "onion",
+    "garlic",
+    "ginger",
+    "cilantro",
+    "vegetable oil",
+    "cumin",
+    "coriander",
+    "turmeric",
+    "garam masala",
+    "green chili",
+    "lemon",
+    "salt",
+    "water"
+  ],
+  "spice_level": 3,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "chickpea curry",
+    "chana aloo",
+    "potato curry",
+    "vegetarian curry",
+    "plant-forward",
+    "indian comfort food",
+    "tomato gravy",
+    "garam masala",
+    "weeknight dinner",
+    "meal prep",
+    "cumin coriander",
+    "garlic ginger",
+    "cilantro",
+    "lemon",
+    "easy curry",
+    "stove top",
+    "protein rich",
+    "veggie main",
+    "serve with rice",
+    "flatbread"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "canned chickpeas (drained and rinsed)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "drain and rinse well; about two 15-oz cans"
+      },
+      {
+        "display_name": "medium potatoes (peeled and diced 1/2-inch)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "about 600 g total"
+      },
+      {
+        "display_name": "yellow onion (finely chopped)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato puree or blended fresh tomatoes",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "or 2 medium tomatoes blended"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger (minced)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1 tbsp finely minced"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "turmeric powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garam masala",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "add near end of cooking"
+      },
+      {
+        "display_name": "red chili powder (adjust to taste)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": true,
+        "notes": "optional or use less for milder spice"
+      },
+      {
+        "display_name": "green chili (slit, optional)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "slit lengthwise for mild heat"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "water",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "for simmering; add more for thinner gravy"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lemon"
+      },
+      {
+        "display_name": "fresh cilantro (chopped)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: peel and dice potatoes, drain and rinse chickpeas, chop onion, mince garlic and ginger, slit the chili if using, and measure spices.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil in a large sauté pan or pot over medium heat until shimmering. Add chopped onion and sauté, stirring occasionally, until golden and softened.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic, ginger and slit green chili; cook while stirring until aromatic, about until raw smell dissipates.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in ground cumin, ground coriander and turmeric (and red chili powder if using). Cook the spices with the aromatics for about a minute to bloom their flavors.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add the tomato puree and salt; reduce heat to medium-low and simmer, stirring occasionally, until the raw tomato taste mellows and oil slightly separates from the gravy.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Add diced potatoes, drained chickpeas and water; bring to a gentle boil, then reduce heat to a simmer and cover partially, cooking until potatoes are fork-tender and flavors meld.",
+        "time_min": 15
+      },
+      {
+        "step_no": 7,
+        "text": "Uncover, stir in garam masala and lemon juice, adjust salt and consistency (simmer uncovered to thicken if needed). Cook 2–3 minutes more to incorporate spices.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Turn off heat and garnish with chopped cilantro. Let the curry rest for a couple of minutes, then serve hot with rice or flatbread.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

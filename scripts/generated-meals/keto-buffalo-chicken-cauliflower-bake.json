@@ -1,0 +1,253 @@
+{
+  "slug": "keto-buffalo-chicken-cauliflower-bake",
+  "title": "Keto Buffalo Chicken Cauliflower Bake",
+  "description": "A creamy, spicy casserole combining shredded chicken, tender roasted cauliflower and tangy buffalo sauce, topped with melty cheddar and cooling ranch. Baked until bubbly for a low-carb, high-flavor weeknight dinner or meal-prep option.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "cauliflower",
+    "cheddar",
+    "cream cheese",
+    "heavy cream",
+    "butter",
+    "garlic",
+    "buffalo sauce",
+    "ranch",
+    "green onions",
+    "parsley",
+    "salt",
+    "black pepper",
+    "paprika"
+  ],
+  "spice_level": 3,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "keto",
+    "low-carb",
+    "buffalo chicken",
+    "cauliflower",
+    "casserole",
+    "bake",
+    "cheddar",
+    "cream cheese",
+    "weeknight dinner",
+    "meal prep",
+    "spicy",
+    "ranch",
+    "comfort food",
+    "gluten-free",
+    "high-protein",
+    "easy",
+    "oven-baked",
+    "game-day",
+    "family-friendly"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts, cooked and shredded",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "poached or rotisserie, shredded"
+      },
+      {
+        "display_name": "cauliflower florets (trimmed)",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into bite-size florets"
+      },
+      {
+        "display_name": "buffalo sauce (hot sauce mixed with butter)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "use 2:1 hot sauce to melted butter ratio if making from hot sauce"
+      },
+      {
+        "display_name": "cream cheese, softened",
+        "quantity": 4,
+        "unit": "oz",
+        "grams": 113,
+        "ml": null,
+        "optional": false,
+        "notes": "full-fat"
+      },
+      {
+        "display_name": "heavy cream",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "or use heavy whipping cream"
+      },
+      {
+        "display_name": "sharp cheddar cheese, shredded",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a small amount for topping"
+      },
+      {
+        "display_name": "parmesan cheese, grated",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 5,
+        "ml": 15,
+        "optional": false,
+        "notes": "for added savory depth"
+      },
+      {
+        "display_name": "butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "unsalted, for sauce and sauté"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "fresh"
+      },
+      {
+        "display_name": "ranch dressing (thick, keto-friendly)",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 60,
+        "ml": 60,
+        "optional": false,
+        "notes": "for cooling contrast; full-fat"
+      },
+      {
+        "display_name": "green onions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": 15,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "adds smokiness"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for roasting cauliflower"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 200°C (400°F). Line a baking sheet with foil or parchment and toss the cauliflower florets with olive oil, half the salt and half the pepper; spread in a single layer.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Roast the cauliflower in the preheated oven until tender and lightly browned, tossing once halfway through.",
+        "time_min": 20
+      },
+      {
+        "step_no": 3,
+        "text": "While cauliflower roasts, warm butter in a medium skillet over medium heat, sauté the minced garlic until fragrant, then add cream cheese and heavy cream; whisk until smooth and slightly thickened.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Stir buffalo sauce, smoked paprika, remaining salt and pepper into the cream mixture, then fold in shredded chicken and most of the cheddar and parmesan until evenly coated.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Combine the roasted cauliflower with the buffalo chicken mixture in a mixing bowl (or directly in a baking dish) and transfer to a 9x13-inch (or similar) baking dish, smoothing the top.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Top the casserole with the reserved cheddar and bake in the oven until the cheese is melted and the bake is bubbling around the edges.",
+        "time_min": 12
+      },
+      {
+        "step_no": 7,
+        "text": "Remove from oven and let rest for 5 minutes, then drizzle or dollop ranch dressing over the top and garnish with sliced green onions and chopped parsley before serving.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

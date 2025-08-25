@@ -1,0 +1,243 @@
+{
+  "slug": "pesto-shrimp-supergreens-bowl",
+  "title": "Pesto Shrimp Supergreens Bowl",
+  "description": "A bright, fast bowl featuring garlicky basil pesto–coated shrimp served over a mix of supergreens, quinoa, and roasted cherry tomatoes. Herbaceous, slightly nutty, and refreshing with a light lemon finish—ready in about 30 minutes for a healthy weeknight lunch or dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "shrimp",
+  "ingredient_tags": [
+    "shrimp",
+    "quinoa",
+    "basil",
+    "spinach",
+    "kale",
+    "arugula",
+    "pesto",
+    "parmesan",
+    "lemon",
+    "cherry tomatoes",
+    "olive oil",
+    "pine nuts",
+    "garlic",
+    "salt",
+    "pepper",
+    "red pepper flakes"
+  ],
+  "spice_level": 2,
+  "time_total_min": 38,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "dairy"
+  ],
+  "search_keywords": [
+    "pesto shrimp bowl",
+    "supergreens bowl",
+    "quinoa bowl",
+    "basil pesto",
+    "garlic shrimp",
+    "quick dinner",
+    "healthy lunch",
+    "mediterranean",
+    "pescatarian",
+    "weeknight meal",
+    "grilled shrimp",
+    "roasted tomatoes",
+    "leafy greens",
+    "parmesan pesto",
+    "pine nuts",
+    "lemony dressing",
+    "low prep",
+    "high protein",
+    "meal bowl",
+    "30 minute meal"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "raw large shrimp, peeled and deveined (16/20 count)",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "tails removed or left on per preference; pat dry"
+      },
+      {
+        "display_name": "quinoa, rinsed",
+        "quantity": 3,
+        "unit": "oz",
+        "grams": 85,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/3 cup dry"
+      },
+      {
+        "display_name": "water for quinoa",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "or low-sodium vegetable broth"
+      },
+      {
+        "display_name": "mixed supergreens (spinach, kale, arugula), torn",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "roughly 40g per cup"
+      },
+      {
+        "display_name": "cherry tomatoes, halved",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 150g"
+      },
+      {
+        "display_name": "store-bought or homemade basil pesto",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 60,
+        "ml": 60,
+        "optional": false,
+        "notes": "reserve 1 tbsp for finishing"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for roasting and cooking"
+      },
+      {
+        "display_name": "parmesan cheese, finely grated",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "for pesto and garnish"
+      },
+      {
+        "display_name": "pine nuts, lightly toasted",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for extra crunch; can substitute walnuts"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for shrimp and pesto flavor boost"
+      },
+      {
+        "display_name": "lemon, zested and juiced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "use juice for dressing and zest for brightness"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for mild heat"
+      },
+      {
+        "display_name": "water or extra virgin olive oil for thinning pesto (optional)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "to loosen pesto if too thick"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 38,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Toss halved cherry tomatoes with 1 tbsp olive oil, a pinch of salt and pepper on a rimmed baking sheet; roast until blistered, about 10 minutes.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Meanwhile, bring water to a boil in a small saucepan; add rinsed quinoa, reduce to a simmer, cover and cook until water is absorbed and quinoa is tender, about 12 minutes. Remove from heat and let stand covered 3 minutes, then fluff with a fork.",
+        "time_min": 15
+      },
+      {
+        "step_no": 3,
+        "text": "While quinoa cooks, toss shrimp with remaining 1 tbsp olive oil, minced garlic, 3 tbsp pesto, 1/2 tsp salt, 1/4 tsp black pepper and optional red pepper flakes; let marinate briefly while pan heats.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Heat a large skillet over medium-high heat. Add shrimp in a single layer and cook without moving until edges turn opaque, about 1.5 minutes, then flip and cook until just cooked through and opaque, about another 1.5–2 minutes. Remove from heat and stir in reserved 1 tbsp pesto and lemon juice.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Assemble bowls by dividing quinoa between bowls, topping with mixed supergreens, roasted cherry tomatoes, and pesto-coated shrimp. Drizzle any pan juices over bowls, sprinkle with grated parmesan, toasted pine nuts if using, lemon zest, and an extra pinch of salt and pepper to taste.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Serve immediately while shrimp are warm; provide lemon wedges on the side for extra brightness.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

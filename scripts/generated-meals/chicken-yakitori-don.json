@@ -1,0 +1,246 @@
+{
+  "slug": "chicken-yakitori-don",
+  "title": "Chicken Yakitori Don",
+  "description": "Grilled skewered chicken glazed in a glossy sweet-savory yakitori sauce, served over steamed rice and topped with scallions and toasted sesame. Simple, restaurant-style flavors with quick marinating and high-heat grilling or broiling for caramelized edges.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "rice",
+    "soy sauce",
+    "mirin",
+    "sugar",
+    "garlic",
+    "ginger",
+    "scallion",
+    "sesame oil",
+    "sesame seeds",
+    "vegetable oil",
+    "cornstarch"
+  ],
+  "spice_level": 1,
+  "time_total_min": 61,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "sesame",
+    "gluten"
+  ],
+  "search_keywords": [
+    "chicken yakitori don",
+    "yakitori bowl",
+    "japanese chicken rice bowl",
+    "grilled chicken",
+    "teriyaki style",
+    "yakitori sauce",
+    "mirin soy glaze",
+    "quick weeknight dinner",
+    "rice bowl",
+    "scallion",
+    "sesame",
+    "broil chicken",
+    "grill chicken",
+    "sweet savory glaze",
+    "marinated chicken",
+    "skewered chicken",
+    "comfort food",
+    "asian flavors",
+    "easy dinner",
+    "family meal"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skin-on chicken thighs, trimmed and cut into 1.5-inch pieces",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat; skin left on gives better caramelization"
+      },
+      {
+        "display_name": "short-grain white rice (uncooked)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": 480,
+        "optional": false,
+        "notes": "rinsed until water runs clear"
+      },
+      {
+        "display_name": "soy sauce (for sauce)",
+        "quantity": 80,
+        "unit": "ml",
+        "grams": null,
+        "ml": 80,
+        "optional": false,
+        "notes": "use regular or low-sodium"
+      },
+      {
+        "display_name": "mirin (sweet rice wine)",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sake (or additional mirin if unavailable)",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "adds depth; optional"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 25,
+        "unit": "g",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 tbsp"
+      },
+      {
+        "display_name": "garlic, finely grated",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, finely grated",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 tbsp"
+      },
+      {
+        "display_name": "vegetable oil (for brushing/grill)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "neutral oil with high smoke point"
+      },
+      {
+        "display_name": "sesame oil (finishing)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "for finishing sauce or rice"
+      },
+      {
+        "display_name": "cornstarch (slurry optional for glaze thickness)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "mix with cold water if thicker glaze desired"
+      },
+      {
+        "display_name": "scallions, thinly sliced (for garnish)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated if desired"
+      },
+      {
+        "display_name": "toasted sesame seeds (white or mixed)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning rice or chicken"
+      },
+      {
+        "display_name": "bamboo skewers, soaked 30 minutes",
+        "quantity": 8,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "or metal skewers"
+      },
+      {
+        "display_name": "water (for cooking rice and sauce adjustments)",
+        "quantity": 720,
+        "unit": "ml",
+        "grams": null,
+        "ml": 720,
+        "optional": false,
+        "notes": "rice liquid plus small amount for sauce if reducing"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 61,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse the short-grain rice under cold water until the water runs clear; drain and combine with the appropriate measured water in a rice cooker or pot, bring to a boil, then reduce to a simmer and cook covered until tender. Keep covered off heat to steam for a few minutes before fluffing.",
+        "time_min": 30
+      },
+      {
+        "step_no": 2,
+        "text": "While rice starts, cut the chicken thighs into uniform 1–1.5-inch pieces and pat dry. Season lightly with a pinch of salt and toss with a little vegetable oil to prevent sticking to skewers.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Thread chicken pieces onto soaked skewers, leaving a little space between pieces so heat circulates; arrange skewers on a tray and refrigerate briefly while you make the sauce.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Make the yakitori sauce by combining soy sauce, mirin, sake (if using), sugar, grated garlic and grated ginger in a small saucepan. Bring to a simmer over medium heat, stir until sugar dissolves, then simmer gently for 3–4 minutes to meld flavors. If a thicker glaze is desired, whisk a cornstarch slurry into the sauce and simmer 30–60 seconds until glossy. Finish with sesame oil off the heat.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Preheat a grill, grill pan, or broiler to high. Brush the grates or pan lightly with oil. Place skewers on the hot surface and cook until the bottoms are browned, about 2–3 minutes per side, turning to get even char. During the last 2–3 minutes of cooking, brush several thin layers of the yakitori sauce onto the chicken, allowing it to caramelize between coats.",
+        "time_min": 8
+      },
+      {
+        "step_no": 6,
+        "text": "Remove skewers and let rest 2 minutes. If desired, chop chicken off the skewers for easier eating. Fluff the cooked rice and divide into bowls, place glazed chicken over the rice, spoon any reserved glaze over the top, and garnish with sliced scallions and toasted sesame seeds.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

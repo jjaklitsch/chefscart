@@ -1,0 +1,277 @@
+{
+  "slug": "dal-tadka",
+  "title": "Dal Tadka",
+  "description": "Creamy yellow lentils tempered with aromatic spices and finished with a smoky, buttery tadka (tempering) of ghee, cumin, garlic and red chili. Comforting, protein-rich and quick to prepare, served best with steamed rice or warm flatbreads.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "lentils",
+  "ingredient_tags": [
+    "lentils",
+    "toor dal",
+    "yellow split peas",
+    "water",
+    "tomato",
+    "onion",
+    "garlic",
+    "ginger",
+    "green chili",
+    "turmeric",
+    "cumin",
+    "mustard seeds",
+    "asafoetida",
+    "ghee",
+    "oil",
+    "red chili powder",
+    "garam masala",
+    "cilantro",
+    "lemon",
+    "salt"
+  ],
+  "spice_level": 2,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "dal",
+    "dal tadka",
+    "toor dal",
+    "yellow lentils",
+    "tadka",
+    "tempering",
+    "indian comfort food",
+    "vegetarian",
+    "protein-rich",
+    "ghee",
+    "cumin",
+    "garlic",
+    "spiced lentils",
+    "easy weeknight",
+    "served with rice",
+    "lemon",
+    "cilantro",
+    "turmeric",
+    "homestyle"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "toor dal (split pigeon peas) or yellow split lentils",
+        "quantity": 250,
+        "unit": "g",
+        "grams": 250,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed until water runs clear"
+      },
+      {
+        "display_name": "water",
+        "quantity": 900,
+        "unit": "ml",
+        "grams": null,
+        "ml": 900,
+        "optional": false,
+        "notes": "for pressure-cooking or simmering"
+      },
+      {
+        "display_name": "tomato",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, finely chopped"
+      },
+      {
+        "display_name": "onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, finely chopped"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "finely minced"
+      },
+      {
+        "display_name": "fresh ginger",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "green chili",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "slit or chopped (adjust for heat)"
+      },
+      {
+        "display_name": "turmeric powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "ghee (or unsalted butter)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "for tadka (tempering)"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "to prevent ghee from burning"
+      },
+      {
+        "display_name": "cumin seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for tadka"
+      },
+      {
+        "display_name": "mustard seeds",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adds nutty flavor to tadka"
+      },
+      {
+        "display_name": "asafoetida (hing)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "helps digestion, use sparingly"
+      },
+      {
+        "display_name": "red chili powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for heat"
+      },
+      {
+        "display_name": "garam masala",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "fresh cilantro (coriander leaves)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "chopped, for garnish"
+      },
+      {
+        "display_name": "lemon",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "juice to finish, optional"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse the lentils under cold water until the water runs clear, then soak for 10 minutes if desired to reduce cooking time and improve texture.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Combine rinsed lentils, water, turmeric and half the salt in a pressure cooker or heavy pot; bring to a boil, skim any foam, then simmer covered until very soft (pressure cooker: 3 whistles ~12 minutes inactive; stovetop: 25-30 minutes) until lentils mash easily.",
+        "time_min": 20
+      },
+      {
+        "step_no": 3,
+        "text": "While lentils cook, heat oil and a little ghee in a skillet over medium heat; add cumin seeds and mustard seeds and cook until they sputter, then add asafoetida, chopped onion and sauté until translucent and lightly golden.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic, grated ginger and chopped green chili to the onions; sauté 1-2 minutes until fragrant, then add chopped tomato and cook until softened and oil begins to separate from the masala.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "If lentils are very thick, add 100-150 ml water to reach a creamy but pourable consistency; temper in any leftover turmeric or salt adjustments and simmer the dal together with the cooked onion-tomato mixture for a few minutes to combine flavors.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "In a small pan, heat remaining ghee until hot but not smoking, add a pinch of cumin seeds and crushed garlic slices; fry until garlic turns golden and slightly crisp to create the tadka, then immediately pour this sizzling tadka over the finished dal to impart a smoky-fragrant flavor.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Stir gently to incorporate the tadka, check seasoning and add lemon juice if using; sprinkle garam masala and chopped cilantro before serving hot with steamed rice or flatbread.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

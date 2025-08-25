@@ -1,0 +1,303 @@
+{
+  "slug": "curry-cauliflower-mango-bowl",
+  "title": "Curry Cauliflower Mango Bowl",
+  "description": "A vibrant plant-forward bowl featuring roasted curry-spiced cauliflower, coconut-lime rice, sweet mango, and crunchy chickpeas. Bright, slightly sweet and savory with warm curry aromatics and a creamy cilantro-tahini drizzle.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegan",
+    "vegetarian"
+  ],
+  "primary_ingredient": "cauliflower",
+  "ingredient_tags": [
+    "cauliflower",
+    "mango",
+    "rice",
+    "chickpeas",
+    "coconut milk",
+    "cilantro",
+    "lime",
+    "tahini",
+    "curry powder",
+    "garlic",
+    "onion",
+    "olive oil",
+    "spinach"
+  ],
+  "spice_level": 2,
+  "time_total_min": 75,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "sesame"
+  ],
+  "search_keywords": [
+    "curry cauliflower",
+    "mango bowl",
+    "coconut rice",
+    "roasted cauliflower",
+    "vegan bowl",
+    "plant-forward",
+    "chickpea crunch",
+    "cilantro tahini",
+    "lime",
+    "fresh mango",
+    "weeknight dinner",
+    "easy meal prep",
+    "gluten-free",
+    "dairy-free",
+    "mild spice",
+    "healthy bowl",
+    "vegetarian",
+    "bowl recipe",
+    "summer flavors"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "cauliflower florets",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into bite-size florets"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "curry powder",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 30,
+        "optional": false,
+        "notes": "medium-ground curry powder"
+      },
+      {
+        "display_name": "ground turmeric",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "canned chickpeas (drained and rinsed)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "approximately one 15 oz can, drained"
+      },
+      {
+        "display_name": "maple syrup",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": 15,
+        "optional": false,
+        "notes": "for roasting chickpeas"
+      },
+      {
+        "display_name": "short-grain jasmine rice (uncooked)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed until water runs clear"
+      },
+      {
+        "display_name": "unsweetened canned coconut milk",
+        "quantity": 240,
+        "unit": "ml",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "for rice (use light for lower calories)"
+      },
+      {
+        "display_name": "water",
+        "quantity": 240,
+        "unit": "ml",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "for cooking rice"
+      },
+      {
+        "display_name": "salt (for rice)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ripe mango",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and diced"
+      },
+      {
+        "display_name": "baby spinach",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "optional handful to add greens"
+      },
+      {
+        "display_name": "fresh cilantro",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "roughly chopped"
+      },
+      {
+        "display_name": "lime",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "juiced"
+      },
+      {
+        "display_name": "tahini",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "sesame paste for drizzle"
+      },
+      {
+        "display_name": "warm water (for tahini thinning)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "more if needed to loosen dressing"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "minced, used in dressing"
+      },
+      {
+        "display_name": "red chili flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for extra heat"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 75,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 220°C (430°F). Line a rimmed baking sheet with parchment. Toss cauliflower florets with olive oil, curry powder, turmeric, cumin, salt and black pepper until evenly coated and spread in a single layer.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Place coated cauliflower on the baking sheet and roast in the preheated oven until edges are golden and tender, stirring once halfway through to ensure even browning.",
+        "time_min": 22
+      },
+      {
+        "step_no": 3,
+        "text": "While cauliflower roasts, toss drained chickpeas with a light drizzle of olive oil, maple syrup, a pinch of salt and a sprinkle of curry powder, spread on a second baking sheet and roast alongside cauliflower until slightly crisp, shaking sheet once.",
+        "time_min": 15
+      },
+      {
+        "step_no": 4,
+        "text": "Combine rinsed rice, coconut milk, water and salt in a medium saucepan and bring to a gentle boil, then reduce to a simmer, cover and cook until liquid is absorbed and rice is tender; remove from heat and let rest covered.",
+        "time_min": 20
+      },
+      {
+        "step_no": 5,
+        "text": "Prepare the dressing by whisking together tahini, lime juice, minced garlic, warm water and chopped cilantro until smooth; season with salt and optional red chili flakes, adjusting consistency with additional water if necessary.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Assemble bowls by dividing coconut-lime rice among bowls, topping with roasted curry cauliflower, crispy chickpeas, diced mango and optional baby spinach. Drizzle with cilantro-tahini dressing and garnish with toasted sesame seeds and extra cilantro.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

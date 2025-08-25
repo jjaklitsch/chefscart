@@ -1,0 +1,257 @@
+{
+  "slug": "larb-gai-chicken-larb",
+  "title": "Larb Gai (Chicken Larb)",
+  "description": "A bright, aromatic Laotian/Thai minced chicken salad featuring toasted rice, lime, fish sauce, fresh herbs and chile for a balance of savory, tangy and spicy flavors. Quick to cook and served warm or at room temperature, it delivers fresh herbaceous contrast and crunchy toasted rice.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "ground chicken",
+    "garlic",
+    "shallot",
+    "lime",
+    "fish sauce",
+    "chilies",
+    "mint",
+    "cilantro",
+    "thai basil",
+    "toasted rice",
+    "roasted rice powder",
+    "green onion",
+    "vegetable oil",
+    "sugar"
+  ],
+  "spice_level": 3,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "soy"
+  ],
+  "search_keywords": [
+    "larb",
+    "larb gai",
+    "chicken larb",
+    "thai salad",
+    "laotian",
+    "minced chicken salad",
+    "toasted rice",
+    "nam dok",
+    "fish sauce",
+    "lime",
+    "mint",
+    "cilantro",
+    "spicy",
+    "herb salad",
+    "ground chicken",
+    "low carb",
+    "quick dinner",
+    "weeknight",
+    "gluten free",
+    "fresh herbs"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ground (minced) chicken",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "preferably thigh or a mix of thigh and breast for juiciness"
+      },
+      {
+        "display_name": "toasted rice (khao khua) or roasted rice powder",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "see notes for toasting whole rice to powder"
+      },
+      {
+        "display_name": "shallots, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "small to medium, sliced paper-thin"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 2-3 limes"
+      },
+      {
+        "display_name": "fish sauce (nam pla)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adjust to taste for saltiness"
+      },
+      {
+        "display_name": "light palm sugar or granulated sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "balances acidity"
+      },
+      {
+        "display_name": "fresh Thai bird chilies or serrano, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "seeds in for hotter heat; adjust to taste"
+      },
+      {
+        "display_name": "green onions (scallions), thinly sliced",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts, sliced"
+      },
+      {
+        "display_name": "fresh mint leaves, chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": 240,
+        "optional": false,
+        "notes": "loosely packed"
+      },
+      {
+        "display_name": "fresh cilantro leaves, chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 16,
+        "ml": 240,
+        "optional": false,
+        "notes": "leaves and tender stems"
+      },
+      {
+        "display_name": "fresh Thai basil (optional), chopped",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 8,
+        "ml": 120,
+        "optional": true,
+        "notes": "adds anise-like aroma"
+      },
+      {
+        "display_name": "vegetable oil (for cooking)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "use sparingly; fish sauce contributes salt"
+      },
+      {
+        "display_name": "butter lettuce leaves or cabbage leaves to serve",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving as wraps"
+      },
+      {
+        "display_name": "uncooked jasmine rice (for toasting into powder), optional",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "toast in skillet and grind to make toasted rice powder"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "If making toasted rice powder from scratch, heat a dry skillet over medium-high heat and add uncooked jasmine rice; toast, stirring constantly, until golden brown and aromatic, about until rice pops and browns. Remove and cool, then grind to a coarse powder in a spice grinder or mortar and pestle.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Prep aromatics and herbs: thinly slice shallots and chilies, mince garlic, slice green onions, and roughly chop mint, cilantro and optional basil. Combine lime juice, fish sauce and sugar in a small bowl and stir until sugar dissolves — this is the dressing.",
+        "time_min": 7
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large nonstick or stainless skillet over medium-high heat with the oil. When hot, add minced garlic and briefly sauté until fragrant but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add ground chicken to the skillet and break up with a spatula; cook, stirring and pressing into the pan to create small crumbles, until fully cooked through and just starting to brown in spots.",
+        "time_min": 7
+      },
+      {
+        "step_no": 5,
+        "text": "Season the cooked chicken with half of the prepared dressing, taste and adjust by adding more fish sauce or lime as desired. Add sliced shallots and green onions to the skillet and stir for a short minute to slightly soften but retain crunch.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Turn off the heat and transfer the chicken to a mixing bowl to retain freshness. Immediately add chilies, chopped herbs and toasted rice powder; toss thoroughly to combine so residual heat releases aromatics without wilting herbs too much.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Taste and adjust seasoning with remaining dressing, lime juice or a pinch of sugar or salt. Let the larb rest a few minutes at room temperature to let flavors meld.",
+        "time_min": 1
+      },
+      {
+        "step_no": 8,
+        "text": "Serve warm or room temperature on a platter with lettuce or cabbage leaves and extra herbs and lime wedges alongside for individual adjustments.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,278 @@
+{
+  "slug": "mediterranean-breakfast-mezze-plate",
+  "title": "Mediterranean Breakfast Mezze Plate",
+  "description": "A bright, shareable breakfast mezze featuring creamy labneh, herb-marinated tomatoes, warm pita, olives and a lemony chickpea salad. Fresh herbs, olive oil and toasted spices bring classic Mediterranean flavors with minimal cooking.",
+  "courses": [
+    "breakfast",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "mediterranean",
+    "vegetarian"
+  ],
+  "primary_ingredient": "yogurt",
+  "ingredient_tags": [
+    "yogurt",
+    "labneh",
+    "chickpeas",
+    "tomato",
+    "cucumber",
+    "olive",
+    "pita",
+    "lemon",
+    "olive oil",
+    "fresh herbs",
+    "sumac",
+    "garlic",
+    "red onion",
+    "feta",
+    "za'atar"
+  ],
+  "spice_level": 1,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "mediterranean breakfast",
+    "mezze plate",
+    "labneh",
+    "yogurt spread",
+    "chickpea salad",
+    "warm pita",
+    "za'atar",
+    "sumac tomatoes",
+    "olive tapenade",
+    "feta",
+    "olive oil",
+    "lemon dressing",
+    "fresh herbs",
+    "easy brunch",
+    "vegetarian breakfast",
+    "shareable platter",
+    "no-cook",
+    "quick morning",
+    "healthy mediterranean",
+    "meze"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "whole-milk yogurt (to make labneh)",
+        "quantity": 500,
+        "unit": "g",
+        "grams": 500,
+        "ml": null,
+        "optional": false,
+        "notes": "strain to make labneh (see instructions)"
+      },
+      {
+        "display_name": "olive oil (extra virgin), plus extra for drizzling",
+        "quantity": 80,
+        "unit": "ml",
+        "grams": null,
+        "ml": 80,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "canned chickpeas, drained and rinsed",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "one 15 oz can (~400 g drained weight)"
+      },
+      {
+        "display_name": "ripe tomatoes, medium",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into wedges or large dice"
+      },
+      {
+        "display_name": "cucumber, English or Persian",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "sliced or quartered"
+      },
+      {
+        "display_name": "small red onion, thinly sliced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "soak in cold water if you want milder onion"
+      },
+      {
+        "display_name": "lemon juice, fresh",
+        "quantity": 45,
+        "unit": "ml",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1.5 lemons"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divided use"
+      },
+      {
+        "display_name": "pita bread, small rounds",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "store-bought or homemade, warm before serving"
+      },
+      {
+        "display_name": "mixed olives (kalamata / green), pitted",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "marinated or plain"
+      },
+      {
+        "display_name": "feta cheese, crumbled",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/2 cup packed, chopped"
+      },
+      {
+        "display_name": "fresh mint leaves, chopped",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "for chickpea salad and garnish"
+      },
+      {
+        "display_name": "sumac",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": null,
+        "optional": false,
+        "notes": "for tomatoes and labneh garnish"
+      },
+      {
+        "display_name": "za'atar spice blend",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": true,
+        "notes": "for sprinkling on labneh or pita"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste, divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional in chickpea salad"
+      },
+      {
+        "display_name": "toasted pine nuts or chopped almonds",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish on labneh or salad"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make quick labneh: place yogurt in a fine-mesh sieve or cheesecloth-lined colander over a bowl, season with a pinch of salt, cover and refrigerate to drain for 20 minutes to 2 hours; for this recipe drain for 20-30 minutes for a thick, spoonable labneh.",
+        "time_min": 30
+      },
+      {
+        "step_no": 2,
+        "text": "While yogurt drains, prepare chickpea salad: combine drained chickpeas, half the lemon juice, half the olive oil, minced one garlic clove, chopped parsley, chopped mint if using, ground cumin (optional), half the salt and half the pepper; gently toss to coat and set aside to marinate briefly.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Prepare tomatoes and cucumber: toss tomatoes and cucumber with remaining lemon juice, 1 tbsp olive oil, sliced red onion if using, sumac, remaining salt and pepper; let sit for 5 minutes to soften flavors.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Warm and dress pita: brush pita lightly with olive oil and warm in a 180°C (350°F) oven for 4-6 minutes or toast in a skillet 1-2 minutes per side until pliable and slightly charred; optionally sprinkle with za'atar after toasting.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Finish labneh and assemble platter: transfer drained labneh to a shallow serving dish, drizzle with remaining olive oil, sprinkle sumac, za'atar or toasted nuts as garnish and scatter crumbled feta if using; arrange chickpea salad, dressed tomatoes and cucumber, olives and warm pita around the labneh.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Final seasoning and serve: taste components and adjust salt, pepper and lemon as needed, garnish with extra herbs, serve immediately while pita is warm.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,280 @@
+{
+  "slug": "whole30-chicken-veg-sheet-pan",
+  "title": "Whole30 Chicken & Veg Sheet Pan",
+  "description": "A bright, savory sheet pan dinner of roasted chicken thighs and a medley of seasonal vegetables tossed in a tangy lemon-herb Whole30-compliant marinade. Easy one-pan prep delivers crispy-skinned chicken, caramelized vegetables, and bold garlic-herb flavors with minimal cleanup.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "whole30",
+    "paleo",
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "chicken thighs",
+    "olive oil",
+    "lemon",
+    "garlic",
+    "roasted vegetables",
+    "broccoli",
+    "red bell pepper",
+    "zucchini",
+    "carrot",
+    "onion",
+    "fresh herbs",
+    "thyme",
+    "rosemary",
+    "salt",
+    "black pepper",
+    "paprika"
+  ],
+  "spice_level": 2,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "whole30",
+    "sheet pan",
+    "one pan",
+    "roasted chicken",
+    "chicken thighs",
+    "roasted vegetables",
+    "lemon garlic",
+    "easy dinner",
+    "meal prep",
+    "paleo",
+    "low carb",
+    "healthy",
+    "family friendly",
+    "weeknight",
+    "olive oil",
+    "herbs",
+    "crispy skin",
+    "caramelized vegetables",
+    "mediterranean",
+    "gluten free"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in, skin-on chicken thighs",
+        "quantity": 1.6,
+        "unit": "lb",
+        "grams": 726.4,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 54,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 medium lemon"
+      },
+      {
+        "display_name": "zest of lemon",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "fresh garlic, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": "smoked or sweet"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "broccoli florets",
+        "quantity": 8,
+        "unit": "oz",
+        "grams": 224,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into bite-sized pieces"
+      },
+      {
+        "display_name": "red bell pepper, seeded and sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "sliced into 1/2-inch strips"
+      },
+      {
+        "display_name": "zucchini, halved lengthwise and sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "about 200 g"
+      },
+      {
+        "display_name": "carrots, peeled and cut into 1/2-inch rounds",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium carrots"
+      },
+      {
+        "display_name": "red onion, cut into wedges",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "about half a large onion"
+      },
+      {
+        "display_name": "fresh rosemary, chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tsp dried"
+      },
+      {
+        "display_name": "fresh parsley, chopped (for garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "optional garnish"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 425°F (220°C). Line a large rimmed sheet pan with foil or parchment and set a wire rack in the pan if you prefer extra airflow under the chicken.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Make the marinade: in a bowl whisk together olive oil, lemon juice, lemon zest, minced garlic, oregano, thyme, paprika, salt and pepper until emulsified.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Pat the chicken thighs dry with paper towels. Reserve a tablespoon of the marinade for tossing vegetables. Place chicken in a shallow dish or bowl and evenly coat with the remaining marinade, rubbing under the skin where possible.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Arrange the marinated chicken thighs skin-side up on the sheet pan, spacing them across the pan to allow hot air to circulate.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "In a large bowl toss broccoli, red bell pepper, zucchini, carrots and red onion with the reserved tablespoon of marinade and chopped rosemary until evenly coated. Spread vegetables in a single layer on the sheet pan around the chicken, leaving some room between pieces.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Roast in the preheated oven until chicken reaches an internal temperature of 165°F (74°C) and skin is crisp, and vegetables are tender and starting to caramelize, about 28 minutes. Halfway through cooking (around 14 minutes), rotate the pan and stir vegetables once for even browning; if any pieces are browning too quickly, move them away from direct heat.",
+        "time_min": 28
+      },
+      {
+        "step_no": 7,
+        "text": "If you want extra-crisp skin, switch the oven to broil on high for 1-2 minutes while watching carefully until skin is golden and blistered. Remove the pan from the oven and let rest 5 minutes.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Garnish with chopped parsley and a squeeze of fresh lemon. Serve warm straight from the pan or plate with pan juices spooned over chicken and vegetables.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

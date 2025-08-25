@@ -1,0 +1,274 @@
+{
+  "slug": "vegan-chana-saag",
+  "title": "Vegan Chana Saag",
+  "description": "A hearty, fragrant Indian-inspired curry combining tender chickpeas and wilted spinach in a spiced tomato-onion base. Bright, earthy flavors from garam masala, cumin, and ginger balance creamy chickpeas for a satisfying plant-based meal served with rice or flatbreads.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "chickpeas",
+    "spinach",
+    "tomato",
+    "onion",
+    "garlic",
+    "ginger",
+    "cumin",
+    "garam masala",
+    "coriander",
+    "chili",
+    "lemon",
+    "oil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 38,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "vegan",
+    "chana",
+    "saag",
+    "chickpeas",
+    "spinach",
+    "indian curry",
+    "plant-based",
+    "one-pot",
+    "weeknight dinner",
+    "healthy",
+    "gluten-free",
+    "meal prep",
+    "tomato-based",
+    "garam masala",
+    "ginger garlic",
+    "comfort food",
+    "easy",
+    "protein-rich",
+    "stovetop",
+    "kid-friendly"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "canned chickpeas (drained and rinsed)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "drain and rinse if using canned; if using cooked from dry, use ~360 g cooked"
+      },
+      {
+        "display_name": "fresh spinach (packed) or chopped frozen spinach (thawed, squeezed)",
+        "quantity": 10,
+        "unit": "oz",
+        "grams": 284,
+        "ml": null,
+        "optional": false,
+        "notes": "about 10 oz fresh equals roughly 8 cups loosely packed before wilting"
+      },
+      {
+        "display_name": "yellow onion (medium, finely chopped)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "finely diced"
+      },
+      {
+        "display_name": "tomato, canned crushed or fresh finely chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "use canned crushed for convenience"
+      },
+      {
+        "display_name": "fresh ginger (minced)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 tbsp minced"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "vegetable oil (or neutral oil)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for sautéing"
+      },
+      {
+        "display_name": "cumin seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "toast briefly in oil at start"
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground turmeric",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red chili powder (or paprika for milder)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to taste; optional for mild version"
+      },
+      {
+        "display_name": "garam masala",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.6,
+        "ml": null,
+        "optional": false,
+        "notes": "stir in near end for aroma"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.6,
+        "ml": null,
+        "optional": true,
+        "notes": "optional"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "adjust to taste for brightness"
+      },
+      {
+        "display_name": "water or vegetable broth",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "use to adjust consistency"
+      },
+      {
+        "display_name": "fresh cilantro (chopped)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 38,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep all ingredients: finely chop onion, mince garlic and ginger, measure spices, drain and rinse chickpeas, wash and roughly chop spinach if using fresh.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil in a large skillet or sauté pan over medium heat. Add cumin seeds and let them sizzle until fragrant (about a few seconds) but not burned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add the chopped onion and a pinch of salt; sauté until softened and translucent, stirring frequently.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in minced garlic and ginger and cook until aromatic, about one minute, taking care not to brown the garlic.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add ground coriander, turmeric and red chili powder (if using). Toast the spices with the aromatics for about 30–45 seconds to bloom the flavors.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Pour in the crushed tomatoes and simmer for 4–5 minutes, breaking down any large pieces and reducing raw tomato flavor; stir occasionally.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Add the drained chickpeas and water or vegetable broth, stir to combine, then bring to a gentle simmer. Cook uncovered for 6–8 minutes so the chickpeas absorb the sauce.",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "Fold in the chopped fresh spinach (or squeezed thawed frozen spinach) in batches, allowing it to wilt between additions; stir until fully incorporated.",
+        "time_min": 4
+      },
+      {
+        "step_no": 9,
+        "text": "Once the spinach is wilted and the sauce is slightly thickened, stir in garam masala, lemon juice and adjust salt. Simmer 1–2 minutes to meld flavors.",
+        "time_min": 2
+      },
+      {
+        "step_no": 10,
+        "text": "Taste and adjust seasoning (salt, lemon, chili). Finish with chopped cilantro if using, then remove from heat and let rest briefly before serving.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

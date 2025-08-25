@@ -1,0 +1,255 @@
+{
+  "slug": "mediterranean-lemon-herb-chicken-farro",
+  "title": "Mediterranean Lemon-Herb Chicken & Farro",
+  "description": "Pan-seared lemon-herb chicken served over nutty, tender farro tossed with cherry tomatoes, baby spinach, olives and a bright lemon-oregano vinaigrette. Fast weeknight cooking with vibrant Mediterranean flavors and a satisfying whole-grain base.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "mediterranean"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "farro",
+    "lemon",
+    "olive oil",
+    "garlic",
+    "oregano",
+    "thyme",
+    "cherry tomatoes",
+    "spinach",
+    "kalamata olives",
+    "parmesan",
+    "red onion",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "grain",
+    "gluten",
+    "dairy"
+  ],
+  "search_keywords": [
+    "mediterranean",
+    "lemon chicken",
+    "farro bowl",
+    "whole grain",
+    "weeknight dinner",
+    "lemon herb",
+    "olive oil",
+    "garlic",
+    "cherry tomatoes",
+    "spinach",
+    "kalamata olives",
+    "parmesan",
+    "pan seared",
+    "one pan",
+    "meal prep",
+    "healthy",
+    "family friendly",
+    "quick",
+    "protein",
+    "comfort"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts (trimmed)",
+        "quantity": 1.25,
+        "unit": "lb",
+        "grams": 567.5,
+        "ml": null,
+        "optional": false,
+        "notes": "pounded to even thickness (~1/2 inch) or halved horizontally"
+      },
+      {
+        "display_name": "farro (pearled)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed"
+      },
+      {
+        "display_name": "low-sodium chicken broth",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": null,
+        "ml": 720,
+        "optional": false,
+        "notes": "for cooking farro"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 40.5,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon (zest and juice)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "zest from 1, juice from 2 (about 60 ml total)"
+      },
+      {
+        "display_name": "garlic cloves (minced)",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh oregano (chopped) or 1 tsp dried oregano",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "if using dried, use 1 tsp"
+      },
+      {
+        "display_name": "fresh thyme leaves (chopped) or 1/2 tsp dried thyme",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "optional to garnish"
+      },
+      {
+        "display_name": "cherry tomatoes (halved)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 270,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "baby spinach (packed)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "fresh, trimmed"
+      },
+      {
+        "display_name": "kalamata olives (pitted, halved)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "optional"
+      },
+      {
+        "display_name": "red onion (finely sliced)",
+        "quantity": 0.25,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "thinly sliced"
+      },
+      {
+        "display_name": "grated Parmesan cheese",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, for a touch of heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring chicken broth to a simmer in a medium saucepan, add rinsed farro, reduce to a low simmer, cover and cook until tender but chewy (about 20 minutes). Drain any excess liquid and fluff with a fork.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "While farro cooks, combine lemon zest, half the lemon juice, minced garlic, chopped oregano, 1 tbsp olive oil, 1 tsp salt and 1/2 tsp black pepper in a shallow dish to make a marinade.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Pat chicken dry, season with remaining salt and pepper, then place in the marinade to coat evenly and let sit at room temperature for 10 minutes (or refrigerate up to 2 hours).",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Heat 1 tbsp olive oil in a large skillet over medium-high heat until shimmering. Add chicken and sear until golden and cooked through, about 4-5 minutes per side depending on thickness (internal temperature 74°C/165°F). Transfer to a cutting board and rest 5 minutes, then slice.",
+        "time_min": 12
+      },
+      {
+        "step_no": 5,
+        "text": "In the same skillet, add remaining 1 tbsp olive oil, sauté sliced red onion briefly if using, then add cherry tomatoes and cook until they begin to soften, about 2-3 minutes. Add garlic if needed and sauté another 30 seconds.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Add cooked farro to the skillet with tomatoes, stir in baby spinach, kalamata olives and remaining lemon juice; toss until spinach wilts and ingredients are evenly combined. Adjust seasoning with salt, pepper and optional red pepper flakes.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Divide farro and vegetable mixture among plates, top with sliced chicken, drizzle any resting juices over top, sprinkle with chopped thyme and grated Parmesan if using, and serve immediately.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

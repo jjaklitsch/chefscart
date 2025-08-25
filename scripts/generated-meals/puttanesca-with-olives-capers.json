@@ -1,0 +1,233 @@
+{
+  "slug": "puttanesca-with-olives-capers",
+  "title": "Puttanesca with Olives & Capers",
+  "description": "A bold, fast Italian pasta sauce featuring salty olives, briny capers and anchovies simmered with tomatoes, garlic and herbs. Ready in under 30 minutes, it delivers bright umami and a peppery finish — perfect tossed with spaghetti or a short pasta.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "pasta",
+    "spaghetti",
+    "canned tomatoes",
+    "garlic",
+    "anchovy",
+    "capers",
+    "olives",
+    "red pepper",
+    "olive oil",
+    "parsley",
+    "salt",
+    "pepper",
+    "parmesan"
+  ],
+  "spice_level": 2,
+  "time_total_min": 28,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "seafood"
+  ],
+  "search_keywords": [
+    "puttanesca",
+    "spaghetti alla puttanesca",
+    "olives",
+    "capers",
+    "anchovy",
+    "tomato sauce",
+    "quick pasta",
+    "weeknight dinner",
+    "mediterranean",
+    "briny",
+    "umami",
+    "garlic",
+    "parsley",
+    "soupy sauce",
+    "red pepper flakes",
+    "olive oil",
+    "pescatarian",
+    "no cream",
+    "one pan sauce",
+    "30 minute meal"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "spaghetti",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "dried"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 54,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly sliced"
+      },
+      {
+        "display_name": "anchovy fillets in oil",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "crushed red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": 5,
+        "optional": true,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "canned whole plum tomatoes",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": 800,
+        "optional": false,
+        "notes": "preferably San Marzano, crushed by hand or with spoon"
+      },
+      {
+        "display_name": "kalamata or black olives",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "pitted and halved"
+      },
+      {
+        "display_name": "capers (packed in salt or brine)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "rinsed if salted"
+      },
+      {
+        "display_name": "fresh flat-leaf parsley",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "chopped, for garnish"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional bright finish"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "plus more for pasta water"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "grated Parmesan or Pecorino",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving (contains dairy)"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 28,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of water to a rolling boil, add a generous pinch of salt, and start cooking the pasta until it is 2 minutes shy of package al dente.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "While the pasta cooks, heat olive oil in a large skillet over medium heat until shimmering but not smoking.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add sliced garlic to the skillet and cook until fragrant and lightly golden, about 30–45 seconds, then add chopped anchovies and mash them into the oil until dissolved.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add crushed red pepper flakes, then pour in the crushed canned tomatoes, breaking up any large pieces; bring the sauce to a gentle simmer.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in halved olives and rinsed capers, season with salt and black pepper, and let the sauce simmer gently to concentrate for about 6 minutes.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Reserve a cup of the pasta cooking water, drain the pasta, then add the pasta to the skillet with the sauce and toss over medium heat, adding reserved pasta water a little at a time to loosen and help the sauce adhere.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Continue tossing until the pasta is fully cooked and the sauce evenly coats the noodles; finish with chopped parsley, optional lemon zest and adjust seasoning.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Serve immediately with grated Parmesan or Pecorino on the side for those who want it.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

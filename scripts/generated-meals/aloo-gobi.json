@@ -1,0 +1,296 @@
+{
+  "slug": "aloo-gobi",
+  "title": "Aloo Gobi",
+  "description": "A classic North Indian dry curry of tender potatoes and cauliflower cooked with fragrant spices, tomatoes, and caramelized onions. Brightened with turmeric and fresh cilantro, this comforting vegetarian dish is sautéed until golden for a balance of earthy and warm flavors.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward",
+    "vegan"
+  ],
+  "primary_ingredient": "potatoes",
+  "ingredient_tags": [
+    "potatoes",
+    "cauliflower",
+    "onion",
+    "tomato",
+    "garlic",
+    "ginger",
+    "cilantro",
+    "green chili",
+    "cumin",
+    "turmeric",
+    "garam masala",
+    "coriander",
+    "mustard seeds",
+    "vegetable oil",
+    "salt"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "aloo gobi",
+    "potato cauliflower curry",
+    "vegetarian indian",
+    "vegan curry",
+    "dry curry",
+    "spiced potatoes",
+    "cauliflower recipe",
+    "weeknight dinner",
+    "stovetop",
+    "turmeric",
+    "garam masala",
+    "cilantro",
+    "comfort food",
+    "gluten free",
+    "plant-forward",
+    "easy indian recipe",
+    "homestyle",
+    "onion tomato base",
+    "mild spice",
+    "oil sauté"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "potatoes, medium, peeled and cut into 2 cm cubes",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "use waxy or all-purpose potatoes for hold"
+      },
+      {
+        "display_name": "cauliflower, trimmed into medium florets",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "bite-sized florets"
+      },
+      {
+        "display_name": "vegetable oil (or neutral oil)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cumin seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for tempering"
+      },
+      {
+        "display_name": "mustard seeds (optional but traditional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "can omit if unavailable"
+      },
+      {
+        "display_name": "onion, medium, finely sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "slice thin for faster caramelization"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, minced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "green chili, finely chopped (adjust to taste)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "jalapeño or serrano"
+      },
+      {
+        "display_name": "ground turmeric",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red chili powder/paprika (for color, optional)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "omit for milder flavor"
+      },
+      {
+        "display_name": "tomato, large, finely chopped (or 1 cup crushed)",
+        "quantity": 180,
+        "unit": "g",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "ripe tomato"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "water",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "to help cook potatoes and cauliflower"
+      },
+      {
+        "display_name": "garam masala",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "stirred in at the end"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "lemon wedges",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "to serve"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare vegetables: peel and cube potatoes to uniform 2 cm pieces and cut cauliflower into similar-sized florets; finely slice onion, mince garlic and ginger, chop tomato and chili if using.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil in a large wide skillet or heavy pan over medium heat until shimmering, then add cumin seeds and mustard seeds; cook until they sizzle and begin to brown and become fragrant.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Add sliced onion and sauté over medium heat, stirring occasionally, until onion is soft and starting to caramelize and turn golden-brown.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in minced garlic, grated ginger, and chopped green chili; cook for one minute until aromatic but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add ground turmeric, ground coriander, ground cumin and optional red chili powder; toast the spices in the pan for 30 seconds while stirring to bloom their flavors.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Add chopped tomato to the pan, stir, and cook until the tomato breaks down and oil starts to separate from the mixture, about 3–4 minutes.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Add the cubed potatoes and cauliflower florets, stir well to coat with the spice-tomato mixture, then add salt and pour in the water; bring to a gentle simmer.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Cover the pan and cook over medium-low heat, stirring every 6–8 minutes and checking for tenderness; cook until potatoes and cauliflower are fork-tender and moisture has mostly evaporated so the pieces are coated and slightly browned.",
+        "time_min": 8
+      },
+      {
+        "step_no": 9,
+        "text": "Uncover, increase heat to medium-high and sauté for a few minutes to brown edges and reduce any excess liquid; stir in garam masala and adjust seasoning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 10,
+        "text": "Remove from heat and garnish with chopped cilantro; serve hot with lemon wedges on the side for squeezing over individual portions.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

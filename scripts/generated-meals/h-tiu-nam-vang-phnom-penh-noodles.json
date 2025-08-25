@@ -1,0 +1,316 @@
+{
+  "slug": "h-tiu-nam-vang-phnom-penh-noodles",
+  "title": "Hủ Tiếu Nam Vang (Phnom Penh Noodles)",
+  "description": "A clear, aromatic pork-and-seafood noodle soup featuring tender pork, shrimp, and a savory pork bone broth finished with fried garlic and fresh herbs. Bright, lightly seasoned, and texturally varied with chewy rice noodles, crunchy bean sprouts, and soft toppings.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "vietnamese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "shrimp",
+    "pork bones",
+    "rice noodles",
+    "bean sprouts",
+    "pork liver",
+    "garlic",
+    "scallion",
+    "cilantro",
+    "soy sauce",
+    "fish sauce",
+    "sugar",
+    "white pepper",
+    "shallot",
+    "lime",
+    "fried shallot",
+    "chives",
+    "bok choy"
+  ],
+  "spice_level": 2,
+  "time_total_min": 190,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "soy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "hủ tiếu",
+    "phnom penh noodles",
+    "vietnamese noodle soup",
+    "pork bone broth",
+    "clear broth noodles",
+    "rice noodles",
+    "shrimp",
+    "pork liver",
+    "fried garlic",
+    "bean sprouts",
+    "fresh herbs",
+    "light soup",
+    "weeknight dinner",
+    "comfort food",
+    "asian soup",
+    "noodle bowl",
+    "lime",
+    "fish sauce",
+    "scallion oil",
+    "crispy shallot"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "pork neck or shoulder, bone-in, cut into large chunks",
+        "quantity": 900,
+        "unit": "g",
+        "grams": 900,
+        "ml": null,
+        "optional": false,
+        "notes": "for broth; can use combination of meat and bones"
+      },
+      {
+        "display_name": "pork neck bones or trotters",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "for rich broth"
+      },
+      {
+        "display_name": "raw shrimp, peeled and deveined",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "medium shrimp, tail-off"
+      },
+      {
+        "display_name": "pork liver, thinly sliced",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "traditional but optional; poached briefly in broth"
+      },
+      {
+        "display_name": "dried flat rice noodles (hủ tiếu) or fresh if available",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "soak or cook according to package; enough for 4 bowls"
+      },
+      {
+        "display_name": "shallots",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly sliced; half fried for garnish, half used for broth"
+      },
+      {
+        "display_name": "garlic cloves, smashed",
+        "quantity": 6,
+        "unit": "clove",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "used for frying and aroma in broth"
+      },
+      {
+        "display_name": "scallions (green onions), white and green parts separated",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "white parts for broth, greens for garnish"
+      },
+      {
+        "display_name": "fresh cilantro (coriander), roughly chopped",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "bok choy or choy sum, blanched",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": true,
+        "notes": "vegetable topping"
+      },
+      {
+        "display_name": "bean sprouts, rinsed",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "served raw or briefly blanched"
+      },
+      {
+        "display_name": "fish sauce",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 60,
+        "ml": 60,
+        "optional": false,
+        "notes": "salt and umami for broth"
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds color and depth"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "balances seasoning"
+      },
+      {
+        "display_name": "white pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "for seasoning"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "water (for broth)",
+        "quantity": 4200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 4200,
+        "optional": false,
+        "notes": "about 4.2 liters to cover bones and make broth"
+      },
+      {
+        "display_name": "cooking oil (neutral) for frying",
+        "quantity": 80,
+        "unit": "ml",
+        "grams": null,
+        "ml": 80,
+        "optional": false,
+        "notes": "for frying shallots and garlic"
+      },
+      {
+        "display_name": "lime wedges",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "chili slices or sriracha",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": true,
+        "notes": "optional chili for spice"
+      },
+      {
+        "display_name": "fried shallot pieces",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "garnish for crunch"
+      },
+      {
+        "display_name": "white pepper powder (for serving)",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "final seasoning"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 190,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare bones and meat: blanch pork bones and pork chunks in a large pot of boiling water for 5 minutes to remove impurities, then drain and rinse under warm water.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Make the broth: return cleaned bones and pork to a large stockpot, add water to cover, bring to a boil, then reduce to a gentle simmer and skim foam for clarity. Add half the sliced shallots and the white parts of the scallions. Simmer gently for 2 hours, partially covered.",
+        "time_min": 120
+      },
+      {
+        "step_no": 3,
+        "text": "Prepare aromatics and fried shallots: while broth simmers, thinly slice remaining shallots and smash garlic. Heat oil in a small skillet over medium heat and fry sliced shallots until golden brown and crisp, about 6–8 minutes, removing and draining on paper towels. Reserve flavored oil for finishing.",
+        "time_min": 20
+      },
+      {
+        "step_no": 4,
+        "text": "Strain and season broth: after simmering, remove bones and large meat, strain broth through a fine sieve into a clean pot. Trim and thinly slice cooked pork meat for serving. Season broth with fish sauce, soy sauce, sugar, white pepper and salt; simmer 10 minutes to meld flavors and adjust seasoning.",
+        "time_min": 15
+      },
+      {
+        "step_no": 5,
+        "text": "Poach proteins: bring broth to a gentle simmer and add raw shrimp briefly (about 1–2 minutes) until opaque and cooked through; remove and set aside. If using pork liver, slide thin slices into simmering broth for 30–45 seconds until just cooked; remove and set aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Prepare noodles and vegetables: cook rice noodles according to package instructions (soak or blanch) until tender but firm, drain and divide into serving bowls. Blanch bok choy or choy sum briefly in boiling water for 30 seconds and drain. Rinse bean sprouts if using raw.",
+        "time_min": 10
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble bowls: arrange noodles, blanched greens, bean sprouts, sliced pork, shrimp, and liver in bowls. Ladle hot strained broth over the bowl to warm and cover ingredients. Top with fried shallots, chopped scallion greens, cilantro, a drizzle of reserved scallion oil or fried garlic oil, a squeeze of lime and white pepper to taste.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Serve with condiments: provide chili, additional fish sauce or lime wedges on the side for diners to adjust seasoning. Serve immediately while hot.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

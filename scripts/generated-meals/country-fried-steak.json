@@ -1,0 +1,237 @@
+{
+  "slug": "country-fried-steak",
+  "title": "Country-Fried Steak",
+  "description": "A crisp, golden-brown breaded beef steak pan-fried and served with a creamy peppered milk gravy. Classic Southern comfort food with a crunchy crust and rich, savory sauce made from the skillet drippings.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "southern",
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "flour",
+    "milk",
+    "egg",
+    "butter",
+    "oil",
+    "black pepper",
+    "salt"
+  ],
+  "spice_level": 1,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten",
+    "grain"
+  ],
+  "search_keywords": [
+    "country fried steak",
+    "chicken fried steak",
+    "southern comfort",
+    "breaded steak",
+    "pan fried",
+    "pepper gravy",
+    "milk gravy",
+    "beef steak",
+    "country gravy",
+    "crispy crust",
+    "homestyle",
+    "dinner",
+    "lunch",
+    "comfort food",
+    "buttermilk substitute",
+    "easy skillet",
+    "weeknight meal",
+    "fried steak",
+    "breaded cutlet",
+    "peppered sauce"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "cube steaks (or round steaks pounded thin)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "about 4 pieces (around 4-6 oz each)"
+      },
+      {
+        "display_name": "all-purpose flour (for dredge)",
+        "quantity": 1.25,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for dusting"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided; more for gravy"
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, for dredge"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "beaten"
+      },
+      {
+        "display_name": "whole milk (for egg wash and gravy)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "1/2 cup in egg wash, 1.5 cups reserved for gravy"
+      },
+      {
+        "display_name": "vegetable oil (for frying)",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": null,
+        "ml": 180,
+        "optional": false,
+        "notes": "enough for shallow frying (about 3/4\" in skillet)"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "for frying and gravy"
+      },
+      {
+        "display_name": "freshly ground black pepper (for gravy)",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "all-purpose flour (for gravy roux)",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "use browned pan drippings"
+      },
+      {
+        "display_name": "salt (for gravy)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "chopped fresh parsley",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare proteins: pat cube steaks dry, season both sides lightly with half the salt and half the pepper; if steaks are thicker than 1/4\", pound to even thickness about 1/4\" using a meat mallet between plastic.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Set up dredging station: combine dredge flour with remaining salt, remaining pepper and optional garlic powder in a shallow bowl; beat eggs with 1/2 cup milk in another dish.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Dredge steaks: lightly dust each steak with plain flour if desired, dip into egg-milk wash, then press into seasoned flour to coat thoroughly; shake off excess and set on a tray to rest for a few minutes.",
+        "time_min": 7
+      },
+      {
+        "step_no": 4,
+        "text": "Heat skillet and oil: warm a large heavy skillet over medium-high heat; add oil and butter and heat until shimmering and butter foams but does not burn (test with a pinch of flour — it should sizzle).",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Fry steaks: working in batches to avoid crowding, add steaks and fry until golden brown and crisp, about 3-4 minutes per side; transfer to a wire rack or paper towel-lined sheet and tent loosely to keep warm.",
+        "time_min": 12
+      },
+      {
+        "step_no": 6,
+        "text": "Make gravy base: reduce heat to medium, carefully pour off excess oil leaving about 2 tablespoons of fat and any browned bits in the skillet; if needed add butter to equal 2 tbsp fat total.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Roux and deglaze: sprinkle the reserved 1/4 cup flour into the skillet and whisk continuously, cooking until the roux is golden brown and smells slightly nutty, about 1-2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Add milk to form gravy: slowly pour in the remaining milk while whisking to avoid lumps; bring to a gentle simmer, reduce heat to low and simmer until thickened to gravy consistency, stirring frequently, about 5 minutes.",
+        "time_min": 7
+      },
+      {
+        "step_no": 9,
+        "text": "Season gravy and finish: season with additional salt and generous freshly ground black pepper to taste; if gravy is too thick, thin with a splash of milk. Return steaks to skillet briefly to warm through in the gravy if desired.",
+        "time_min": 4
+      },
+      {
+        "step_no": 10,
+        "text": "Serve: plate steaks topped with peppered gravy and garnish with chopped parsley; serve immediately with preferred sides.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

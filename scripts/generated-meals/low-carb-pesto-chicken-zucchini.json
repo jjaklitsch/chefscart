@@ -1,0 +1,222 @@
+{
+  "slug": "low-carb-pesto-chicken-zucchini",
+  "title": "Low-Carb Pesto Chicken & Zucchini",
+  "description": "Juicy pan-seared chicken breast dressed in vibrant basil pesto, served over tender sautéed zucchini ribbons for a bright, low-carb dinner. Fast stovetop cooking keeps the chicken moist while the pesto adds nutty, garlicky richness and fresh herb flavor.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "low-carb",
+    "keto",
+    "paleo",
+    "whole30"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "zucchini",
+    "basil",
+    "parmesan",
+    "pine nuts",
+    "olive oil",
+    "garlic",
+    "lemon",
+    "salt",
+    "black pepper",
+    "red pepper flakes"
+  ],
+  "spice_level": 2,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "low-carb",
+    "keto",
+    "pesto chicken",
+    "zucchini ribbons",
+    "low-carb dinner",
+    "quick weeknight",
+    "pan seared chicken",
+    "basil pesto",
+    "gluten free",
+    "paleo-friendly",
+    "whole30 option",
+    "garlic",
+    "olive oil",
+    "parmesan",
+    "pine nuts",
+    "lemon",
+    "light meal",
+    "mediterranean",
+    "summer",
+    "healthy"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 medium breasts, trimmed"
+      },
+      {
+        "display_name": "zucchini",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, sliced into ribbons or 1/8\" thick rounds"
+      },
+      {
+        "display_name": "basil leaves (packed)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "fresh, stems removed"
+      },
+      {
+        "display_name": "parmesan cheese, grated",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "preferably Parmigiano-Reggiano"
+      },
+      {
+        "display_name": "pine nuts (toasted)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly toasted for flavor"
+      },
+      {
+        "display_name": "extra-virgin olive oil (for pesto)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "use good quality oil"
+      },
+      {
+        "display_name": "garlic cloves (for pesto)",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "zest from 1 small lemon"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "olive oil (for cooking)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for searing chicken and sautéing zucchini"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, for a touch of heat"
+      },
+      {
+        "display_name": "water (to thin pesto if needed)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "use sparingly to reach desired consistency"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: pat chicken dry and season both sides with half the salt and half the pepper; trim ends of zucchini and slice into long ribbons with a vegetable peeler or cut into 1/8\" rounds; measure and set aside pesto ingredients.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Make the pesto: in a food processor combine basil, grated parmesan, toasted pine nuts, garlic, lemon zest, remaining salt and pepper; pulse to combine, then stream in olive oil until a smooth, thick emulsion forms; if too thick, add small amounts of water to loosen. Taste and adjust seasoning.",
+        "time_min": 7
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large skillet over medium-high heat and add cooking olive oil. When shimmering, add the chicken and sear without moving until golden, about 4 minutes per side, then reduce heat to medium and continue cooking until internal temperature reaches 165°F (74°C) or chicken is cooked through. Total cook time will depend on thickness; use an instant-read thermometer.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Rest the cooked chicken on a cutting board for 5 minutes, then slice thinly across the grain. While chicken rests, wipe skillet and return to medium heat.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Sauté zucchini ribbons: add a drizzle of olive oil to the skillet, add zucchini and a pinch of salt and pepper, and sauté 3–4 minutes until just tender but still bright; add optional red pepper flakes if desired. Remove from heat.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Assemble plates: divide zucchini among plates, top with sliced chicken, and spoon or drizzle pesto over chicken and zucchini. Garnish with extra grated parmesan and an additional sprinkle of toasted pine nuts if desired. Serve immediately.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

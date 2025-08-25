@@ -1,0 +1,182 @@
+{
+  "slug": "cacio-e-pepe",
+  "title": "Cacio e Pepe",
+  "description": "A classic Roman pasta showcasing creamy Pecorino Romano and plenty of freshly cracked black pepper, emulsified with starchy pasta water for a silky sauce. Quick, elegant, and intensely savory — relies on technique rather than many ingredients.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "pasta",
+    "pecorino romano",
+    "parmesan",
+    "black pepper",
+    "salt",
+    "water",
+    "olive oil",
+    "butter"
+  ],
+  "spice_level": 1,
+  "time_total_min": 16,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "cacio e pepe",
+    "pecorino romano",
+    "black pepper",
+    "pasta",
+    "spaghetti",
+    "tonnarelli",
+    "roman",
+    "easy dinner",
+    "quick pasta",
+    "creamy without cream",
+    "starchy water",
+    "vegetarian pasta",
+    "weeknight meal",
+    "simple ingredients",
+    "cheese sauce",
+    "peppery",
+    "italian classic",
+    "comfort food",
+    "olive oil",
+    "butter"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "spaghetti or tonnarelli (dry)",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "use high-quality durum wheat pasta; adjust shape if preferred"
+      },
+      {
+        "display_name": "Pecorino Romano, finely grated",
+        "quantity": 160,
+        "unit": "g",
+        "grams": 160,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grate and keep fluffy to prevent clumping"
+      },
+      {
+        "display_name": "Parmesan (Parmigiano-Reggiano), finely grated (optional for creaminess)",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "optional blend to temper Pecorino saltiness"
+      },
+      {
+        "display_name": "freshly cracked black pepper",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "crack coarsely just before cooking for aroma"
+      },
+      {
+        "display_name": "fine sea salt for pasta water",
+        "quantity": 18,
+        "unit": "g",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 tablespoon per 4-5 liters of water; add to boiling water"
+      },
+      {
+        "display_name": "extra-virgin olive oil (optional finish)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13.5,
+        "ml": 15,
+        "optional": true,
+        "notes": "adds gloss if desired"
+      },
+      {
+        "display_name": "unsalted butter (optional for extra silkiness)",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "add at end if you want silkier emulsion"
+      },
+      {
+        "display_name": "reserved pasta cooking water",
+        "quantity": 600,
+        "unit": "ml",
+        "grams": null,
+        "ml": 600,
+        "optional": false,
+        "notes": "reserve in increments; starts with ~1.5 cups reserved from boiling water"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 16,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of water to a rapid boil. Add salt to the boiling water and then add the pasta, stirring to prevent sticking.",
+        "time_min": 1
+      },
+      {
+        "step_no": 2,
+        "text": "Begin timing pasta per package until al dente minus 1–2 minutes; while pasta cooks, toast the cracked black pepper in a large wide stainless-steel or nonstick skillet over medium heat to bloom the oils (stir constantly to avoid burning).",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "When pasta is about 2 minutes from done, use a heatproof cup or measuring jug to reserve 1.5 cups (about 350–400 ml) of starchy cooking water, then continue to cook pasta to desired doneness.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add a small ladle (about 60–120 ml) of the reserved hot pasta water to the skillet with toasted pepper to create a fragrant peppery broth; reduce heat to low to keep warm.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Transfer the drained pasta directly into the skillet (or add pasta back into the empty pot), reserving more pasta water if needed. Toss briefly to coat with the pepper broth.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Off the heat, sprinkle in most of the grated Pecorino (and Parmesan if using) in small handfuls while vigorously tossing or stirring, adding hot pasta water a few tablespoons at a time to create a smooth, emulsified sauce that clings to the pasta; avoid adding too much water at once.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Continue to toss and add more cheese or water as needed until sauce is silky and coats the noodles evenly. If using butter, whisk or toss it in now off heat for extra silkiness; finish with a drizzle of olive oil if desired.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Plate immediately, grinding additional black pepper over each portion and sprinkling any reserved cheese on top. Serve hot so the sauce remains creamy.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

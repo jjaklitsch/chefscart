@@ -169,13 +169,13 @@ export async function POST(request: NextRequest) {
                   quality: 0.9
                 })
                 
-                console.log(`📊 heic-convert result: ${jpegBuffer.length} bytes (${(jpegBuffer.length / 1024 / 1024).toFixed(2)}MB)`)
+                console.log(`📊 heic-convert result: ${jpegBuffer.byteLength} bytes (${(jpegBuffer.byteLength / 1024 / 1024).toFixed(2)}MB)`)
                 
-                if (jpegBuffer.length > 0) {
+                if (jpegBuffer.byteLength > 0) {
                   processedBuffer = jpegBuffer
                   mimeType = 'image/jpeg'
                   console.log(`✅ Successfully converted with heic-convert: ${file.name}`)
-                  console.log(`  - Size change: ${(buffer.byteLength / 1024 / 1024).toFixed(2)}MB → ${(jpegBuffer.length / 1024 / 1024).toFixed(2)}MB`)
+                  console.log(`  - Size change: ${(buffer.byteLength / 1024 / 1024).toFixed(2)}MB → ${(jpegBuffer.byteLength / 1024 / 1024).toFixed(2)}MB`)
                 } else {
                   throw new Error('heic-convert produced empty buffer')
                 }

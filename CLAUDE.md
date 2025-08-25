@@ -34,7 +34,7 @@ npm run deploy     # Deploy functions to Firebase
 - **External APIs**: Instacart IDP, Resend
 
 ### Core User Flow
-1. ZIP validation → Check Instacart coverage
+1. ZIP validation → Check Instacart coverage with prioritized grocery retailers
 2. 10-step chat wizard → Collect preferences  
 3. GPT generation → Create personalized meal plans
 4. Instacart integration → Build shopping cart
@@ -103,6 +103,11 @@ The chat wizard (`PreferencesChat.tsx`) uses a step-based flow:
 - Mock endpoints available (e.g., `/api/generate-mealplan/mock`)
 - Error handling with try-catch and proper status codes
 - TypeScript interfaces ensure type safety across API boundaries
+- Retailers API with intelligent grocery store prioritization:
+  - Tier 0: Whole Foods first
+  - Tier 0.5: Major chains by store count (Aldi, Kroger, Publix, etc.)
+  - Tier 1: Premium chains (Pavilions, Gelson's, Erewhon, Trader Joe's, etc.)
+  - Filters out convenience/drug stores when ≥3 grocery options available
 
 ### Common Tasks
 - Add new chat step: Update `chatSteps` array in `PreferencesChat.tsx`

@@ -1,0 +1,221 @@
+{
+  "slug": "spinach-feta-frittata",
+  "title": "Spinach & Feta Frittata",
+  "description": "A light, savory oven-finished egg dish combining tender wilted spinach, tangy feta, and caramelized onion. Perfect for brunch or a simple dinner, it cooks on the stovetop then finishes under the broiler for a golden top.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "eggs",
+  "ingredient_tags": [
+    "eggs",
+    "spinach",
+    "feta",
+    "onion",
+    "garlic",
+    "olive oil",
+    "milk",
+    "butter",
+    "black pepper",
+    "salt",
+    "parsley"
+  ],
+  "spice_level": 1,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "spinach",
+    "feta",
+    "frittata",
+    "eggs",
+    "brunch",
+    "mediterranean",
+    "baked eggs",
+    "skillet",
+    "quick dinner",
+    "vegetarian",
+    "easy",
+    "one-pan",
+    "cheesy",
+    "garlic",
+    "caramelized onion",
+    "herbs",
+    "olive oil",
+    "breakfast casserole",
+    "protein-rich",
+    "meal prep"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "large eggs",
+        "quantity": 8,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "fresh spinach, washed and stems removed",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "coarsely chopped if large"
+      },
+      {
+        "display_name": "feta cheese, crumbled",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "about 110 g"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "whole milk",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "can substitute with half-and-half for richer texture"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "for sautéing onion"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; reserve some for eggs"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for a touch of heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven broiler to high and position a rack 6 inches below the heat source; if using a conventional oven without broiler, preheat to 200°C/400°F. Crack eggs into a bowl, add milk, half the salt and half the pepper, and whisk until fully combined and slightly frothy.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat an oven-safe 10-inch nonstick or cast-iron skillet over medium heat, add olive oil and butter until butter is melted and foaming.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Add sliced onion to the skillet and cook, stirring occasionally, until softened and beginning to brown and caramelize.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in minced garlic and cook until fragrant, about one minute, then add the spinach in batches, stirring to wilt each addition until all spinach is evenly wilted and any excess liquid has mostly evaporated; season with remaining salt and a pinch of pepper.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Spread the spinach and onion mixture evenly in the skillet and reduce heat to low. Pour the egg mixture over the vegetables, stirring once gently to distribute, then sprinkle crumbled feta evenly over the top.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Cook on the stovetop over low heat until the edges begin to set but the center is still slightly loose, about 4–5 minutes; occasionally lift the edges with a spatula to allow uncooked egg to flow underneath.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Transfer the skillet to the preheated broiler and broil until the top is puffed and lightly golden (or bake in the oven) and a knife inserted near the center comes out clean, about 3–4 minutes. Watch closely to prevent burning.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Remove from oven and let the frittata rest for 3 minutes, then slide onto a cutting board or serve directly from skillet. Garnish with chopped parsley and optional red pepper flakes, slice into 4 wedges and serve warm.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

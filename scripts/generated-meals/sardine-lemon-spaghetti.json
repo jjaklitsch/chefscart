@@ -1,0 +1,226 @@
+{
+  "slug": "sardine-lemon-spaghetti",
+  "title": "Sardine & Lemon Spaghetti",
+  "description": "A bright, pantry-friendly spaghetti tossed with canned sardines, lemon, garlic, and chili flakes for a savory, slightly spicy weeknight pasta. Quick sautéing and a splash of pasta cooking water create a silky sauce that coats each strand.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "sardines",
+    "spaghetti",
+    "lemon",
+    "garlic",
+    "olive oil",
+    "chili flakes",
+    "parsley",
+    "capers",
+    "breadcrumbs",
+    "parmesan"
+  ],
+  "spice_level": 2,
+  "time_total_min": 23,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "seafood",
+    "dairy"
+  ],
+  "search_keywords": [
+    "sardine pasta",
+    "lemon spaghetti",
+    "canned fish recipe",
+    "quick weeknight dinner",
+    "pescatarian pasta",
+    "garlic and lemon",
+    "olive oil pasta",
+    "spicy sardines",
+    "capers and parsley",
+    "pantry meal",
+    "30 minute meal",
+    "simple italian",
+    "seafood spaghetti",
+    "breadcrumb topping",
+    "parmesan finish",
+    "lemon zest",
+    "pasta with sardines",
+    "one pot-ish pasta",
+    "light mediterranean",
+    "garlicky spaghetti"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "spaghetti",
+        "quantity": 340,
+        "unit": "g",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "dried"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, thinly sliced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "about 3 g per clove"
+      },
+      {
+        "display_name": "anchovy fillet (optional, for depth)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "canned sardines in olive oil, drained and roughly flaked",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "usually two 120 g cans including oil; drain and reserve oil if desired"
+      },
+      {
+        "display_name": "lemon (zest and juice)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": 30,
+        "optional": false,
+        "notes": "zest 1 tsp and juice about 30 ml"
+      },
+      {
+        "display_name": "red chili flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "capers, rinsed",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "grated parmesan cheese (or pecorino), for serving",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "leave out for strict pescatarian/vegetarian preferences"
+      },
+      {
+        "display_name": "plain breadcrumbs, toasted",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for crunchy topping"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "for pasta water and seasoning"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 23,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of water to a rolling boil, add salt, and cook the spaghetti uncovered until al dente according to package instructions; reserve about 240 ml (1 cup) of pasta cooking water before draining.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "While pasta cooks, heat olive oil in a large skillet over medium heat. Add sliced garlic and optional anchovy and sauté until fragrant and just golden, stirring constantly to avoid burning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Add chili flakes and drained flaked sardines to the skillet, gently breaking larger pieces with a spoon; cook for a minute to warm through and meld flavors.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in lemon zest, lemon juice, and capers; pour in about 120 ml (1/2 cup) of the reserved pasta water and bring to a gentle simmer to form a loose sauce.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Add the drained spaghetti to the skillet and toss vigorously with tongs, adding more reserved pasta water as needed to achieve a silky coating; adjust seasoning with salt and pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Remove from heat, stir in chopped parsley, and let the pasta rest for 30 seconds to thicken slightly. Plate and finish with toasted breadcrumbs and grated parmesan if using.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Serve immediately with extra lemon wedges on the side for squeezing and additional chili flakes if desired.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

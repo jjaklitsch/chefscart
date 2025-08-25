@@ -1,0 +1,237 @@
+{
+  "slug": "paleo-baked-cod-with-salsa-verde",
+  "title": "Paleo Baked Cod with Salsa Verde",
+  "description": "Lean cod fillets baked until flaky and finished with a bright, herbaceous salsa verde. Fresh herbs, capers, lemon and olive oil give vibrant flavor while paleo-compliant accompaniments keep this dish light and satisfying.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "paleo",
+    "pescatarian",
+    "whole30",
+    "low-carb"
+  ],
+  "primary_ingredient": "cod",
+  "ingredient_tags": [
+    "cod",
+    "fish",
+    "olive oil",
+    "lemon",
+    "parsley",
+    "capers",
+    "garlic",
+    "anchovy",
+    "shallot",
+    "red pepper flakes"
+  ],
+  "spice_level": 2,
+  "time_total_min": 28,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "paleo",
+    "baked cod",
+    "salsa verde",
+    "pescatarian",
+    "whole30",
+    "low-carb",
+    "mediterranean",
+    "herb sauce",
+    "capers",
+    "lemon garlic",
+    "easy dinner",
+    "healthy fish",
+    "oven baked",
+    "weeknight meal",
+    "gluten-free",
+    "low calorie",
+    "parsley sauce",
+    "anchovy",
+    "olive oil"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "cod fillets, skinless (about 6-7 oz each)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "pat dry with paper towel"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, packed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed, lightly packed"
+      },
+      {
+        "display_name": "fresh cilantro, packed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 16,
+        "ml": null,
+        "optional": true,
+        "notes": "optional — for additional herb brightness"
+      },
+      {
+        "display_name": "capers, rinsed",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "drain and rinse to reduce saltiness"
+      },
+      {
+        "display_name": "garlic, peeled",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "roughly chopped"
+      },
+      {
+        "display_name": "anchovy fillets in oil",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "adds umami; omit for personal preference"
+      },
+      {
+        "display_name": "shallot, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 medium lemon"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divided: half for fish, half for salsa"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "olive oil for drizzling/baking",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for fish before baking"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 28,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 400°F (200°C). Line a baking sheet with parchment or lightly oil a baking dish and set aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Season the cod fillets on both sides with half the salt and half the pepper. Drizzle with the tablespoon of olive oil and let sit while you prepare the salsa verde.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Make the salsa verde by combining parsley, cilantro (if using), capers, garlic, anchovy fillets (if using), shallot, lemon juice, lemon zest, red wine vinegar, remaining salt, remaining pepper, red pepper flakes (if using), and 3 tablespoons olive oil in a food processor or by finely mincing and whisking. Pulse until finely chopped but not a puree; adjust seasoning to taste.",
+        "time_min": 7
+      },
+      {
+        "step_no": 4,
+        "text": "Arrange the seasoned cod on the prepared baking sheet or dish in a single layer with a little space between fillets.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Bake the cod in the preheated oven until opaque and flaking easily with a fork, about 10–12 minutes depending on thickness (approximately 10 minutes for 1‑inch thick fillets, longer for thicker).",
+        "time_min": 11
+      },
+      {
+        "step_no": 6,
+        "text": "Remove the cod from the oven and spoon the salsa verde over each fillet while hot. Let rest 1–2 minutes so flavors meld, then serve immediately with lemon wedges if desired.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

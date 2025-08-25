@@ -1,0 +1,289 @@
+{
+  "slug": "chana-masala",
+  "title": "Chana Masala",
+  "description": "Hearty North Indian chickpea curry simmered in a spiced tomato-onion gravy. Bright with lemon and cilantro, it balances warm spices and a touch of heat for a comforting, protein-rich meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward",
+    "vegetarian"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "chickpeas",
+    "tomato",
+    "onion",
+    "garlic",
+    "ginger",
+    "cilantro",
+    "lemon",
+    "oil",
+    "cumin",
+    "coriander",
+    "garam masala",
+    "turmeric",
+    "green chili"
+  ],
+  "spice_level": 3,
+  "time_total_min": 44,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "chana masala",
+    "chickpea curry",
+    "vegetarian curry",
+    "vegan indian",
+    "protein-rich",
+    "spiced tomato gravy",
+    "garam masala",
+    "cumin",
+    "coriander",
+    "weeknight dinner",
+    "meal prep",
+    "gluten-free",
+    "plant-based",
+    "cilantro",
+    "lemony",
+    "comfort food",
+    "chickpeas",
+    "onion-tomato",
+    "stovetop curry"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "canned chickpeas (drained and rinsed)",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "two 400g cans drained (or equivalent cooked chickpeas)"
+      },
+      {
+        "display_name": "water (or reserved chickpea liquid)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "for simmering; adjust to desired sauce consistency"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "onion (finely chopped)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium yellow or white"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger (grated)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "green chili (finely chopped)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust or omit for heat preference"
+      },
+      {
+        "display_name": "tomato puree",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "canned tomato puree or blended fresh tomatoes"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "turmeric powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garam masala",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": "add at end for aroma"
+      },
+      {
+        "display_name": "amchur (dry mango powder) or lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "use lemon juice if amchur not available"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.6,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "fresh cilantro (chopped)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "whole cumin seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to temper at start"
+      },
+      {
+        "display_name": "kasuri methi (dried fenugreek leaves)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, crush between palms and add near end"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 44,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: finely chop onion, mince garlic, grate ginger, chop chili if using, drain and rinse chickpeas, measure spices and cilantro.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil in a large skillet or Dutch oven over medium heat until shimmering. Add whole cumin seeds and toast until fragrant and they sizzle.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add chopped onion and cook, stirring occasionally, until soft and beginning to brown on edges to develop sweetness.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in minced garlic, grated ginger, and chopped green chili; cook until raw aroma dissipates.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add ground cumin, ground coriander, turmeric and a pinch of salt; toast the spices for 30–45 seconds to bloom flavors without burning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Pour in tomato puree and bring to a gentle simmer. Reduce heat to medium-low and cook, stirring occasionally, until the sauce thickens and oil begins to separate from the tomato base.",
+        "time_min": 8
+      },
+      {
+        "step_no": 7,
+        "text": "Add drained chickpeas and measured water (or reserved liquid). Stir to combine and bring to a low simmer.",
+        "time_min": 1
+      },
+      {
+        "step_no": 8,
+        "text": "Cover partly and simmer gently so the chickpeas absorb flavors; mash a small portion against the pan to thicken the sauce if desired.",
+        "time_min": 12
+      },
+      {
+        "step_no": 9,
+        "text": "Uncover, adjust consistency with additional water if needed, then stir in garam masala, amchur or lemon juice, salt, and pepper. Taste and adjust seasoning.",
+        "time_min": 2
+      },
+      {
+        "step_no": 10,
+        "text": "Stir in crushed kasuri methi if using and finish with chopped cilantro. Remove from heat and let rest a few minutes before serving.",
+        "time_min": 1
+      },
+      {
+        "step_no": 11,
+        "text": "Serve hot with basmati rice, naan, or roti and an extra wedge of lemon on the side.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

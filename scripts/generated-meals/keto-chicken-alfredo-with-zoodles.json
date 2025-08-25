@@ -1,0 +1,237 @@
+{
+  "slug": "keto-chicken-alfredo-with-zoodles",
+  "title": "Keto Chicken Alfredo with Zoodles",
+  "description": "Creamy, garlicky Alfredo sauce tossed with tender seared chicken and crisp zucchini noodles for a low-carb comfort meal. Ready in about 30 minutes, this skillet dinner delivers rich, cheesy flavor with bright parsley and lemon to balance the sauce.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian",
+    "american"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "zucchini",
+    "zoodles",
+    "cream",
+    "parmesan",
+    "garlic",
+    "butter",
+    "olive oil",
+    "lemon",
+    "parsley",
+    "salt",
+    "pepper",
+    "cream cheese",
+    "nutmeg"
+  ],
+  "spice_level": 1,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "keto chicken alfredo",
+    "zoodles",
+    "low-carb pasta",
+    "zucchini noodles",
+    "garlic alfredo",
+    "cream sauce",
+    "parmesan",
+    "weeknight dinner",
+    "skillet meal",
+    "gluten-free",
+    "low carb",
+    "high fat",
+    "ketogenic",
+    "chicken skillet",
+    "easy dinner",
+    "30 minute meal",
+    "healthy comfort food",
+    "lemon parsley",
+    "garlicky",
+    "single pan"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts, trimmed and pounded to even thickness",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1/2-inch slices or bite-size strips"
+      },
+      {
+        "display_name": "zucchini (for zoodles), medium",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 960,
+        "ml": null,
+        "optional": false,
+        "notes": "spiralized into noodles, excess moisture patted dry"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "mince finely"
+      },
+      {
+        "display_name": "heavy cream (36% fat)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cream cheese, softened",
+        "quantity": 2,
+        "unit": "oz",
+        "grams": 56,
+        "ml": null,
+        "optional": true,
+        "notes": "adds extra creaminess; optional"
+      },
+      {
+        "display_name": "freshly grated parmesan cheese",
+        "quantity": 3,
+        "unit": "oz",
+        "grams": 84,
+        "ml": null,
+        "optional": false,
+        "notes": "grate finely for smooth melting"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lemon"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish and brightness"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus more to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "ground nutmeg",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, adds warmth to sauce"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for mild heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: trim and slice chicken, spiralize zucchini into zoodles, pat zoodles dry in a towel, measure cheeses and cream, mince garlic, and chop parsley.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Season chicken pieces with half the salt and pepper. Heat a large skillet over medium-high heat and add olive oil. Sear chicken in a single layer until golden brown and cooked through, turning once (internal temperature 165°F). Remove chicken to a plate and tent loosely.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to medium, add butter to the same skillet. Sauté minced garlic until fragrant but not browned, about 30 seconds, scraping up browned bits from the pan.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Pour in heavy cream and bring to a gentle simmer, stirring to combine with garlic and pan fond. Add cream cheese if using and whisk until fully incorporated and smooth.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Lower heat to medium-low and stir in grated parmesan a handful at a time until melted and the sauce is silky. Season sauce with remaining salt, pepper, lemon juice, and a pinch of nutmeg and red pepper flakes if using.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Return cooked chicken to the skillet and toss to coat in the sauce. Add zoodles and gently fold them into the sauce for 1–2 minutes until just warmed and slightly softened but still al dente; avoid overcooking to prevent sogginess.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Remove from heat, taste and adjust seasoning. Sprinkle chopped parsley over the top and serve immediately, dividing into plates or bowls.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

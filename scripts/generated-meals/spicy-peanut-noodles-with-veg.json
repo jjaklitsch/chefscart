@@ -1,0 +1,312 @@
+{
+  "slug": "spicy-peanut-noodles-with-veg",
+  "title": "Spicy Peanut Noodles with Veg",
+  "description": "Silky wheat noodles tossed in a creamy, spicy peanut sauce with crisp-tender vegetables and fresh herbs. Quick stir-fry technique keeps vegetables vibrant while the sauce balances heat, tang, and savory umami for a satisfying vegetarian meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "wheat noodles",
+    "peanut butter",
+    "soy sauce",
+    "sesame oil",
+    "carrot",
+    "bell pepper",
+    "broccoli",
+    "scallion",
+    "ginger",
+    "garlic",
+    "lime",
+    "cilantro",
+    "red pepper flakes",
+    "honey",
+    "tofu"
+  ],
+  "spice_level": 4,
+  "time_total_min": 36,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "peanut",
+    "soy",
+    "gluten",
+    "sesame"
+  ],
+  "search_keywords": [
+    "peanut noodles",
+    "spicy peanut sauce",
+    "vegetarian noodles",
+    "thai peanut",
+    "stir fry noodles",
+    "weeknight dinner",
+    "quick vegetarian",
+    "creamy peanut",
+    "sesame oil",
+    "tofu option",
+    "spicy noodles",
+    "lime and cilantro",
+    "garlic ginger",
+    "sheet pan veg",
+    "cold peanut noodles",
+    "meal prep",
+    "noodle stir-fry",
+    "wheat noodles",
+    "easy sauce",
+    "chili flakes"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "wheat noodles (spaghetti or Chinese eggless noodles)",
+        "quantity": 340,
+        "unit": "g",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "dried"
+      },
+      {
+        "display_name": "natural creamy peanut butter",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "stir before measuring"
+      },
+      {
+        "display_name": "low-sodium soy sauce",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "toasted sesame oil"
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "honey or maple syrup",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "maple for vegan"
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lime"
+      },
+      {
+        "display_name": "fresh ginger",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and finely grated"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "chili garlic sauce (sambal oelek or sriracha)",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "warm water (to thin sauce)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "more as needed for desired consistency"
+      },
+      {
+        "display_name": "carrot",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "julienned"
+      },
+      {
+        "display_name": "red bell pepper",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly sliced"
+      },
+      {
+        "display_name": "broccoli florets",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "small florets"
+      },
+      {
+        "display_name": "scallions (green onions)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "sliced on bias"
+      },
+      {
+        "display_name": "firm tofu (optional protein)",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": true,
+        "notes": "pressed and cubed; optional for extra protein"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for stir-frying"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fresh cilantro",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "chopped, for garnish"
+      },
+      {
+        "display_name": "crushed peanuts (unsalted)",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2,
+        "unit": "g",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "or to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 36,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare and measure all ingredients: peel and grate ginger, mince garlic, julienne carrots, slice bell pepper, trim broccoli into small florets, slice scallions, press and cube tofu if using, and measure sauce components.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Bring a large pot of salted water to a rolling boil and cook the wheat noodles according to package instructions until al dente; reserve a cup of pasta water, then drain and toss immediately with a small drizzle of oil to prevent sticking.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "While noodles cook, whisk the peanut sauce in a medium bowl by combining peanut butter, soy sauce, sesame oil, rice vinegar, honey or maple syrup, lime juice, grated ginger, minced garlic, chili garlic sauce and warm water until smooth; adjust consistency with additional warm water to a pourable but creamy texture.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Heat a large skillet or wok over medium-high heat, add vegetable oil and sear tofu cubes until golden on at least two sides (if using), about 4 minutes per side, then remove and set aside; alternatively skip to next step if not using tofu.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "In the same skillet/wok over medium-high heat add a touch more oil if needed, stir-fry carrots and broccoli for about 2 minutes, add bell pepper and continue stir-frying until vegetables are crisp-tender, about 2–3 more minutes; season lightly with salt and pepper.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Return noodles (and tofu if using) to the skillet with the vegetables, pour the peanut sauce over the top, and toss vigorously to coat; if sauce is too thick, loosen with reserved pasta water a tablespoon at a time until the sauce evenly coats noodles and veggies.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Finish by stirring in sliced scallions and a squeeze of fresh lime, taste and adjust seasoning with additional soy sauce, lime, or chili sauce as desired; transfer to a serving platter and garnish with toasted sesame seeds, crushed peanuts and chopped cilantro.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

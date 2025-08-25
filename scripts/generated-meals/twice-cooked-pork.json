@@ -1,0 +1,248 @@
+{
+  "slug": "twice-cooked-pork",
+  "title": "Twice-Cooked Pork",
+  "description": "A classic Sichuan-inspired twice-cooked pork featuring tender boiled pork belly sliced and stir-fried until sizzling with spicy fermented bean paste, sweet bell pepper and scallions. Rich, savory, and slightly smoky with a balanced heat and umami finish.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "pork belly",
+    "scallion",
+    "garlic",
+    "ginger",
+    "bell pepper",
+    "sichuan bean paste",
+    "doubanjiang",
+    "soy sauce",
+    "rice wine",
+    "sugar",
+    "vegetable oil",
+    "salt",
+    "water"
+  ],
+  "spice_level": 3,
+  "time_total_min": 51,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "twice-cooked pork",
+    "hong shao",
+    "doubanjiang",
+    "sichuan",
+    "pork belly",
+    "stir-fry",
+    "spicy pork",
+    "bell pepper",
+    "scallion",
+    "garlic",
+    "ginger",
+    "chinese dinner",
+    "asian",
+    "rice accompaniment",
+    "umami",
+    "fried pork",
+    "stewed then fried",
+    "weeknight",
+    "comfort food"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "pork belly (skin removed if desired) cut into 2-3 in piece for boiling",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "1 piece (~800 g); will be boiled then sliced"
+      },
+      {
+        "display_name": "water (for boiling pork)",
+        "quantity": 2000,
+        "unit": "ml",
+        "grams": null,
+        "ml": 2000,
+        "optional": false,
+        "notes": "enough to cover pork in pot"
+      },
+      {
+        "display_name": "scallions (white and green separated, whites chopped, greens cut into 2-inch lengths)",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "use whites for aromatics, greens for garnish"
+      },
+      {
+        "display_name": "fresh ginger, peeled and thinly sliced",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "thin slices for boiling and stir-fry"
+      },
+      {
+        "display_name": "garlic, crushed",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried red chilies (optional for extra heat)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "torn or halved"
+      },
+      {
+        "display_name": "sichuan doubanjiang (fermented broad bean and chili paste)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 34,
+        "ml": 30,
+        "optional": false,
+        "notes": "gives primary spicy umami flavor"
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "shaoxing rice wine (or dry sherry)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": 15,
+        "optional": false,
+        "notes": "used in braising/seasoning"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "balances heat"
+      },
+      {
+        "display_name": "bell pepper (red or green), seeded and thickly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "adds sweetness and color"
+      },
+      {
+        "display_name": "vegetable oil (neutral high-heat oil)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 45,
+        "optional": false,
+        "notes": "for frying"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "toasted sesame oil",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 2.5,
+        "optional": true,
+        "notes": "finish for aroma"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 51,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare pork by trimming excess rind if desired and rinse; place pork belly in a pot large enough to cover and add water, half the sliced ginger, half the scallion whites and a pinch of salt.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Bring water to a boil over high heat, then reduce to a simmer and poach the pork gently until just cooked through and tender enough to slice, about 25 minutes depending on thickness.",
+        "time_min": 25
+      },
+      {
+        "step_no": 3,
+        "text": "Remove pork from broth and let rest until cool enough to handle; reserve 100–200 ml of the poaching liquid for later if needed for deglazing or thinning sauce.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Slice the cooled pork belly thinly (2–3 mm) across the grain into bite-sized slices; arrange on a plate ready for frying.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Heat a large wok or heavy skillet over high heat until smoking slightly, add vegetable oil and spread; add remaining ginger, garlic, dried chilies if using and the remaining scallion whites; stir-fry briefly (20–30 seconds) until aromatic.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Add sliced pork to the hot wok in a single layer if possible and stir-fry over high heat until edges begin to brown and render slightly, about 3–4 minutes. Work in batches if needed to avoid crowding.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Push pork to the side and add doubanjiang; fry the paste in the oil for 20–30 seconds to bloom the flavors, then mix with the pork to coat evenly.",
+        "time_min": 1
+      },
+      {
+        "step_no": 8,
+        "text": "Add sliced bell pepper (if using), soy sauce, rice wine, sugar and reserved poaching liquid as needed to create a glossy sauce; stir-fry until peppers are just tender-crisp and sauce clings to pork, about 2–3 minutes.",
+        "time_min": 3
+      },
+      {
+        "step_no": 9,
+        "text": "Taste and adjust seasoning with salt; finish with a drizzle of toasted sesame oil and fold in scallion greens just before removing from heat.",
+        "time_min": 1
+      },
+      {
+        "step_no": 10,
+        "text": "Transfer to a serving platter and serve hot with steamed rice and optional greens.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

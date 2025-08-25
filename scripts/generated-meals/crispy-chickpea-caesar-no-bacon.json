@@ -1,0 +1,283 @@
+{
+  "slug": "crispy-chickpea-caesar-no-bacon",
+  "title": "Crispy Chickpea Caesar (No Bacon)",
+  "description": "A bright, crunchy plant-forward take on classic Caesar featuring oven-crisped chickpeas in place of bacon for savory crunch. Creamy, tangy Caesar dressing with Parmesan and lemon coats crisp romaine and shatteringly toasted croutons for a satisfying lunch or dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "chickpeas",
+    "romaine",
+    "parmesan",
+    "bread",
+    "lemon",
+    "olive oil",
+    "garlic",
+    "anchovy",
+    "egg yolk",
+    "mustard",
+    "capers",
+    "salt",
+    "pepper",
+    "breadcrumbs"
+  ],
+  "spice_level": 1,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "crispy chickpeas",
+    "chickpea caesar",
+    "no bacon caesar",
+    "vegetarian caesar",
+    "plant-forward salad",
+    "croutons",
+    "romaine salad",
+    "parmesan dressing",
+    "homemade caesar",
+    "oven roasted chickpeas",
+    "salad for lunch",
+    "weeknight dinner",
+    "lemon garlic dressing",
+    "anchovy caesar",
+    "protein salad",
+    "crunchy salad",
+    "easy salad recipe",
+    "meatless caesar",
+    "salad with croutons",
+    "party salad"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "canned chickpeas, drained and rinsed",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 330,
+        "ml": null,
+        "optional": false,
+        "notes": "pat dry with paper towel"
+      },
+      {
+        "display_name": "olive oil (for chickpeas)",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": 22.5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning chickpeas"
+      },
+      {
+        "display_name": "salt (for chickpeas)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "day-old crusty bread, cut into 1/2-inch cubes (for croutons)",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "torn into bite-sized cubes"
+      },
+      {
+        "display_name": "olive oil (for croutons)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic, minced (for croutons)",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "romaine lettuce, washed, dried and chopped",
+        "quantity": 2,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "outer leaves removed, chopped into bite-sized pieces"
+      },
+      {
+        "display_name": "grated Parmesan cheese (plus extra for garnish)",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "egg yolk (room temperature) or 2 tbsp mayonnaise as swap",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": "traditional emulsifier; can use pasteurized egg or mayo"
+      },
+      {
+        "display_name": "anchovy fillets, minced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "use more or less to taste"
+      },
+      {
+        "display_name": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 medium lemon"
+      },
+      {
+        "display_name": "olive oil (for dressing)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 108,
+        "ml": 120,
+        "optional": false,
+        "notes": "extra-virgin preferred"
+      },
+      {
+        "display_name": "capers, drained (optional in dressing)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "adds briny note"
+      },
+      {
+        "display_name": "freshly ground black pepper (to taste)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt (to taste for dressing and salad)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust after tossing"
+      },
+      {
+        "display_name": "optional lemon wedges (to serve)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into quarters"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Line a rimmed baking sheet with parchment paper for chickpeas and another for croutons or leave space on one sheet if large.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare chickpeas: after draining and rinsing, thoroughly pat chickpeas dry and remove loose skins; toss with oil, smoked paprika, salt and pepper so each bean is lightly coated.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Spread chickpeas in a single layer on the prepared sheet and roast in the preheated oven until crisp and golden, shaking the pan once halfway through.",
+        "time_min": 18
+      },
+      {
+        "step_no": 4,
+        "text": "Meanwhile prepare croutons: toss bread cubes with oil and minced garlic, spread on a sheet and bake until golden and crunchy, turning once for even browning; remove and cool.",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "Make the Caesar dressing: whisk together egg yolk, minced anchovies, Dijon, lemon juice, and capers (if using). Slowly whisk in olive oil until a thick emulsified dressing forms; finish with grated Parmesan, salt and pepper to taste.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Assemble the salad: place chopped romaine in a large bowl, add most of the grated Parmesan, toss with dressing until evenly coated, then fold in croutons and about two-thirds of the crispy chickpeas to retain some for garnish.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Plate and finish: divide salad among plates or a serving bowl, sprinkle remaining Parmesan and remaining chickpeas on top, add an extra crack of black pepper and serve with lemon wedges.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

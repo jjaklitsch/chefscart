@@ -1,0 +1,280 @@
+{
+  "slug": "cobb-salad-wrap",
+  "title": "Cobb Salad Wrap",
+  "description": "A crisp, layered Cobb Salad wrapped in a soft tortilla for a portable, flavor-packed meal. Classic ingredients — grilled chicken, bacon, avocado, egg, blue cheese and a tangy red wine vinaigrette — combine for creamy, savory and bright contrasts in every bite.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "bacon",
+    "egg",
+    "avocado",
+    "blue cheese",
+    "romaine",
+    "tomato",
+    "tortilla",
+    "red wine vinegar",
+    "olive oil",
+    "mustard",
+    "shallot"
+  ],
+  "spice_level": 1,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "cobb salad",
+    "wrap",
+    "chicken wrap",
+    "grilled chicken",
+    "bacon",
+    "avocado",
+    "blue cheese",
+    "romaine",
+    "red wine vinaigrette",
+    "easy lunch",
+    "portable dinner",
+    "low-carb option",
+    "meal prep",
+    "quick weeknight",
+    "salad wrap",
+    "protein packed",
+    "tomato",
+    "hard boiled egg",
+    "tortilla"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts, trimmed",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 medium breasts"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil (for chicken)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13.5,
+        "ml": 15,
+        "optional": false,
+        "notes": "for brushing or pan searing"
+      },
+      {
+        "display_name": "bacon strips",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 224,
+        "ml": null,
+        "optional": false,
+        "notes": "regular-cut"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "for hard boiling"
+      },
+      {
+        "display_name": "romaine lettuce, washed and chopped",
+        "quantity": 6,
+        "unit": "cup",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 hearts"
+      },
+      {
+        "display_name": "cherry tomatoes, halved",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "or 2 medium tomatoes, diced"
+      },
+      {
+        "display_name": "ripe avocado, sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 150 g peeled weight"
+      },
+      {
+        "display_name": "crumbled blue cheese",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 56,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "large flour tortillas (10-12 inch)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "soft, room temperature"
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "extra-virgin olive oil (for dressing)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 40.5,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "shallot, minced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small shallot"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 0.5,
+        "unit": "clove",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt (dressing)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "black pepper (dressing)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon juice (optional, for dressing brightness)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": true,
+        "notes": "adds brightness if desired"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring eggs to a boil in a saucepan of cold water; when water reaches a rolling boil, reduce heat to maintain a gentle boil and cook eggs for 10 minutes. Immediately transfer eggs to an ice bath for 5 minutes, then peel and quarter.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "While eggs cook, season chicken breasts with salt and pepper and brush with olive oil. Heat a skillet or grill pan over medium-high heat and cook chicken until internal temperature reaches 165°F (74°C), about 5-7 minutes per side depending on thickness. Transfer to a cutting board to rest 5 minutes, then slice thinly.",
+        "time_min": 18
+      },
+      {
+        "step_no": 3,
+        "text": "Cook bacon in a skillet over medium heat until crisp, about 8-10 minutes, turning occasionally; transfer to paper towels to drain, then chop into bite-sized pieces.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Make the vinaigrette by whisking together red wine vinegar, Dijon mustard, minced shallot, minced garlic, salt, pepper and olive oil (and lemon juice if using) until emulsified. Taste and adjust seasoning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Warm tortillas briefly in a dry skillet or microwave so they are pliable, about 20-30 seconds each, and lay them flat. Divide chopped romaine evenly among tortillas, then layer sliced chicken, chopped bacon, quartered eggs, halved cherry tomatoes, avocado slices and crumbled blue cheese in parallel rows down the center of each tortilla.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Drizzle a small amount of vinaigrette over the fillings, then fold the short edges in and roll tightly from one long side to form a wrap. If desired, press seam-side down in a warm skillet for 1 minute per side to seal and warm through.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Cut each wrap in half on the bias and serve immediately or wrap tightly in foil or parchment for transport.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

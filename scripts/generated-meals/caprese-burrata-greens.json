@@ -1,0 +1,231 @@
+{
+  "slug": "caprese-burrata-greens",
+  "title": "Caprese Burrata Greens",
+  "description": "A bright, no-cook salad combining peppery mixed greens with sweet cherry tomatoes, fresh basil, creamy burrata and a tangy balsamic-lemon vinaigrette. Quick to assemble, it highlights fresh summer flavors and luxurious burrata for a light lunch or elegant side.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "burrata",
+  "ingredient_tags": [
+    "burrata",
+    "mozzarella",
+    "tomatoes",
+    "mixed greens",
+    "arugula",
+    "basil",
+    "olive oil",
+    "balsamic vinegar",
+    "lemon",
+    "salt",
+    "black pepper",
+    "garlic",
+    "crusty bread",
+    "pine nuts",
+    "red pepper flakes",
+    "shallot"
+  ],
+  "spice_level": 1,
+  "time_total_min": 15,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "caprese",
+    "burrata",
+    "caprese salad",
+    "burrata salad",
+    "tomato basil",
+    "summer salad",
+    "mixed greens",
+    "arugula",
+    "balsamic vinaigrette",
+    "lemon dressing",
+    "quick lunch",
+    "vegetarian lunch",
+    "entree salad",
+    "side salad",
+    "crusty bread"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "burrata cheese (room temperature)",
+        "quantity": 16,
+        "unit": "oz",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "one whole 16 oz ball or two 8 oz balls, drained and brought to room temperature"
+      },
+      {
+        "display_name": "cherry tomatoes, halved if large",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "use a mix of colors if available"
+      },
+      {
+        "display_name": "mixed salad greens (spring mix) plus arugula",
+        "quantity": 5,
+        "unit": "oz",
+        "grams": 142,
+        "ml": null,
+        "optional": false,
+        "notes": "approx 4 cups packed"
+      },
+      {
+        "display_name": "fresh basil leaves, torn",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly packed, tear large leaves"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "use a good quality fruity olive oil"
+      },
+      {
+        "display_name": "balsamic vinegar (preferably aged)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "can substitute balsamic glaze (use less if very sweet)"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a medium lemon"
+      },
+      {
+        "display_name": "shallot, finely minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 small red onion shallot"
+      },
+      {
+        "display_name": "garlic, grated or minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "optional — for a sharper dressing note"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for finishing"
+      },
+      {
+        "display_name": "toasted pine nuts",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": true,
+        "notes": "toast briefly in a dry skillet until fragrant"
+      },
+      {
+        "display_name": "crusty bread (for serving)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "1 small baguette or equivalent, sliced and optionally toasted"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for a hint of heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 15,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: halve cherry tomatoes, tear basil, finely mince shallot and garlic if using, and bring burrata to room temperature so it is soft and creamy.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Make the dressing: whisk together olive oil, balsamic vinegar, lemon juice, minced shallot, grated garlic (optional), salt and black pepper in a small bowl until emulsified; taste and adjust seasoning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Assemble greens and tomatoes: place mixed greens and arugula in a large shallow bowl or platter, scatter halved cherry tomatoes and torn basil over the greens.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Dress the salad: drizzle about two-thirds of the dressing over the greens and tomatoes and gently toss to coat, being careful not to bruise leaves.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Plate and add burrata: transfer dressed greens to serving plates if not already on a platter, gently place the whole burrata(s) in the center or divide into portions and nestle pieces among the salad.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Finish and serve: drizzle remaining dressing and a little extra olive oil over the burrata, sprinkle toasted pine nuts and a pinch of red pepper flakes if using, and finish with flaky salt and extra black pepper. Serve immediately with crusty bread if desired.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

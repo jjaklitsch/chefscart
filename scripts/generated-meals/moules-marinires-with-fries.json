@@ -1,0 +1,264 @@
+{
+  "slug": "moules-marinires-with-fries",
+  "title": "Moules Marinières with Fries",
+  "description": "Classic French mussels steamed in a fragrant white-wine, garlic, shallot and herb broth served with crisp, hand-cut fries. Bright, briny mussels and buttery-scented broth pair perfectly with hot, crunchy fries for a comforting bistro-style meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "french"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "mussels",
+  "ingredient_tags": [
+    "mussels",
+    "potatoes",
+    "white wine",
+    "garlic",
+    "shallot",
+    "butter",
+    "parsley",
+    "bay leaf",
+    "black pepper",
+    "lemon",
+    "olive oil",
+    "flour",
+    "salt"
+  ],
+  "spice_level": 1,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "seafood",
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "moules marinières",
+    "mussels",
+    "mussels and fries",
+    "moules frites",
+    "white wine mussels",
+    "bistro mussels",
+    "hand-cut fries",
+    "crispy fries",
+    "garlic butter mussels",
+    "shallot",
+    "parsley",
+    "lemon",
+    "seafood dinner",
+    "pescatarian",
+    "french bistro",
+    "one-pot mussels",
+    "weeknight dinner",
+    "restaurant style",
+    "easy seafood"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "fresh mussels, debearded and scrubbed",
+        "quantity": 2,
+        "unit": "lb",
+        "grams": 908,
+        "ml": null,
+        "optional": false,
+        "notes": "discard any open mussels that do not close when tapped; rinse and remove beards"
+      },
+      {
+        "display_name": "dry white wine (like sauvignon blanc or muscadet)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "use a wine you'd drink"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 56,
+        "ml": 60,
+        "optional": false,
+        "notes": "divided: some for broth, some for finishing"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for frying fries and sautéing aromatics"
+      },
+      {
+        "display_name": "shallots, finely sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "about 60 g total"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh flat-leaf parsley, chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "packed chopped; reserve some for garnish"
+      },
+      {
+        "display_name": "bay leaves",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "whole"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus more for fries boiling and seasoning"
+      },
+      {
+        "display_name": "lemon, halved and cut into wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "for finishing and serving"
+      },
+      {
+        "display_name": "russet potatoes, peeled (or scrubbed) and cut into 1/3-inch fries",
+        "quantity": 2,
+        "unit": "lb",
+        "grams": 908,
+        "ml": null,
+        "optional": false,
+        "notes": "soaked in cold water to remove excess starch"
+      },
+      {
+        "display_name": "vegetable oil (for frying)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "enough for shallow or deep frying"
+      },
+      {
+        "display_name": "all-purpose flour (optional for a light dredge of fries)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": true,
+        "notes": "toss fries lightly for extra crispness"
+      },
+      {
+        "display_name": "cornstarch (optional for extra-crisp fries)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "mixed with flour or alone"
+      },
+      {
+        "display_name": "coarse salt (for finishing fries)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare mussels: remove beards, scrub shells, discard any broken or open mussels that don't close when tapped; place cleaned mussels in the refrigerator until ready.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Soak and par-cook fries: cut potatoes into 1/3-inch sticks, place in cold water and soak 20 minutes to 1 hour (shorter soaking counted here); drain and pat dry thoroughly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Start fries first fry (blanch): heat vegetable oil to 300°F (if using thermometer) or medium-low; fry potato sticks in batches until tender but not colored (about 4–5 minutes per batch); remove to a wire rack and drain.",
+        "time_min": 12
+      },
+      {
+        "step_no": 4,
+        "text": "Make mussel broth: in a large wide pot or Dutch oven over medium heat, add olive oil and 2 tbsp butter; sauté sliced shallots until translucent, then add minced garlic and cook briefly until fragrant (about 1 minute).",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Deglaze and steam: add white wine, bay leaves, half the chopped parsley, salt and pepper; bring to a brisk simmer to burn off some alcohol (about 2 minutes).",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Add mussels to the pot, cover tightly and increase heat to maintain a vigorous steam; cook until mussels open, shaking the pot occasionally, about 5–6 minutes. Discard any mussels remaining closed after cooking.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Finish broth: remove lid, transfer mussels with tongs to serving bowls leaving cooking liquid in pot; reduce liquid briefly if needed, then swirl in remaining butter and adjust seasoning; stir in remaining parsley and a squeeze of lemon.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Second fry and season fries: heat oil to higher temperature (about 375°F) or medium-high; fry blanched fries in batches until golden and crisp, about 3–4 minutes per batch; drain on paper or rack and immediately season with coarse salt.",
+        "time_min": 10
+      },
+      {
+        "step_no": 9,
+        "text": "Serve: spoon hot broth over mussels in bowls, garnish with lemon wedges and extra parsley; serve fries immediately on side or in cones for dipping into broth.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

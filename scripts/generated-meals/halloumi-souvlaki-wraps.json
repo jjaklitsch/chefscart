@@ -1,0 +1,259 @@
+{
+  "slug": "halloumi-souvlaki-wraps",
+  "title": "Halloumi Souvlaki Wraps",
+  "description": "Grilled halloumi is marinated in lemon, oregano and olive oil, then seared until golden and assembled in warm flatbreads with crisp vegetables and tangy tzatziki. Bright, savory Mediterranean flavors deliver a quick, satisfying lunch or weeknight dinner with minimal fuss.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "halloumi",
+  "ingredient_tags": [
+    "halloumi",
+    "olive oil",
+    "lemon",
+    "oregano",
+    "garlic",
+    "plain yogurt",
+    "cucumber",
+    "tomato",
+    "red onion",
+    "flatbread",
+    "lettuce",
+    "parsley",
+    "salt",
+    "black pepper",
+    "chili flakes"
+  ],
+  "spice_level": 2,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "halloumi",
+    "souvlaki",
+    "wrap",
+    "tzatziki",
+    "grilled cheese",
+    "mediterranean",
+    "vegetarian",
+    "flatbread",
+    "lemon oregano",
+    "quick dinner",
+    "lunch",
+    "skewers",
+    "olive oil",
+    "garlic",
+    "cucumber",
+    "tomato",
+    "red onion",
+    "meal prep",
+    "grill",
+    "pan-seared"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "halloumi cheese, sliced 1 cm thick",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 8–12 slices about 1 cm thick"
+      },
+      {
+        "display_name": "extra-virgin olive oil (for marinade and cooking)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": "use 2 tbsp for marinade, 1 tbsp for pan"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tbsp fresh chopped"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "plain Greek yogurt (for tzatziki)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 245,
+        "ml": 240,
+        "optional": false,
+        "notes": "full-fat or 2% for creaminess"
+      },
+      {
+        "display_name": "cucumber, seeded and grated",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "squeeze out excess liquid"
+      },
+      {
+        "display_name": "fresh dill or parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "dill preferred for tzatziki"
+      },
+      {
+        "display_name": "white wine vinegar or red wine vinegar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "for tzatziki balance"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divide between marinade, tzatziki and vegetables"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato, sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "ripe medium tomatoes, sliced"
+      },
+      {
+        "display_name": "red onion, thinly sliced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 55,
+        "ml": null,
+        "optional": false,
+        "notes": "soak briefly in cold water to mellow if desired"
+      },
+      {
+        "display_name": "romaine lettuce or mixed greens, shredded",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 85,
+        "ml": 480,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "flatbreads or pita, 8-inch",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "warmed"
+      },
+      {
+        "display_name": "lemon wedges (to serve)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into wedges"
+      },
+      {
+        "display_name": "crushed red pepper flakes (optional)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "for extra heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make the tzatziki: combine yogurt, grated cucumber (squeezed dry), minced garlic, chopped dill or parsley, vinegar, half the salt and a pinch of black pepper in a bowl; mix, taste and adjust seasoning. Refrigerate while you prep other components.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Marinate the halloumi: whisk together olive oil, lemon juice, dried oregano, minced garlic, remaining salt and pepper in a shallow dish; add halloumi slices and turn to coat. Let sit at room temperature briefly while you heat the pan or grill.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Prepare vegetables and breads: slice tomatoes and red onion, shred lettuce, and warm flatbreads in a dry skillet or oven until pliable. Keep vegetables ready for assembly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Cook the halloumi: heat a nonstick or cast-iron skillet over medium-high heat with remaining oil; add halloumi slices in a single layer and sear 2–3 minutes per side until deep golden brown and crisp. Work in batches if needed.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Assemble wraps: spread tzatziki down the center of each warmed flatbread, layer lettuce, tomato slices, red onion, and 2–3 slices of hot halloumi. Sprinkle with chopped parsley and optional red pepper flakes, then fold or roll to serve with lemon wedges.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Serve immediately while halloumi is warm, offering extra lemon and tzatziki on the side.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

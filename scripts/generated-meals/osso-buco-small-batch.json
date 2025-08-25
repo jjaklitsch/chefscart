@@ -1,0 +1,301 @@
+{
+  "slug": "osso-buco-small-batch",
+  "title": "Osso Buco (Small-Batch)",
+  "description": "A rich, slow-braised veal shank stew finished with a bright gremolata. Long, gentle braising yields fall-off-the-bone meat, while aromatic vegetables, white wine and tomato create a deeply savory sauce.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "veal",
+  "ingredient_tags": [
+    "veal",
+    "beef",
+    "carrot",
+    "celery",
+    "onion",
+    "garlic",
+    "tomato",
+    "white wine",
+    "beef broth",
+    "flour",
+    "butter",
+    "olive oil",
+    "thyme",
+    "bay leaf",
+    "parsley",
+    "lemon",
+    "zest"
+  ],
+  "spice_level": 1,
+  "time_total_min": 155,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 4,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "osso buco",
+    "veal shank",
+    "braised veal",
+    "italian braise",
+    "gremolata",
+    "slow braised",
+    "comfort dinner",
+    "white wine sauce",
+    "tomato braise",
+    "fall-off-the-bone",
+    "braised shank",
+    "weekend meal",
+    "dinner for two",
+    "stew",
+    "classic italian",
+    "winter warm",
+    "braising vegetables",
+    "lemon zest",
+    "parsley garlic",
+    "celery carrot onion"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "veal shanks, cross-cut (about 1.25–1.5 inches thick)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 700,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat; bone should have marrow"
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 24,
+        "ml": null,
+        "optional": false,
+        "notes": "for dredging"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for browning"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "adds richness"
+      },
+      {
+        "display_name": "carrot, medium, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 61,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "celery stalk, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, medium, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "concentrated flavor"
+      },
+      {
+        "display_name": "canned crushed tomatoes",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "or passata"
+      },
+      {
+        "display_name": "dry white wine (vermouth or sauvignon blanc)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "for deglazing"
+      },
+      {
+        "display_name": "beef broth (low-sodium preferred)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "hot"
+      },
+      {
+        "display_name": "fresh thyme sprigs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon zest (for gremolata)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "fresh flat-leaf parsley, finely chopped (for gremolata)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic clove, minced (for gremolata)",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt and pepper to taste",
+        "quantity": 0,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust at end"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 155,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare proteins and aromatics: pat veal shanks dry, season both sides with half the salt and pepper, and dredge lightly in flour, shaking off excess.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Brown shanks: heat oil and butter in a wide heavy-bottomed ovenproof pot over medium-high heat until shimmering. Add shanks and brown 4–5 minutes per side until deep golden; transfer to a plate.",
+        "time_min": 12
+      },
+      {
+        "step_no": 3,
+        "text": "Sauté mirepoix: reduce heat to medium, add diced carrot, celery and onion to the pot and cook, stirring, until softened and beginning to brown (about 6–8 minutes). Add minced garlic and cook 30–45 seconds until fragrant.",
+        "time_min": 9
+      },
+      {
+        "step_no": 4,
+        "text": "Build the sauce: stir in tomato paste and cook 1–2 minutes, then add crushed tomatoes and bring to a simmer, scraping up any browned bits from the bottom.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Deglaze and combine liquids: pour in white wine, increase heat briefly to reduce by half (about 2–3 minutes), then add hot beef broth and return browned shanks to nestle into the sauce. Add thyme sprigs and bay leaf; bring to a gentle simmer.",
+        "time_min": 8
+      },
+      {
+        "step_no": 6,
+        "text": "Braise covered: cover the pot with a tight-fitting lid and transfer to a preheated oven at 325°F (160°C). Braise until meat is tender and near-falling from the bone, 90 minutes.",
+        "time_min": 90
+      },
+      {
+        "step_no": 7,
+        "text": "Finish on stovetop: remove pot from oven, transfer shanks briefly to a plate and skim excess fat from sauce. Return to stovetop and simmer uncovered 6–8 minutes to thicken sauce slightly; adjust seasoning with remaining salt and pepper.",
+        "time_min": 10
+      },
+      {
+        "step_no": 8,
+        "text": "Make gremolata: while sauce finishes, combine lemon zest, chopped parsley and minced garlic in a small bowl; season lightly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 9,
+        "text": "Plate and serve: spoon sauce onto plates, place veal shanks on top, sprinkle gremolata over each shank and serve immediately with polenta, risotto or mashed potatoes.",
+        "time_min": 7
+      }
+    ]
+  },
+  "image_url": null
+}

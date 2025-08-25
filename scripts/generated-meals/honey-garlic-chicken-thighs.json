@@ -1,0 +1,232 @@
+{
+  "slug": "honey-garlic-chicken-thighs",
+  "title": "Honey-Garlic Chicken Thighs",
+  "description": "Juicy bone-in chicken thighs seared until crisp, then finished in a glossy honey-garlic soy glaze. Sweet, savory, and slightly tangy with a caramelized exterior—an easy pan-to-oven method for weeknight dinners.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "honey",
+    "garlic",
+    "soy sauce",
+    "lemon",
+    "butter",
+    "olive oil",
+    "black pepper",
+    "salt",
+    "cornstarch",
+    "water",
+    "scallion",
+    "ginger"
+  ],
+  "spice_level": 1,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy"
+  ],
+  "search_keywords": [
+    "honey garlic chicken",
+    "sticky chicken thighs",
+    "pan seared chicken",
+    "oven baked chicken",
+    "weeknight dinner",
+    "sweet and savory",
+    "garlic sauce",
+    "honey glaze",
+    "asian inspired",
+    "chicken thighs recipe",
+    "easy chicken",
+    "family meal",
+    "caramelized chicken",
+    "soy honey",
+    "scallion garnish",
+    "butter finish",
+    "marinade",
+    "crispy skin",
+    "one pan",
+    "30 minute meal"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in, skin-on chicken thighs",
+        "quantity": 1.6,
+        "unit": "lb",
+        "grams": 726.4,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat; bring to room temperature 15 minutes before cooking"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided (use half for seasoning before sear)"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13.5,
+        "ml": 15,
+        "optional": false,
+        "notes": "for searing"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14.2,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds gloss and flavor to sauce"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 5,
+        "unit": "clove",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "finely minced"
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional but recommended for brightness"
+      },
+      {
+        "display_name": "low-sodium soy sauce",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 45,
+        "optional": false,
+        "notes": "use tamari for gluten-free option"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 63,
+        "ml": 45,
+        "optional": false,
+        "notes": "prefer mild-flavored honey"
+      },
+      {
+        "display_name": "rice vinegar or lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds acidity to balance sweetness"
+      },
+      {
+        "display_name": "water",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "to thin sauce; use reserved pan juices if available"
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.6,
+        "ml": null,
+        "optional": false,
+        "notes": "for slurry to thicken glaze"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "optional garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 400°F (200°C). Pat the chicken thighs dry and season both sides with half the salt and half the pepper. Let rest at room temperature while heating the pan.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat an ovenproof skillet over medium-high heat until hot, add olive oil, then place chicken thighs skin-side down without crowding. Sear until the skin is deeply golden and releases easily, about 6-8 minutes.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Flip the thighs and sear the meat side for 2 minutes to color. Transfer the skillet to the preheated oven and roast until internal temperature reaches 165°F (74°C), about 12-14 minutes depending on thickness.",
+        "time_min": 14
+      },
+      {
+        "step_no": 4,
+        "text": "While chicken roasts, combine minced garlic, grated ginger (if using), soy sauce, honey, rice vinegar, remaining salt and pepper, and water in a small bowl. Stir to combine. Mix cornstarch with a little cold water to make a slurry and set aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "When chicken reaches temperature, transfer thighs to a plate and tent with foil. Pour off excess fat from the skillet leaving browned bits, return skillet to medium heat, add butter and the honey-garlic sauce mixture, simmer 1-2 minutes to meld.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Stir in the cornstarch slurry and cook until the sauce thickens and becomes glossy, about 1-2 minutes. Taste and adjust seasoning with salt, pepper, or a squeeze of lemon if desired.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Return the chicken thighs to the skillet, spoon the glaze over them to coat, and cook an additional 1-2 minutes to reheat and glaze the skin. Garnish with sliced scallions and toasted sesame seeds before serving.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

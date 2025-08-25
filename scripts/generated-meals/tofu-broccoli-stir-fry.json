@@ -1,0 +1,264 @@
+{
+  "slug": "tofu-broccoli-stir-fry",
+  "title": "Tofu & Broccoli Stir-Fry",
+  "description": "A quick, savory stir-fry of crispy pan-fried tofu and tender-crisp broccoli tossed in a garlicky-sesame soy sauce. Bright notes from rice vinegar and optional chili give this weeknight meal satisfying texture and umami depth.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [
+    "vegan",
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "tofu",
+  "ingredient_tags": [
+    "tofu",
+    "broccoli",
+    "soy sauce",
+    "garlic",
+    "ginger",
+    "sesame oil",
+    "vegetable oil",
+    "rice vinegar",
+    "cornstarch",
+    "green onion",
+    "red pepper flakes",
+    "brown sugar",
+    "water",
+    "sesame seeds",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 48,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "soy",
+    "sesame",
+    "gluten"
+  ],
+  "search_keywords": [
+    "tofu stir fry",
+    "broccoli stir fry",
+    "vegan dinner",
+    "plant-based",
+    "quick weeknight",
+    "crispy tofu",
+    "soy sauce",
+    "garlic ginger",
+    "sesame oil",
+    "stir-fry sauce",
+    "vegetarian",
+    "easy healthy",
+    "rice bowl",
+    "meal prep",
+    "stove-top stir fry",
+    "brown sugar",
+    "cornstarch",
+    "green onion",
+    "red pepper flakes",
+    "low effort"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "extra-firm tofu, pressed and cut into 1/2-inch cubes",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "press 20-30 minutes to remove excess water"
+      },
+      {
+        "display_name": "broccoli florets (trimmed, medium pieces)",
+        "quantity": 500,
+        "unit": "g",
+        "grams": 500,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into bite-sized florets"
+      },
+      {
+        "display_name": "vegetable oil (for frying)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cornstarch (for coating tofu)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 24,
+        "ml": null,
+        "optional": false,
+        "notes": "toss with tofu to dry lightly before frying"
+      },
+      {
+        "display_name": "low-sodium soy sauce",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "about 4 tbsp"
+      },
+      {
+        "display_name": "water",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "used to thin sauce"
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "brown sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "can adjust for sweetness"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 thumb-sized piece"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "to finish for aroma"
+      },
+      {
+        "display_name": "green onions, sliced on bias",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "sesame seeds, toasted",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "optional garnish"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for extra heat"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste for broccoli blanching and tofu seasoning"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 48,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Press the tofu 20-30 minutes to remove excess moisture, then cut into 1/2-inch cubes and toss gently with cornstarch to coat evenly.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "Bring a medium pot of water to a boil, add a pinch of salt, blanch broccoli florets 1 minute until bright green and partially tender, then drain and immediately plunge into cold water to stop cooking; drain and set aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large nonstick or cast-iron skillet over medium-high heat with 2 tablespoons vegetable oil until shimmering; add tofu in a single layer and pan-fry without moving 3-4 minutes per side until golden and crisp on most sides, turning as needed; transfer tofu to a plate.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Wipe skillet leaving any fond, add remaining oil, then add minced garlic and grated ginger; sauté 30-45 seconds until fragrant but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add blanched broccoli to the pan and stir-fry 1-2 minutes to reheat and coat with aromatics.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Whisk soy sauce, water, rice vinegar and brown sugar in a small bowl until sugar dissolves; pour sauce into the pan and bring to a simmer so it reduces and thickens slightly, about 1-2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Return crispy tofu to the pan, toss to coat in the sauce and cook 1-2 minutes until heated through and sauce clings; adjust seasoning with salt, pepper and optional red pepper flakes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Drizzle sesame oil, toss gently, then remove from heat; garnish with sliced green onions and toasted sesame seeds before serving.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

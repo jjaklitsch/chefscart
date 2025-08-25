@@ -1,0 +1,206 @@
+{
+  "slug": "zucchini-frittata-with-mint",
+  "title": "Zucchini Frittata with Mint",
+  "description": "A light, bright frittata featuring tender zucchini, fresh mint and sharp Parmesan, cooked gently on the stovetop and finished under the broiler for a golden top. It's an easy, versatile one-pan dish perfect for breakfast, lunch or a light dinner.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "zucchini",
+  "ingredient_tags": [
+    "zucchini",
+    "eggs",
+    "parmesan",
+    "mint",
+    "olive oil",
+    "onion",
+    "garlic",
+    "salt",
+    "black pepper",
+    "butter"
+  ],
+  "spice_level": 1,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "zucchini",
+    "frittata",
+    "mint",
+    "parmesan",
+    "egg dish",
+    "stovetop to broiler",
+    "vegetarian",
+    "quick brunch",
+    "light dinner",
+    "summer zucchini",
+    "herb frittata",
+    "one pan",
+    "easy breakfast",
+    "low spice",
+    "olive oil",
+    "garlic",
+    "onion",
+    "protein breakfast",
+    "meal prep",
+    "quick skillet"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "zucchini, medium, thinly sliced",
+        "quantity": 500,
+        "unit": "g",
+        "grams": 500,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 medium zucchini, sliced 1/8–1/4 inch thick"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "use room temperature eggs for best texture"
+      },
+      {
+        "display_name": "Parmesan cheese, finely grated",
+        "quantity": 50,
+        "unit": "g",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/2 cup packed"
+      },
+      {
+        "display_name": "fresh mint leaves, chopped",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/4 cup lightly packed"
+      },
+      {
+        "display_name": "yellow onion, small, thinly sliced",
+        "quantity": 70,
+        "unit": "g",
+        "grams": 70,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/2 small onion"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for sautéing"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "adds flavor and helps browning"
+      },
+      {
+        "display_name": "fine sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "or to taste"
+      },
+      {
+        "display_name": "lemon zest (optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "adds brightness if desired"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the broiler and position the oven rack about 6 inches from the heat source. Crack eggs into a large bowl and whisk until combined and slightly frothy; stir in grated Parmesan, chopped mint, salt and pepper. Set the egg mixture aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat an ovenproof 10-inch (25 cm) nonstick or cast-iron skillet over medium heat. Add olive oil and butter and swirl until butter is melted and foaming.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Add sliced onion to the skillet and cook, stirring occasionally, until translucent and beginning to soften.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic and sliced zucchini, season with a pinch of salt, and sauté until zucchini releases moisture and becomes tender but not mushy; cook until most liquid evaporates and edges start to color.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Spread the zucchini and onion mixture evenly in the skillet and reduce heat to low. Pour the egg and cheese mixture over the vegetables, shaking the pan gently to distribute. Cook undisturbed until the edges begin to set but the center is still loose.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Transfer the skillet to the preheated broiler and cook until the top is puffed and lightly golden, watching closely to prevent burning.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Remove the frittata from the oven and let it rest for 2–3 minutes. Sprinkle additional chopped mint and a little extra Parmesan or lemon zest if using. Slice into wedges and serve warm or at room temperature.",
+        "time_min": 6
+      }
+    ]
+  },
+  "image_url": null
+}

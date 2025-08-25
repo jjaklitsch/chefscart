@@ -1,0 +1,219 @@
+{
+  "slug": "caprese-breakfast-sandwich",
+  "title": "Caprese Breakfast Sandwich",
+  "description": "A bright, savory breakfast sandwich layering creamy fresh mozzarella, ripe tomato, basil, and a runny fried egg on toasted ciabatta with a drizzle of balsamic glaze. Quick pan-to-table method yields crisp bread, melted cheese, and classic Caprese flavors with breakfast richness.",
+  "courses": [
+    "breakfast",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian",
+    "american"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "egg",
+  "ingredient_tags": [
+    "egg",
+    "mozzarella",
+    "tomato",
+    "basil",
+    "ciabatta",
+    "olive oil",
+    "balsamic",
+    "salt",
+    "pepper",
+    "butter",
+    "garlic",
+    "avocado"
+  ],
+  "spice_level": 1,
+  "time_total_min": 18,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "caprese",
+    "breakfast sandwich",
+    "mozzarella",
+    "fresh tomato",
+    "basil",
+    "fried egg",
+    "ciabatta",
+    "balsamic glaze",
+    "brunch",
+    "quick breakfast",
+    "vegetarian sandwich",
+    "pan-toasted",
+    "italian flavors",
+    "easy recipe",
+    "savory breakfast",
+    "tomato mozzarella",
+    "garlic butter",
+    "runny yolk",
+    "grilled sandwich",
+    "plant-forward"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "ciabatta rolls, split horizontally",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "split horizontally; about 90-110g each"
+      },
+      {
+        "display_name": "fresh mozzarella, sliced 1/4-inch",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "use whole-milk mozzarella, drained"
+      },
+      {
+        "display_name": "ripe tomato, very thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "about 120 g; plum or vine-ripened"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "one egg per sandwich half"
+      },
+      {
+        "display_name": "fresh basil leaves",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "about 6 g total, whole leaves"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for toasting bread"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13,
+        "ml": 15,
+        "optional": false,
+        "notes": "for frying eggs"
+      },
+      {
+        "display_name": "balsamic glaze (store-bought or reduced)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": 15,
+        "optional": false,
+        "notes": "for drizzling"
+      },
+      {
+        "display_name": "garlic, halved (rub for bread)",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "optional: rub toasted bread halves for flavor"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "to season tomato and egg"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.6,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "optional: avocado slices",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "adds creaminess if desired"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 18,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep ingredients: slice mozzarella and tomato; wash and pat basil dry; split ciabatta rolls and set cut sides up; measure butter, oil, and glaze.",
+        "time_min": 4
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large nonstick or cast-iron skillet over medium heat until hot (about 1–2 minutes).",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Add butter to the skillet and spread to coat. Place ciabatta cut-side down and toast until golden and crisp, about 1–2 minutes. Remove and optionally rub cut surface with the halved garlic clove.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Wipe skillet clean if needed, then add olive oil and let warm 15–30 seconds. Crack eggs into the skillet and fry on medium-low for a crisp edge and set whites while keeping yolks slightly runny; cover pan with a lid for 2–3 minutes until whites are set but yolks are soft.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "While eggs finish, assemble sandwich bases: place mozzarella slices on bottom ciabatta halves, season tomato slices with a pinch of salt and pepper and layer atop the cheese, then add basil leaves. If you want melted mozzarella, return topped ciabatta bottoms to the warm skillet for 30–45 seconds with the skillet covered.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Place fried eggs onto the tomato-basil stacks, add optional avocado slices if using, drizzle with balsamic glaze and a light sprinkle of pepper, then cap with top ciabatta halves.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Slice sandwiches in half and serve immediately while warm to enjoy crisp bread, melted cheese, and runny yolk.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

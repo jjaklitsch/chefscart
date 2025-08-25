@@ -1,0 +1,252 @@
+{
+  "slug": "kale-caesar-with-sourdough-crumbs",
+  "title": "Kale Caesar with Sourdough Crumbs",
+  "description": "A bright, crunchy kale Caesar tossed in a tangy, anchovy-garlic dressing and finished with crisp, buttery sourdough crumbs. Robust umami from anchovy and Parmesan contrasts fresh lemon and kale for a satisfying vegetarian-friendly salad that stands up as a main or hearty side.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "kale",
+  "ingredient_tags": [
+    "kale",
+    "sourdough",
+    "parmesan",
+    "anchovy",
+    "garlic",
+    "lemon",
+    "olive oil",
+    "mayonnaise",
+    "mustard",
+    "capers",
+    "croutons",
+    "black pepper",
+    "salt",
+    "butter",
+    "red pepper flakes"
+  ],
+  "spice_level": 1,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "kale caesar",
+    "sourdough crumbs",
+    "anchovy dressing",
+    "parmesan kale salad",
+    "caesar salad",
+    "toasted crumbs",
+    "garlic lemon dressing",
+    "winter greens",
+    "salad for lunch",
+    "vegetarian caesar",
+    "plant-forward salad",
+    "quick weeknight salad",
+    "crispy breadcrumbs",
+    "homemade croutons alternative",
+    "olive oil dressing",
+    "easy dinner salad",
+    "make ahead dressing",
+    "lemon parmesan",
+    "anchovy umami",
+    "buttery crumbs"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "lacinato or curly kale, stems removed and chopped",
+        "quantity": 240,
+        "unit": "g",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "trim tough stems, chop into bite-size ribbons"
+      },
+      {
+        "display_name": "sourdough bread, crusts removed, torn into 1/2-inch pieces",
+        "quantity": 6,
+        "unit": "oz",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "day-old bread works best for toasting into crumbs"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "for toasting crumbs"
+      },
+      {
+        "display_name": "extra-virgin olive oil (dressing)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 54,
+        "ml": 60,
+        "optional": false,
+        "notes": "use good-quality olive oil"
+      },
+      {
+        "display_name": "mayonnaise (preferably full-fat)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "forms the creamy base"
+      },
+      {
+        "display_name": "grated Parmigiano-Reggiano",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for serving"
+      },
+      {
+        "display_name": "anchovy fillets packed in oil, drained and minced",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "mash into a paste for dressing"
+      },
+      {
+        "display_name": "garlic cloves, peeled",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "minced for dressing"
+      },
+      {
+        "display_name": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": "stabilizes dressing"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lemon"
+      },
+      {
+        "display_name": "capers, rinsed and chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "adds bright briny notes"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 3,
+        "unit": "pinch",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste; some will be in cheese and anchovy"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for a hint of heat"
+      },
+      {
+        "display_name": "olive oil (for frying crumbs)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13.5,
+        "ml": 15,
+        "optional": false,
+        "notes": "can combine with butter for higher smoke point"
+      },
+      {
+        "display_name": "water (for massaging kale)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": true,
+        "notes": "helps soften kale when massaging"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: remove stems from kale and chop into bite-size ribbons; tear sourdough into small pieces; finely mince anchovies and garlic; grate the Parmesan; juice the lemon.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Make sourdough crumbs: heat a large skillet over medium, add butter and olive oil until foaming, then add torn sourdough pieces and cook, stirring frequently until golden brown and crisp (about 6–8 minutes). Transfer to a plate to cool, then pulse briefly in a food processor or crush by hand to make coarse crumbs.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Combine dressing ingredients: in a medium bowl whisk together minced anchovy, minced garlic, mayonnaise, Dijon mustard, lemon juice, grated Parmesan, and capers if using. Slowly whisk in olive oil until emulsified. Season with black pepper and a small pinch of salt; taste and adjust acidity or salt as needed.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Massage the kale: place chopped kale in a large bowl, add a couple tablespoons of the dressing (or water if preferred) and a pinch of salt, then massage with clean hands for 2–3 minutes until leaves soften and darken.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Toss salad: add most of the remaining dressing and about two-thirds of the sourdough crumbs and half the grated Parmesan to the massaged kale. Toss thoroughly to coat, adding more dressing a little at a time until desired creaminess is reached. Adjust seasoning with salt, pepper, and lemon as needed.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Serve: divide salad among plates or a large platter, sprinkle remaining sourdough crumbs and extra Parmesan over the top, finish with a light drizzle of olive oil and an optional pinch of red pepper flakes.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

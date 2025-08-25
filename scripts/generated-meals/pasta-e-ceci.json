@@ -1,0 +1,250 @@
+{
+  "slug": "pasta-e-ceci",
+  "title": "Pasta e Ceci",
+  "description": "Hearty Italian chickpea and pasta stew simmered with garlic, rosemary and tomato for a comforting, rustic flavor. Finished with a drizzle of olive oil and a squeeze of lemon, it’s nourishing and quick to prepare on stovetop.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegan",
+    "vegetarian"
+  ],
+  "primary_ingredient": "chickpeas",
+  "ingredient_tags": [
+    "pasta",
+    "chickpeas",
+    "garlic",
+    "onion",
+    "tomato",
+    "olive oil",
+    "rosemary",
+    "lemon",
+    "vegetable broth",
+    "parmesan",
+    "bay leaf",
+    "red pepper flakes"
+  ],
+  "spice_level": 2,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten"
+  ],
+  "search_keywords": [
+    "pasta e ceci",
+    "chickpea pasta stew",
+    "italian soup",
+    "comfort food",
+    "vegan pasta",
+    "one pot",
+    "stovetop",
+    "garlic",
+    "rosemary",
+    "tomato",
+    "olive oil",
+    "lemon",
+    "quick dinner",
+    "weeknight meal",
+    "legumes",
+    "mediterranean",
+    "plant-forward",
+    "hearty stew",
+    "chickpeas",
+    "short pasta"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion (finely chopped)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "finely diced"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh rosemary (finely chopped) or 1 tsp dried",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "leaf removed and finely chopped"
+      },
+      {
+        "display_name": "crushed red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "canned crushed tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": 400,
+        "optional": false,
+        "notes": "one 14 oz (400 g) can"
+      },
+      {
+        "display_name": "canned chickpeas (drained and rinsed)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 330,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 cups drained (approx. 480 g whole, 330 g drained)"
+      },
+      {
+        "display_name": "vegetable broth (low-sodium recommended)",
+        "quantity": 800,
+        "unit": "ml",
+        "grams": null,
+        "ml": 800,
+        "optional": false,
+        "notes": "use 800 ml for a stew; add more for soupier consistency"
+      },
+      {
+        "display_name": "short pasta (ditalini or small shells)",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "use small shapes that cook in the broth"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "remove before serving"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste and depending on broth sodium"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "fresh lemon (juice)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": 30,
+        "optional": false,
+        "notes": "juice of one lemon to finish"
+      },
+      {
+        "display_name": "fresh flat-leaf parsley (chopped)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "grated parmesan cheese",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "omit for vegan version"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: finely chop onion, mince garlic, chop rosemary and parsley, drain and rinse chickpeas, measure pasta and liquids.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat olive oil in a large wide pot over medium heat until shimmering; add chopped onion and cook, stirring occasionally, until softened and translucent.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic, chopped rosemary and crushed red pepper flakes; sauté briefly until fragrant, taking care not to brown the garlic.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in crushed tomatoes and cook for a couple of minutes to combine flavors and slightly reduce acidity.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Add drained chickpeas, bay leaf and vegetable broth; bring to a gentle boil, then reduce to a simmer and cook to meld flavors.",
+        "time_min": 8
+      },
+      {
+        "step_no": 6,
+        "text": "Add the short pasta directly to the simmering chickpea-tomato broth, stirring to prevent sticking. Simmer uncovered, stirring occasionally, until pasta is al dente and broth thickens; add extra broth or water if it becomes too dry.",
+        "time_min": 12
+      },
+      {
+        "step_no": 7,
+        "text": "Taste and season with salt and freshly ground black pepper. Remove bay leaf. If desired, mash a portion of the chickpeas against the pot wall to thicken the stew and create a creamier texture.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Finish with lemon juice and stir in most of the parsley. Serve hot with a drizzle of olive oil and grated parmesan on the side for non-vegans; garnish with remaining parsley.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

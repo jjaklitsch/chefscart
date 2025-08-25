@@ -1,0 +1,191 @@
+{
+  "slug": "asparagus-parmigiano-soft-scramble",
+  "title": "Asparagus & Parmigiano Soft Scramble",
+  "description": "A creamy, silky soft-scrambled egg dish studded with tender asparagus tips and finished with nutty Parmigiano-Reggiano. Quick to make for breakfast, brunch, or a light dinner—bright lemon zest and chives lift the richness.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "eggs",
+  "ingredient_tags": [
+    "eggs",
+    "asparagus",
+    "parmigiano-reggiano",
+    "butter",
+    "olive oil",
+    "lemon",
+    "chives",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 20,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "soft scramble",
+    "asparagus",
+    "parmigiano",
+    "parmesan",
+    "eggs",
+    "creamy eggs",
+    "brunch",
+    "quick breakfast",
+    "easy dinner",
+    "italian",
+    "chives",
+    "lemon zest",
+    "butter",
+    "olive oil",
+    "low spice",
+    "vegetarian",
+    "spring vegetables",
+    "one-pan",
+    "silky scramble",
+    "light meal"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "large eggs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "asparagus, trimmed and cut into 1-inch pieces (tips reserved separately)",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "tips kept whole (about 8–10 tips)"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "divided (see steps)"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "Parmigiano-Reggiano, finely grated",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for serving"
+      },
+      {
+        "display_name": "whole milk or light cream",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "optional for extra creaminess"
+      },
+      {
+        "display_name": "fresh chives, thinly sliced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "fine sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divided (taste and adjust)"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "or to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep asparagus by trimming woody ends, cutting stalks into 1-inch pieces and reserving the tips whole; slice chives and grate Parmigiano; bring eggs to room temperature and lightly beat with a fork until just combined; if using milk or cream, add it to the eggs.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a medium nonstick skillet over medium heat, add olive oil and half the butter; when shimmering, add asparagus pieces (not tips) and sauté, stirring, until bright green and just tender-crisp, about 3–4 minutes; season lightly with a pinch of salt. Remove asparagus to a bowl and keep tips separate.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to low–medium; add remaining butter to the same skillet and let it foam gently; add reserved asparagus tips and warm for 30–45 seconds to soften slightly without wilting.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Pour beaten eggs into the pan over low heat; let cook undisturbed for about 10–15 seconds until edges set, then using a silicone spatula, gently pull cooked edges toward center, forming soft curds. Continuously but slowly fold eggs, keeping temperature low to achieve a custardy texture.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "When eggs are about 70% set (still glossy and slightly runny), fold in sautéed asparagus pieces, warm tips, grated Parmigiano, most of the chives, lemon zest (if using), and remaining salt and pepper; cook another 30–60 seconds off direct heat if necessary to allow cheese to melt into the eggs.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Remove pan from heat while eggs are still slightly softer than desired (they will finish setting from residual heat); taste and adjust seasoning. Divide scramble between plates and garnish with remaining chives and extra Parmigiano.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

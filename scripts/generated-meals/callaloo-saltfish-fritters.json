@@ -1,0 +1,261 @@
+{
+  "slug": "callaloo-saltfish-fritters",
+  "title": "Callaloo & Saltfish Fritters",
+  "description": "Crispy golden fritters filled with tender callaloo and flaked saltfish, seasoned with scallion, Scotch bonnet, and Caribbean spices. Pan-fried to a crunchy exterior and soft interior, served as a snack or appetizer with a tangy lime or pepper sauce.",
+  "courses": [
+    "snack",
+    "lunch"
+  ],
+  "cuisines": [
+    "caribbean"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "saltfish",
+  "ingredient_tags": [
+    "saltfish",
+    "callaloo",
+    "flour",
+    "egg",
+    "scallion",
+    "onion",
+    "scotch bonnet",
+    "garlic",
+    "baking powder",
+    "milk",
+    "vegetable oil",
+    "lime",
+    "black pepper",
+    "thyme",
+    "water"
+  ],
+  "spice_level": 3,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "gluten",
+    "seafood",
+    "dairy"
+  ],
+  "search_keywords": [
+    "callaloo",
+    "saltfish",
+    "ackee and saltfish style",
+    "caribbean fritters",
+    "salted cod",
+    "fish fritters",
+    "scotch bonnet",
+    "scallion",
+    "appetizer",
+    "snack",
+    "crispy fritters",
+    "street food",
+    "pan-fried",
+    "crispy outside soft inside",
+    "lime dipping sauce",
+    "brined fish",
+    "jerk spices",
+    "thyme",
+    "holiday brunch"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "saltfish (salted cod), soaked and flaked",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "soak in cold water overnight or at least 6 hours, change water once; remove skin and bones, flake"
+      },
+      {
+        "display_name": "fresh callaloo (or spinach/chard), blanched, chopped",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed, blanched 1 minute and squeezed dry, finely chopped"
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 180,
+        "unit": "g",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "approx 1 1/2 cups"
+      },
+      {
+        "display_name": "baking powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "for lift"
+      },
+      {
+        "display_name": "egg, lightly beaten",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "binds fritter batter"
+      },
+      {
+        "display_name": "milk (or plant milk)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "about 1/2 cup to adjust batter consistency"
+      },
+      {
+        "display_name": "scallions (green onions), thinly sliced",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts, thinly sliced"
+      },
+      {
+        "display_name": "yellow onion, finely diced",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/2 small onion"
+      },
+      {
+        "display_name": "Garlic, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "Scotch bonnet pepper, seeded and minced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "halve or omit for lower heat; adjust to taste"
+      },
+      {
+        "display_name": "fresh thyme leaves, chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 2,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt (only if needed)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": true,
+        "notes": "be cautious because saltfish is salty"
+      },
+      {
+        "display_name": "vegetable oil (for frying)",
+        "quantity": 500,
+        "unit": "ml",
+        "grams": null,
+        "ml": 500,
+        "optional": false,
+        "notes": "enough for 1/4-inch shallow fry in skillet; amount may vary"
+      },
+      {
+        "display_name": "lime wedges (for serving)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into wedges"
+      },
+      {
+        "display_name": "hot pepper sauce or dipping sauce (optional)",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": true,
+        "notes": "serve on side"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare saltfish by soaking to remove excess salt: drain and rinse soaked saltfish, place in a pot, cover with fresh cold water, bring to a gentle simmer for 8-10 minutes to finish desalting, then drain, cool slightly and flake fish, removing any skin and bones.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "Blanch callaloo: bring a small pot of water to a boil, add callaloo leaves for 30-60 seconds until wilted, immediately transfer to ice water or rinse under cold water, squeeze out excess water and chop finely.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Sauté aromatics: heat 1 tbsp oil in a skillet over medium heat, add diced onion, scallions, garlic, minced scotch bonnet (if using) and thyme; cook until softened and fragrant, about 2-3 minutes; remove from heat and let cool slightly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Combine batter: in a mixing bowl whisk flour and baking powder; add beaten egg and milk, stir until just combined into a thick batter; fold in flaked saltfish, chopped callaloo and sautéed aromatics, season with black pepper and salt only if necessary; adjust consistency with a splash of water or milk so batter drops from a spoon.",
+        "time_min": 7
+      },
+      {
+        "step_no": 5,
+        "text": "Heat oil for frying: pour oil into a wide skillet to about 1/4-inch depth and heat over medium-high until shimmering and a small dollop of batter sizzles and browns in about 20-30 seconds (approx 180°C / 350°F).",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Fry fritters: using two spoons or a small ice cream scoop, drop 2 tbsp portions of batter into the hot oil without crowding; fry 2-3 minutes per side until golden brown and crisp; work in batches and adjust heat to maintain color without burning.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Drain and keep warm: transfer cooked fritters to a rack or paper towel-lined tray to drain excess oil; keep warm in a low oven if needed while finishing remaining batter.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Serve: plate fritters with lime wedges and optional hot pepper or dipping sauce; garnish with extra scallions or thyme and serve hot.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

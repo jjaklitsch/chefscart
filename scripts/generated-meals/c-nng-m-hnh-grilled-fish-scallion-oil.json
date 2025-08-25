@@ -1,0 +1,243 @@
+{
+  "slug": "c-nng-m-hnh-grilled-fish-scallion-oil",
+  "title": "Cá Nướng Mỡ Hành (Grilled Fish Scallion Oil)",
+  "description": "Whole fish marinated in fish sauce, garlic and shallot, then grilled until crisp outside and tender inside. Topped with aromatic scallion-chili oil (mỡ hành) for a glossy, savory finish with bright herbal notes.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "vietnamese"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "low-carb"
+  ],
+  "primary_ingredient": "whole fish",
+  "ingredient_tags": [
+    "whole fish",
+    "tilapia",
+    "sea bass",
+    "mackerel",
+    "scallion",
+    "green onion",
+    "garlic",
+    "shallot",
+    "fish sauce",
+    "sugar",
+    "black pepper",
+    "vegetable oil",
+    "peanut oil",
+    "lime",
+    "chili",
+    "cilantro"
+  ],
+  "spice_level": 2,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "cá nướng",
+    "mỡ hành",
+    "grilled fish",
+    "scallion oil",
+    "vietnamese grilled fish",
+    "fish sauce marinade",
+    "whole grilled fish",
+    "tilapia recipe",
+    "sea bass grilled",
+    "garlic scallion oil",
+    "easy dinner",
+    "low carb pescatarian",
+    "charred fish",
+    "lime and chili",
+    "weeknight meal",
+    "outdoor grill",
+    "oven broil",
+    "summer fish",
+    "savory glaze",
+    "heritage vietnamese"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "whole fish (tilapia or sea bass), scaled and gutted",
+        "quantity": 1.6,
+        "unit": "lb",
+        "grams": 726.4,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1.6 lb (700-750 g) whole fish, score both sides with 3 diagonal cuts"
+      },
+      {
+        "display_name": "fish sauce (nước mắm) for marinade",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "use a traditional fish sauce"
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "juice from about 1/2 lime"
+      },
+      {
+        "display_name": "light brown sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "balances saltiness"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "finely minced for marinade"
+      },
+      {
+        "display_name": "shallot, minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "finely minced"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning fish cavity and skin"
+      },
+      {
+        "display_name": "vegetable oil (for brushing fish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "neutral oil for grill/oven"
+      },
+      {
+        "display_name": "scallion (green onions), thinly sliced on bias",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 160,
+        "ml": null,
+        "optional": false,
+        "notes": "use white and green parts; about 160 g total"
+      },
+      {
+        "display_name": "neutral oil (peanut or canola) for mỡ hành",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": "use peanut or canola oil"
+      },
+      {
+        "display_name": "small red chile (bird's eye or serrano), thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for mild heat; remove seeds for less spice"
+      },
+      {
+        "display_name": "cilantro leaves for garnish",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "small sprigs for finish"
+      },
+      {
+        "display_name": "lime wedges (to serve)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "for squeezing at table"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Clean and pat the whole fish dry, make 3 diagonal 1/2-inch deep scores per side, season cavity and skin lightly with kosher salt and freshly ground black pepper.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare the marinade by combining fish sauce, lime juice, brown sugar, minced garlic, and minced shallot in a bowl; stir until sugar dissolves.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Brush or spoon the marinade evenly over and into the scored cuts and cavity of the fish, letting it rest at room temperature for 15 minutes to absorb flavors (or refrigerate up to 30 minutes).",
+        "time_min": 15
+      },
+      {
+        "step_no": 4,
+        "text": "Preheat a grill to medium-high heat (or set oven to broil high and position rack 6 inches from element). Lightly oil the grates or a foil-lined baking sheet and brush the fish with vegetable oil to prevent sticking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Grill the fish over direct heat for about 6-8 minutes per side depending on thickness, turning once carefully; if broiling, broil 6-8 minutes per side until skin is blistered and flesh flakes easily. Use a thermometer aiming for 60-63°C (140-145°F) in the thickest part.",
+        "time_min": 16
+      },
+      {
+        "step_no": 6,
+        "text": "While the fish cooks, prepare mỡ hành: place sliced scallions and optional sliced chile in a heatproof bowl or pan.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Heat neutral oil in a small saucepan until shimmering but not smoking (about 180°C / 350°F); carefully pour hot oil over the scallions and chile to sizzle and wilt them, releasing aroma and bright green color. Stir and season with a pinch of salt if desired.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Transfer the grilled fish to a serving platter, spoon the hot scallion oil evenly over the fish, garnish with cilantro and lime wedges, and serve immediately with rice or greens.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

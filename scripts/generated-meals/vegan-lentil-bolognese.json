@@ -1,0 +1,310 @@
+{
+  "slug": "vegan-lentil-bolognese",
+  "title": "Vegan Lentil Bolognese",
+  "description": "Hearty, savory lentils simmered in a rich tomato base with classic Italian aromatics and umami-packed mushrooms. Served over pasta or zucchini noodles, this plant-based bolognese delivers the texture and depth of a traditional ragù using only vegan ingredients.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "lentils",
+  "ingredient_tags": [
+    "lentils",
+    "tomato",
+    "onion",
+    "carrot",
+    "celery",
+    "garlic",
+    "mushroom",
+    "olive oil",
+    "vegetable stock",
+    "tomato paste",
+    "red wine",
+    "bay leaf",
+    "thyme",
+    "oregano",
+    "basil",
+    "pasta",
+    "salt",
+    "black pepper",
+    "maple syrup"
+  ],
+  "spice_level": 2,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten"
+  ],
+  "search_keywords": [
+    "vegan lentil bolognese",
+    "lentil ragu",
+    "plant-based pasta sauce",
+    "meaty vegan sauce",
+    "mushroom lentils",
+    "tomato sauce",
+    "italian vegan",
+    "weeknight dinner",
+    "comfort food",
+    "high-protein vegan",
+    "slow simmer",
+    "one-pot sauce",
+    "easy family meal",
+    "serve with spaghetti",
+    "gluten-free option",
+    "soy-free",
+    "no dairy",
+    "meal prep",
+    "freezer friendly",
+    "vegetable stock"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "brown or green lentils, rinsed",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed and picked over"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 150 g"
+      },
+      {
+        "display_name": "carrots, finely diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 75 g each"
+      },
+      {
+        "display_name": "celery stalks, finely diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "about 50 g each"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "cremini or button mushrooms, finely chopped",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped to add meaty texture"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 33,
+        "ml": null,
+        "optional": false,
+        "notes": "concentrated for depth"
+      },
+      {
+        "display_name": "canned crushed tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": 400,
+        "optional": false,
+        "notes": "one 14 oz can (use crushed or whole and crush by hand)"
+      },
+      {
+        "display_name": "dry red wine (optional but recommended)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": true,
+        "notes": "or additional stock if avoiding alcohol"
+      },
+      {
+        "display_name": "vegetable stock",
+        "quantity": 500,
+        "unit": "ml",
+        "grams": null,
+        "ml": 500,
+        "optional": false,
+        "notes": "low-sodium preferred"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "maple syrup or brown sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "balances acidity"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "fresh basil leaves, chopped (optional)",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "spaghetti or pasta of choice (use gluten-free if needed)",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "uncooked weight for 4 servings"
+      },
+      {
+        "display_name": "red pepper flakes (optional)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for added heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare all vegetables: finely dice onion, carrot, and celery; mince garlic; finely chop mushrooms; rinse and drain lentils.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat olive oil in a large heavy skillet or Dutch oven over medium heat. Add diced onion, carrot, and celery and cook, stirring occasionally, until softened and beginning to brown.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic and chopped mushrooms to the softened mirepoix; sauté until the mushrooms release their liquid and that liquid mostly evaporates, stirring to achieve some browning.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in tomato paste and cook for a minute to caramelize and deepen flavor, coating the vegetables evenly.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "If using, pour in red wine to deglaze the pan, scraping up browned bits; simmer until reduced by about half.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Add rinsed lentils, crushed tomatoes, vegetable stock, bay leaf, dried oregano, and dried thyme. Stir to combine, bring to a gentle boil.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Reduce heat to low, partially cover, and simmer gently until lentils are tender and sauce has thickened, stirring occasionally to prevent sticking.",
+        "time_min": 20
+      },
+      {
+        "step_no": 8,
+        "text": "While the sauce simmers, cook pasta according to package instructions until al dente, drain, and reserve a small ladle of pasta water.",
+        "time_min": 8
+      },
+      {
+        "step_no": 9,
+        "text": "Taste the sauce; remove bay leaf. Season with salt, pepper, maple syrup (if using) and red pepper flakes as desired. If the sauce is too thick, add a splash of reserved pasta water or stock to adjust consistency.",
+        "time_min": 2
+      },
+      {
+        "step_no": 10,
+        "text": "Toss sauce with cooked pasta or serve the sauce spooned over pasta. Garnish with chopped fresh basil if desired and serve hot.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

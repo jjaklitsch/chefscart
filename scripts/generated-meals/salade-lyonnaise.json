@@ -1,0 +1,223 @@
+{
+  "slug": "salade-lyonnaise",
+  "title": "Salade Lyonnaise",
+  "description": "A classic French warm salad from Lyon featuring frisée lettuce tossed with a mustardy vinaigrette, topped with crisp lardons and a soft-poached or fried egg. The salad balances bitter greens, smoky pork, tangy dressing and a runny yolk for richness.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "french"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "eggs",
+  "ingredient_tags": [
+    "frisée",
+    "lettuce",
+    "eggs",
+    "bacon",
+    "lardons",
+    "shallot",
+    "mustard",
+    "red wine vinegar",
+    "olive oil",
+    "croutons",
+    "baguette",
+    "butter",
+    "black pepper",
+    "salt",
+    "sugar"
+  ],
+  "spice_level": 1,
+  "time_total_min": 25,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "egg",
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "salade lyonnaise",
+    "frisée salad",
+    "warm bacon salad",
+    "lardons",
+    "poached egg salad",
+    "french salad",
+    "mustard vinaigrette",
+    "bitter greens",
+    "croutons",
+    "baguette croutons",
+    "weeknight lunch",
+    "brunch",
+    "comfort salad",
+    "smoky bacon",
+    "runny yolk",
+    "easy french recipe",
+    "classic lyon",
+    "shallot vinaigrette",
+    "salad with egg",
+    "warm dressing"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "frisée or curly endive, torn into bite-sized pieces",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "washed and spun dry"
+      },
+      {
+        "display_name": "thick-cut bacon or lardons, cut into 1/2-inch pieces",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "or use diced pancetta"
+      },
+      {
+        "display_name": "large eggs (for poaching or frying)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "one per serving"
+      },
+      {
+        "display_name": "baguette, cut into 1/2-inch cubes for croutons",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "day-old bread preferred"
+      },
+      {
+        "display_name": "unsalted butter (for toasting croutons)",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "shallot, minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small shallot"
+      },
+      {
+        "display_name": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "cold-pressed preferred"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for finishing"
+      },
+      {
+        "display_name": "granulated sugar (optional, to balance acidity)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "use if vinegar is very sharp"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 25,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: wash and dry the frisée, cut bread into cubes, mince the shallot, and cut bacon into lardons.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Make croutons: heat a skillet over medium heat, add butter, then toast bread cubes until golden and crisp, stirring frequently; transfer to paper towel to drain.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Cook lardons: in the same skillet (no need to wipe clean) over medium-high heat, add lardons and cook until deeply browned and crisp and fat is rendered; use a slotted spoon to transfer lardons to a plate and reserve the fat in the pan.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Vinaigrette: off-heat, combine minced shallot, Dijon mustard, red wine vinegar, salt, pepper and optional sugar in a bowl; whisk while slowly streaming in olive oil until emulsified. Taste and adjust seasoning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Warm the dressing (optional): briefly return reserved bacon fat to low heat and stir a tablespoon into the vinaigrette for a slightly warm, glossy dressing; do not overheat.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Dress greens: place frisée in a large bowl, pour vinaigrette over and toss gently to coat evenly.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Poach or fry eggs: bring a shallow pan of water to a gentle simmer with a splash of vinegar to poach, then create a gentle whirlpool and slip in eggs one at a time, cooking until whites are set but yolks remain runny (about 3 minutes); alternatively fry eggs in a lightly oiled skillet until whites are set and yolk to desired doneness.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble: divide dressed frisée among plates, sprinkle with warm lardons and croutons, season with extra pepper, and top each portion with a poached or fried egg. Serve immediately so yolk can be broken over the salad.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

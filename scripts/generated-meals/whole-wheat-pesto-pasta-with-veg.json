@@ -1,0 +1,280 @@
+{
+  "slug": "whole-wheat-pesto-pasta-with-veg",
+  "title": "Whole-Wheat Pesto Pasta with Veg",
+  "description": "A hearty, brightly flavored whole-wheat pasta tossed with a vibrant basil-parsley pesto and crisp-tender seasonal vegetables. Olive oil, lemon, and Parmesan add richness while toasted pine nuts provide a buttery crunch for a satisfying weeknight main or lunch.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "whole-wheat pasta",
+    "basil",
+    "parsley",
+    "garlic",
+    "parmesan",
+    "olive oil",
+    "pine nuts",
+    "lemon",
+    "cherry tomatoes",
+    "zucchini",
+    "red bell pepper",
+    "spinach",
+    "salt",
+    "black pepper",
+    "red pepper flakes"
+  ],
+  "spice_level": 2,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "grain",
+    "gluten"
+  ],
+  "search_keywords": [
+    "whole-wheat pasta",
+    "pesto",
+    "basil pesto",
+    "vegetarian pasta",
+    "easy weeknight dinner",
+    "mediterranean",
+    "olive oil",
+    "pine nuts",
+    "parmesan",
+    "zucchini",
+    "cherry tomatoes",
+    "red pepper",
+    "spinach",
+    "lemony pasta",
+    "toasted nuts",
+    "healthy pasta",
+    "whole grain",
+    "meal prep",
+    "quick dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "whole-wheat spaghetti or penne",
+        "quantity": 340,
+        "unit": "g",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "uncooked"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh basil leaves",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "packed, stems removed"
+      },
+      {
+        "display_name": "fresh flat-leaf parsley",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "packed, stems removed"
+      },
+      {
+        "display_name": "grated Parmesan cheese",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for serving"
+      },
+      {
+        "display_name": "pine nuts (toasted)",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "toast in dry skillet until golden"
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "plus more for pasta water"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "crushed red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for a bit of heat"
+      },
+      {
+        "display_name": "cherry tomatoes",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "halved"
+      },
+      {
+        "display_name": "zucchini",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed and sliced into half-moons (~1/4-inch)"
+      },
+      {
+        "display_name": "red bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "seeded and thinly sliced"
+      },
+      {
+        "display_name": "baby spinach",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "washed"
+      },
+      {
+        "display_name": "water (for pasta)",
+        "quantity": 3000,
+        "unit": "ml",
+        "grams": null,
+        "ml": 3000,
+        "optional": false,
+        "notes": "enough to boil pasta in a large pot"
+      },
+      {
+        "display_name": "olive oil (for sautéing vegetables)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "extra for pan"
+      },
+      {
+        "display_name": "optional: lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "finely grated, for finishing"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of water to a rolling boil, add a generous pinch of salt, then add the whole-wheat pasta and cook until just al dente according to package instructions, stirring occasionally.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "While pasta cooks, toast the pine nuts in a dry skillet over medium heat, stirring frequently, until golden and fragrant; transfer to a small bowl to cool.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Make the pesto by combining basil, parsley, garlic, toasted pine nuts (reserve a small pinch for garnish), grated Parmesan, lemon juice, olive oil, salt, and black pepper in a food processor; pulse until smooth but still slightly textured. Taste and adjust seasoning.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Heat oil in a large skillet over medium-high heat, add sliced zucchini and red pepper, and sauté until they begin to soften and char slightly, about halfway cooked.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Add halved cherry tomatoes to the skillet and cook until tomatoes soften and release some juice, then stir in baby spinach until wilted; remove skillet from heat.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Reserve about 1 cup of the pasta cooking water, then drain the pasta and add it to the skillet with the vegetables off the heat; add the pesto and a few tablespoons of reserved pasta water and toss to coat, adding more water as needed to loosen the sauce and create a silky finish.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Adjust seasoning with salt, pepper, and optional crushed red pepper flakes; finish with a drizzle of olive oil, optional lemon zest, and sprinkle reserved toasted pine nuts and extra grated Parmesan before serving.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Divide among bowls and serve warm or at room temperature with additional lemon wedges on the side.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

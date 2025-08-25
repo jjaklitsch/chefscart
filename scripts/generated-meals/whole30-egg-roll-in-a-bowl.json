@@ -1,0 +1,240 @@
+{
+  "slug": "whole30-egg-roll-in-a-bowl",
+  "title": "Whole30 Egg Roll in a Bowl",
+  "description": "A quick, vibrant deconstructed egg roll that delivers the classic savory, garlicky, and slightly tangy flavors without the wrapper. Ground pork and crisp cabbage are stir-fried with ginger, garlic, and coconut aminos for a satisfying low-carb, Whole30-compliant one-pan meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "whole30",
+    "paleo",
+    "low-carb"
+  ],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "ground pork",
+    "green cabbage",
+    "carrot",
+    "onion",
+    "garlic",
+    "ginger",
+    "coconut aminos",
+    "avocado oil",
+    "sesame oil (optional)",
+    "green onion",
+    "salt",
+    "black pepper",
+    "red pepper flakes",
+    "rice vinegar (optional)"
+  ],
+  "spice_level": 2,
+  "time_total_min": 25,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "whole30",
+    "egg roll in a bowl",
+    "deconstructed egg roll",
+    "ground pork",
+    "cabbage",
+    "low carb",
+    "paleo",
+    "stir fry",
+    "one pan",
+    "quick dinner",
+    "weeknight meal",
+    "garlic ginger",
+    "coconut aminos",
+    "healthy",
+    "gluten free",
+    "no wrapper",
+    "asian inspired",
+    "lean protein",
+    "vegetable packed",
+    "easy recipe"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ground pork",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "80/20 or lean; broken into small pieces"
+      },
+      {
+        "display_name": "green cabbage, finely shredded",
+        "quantity": 6,
+        "unit": "cup",
+        "grams": 510,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small head or half a medium head"
+      },
+      {
+        "display_name": "carrot, shredded",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 medium carrots, shredded or julienned"
+      },
+      {
+        "display_name": "yellow onion, finely diced",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small onion"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, minced (or grated)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "avocado oil (or neutral oil)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for cooking"
+      },
+      {
+        "display_name": "coconut aminos",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 48,
+        "ml": 45,
+        "optional": false,
+        "notes": "adds umami and saltiness (Whole30-approved soy alternative)"
+      },
+      {
+        "display_name": "rice vinegar (unseasoned)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": true,
+        "notes": "for brightness, optional on strict Whole30 if avoiding vinegar but typically allowed"
+      },
+      {
+        "display_name": "sesame oil (toasted) - optional for finishing (omit for strict Whole30)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 2.5,
+        "optional": true,
+        "notes": "use sparingly for flavor; not Whole30 if strict about sesame"
+      },
+      {
+        "display_name": "green onions, thinly sliced (white and green parts separated)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve some green for garnish"
+      },
+      {
+        "display_name": "fine sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes (optional)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for mild heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 25,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep all vegetables: finely shred the cabbage, shred the carrot, finely dice the onion, mince the garlic and ginger, and thinly slice the green onions. Have sauces measured and ready.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large skillet or wok over medium-high heat until hot, then add the avocado oil and swirl to coat.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add the ground pork to the hot skillet, breaking it into small pieces. Cook, stirring and pressing, until no longer pink and starting to brown, about 5–6 minutes. Drain excess fat if there is a large amount, leaving a thin film for flavor.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Push the pork to one side of the pan or transfer briefly to a bowl. Add the diced onion to the skillet and cook until softened and translucent, about 2 minutes, then add the garlic and ginger and cook until fragrant, about 30 seconds.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Return pork to the center of the pan if moved. Add the shredded cabbage and shredded carrot to the skillet. Toss or stir-fry briskly to combine and wilt the cabbage, about 3–4 minutes, until cabbage is tender-crisp.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Stir in the coconut aminos, rice vinegar if using, and the white parts of the green onions. Continue to cook 1–2 minutes to allow flavors to meld and most of the liquid to evaporate.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Season with salt, pepper, and red pepper flakes if using. Taste and adjust seasoning as needed. If using sesame oil for finishing, drizzle it over now and toss briefly.",
+        "time_min": 0.5
+      },
+      {
+        "step_no": 8,
+        "text": "Remove from heat, garnish with reserved green onion tops, and serve immediately in bowls while hot.",
+        "time_min": 0.5
+      }
+    ]
+  },
+  "image_url": null
+}

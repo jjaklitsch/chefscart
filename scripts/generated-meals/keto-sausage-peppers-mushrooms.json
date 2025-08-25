@@ -1,0 +1,233 @@
+{
+  "slug": "keto-sausage-peppers-mushrooms",
+  "title": "Keto Sausage Peppers & Mushrooms",
+  "description": "Hearty, savory skillet of browned Italian sausage seared with bell peppers, cremini mushrooms and aromatic garlic and herbs. Low-carb, one-pan meal finished with a touch of butter and fresh parsley for bright flavor.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb",
+    "paleo",
+    "whole30"
+  ],
+  "primary_ingredient": "sausage",
+  "ingredient_tags": [
+    "sausage",
+    "italian sausage",
+    "ground pork",
+    "bell pepper",
+    "mushroom",
+    "onion",
+    "garlic",
+    "olive oil",
+    "butter",
+    "parsley",
+    "oregano",
+    "thyme",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "keto",
+    "low-carb",
+    "sausage and peppers",
+    "one pan",
+    "skillet dinner",
+    "mushrooms",
+    "italian sausage",
+    "bell pepper",
+    "garlic",
+    "butter",
+    "easy weeknight",
+    "whole30",
+    "paleo",
+    "gluten free",
+    "family dinner",
+    "meal prep",
+    "high protein",
+    "sautéed vegetables",
+    "herbed sausage",
+    "quick"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "Italian pork sausage (mild or hot), casings removed",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "use high-fat sausage for keto; remove casings if using links"
+      },
+      {
+        "display_name": "Olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "Unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds richness; can omit for dairy-free"
+      },
+      {
+        "display_name": "Yellow onion, medium, sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "slice into 1/4-inch strips"
+      },
+      {
+        "display_name": "Red bell pepper, seeded and sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "slice into 1/4-inch strips"
+      },
+      {
+        "display_name": "Yellow or orange bell pepper, seeded and sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for extra color"
+      },
+      {
+        "display_name": "Cremini or white mushrooms, cleaned and quartered",
+        "quantity": 10,
+        "unit": "oz",
+        "grams": 284,
+        "ml": null,
+        "optional": false,
+        "notes": "halve or quarter depending on size"
+      },
+      {
+        "display_name": "Garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "mince finely"
+      },
+      {
+        "display_name": "Dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "Dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "Kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "Freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "Fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": 30,
+        "optional": false,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "Red pepper flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for extra heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep all ingredients: slice onion and peppers, clean and quarter mushrooms, mince garlic, chop parsley, and remove casings from sausage if using links.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large heavy skillet over medium-high heat until hot, then add olive oil. Add the sausage (crumbled or sliced) and cook without moving for 2 minutes to develop color, then break up and continue browning until cooked through and no pink remains.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Push the browned sausage to one side of the skillet, add butter to the empty side and when melted add sliced onion and peppers. Sauté, stirring occasionally, until softened and starting to brown.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Add mushrooms to the pan with the vegetables and stir to combine. Cook until mushrooms release moisture and begin to brown, about when liquid mostly evaporates.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in minced garlic, dried oregano, dried thyme, salt, black pepper and optional red pepper flakes. Cook, stirring, until fragrant, about one minute.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Mix the sausage back in thoroughly with the vegetables and mushrooms. Taste and adjust seasoning. Remove from heat and sprinkle with chopped parsley before serving.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

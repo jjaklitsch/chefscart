@@ -1,0 +1,327 @@
+{
+  "slug": "char-siu-noodle-bowl",
+  "title": "Char Siu Noodle Bowl",
+  "description": "Savory-sweet char siu pork glazed with a honey-soy marinade, thinly sliced and served over springy wheat noodles with bright greens and scallions. The bowl balances caramelized pork, umami broth, and a quick pickled cucumber for contrast.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "wheat noodles",
+    "soy sauce",
+    "honey",
+    "hoisin",
+    "garlic",
+    "ginger",
+    "scallion",
+    "cucumber",
+    "bok choy",
+    "sesame oil",
+    "chili oil",
+    "rice vinegar",
+    "mirin"
+  ],
+  "spice_level": 2,
+  "time_total_min": 320,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "gluten",
+    "soy",
+    "sesame",
+    "egg"
+  ],
+  "search_keywords": [
+    "char siu",
+    "char siu pork",
+    "noodle bowl",
+    "chinese barbecue",
+    "hoisin glaze",
+    "soy marinade",
+    "wheat noodles",
+    "lo mein",
+    "ramen-style broth",
+    "bok choy",
+    "pickled cucumber",
+    "scallions",
+    "garlic ginger",
+    "sesame oil",
+    "honey soy",
+    "marinated pork",
+    "grilled pork",
+    "stir-fry",
+    "easy weeknight",
+    "asian noodles"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "pork shoulder, 1-inch thick strips",
+        "quantity": 900,
+        "unit": "g",
+        "grams": 900,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, slice into 1-inch thick strips for even cooking"
+      },
+      {
+        "display_name": "soy sauce (dark or regular)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "use gluten-free tamari if needed"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "for glaze; can substitute brown sugar"
+      },
+      {
+        "display_name": "hoisin sauce",
+        "quantity": 45,
+        "unit": "ml",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "mirin (sweet rice wine) or dry sherry",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "shaoxing wine (or additional mirin)",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adds depth; optional if using sherry"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "about 12 g total"
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 tablespoon grated"
+      },
+      {
+        "display_name": "five-spice powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for marinade"
+      },
+      {
+        "display_name": "red food coloring (optional for classic color)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "purely cosmetic; omit if preferred"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for searing before roasting"
+      },
+      {
+        "display_name": "wheat egg noodles or alkaline noodles",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "fresh or dried; adjust cooking time per package"
+      },
+      {
+        "display_name": "chicken or pork broth",
+        "quantity": 1200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 1200,
+        "optional": false,
+        "notes": "light broth to toss with noodles or serve as shallow bowl broth"
+      },
+      {
+        "display_name": "bok choy, halved lengthwise",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "baby bok choy works well"
+      },
+      {
+        "display_name": "english cucumber, julienned or thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "for quick pickle"
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "for quick pickling cucumber"
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "for quick pickle"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated for garnish"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 10,
+        "optional": false,
+        "notes": "finish for aroma"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "chili oil or sriracha",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 10,
+        "optional": true,
+        "notes": "optional, for heat"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste for broth and noodles"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 320,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make the char siu marinade by whisking together soy sauce, hoisin, honey, mirin, shaoxing wine, minced garlic, grated ginger, five-spice powder and optional food coloring in a bowl until smooth.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Reserve one-quarter of the marinade in a separate bowl for glazing later; add the pork strips to the remaining marinade, massaging to coat, then cover and refrigerate for at least 4 hours or up to overnight for best flavor.",
+        "time_min": 240
+      },
+      {
+        "step_no": 3,
+        "text": "Preheat oven to 200°C / 400°F. Remove pork from marinade, wipe off excess marinade to prevent burning, then heat oil in a heavy skillet over medium-high heat and sear pork strips 1-2 minutes per side until browned to develop color.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Transfer seared pork to a foil-lined baking sheet or roasting rack, brush with reserved glaze, roast in the preheated oven until internal temperature reaches 70°C / 160°F and edges start to caramelize, about 20-25 minutes, flipping and glazing once halfway through.",
+        "time_min": 30
+      },
+      {
+        "step_no": 5,
+        "text": "While pork roasts, quick-pickle the cucumber by combining rice vinegar and sugar, stirring until dissolved, then tossing with sliced cucumber and letting sit at room temperature for 10 minutes.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Bring the broth to a gentle simmer in a medium saucepan, season with salt and pepper, then blanch halved bok choy in the simmering broth for 1-2 minutes until bright and tender; remove and keep warm.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Cook the wheat noodles according to package instructions until just al dente, usually 3-5 minutes for fresh noodles or 7-9 minutes for dried; drain and toss lightly with a small amount of sesame oil to prevent sticking.",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "When pork is done, rest for 5 minutes, then thinly slice on a bias. Rewarm reserved glaze briefly and brush over slices for extra shine.",
+        "time_min": 7
+      },
+      {
+        "step_no": 9,
+        "text": "Assemble bowls by dividing noodles among bowls, ladling warm broth if using, arranging sliced char siu on top with bok choy, pickled cucumber, and scallions. Drizzle sesame oil and optional chili oil, sprinkle toasted sesame seeds, and serve immediately.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,245 @@
+{
+  "slug": "elote-black-bean-salad",
+  "title": "Elote & Black Bean Salad",
+  "description": "A bright, zesty salad combining charred sweet corn (elote-style) with creamy black beans, crisp bell pepper, cilantro and a tangy lime-cumin dressing. Served warm or chilled, it balances smoky, citrusy, and savory flavors for a satisfying vegetarian main or side.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "corn",
+    "black beans",
+    "bell pepper",
+    "red onion",
+    "cilantro",
+    "lime",
+    "cotija",
+    "mayonnaise",
+    "olive oil",
+    "cumin",
+    "chili powder",
+    "garlic",
+    "jalapeño"
+  ],
+  "spice_level": 2,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg"
+  ],
+  "search_keywords": [
+    "elote",
+    "black bean salad",
+    "mexican corn salad",
+    "charred corn",
+    "street corn",
+    "vegetarian",
+    "plant-forward",
+    "summer salad",
+    "lime dressing",
+    "cilantro",
+    "cotija",
+    "grilled corn",
+    "black beans",
+    "easy side dish",
+    "meal prep",
+    "picnic",
+    "barbecue",
+    "cumin",
+    "jalapeño",
+    "quick lunch"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "fresh corn kernels (cut from cob) or frozen thawed",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 390,
+        "ml": null,
+        "optional": false,
+        "notes": "about 3 medium ears or equivalent frozen, kernels removed"
+      },
+      {
+        "display_name": "canned black beans (rinsed and drained)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 255,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 (15 oz) can, drained and rinsed"
+      },
+      {
+        "display_name": "red bell pepper (finely diced)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "about half a medium pepper"
+      },
+      {
+        "display_name": "red onion (finely diced)",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/4 small onion"
+      },
+      {
+        "display_name": "fresh cilantro (chopped)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "packed, chopped leaves and tender stems"
+      },
+      {
+        "display_name": "jalapeño (seeded and minced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 14,
+        "ml": null,
+        "optional": true,
+        "notes": "remove seeds for milder heat"
+      },
+      {
+        "display_name": "lime juice (freshly squeezed)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 2 limes"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for dressing and searing corn"
+      },
+      {
+        "display_name": "mayonnaise",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "for creamy elote-style dressing"
+      },
+      {
+        "display_name": "cotija cheese (crumbled) or feta",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "optional topping, crumbled"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adds warm, earthy flavor"
+      },
+      {
+        "display_name": "chili powder (or smoked paprika for milder)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "for smoky heat"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly minced"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "green onions (sliced) for garnish",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "green and white parts sliced"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare vegetables: remove kernels from fresh corn if using fresh; finely dice red bell pepper and red onion, mince garlic, chop cilantro, and seed/mince jalapeño if using.",
+        "time_min": 7
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large skillet or grill pan over medium-high heat and add 1 tablespoon of oil. Spread the corn kernels in a single layer and cook without stirring until edges char, then toss and continue until most kernels have light char - about 6–8 minutes total.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "While corn chars, whisk together dressing in a bowl: remaining oil, mayonnaise, lime juice, cumin, chili powder, minced garlic, salt and pepper until smooth. Taste and adjust acidity or salt.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Transfer charred corn to a large mixing bowl; add rinsed black beans, diced bell pepper, red onion, chopped cilantro, and minced jalapeño. Pour dressing over and toss gently to combine.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Allow salad to rest for 5 minutes for flavors to meld; then taste and adjust seasoning. Garnish with crumbled cotija or feta and sliced green onions if using. Serve warm or chilled.",
+        "time_min": 8
+      }
+    ]
+  },
+  "image_url": null
+}

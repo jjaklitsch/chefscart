@@ -1,0 +1,242 @@
+{
+  "slug": "moo-ping-grilled-pork-skewers",
+  "title": "Moo Ping (Grilled Pork Skewers)",
+  "description": "Moo Ping are Thai-style marinated grilled pork skewers with a balance of sweet, savory and aromatic flavors from garlic, cilantro roots, fish sauce and palm sugar, charred over high heat for smoky edges. Served hot from the grill, they make a perfect street-food snack or casual dinner with sticky rice and fresh vegetables.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "garlic",
+    "cilantro",
+    "fish sauce",
+    "soy sauce",
+    "palm sugar",
+    "brown sugar",
+    "vegetable oil",
+    "black pepper",
+    "coriander",
+    "skewers",
+    "rice"
+  ],
+  "spice_level": 2,
+  "time_total_min": 202,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "moo ping",
+    "grilled pork",
+    "thai skewers",
+    "pork skewers",
+    "street food",
+    "garlic marinade",
+    "cilantro root",
+    "fish sauce",
+    "palm sugar",
+    "charcoal grill",
+    "bbq",
+    "sticky rice",
+    "marinated pork",
+    "easy dinner",
+    "asian",
+    "savory sweet",
+    "weeknight",
+    "appetizer",
+    "party food"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "pork shoulder, thinly sliced against the grain",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "slice 3-5 mm thick for skewering"
+      },
+      {
+        "display_name": "garlic cloves, peeled",
+        "quantity": 6,
+        "unit": "clove",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "roughly chopped for blender"
+      },
+      {
+        "display_name": "cilantro roots (or stems if unavailable), cleaned",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 24,
+        "ml": null,
+        "optional": false,
+        "notes": "use roots for authentic flavor; roughly chopped"
+      },
+      {
+        "display_name": "fish sauce",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds color and umami"
+      },
+      {
+        "display_name": "palm sugar or light brown sugar, grated",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 26,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust for sweetness preference"
+      },
+      {
+        "display_name": "vegetable oil (neutral)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "helps carry marinade and prevent sticking"
+      },
+      {
+        "display_name": "white or black pepper, ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "coriander powder (optional, for aroma)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "traditional in some recipes"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 2.5,
+        "optional": true,
+        "notes": "for finishing aroma"
+      },
+      {
+        "display_name": "bamboo skewers, soaked in water 30 minutes",
+        "quantity": 12,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "soak to prevent burning"
+      },
+      {
+        "display_name": "lime wedges (for serving)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into wedges"
+      },
+      {
+        "display_name": "fresh cucumber slices (for serving)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "serve chilled"
+      },
+      {
+        "display_name": "sticky rice or steamed jasmine rice (optional side)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": true,
+        "notes": "uncooked rice measurement"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 202,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare skewers: soak bamboo skewers in water for 30 minutes to prevent burning while grilling.",
+        "time_min": 30
+      },
+      {
+        "step_no": 2,
+        "text": "Make marinade: in a blender or mortar and pestle combine garlic, cilantro roots, fish sauce, soy sauce, palm sugar, vegetable oil, ground pepper and coriander powder if using; blend to a rough paste until sugar dissolves and mixture is homogeneous.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Slice and mix pork: slice pork thinly against the grain to the recommended thickness and place in a bowl; pour marinade over pork and mix thoroughly so each piece is coated. Cover and refrigerate to marinate.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Marinate: refrigerate the pork for at least 120 minutes, or preferably overnight for deepest flavor. Occasionally stir to redistribute marinade.",
+        "time_min": 120
+      },
+      {
+        "step_no": 5,
+        "text": "Skewer the pork: thread 3–4 slices per skewer, folding as needed to make an even thickness along the skewer, leaving small gaps for heat circulation.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Preheat grill or griddle: heat a charcoal grill, gas grill or heavy griddle to medium-high heat (around 200–230°C / 390–450°F) until hot and slightly smoking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Grill: place skewers on the hot grill and cook, turning frequently and brushing with any reserved marinade or a little oil to prevent drying. Grill until edges char and pork is cooked through, about 3–4 minutes per side depending on thickness; total grilling time approximately 8–10 minutes.",
+        "time_min": 10
+      },
+      {
+        "step_no": 8,
+        "text": "Finish and rest: if using sesame oil, brush lightly on finished skewers for aroma. Rest skewers 2 minutes off the heat to let juices settle.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Serve: transfer to a platter and serve immediately with sticky rice or jasmine rice, cucumber slices and lime wedges. Provide extra dipping sauce if desired.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

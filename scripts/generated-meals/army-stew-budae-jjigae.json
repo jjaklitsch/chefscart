@@ -1,0 +1,305 @@
+{
+  "slug": "army-stew-budae-jjigae",
+  "title": "Army Stew (Budae Jjigae)",
+  "description": "A hearty, savory Korean one-pot stew combining spicy gochujang broth with cured meats, kimchi, noodles and vegetables for bold umami and smoky-salty flavors. Simmered at the table or stovetop, it’s designed for communal eating and quick weeknight assembly.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "korean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork/processed meats",
+  "ingredient_tags": [
+    "spam",
+    "hot dogs",
+    "bacon",
+    "kimchi",
+    "tofu",
+    "ramen",
+    "udon",
+    "gochujang",
+    "gochugaru",
+    "garlic",
+    "onion",
+    "mushrooms",
+    "scallion",
+    "cabbage",
+    "bean sprouts",
+    "cheese",
+    "beef broth",
+    "soy sauce",
+    "sesame oil"
+  ],
+  "spice_level": 4,
+  "time_total_min": 38,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "gluten",
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "budae jjigae",
+    "army stew",
+    "korean stew",
+    "spicy",
+    "gochujang",
+    "kimchi",
+    "instant ramen",
+    "spam",
+    "hot dogs",
+    "one-pot",
+    "communal",
+    "korean comfort food",
+    "cheese",
+    "bacon",
+    "tofu",
+    "mushrooms",
+    "scallions",
+    "bean sprouts",
+    "weeknight dinner",
+    "tabletop hotpot"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "spam, sliced 1/4-inch",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "slice into bite-sized strips"
+      },
+      {
+        "display_name": "hot dogs or frankfurters, halved lengthwise",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 2–3 cm pieces"
+      },
+      {
+        "display_name": "bacon or thinly sliced pork belly, cut into strips",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "about 6–8 slices, optional for extra smokiness"
+      },
+      {
+        "display_name": "kimchi, well fermented and chopped",
+        "quantity": 250,
+        "unit": "g",
+        "grams": 250,
+        "ml": null,
+        "optional": false,
+        "notes": "squeeze out excess liquid if very wet"
+      },
+      {
+        "display_name": "soft tofu (silken/medium), cut into chunks",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into large cubes"
+      },
+      {
+        "display_name": "fresh mushrooms (shiitake or button), sliced",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "slice thicker if using shiitake"
+      },
+      {
+        "display_name": "cabbage, shredded",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "napa or green cabbage"
+      },
+      {
+        "display_name": "bean sprouts, rinsed",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "scallions, trimmed and cut into 4cm lengths",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "use white and green parts"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "gochujang (Korean chili paste)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 75,
+        "ml": 45,
+        "optional": false,
+        "notes": "adjust for desired heat"
+      },
+      {
+        "display_name": "gochugaru (Korean chili flakes)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds smoky heat"
+      },
+      {
+        "display_name": "soy sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "use regular or low-sodium"
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "balances acidity"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "chicken or beef broth",
+        "quantity": 900,
+        "unit": "ml",
+        "grams": null,
+        "ml": 900,
+        "optional": false,
+        "notes": "use low-sodium if preferred"
+      },
+      {
+        "display_name": "instant ramen noodles (exclude seasoning packet) or udon",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 160,
+        "ml": null,
+        "optional": false,
+        "notes": "one pack per two servings; can add more"
+      },
+      {
+        "display_name": "processed cheese slices (american), torn",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "classic finishing garnish"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": 5,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "cooking oil (neutral)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for light sautéing"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 38,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare and arrange ingredients: slice spam, hot dogs, bacon; chop kimchi; cut tofu into cubes; slice mushrooms and cabbage; trim scallions and mince garlic so everything is ready for quick assembly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a shallow wide pot or casserole over medium heat and add neutral oil. Lightly sauté bacon or pork strips until just rendered and aromatic, about a minute to two; this builds flavor for the base.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic and chopped kimchi to the pot and sauté briefly until fragrant and slightly softened, about 2 minutes, stirring to incorporate rendered fat and release juices.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in gochujang and gochugaru, mixing thoroughly with the kimchi mixture for 1 minute to bloom the chili paste, then add soy sauce, sugar and sesame oil and stir to combine.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Pour in the broth and bring to a gentle boil over medium-high heat, scraping up any browned bits; this creates the stew base.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Arrange the prepared proteins and vegetables in the pot in sections—spam, hot dogs, tofu, mushrooms, cabbage, bean sprouts and scallions—without stirring so they form a visually appealing arrangement.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Reduce heat to a simmer, cover partially, and cook until vegetables are tender and flavors meld, about 8 minutes. Taste and adjust seasoning with soy sauce or a pinch of salt if needed.",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "Add the instant noodles to the pot and cook uncovered until noodles are al dente, following package timing (about 3–4 minutes); if using udon, cook until heated through.",
+        "time_min": 4
+      },
+      {
+        "step_no": 9,
+        "text": "Top the simmering stew with torn cheese slices and allow to melt into the broth for 1–2 minutes. Finish with a scatter of scallion greens and toasted sesame seeds before serving communal-style.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,287 @@
+{
+  "slug": "keto-chimichurri-chicken-cauli-mash",
+  "title": "Keto Chimichurri Chicken & Cauli Mash",
+  "description": "Pan-seared chicken breasts topped with a vibrant herbaceous chimichurri served over a creamy, buttery cauliflower mash. Bright acidity from red wine vinegar and fresh herbs balances rich garlic and olive oil for a satisfying low-carb dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb",
+    "paleo",
+    "whole30"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "cauliflower",
+    "garlic",
+    "parsley",
+    "cilantro",
+    "olive oil",
+    "red wine vinegar",
+    "lemon",
+    "butter",
+    "parmesan",
+    "red pepper flakes",
+    "shallot",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "keto",
+    "low carb",
+    "chimichurri",
+    "cauliflower mash",
+    "pan seared chicken",
+    "garlic",
+    "parsley",
+    "cilantro",
+    "weeknight dinner",
+    "gluten free",
+    "paleo friendly",
+    "whole30",
+    "herb sauce",
+    "buttery mash",
+    "red wine vinegar",
+    "lemon",
+    "easy",
+    "meal prep",
+    "high protein",
+    "healthy fats"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, patted dry (about 170g/each)"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "olive oil (for searing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cauliflower florets",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed into florets (about 6 cups)"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "parmesan cheese, finely grated",
+        "quantity": 1,
+        "unit": "oz",
+        "grams": 28,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for richer mash"
+      },
+      {
+        "display_name": "heavy cream",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": true,
+        "notes": "optional to loosen mash"
+      },
+      {
+        "display_name": "fresh parsley leaves, packed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed"
+      },
+      {
+        "display_name": "fresh cilantro leaves, packed",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed"
+      },
+      {
+        "display_name": "fresh oregano leaves (or 1 tsp dried)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "shallot, minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "small"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 24,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1/2 lemon"
+      },
+      {
+        "display_name": "extra virgin olive oil (for chimichurri)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 108,
+        "ml": 120,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for heat"
+      },
+      {
+        "display_name": "salt for chimichurri",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "buttery finishing oil (optional olive oil)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": true,
+        "notes": "to finish chicken if desired"
+      },
+      {
+        "display_name": "freshly chopped chives or parsley (garnish)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: remove cauliflower florets, mince garlic and shallot, finely chop parsley, cilantro and oregano; pat chicken dry and season both sides with half the salt and half the pepper.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Make chimichurri: in a medium bowl combine chopped parsley, cilantro, oregano, minced shallot, garlic, red wine vinegar, lemon juice, red pepper flakes, remaining salt, and whisking slowly pour in extra virgin olive oil until emulsified; taste and adjust seasoning.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Cook cauliflower: bring a medium pot of salted water to a boil, add cauliflower florets and simmer until fork-tender, about 8–10 minutes, then drain thoroughly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "While cauliflower cooks, heat a large skillet over medium-high heat until shimmering and add olive oil. Sear seasoned chicken breasts 4–5 minutes per side (depending on thickness) until a deep golden crust forms and internal temperature reaches 165°F (74°C); reduce heat as needed to prevent burning. Transfer to a plate and rest 5 minutes.",
+        "time_min": 12
+      },
+      {
+        "step_no": 5,
+        "text": "Make cauliflower mash: transfer drained cauliflower to a food processor or blender, add butter, optional heavy cream and optional parmesan, and process until smooth and creamy; season with remaining salt and pepper to taste.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Assemble and finish: divide cauliflower mash among plates, slice or place whole chicken breasts atop mash, spoon generous chimichurri over chicken and garnish with chopped chives or parsley. Serve immediately.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

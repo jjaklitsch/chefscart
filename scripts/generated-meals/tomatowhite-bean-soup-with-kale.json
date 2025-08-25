@@ -1,0 +1,268 @@
+{
+  "slug": "tomatowhite-bean-soup-with-kale",
+  "title": "Tomato–White Bean Soup with Kale",
+  "description": "A hearty, comforting soup combining bright tomatoes, creamy white beans and tender kale in a fragrant garlic-onion broth. Simmered gently to meld flavors, finished with lemon and olive oil for brightness — quick to prepare and deeply satisfying.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegetarian",
+    "vegan"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "tomatoes",
+    "white beans",
+    "kale",
+    "onion",
+    "garlic",
+    "vegetable broth",
+    "olive oil",
+    "lemon",
+    "carrot",
+    "celery",
+    "bay leaf",
+    "thyme",
+    "red pepper flakes",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 43,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "tomato soup",
+    "white bean soup",
+    "kale soup",
+    "vegetarian soup",
+    "vegan soup",
+    "plant-forward",
+    "one-pot meal",
+    "comfort food",
+    "quick dinner",
+    "healthy soup",
+    "mediterranean style",
+    "garlic",
+    "olive oil",
+    "lemon",
+    "white beans canned",
+    "cannellini",
+    "navy beans",
+    "stew",
+    "winter greens",
+    "meal prep"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for sautéing"
+      },
+      {
+        "display_name": "yellow onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, diced"
+      },
+      {
+        "display_name": "carrot",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, diced"
+      },
+      {
+        "display_name": "celery stalk",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "diced"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "canned crushed tomatoes",
+        "quantity": 28,
+        "unit": "oz",
+        "grams": 794,
+        "ml": 828,
+        "optional": false,
+        "notes": "one 28 oz can (or crushed/whole crushed)"
+      },
+      {
+        "display_name": "low-sodium vegetable broth",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": null,
+        "ml": 960,
+        "optional": false,
+        "notes": "hot or room temperature"
+      },
+      {
+        "display_name": "canned white beans (cannellini or great northern)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "drained and rinsed (about 2 x 15 oz cans)"
+      },
+      {
+        "display_name": "kale",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed, leaves chopped and loosely packed"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 sprig fresh thyme"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "or to taste"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lemon"
+      },
+      {
+        "display_name": "extra-virgin olive oil for finishing",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "for drizzling"
+      },
+      {
+        "display_name": "parmesan or vegan parmesan (optional)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 43,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: dice onion, carrot and celery; mince garlic; rinse and drain the canned white beans; remove kale stems and chop the leaves; measure herbs and spices.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil in a large heavy pot over medium heat until shimmering. Add diced onion, carrot and celery and cook, stirring occasionally, until softened and beginning to brown.",
+        "time_min": 7
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic, dried thyme and red pepper flakes and cook, stirring constantly, until fragrant (do not let the garlic burn).",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Pour in the crushed tomatoes and the vegetable broth, scraping up any browned bits from the bottom of the pot; stir to combine.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Add the drained white beans and bay leaf. Increase heat to bring the soup to a gentle simmer, then lower heat to maintain a gentle simmer.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Simmer uncovered for 15 minutes to allow flavors to meld and the soup to reduce slightly, stirring occasionally.",
+        "time_min": 15
+      },
+      {
+        "step_no": 7,
+        "text": "Stir in the chopped kale and continue to simmer until the kale is wilted and tender but still bright, about 4 minutes.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Remove the pot from heat; discard the bay leaf. Stir in lemon juice, salt and black pepper, taste and adjust seasoning as needed. If desired, finish with a drizzle of olive oil and grated parmesan or vegan alternative when serving.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

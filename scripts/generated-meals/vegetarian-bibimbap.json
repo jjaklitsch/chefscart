@@ -1,0 +1,304 @@
+{
+  "slug": "vegetarian-bibimbap",
+  "title": "Vegetarian Bibimbap",
+  "description": "A vibrant Korean-inspired bowl layered with seasoned rice, sautéed and pickled vegetables, shiitake mushrooms, crispy tofu, and a savory-spicy gochujang sauce. Serve warm with a runny fried egg or keep fully vegetarian for a comforting, texture-rich meal that balances umami, heat, and acidity.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "korean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "rice",
+  "ingredient_tags": [
+    "rice",
+    "tofu",
+    "shiitake mushrooms",
+    "carrot",
+    "cucumber",
+    "spinach",
+    "bean sprouts",
+    "sesame oil",
+    "gochujang",
+    "soy sauce",
+    "scallion",
+    "garlic",
+    "egg",
+    "sesame seeds",
+    "vinegar"
+  ],
+  "spice_level": 3,
+  "time_total_min": 75,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "egg",
+    "sesame",
+    "grain"
+  ],
+  "search_keywords": [
+    "bibimbap",
+    "vegetarian bibimbap",
+    "korean rice bowl",
+    "gochujang",
+    "tofu bowl",
+    "mixed vegetables",
+    "banchan style",
+    "stir fry",
+    "sautéed spinach",
+    "marinated mushrooms",
+    "quick weeknight",
+    "one bowl meal",
+    "comfort food",
+    "healthy dinner",
+    "high protein vegetarian",
+    "sesame oil",
+    "rice recipe",
+    "fried egg topping",
+    "pickled cucumber",
+    "vegan option"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "short-grain white rice (uncooked)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed until water runs clear"
+      },
+      {
+        "display_name": "firm tofu",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "pressed and cut into 1/2-inch cubes"
+      },
+      {
+        "display_name": "shiitake mushrooms",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed, sliced"
+      },
+      {
+        "display_name": "carrots",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 140,
+        "ml": null,
+        "optional": false,
+        "notes": "julienned"
+      },
+      {
+        "display_name": "cucumber (for quick pickle)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "thin matchsticks"
+      },
+      {
+        "display_name": "fresh spinach",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed"
+      },
+      {
+        "display_name": "bean sprouts (mung)",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed"
+      },
+      {
+        "display_name": "scallions",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly sliced (white and green separated)"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "gochujang (Korean red pepper paste)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 72,
+        "ml": 60,
+        "optional": false,
+        "notes": "adjust to spice preference"
+      },
+      {
+        "display_name": "soy sauce (or tamari for gluten-free)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 60,
+        "ml": 60,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "for quick cucumber pickle and seasoning"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sugar (for pickle/seasoning)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "eggs (optional per bowl)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "fried sunny-side up for topping; omit for vegan"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "vegetable stock or water (for rice)",
+        "quantity": 2.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 600,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "gochujang sauce mix (gochujang + soy + sesame oil + sugar)",
+        "quantity": null,
+        "unit": null,
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "combine gochujang, 1 tbsp soy sauce, 1 tbsp sesame oil, 1 tsp sugar and 1 tbsp water to loosen"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 75,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare rice: rinse short-grain rice until water runs clear, then combine with measured water or vegetable stock in a pot or rice cooker and cook until tender; let rest covered off heat for 10 minutes.",
+        "time_min": 30
+      },
+      {
+        "step_no": 2,
+        "text": "Make quick pickled cucumber: toss cucumber matchsticks with rice vinegar, 1 teaspoon sugar, 1/4 teaspoon salt and let sit while you cook other components to pickle lightly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Season and sauté spinach: blanch or wilt spinach in a hot pan with a pinch of salt until just wilted, then drain, squeeze excess liquid, toss with 1/2 tablespoon soy sauce and 1/2 tablespoon sesame oil and set aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Cook bean sprouts: heat 1 teaspoon neutral oil in a skillet, add bean sprouts with a pinch of salt and 1 minced garlic clove, stir-fry briefly until tender-crisp, then finish with a drizzle of sesame oil and set aside.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Sear shiitake mushrooms: heat 1 tablespoon neutral oil in the same pan, add sliced shiitake and cook over medium-high heat until browned, add 1 tablespoon soy sauce and 1 minced garlic clove, cook until liquid is absorbed, then remove.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Pan-fry tofu: toss pressed tofu cubes with 1/2 teaspoon salt and a light dusting of cornstarch if desired; heat 1 tablespoon neutral oil in a skillet and fry tofu until golden on all sides, then toss with 1 tablespoon soy sauce and 1/2 tablespoon sesame oil and keep warm.",
+        "time_min": 8
+      },
+      {
+        "step_no": 7,
+        "text": "Make gochujang sauce: in a small bowl combine gochujang, soy sauce, sesame oil, sugar and a bit of water to loosen into a spoonable sauce; taste and adjust sweetness or heat.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Optional: fry eggs sunny-side up in 1 tablespoon neutral oil until whites are set but yolks remain runny; season lightly with salt.",
+        "time_min": 4
+      },
+      {
+        "step_no": 9,
+        "text": "Assemble bowls: divide warm rice between bowls, arrange tofu, mushrooms, spinach, bean sprouts, carrots, and pickled cucumber in sections on top of rice, place fried egg in center if using, sprinkle with toasted sesame seeds and sliced scallions, and serve with gochujang sauce to mix in.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

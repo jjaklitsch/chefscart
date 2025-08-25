@@ -1,0 +1,242 @@
+{
+  "slug": "roasted-beet-citrus-pistachio-salad",
+  "title": "Roasted Beet, Citrus & Pistachio Salad",
+  "description": "Earthy roasted beets are paired with bright citrus segments, creamy goat cheese, and crunchy pistachios, finished with a honey-citrus vinaigrette. This vibrant salad balances sweet, tart and nutty flavors and works as a light lunch or an elegant starter.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "beets",
+  "ingredient_tags": [
+    "beets",
+    "citrus",
+    "oranges",
+    "grapefruit",
+    "pistachios",
+    "goat cheese",
+    "mixed greens",
+    "arugula",
+    "olive oil",
+    "honey",
+    "shallot",
+    "red wine vinegar",
+    "salt",
+    "pepper",
+    "herbs"
+  ],
+  "spice_level": 1,
+  "time_total_min": 70,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "roasted beets",
+    "beet salad",
+    "citrus salad",
+    "orange and beet",
+    "pistachio salad",
+    "goat cheese salad",
+    "honey vinaigrette",
+    "roasted vegetables",
+    "mediterranean salad",
+    "vegetarian lunch",
+    "plant-forward",
+    "holiday salad",
+    "starter",
+    "light dinner",
+    "easy salad",
+    "seasonal produce",
+    "arugula salad",
+    "winter citrus",
+    "crunchy pistachios",
+    "salad with nuts"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "beets (mixed red and golden), trimmed and scrubbed",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "leave root and stem on for roasting, peel after cooking if desired"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.75,
+        "unit": "tsp",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "divided (about 1 tsp for roasting, 3/4 tsp for dressing and finishing)"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "navel orange, peeled and segmented (supremes)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 140,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve any juice for dressing"
+      },
+      {
+        "display_name": "grapefruit, peeled and segmented (optional mix of pink/white)",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "adds brightness; can substitute with extra orange"
+      },
+      {
+        "display_name": "pistachios, shelled and lightly toasted, roughly chopped",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "leave some larger pieces for texture"
+      },
+      {
+        "display_name": "goat cheese (chèvre), crumbled",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": true,
+        "notes": "use vegan chèvre for dairy-free variation"
+      },
+      {
+        "display_name": "mixed salad greens (arugula and baby spinach)",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "or use all arugula for peppery bite"
+      },
+      {
+        "display_name": "shallot, finely minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small shallot"
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "honey",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 22.5,
+        "optional": false,
+        "notes": "substitute maple syrup for vegan"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "fresh thyme leaves or chopped parsley",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish and aroma"
+      },
+      {
+        "display_name": "optional flaky sea salt for finishing",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "to finish before serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 70,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 200°C (400°F). Toss whole trimmed beets with half the olive oil and about 1 tsp salt, place on a foil-lined baking sheet, and roast until tender when pierced with a knife.",
+        "time_min": 50
+      },
+      {
+        "step_no": 2,
+        "text": "While beets roast, toast pistachios in a dry skillet over medium heat, stirring until fragrant and lightly browned; remove to cool and roughly chop.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Prepare citrus: peel and segment the orange and grapefruit over a bowl to catch juices, then set segments aside and reserve any juice for the dressing.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Make the vinaigrette by whisking together remaining olive oil, red wine vinegar, honey, lemon juice, minced shallot, reserved citrus juice, 3/4 tsp salt, and freshly ground black pepper until emulsified.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "When beets are cool enough to handle, peel if desired and cut into wedges or 1/2-inch slices. Toss warm beet pieces gently with a small amount of vinaigrette to glaze.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "On a large platter or individual plates, arrange mixed greens, top with dressed warm beets, citrus segments, crumbled goat cheese, and toasted pistachios. Drizzle remaining vinaigrette as needed and scatter thyme or parsley. Finish with a pinch of flaky sea salt if using.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

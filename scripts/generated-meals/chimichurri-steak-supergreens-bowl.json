@@ -1,0 +1,285 @@
+{
+  "slug": "chimichurri-steak-supergreens-bowl",
+  "title": "Chimichurri Steak & Supergreens Bowl",
+  "description": "A vibrant bowl featuring grilled flank steak finished with bright, herb-forward chimichurri served over a mix of nutrient-dense supergreens and roasted vegetables. Bold tangy garlic flavors and a light char on the steak balance with crunchy seeds and a citrusy finish for a satisfying, whole-food meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "paleo",
+    "low-carb",
+    "keto"
+  ],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "flank steak",
+    "chimichurri",
+    "parsley",
+    "cilantro",
+    "garlic",
+    "red wine vinegar",
+    "olive oil",
+    "supergreens",
+    "kale",
+    "spinach",
+    "arugula",
+    "broccoli",
+    "sweet potato",
+    "avocado",
+    "pumpkin seeds",
+    "lemon",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "chimichurri",
+    "steak bowl",
+    "supergreens",
+    "grilled beef",
+    "flank steak",
+    "herb sauce",
+    "parsley cilantro",
+    "garlic",
+    "low-carb bowl",
+    "keto friendly",
+    "paleo meal",
+    "roasted sweet potato",
+    "avocado bowl",
+    "meal prep",
+    "healthy lunch",
+    "dinner bowl",
+    "lime chimichurri",
+    "olive oil dressing",
+    "seed topping",
+    "charred steak"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "flank steak, trimmed",
+        "quantity": 1.5,
+        "unit": "lb",
+        "grams": 681,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, bring to room temperature"
+      },
+      {
+        "display_name": "flat-leaf parsley, packed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed, roughly chopped"
+      },
+      {
+        "display_name": "fresh cilantro, packed",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed, roughly chopped"
+      },
+      {
+        "display_name": "fresh oregano leaves (or 1 tsp dried)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "optional but recommended"
+      },
+      {
+        "display_name": "garlic cloves, peeled",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced or smashed"
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 26,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lemon"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 432,
+        "ml": 120,
+        "optional": false,
+        "notes": "use good quality oil"
+      },
+      {
+        "display_name": "olive oil for roasting/steak",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided between veg and steak sear"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for heat"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "divided; more to season steak"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "mixed supergreens (kale, spinach, arugula), washed",
+        "quantity": 8,
+        "unit": "oz",
+        "grams": 227,
+        "ml": null,
+        "optional": false,
+        "notes": "roughly chopped if large leaves"
+      },
+      {
+        "display_name": "broccoli florets, bite-sized",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "tossed with oil and roasted"
+      },
+      {
+        "display_name": "sweet potato, peeled and diced 1/2-inch",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "can substitute with roasted carrot"
+      },
+      {
+        "display_name": "avocado, sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "ripe but firm"
+      },
+      {
+        "display_name": "pumpkin seeds (pepitas), toasted",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 24,
+        "ml": null,
+        "optional": true,
+        "notes": "for crunch"
+      },
+      {
+        "display_name": "lemon wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "water (to adjust chimichurri consistency)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "add only if needed"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Toss diced sweet potato and broccoli florets with half the roasting oil and a pinch of salt and pepper; spread in a single layer on a rimmed baking sheet.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Roast the vegetables until tender and lightly browned, stirring halfway through to ensure even browning.",
+        "time_min": 20
+      },
+      {
+        "step_no": 3,
+        "text": "While vegetables roast, make the chimichurri: combine chopped parsley, cilantro, oregano, minced garlic, red wine vinegar, lemon juice, red pepper flakes (if using), salt, pepper and olive oil in a bowl or blender; pulse or whisk to a slightly chunky sauce, thinning with a small amount of water if needed.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Bring the flank steak to room temperature and pat dry; season both sides generously with salt and pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Heat a cast-iron skillet or grill pan over high heat with remaining oil until just smoking, then sear the steak 3-4 minutes per side for medium-rare depending on thickness, adjusting time for desired doneness; use tongs to sear edges if needed.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Transfer steak to a cutting board and rest for 6 minutes to allow juices to redistribute before slicing thinly against the grain.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble bowls: divide supergreens among serving bowls, top with roasted sweet potato and broccoli, fan sliced steak over greens, drizzle chimichurri liberally over steak and vegetables, add avocado slices and sprinkle toasted pumpkin seeds; serve with lemon wedges.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

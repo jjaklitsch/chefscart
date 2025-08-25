@@ -1,0 +1,288 @@
+{
+  "slug": "coconut-rice-with-grilled-prawns",
+  "title": "Coconut Rice with Grilled Prawns",
+  "description": "Fragrant jasmine rice cooked in coconut milk with toasted coconut and lime for brightness, served with marinated, char-grilled prawns. A balance of creamy, sweet, and slightly tangy flavors with a light smoky finish.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "prawns",
+  "ingredient_tags": [
+    "prawns",
+    "shrimp",
+    "rice",
+    "jasmine rice",
+    "coconut milk",
+    "lime",
+    "garlic",
+    "ginger",
+    "green onion",
+    "cilantro",
+    "cumin",
+    "chili",
+    "soy sauce",
+    "fish sauce",
+    "brown sugar",
+    "salt",
+    "pepper",
+    "vegetable oil",
+    "toasted coconut"
+  ],
+  "spice_level": 2,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "seafood",
+    "soy"
+  ],
+  "search_keywords": [
+    "coconut rice",
+    "grilled prawns",
+    "shrimp",
+    "jasmine rice",
+    "coconut milk",
+    "lime",
+    "thai style",
+    "pescatarian",
+    "seafood dinner",
+    "grilled shrimp",
+    "garlic ginger",
+    "toasted coconut",
+    "weeknight dinner",
+    "summer grill",
+    "marinated prawns",
+    "coconut lime",
+    "easy weeknight",
+    "medium spice",
+    "aromatic rice",
+    "cilantro garnish"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "jasmine rice",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed until water runs clear"
+      },
+      {
+        "display_name": "unsweetened canned coconut milk",
+        "quantity": 400,
+        "unit": "ml",
+        "grams": null,
+        "ml": 400,
+        "optional": false,
+        "notes": "use full-fat for creamier rice"
+      },
+      {
+        "display_name": "water",
+        "quantity": 240,
+        "unit": "ml",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "adjust amount if using thin coconut milk"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "granulated sugar or brown sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "adds slight sweetness to rice"
+      },
+      {
+        "display_name": "large prawns (raw, peeled, deveined, tails on)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "about 12–16 prawns depending on size"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger (grated)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lime (zest and juice)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 67,
+        "ml": null,
+        "optional": false,
+        "notes": "zest for marinade, juice for finishing rice and prawns"
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": "for prawn marinade"
+      },
+      {
+        "display_name": "fish sauce",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adds umami to marinade"
+      },
+      {
+        "display_name": "brown sugar (for marinade)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red chili flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for added heat"
+      },
+      {
+        "display_name": "vegetable oil (or neutral oil)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for marinade and brushing grill/pan"
+      },
+      {
+        "display_name": "unsweetened shredded coconut (toasted)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "toast in skillet until golden for garnish"
+      },
+      {
+        "display_name": "green onions (thinly sliced)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fresh cilantro (chopped)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse the jasmine rice under cold water until runoff is mostly clear, then drain thoroughly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Combine coconut milk, water, salt, and sugar in a medium saucepan and bring to a gentle simmer over medium heat, stirring to dissolve sugar and salt.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Add the drained rice to the simmering liquid, stir once, cover with a tight-fitting lid, reduce heat to low and cook undisturbed until liquid is absorbed and rice is tender.",
+        "time_min": 18
+      },
+      {
+        "step_no": 4,
+        "text": "While rice cooks, make the prawn marinade by combining minced garlic, grated ginger, lime zest, lime juice, soy sauce, fish sauce, brown sugar, oil, black pepper and optional chili flakes in a bowl.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Toss the prawns with the marinade, coating evenly. Let marinate briefly at room temperature for 10 minutes (do not exceed 30 minutes for best texture).",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Preheat a grill or grill pan over medium-high heat and oil the grates lightly. Grill the marinated prawns in a single layer until opaque and charred at the edges, about 2 minutes per side depending on size. Work in batches if needed.",
+        "time_min": 8
+      },
+      {
+        "step_no": 7,
+        "text": "While prawns grill, once rice is done remove from heat and let rest covered for 5 minutes, then fluff with a fork and stir in a squeeze of lime juice and half of the sliced green onions.",
+        "time_min": 6
+      },
+      {
+        "step_no": 8,
+        "text": "Toast shredded coconut in a small dry skillet over medium heat, stirring constantly until golden (watch closely to avoid burning).",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Plate coconut rice, top with grilled prawns, sprinkle toasted coconut, remaining green onions and chopped cilantro. Serve with lime wedges on the side.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

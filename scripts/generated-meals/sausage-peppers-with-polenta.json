@@ -1,0 +1,279 @@
+{
+  "slug": "sausage-peppers-with-polenta",
+  "title": "Sausage & Peppers with Polenta",
+  "description": "Rustic Italian-inspired skillet of savory sausages seared with sweet bell peppers and onions, finished in a garlicky tomato sauce and served over creamy parmesan polenta. Hearty, comforting, and ready in about an hour — bright roasted peppers and rich cornmeal make this a crowd-pleasing one-pan supper.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian",
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "sausage",
+  "ingredient_tags": [
+    "sausage",
+    "italian sausage",
+    "pork",
+    "bell pepper",
+    "onion",
+    "garlic",
+    "tomato",
+    "polenta",
+    "cornmeal",
+    "parmesan",
+    "olive oil",
+    "butter",
+    "herbs"
+  ],
+  "spice_level": 2,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "sausage and peppers",
+    "polenta",
+    "italian sausage",
+    "comfort food",
+    "skillet dinner",
+    "cornmeal porridge",
+    "parmesan polenta",
+    "bell peppers",
+    "one pan meal",
+    "weeknight dinner",
+    "tomato sauce",
+    "garlic",
+    "roasted peppers",
+    "pork sausage",
+    "creamy polenta",
+    "hearty",
+    "family meal",
+    "stovetop",
+    "simmer"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "Italian sausage links (mild or sweet), casings left on or removed",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "use pork or chicken sausage; can slice into 1-inch pieces or leave whole"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided use for searing and sautéing"
+      },
+      {
+        "display_name": "yellow onion, peeled and sliced into 1/2-inch strips",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "assorted bell peppers (red and yellow), seeded and sliced into 1/2-inch strips",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1.25 lb total"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "crushed tomatoes (canned)",
+        "quantity": 14,
+        "unit": "oz",
+        "grams": 400,
+        "ml": 414,
+        "optional": false,
+        "notes": "can substitute diced tomatoes for a chunkier sauce"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds depth to the sauce"
+      },
+      {
+        "display_name": "chicken or vegetable stock",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "used to simmer sauce; more as needed"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust or omit for spice level"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus more to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "polenta (coarse cornmeal)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 170,
+        "ml": 240,
+        "optional": false,
+        "notes": "regular coarse polenta, not instant for best texture"
+      },
+      {
+        "display_name": "water",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": null,
+        "ml": 960,
+        "optional": false,
+        "notes": "for cooking polenta; can substitute part milk for creaminess"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": null,
+        "optional": false,
+        "notes": "stirred into polenta for richness"
+      },
+      {
+        "display_name": "grated Parmesan cheese",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly grated for best flavor"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "lemon zest (optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "brightens the polenta"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep all produce and measure ingredients: slice onions and bell peppers, mince garlic, grate Parmesan, and portion polenta and liquids so cooking proceeds smoothly.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large heavy skillet over medium-high heat and add 1 tablespoon of olive oil. When shimmering, add whole or sliced sausage and brown on all sides until nicely caramelized (internal color mostly cooked). Remove sausages to a plate and reserve drippings.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to medium, add remaining olive oil to the skillet if needed, then add sliced onions and peppers. Sauté, stirring occasionally, until peppers begin to soften and edges blister, about until translucent and slightly charred.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic and cook, stirring, until fragrant but not browned. Stir in tomato paste and cook 1 minute to deepen flavor.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Pour in crushed tomatoes and stock, scrape up any browned bits from the bottom of the pan, then add dried oregano, red pepper flakes if using, salt and pepper. Return sausages to the skillet nestling them into the sauce and peppers.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Bring the skillet to a gentle simmer, then reduce heat to low, cover partially, and simmer until sausages are cooked through and peppers are tender, about 15 minutes. Uncover for the last 3–4 minutes if you want the sauce to thicken slightly.",
+        "time_min": 15
+      },
+      {
+        "step_no": 7,
+        "text": "While the sausages simmer, bring water to a boil in a medium saucepan with a pinch of salt. Slowly whisk in the polenta in a steady stream to prevent lumps, then reduce heat to low and simmer, stirring frequently until thick and creamy.",
+        "time_min": 12
+      },
+      {
+        "step_no": 8,
+        "text": "When polenta has thickened and grains are tender, stir in butter and grated Parmesan until melted and smooth. Taste and adjust seasoning, adding lemon zest if using.",
+        "time_min": 3
+      },
+      {
+        "step_no": 9,
+        "text": "Serve a generous spoonful of creamy polenta on each plate or shallow bowl and top with sausages, peppers and tomato sauce. Garnish with chopped parsley and extra Parmesan if desired.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

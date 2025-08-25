@@ -1,0 +1,301 @@
+{
+  "slug": "kung-pao-chicken-small-batch",
+  "title": "Kung Pao Chicken (Small-Batch)",
+  "description": "A fast, wok-style stir-fry marrying tender marinated chicken with crunchy peanuts, bright scallions, and a savory-sweet-spicy sauce. Quick pan-searing and a short sauce reduction deliver glossy, caramelized edges and a vibrant balance of heat, umami, and tang.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "peanuts",
+    "scallion",
+    "bell pepper",
+    "soy sauce",
+    "vinegar",
+    "garlic",
+    "ginger",
+    "cornstarch",
+    "chili",
+    "sesame oil",
+    "rice"
+  ],
+  "spice_level": 3,
+  "time_total_min": 31,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 4,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "peanut",
+    "soy",
+    "sesame",
+    "grain"
+  ],
+  "search_keywords": [
+    "kung pao",
+    "kung pao chicken",
+    "sichuan-style",
+    "stir-fry",
+    "wok",
+    "spicy chicken",
+    "peanuts",
+    "chili",
+    "soy glaze",
+    "quick dinner",
+    "small-batch",
+    "scallions",
+    "bell pepper",
+    "garlic ginger",
+    "cornstarch",
+    "marinated chicken",
+    "takeout copycat",
+    "asian",
+    "rice bowl"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs, cut into 1/2-inch pieces",
+        "quantity": 10,
+        "unit": "oz",
+        "grams": 283,
+        "ml": null,
+        "optional": false,
+        "notes": "trim fat, pat dry, cut against the grain"
+      },
+      {
+        "display_name": "light soy sauce (for marinade)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "use lower-sodium if preferred"
+      },
+      {
+        "display_name": "Shaoxing wine or dry sherry (for marinade)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "can omit and replace with extra soy for non-alcohol"
+      },
+      {
+        "display_name": "cornstarch (for marinade)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "helps create a velvety exterior"
+      },
+      {
+        "display_name": "vegetable oil (for stir-frying), divided",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "use neutral oil with high smoke point"
+      },
+      {
+        "display_name": "raw peanuts, unsalted",
+        "quantity": 1,
+        "unit": "oz",
+        "grams": 28,
+        "ml": null,
+        "optional": false,
+        "notes": "or roasted unsalted peanuts; can substitute cashews"
+      },
+      {
+        "display_name": "dried red chilies (or 1 tsp chili flakes), whole",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust quantity for heat preference; remove seeds for less heat"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, minced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 thumb-sized piece"
+      },
+      {
+        "display_name": "scallions (green parts and some white), sliced 1-inch",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "slice diagonally for presentation"
+      },
+      {
+        "display_name": "red bell pepper, diced 1/2-inch",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "adds color and crunch"
+      },
+      {
+        "display_name": "scallion whites (separate) - included in scallions",
+        "quantity": 0,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "already counted"
+      },
+      {
+        "display_name": "sauce: light soy sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sauce: dark soy sauce",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "for color and deeper umami"
+      },
+      {
+        "display_name": "sauce: Chinese black vinegar or balsamic vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "black vinegar preferred; balsamic if unavailable"
+      },
+      {
+        "display_name": "sauce: granulated sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "balances salt and heat"
+      },
+      {
+        "display_name": "sauce: chicken stock or water",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "use low-sodium stock if possible"
+      },
+      {
+        "display_name": "sauce: cornstarch slurry (1 tsp cornstarch + 1 tbsp water)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "mix cornstarch and water just before adding"
+      },
+      {
+        "display_name": "toasted sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "add at end for aroma"
+      },
+      {
+        "display_name": "white rice, cooked (for serving)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": true,
+        "notes": "approximate cooked volume for 2 servings"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; mainly for par-cooking oil if needed"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 31,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare chicken by cutting into uniform bite-sized pieces, then toss with the marinade soy, shaoxing wine (if using) and cornstarch until evenly coated; let rest while you prep other ingredients.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Mix the sauce ingredients (soy sauces, vinegar, sugar, stock) in a small bowl and set aside; separately dissolve cornstarch in a little water to make a slurry.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large skillet or wok over medium-high heat until very hot, then add half the oil and swirl to coat; add peanuts and toast, stirring, until golden and aromatic; remove peanuts and set aside.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Add remaining oil to the hot wok; add dried chilies and stir-fry briefly until fragrant (be careful not to burn), then add marinated chicken in a single layer and sear without moving for 30–45 seconds to develop color, then stir-fry until mostly cooked through.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Push the chicken to the side, add garlic and ginger to the hot center and stir for 15–20 seconds until fragrant, then add bell pepper and most of the scallions and stir-fry together to just tender-crisp.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Pour the prepared sauce over the chicken and vegetables, stir to combine and bring to a simmer; once simmering, add cornstarch slurry slowly while stirring to thicken the sauce to a glossy coating.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Return toasted peanuts to the wok, drizzle with sesame oil, toss everything together and cook for another 30–60 seconds until sauce clings and chicken is cooked through; taste and adjust seasoning.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Remove from heat, garnish with remaining scallion greens, and serve immediately over steamed rice or as desired.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

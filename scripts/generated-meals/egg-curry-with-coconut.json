@@ -1,0 +1,308 @@
+{
+  "slug": "egg-curry-with-coconut",
+  "title": "Egg Curry with Coconut",
+  "description": "A creamy, aromatic egg curry made with simmered hard-boiled eggs in a spiced coconut-tomato gravy. Warm spices, toasted coconut and a touch of tamarind balance richness for a comforting weeknight meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "egg",
+  "ingredient_tags": [
+    "egg",
+    "coconut",
+    "tomato",
+    "onion",
+    "garlic",
+    "ginger",
+    "cilantro",
+    "cumin",
+    "turmeric",
+    "chili",
+    "mustard seeds",
+    "curry leaves",
+    "oil",
+    "salt",
+    "tamarind",
+    "water",
+    "green chili"
+  ],
+  "spice_level": 3,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg"
+  ],
+  "search_keywords": [
+    "egg curry",
+    "coconut curry",
+    "eggs in gravy",
+    "vegetarian indian",
+    "easy dinner",
+    "spicy egg coconut",
+    "tamarind egg curry",
+    "hard boiled eggs",
+    "tomato coconut sauce",
+    "one-pot curry",
+    "south indian style",
+    "coconut milk substitute",
+    "weeknight meal",
+    "cilantro garnish",
+    "toasted coconut",
+    "comfort food",
+    "protein rich vegetarian",
+    "moderate spice",
+    "stovetop curry",
+    "serve with rice"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "large eggs (hard boiled and peeled)",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "hard-boiled, cooled and peeled"
+      },
+      {
+        "display_name": "coconut milk (full-fat)",
+        "quantity": 400,
+        "unit": "ml",
+        "grams": null,
+        "ml": 400,
+        "optional": false,
+        "notes": "shake before measuring"
+      },
+      {
+        "display_name": "medium tomatoes (or canned crushed tomatoes)",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "fresh chopped or canned crushed"
+      },
+      {
+        "display_name": "large onion (finely chopped)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "finely diced"
+      },
+      {
+        "display_name": "garlic cloves (minced)",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh ginger (minced)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "vegetable oil or neutral oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "or ghee for richer flavor"
+      },
+      {
+        "display_name": "mustard seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "black or brown mustard seeds"
+      },
+      {
+        "display_name": "curry leaves",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional but recommended"
+      },
+      {
+        "display_name": "ground turmeric",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red chili powder (adjust to taste)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "use less for milder heat"
+      },
+      {
+        "display_name": "green chilies (slit)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, adjust to spice level"
+      },
+      {
+        "display_name": "tamarind paste",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": "or 1 tbsp lemon juice as substitute"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "water",
+        "quantity": 150,
+        "unit": "ml",
+        "grams": null,
+        "ml": 150,
+        "optional": false,
+        "notes": "to adjust gravy consistency"
+      },
+      {
+        "display_name": "fresh cilantro (chopped, for garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 30,
+        "optional": false,
+        "notes": "chopped"
+      },
+      {
+        "display_name": "toasted grated coconut (optional garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": 30,
+        "optional": true,
+        "notes": "toast lightly until golden"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Hard-boil the eggs: place eggs in a pot, cover with cold water by about an inch, bring to a rolling boil, then reduce heat and simmer for 10 minutes. Transfer to ice water, cool, peel and set aside.",
+        "time_min": 18
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare tomatoes and aromatics: chop tomatoes (or measure canned tomatoes), finely chop onion, mince garlic and ginger, and slit green chilies if using.",
+        "time_min": 7
+      },
+      {
+        "step_no": 3,
+        "text": "Heat oil in a wide skillet over medium heat, add mustard seeds and let them pop briefly, then add curry leaves and sauté for a few seconds until fragrant.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add chopped onion to the skillet and cook, stirring occasionally, until softened and beginning to brown around the edges.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in minced garlic and ginger and cook for a minute until aromatic without burning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Add ground turmeric, cumin, coriander and red chili powder; toast the spices for about 30 seconds to bloom their flavors.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Add chopped or crushed tomatoes and slit green chilies; simmer the mixture until it thickens and oil starts to separate from the tomato base.",
+        "time_min": 6
+      },
+      {
+        "step_no": 8,
+        "text": "Pour in the coconut milk and add water; stir to combine and bring the sauce to a gentle simmer.",
+        "time_min": 3
+      },
+      {
+        "step_no": 9,
+        "text": "Season the sauce with tamarind paste and salt; adjust acidity and seasoning, then simmer uncovered for a few minutes to let flavors meld and the gravy slightly reduce.",
+        "time_min": 3
+      },
+      {
+        "step_no": 10,
+        "text": "Halve or leave eggs whole and gently nestle the peeled hard-boiled eggs into the simmering coconut-tomato gravy, spooning sauce over them to coat. Simmer gently to heat eggs through and let them absorb flavor.",
+        "time_min": 3
+      },
+      {
+        "step_no": 11,
+        "text": "Taste and adjust seasoning for salt, spice or tamarind. Finish by sprinkling chopped cilantro and toasted grated coconut over the curry just before serving.",
+        "time_min": 1
+      },
+      {
+        "step_no": 12,
+        "text": "Serve hot with steamed rice, naan, or flatbreads as desired.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

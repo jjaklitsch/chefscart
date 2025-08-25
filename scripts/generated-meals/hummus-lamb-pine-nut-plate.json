@@ -1,0 +1,283 @@
+{
+  "slug": "hummus-lamb-pine-nut-plate",
+  "title": "Hummus Lamb & Pine Nut Plate",
+  "description": "A Mediterranean-inspired plate featuring creamy garlic-lemon hummus topped with spiced ground lamb and toasted pine nuts, finished with bright herbs and olive oil. Fast stovetop lamb and quick-blended hummus make this a satisfying shareable lunch or dinner with vibrant textures and warm, nutty flavors.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "lamb",
+  "ingredient_tags": [
+    "lamb",
+    "chickpeas",
+    "tahini",
+    "pine nuts",
+    "olive oil",
+    "garlic",
+    "lemon",
+    "parsley",
+    "cumin",
+    "paprika",
+    "onion",
+    "salt",
+    "pepper",
+    "sumac",
+    "yogurt",
+    "pita"
+  ],
+  "spice_level": 2,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "sesame",
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "hummus",
+    "lamb",
+    "pine nuts",
+    "mediterranean",
+    "middle eastern",
+    "ground lamb",
+    "toasted pine nuts",
+    "tahini",
+    "chickpeas",
+    "garlic lemon",
+    "spiced lamb",
+    "easy dinner",
+    "shareable plate",
+    "mezzes",
+    "pita",
+    "weeknight meal",
+    "herbs",
+    "olive oil",
+    "sumac",
+    "protein rich"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "canned chickpeas, drained and rinsed",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve 60–80 ml of the can liquid (aquafaba) if needed for blending"
+      },
+      {
+        "display_name": "tahini",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "stir before measuring"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1 large lemon"
+      },
+      {
+        "display_name": "garlic cloves, peeled",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "extra-virgin olive oil (for hummus)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "plus extra for finishing"
+      },
+      {
+        "display_name": "ground lamb",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "80/20 or 85/15 fat for flavor"
+      },
+      {
+        "display_name": "small yellow onion, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 cup diced"
+      },
+      {
+        "display_name": "pine nuts",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 34,
+        "ml": null,
+        "optional": false,
+        "notes": "toast until golden"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for lamb"
+      },
+      {
+        "display_name": "sweet paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for lamb"
+      },
+      {
+        "display_name": "ground cinnamon",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "small pinch for lamb warmth"
+      },
+      {
+        "display_name": "salt, plus more to taste",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "split between hummus and lamb"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "plain Greek yogurt (optional drizzle)",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 60,
+        "ml": 60,
+        "optional": true,
+        "notes": "for tangy finish"
+      },
+      {
+        "display_name": "sumac (for finishing)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "sprinkle over plate"
+      },
+      {
+        "display_name": "pita bread, warm, quartered",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": true,
+        "notes": "serve alongside for scooping"
+      },
+      {
+        "display_name": "olive oil (for cooking lamb and finishing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare chickpeas: drain and rinse canned chickpeas, reserve some can liquid; transfer chickpeas, tahini, lemon juice, garlic, olive oil, a portion of the salt and pepper to a food processor.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Blend hummus: process until smooth, scraping down the bowl as needed; add reserved aquafaba or a little water in tablespoons to reach creamy, spreadable consistency; adjust salt, lemon and garlic to taste.",
+        "time_min": 7
+      },
+      {
+        "step_no": 3,
+        "text": "Toast pine nuts: heat a small dry skillet over medium, add pine nuts and toast, stirring constantly until fragrant and golden, then transfer to a bowl to stop cooking.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Cook aromatics: heat half the olive oil in a large skillet over medium-high heat, add diced onion and a pinch of salt and cook until soft and translucent.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Brown lamb: add ground lamb to the skillet with onions, breaking it up with a spoon; cook until no longer pink and starting to brown, about several minutes.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Season lamb: lower heat to medium, stir in cumin, paprika, cinnamon, remaining salt and pepper; cook 1–2 minutes to toast spices and meld flavors; taste and adjust seasoning.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Finish lamb: add a splash of water or a drizzle of olive oil if mixture is dry, stir to combine and remove from heat; fold in half the toasted pine nuts for texture.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble plate: spoon hummus into a shallow bowl or plate and use the back of the spoon to create a well; top center with warm spiced lamb, drizzle with olive oil and scattered pine nuts, add dollops of yogurt if using, sprinkle chopped parsley and sumac.",
+        "time_min": 3
+      },
+      {
+        "step_no": 9,
+        "text": "Warm pita and serve: briefly warm pita in oven or skillet, cut into wedges and serve alongside for scooping; serve immediately.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

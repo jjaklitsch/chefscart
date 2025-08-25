@@ -1,0 +1,253 @@
+{
+  "slug": "pad-see-ew",
+  "title": "Pad See Ew",
+  "description": "A classic Thai stir-fry of wide rice noodles tossed with savory soy-based sauce, crisp-tender Chinese broccoli, and tender slices of protein. Quick wok cooking gives smoky char and concentrated umami while eggs add silkiness to the sauce.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "rice noodles",
+  "ingredient_tags": [
+    "rice noodles",
+    "beef",
+    "chicken",
+    "pork",
+    "tofu",
+    "egg",
+    "chinese broccoli",
+    "broccoli rabe",
+    "soy sauce",
+    "dark soy sauce",
+    "oyster sauce",
+    "garlic",
+    "vegetable oil",
+    "sugar",
+    "white pepper",
+    "sesame oil",
+    "lime"
+  ],
+  "spice_level": 1,
+  "time_total_min": 20,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "gluten",
+    "soy",
+    "shellfish",
+    "sesame"
+  ],
+  "search_keywords": [
+    "pad see ew",
+    "thai stir fry",
+    "flat rice noodles",
+    "wide rice noodles",
+    "chinese broccoli",
+    "gai lan",
+    "soy sauce",
+    "dark soy sauce",
+    "oyster sauce",
+    "stir fry noodles",
+    "wok",
+    "beef pad see ew",
+    "chicken pad see ew",
+    "vegetarian pad see ew",
+    "egg noodles alternative",
+    "umami",
+    "quick weeknight",
+    "street food",
+    "garlic"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "wide rice noodles (fresh or rehydrated dried)",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "separate sheets before cooking if fresh; if dried, rehydrate per package until pliable and drain"
+      },
+      {
+        "display_name": "vegetable oil (neutral, for wok)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "about 3 g per clove minced"
+      },
+      {
+        "display_name": "protein: flank steak, thinly sliced (or chicken/thin tofu strips)",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "slice thin across the grain; tofu use firm pressed and sliced"
+      },
+      {
+        "display_name": "Chinese broccoli (gai lan), trimmed and cut into 4 cm pieces",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "stems sliced thinner to cook evenly"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly beaten"
+      },
+      {
+        "display_name": "light soy sauce (salty)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dark soy sauce (for color and slight sweetness)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds color; can reduce if unavailable"
+      },
+      {
+        "display_name": "oyster sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "substitute vegetarian oyster sauce for vegetarian version (affects allergens)"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "white pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "or ground black pepper"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "fish sauce (optional to taste)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "adds savory depth; adjust if using oyster sauce"
+      },
+      {
+        "display_name": "lime wedges (for serving)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into 4 wedges"
+      },
+      {
+        "display_name": "chili flakes or fresh chiles (optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "for those who want heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare noodles and aromatics: if using dried wide rice noodles, soak or rehydrate per package until pliable and drain; if fresh, gently separate sheets. Mince garlic and beat eggs. Mix light soy, dark soy, oyster sauce, sugar, and white pepper in a bowl and set aside.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a wok or large heavy skillet over high heat until very hot. Add neutral oil and swirl to coat. Add minced garlic and stir-fry briefly until fragrant but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add the sliced protein and spread in a single layer; sear without moving for 20–30 seconds to get a bit of caramelization, then stir-fry until mostly cooked through.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Push the contents to one side of the wok, add a touch more oil if needed, pour in the beaten eggs and scramble quickly until just set, then combine with the protein.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Add the Chinese broccoli and stir-fry for about 1–2 minutes until stems begin to soften but remain crisp-tender.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Add the drained noodles to the wok, pour the sauce mixture over them, and toss vigorously to coat. Use tongs or spatula to press noodles into the hot surface for brief contact to develop slight char (breath of wok hei). Continue tossing until noodles are heated through and sauce is absorbed.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Adjust seasoning: taste and add fish sauce, extra soy, or more sugar as needed. Finish with a drizzle of sesame oil if using and toss once more.",
+        "time_min": 1
+      },
+      {
+        "step_no": 8,
+        "text": "Serve immediately with optional lime wedges and chili on the side.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

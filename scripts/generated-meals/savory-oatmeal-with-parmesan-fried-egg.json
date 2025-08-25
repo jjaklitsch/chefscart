@@ -1,0 +1,238 @@
+{
+  "slug": "savory-oatmeal-with-parmesan-fried-egg",
+  "title": "Savory Oatmeal with Parmesan & Fried Egg",
+  "description": "A creamy, umami-forward savory oatmeal finished with nutty grated Parmesan, a runny fried egg, and bright herb oil. Quick to make, it balances soft steel-cut oats with salty cheese, butter, and crisped egg edges for a comforting breakfast or light lunch.",
+  "courses": [
+    "breakfast",
+    "lunch"
+  ],
+  "cuisines": [
+    "american",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "oats",
+  "ingredient_tags": [
+    "oats",
+    "parmesan",
+    "egg",
+    "butter",
+    "olive oil",
+    "garlic",
+    "salt",
+    "black pepper",
+    "chicken stock",
+    "water",
+    "chives",
+    "red pepper flakes",
+    "lemon",
+    "parmesan rind"
+  ],
+  "spice_level": 2,
+  "time_total_min": 33,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "grain"
+  ],
+  "search_keywords": [
+    "savory oatmeal",
+    "parmesan oatmeal",
+    "oats and egg",
+    "fried egg breakfast",
+    "cheesy oatmeal",
+    "umami oats",
+    "steel-cut oats savory",
+    "quick savory porridge",
+    "breakfast lunch",
+    "herbed oil",
+    "chives",
+    "comfort food",
+    "vegetarian breakfast",
+    "one-pan egg",
+    "garlic oats",
+    "red pepper flakes",
+    "lemon zest",
+    "parmesan rind",
+    "butter oats",
+    "olive oil drizzle"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "steel-cut oats",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed briefly if dusty (or use old-fashioned rolled oats with adjusted liquid)"
+      },
+      {
+        "display_name": "low-sodium chicken stock (or vegetable stock for vegetarian)",
+        "quantity": 480,
+        "unit": "ml",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "use warm stock for quicker cooking"
+      },
+      {
+        "display_name": "water",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "adjust for desired thickness"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "can substitute olive oil for dairy-free"
+      },
+      {
+        "display_name": "parmesan cheese, finely grated",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for finishing"
+      },
+      {
+        "display_name": "parmesan rind",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "adds extra umami when simmered with oats"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "see instructions for frying to desired doneness"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for frying eggs and making herb drizzle"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "sweat briefly with oats for aroma"
+      },
+      {
+        "display_name": "fresh chives, thinly sliced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "for garnish and herb oil"
+      },
+      {
+        "display_name": "fresh lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": true,
+        "notes": "bright finish"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 4.5,
+        "ml": 3.75,
+        "optional": false,
+        "notes": "adjust to taste, account for stock and cheese"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "plus extra for finishing"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": 1.25,
+        "optional": true,
+        "notes": "optional for mild heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 33,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring the stock, water, and parmesan rind to a gentle simmer in a medium saucepan over medium heat.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Add the steel-cut oats and minced garlic to the simmering liquid, stir once, then reduce heat to low to maintain a gentle simmer.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Cook oats, stirring every 2–3 minutes to prevent sticking, until tender but still slightly toothsome and the mixture is creamy, about 18–20 minutes total.",
+        "time_min": 20
+      },
+      {
+        "step_no": 4,
+        "text": "While oats finish, heat a nonstick or well-seasoned skillet over medium-high heat and add olive oil; crack eggs into a small bowl and gently slide into skillet to fry.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Fry eggs until whites are set with slightly crisp edges and yolks reach desired doneness (about 2–3 minutes for runny yolk; cover pan for slightly set yolk). Season eggs with a pinch of salt and pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "When oats are done, remove and discard the parmesan rind, stir in butter and grated Parmesan until melted and combined. Adjust seasoning with salt, pepper, and optional red pepper flakes and lemon zest.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Make a quick herb oil by stirring sliced chives into remaining olive oil (or use warm oil) and spoon a little over each bowl. Divide oatmeal between bowls, top each with a fried egg, a grind of pepper, extra parmesan, and a drizzle of herb oil.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

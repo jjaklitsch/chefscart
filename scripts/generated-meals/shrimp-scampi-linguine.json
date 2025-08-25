@@ -1,0 +1,247 @@
+{
+  "slug": "shrimp-scampi-linguine",
+  "title": "Shrimp Scampi Linguine",
+  "description": "A classic Italian-American pasta showcasing tender shrimp sautéed in a bright garlic, lemon and white wine butter sauce tossed with al dente linguine. Fast to prepare, it balances rich butter and olive oil with fresh herbs and a hint of chili for depth.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "shrimp",
+    "linguine",
+    "garlic",
+    "butter",
+    "olive oil",
+    "lemon",
+    "white wine",
+    "parsley",
+    "red pepper flakes",
+    "parmesan",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 28,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "seafood",
+    "gluten",
+    "dairy"
+  ],
+  "search_keywords": [
+    "shrimp scampi",
+    "linguine",
+    "garlic butter",
+    "lemon",
+    "white wine sauce",
+    "quick pasta",
+    "weeknight dinner",
+    "seafood pasta",
+    "italian american",
+    "parsley",
+    "red pepper flakes",
+    "al dente",
+    "easy recipe",
+    "pescatarian",
+    "mediterranean diet",
+    "butter sauce",
+    "garlic shrimp",
+    "serve with salad",
+    "30 minute meal",
+    "comfortable food"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "linguine",
+        "quantity": 12,
+        "unit": "oz",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "preferably bronze-cut for sauce adhesion"
+      },
+      {
+        "display_name": "large shrimp, peeled and deveined (tails on or off)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "16-20 count per lb, thawed if frozen"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 57,
+        "ml": 60,
+        "optional": false,
+        "notes": "divided (2 tbsp for sauce, 2 tbsp to finish)"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for sautéing"
+      },
+      {
+        "display_name": "garlic, finely minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "about 12 g total"
+      },
+      {
+        "display_name": "dry white wine (e.g., sauvignon blanc)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "can substitute low-sodium chicken or vegetable broth"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about juice of 1 lemon"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "fresh flat-leaf parsley, chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "loosely packed, about 1 cup chopped"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to taste for mild heat"
+      },
+      {
+        "display_name": "kosher salt (for pasta water and seasoning)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "plus additional to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "grated parmesan cheese",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "reserved pasta cooking water",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "starchy water to adjust sauce consistency"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 28,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of water to a rolling boil, add kosher salt, then add linguine and cook until al dente according to package directions. Stir occasionally to prevent sticking and reserve pasta cooking water before draining.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "While pasta cooks, pat shrimp dry and season lightly with salt and pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Heat olive oil and half the butter in a large skillet over medium-high heat until shimmering; add shrimp in a single layer and sear until pink and opaque, about 1-2 minutes per side depending on size. Transfer shrimp to a plate and keep warm.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Reduce heat to medium, add minced garlic to the skillet and sauté until fragrant, about 30-45 seconds, taking care not to brown the garlic.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Pour in white wine and scrape up any browned bits from the pan; simmer until wine is reduced by about half, approximately 2-3 minutes.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Stir in remaining butter, lemon juice, lemon zest and red pepper flakes; simmer briefly to meld flavors and emulsify the sauce.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Return shrimp to the skillet along with chopped parsley and a splash of reserved pasta water; toss to warm shrimp through and coat in sauce, about 1-2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Add drained linguine to the skillet (or combine in a large bowl), toss thoroughly with the sauce, adding more reserved pasta water as needed to reach a silky consistency. Taste and adjust salt and pepper.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Plate the linguine and shrimp, finish with grated Parmesan if desired and a final sprinkle of parsley and freshly ground black pepper before serving.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

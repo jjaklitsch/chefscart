@@ -1,0 +1,310 @@
+{
+  "slug": "bbq-ranch-chicken-chop",
+  "title": "BBQ Ranch Chicken Chop",
+  "description": "Pan-seared boneless chicken chops brushed with a sweet-smoky barbecue glaze and finished with a tangy homemade ranch drizzle. Served with crisp pan-roasted vegetables for a balanced, hearty weeknight dinner with bold flavor contrast.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "bbq sauce",
+    "ranch",
+    "buttermilk",
+    "mayonnaise",
+    "garlic",
+    "onion",
+    "paprika",
+    "smoked paprika",
+    "olive oil",
+    "vegetables",
+    "potato",
+    "carrot",
+    "broccoli",
+    "butter",
+    "lemon"
+  ],
+  "spice_level": 2,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "soy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "bbq chicken",
+    "ranch dressing",
+    "pan-seared chicken",
+    "chicken chop",
+    "weeknight dinner",
+    "grilled flavor indoors",
+    "smoky bbq",
+    "creamy ranch",
+    "buttermilk marinade",
+    "quick roasted veg",
+    "family meal",
+    "protein entrée",
+    "comfort food",
+    "sweet and tangy",
+    "easy chicken recipe",
+    "american",
+    "low spice",
+    "skillet chicken",
+    "one-pan option",
+    "stovetop and oven"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs (trimmed)",
+        "quantity": 1.25,
+        "unit": "lb",
+        "grams": 567.5,
+        "ml": null,
+        "optional": false,
+        "notes": "pounded to even thickness ~1/2 inch"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided (1 tbsp for chicken, 1 tbsp for vegetables)"
+      },
+      {
+        "display_name": "barbecue sauce (store-bought or homemade)",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": 225,
+        "ml": 180,
+        "optional": false,
+        "notes": "sweet-smoky style"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "for glaze finish"
+      },
+      {
+        "display_name": "buttermilk",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "for ranch base"
+      },
+      {
+        "display_name": "mayonnaise",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "for ranch base (contains egg, soy in some brands)"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, finely chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dill, dried",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "onion powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional to balance ranch acidity"
+      },
+      {
+        "display_name": "small potatoes, halved (or baby potatoes)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "for pan-roasted vegetables"
+      },
+      {
+        "display_name": "carrots, 1/2-inch slices",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 140,
+        "ml": null,
+        "optional": false,
+        "notes": "medium carrots"
+      },
+      {
+        "display_name": "broccoli florets",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 270,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed"
+      },
+      {
+        "display_name": "salt for vegetables",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 4.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "freshly ground black pepper for vegetables",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh chives or green onion, thinly sliced",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "neutral oil for high-heat searing (canola or avocado)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": 15,
+        "optional": false,
+        "notes": "use if skillet needs higher smoke point"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep chicken: trim excess fat and place thighs between plastic wrap; pound to even thickness (~1/2 inch). Pat dry and season both sides with salt, pepper, smoked paprika, and garlic powder.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Make ranch drizzle: whisk together buttermilk, mayonnaise, lemon juice, parsley, dried dill, onion powder and optional sugar until smooth; adjust salt and pepper to taste. Chill while cooking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Preheat oven to 425°F (220°C). Toss halved potatoes and sliced carrots with 1 tbsp olive oil, salt and pepper; spread on a rimmed baking sheet and roast for 18 minutes, turning halfway.",
+        "time_min": 18
+      },
+      {
+        "step_no": 4,
+        "text": "Heat a large ovenproof skillet over medium-high heat with neutral oil and 1 tbsp olive oil. When shimmering, add chicken thighs presentation-side down; sear without moving until a deep golden crust forms, about 3-4 minutes.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Flip chicken, cook the second side for 2 minutes, then brush the tops with barbecue sauce. Dot butter on top and transfer the skillet to the oven alongside vegetables to finish cooking until internal temperature reaches 165°F (74°C), about 6 minutes.",
+        "time_min": 8
+      },
+      {
+        "step_no": 6,
+        "text": "While chicken finishes, steam or roast broccoli for 4-5 minutes until bright and tender-crisp, then toss with a pinch of salt and a small pat of butter.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Remove chicken from oven; let rest 3 minutes. Brush with an additional thin layer of barbecue sauce, drizzle with ranch, and garnish with chives. Plate with roasted potatoes, carrots, and broccoli.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

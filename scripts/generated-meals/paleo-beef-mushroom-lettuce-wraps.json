@@ -1,0 +1,270 @@
+{
+  "slug": "paleo-beef-mushroom-lettuce-wraps",
+  "title": "Paleo Beef & Mushroom Lettuce Wraps",
+  "description": "Savory ground beef and earthy mushrooms are quickly stir-fried with garlic, ginger and coconut aminos, then spooned into crisp butter lettuce cups for a fresh, handheld meal. Bright lime and fresh herbs brighten the rich umami filling for a fast paleo-friendly lunch or weeknight dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "paleo",
+    "low-carb",
+    "whole30",
+    "keto"
+  ],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "mushrooms",
+    "lettuce",
+    "garlic",
+    "ginger",
+    "onion",
+    "coconut aminos",
+    "lime",
+    "cilantro",
+    "scallion",
+    "avocado oil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "paleo",
+    "lettuce wraps",
+    "ground beef",
+    "mushrooms",
+    "low-carb",
+    "whole30",
+    "keto",
+    "stir-fry",
+    "coconut aminos",
+    "garlic",
+    "ginger",
+    "lime",
+    "cilantro",
+    "easy weeknight",
+    "gluten-free",
+    "dairy-free",
+    "healthy lunch",
+    "handheld",
+    "quick dinner",
+    "asian-inspired"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ground beef (80/20)",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "cremini or button mushrooms, finely chopped",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "finely diced"
+      },
+      {
+        "display_name": "butter lettuce leaves, whole",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "separate leaves, rinsed and dried"
+      },
+      {
+        "display_name": "small yellow onion, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 cup diced"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh ginger, peeled and minced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "coconut aminos",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "for savory umami"
+      },
+      {
+        "display_name": "fish sauce",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "use paleo-certified if desired"
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lime"
+      },
+      {
+        "display_name": "avocado oil (or other neutral paleo oil)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for sautéing"
+      },
+      {
+        "display_name": "sesame oil (toasted) - optional for finishing",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "adds toasted flavor; omit for strict paleo/Whole30 if avoiding"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for spice preference"
+      },
+      {
+        "display_name": "green onions (scallions), thinly sliced",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 16,
+        "ml": 240,
+        "optional": false,
+        "notes": "loosely packed, for garnish"
+      },
+      {
+        "display_name": "lime wedges, for serving",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into wedges"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare all produce: rinse and dry lettuce leaves, finely dice onion, mince garlic and ginger, finely chop mushrooms, thinly slice scallions, and roughly chop cilantro.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large skillet or sauté pan over medium-high heat until hot, then add the avocado oil and swirl to coat.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add diced onion to the hot pan and sauté until translucent and edges begin to brown, stirring occasionally.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic and ginger to the pan, stirring constantly for aromatic release until fragrant but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Increase heat to high, add ground beef, break it up with a spatula, and sear until no longer pink and beginning to brown, allowing moisture to evaporate.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Push beef to one side of the pan, add chopped mushrooms to the empty space and cook until they release moisture and reduce in size, then stir together with the beef.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Stir in coconut aminos, fish sauce, lime juice, salt, pepper, and red pepper flakes if using; continue to cook for another minute to allow flavors to meld and excess liquid to reduce.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Turn off the heat and stir in sliced scallion whites and chopped cilantro; if desired, finish with a small drizzle of toasted sesame oil and adjust seasoning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 9,
+        "text": "Assemble the wraps by spooning warm beef and mushroom mixture into individual lettuce leaves, garnish with scallion greens, extra cilantro, and lime wedges; serve immediately.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

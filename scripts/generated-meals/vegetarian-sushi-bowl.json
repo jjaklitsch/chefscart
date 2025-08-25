@@ -1,0 +1,311 @@
+{
+  "slug": "vegetarian-sushi-bowl",
+  "title": "Vegetarian Sushi Bowl",
+  "description": "A fresh, deconstructed sushi bowl featuring seasoned sushi rice, marinated tofu, crisp vegetables and avocado with a tangy soy-ginger dressing. Bright flavors and varied textures come together quickly for an easy lunch or dinner bowl.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "rice",
+  "ingredient_tags": [
+    "rice",
+    "tofu",
+    "avocado",
+    "cucumber",
+    "carrot",
+    "edamame",
+    "sesame",
+    "nori",
+    "rice vinegar",
+    "soy sauce",
+    "ginger",
+    "scallion",
+    "sesame oil",
+    "sugar"
+  ],
+  "spice_level": 1,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "sesame",
+    "grain"
+  ],
+  "search_keywords": [
+    "vegetarian sushi bowl",
+    "sushi rice bowl",
+    "tofu sushi bowl",
+    "deconstructed sushi",
+    "rice bowl",
+    "vegan adaptable",
+    "plant-forward",
+    "japanese flavors",
+    "soy-ginger dressing",
+    "sesame",
+    "avocado sushi",
+    "edamame",
+    "quick dinner",
+    "lunch bowl",
+    "make-ahead rice",
+    "marinated tofu",
+    "nori strips",
+    "pickled ginger",
+    "cucumber",
+    "carrot ribbons"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "short-grain sushi rice",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "rinse until water runs clear"
+      },
+      {
+        "display_name": "water for cooking rice",
+        "quantity": 480,
+        "unit": "ml",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "warmed slightly to dissolve sugar"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fine salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "extra-firm tofu, pressed and drained",
+        "quantity": 14,
+        "unit": "oz",
+        "grams": 392,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1/2-inch cubes"
+      },
+      {
+        "display_name": "soy sauce (or tamari for gluten-free)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "for tofu marinade"
+      },
+      {
+        "display_name": "mirin",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "adds sweetness to tofu (optional)"
+      },
+      {
+        "display_name": "grated fresh ginger",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for marinade and dressing"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 10,
+        "optional": false,
+        "notes": "toasted sesame oil for flavor"
+      },
+      {
+        "display_name": "neutral oil (canola or vegetable)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for frying or baking tofu"
+      },
+      {
+        "display_name": "frozen shelled edamame, thawed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "thawed and blanched if needed"
+      },
+      {
+        "display_name": "cucumber, seeded and thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "english or Persian cucumber"
+      },
+      {
+        "display_name": "carrot, peeled and julienned",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 70,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ripe avocado, sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "slice just before serving to avoid browning"
+      },
+      {
+        "display_name": "nori sheets, cut into thin strips",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "toast briefly if desired"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "green and white parts"
+      },
+      {
+        "display_name": "pickled ginger",
+        "quantity": 50,
+        "unit": "g",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "white or black sesame seeds"
+      },
+      {
+        "display_name": "soy-ginger dressing (prepared)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "combine soy sauce, rice vinegar, sugar, sesame oil, ginger"
+      },
+      {
+        "display_name": "salt and pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse the sushi rice under cold water until the water runs clear, then combine with the measured water in a pot or rice cooker and let soak for 10 minutes before cooking.",
+        "time_min": 12
+      },
+      {
+        "step_no": 2,
+        "text": "Cook the rice: bring to a boil, reduce to low, cover and simmer until water is absorbed; if using a rice cooker follow its cycle. Rest covered off heat for 10 minutes after cooking.",
+        "time_min": 20
+      },
+      {
+        "step_no": 3,
+        "text": "While rice cooks, prepare the sushi seasoning by warming rice vinegar with sugar and salt until dissolved; set aside to cool slightly.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Transfer the hot cooked rice to a wide bowl or tray and gently fold in the seasoned vinegar using a cutting motion to avoid crushing grains; fan or let cool to near room temperature.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Marinate tofu cubes briefly in soy sauce, grated ginger and a splash of sesame oil (and mirin if using) for 5 minutes while preparing vegetables.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Pan-fry or bake the marinated tofu: for pan-fry, heat neutral oil in a skillet over medium-high heat and cook tofu until golden on all sides; for baking, spread on a sheet and bake at 200°C (400°F) until browned, turning once.",
+        "time_min": 8
+      },
+      {
+        "step_no": 7,
+        "text": "Prepare vegetables and toppings: thinly slice cucumber, julienne carrot, slice avocado, thaw and blanch edamame if needed, and slice scallions. Cut nori into strips and toast sesame seeds if not pre-toasted.",
+        "time_min": 6
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble bowls by dividing seasoned rice among bowls, arranging tofu, cucumber, carrot, edamame and avocado on top. Drizzle with soy-ginger dressing, sprinkle scallions, toasted sesame seeds and nori strips, and add pickled ginger on the side.",
+        "time_min": 5
+      },
+      {
+        "step_no": 9,
+        "text": "Adjust seasoning with extra soy sauce or a pinch of salt if needed and serve immediately so avocado stays fresh.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

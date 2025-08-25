@@ -1,0 +1,271 @@
+{
+  "slug": "panang-curry-with-pork",
+  "title": "Panang Curry with Pork",
+  "description": "A rich, slightly sweet and nutty Thai panang curry featuring ground pork simmered in a creamy coconut-peanut curry sauce. Aromatic with kaffir lime, fish sauce, and palm sugar, it cooks quickly on the stovetop for a comforting weeknight dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "ground pork",
+    "coconut milk",
+    "red curry paste",
+    "panang curry paste",
+    "peanut butter",
+    "fish sauce",
+    "lime",
+    "kaffir lime leaves",
+    "palm sugar",
+    "vegetable oil",
+    "garlic",
+    "shallot",
+    "thai basil",
+    "bell pepper",
+    "green beans",
+    "jasmine rice"
+  ],
+  "spice_level": 3,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "peanut",
+    "soy",
+    "seafood"
+  ],
+  "search_keywords": [
+    "panang curry",
+    "panang",
+    "thai curry",
+    "pork curry",
+    "ground pork",
+    "coconut milk",
+    "peanut curry",
+    "kaffir lime",
+    "fish sauce",
+    "palm sugar",
+    "thai basil",
+    "jasmine rice",
+    "weeknight dinner",
+    "spicy",
+    "creamy curry",
+    "one pot",
+    "stovetop",
+    "red curry paste",
+    "nutty",
+    "comfort food"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ground pork",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "80/20 lean-to-fat preferred"
+      },
+      {
+        "display_name": "coconut milk (full-fat)",
+        "quantity": 400,
+        "unit": "ml",
+        "grams": null,
+        "ml": 400,
+        "optional": false,
+        "notes": "one 400 ml can"
+      },
+      {
+        "display_name": "panang curry paste",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smooth peanut butter (or ground peanuts)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "adds nuttiness and body"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "about 3 medium cloves, minced"
+      },
+      {
+        "display_name": "shallot (finely sliced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 small onion"
+      },
+      {
+        "display_name": "fish sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "palm sugar (or brown sugar)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "kaffir lime leaves (thinly sliced)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "stack and roll before slicing for fine strips"
+      },
+      {
+        "display_name": "red bell pepper (julienned)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "for color and crunch"
+      },
+      {
+        "display_name": "trimmed green beans (cut to 4cm pieces)",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "or substitute snap peas"
+      },
+      {
+        "display_name": "lime (juice)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 tbsp juice to finish"
+      },
+      {
+        "display_name": "thai basil leaves (torn)",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "garnish and finish"
+      },
+      {
+        "display_name": "water or low-sodium chicken stock",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "to loosen the sauce"
+      },
+      {
+        "display_name": "jasmine rice (uncooked)",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": true,
+        "notes": "about 1.5 cups uncooked to serve with curry"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare mise en place: mince garlic, slice shallot, julienne bell pepper, trim and cut green beans, tear basil leaves, and thinly slice kaffir lime leaves; measure coconut milk and other sauces.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large skillet or wok over medium heat and add oil. When shimmering, add shallot and sauté until softened and translucent.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic and continue to sauté briefly until fragrant but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add the panang curry paste to the pan and fry it with the aromatics, stirring continuously to bloom the spices and release oils into the oil.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add ground pork to the pan and break it up with a spatula. Cook until the pork is no longer pink and begins to brown lightly.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Pour in about half of the coconut milk and stir to combine with the pork and paste, scraping any browned bits; simmer gently until the liquid reduces slightly and the flavors concentrate.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Stir in the remaining coconut milk, peanut butter, fish sauce, and palm sugar; add water or stock if the sauce looks too thick. Bring to a gentle simmer and taste for seasoning, adjusting with more fish sauce or sugar as needed.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Add sliced kaffir lime leaves, bell pepper, and green beans to the curry and simmer until vegetables are tender-crisp and sauce coats the pork.",
+        "time_min": 4
+      },
+      {
+        "step_no": 9,
+        "text": "Finish by stirring in lime juice and torn thai basil leaves off heat; let sit 1 minute to wilt the basil, then taste and adjust seasoning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 10,
+        "text": "Serve hot over jasmine rice, garnish with extra basil and a thin slice of kaffir lime leaf or lime wedge.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

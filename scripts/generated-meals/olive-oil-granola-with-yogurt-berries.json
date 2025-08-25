@@ -1,0 +1,256 @@
+{
+  "slug": "olive-oil-granola-with-yogurt-berries",
+  "title": "Olive Oil Granola with Yogurt & Berries",
+  "description": "Crunchy, lightly sweet granola toasted in extra-virgin olive oil with warm notes of cinnamon and vanilla, served with creamy yogurt and mixed berries for a bright, balanced breakfast or snack. Simple baking method yields clusters with a tender chew and nutty depth from almonds and seeds.",
+  "courses": [
+    "breakfast",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "oats",
+  "ingredient_tags": [
+    "rolled oats",
+    "olive oil",
+    "honey",
+    "maple syrup",
+    "almonds",
+    "pumpkin seeds",
+    "sunflower seeds",
+    "flaxseed",
+    "cinnamon",
+    "vanilla",
+    "salt",
+    "greek yogurt",
+    "mixed berries",
+    "lemon",
+    "brown sugar"
+  ],
+  "spice_level": 1,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "olive oil granola",
+    "homemade granola",
+    "yogurt and berries",
+    "breakfast bowl",
+    "healthy snack",
+    "almond granola",
+    "seed granola",
+    "mediterranean breakfast",
+    "easy granola recipe",
+    "oven baked granola",
+    "crunchy clusters",
+    "cinnamon vanilla",
+    "greek yogurt",
+    "mixed berries",
+    "maple honey",
+    "make ahead breakfast",
+    "plant-forward",
+    "no butter granola",
+    "low spice",
+    "weekend brunch"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "rolled oats (old-fashioned)",
+        "quantity": 360,
+        "unit": "g",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "use quality old-fashioned rolled oats for texture"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": "mild or medium-flavor olive oil"
+      },
+      {
+        "display_name": "pure maple syrup",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "or honey if preferred"
+      },
+      {
+        "display_name": "light brown sugar, packed",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 26,
+        "ml": null,
+        "optional": false,
+        "notes": "adds caramel notes and helps clustering"
+      },
+      {
+        "display_name": "raw almonds, chopped",
+        "quantity": 90,
+        "unit": "g",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "rough chop for bite"
+      },
+      {
+        "display_name": "pumpkin seeds (pepitas)",
+        "quantity": 45,
+        "unit": "g",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sunflower seeds, hulled",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground flaxseed",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": true,
+        "notes": "adds texture and omega-3s"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "ground cinnamon",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "pure vanilla extract",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "plain Greek yogurt (2% or whole)",
+        "quantity": 480,
+        "unit": "g",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "about 120 g per serving"
+      },
+      {
+        "display_name": "mixed berries (strawberries, blueberries, raspberries)",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "hulled and halved larger berries"
+      },
+      {
+        "display_name": "fresh lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "for brightening yogurt or berries"
+      },
+      {
+        "display_name": "optional mix-in: shredded coconut",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "unsweetened, toss in before baking"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 325°F (160°C). Line a large rimmed baking sheet with parchment paper and set aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "In a large mixing bowl, combine the rolled oats, chopped almonds, pumpkin seeds, sunflower seeds, ground flaxseed (if using), ground cinnamon, and salt; toss to evenly distribute dry ingredients.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "In a small bowl or measuring cup, whisk together the olive oil, maple syrup (and brown sugar if using) and vanilla until smooth and combined.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Pour the wet mixture over the dry ingredients and stir thoroughly until all dry pieces are evenly coated and glossy; the sugar will help form clusters during baking.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Spread the mixture in an even single layer on the prepared baking sheet, pressing down gently with a spatula to compact for larger clusters. Optionally sprinkle shredded coconut on top.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Bake at 325°F (160°C) for 20 minutes, then remove the sheet, gently stir or flip the granola for even browning and press again if you want bigger clusters.",
+        "time_min": 20
+      },
+      {
+        "step_no": 7,
+        "text": "Return the pan to the oven and bake for an additional 8 minutes until golden and fragrant but not burnt. Watch closely in the final minutes.",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "Remove from oven and let the granola cool completely on the baking sheet (30–40 minutes cooling allows it to crisp and form clusters). Break into pieces when cool.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Portion yogurt into bowls, spoon granola over the yogurt, and top with mixed berries and a light grating of lemon zest if desired. Serve immediately.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

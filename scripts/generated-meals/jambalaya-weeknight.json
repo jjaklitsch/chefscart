@@ -1,0 +1,297 @@
+{
+  "slug": "jambalaya-weeknight",
+  "title": "Jambalaya (Weeknight)",
+  "description": "A quick weeknight jambalaya that layers smoky sausage, tender chicken, aromatic soffritto and tomatoes with long-grain rice for a one-pot, flavorful Creole-inspired meal. Bold spices, a touch of heat, and a short simmer make this a fast, satisfying dinner that still delivers classic jambalaya comfort.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "southern"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "andouille sausage",
+    "smoked sausage",
+    "long-grain rice",
+    "bell pepper",
+    "onion",
+    "celery",
+    "garlic",
+    "canned tomatoes",
+    "tomato paste",
+    "chicken stock",
+    "thyme",
+    "bay leaf",
+    "paprika",
+    "cayenne",
+    "olive oil",
+    "butter",
+    "salt",
+    "black pepper",
+    "parsley"
+  ],
+  "spice_level": 3,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "grain"
+  ],
+  "search_keywords": [
+    "jambalaya",
+    "weeknight dinner",
+    "one pot",
+    "creole",
+    "southern",
+    "andouille",
+    "smoked sausage",
+    "chicken jambalaya",
+    "rice",
+    "bell pepper",
+    "holy trinity",
+    "quick jambalaya",
+    "spicy rice",
+    "tomato",
+    "easy dinner",
+    "comfort food",
+    "meal prep",
+    "stovetop",
+    "family dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs, cut into 1-inch pieces",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "andouille or smoked sausage, sliced 1/4-inch thick",
+        "quantity": 225,
+        "unit": "g",
+        "grams": 225,
+        "ml": null,
+        "optional": false,
+        "notes": "use smoked kielbasa if andouille unavailable"
+      },
+      {
+        "display_name": "long-grain white rice (uncooked)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 360,
+        "ml": 360,
+        "optional": false,
+        "notes": "rinsed until water runs clear"
+      },
+      {
+        "display_name": "yellow onion, medium, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 cup diced"
+      },
+      {
+        "display_name": "green bell pepper, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 cup diced"
+      },
+      {
+        "display_name": "celery stalks, diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "about 3/4 cup diced"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "canned diced tomatoes, undrained",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "or 14 oz can, crushed lightly"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "to deepen tomato flavor"
+      },
+      {
+        "display_name": "low-sodium chicken stock",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 720,
+        "ml": 720,
+        "optional": false,
+        "notes": "hot or warm"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for sautéing"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": true,
+        "notes": "optional finish for richness"
+      },
+      {
+        "display_name": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "paprika (sweet or smoked)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cayenne pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": 5,
+        "optional": true,
+        "notes": "adjust for heat"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.25,
+        "unit": "tsp",
+        "grams": 7,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": 30,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "green onions, sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep all ingredients: dice onion, bell pepper and celery; mince garlic; cut chicken into 1-inch pieces and slice sausage; rinse rice and set stock warm.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large heavy skillet or Dutch oven over medium-high heat and add olive oil. When shimmering, add sliced sausage and brown for color, about turning occasionally until edges are caramelized, then remove to a plate.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Add chicken pieces to the same pan in a single layer and sear until lightly browned on all sides but not cooked through, about 4 minutes; transfer to the plate with sausage.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Reduce heat to medium and add onion, bell pepper and celery to the pan. Sauté, stirring, until vegetables are softened and translucent, about 5 minutes. Add garlic and cook until fragrant, about 30 seconds.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in tomato paste and cook 1 minute to caramelize slightly, then add diced tomatoes, paprika, thyme, bay leaf, cayenne (if using), salt and pepper. Cook, stirring, 2 minutes to meld flavors.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Return chicken and sausage to the pot, add the rinsed rice, then pour in hot chicken stock. Stir once to distribute evenly, bring to a gentle boil over medium-high heat.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Reduce heat to low, cover tightly, and simmer undisturbed for 18 minutes until rice is tender and liquid absorbed. Do not lift the lid during this time.",
+        "time_min": 18
+      },
+      {
+        "step_no": 8,
+        "text": "Remove from heat, let sit covered for 4 minutes. Stir in butter if using, fluff with a fork, adjust seasoning, discard bay leaf, and garnish with chopped parsley and sliced green onions before serving.",
+        "time_min": 9
+      }
+    ]
+  },
+  "image_url": null
+}

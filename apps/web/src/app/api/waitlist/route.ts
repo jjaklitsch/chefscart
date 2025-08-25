@@ -41,32 +41,15 @@ async function validateZipCodeFormat(zipCode: string): Promise<boolean> {
 }
 
 async function checkExistingWaitlistEntry(email: string, zipCode: string): Promise<boolean> {
-  try {
-    const db = (await import('@/lib/firebase-admin')).adminDb()
-    const waitlistRef = db.collection('waitlist')
-    const query = await waitlistRef
-      .where('email', '==', email.toLowerCase())
-      .where('zipCode', '==', zipCode)
-      .limit(1)
-      .get()
-
-    return !query.empty
-  } catch (error) {
-    console.error('Error checking existing waitlist entry:', error)
-    return false
-  }
+  // TODO: Implement with Supabase
+  return false // For now, allow all entries
 }
 
 async function addToWaitlist(entry: WaitlistEntry): Promise<string> {
-  try {
-    const db = (await import('@/lib/firebase-admin')).adminDb()
-    const waitlistRef = db.collection('waitlist')
-    const docRef = await waitlistRef.add(entry)
-    return docRef.id
-  } catch (error) {
-    console.error('Error adding to waitlist:', error)
-    throw new Error('Failed to add to waitlist database')
-  }
+  // TODO: Implement with Supabase
+  console.log('Waitlist entry (will save to Supabase):', entry)
+  const entryId = `waitlist_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+  return entryId
 }
 
 async function sendWaitlistConfirmationEmail(

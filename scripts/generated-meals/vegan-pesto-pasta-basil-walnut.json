@@ -1,0 +1,225 @@
+{
+  "slug": "vegan-pesto-pasta-basil-walnut",
+  "title": "Vegan Pesto Pasta (Basil & Walnut)",
+  "description": "Bright basil pesto blended with toasted walnuts creates a creamy, nutty sauce tossed with al dente pasta. Ready in about 30 minutes, this vegan dish balances fresh herbs, lemon, garlic, and savory nutritional yeast for an easy weeknight meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "basil",
+    "walnuts",
+    "pasta",
+    "garlic",
+    "lemon",
+    "olive oil",
+    "nutritional yeast",
+    "salt",
+    "pepper",
+    "cherry tomatoes",
+    "spinach",
+    "red pepper flakes"
+  ],
+  "spice_level": 1,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "grain"
+  ],
+  "search_keywords": [
+    "vegan pesto",
+    "basil pesto",
+    "walnut pesto",
+    "vegan pasta",
+    "nutritional yeast",
+    "quick weeknight dinner",
+    "plant-based",
+    "almond alternative",
+    "toasted walnuts",
+    "garlic lemon pasta",
+    "mediterranean pasta",
+    "herb sauce",
+    "easy vegan meal",
+    "cold pesto",
+    "almonds substitute",
+    "spinach pesto option",
+    "cherry tomato garnish",
+    "olive oil",
+    "no-dairy pesto"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "dried spaghetti or linguine",
+        "quantity": 340,
+        "unit": "g",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "standard long pasta"
+      },
+      {
+        "display_name": "fresh basil leaves, packed",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed"
+      },
+      {
+        "display_name": "walnuts, toasted",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "halve or roughly chop after toasting"
+      },
+      {
+        "display_name": "nutritional yeast",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "adds cheesy umami"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "use good quality for flavor"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lemon"
+      },
+      {
+        "display_name": "garlic, peeled",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "kosher salt (for pasta water and seasoning)",
+        "quantity": 12,
+        "unit": "g",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "approx 2 tsp total divided"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "or to taste"
+      },
+      {
+        "display_name": "reserved pasta cooking water",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "use to loosen pesto"
+      },
+      {
+        "display_name": "cherry tomatoes, halved",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish and freshness"
+      },
+      {
+        "display_name": "baby spinach or arugula (optional greens)",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "tossed in at the end"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "for a touch of heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of water to a rolling boil, add a generous pinch of salt, then add the pasta and cook until al dente according to package instructions.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "While the pasta cooks, toast the walnuts in a dry skillet over medium heat, stirring frequently, until fragrant and lightly browned; transfer to a plate to cool.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "In a food processor, combine cooled toasted walnuts, basil leaves, nutritional yeast, garlic, lemon juice, olive oil, salt, and pepper. Pulse to an even but slightly textured pesto, scraping down the sides as needed.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "With the processor running, stream in reserved olive oil or add small amounts of pasta cooking water to reach a creamy but spreadable consistency; adjust salt, pepper, and lemon to taste.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Reserve about one-half cup of the hot pasta cooking water, then drain the pasta. Return the pasta to the warm pot or a large bowl off the heat.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Add the pesto to the pasta and toss vigorously, adding reserved pasta water a few tablespoons at a time until the sauce evenly coats the noodles and is silky.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Fold in optional greens if using so they wilt slightly from the pasta heat; stir in halved cherry tomatoes and adjust seasoning. Serve immediately with extra walnuts and red pepper flakes if desired.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

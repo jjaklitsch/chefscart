@@ -1,0 +1,281 @@
+{
+  "slug": "clam-white-bean-stew",
+  "title": "Clam & White Bean Stew",
+  "description": "A cozy, briny stew of tender clams and creamy white beans simmered in a garlicky tomato-broth with herbs and a hint of lemon. Quick to make, it balances savory seafood flavor with rustic beans for a satisfying weeknight dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "clams",
+  "ingredient_tags": [
+    "clams",
+    "white beans",
+    "cannellini beans",
+    "onion",
+    "garlic",
+    "tomato",
+    "olive oil",
+    "lemon",
+    "parsley",
+    "thyme",
+    "vegetable stock",
+    "white wine",
+    "red pepper flakes",
+    "bay leaf",
+    "salt",
+    "black pepper",
+    "butter"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "seafood"
+  ],
+  "search_keywords": [
+    "clams",
+    "white bean stew",
+    "cannellini",
+    "seafood stew",
+    "mediterranean",
+    "pescatarian",
+    "garlic",
+    "tomato broth",
+    "one pot",
+    "weeknight dinner",
+    "lemon",
+    "parsley",
+    "white wine",
+    "comfort food",
+    "easy dinner",
+    "bean stew",
+    "shellfish",
+    "olive oil",
+    "herbs",
+    "hearty"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "fresh littleneck clams (scrubbed)",
+        "quantity": 2,
+        "unit": "lb",
+        "grams": 908,
+        "ml": null,
+        "optional": false,
+        "notes": "discard any open clams that do not close when tapped"
+      },
+      {
+        "display_name": "cannellini (white) beans, cooked or canned (drained, rinsed if canned)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "if using dried, soak and cook beforehand (yields ~2 cups cooked)"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds richness; can omit for dairy-free"
+      },
+      {
+        "display_name": "yellow onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "crushed tomatoes (canned)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "prefer 28 oz can portion as needed"
+      },
+      {
+        "display_name": "dry white wine",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "can substitute additional stock if avoiding alcohol"
+      },
+      {
+        "display_name": "low-sodium vegetable or fish stock",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "use seafood/fish stock for deeper flavor"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lemon"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "packed, for garnish"
+      },
+      {
+        "display_name": "fresh thyme leaves or 1 tsp dried thyme",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "if using dried, reduce to 1 tsp"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": true,
+        "notes": "for gentle heat; omit to keep mild"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; additional for seasoning clams if desired"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "crusty bread, for serving",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, for dipping"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep clams by scrubbing shells under cold water and discarding any broken shells; soak briefly in salted cold water if sandy, then drain and set aside.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil and butter in a large heavy pot over medium heat until shimmering and butter melts.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Add chopped onion and sweat until translucent and soft, stirring occasionally to avoid browning.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic, thyme, and red pepper flakes (if using); cook until fragrant for about 30–60 seconds.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Pour in white wine to deglaze the pot, scraping any browned bits, and simmer until reduced by roughly half.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Stir in crushed tomatoes, stock, bay leaf, salt, and pepper; bring to a gentle simmer.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Add drained white beans to the simmering broth and cook until beans are heated through and flavors meld.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Gently nestle clams into the stew, cover the pot, and steam until clams open (discard any that remain closed).",
+        "time_min": 6
+      },
+      {
+        "step_no": 9,
+        "text": "Remove from heat, stir in lemon juice and chopped parsley, taste and adjust seasoning.",
+        "time_min": 3
+      },
+      {
+        "step_no": 10,
+        "text": "Serve immediately in bowls with crusty bread for dipping if desired.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

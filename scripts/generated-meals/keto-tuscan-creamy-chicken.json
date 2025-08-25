@@ -1,0 +1,252 @@
+{
+  "slug": "keto-tuscan-creamy-chicken",
+  "title": "Keto Tuscan Creamy Chicken",
+  "description": "Juicy pan-seared chicken breasts simmered in a rich, garlicky sun-dried tomato and spinach cream sauce with Italian herbs. Low-carb and keto-friendly, this one-skillet dish combines savory chicken, tangy tomatoes, and silky cream for a comforting weeknight meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "heavy cream",
+    "parmesan",
+    "cream cheese",
+    "sun-dried tomatoes",
+    "spinach",
+    "garlic",
+    "olive oil",
+    "italian seasoning",
+    "lemon",
+    "butter",
+    "salt",
+    "pepper",
+    "red pepper flakes",
+    "basil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "keto",
+    "low-carb",
+    "tuscan",
+    "creamy chicken",
+    "sun-dried tomatoes",
+    "spinach",
+    "garlic",
+    "one-skillet",
+    "italian",
+    "parmesan",
+    "cream cheese",
+    "weeknight dinner",
+    "gluten-free",
+    "rich sauce",
+    "pan-seared",
+    "lemon",
+    "basil",
+    "olive oil",
+    "easy dinner",
+    "high-fat"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts",
+        "quantity": 1.25,
+        "unit": "lb",
+        "grams": 568,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed and patted dry"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "italian seasoning",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "or adjust to taste"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "sun-dried tomatoes (packed in oil), drained and chopped",
+        "quantity": 3,
+        "unit": "oz",
+        "grams": 85,
+        "ml": null,
+        "optional": false,
+        "notes": "chop into strips"
+      },
+      {
+        "display_name": "fresh baby spinach",
+        "quantity": 5,
+        "unit": "oz",
+        "grams": 142,
+        "ml": null,
+        "optional": false,
+        "notes": "roughly chopped if large"
+      },
+      {
+        "display_name": "heavy cream",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "use full-fat for keto"
+      },
+      {
+        "display_name": "cream cheese",
+        "quantity": 2,
+        "unit": "oz",
+        "grams": 57,
+        "ml": null,
+        "optional": false,
+        "notes": "softened, cut into pieces"
+      },
+      {
+        "display_name": "grated parmesan cheese",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly grated preferred"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lemon"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for mild heat"
+      },
+      {
+        "display_name": "fresh basil",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "chiffonade or rough chop"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Season the chicken breasts evenly with salt, pepper, and half the Italian seasoning on both sides; let rest briefly while heating the pan.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large skillet over medium-high heat; add 1 tablespoon olive oil and the butter. When shimmering, add the chicken and sear until golden brown, about 4-5 minutes per side until internal temperature reaches 160°F (use a thermometer). Transfer chicken to a plate and tent loosely with foil.",
+        "time_min": 12
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to medium; add remaining olive oil to the skillet if needed, then add minced garlic and sun-dried tomatoes; sauté, stirring, until fragrant, about 45-60 seconds.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Pour in the heavy cream and bring to a gentle simmer, scraping up any browned bits from the pan; stir in cream cheese and continue stirring until fully incorporated and sauce is smooth.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Add grated parmesan, remaining Italian seasoning, red pepper flakes if using, and lemon juice; stir until cheese melts and sauce thickens slightly, about 2-3 minutes.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Fold in the spinach and cook until wilted, about 1-2 minutes, then stir in fresh basil; taste and adjust seasoning with salt and pepper as needed.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Return the seared chicken to the skillet, spooning sauce over the top; reduce heat to low, cover loosely, and simmer until chicken reaches 165°F internal temperature, about 3-4 minutes to finish cooking and meld flavors.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Plate the chicken and spoon additional sauce and spinach over each portion; garnish with extra parmesan or basil if desired and serve immediately.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

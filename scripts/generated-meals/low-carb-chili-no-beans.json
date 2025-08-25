@@ -1,0 +1,310 @@
+{
+  "slug": "low-carb-chili-no-beans",
+  "title": "Low-Carb Chili (No Beans)",
+  "description": "A hearty, low-carb chili that layers rich tomato, cumin, and smoked paprika flavors over browned ground beef and tender vegetables. Slow-simmered to concentrate flavor without beans, it’s satisfying, keto-friendly, and easy to scale for weeknight dinners or meal prep.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american",
+    "mexican"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb",
+    "paleo",
+    "whole30"
+  ],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "ground beef",
+    "tomato",
+    "onion",
+    "bell pepper",
+    "garlic",
+    "tomato paste",
+    "beef broth",
+    "olive oil",
+    "chili powder",
+    "cumin",
+    "smoked paprika",
+    "oregano",
+    "salt",
+    "pepper",
+    "chipotle",
+    "avocado",
+    "cilantro",
+    "lime"
+  ],
+  "spice_level": 3,
+  "time_total_min": 70,
+  "servings_default": 6,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "low carb chili",
+    "keto chili",
+    "no beans",
+    "ground beef chili",
+    "paleo chili",
+    "whole30 chili",
+    "spicy beef stew",
+    "tomato chili",
+    "chipotle chili",
+    "smoky chili",
+    "weeknight dinner",
+    "meal prep",
+    "gluten free",
+    "low sugar",
+    "mexican inspired",
+    "american comfort",
+    "one pot",
+    "stovetop chili",
+    "ground beef recipes",
+    "high protein"
+  ],
+  "ingredients_json": {
+    "servings": 6,
+    "ingredients": [
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for browning and sautéing"
+      },
+      {
+        "display_name": "yellow onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and diced (about 1 1/2 cups)"
+      },
+      {
+        "display_name": "red bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "seeded and diced"
+      },
+      {
+        "display_name": "green bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "seeded and diced (optional for color)"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "ground beef (80/20)",
+        "quantity": 2,
+        "unit": "lb",
+        "grams": 908,
+        "ml": null,
+        "optional": false,
+        "notes": "can use 90/10 for leaner, break up while browning"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 50,
+        "ml": 45,
+        "optional": false,
+        "notes": "concentrated flavor; bloom in fat"
+      },
+      {
+        "display_name": "diced tomatoes (canned, no sugar added)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "or crushed tomatoes for smoother texture"
+      },
+      {
+        "display_name": "beef broth (low sodium)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "adjust for desired thickness"
+      },
+      {
+        "display_name": "chili powder",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "blend of chilies and spices"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": "adds smoky depth"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "chipotle in adobo (finely chopped)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "for smoky heat; omit for milder"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "apple cider vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "brightens flavors"
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "for finishing (optional)"
+      },
+      {
+        "display_name": "fresh cilantro",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "chopped, for garnish"
+      },
+      {
+        "display_name": "avocado",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "sliced, for serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 70,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep vegetables and aromatics: peel and dice the onion, seed and dice the bell pepper(s), mince the garlic, and chop cilantro if using.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil in a large heavy-bottomed pot or Dutch oven over medium-high heat until shimmering.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Add diced onions and bell peppers to the pot and sauté, stirring occasionally, until softened and beginning to brown.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Push vegetables to the side, add the ground beef in batches if needed, and brown the meat, breaking it up with a spoon until no pink remains and some fond forms on the pan.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Stir garlic into the browned beef and vegetables and cook until fragrant, about 30 seconds.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Add tomato paste and cook, stirring constantly, to caramelize slightly and remove raw edge from the paste.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Stir in diced tomatoes, beef broth, chili powder, cumin, smoked paprika, oregano, chopped chipotle (if using), salt and pepper; scrape up any browned bits from the bottom of the pot.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Bring mixture to a gentle simmer, then reduce heat to low and partially cover the pot. Simmer gently to meld flavors and reduce liquid, stirring occasionally.",
+        "time_min": 30
+      },
+      {
+        "step_no": 9,
+        "text": "Taste and adjust seasoning with additional salt, pepper, apple cider vinegar, and lime juice as desired to balance acidity and heat.",
+        "time_min": 2
+      },
+      {
+        "step_no": 10,
+        "text": "Serve hot topped with sliced avocado and chopped cilantro or other garnishes; refrigerate leftovers within two hours.",
+        "time_min": 6
+      }
+    ]
+  },
+  "image_url": null
+}

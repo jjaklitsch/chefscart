@@ -1,0 +1,312 @@
+{
+  "slug": "rajma-masala-kidney-beans",
+  "title": "Rajma Masala (Kidney Beans)",
+  "description": "Hearty North-Indian-style kidney beans simmered in a spiced tomato-onion gravy until thick and creamy. Slow-cooked aromatics, warm spices and a finishing touch of cilantro make this comforting, protein-rich vegetarian curry.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward",
+    "vegan"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "kidney beans",
+    "onion",
+    "tomato",
+    "garlic",
+    "ginger",
+    "green chili",
+    "cilantro",
+    "vegetable oil",
+    "vegetable stock",
+    "cumin",
+    "coriander",
+    "turmeric",
+    "garam masala",
+    "red chili powder",
+    "salt",
+    "bay leaf",
+    "kasuri methi",
+    "cream"
+  ],
+  "spice_level": 3,
+  "time_total_min": 150,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "rajma",
+    "rajma masala",
+    "kidney beans curry",
+    "vegetarian indian",
+    "vegan curry",
+    "comfort food",
+    "protein rich",
+    "bean stew",
+    "tomato gravy",
+    "slow cooked",
+    "cumin",
+    "garam masala",
+    "north indian",
+    "cilantro garnish",
+    "weeknight dinner",
+    "meal prep",
+    "spiced beans",
+    "red kidney beans",
+    "kidney beans masala"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "dried red kidney beans (rajma), soaked overnight",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "soak 8-10 hours then drain"
+      },
+      {
+        "display_name": "water for pressure cooking/boiling",
+        "quantity": 1200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 1200,
+        "optional": false,
+        "notes": "approximate; enough to cook beans until tender"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cumin seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "large yellow onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 large onion"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, minced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh green chili, slit (adjust to taste)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for spice"
+      },
+      {
+        "display_name": "tomato puree (or blended tomatoes)",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1.5 cups / canned or fresh blended"
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "turmeric powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red chili powder (or paprika for milder)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to preference"
+      },
+      {
+        "display_name": "garam masala",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "added near end"
+      },
+      {
+        "display_name": "kasuri methi (dried fenugreek leaves), crushed",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adds aroma; optional"
+      },
+      {
+        "display_name": "vegetable stock or reserved bean cooking liquid",
+        "quantity": 300,
+        "unit": "ml",
+        "grams": null,
+        "ml": 300,
+        "optional": false,
+        "notes": "for desired gravy consistency"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 30,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "heavy cream or coconut cream (optional finish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": true,
+        "notes": "adds richness; omit for vegan"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 150,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Soak the dried kidney beans in cold water for 8-10 hours or overnight, then drain and rinse.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Cook the soaked beans in a pressure cooker or large pot with fresh water and a bay leaf until very tender; in a pressure cooker, cook 12-15 minutes at high pressure plus natural release, or simmer 60-75 minutes in a pot until soft. Reserve cooking liquid.",
+        "time_min": 90
+      },
+      {
+        "step_no": 3,
+        "text": "Heat oil in a heavy-bottomed pan over medium heat, add cumin seeds and let them sizzle until fragrant.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add finely chopped onion and sauté on medium heat until golden brown, stirring frequently to avoid burning.",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "Add minced garlic, ginger and slit green chili; cook until raw aroma dissipates and mixture is lightly browned.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Pour in tomato puree and cook on medium-low until oil begins to separate from the masala, stirring occasionally to prevent sticking.",
+        "time_min": 10
+      },
+      {
+        "step_no": 7,
+        "text": "Stir in ground coriander, ground cumin, turmeric, red chili powder and salt; cook the spice-tomato base for a few minutes to bloom the spices.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Add the cooked beans and some reserved bean cooking liquid or stock to the pan; bring to a simmer and mash a portion of the beans against the side of the pan to thicken the gravy.",
+        "time_min": 8
+      },
+      {
+        "step_no": 9,
+        "text": "Simmer the curry on low heat, partially covered, stirring occasionally until the gravy reaches desired thickness and flavors meld.",
+        "time_min": 10
+      },
+      {
+        "step_no": 10,
+        "text": "Finish by stirring in garam masala and crushed kasuri methi; adjust salt and consistency with reserved liquid. Optionally swirl in cream for richness.",
+        "time_min": 2
+      },
+      {
+        "step_no": 11,
+        "text": "Garnish with chopped cilantro and let the curry rest for 5 minutes before serving with rice or bread.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

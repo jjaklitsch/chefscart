@@ -1,0 +1,304 @@
+{
+  "slug": "turkish-kofte-with-bulgur",
+  "title": "Turkish Köfte with Bulgur",
+  "description": "Seasoned lamb-and-beef köfte (meatballs) are pan-seared until browned and finished gently, served with fluffy bulgur pilaf cooked with tomato paste and aromatic spices. Bright fresh herbs and a squeeze of lemon balance the warm, savory spices for a classic, homey Turkish plate.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "lamb",
+    "bulgur",
+    "onion",
+    "tomato",
+    "tomato paste",
+    "parsley",
+    "mint",
+    "olive oil",
+    "lemon",
+    "garlic",
+    "pepper",
+    "salt",
+    "paprika",
+    "cumin",
+    "red pepper flakes",
+    "butter",
+    "vegetable stock"
+  ],
+  "spice_level": 2,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "grain"
+  ],
+  "search_keywords": [
+    "turkish kofte",
+    "köfte",
+    "bulgur pilaf",
+    "turkish meatballs",
+    "ground beef and lamb",
+    "bulgur recipe",
+    "mediterranean",
+    "middle eastern",
+    "pan seared",
+    "tomato paste",
+    "cumin paprika",
+    "fresh parsley",
+    "lemon garlic",
+    "weeknight dinner",
+    "easy dinner",
+    "comfort food",
+    "spiced meatballs",
+    "herbed bulgur",
+    "lamb beef mix"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ground beef (80/20)",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "preferably freshly ground"
+      },
+      {
+        "display_name": "ground lamb",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "optional but traditional for flavor"
+      },
+      {
+        "display_name": "fine bulgur",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "fine or medium grind"
+      },
+      {
+        "display_name": "onion, finely grated and drained",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "use medium onion, squeeze out excess liquid"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, finely chopped",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "flat-leaf preferred"
+      },
+      {
+        "display_name": "fresh mint, finely chopped",
+        "quantity": 5,
+        "unit": "g",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional but traditional"
+      },
+      {
+        "display_name": "eggs",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "helps bind the köfte"
+      },
+      {
+        "display_name": "bread crumbs",
+        "quantity": 25,
+        "unit": "g",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "for binding; can substitute fine bulgur if gluten-free"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sweet paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes (pul biber or crushed)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for heat"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divide between meat and bulgur preparations"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil (for pan-searing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "butter",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "for bulgur flavor (can omit for vegan)"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "adds color and umami to bulgur"
+      },
+      {
+        "display_name": "vegetable or chicken stock (hot)",
+        "quantity": 480,
+        "unit": "ml",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "use hot stock for bulgur absorption"
+      },
+      {
+        "display_name": "tomato, diced (optional garnish)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish or folded into bulgur"
+      },
+      {
+        "display_name": "lemon, cut into wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "sumac (optional, for garnish)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adds tangy finish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare bulgur: rinse briefly if needed, then combine bulgur, tomato paste, half the salt, and hot stock in a medium saucepan; add butter and bring to a simmer.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Lower heat to low, cover tightly, and cook bulgur until liquid is absorbed and grains are tender; remove from heat and let rest covered to steam.",
+        "time_min": 20
+      },
+      {
+        "step_no": 3,
+        "text": "Make köfte mix: in a bowl combine ground beef and lamb, grated onion (drained), minced garlic, chopped parsley and mint, egg, breadcrumbs, cumin, paprika, red pepper flakes, remaining salt and pepper; mix until just combined but not overworked.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Shape meat mixture into evenly sized oval or round patties (about 12–16 small köfte) using damp hands to prevent sticking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Heat a large skillet over medium-high heat with olive oil until shimmering; add köfte in a single layer without crowding and sear until a deep brown crust forms on the first side.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Flip köfte and reduce heat to medium; continue cooking until cooked through but still moist inside. Work in batches and keep finished köfte warm on a sheet in a low oven if needed.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Fluff bulgur with a fork, fold in diced tomato and remaining chopped parsley if using, and adjust seasoning with salt, pepper, and lemon juice to taste.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Plate by spooning bulgur pilaf, arranging köfte on top or alongside, garnish with lemon wedges and optional sumac; serve immediately.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

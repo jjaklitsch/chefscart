@@ -1,0 +1,239 @@
+{
+  "slug": "gochujang-glazed-salmon",
+  "title": "Gochujang Glazed Salmon",
+  "description": "Pan-seared salmon finished with a sticky sweet-spicy gochujang glaze, balanced by a touch of honey, rice vinegar and soy. Quick to make on the stovetop or under the broiler for a caramelized finish; pairs well with steamed rice and crisp vegetables.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "korean",
+    "american"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "low-carb"
+  ],
+  "primary_ingredient": "salmon",
+  "ingredient_tags": [
+    "salmon",
+    "gochujang",
+    "honey",
+    "soy sauce",
+    "rice vinegar",
+    "sesame oil",
+    "garlic",
+    "ginger",
+    "green onion",
+    "sesame seeds",
+    "vegetable oil",
+    "salt",
+    "black pepper",
+    "lime"
+  ],
+  "spice_level": 3,
+  "time_total_min": 20,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "gochujang",
+    "salmon",
+    "glazed salmon",
+    "korean glaze",
+    "spicy sweet",
+    "pan seared",
+    "broiled salmon",
+    "honey gochujang",
+    "easy dinner",
+    "weeknight meal",
+    "pescatarian",
+    "low-carb",
+    "asian glaze",
+    "sticky sauce",
+    "garlic ginger",
+    "sesame seeds",
+    "green onion",
+    "rice vinegar",
+    "soy sauce",
+    "marinade"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "salmon fillets, skin-on",
+        "quantity": 1.4,
+        "unit": "lb",
+        "grams": 635.6,
+        "ml": null,
+        "optional": false,
+        "notes": "about 4 fillets, 6 oz (170g) each; pat dry"
+      },
+      {
+        "display_name": "gochujang (Korean red chili paste)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 60,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "honey",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "soy sauce (use tamari for gluten-free)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": "or apple cider vinegar"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4.5,
+        "ml": 5,
+        "optional": false,
+        "notes": "toasted sesame oil for flavor"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for searing"
+      },
+      {
+        "display_name": "garlic, finely minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lime juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "green onions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": null,
+        "optional": false,
+        "notes": "to season salmon"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the glaze: whisk gochujang, honey, soy sauce, rice vinegar, sesame oil, minced garlic, grated ginger and lime juice in a small bowl until smooth.",
+        "time_min": 4
+      },
+      {
+        "step_no": 2,
+        "text": "Pat salmon fillets dry and season both sides lightly with kosher salt and black pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Heat neutral oil in a large nonstick or stainless steel skillet over medium-high heat until shimmering. Place salmon skin-side down and sear without moving until skin is crisp and releases, about 4-5 minutes depending on thickness.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Flip fillets gently and reduce heat to medium. Spoon half of the glaze over the tops of the salmon, allowing it to warm and start to thicken, cooking for 2-3 minutes more until salmon is nearly cooked through.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Optional broil finish: transfer skillet to a preheated broiler and broil 1-2 minutes to caramelize the glaze; watch closely to avoid burning. If not broiling, increase heat to medium-high for 30-60 seconds to caramelize in the pan.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Remove salmon to a plate, spoon remaining glaze over the fillets, and let rest 1-2 minutes. Garnish with sliced green onions and toasted sesame seeds before serving.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Serve warm with steamed rice, sautéed vegetables or a crisp salad as desired.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

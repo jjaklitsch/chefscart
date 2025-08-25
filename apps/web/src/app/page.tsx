@@ -22,9 +22,26 @@ export default function Home() {
     analytics.trackPageView('landing', userId);
   }, []);
 
-  const handleZipValidation = (zip: string, isValid: boolean) => {
-    setZipCode(zip)
-    setIsValidZip(isValid)
+  const handleZipValidation = async (zip: string) => {
+    try {
+      const response = await fetch('/api/validate-zip', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ zipCode: zip })
+      })
+      
+      if (response.ok) {
+        const data = await response.json()
+        setIsValidZip(data.isValid)
+      } else {
+        setIsValidZip(false)
+      }
+    } catch (error) {
+      console.error('ZIP validation error:', error)
+      setIsValidZip(false)
+    }
   }
 
   const handleGetStarted = () => {
@@ -129,8 +146,7 @@ export default function Home() {
                   const newZip = e.target.value.replace(/\D/g, '').slice(0, 5)
                   setZipCode(newZip)
                   if (newZip.length === 5) {
-                    handleZipValidation(newZip, true) // Simplified for demo
-                    setIsValidZip(true)
+                    handleZipValidation(newZip)
                   } else {
                     setIsValidZip(false)
                   }

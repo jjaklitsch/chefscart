@@ -1,0 +1,287 @@
+{
+  "slug": "boeuf-bourguignon-small-pot",
+  "title": "Boeuf Bourguignon (Small Pot)",
+  "description": "A rich, slow-braised French classic featuring tender beef simmered in red wine, aromatics and mushrooms until melt-in-your-mouth. Concentrated flavors develop through searing, deglazing and gentle oven braising for an intensely savory, comforting stew.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "french"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "red wine",
+    "bacon",
+    "onion",
+    "carrot",
+    "garlic",
+    "mushroom",
+    "thyme",
+    "bay leaf",
+    "flour",
+    "beef stock",
+    "butter",
+    "tomato paste",
+    "parsley",
+    "salt",
+    "pepper",
+    "olive oil"
+  ],
+  "spice_level": 1,
+  "time_total_min": 210,
+  "servings_default": 3,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "boeuf bourguignon",
+    "beef stew",
+    "french braise",
+    "red wine sauce",
+    "slow braised beef",
+    "mushroom",
+    "bacon",
+    "carrot",
+    "onion",
+    "garlic",
+    "thyme",
+    "bay leaf",
+    "comfort food",
+    "dinner",
+    "lunch",
+    "stew",
+    "oven braised",
+    "classic french",
+    "pearl onion alternative"
+  ],
+  "ingredients_json": {
+    "servings": 3,
+    "ingredients": [
+      {
+        "display_name": "beef chuck, trimmed and cut into 1 1/2-inch cubes",
+        "quantity": 700,
+        "unit": "g",
+        "grams": 700,
+        "ml": null,
+        "optional": false,
+        "notes": "pat dry with paper towels"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "for dusting beef"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for browning"
+      },
+      {
+        "display_name": "bacon (lardons) cut into 1/2-inch pieces",
+        "quantity": 75,
+        "unit": "g",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "or pancetta"
+      },
+      {
+        "display_name": "yellow onion, medium, peeled and sliced into 1/2-inch wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "carrots, peeled and cut on bias into 1/2-inch pieces",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dry red wine (burgundy, pinot noir or similar)",
+        "quantity": 375,
+        "unit": "ml",
+        "grams": null,
+        "ml": 375,
+        "optional": false,
+        "notes": "about 1 1/2 cups"
+      },
+      {
+        "display_name": "beef stock (low-sodium preferred), hot",
+        "quantity": 375,
+        "unit": "ml",
+        "grams": null,
+        "ml": 375,
+        "optional": false,
+        "notes": "enough to nearly cover"
+      },
+      {
+        "display_name": "fresh thyme sprigs",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "bay leaves",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "button mushrooms, halved or quartered depending on size",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve for later sauté"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "for finishing mushrooms"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "cornstarch (or additional flour) mixed with water for slurry (optional to thicken)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "mix with 1 tbsp cold water if needed"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 210,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 325°F (160°C). Pat beef dry, season with half the salt and pepper, then dust lightly with flour. This helps with browning and thickening.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a heavy small Dutch oven or oven-safe pot over medium-high heat. Add olive oil and sear beef in batches without crowding until deeply browned on all sides; transfer browned pieces to a bowl between batches.",
+        "time_min": 15
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to medium, add bacon and cook until fat renders and edges are crisp; remove most of the rendered fat leaving about 1 tablespoon in the pot.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Add sliced onion and carrots to the pot and sauté until softened and lightly caramelized, about 6–8 minutes. Stir in minced garlic and tomato paste and cook 1 minute to bloom flavors.",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "Return beef and any accumulated juices to the pot. Pour in red wine to deglaze, scraping up browned bits from the bottom; bring to a simmer and reduce by about one-third, approximately 8–10 minutes.",
+        "time_min": 12
+      },
+      {
+        "step_no": 6,
+        "text": "Add hot beef stock, thyme sprigs and bay leaves. The liquid should almost cover the meat. Bring to a gentle simmer on the stovetop.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Cover the pot and transfer to the preheated oven. Braise until beef is very tender and the sauce is concentrated, about 2 hours (120 minutes).",
+        "time_min": 120
+      },
+      {
+        "step_no": 8,
+        "text": "While braise is finishing, heat a skillet over medium-high heat with butter. Sauté mushrooms until browned and liquid evaporates, about 6–8 minutes; set aside.",
+        "time_min": 10
+      },
+      {
+        "step_no": 9,
+        "text": "When braise is done, remove pot from oven. Skim excess fat from the surface, discard thyme stems and bay leaves. If sauce needs thickening, simmer uncovered on stovetop and/or stir in slurry until desired consistency is reached (2–4 minutes).",
+        "time_min": 8
+      },
+      {
+        "step_no": 10,
+        "text": "Stir sautéed mushrooms back into the stew and adjust seasoning with remaining salt and pepper. Garnish with chopped parsley and serve hot with mashed potatoes, buttered noodles or crusty bread.",
+        "time_min": 7
+      }
+    ]
+  },
+  "image_url": null
+}

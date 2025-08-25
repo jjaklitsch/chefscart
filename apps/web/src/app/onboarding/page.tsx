@@ -7,7 +7,6 @@ import MealPlanPreview from '../../../components/MealPlanPreview'
 import CartBuilder from '../../../components/CartBuilder'
 import CartPreparation from '../../../components/CartPreparation'
 import { UserPreferences, MealPlan } from '../../../types'
-import { FirestoreService } from '../../../lib/firestore'
 
 function OnboardingPageContent() {
   const [step, setStep] = useState<'preferences' | 'mealplan' | 'cartbuilder' | 'cartprep' | 'cart'>('preferences')
@@ -43,185 +42,83 @@ function OnboardingPageContent() {
     setError(null)
 
     try {
-      // Generate a temporary user ID for anonymous users
-      const userId = `temp_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
-      
-      console.log('Starting progressive meal plan generation...')
-      
-      // Get zipCode from localStorage
-      const zipCode = localStorage.getItem('chefscart_zipcode') || ''
-      
-      // Step 1: Generate basic meal plan (fast) - text only
-      const response = await fetch('/api/generate-mealplan-fast', {
+      // Call the meal recommendation API to get personalized meals from Supabase
+      const response = await fetch('/api/recommend-meals', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userId,
           preferences: userPreferences,
-          zipCode
+          limit: 10 // Get top 10 meals for the user to choose from
         })
       })
 
       if (!response.ok) {
         const errorData = await response.json()
-        throw new Error(errorData.error || 'Failed to generate meal plan')
+        throw new Error(errorData.error || 'Failed to fetch meal recommendations')
       }
 
       const data = await response.json()
-      console.log('Basic meal plan generated:', data)
       
-      // Show meal plan immediately with loading states for images
-      const mealPlanWithLoadingImages = {
-        ...data.mealPlan,
-        recipes: data.mealPlan.recipes.map((recipe: any) => {
-          console.log(`🔍 Recipe from API:`, { id: recipe.id, title: recipe.title })
-          return {
-            ...recipe,
-            imageLoading: true,
-            imageError: false
-          }
-        })
+      if (!data.success || !data.meals || data.meals.length === 0) {
+        throw new Error('No suitable meals found for your preferences')
+      }
+
+      // Transform Supabase meals to our Recipe format
+      const recipes = data.meals.map((meal: any) => ({
+        id: meal.id,
+        title: meal.title,
+        description: meal.description,
+        cuisine: meal.cuisines[0] || 'international',
+        imageUrl: meal.image_url || '/images/placeholder-meal.webp',
+        ingredients: (meal.ingredients_json?.ingredients || []).map((ing: any) => ({
+          name: ing.display_name,
+          amount: ing.quantity,
+          unit: ing.unit
+        })),
+        difficulty: 'easy', // Default since Supabase doesn't have difficulty levels
+        cookTime: meal.time_total_min,
+        prepTime: 15, // Default prep time
+        servings: meal.servings_default,
+        estimatedCost: meal.cost_per_serving === '$' ? 8 : meal.cost_per_serving === '$$' ? 15 : 25,
+        tags: meal.diets_supported || [],
+        nutrition: {
+          calories: 0, // Nutrition info not in current schema
+          protein: 0,
+          carbs: 0,
+          fat: 0,
+          fiber: 0,
+          sugar: 0
+        },
+        instructions: (meal.instructions_json?.steps || []).map((step: any) => step.text)
+      }))
+
+      // Create meal plan with selected recipes
+      const mealPlan: MealPlan = {
+        id: `mealplan_${Date.now()}`,
+        userId: `temp_${Date.now()}`,
+        recipes: recipes,
+        backupRecipes: [],
+        subtotalEstimate: recipes.reduce((sum: number, r: any) => sum + (r.estimatedCost || 15), 0),
+        ingredientMatchPct: 95,
+        status: 'draft',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
       
-      setMealPlan(mealPlanWithLoadingImages)
+      setMealPlan(mealPlan)
       setStep('mealplan')
       setIsLoading(false)
 
-      // Step 2: Generate images in background (non-blocking)
-      generateImagesInBackground(data.mealPlan.recipes)
-
     } catch (err) {
-      console.error('Error generating meal plan:', err)
-      setError('We\'re having trouble creating your meal plan. Please check your internet connection and try again.')
+      console.error('Error creating meal plan:', err)
+      setError('We\'re having trouble creating your meal plan. Please try again.')
       setIsLoading(false)
     }
   }
 
-  const generateImagesInBackground = async (recipes: any[]) => {
-    try {
-      console.log('Generating images in background...')
-      
-      // Generate all images in true parallel with aggressive timeouts
-      console.log(`Starting parallel image generation for ${recipes.length} recipes...`)
-      const imageStartTime = Date.now()
-      
-      console.log(`🔍 All recipes being processed for images:`, recipes.map(r => ({ id: r.id, title: r.title })))
-      const imagePromises = recipes.map(async (recipe) => {
-        try {
-          // Race against timeout for each individual image
-          const response = await Promise.race([
-            fetch('/api/generate-dish-image', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                dishName: recipe.title,
-                description: recipe.description,
-                cuisine: recipe.cuisine,
-                thumbnail: true
-              })
-            }),
-            new Promise<never>((_, reject) => 
-              setTimeout(() => reject(new Error('Individual image timeout')), 45000) // 45s timeout to match replacement images
-            )
-          ])
-          
-          if (response.ok) {
-            const data = await response.json()
-            console.log(`✅ Generated image for ${recipe.title}`)
-            return { id: recipe.id, url: data.imageUrl, success: true }
-          }
-        } catch (error) {
-          console.warn(`❌ Failed to generate image for ${recipe.title}:`, error instanceof Error ? error.message : error)
-        }
-        return { id: recipe.id, url: '/images/placeholder-meal.webp', success: false }
-      })
-
-      // Process ALL images simultaneously (true parallel execution)
-      console.log(`🚀 Starting ${imagePromises.length} parallel image requests simultaneously...`)
-      
-      imagePromises.forEach((imagePromise, index) => {
-        // Don't await here - let all promises run simultaneously
-        imagePromise
-          .then(result => {
-            console.log(`✅ Image ${index + 1}/${recipes.length} completed for: ${recipes[index].title}`)
-            console.log(`🔗 Image URL:`, result.url)
-            console.log(`🆔 Recipe ID:`, result.id)
-            
-            // Update this specific recipe's image immediately
-            setMealPlan(prevPlan => {
-              if (!prevPlan) return null
-              
-              console.log(`🔍 Trying to update recipe with ID: ${result.id}`)
-              console.log(`🔍 Available recipe IDs:`, prevPlan.recipes.map(r => r.id))
-              
-              let foundMatch = false
-              const updatedPlan = {
-                ...prevPlan,
-                recipes: prevPlan.recipes.map(recipe => {
-                  const isMatch = recipe.id === result.id
-                  if (isMatch) {
-                    foundMatch = true
-                    console.log(`✅ Found matching recipe: ${recipe.title} (ID: ${recipe.id})`)
-                  }
-                  return isMatch 
-                    ? { ...recipe, imageUrl: result.url, imageLoading: false }
-                    : recipe
-                })
-              }
-              
-              if (!foundMatch) {
-                console.warn(`❌ No matching recipe found for ID: ${result.id}`)
-              }
-              
-              console.log(`🔄 Updated recipe ${result.id} with image in meal plan`)
-              return updatedPlan
-            })
-          })
-          .catch(error => {
-            console.warn(`❌ Image ${index + 1} failed for ${recipes[index].title}:`, error.message)
-            
-            // Mark this specific recipe's image as failed
-            setMealPlan(prevPlan => {
-              if (!prevPlan) return null
-              
-              return {
-                ...prevPlan,
-                recipes: prevPlan.recipes.map(recipe => 
-                  recipe.id === recipes[index].id 
-                    ? { ...recipe, imageLoading: false, imageError: true }
-                    : recipe
-                )
-              }
-            })
-          })
-      })
-
-      // Log the start of parallel processing
-      const imageTime = Date.now() - imageStartTime
-      console.log(`🎨 Started ${recipes.length} parallel image generations at ${imageTime}ms`)
-      
-      console.log('Images loaded successfully')
-    } catch (error) {
-      console.error('Background image generation failed:', error)
-      // Mark all images as failed to load
-      setMealPlan(prevPlan => {
-        if (!prevPlan) return null
-        
-        return {
-          ...prevPlan,
-          recipes: prevPlan.recipes.map(recipe => ({
-            ...recipe,
-            imageLoading: false,
-            imageError: true
-          }))
-        }
-      })
-    }
-  }
+  // Removed AI image generation - using curated meals with pre-existing images
 
   const handleMealPlanApprove = () => {
     setStep('cartbuilder')
@@ -239,13 +136,13 @@ function OnboardingPageContent() {
     setError(null)
 
     try {
-      console.log('Saving user data to Firestore...')
+      console.log('Saving user data locally...')
       
       // Get zipCode from localStorage
       const zipCode = localStorage.getItem('chefscart_zipcode') || ''
       
-      // Create user and save data to Firestore
-      const userId = await FirestoreService.createUser(email, zipCode, preferences)
+      // Create user ID locally (will migrate to Supabase later)
+      const userId = `user_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`
       
       // Also save user data locally for login system
       const userData = {
@@ -258,19 +155,23 @@ function OnboardingPageContent() {
       localStorage.setItem(`chefscart_user_${email}`, JSON.stringify(userData))
       localStorage.setItem('chefscart_current_user', email)
       
-      // Save meal plan and shopping list
-      const mealPlanId = await FirestoreService.saveMealPlan(
-        userId, 
-        email, 
-        zipCode, 
-        mealPlan, 
-        consolidatedCart
-      )
+      // Save meal plan locally (will migrate to Supabase later)
+      const mealPlanId = `mealplan_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`
+      const mealPlanData = {
+        id: mealPlanId,
+        userId,
+        email,
+        zipCode,
+        mealPlan,
+        consolidatedCart,
+        createdAt: new Date().toISOString()
+      }
+      localStorage.setItem(`chefscart_mealplan_${mealPlanId}`, JSON.stringify(mealPlanData))
       
       console.log('User data saved successfully. Creating Instacart cart...')
       
-      // Call the mock cart creation API
-      const response = await fetch('/api/create-cart-mock', {
+      // Call the production cart creation API
+      const response = await fetch('/api/create-cart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -279,7 +180,7 @@ function OnboardingPageContent() {
           planId: mealPlan.id,
           userId: userId,
           email,
-          firestoreMealPlanId: mealPlanId
+          mealPlanId: mealPlanId
         })
       })
 
@@ -291,8 +192,9 @@ function OnboardingPageContent() {
       const data = await response.json()
       console.log('Cart created:', data)
       
-      // Update meal plan status to indicate cart was created
-      await FirestoreService.updateMealPlanStatus(mealPlanId, 'cart_created')
+      // Update meal plan status locally (will migrate to Supabase later)
+      const updatedMealPlanData = { ...mealPlanData, status: 'cart_created', updatedAt: new Date().toISOString() }
+      localStorage.setItem(`chefscart_mealplan_${mealPlanId}`, JSON.stringify(updatedMealPlanData))
       
       // Redirect to Instacart cart
       if (data.cartUrl) {

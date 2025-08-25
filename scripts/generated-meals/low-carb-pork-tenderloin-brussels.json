@@ -1,0 +1,217 @@
+{
+  "slug": "low-carb-pork-tenderloin-brussels",
+  "title": "Low-Carb Pork Tenderloin & Brussels",
+  "description": "Seared pork tenderloin roasted with caramelized Brussels sprouts and a garlic-herb butter creates a savory low-carb weeknight dinner. Quick pan-searing locks in juices while oven-roasting finishes the pork and crisps the sprouts for contrasting textures.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "low-carb",
+    "keto",
+    "paleo"
+  ],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "pork tenderloin",
+    "brussels sprouts",
+    "garlic",
+    "olive oil",
+    "butter",
+    "fresh thyme",
+    "fresh rosemary",
+    "lemon",
+    "salt",
+    "black pepper",
+    "red pepper flakes",
+    "parmesan (optional)"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "pork tenderloin",
+    "brussels sprouts",
+    "low-carb dinner",
+    "keto pork",
+    "roasted sprouts",
+    "pan sear",
+    "garlic herb butter",
+    "weeknight meal",
+    "high-protein",
+    "low-carb lunch",
+    "paleo friendly",
+    "lemon thyme",
+    "crispy brussels",
+    "quick roast",
+    "sugar-free glaze",
+    "easy pork recipe",
+    "oven roasted",
+    "stovetop sear",
+    "family dinner",
+    "healthy comfort food"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "pork tenderloin",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim silver skin and excess fat"
+      },
+      {
+        "display_name": "brussels sprouts",
+        "quantity": 16,
+        "unit": "each",
+        "grams": 720,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed and halved"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "for herb butter and finishing"
+      },
+      {
+        "display_name": "fresh garlic",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh thyme",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "leaves only"
+      },
+      {
+        "display_name": "fresh rosemary",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "lemon",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "zest and juice"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus additional to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for mild heat"
+      },
+      {
+        "display_name": "parmesan cheese",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 25,
+        "ml": 60,
+        "optional": true,
+        "notes": "finely grated, optional garnish"
+      },
+      {
+        "display_name": "neutral-flavored oil for searing (canola or avocado)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "high-smoke-point oil"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Prepare pork by patting dry and seasoning all over with half the salt and pepper; let sit while you trim and halve the Brussels sprouts and toss them with olive oil, remaining salt, pepper, and red pepper flakes in a bowl.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat an oven-safe skillet over medium-high heat and add neutral oil. When shimmering, sear the pork tenderloin on all sides until deeply golden (about 2–3 minutes per side) to develop a crust.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Add halved Brussels sprouts to the skillet, arranging cut sides down around the pork. Transfer skillet to the preheated oven and roast until pork reaches 140°F (60°C) internal temperature and sprouts are tender with crisped edges.",
+        "time_min": 12
+      },
+      {
+        "step_no": 4,
+        "text": "While roasting, mix softened butter with minced garlic, chopped thyme, rosemary, lemon zest and juice. When pork is done, remove skillet from oven and transfer pork to a cutting board to rest for 6–8 minutes; tent loosely with foil.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Return skillet with sprouts to stovetop over medium heat for 1–2 minutes to reincorporate pan fond; stir in the garlic-herb butter to glaze the sprouts. Slice rested pork into medallions, arrange with Brussels sprouts, and sprinkle with grated parmesan if using before serving.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

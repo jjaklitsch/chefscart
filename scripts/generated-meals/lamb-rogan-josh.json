@@ -1,0 +1,340 @@
+{
+  "slug": "lamb-rogan-josh",
+  "title": "Lamb Rogan Josh",
+  "description": "A classic Kashmiri-style braised lamb curry featuring tender pieces of lamb simmered in a fragrant, tomato-onion and yogurt-based sauce spiced with warm aromatic spices. Rich, slightly tangy, and deeply savory with a moderate heat, finished with a glossy, well-reduced gravy ideal for rice or naan.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "lamb",
+  "ingredient_tags": [
+    "lamb",
+    "yogurt",
+    "onion",
+    "tomato",
+    "garlic",
+    "ginger",
+    "ghee",
+    "oil",
+    "cumin",
+    "coriander",
+    "kashmiri chili",
+    "turmeric",
+    "garam masala",
+    "bay leaf",
+    "cardamom",
+    "cinnamon",
+    "clove",
+    "salt",
+    "cilantro",
+    "green chili"
+  ],
+  "spice_level": 3,
+  "time_total_min": 190,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "lamb rogan josh",
+    "kashmiri lamb curry",
+    "braised lamb",
+    "yogurt curry",
+    "mild spicy lamb",
+    "indian dinner",
+    "gluten free curry",
+    "weekend braise",
+    "slow cooked lamb",
+    "tomato onion gravy",
+    "garam masala",
+    "kashmiri chili",
+    "serve with rice",
+    "serve with naan",
+    "comfort food",
+    "holiday lamb",
+    "authentic indian",
+    "one-pot curry",
+    "stewed lamb",
+    "fragrant spices"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "lamb shoulder, cut into 1-1.5 inch cubes",
+        "quantity": 900,
+        "unit": "g",
+        "grams": 900,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, keep some for flavor"
+      },
+      {
+        "display_name": "plain whole-milk yogurt",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 245,
+        "ml": 240,
+        "optional": false,
+        "notes": "whisked until smooth"
+      },
+      {
+        "display_name": "large onions, finely sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "about 180g each, thinly sliced"
+      },
+      {
+        "display_name": "tomato puree or canned crushed tomatoes",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "or 1 cup fresh tomato purée"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 6,
+        "unit": "clove",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "about 3g per clove"
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 6g per tbsp"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ghee or clarified butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "adds richness; can use additional oil if needed"
+      },
+      {
+        "display_name": "cumin seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "green cardamom pods",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly crushed"
+      },
+      {
+        "display_name": "whole cloves",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cinnamon stick",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "about 5cm piece"
+      },
+      {
+        "display_name": "bay leaves",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 10,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "turmeric powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kashmiri chili powder (or sweet paprika + cayenne to taste)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 30,
+        "optional": false,
+        "notes": "adjust heat; kashmiri gives color more than heat"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": 10,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "water or low-sodium broth",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 360,
+        "optional": false,
+        "notes": "for simmering; add more if needed"
+      },
+      {
+        "display_name": "garam masala (finished sprinkle)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": 5,
+        "optional": false,
+        "notes": "add at end for fragrance"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 30,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fresh green chilies, slit (optional)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "for extra heat"
+      },
+      {
+        "display_name": "lemon wedges (to serve)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "optional acidity"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 190,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Marinate the lamb: combine whisked yogurt, half the minced garlic, half the grated ginger, 1 tsp salt, 1 tsp kashmiri chili powder and 1/2 tsp turmeric in a bowl; add lamb cubes, mix to coat, cover and refrigerate for at least 1 hour (or up to 4 hours).",
+        "time_min": 60
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare aromatics and whole spices: finely slice the onions and measure out whole spices and ground spices so they are ready; this takes a few minutes of prep.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Brown the onions: heat oil and ghee in a heavy-bottomed pot over medium heat, add sliced onions and cook, stirring occasionally, until deep golden brown and caramelized to develop sweetness and color.",
+        "time_min": 25
+      },
+      {
+        "step_no": 4,
+        "text": "Tempering whole spices: push onions to the side, add cumin seeds, crushed cardamom, cloves, cinnamon stick and bay leaves; sauté briefly until fragrant (about 30–45 seconds), then fully incorporate with the onions.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Add ginger and garlic: add remaining minced garlic and grated ginger to the pot and sauté for 1–2 minutes until raw aroma dissipates.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Toast ground spices: add ground coriander, ground cumin, turmeric and remaining kashmiri chili powder; cook for 1–2 minutes, stirring constantly to bloom the spices but avoid burning.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Add tomato purée and cook: stir in tomato purée and cook until oil begins to separate from the masala and the mixture reduces slightly.",
+        "time_min": 6
+      },
+      {
+        "step_no": 8,
+        "text": "Add marinated lamb and sear: add marinated lamb (with excess marinade) to the pot, increase heat to medium-high and brown the lamb pieces on all sides for 6–8 minutes, stirring to incorporate with the spice-onion mixture.",
+        "time_min": 8
+      },
+      {
+        "step_no": 9,
+        "text": "Add liquid and simmer: pour in water or broth to just cover, bring to a gentle boil, reduce heat to low, partially cover and simmer gently until lamb is tender, about 50–60 minutes; stir occasionally and skim any foam.",
+        "time_min": 60
+      },
+      {
+        "step_no": 10,
+        "text": "Reduce and finish: uncover and increase heat to medium to reduce gravy to desired thickness if needed (10–12 minutes), adjust seasoning with salt, sprinkle garam masala and fold in chopped cilantro and slit green chilies if using.",
+        "time_min": 10
+      },
+      {
+        "step_no": 11,
+        "text": "Rest and serve: remove whole spices like cinnamon stick if preferred, let curry rest 5 minutes off heat, then serve hot with steamed rice or naan and lemon wedges.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

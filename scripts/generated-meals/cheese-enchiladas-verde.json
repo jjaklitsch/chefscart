@@ -1,0 +1,278 @@
+{
+  "slug": "cheese-enchiladas-verde",
+  "title": "Cheese Enchiladas Verde",
+  "description": "Soft corn tortillas filled with gooey cheese are bathed in a bright, tangy roasted tomatillo and jalapeño salsa verde, then baked until bubbling. Fresh cilantro, crema and a squeeze of lime finish these comforting, vibrant enchiladas perfect for weeknight dinner or casual entertaining.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "cheese",
+  "ingredient_tags": [
+    "cheese",
+    "tomatillo",
+    "jalapeño",
+    "corn tortilla",
+    "onion",
+    "garlic",
+    "cilantro",
+    "lime",
+    "sour cream",
+    "vegetable oil",
+    "salt",
+    "pepper",
+    "cumin",
+    "oregano"
+  ],
+  "spice_level": 2,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "gluten",
+    "grain"
+  ],
+  "search_keywords": [
+    "cheese enchiladas",
+    "enchiladas verde",
+    "salsa verde",
+    "tomatillo sauce",
+    "vegetarian mexican",
+    "baked enchiladas",
+    "corn tortillas",
+    "jalapeño",
+    "cilantro",
+    "lime",
+    "sour cream",
+    "weeknight dinner",
+    "comfort food",
+    "green enchiladas",
+    "cheesy",
+    "oven baked",
+    "mild spice",
+    "easy mexican",
+    "meal prep",
+    "party food"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "tomatillos, husked and rinsed",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "halved if large"
+      },
+      {
+        "display_name": "jalapeño peppers",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "stemmed; seeds left in or removed for heat preference"
+      },
+      {
+        "display_name": "white onion, peeled and quartered",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 140,
+        "ml": null,
+        "optional": false,
+        "notes": "quartered for roasting"
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled"
+      },
+      {
+        "display_name": "fresh cilantro, leaves and stems",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a little for garnish"
+      },
+      {
+        "display_name": "lime juice (about 1 lime)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "vegetable oil (for roasting and frying)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided, adjust to taste"
+      },
+      {
+        "display_name": "ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adds warmth to sauce"
+      },
+      {
+        "display_name": "dried oregano (preferably Mexican)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 0.6,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "monterey jack cheese, shredded (or queso Oaxaca)",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "or blend of jack and cheddar"
+      },
+      {
+        "display_name": "corn tortillas",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "6-inch tortillas preferred; warm to make pliable"
+      },
+      {
+        "display_name": "sour cream or Mexican crema",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "for garnish and sauce thinning"
+      },
+      {
+        "display_name": "vegetable or chicken broth (warm)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "used to thin sauce as needed"
+      },
+      {
+        "display_name": "butter or oil (for skillet)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for lightly frying tortillas"
+      },
+      {
+        "display_name": "fresh cilantro leaves (garnish)",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "chopped"
+      },
+      {
+        "display_name": "lime wedges (to serve)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into 4 wedges"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 200°C (400°F). Arrange the husked tomatillos, jalapeños, quartered onion, and garlic on a rimmed baking sheet, drizzle with half the oil and a pinch of salt, and roast until softened and charred in spots.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "Transfer the roasted tomatillos, jalapeños, onion, and garlic to a blender. Add cilantro, lime juice, cumin, oregano, remaining salt and pepper, and blend until mostly smooth, adding warm broth or a splash of water to reach a pourable sauce consistency.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Taste and adjust seasoning, then stir in one tablespoon of sour cream or crema to temper acidity if desired. Keep sauce warm while preparing tortillas and filling.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Lightly warm a skillet over medium heat and heat remaining butter or oil. Briefly fry each corn tortilla for about 10–15 seconds per side to make pliable, then drain on paper towels. Keep tortillas covered with a clean kitchen towel to stay soft.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Fill each warmed tortilla with an even amount of shredded cheese (no liquid measurements in instructions), roll tightly, and place seam-side down in a lightly oiled 9x13-inch (or similar) baking dish in a single layer.",
+        "time_min": 7
+      },
+      {
+        "step_no": 6,
+        "text": "Pour the warm salsa verde evenly over the arranged enchiladas, ensuring most of the cheese is covered. Sprinkle any remaining shredded cheese over the top for a cheesy crust.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Bake in the preheated oven until sauce is bubbling and cheese is melted and lightly golden on top.",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "Remove from oven and let rest for 3–5 minutes. Garnish with chopped cilantro, dollops of sour cream or crema, and lime wedges before serving.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

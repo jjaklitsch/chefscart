@@ -1,0 +1,263 @@
+{
+  "slug": "seafood-risotto",
+  "title": "Seafood Risotto",
+  "description": "Creamy Italian-style risotto studded with tender shrimp, scallops, and calamari in a fragrant white wine and seafood broth. Finished with butter and Parmesan for a rich, silky texture and bright lemon-herb notes.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "seafood",
+  "ingredient_tags": [
+    "arborio rice",
+    "shrimp",
+    "scallops",
+    "calamari",
+    "fish stock",
+    "white wine",
+    "parmesan",
+    "butter",
+    "onion",
+    "garlic",
+    "olive oil",
+    "lemon",
+    "parsley",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 41,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "seafood",
+    "shellfish",
+    "grain"
+  ],
+  "search_keywords": [
+    "seafood risotto",
+    "shrimp risotto",
+    "scallop risotto",
+    "calamari",
+    "arborio rice",
+    "creamy risotto",
+    "white wine",
+    "seafood stew",
+    "italian",
+    "pescatarian",
+    "dinner",
+    "comfort food",
+    "lemon parsley",
+    "parmesan",
+    "one-pot rice",
+    "stove-top",
+    "butter finish",
+    "weeknight dinner",
+    "restaurant style",
+    "olive oil"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "arborio rice",
+        "quantity": 320,
+        "unit": "g",
+        "grams": 320,
+        "ml": null,
+        "optional": false,
+        "notes": "short-grain risotto rice"
+      },
+      {
+        "display_name": "shrimp, peeled and deveined",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, tails removed"
+      },
+      {
+        "display_name": "scallops, side muscle removed",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "sea scallops, dry-packed"
+      },
+      {
+        "display_name": "calamari rings or tubes, sliced",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "optional; cleaned and sliced into rings"
+      },
+      {
+        "display_name": "fish or seafood stock (hot)",
+        "quantity": 1.2,
+        "unit": "g",
+        "grams": null,
+        "ml": 1200,
+        "optional": false,
+        "notes": "keep hot in a saucepan"
+      },
+      {
+        "display_name": "dry white wine",
+        "quantity": 150,
+        "unit": "ml",
+        "grams": null,
+        "ml": 150,
+        "optional": false,
+        "notes": "e.g., pinot grigio or sauvignon blanc"
+      },
+      {
+        "display_name": "shallot, finely chopped",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 medium shallots"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "use 40g for cooking, 20g for finishing (mounting)"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for sautéing shallots and seafood"
+      },
+      {
+        "display_name": "freshly grated Parmesan cheese",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for serving"
+      },
+      {
+        "display_name": "lemon zest and juice",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 5,
+        "ml": 15,
+        "optional": false,
+        "notes": "zest of 1 lemon and 1 tbsp juice"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish and brightness"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "adjust to taste; for broth and risotto seasoning"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": 1.25,
+        "optional": true,
+        "notes": "optional for a mild kick"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 41,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: warm the seafood stock in a saucepan and keep at a gentle simmer; pat seafood dry and season lightly with salt and pepper; chop shallots, mince garlic, zest and juice lemon, and chop parsley.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large wide sauté pan or heavy-bottomed pot over medium heat, add one tablespoon of olive oil and 20g butter; add shallots and sweat until translucent but not browned.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Add the arborio rice to the pan and stir to coat grains in fat, toasting gently until edges become translucent and the center is opaque, stirring constantly.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Pour in the white wine and stir until the alcohol aroma has mostly evaporated and the liquid is absorbed.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Begin adding hot seafood stock one ladleful at a time, stirring frequently; allow each addition to be mostly absorbed before adding the next, maintaining a gentle simmer.",
+        "time_min": 18
+      },
+      {
+        "step_no": 6,
+        "text": "When the rice is nearly al dente (creamy but with slight bite), about 3–4 minutes before done, increase heat to medium-high and in a separate skillet heat remaining olive oil; sear scallops quickly on one side until golden, turn briefly, then remove; sauté shrimp briefly until pink and just cooked; quickly sauté calamari rings for 1 minute until opaque — avoid overcooking.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Fold the cooked seafood into the risotto along with lemon zest and juice; add remaining butter and grated Parmesan and stir vigorously (mantecatura) until the risotto becomes glossy and creamy. Adjust seasoning with salt and pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Turn off heat, stir in chopped parsley and let rest for 1 minute. Plate immediately and garnish with extra Parmesan and a drizzle of olive oil or a sprinkle of red pepper flakes if desired.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

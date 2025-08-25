@@ -1,0 +1,232 @@
+{
+  "slug": "ochazuke-with-salmon",
+  "title": "Ochazuke with Salmon",
+  "description": "Comforting Japanese ochazuke featuring gently grilled salmon served over steamed rice and finished with hot green tea and savory dashi. Bright toppings of nori, scallion, sesame and pickled plum add texture and umami for a quick, soothing meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "salmon",
+  "ingredient_tags": [
+    "salmon",
+    "rice",
+    "green tea",
+    "dashi",
+    "soy sauce",
+    "nori",
+    "scallion",
+    "sesame seeds",
+    "umeboshi",
+    "mirin",
+    "salt",
+    "wasabi",
+    "ginger"
+  ],
+  "spice_level": 1,
+  "time_total_min": 45,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "soy",
+    "grain",
+    "sesame"
+  ],
+  "search_keywords": [
+    "ochazuke",
+    "salmon ochazuke",
+    "japanese tea over rice",
+    "green tea rice",
+    "dashi broth",
+    "quick dinner",
+    "comfort food",
+    "pescatarian",
+    "grilled salmon",
+    "nori",
+    "umeboshi",
+    "scallion",
+    "sesame seeds",
+    "simple soup rice",
+    "one-bowl meal",
+    "mirin",
+    "soy sauce",
+    "light meal",
+    "weeknight",
+    "rice bowl"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "salmon fillet, skin on",
+        "quantity": 240,
+        "unit": "g",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "about 120 g per person; pinch salt before cooking"
+      },
+      {
+        "display_name": "short-grain white rice, uncooked",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "yields ~2 cups cooked"
+      },
+      {
+        "display_name": "dashi stock (kombu + bonito) or instant dashi",
+        "quantity": 480,
+        "unit": "ml",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "use 240 ml per serving as tea/broth"
+      },
+      {
+        "display_name": "green tea (sencha) brewed strong, hot",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "can substitute with additional dashi; combine with dashi if desired"
+      },
+      {
+        "display_name": "soy sauce",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 10,
+        "optional": false,
+        "notes": "adjust to taste; low-sodium recommended"
+      },
+      {
+        "display_name": "mirin",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds mild sweetness to broth or salmon glaze"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.4,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning rice and salmon"
+      },
+      {
+        "display_name": "nori strips or shredded nori",
+        "quantity": 4,
+        "unit": "g",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small sheet, shredded"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "green parts only"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "white or mixed sesame"
+      },
+      {
+        "display_name": "umeboshi (pickled plum) or 1/2 tsp umeboshi paste",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "optional garnish for tangy saltiness"
+      },
+      {
+        "display_name": "wasabi paste",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, serve on side"
+      },
+      {
+        "display_name": "pickled ginger (gari)",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": true,
+        "notes": "optional garnish"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola) for searing",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "for skin-side sear"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse rice until water runs clear; drain and cook rice using a rice cooker or on stovetop with a tight lid until tender. Fluff and keep covered.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare dashi: if using instant dashi, dissolve in hot water to make the specified volume; if making from scratch, simmer kombu and bonito flakes and strain. Keep hot. Brew sencha strong and combine with dashi if you prefer a tea-forward broth.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Season the salmon lightly with salt and a little mirin. Heat a skillet over medium-high heat with a small amount of oil. Place salmon skin-side down and sear until skin is crisp, then flip and cook briefly until just cooked through. Remove and let rest; flake or slice into bite-sized pieces.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Warm the dashi-green tea mixture, then add soy sauce and mirin; taste and adjust seasoning. Keep the broth hot but not boiling.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Assemble bowls: divide steamed rice between bowls, place salmon pieces on top, and sprinkle sliced scallions, shredded nori, and toasted sesame seeds. Add umeboshi, wasabi, or pickled ginger if using.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Ladle hot dashi-green tea broth over the rice and salmon to just cover or to desired level. Serve immediately while hot so the rice soaks up the broth.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

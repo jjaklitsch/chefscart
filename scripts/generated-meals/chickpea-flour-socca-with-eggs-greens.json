@@ -1,0 +1,252 @@
+{
+  "slug": "chickpea-flour-socca-with-eggs-greens",
+  "title": "Chickpea Flour Socca with Eggs & Greens",
+  "description": "A crisp-edged chickpea flour socca pan-fried until golden, topped with sautéed garlicky greens and runny fried eggs. Earthy, nutty socca contrasts with bright lemony greens and rich yolks for a satisfying breakfast, brunch, or light dinner.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "chickpea flour",
+  "ingredient_tags": [
+    "chickpea flour",
+    "eggs",
+    "spinach",
+    "kale",
+    "garlic",
+    "olive oil",
+    "lemon",
+    "water",
+    "salt",
+    "black pepper",
+    "red pepper flakes",
+    "thyme",
+    "onion",
+    "scallion"
+  ],
+  "spice_level": 2,
+  "time_total_min": 42,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "grain"
+  ],
+  "search_keywords": [
+    "socca",
+    "chickpea flour pancake",
+    "besan pancake",
+    "gluten-free flatbread",
+    "eggs and greens",
+    "brunch",
+    "vegetarian",
+    "plant-forward",
+    "mediterranean",
+    "crispy chickpea",
+    "iron-rich greens",
+    "garlic lemon",
+    "quick skillet",
+    "weeknight dinner",
+    "easy breakfast",
+    "low-cost",
+    "nutty flavor",
+    "one-pan",
+    "protein-rich",
+    "savory pancake"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "chickpea flour (besan)",
+        "quantity": 240,
+        "unit": "g",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "sifted"
+      },
+      {
+        "display_name": "water",
+        "quantity": 600,
+        "unit": "ml",
+        "grams": null,
+        "ml": 600,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "extra-virgin olive oil, divided",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "plus extra for pan"
+      },
+      {
+        "display_name": "fine sea salt",
+        "quantity": 8,
+        "unit": "g",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "for topping"
+      },
+      {
+        "display_name": "olive oil or neutral oil for frying",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for skillet"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium"
+      },
+      {
+        "display_name": "mixed greens (spinach and kale), stems removed and roughly chopped",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "about 6 cups packed"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for heat"
+      },
+      {
+        "display_name": "fresh thyme leaves or dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "or 1/2 tsp dried"
+      },
+      {
+        "display_name": "scallions, thinly sliced (for garnish)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "lemon zest (for garnish)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 42,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make the socca batter by whisking chickpea flour with water, olive oil, half the salt and pepper until smooth; let rest at room temperature to hydrate.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Preheat oven to 240°C (475°F) with a 10-12 inch oven-safe skillet or cast-iron pan inside so it gets very hot.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "When pan is smoking hot, add a tablespoon of oil to coat, swirl, then pour the batter into the pan, tilting to an even thin layer; sprinkle with thyme and remaining salt.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Bake the socca in the hot oven until edges are deeply golden and the top sets and lightly browns, about 8-10 minutes.",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "While socca bakes, heat a separate skillet over medium heat, add oil, sauté onion until translucent, then add garlic and cook briefly until fragrant.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Add chopped greens to the skillet, season with salt, pepper and red pepper flakes if using; sauté until wilted and tender, then finish with lemon juice and remove from heat.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Fry eggs in a small nonstick or cast-iron skillet to desired doneness (sunny-side-up or over-easy recommended for runny yolks), seasoning with salt and pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Remove socca from oven, slice or tear into portions, top with sautéed greens and fried eggs, garnish with scallions and lemon zest, and serve immediately.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

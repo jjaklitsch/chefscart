@@ -1,0 +1,222 @@
+{
+  "slug": "chili-lime-grilled-shrimp",
+  "title": "Chili-Lime Grilled Shrimp",
+  "description": "Quick, bright and smoky grilled shrimp tossed in a zesty chili-lime marinade. Ready in under 30 minutes, this recipe balances tangy citrus, garlic, and a touch of heat for a vibrant weeknight dinner or grill-side appetizer.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "low-carb",
+    "keto"
+  ],
+  "primary_ingredient": "shrimp",
+  "ingredient_tags": [
+    "shrimp",
+    "lime",
+    "garlic",
+    "olive oil",
+    "chili",
+    "cilantro",
+    "honey",
+    "salt",
+    "pepper",
+    "paprika",
+    "cumin",
+    "skewers"
+  ],
+  "spice_level": 3,
+  "time_total_min": 28,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "seafood"
+  ],
+  "search_keywords": [
+    "shrimp",
+    "grilled shrimp",
+    "chili lime",
+    "lime shrimp",
+    "marinated shrimp",
+    "skewers",
+    "weeknight dinner",
+    "easy seafood",
+    "low carb",
+    "keto friendly",
+    "pescatarian",
+    "spicy shrimp",
+    "cilantro",
+    "garlic",
+    "summer grilling",
+    "barbecue",
+    "appetizer",
+    "seafood salad topper",
+    "meal prep",
+    "quick"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "large raw shrimp, peeled and deveined (16-20 count), tails on or off per preference",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "pat dry with paper towels"
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "from about 2 limes"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "about 9 g total"
+      },
+      {
+        "display_name": "honey (or agave for strict keto replace with 1/2 tsp erythritol; optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 7,
+        "ml": 5,
+        "optional": true,
+        "notes": "adds balance to heat; omit for strict keto"
+      },
+      {
+        "display_name": "chili powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/2 tsp if finely ground and preferred"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish and mixing"
+      },
+      {
+        "display_name": "lime zest (optional garnish)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "wooden or metal skewers (if using wooden, soak 30 minutes)",
+        "quantity": 8,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "about 2 shrimp per skewer for presentation"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 28,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare shrimp by peeling and deveining as needed, then pat them very dry with paper towels to ensure marinade adheres and they sear rather than steam.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Make the marinade: whisk together lime juice, olive oil, minced garlic, honey (if using), chili powder, smoked paprika, ground cumin, kosher salt, and black pepper in a bowl until combined.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Combine shrimp and marinade in a resealable bag or shallow dish; toss to coat thoroughly. Refrigerate and let marinate briefly, 10 minutes maximum to avoid 'cooking' the shrimp in acid.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "While shrimp marinates, soak wooden skewers in water for at least 30 minutes if using; preheat grill to medium-high (about 400-450°F / 200-230°C). Oil grill grates lightly to prevent sticking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Thread shrimp onto skewers (if using) or place directly on a hot grill. Grill shrimp 2-3 minutes per side until opaque and just firm, flipping once; total cook time 4-6 minutes depending on size.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Remove shrimp from grill, transfer to a plate, sprinkle with chopped cilantro and lime zest if desired, and let rest 1-2 minutes before serving. Serve with extra lime wedges.",
+        "time_min": -1
+      }
+    ]
+  },
+  "image_url": null
+}

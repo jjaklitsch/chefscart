@@ -1,0 +1,307 @@
+{
+  "slug": "escovitch-fish-with-pickled-veg",
+  "title": "Escovitch Fish with Pickled Veg",
+  "description": "Pan-fried whole fish crisped to golden brown, finished with a bright, vinegary escovitch sauce and quick-pickled vegetables for a balance of heat, acidity and crunchy texture. Classic Caribbean flavors with a simple stovetop technique that yields vibrant, layered taste.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "caribbean"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "whole snapper",
+  "ingredient_tags": [
+    "snapper",
+    "fish",
+    "vegetables",
+    "carrots",
+    "onion",
+    "scotch bonnet",
+    "scallion",
+    "bell pepper",
+    "white vinegar",
+    "white rum",
+    "allspice",
+    "thyme",
+    "lime",
+    "garlic",
+    "flour",
+    "oil",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 3,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "grain"
+  ],
+  "search_keywords": [
+    "escovitch",
+    "escoveitch",
+    "caribbean fish",
+    "fried fish",
+    "pickled vegetables",
+    "pickled veg",
+    "snapper recipe",
+    "quick pickle",
+    "vinegar sauce",
+    "spicy fish",
+    "jamaican escovitch",
+    "scotch bonnet",
+    "pescatarian dinner",
+    "pan-fried whole fish",
+    "allspice",
+    "lime",
+    "weeknight dinner",
+    "bright sauce",
+    "crispy skin"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "whole red snapper, scaled, gutted, head-on or trimmed",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 1000,
+        "ml": null,
+        "optional": false,
+        "notes": "about 450-550 g each; score both sides 3-4 times"
+      },
+      {
+        "display_name": "all-purpose flour (for dusting)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "seasoned with salt and pepper"
+      },
+      {
+        "display_name": "fine sea salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "vegetable oil (for frying)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 220,
+        "ml": 240,
+        "optional": false,
+        "notes": "neutral oil with high smoke point"
+      },
+      {
+        "display_name": "vegetable oil (for sauce)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "white vinegar",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lime"
+      },
+      {
+        "display_name": "water",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "to temper vinegar if desired"
+      },
+      {
+        "display_name": "white rum (optional splash)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "traditional but optional"
+      },
+      {
+        "display_name": "garlic, thinly sliced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "scotch bonnet or habanero pepper, seeded and thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for heat and wear gloves if seeding"
+      },
+      {
+        "display_name": "fresh thyme sprigs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tsp dried"
+      },
+      {
+        "display_name": "pimento (allspice) berries or ground allspice",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "use ground if berries unavailable"
+      },
+      {
+        "display_name": "carrots, julienned or thin matchsticks",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 medium carrots"
+      },
+      {
+        "display_name": "red onion, thinly sliced into half-moons",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium"
+      },
+      {
+        "display_name": "scallions (green onions), julienned",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts"
+      },
+      {
+        "display_name": "red bell pepper, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sugar (to balance acidity)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lime wedges (for serving)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into 4 wedges"
+      },
+      {
+        "display_name": "fresh parsley or cilantro (for garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "chopped"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the fish: rinse and pat dry whole fish, score both sides with 3-4 diagonal cuts, season inside cavity and exterior with half the salt and pepper, and set aside to come to room temperature.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Make pickled vegetables: combine sliced onion, carrots, bell pepper and scallions in a bowl; sprinkle with remaining salt and sugar and toss to soften while you heat the sauce.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Heat oil for the escovitch sauce in a small skillet over medium heat until shimmering; add sliced garlic and optional scotch bonnet and fry briefly until garlic is pale golden, about a minute, being careful not to burn.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Add thyme and allspice to the hot oil and stir for 20-30 seconds to bloom the aromatics, then remove from heat and stir in vinegar, lime juice, water and optional rum to form the escovitch sauce; pour hot sauce over the prepared vegetables so they begin to pickle.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Dredge the fish lightly in seasoned flour, shaking off excess, and heat a large skillet or frying pan with enough oil to come 1/4 inch up the sides over medium-high heat until hot but not smoking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Fry the fish: add fish to the pan and cook undisturbed until the skin is crisp and browned, about 6-8 minutes per side depending on thickness; carefully flip once and fry until just cooked through (opaque flesh and firm).",
+        "time_min": 16
+      },
+      {
+        "step_no": 7,
+        "text": "Transfer the fried fish to a platter and spoon the pickled vegetable and escovitch sauce mixture over and around the fish, allowing the hot oil-vinegar mix to sizzle on contact and slightly wilt the veg.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Rest for a few minutes to let flavors meld, garnish with chopped parsley or cilantro and serve with lime wedges alongside starches like rice or fried plantains if desired.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

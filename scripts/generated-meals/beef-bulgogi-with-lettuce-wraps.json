@@ -1,0 +1,286 @@
+{
+  "slug": "beef-bulgogi-with-lettuce-wraps",
+  "title": "Beef Bulgogi with Lettuce Wraps",
+  "description": "Thinly sliced marinated beef seared quickly for caramelized edges and tender bite, served with crisp lettuce cups and bright accompaniments. Sweet-savory-sesame flavors with garlic, ginger and scallions make quick handheld wraps perfect for weeknight dinners or entertaining.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "korean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "lettuce",
+    "soy sauce",
+    "sugar",
+    "garlic",
+    "ginger",
+    "scallion",
+    "sesame oil",
+    "rice",
+    "pear",
+    "carrot",
+    "cucumber",
+    "chili",
+    "sesame seeds",
+    "vegetable oil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "sesame",
+    "gluten"
+  ],
+  "search_keywords": [
+    "beef bulgogi",
+    "korean bbq",
+    "lettuce wraps",
+    "marinated beef",
+    "ssam",
+    "handheld",
+    "quick dinner",
+    "weeknight meal",
+    "sweet savory",
+    "garlic ginger",
+    "sesame oil",
+    "ribeye",
+    "flank steak",
+    "scallions",
+    "pear marinade",
+    "grilled pan-seared",
+    "low prep",
+    "party appetizer",
+    "caramelized beef",
+    "crisp lettuce"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "thinly sliced beef (ribeye or flank)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "very thin slices, about 2–3 mm; partially freeze for easier slicing if needed"
+      },
+      {
+        "display_name": "soy sauce (reduced-sodium preferred)",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "can substitute brown sugar for deeper flavor"
+      },
+      {
+        "display_name": "ripe Asian pear (or Bosc pear), grated",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "provides tenderizing enzymatic sweetness"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "toasted sesame oil for best flavor"
+      },
+      {
+        "display_name": "green onion / scallion, thinly sliced",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts, sliced on bias"
+      },
+      {
+        "display_name": "mirin or rice wine (optional but recommended)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "adds mild sweetness and gloss"
+      },
+      {
+        "display_name": "vegetable oil (for high-heat searing)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "neutral oil with high smoke point"
+      },
+      {
+        "display_name": "butter lettuce or bibb lettuce leaves, washed and separated",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "choose large intact leaves for wrapping"
+      },
+      {
+        "display_name": "carrot, julienned",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "for crunch and color"
+      },
+      {
+        "display_name": "english cucumber, julienned",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "seeds removed if watery"
+      },
+      {
+        "display_name": "gochugaru or red pepper flakes (optional)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for spice preference"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "short-grain cooked rice (for serving, optional)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 360,
+        "ml": 480,
+        "optional": true,
+        "notes": "serve on side for non-wrap eaters"
+      },
+      {
+        "display_name": "gochujang (Korean chili paste) or ssamjang for dipping",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "serve on the side"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning vegetables and rice if used"
+      },
+      {
+        "display_name": "fresh cilantro or perilla leaves (optional garnish)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "perilla (kkaennip) if available for authentic flavor"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Slice or prepare the beef thinly and place in a large bowl; pat dry any excess moisture for better sear.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "In a separate bowl combine soy sauce, sugar, grated pear, minced garlic, grated ginger, sesame oil, sliced scallions and mirin if using; whisk until sugar dissolves to make the marinade.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Pour the marinade over the beef, toss thoroughly to coat, cover and refrigerate for at least 15 minutes and up to 4 hours; short marination is fine for very thin slices.",
+        "time_min": 15
+      },
+      {
+        "step_no": 4,
+        "text": "While meat marinates, prepare vegetables: separate and dry lettuce leaves, julienne carrot and cucumber, and set out sesame seeds and condiments.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Heat a large heavy skillet or cast-iron pan over high heat until shimmering, add vegetable oil and when hot spread beef in a single layer (work in batches to avoid steaming).",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Sear beef without moving for 30–45 seconds to develop a crust, then stir or toss and continue cooking another 30–60 seconds until just cooked through and caramelized; remove to a plate and repeat with remaining beef.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Taste a piece and adjust seasoning with a pinch of salt or additional soy if needed; sprinkle toasted sesame seeds and extra sliced scallions over the cooked beef.",
+        "time_min": 1
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble wraps by placing a portion of beef into a lettuce leaf, topping with julienned vegetables, a dab of gochujang or ssamjang if desired, and garnish with cilantro or perilla; serve immediately.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

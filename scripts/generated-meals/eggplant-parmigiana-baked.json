@@ -1,0 +1,294 @@
+{
+  "slug": "eggplant-parmigiana-baked",
+  "title": "Eggplant Parmigiana (Baked)",
+  "description": "Layers of roasted eggplant, tangy tomato sauce, and melted cheeses baked until bubbly and golden. A comforting Italian-style vegetarian casserole that emphasizes bright herbs, garlic, and a crisp breadcrumb topping.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "eggplant",
+  "ingredient_tags": [
+    "eggplant",
+    "tomato",
+    "mozzarella",
+    "parmesan",
+    "basil",
+    "garlic",
+    "olive oil",
+    "breadcrumbs",
+    "eggs",
+    "flour",
+    "salt",
+    "pepper",
+    "onion",
+    "oregano",
+    "sugar"
+  ],
+  "spice_level": 1,
+  "time_total_min": 140,
+  "servings_default": 6,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "eggplant parmigiana",
+    "eggplant parmesan",
+    "baked eggplant",
+    "vegetarian casserole",
+    "italian comfort food",
+    "tomato sauce",
+    "mozzarella",
+    "parmesan",
+    "breaded eggplant",
+    "breadcrumbs",
+    "garlic",
+    "fresh basil",
+    "oven baked",
+    "layered casserole",
+    "meatless main",
+    "weeknight dinner",
+    "holiday side",
+    "crispy top",
+    "mediterranean",
+    "plant-forward"
+  ],
+  "ingredients_json": {
+    "servings": 6,
+    "ingredients": [
+      {
+        "display_name": "eggplants (large), sliced 1/2-inch thick",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 1500,
+        "ml": null,
+        "optional": false,
+        "notes": "trim ends and cut into 1.2 cm (1/2 in) rounds"
+      },
+      {
+        "display_name": "coarse salt (for sweating eggplant)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "used to draw moisture; rinse and pat dry after"
+      },
+      {
+        "display_name": "all-purpose flour (for dredging)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "large eggs, beaten (for dredging)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "beat until uniform"
+      },
+      {
+        "display_name": "plain breadcrumbs (panko or regular)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 160,
+        "ml": null,
+        "optional": false,
+        "notes": "for crisp topping and dredge"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": 81,
+        "ml": 90,
+        "optional": false,
+        "notes": "for roasting and sautéing"
+      },
+      {
+        "display_name": "yellow onion, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "crushed tomatoes (canned)",
+        "quantity": 28,
+        "unit": "oz",
+        "grams": 794,
+        "ml": 830,
+        "optional": false,
+        "notes": "one 28 oz can"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 34,
+        "ml": 30,
+        "optional": false,
+        "notes": "to deepen sauce"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried basil (or 1/3 cup fresh chopped)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": "use fresh if available"
+      },
+      {
+        "display_name": "granulated sugar (optional, to balance acidity)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": true,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "for sauce seasoning; adjust"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh mozzarella, sliced or torn",
+        "quantity": 16,
+        "unit": "oz",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "drain excess moisture if very wet"
+      },
+      {
+        "display_name": "grated Parmigiano-Reggiano (parmesan)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for topping"
+      },
+      {
+        "display_name": "fresh basil leaves, chiffonade",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "for layering and garnish"
+      },
+      {
+        "display_name": "salted butter, melted (optional for breadcrumb mix)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": true,
+        "notes": "helps breadcrumbs brown"
+      },
+      {
+        "display_name": "olive oil spray or additional oil for pan",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13.5,
+        "ml": 15,
+        "optional": false,
+        "notes": "to coat baking sheet or dish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 140,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare eggplant: slice eggplants into 1/2-inch rounds, arrange in a single layer on racks or trays, sprinkle both sides with coarse salt and let sweat for 30 minutes to draw out bitterness and moisture; rinse briefly and pat dry with paper towels.",
+        "time_min": 35
+      },
+      {
+        "step_no": 2,
+        "text": "Preheat oven to 220°C (425°F). Line baking sheets with parchment or brush with oil. Lightly coat eggplant slices with a thin layer of olive oil and place on sheets in a single layer; roast until golden and tender, about 10 minutes per side (20 minutes total).",
+        "time_min": 30
+      },
+      {
+        "step_no": 3,
+        "text": "Make tomato sauce: heat olive oil in a medium saucepan over medium heat, sauté diced onion until translucent, add minced garlic and cook briefly, stir in tomato paste, crushed tomatoes, oregano, basil, salt, pepper and optional sugar; simmer gently, uncovered, for 15 minutes to thicken and blend flavors.",
+        "time_min": 20
+      },
+      {
+        "step_no": 4,
+        "text": "Prepare dredging and topping: set three shallow bowls with flour, beaten eggs, and breadcrumbs mixed with grated parmesan and melted butter (if using); lightly dredge a few roasted eggplant slices in flour, dip in egg, then press into breadcrumb mixture if additional crispness is desired (this step is optional if you prefer unbreaded layers).",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "Assemble casserole: reduce oven to 190°C (375°F). In a 9x13 inch (or similar) baking dish, spread a thin layer of tomato sauce, arrange a single layer of eggplant slices, top with sauce, pieces of fresh mozzarella, a sprinkle of parmesan and some basil; repeat layers until ingredients are used, finishing with sauce, remaining parmesan and breadcrumbs for a crisp top.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Bake: cover dish loosely with foil and bake in preheated 190°C (375°F) oven for 20 minutes; remove foil and bake an additional 10 minutes until cheese is bubbly and top is golden. If top needs more browning, broil 1-2 minutes while watching closely.",
+        "time_min": 30
+      },
+      {
+        "step_no": 7,
+        "text": "Rest and serve: let casserole rest 10 minutes to set for easier slicing, garnish with fresh basil, drizzle a little olive oil if desired, then portion and serve warm.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

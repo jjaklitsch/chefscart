@@ -1,0 +1,329 @@
+{
+  "slug": "lentil-bolognese-over-whole-wheat-pasta",
+  "title": "Lentil Bolognese over Whole-Wheat Pasta",
+  "description": "Hearty, savory lentil bolognese simmers with aromatic soffrito, crushed tomatoes, and Italian herbs, served over nutty whole-wheat pasta. A comforting, plant-forward take on classic ragu that yields rich umami without meat.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegan",
+    "vegetarian"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "brown lentils",
+    "whole-wheat pasta",
+    "tomatoes",
+    "onion",
+    "carrot",
+    "celery",
+    "garlic",
+    "olive oil",
+    "tomato paste",
+    "vegetable broth",
+    "red wine",
+    "bay leaf",
+    "italian herbs",
+    "mushrooms",
+    "soy sauce",
+    "red pepper flakes",
+    "salt",
+    "black pepper",
+    "parsley",
+    "nutritional yeast"
+  ],
+  "spice_level": 2,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "grain",
+    "soy"
+  ],
+  "search_keywords": [
+    "lentil bolognese",
+    "vegan bolognese",
+    "whole wheat pasta",
+    "plant based pasta sauce",
+    "meatless ragu",
+    "brown lentils",
+    "tomato sauce",
+    "easy weeknight dinner",
+    "italian comfort food",
+    "nutritional yeast",
+    "one pot sauce",
+    "make ahead",
+    "high protein vegan",
+    "vegetarian pasta",
+    "winter warmer",
+    "simmered sauce",
+    "garlic and herbs",
+    "mushroom umami",
+    "red wine optional",
+    "olive oil saute"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "whole-wheat spaghetti or penne",
+        "quantity": 12,
+        "unit": "oz",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "use whole-wheat variety"
+      },
+      {
+        "display_name": "dry brown or green lentils, rinsed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed and picked over"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium"
+      },
+      {
+        "display_name": "carrots, finely diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 140,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 medium"
+      },
+      {
+        "display_name": "celery stalks, finely diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cremini or button mushrooms, finely chopped",
+        "quantity": 8,
+        "unit": "oz",
+        "grams": 225,
+        "ml": null,
+        "optional": true,
+        "notes": "adds umami; optional but recommended"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 33,
+        "ml": 30,
+        "optional": false,
+        "notes": "concentrated tomato flavor"
+      },
+      {
+        "display_name": "crushed tomatoes (canned)",
+        "quantity": 28,
+        "unit": "oz",
+        "grams": 794,
+        "ml": 828,
+        "optional": false,
+        "notes": "one 28-oz can"
+      },
+      {
+        "display_name": "low-sodium vegetable broth",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "add more for desired consistency"
+      },
+      {
+        "display_name": "dry red wine (optional)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": true,
+        "notes": "substitute extra broth if avoiding alcohol"
+      },
+      {
+        "display_name": "soy sauce or tamari",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": "tamari for gluten-free (note: soy allergen remains)"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried basil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "remove before serving"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for heat"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste and considering broth and soy sauce"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "nutritional yeast (optional topping)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": true,
+        "notes": "adds cheesy flavor"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare and measure all ingredients: rinse lentils, dice onion, carrot, celery, chop mushrooms if using, mince garlic, open tomatoes, and measure liquids.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Bring a large pot of salted water to a rolling boil for the pasta and set aside; pasta will be cooked while sauce simmers later.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Heat olive oil in a large wide skillet or Dutch oven over medium heat until shimmering, then add diced onion, carrot, and celery. Sauté, stirring occasionally, until softened and translucent.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Add chopped mushrooms to the pan (if using) and continue to cook until they release moisture and begin to brown, about the same time continue stirring to prevent sticking.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in minced garlic and tomato paste; cook briefly until fragrant and the paste darkens slightly to deepen flavor.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Deglaze the pan with red wine if using, scraping up browned bits, and reduce until mostly evaporated; if not using wine, skip this step and proceed with broth.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Add rinsed lentils, crushed tomatoes, vegetable broth, soy sauce, dried oregano, dried basil, bay leaf, red pepper flakes, salt, and pepper. Stir to combine and bring to a gentle simmer.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Lower heat to maintain a gentle simmer, cover partially, and cook until lentils are tender and sauce has thickened, stirring occasionally and adjusting liquid as needed.",
+        "time_min": 20
+      },
+      {
+        "step_no": 9,
+        "text": "About 10 minutes before the sauce is done, add pasta to the boiling water and cook until al dente according to package instructions; reserve a ladle of pasta cooking water before draining.",
+        "time_min": 10
+      },
+      {
+        "step_no": 10,
+        "text": "If sauce is too thick, add reserved pasta water a little at a time to reach desired consistency. Adjust seasoning, remove bay leaf, and stir in chopped parsley.",
+        "time_min": 2
+      },
+      {
+        "step_no": 11,
+        "text": "Plate drained pasta and top with generous spoonfuls of lentil bolognese. Offer nutritional yeast or additional parsley for garnish and serve immediately.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

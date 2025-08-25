@@ -1,0 +1,297 @@
+{
+  "slug": "vegan-mushroom-bourguignon",
+  "title": "Vegan Mushroom Bourguignon",
+  "description": "A rich, deeply savory plant-based take on the classic French stew, featuring meaty mushrooms braised in red wine, tomato, and herb-infused vegetable stock. Slow-simmered until glossy and thick, served with buttery mashed potatoes or crusty bread for comfort and depth.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "french"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "mushrooms",
+  "ingredient_tags": [
+    "mushrooms",
+    "carrots",
+    "onion",
+    "celery",
+    "garlic",
+    "tomato paste",
+    "red wine",
+    "vegetable stock",
+    "thyme",
+    "bay leaf",
+    "flour",
+    "olive oil",
+    "parsley",
+    "potatoes",
+    "maple syrup"
+  ],
+  "spice_level": 1,
+  "time_total_min": 105,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "gluten",
+    "soy"
+  ],
+  "search_keywords": [
+    "vegan mushroom bourguignon",
+    "vegan stew",
+    "mushroom bourguignon",
+    "plant-based bourguignon",
+    "red wine braised mushrooms",
+    "comfort food vegan",
+    "french vegan",
+    "mushroom stew",
+    "vegetarian dinner",
+    "easy vegan dinner",
+    "mashed potatoes pairing",
+    "one-pot vegan",
+    "hearty vegan stew",
+    "winter comfort",
+    "make-ahead stew",
+    "gluten thickened gravy",
+    "savory umami",
+    "thyme and bay leaf",
+    "tomato paste glaze"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "cremini mushrooms, halved (or mixed mushrooms)",
+        "quantity": 900,
+        "unit": "g",
+        "grams": 900,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed and halved; use mix of cremini, shiitake, and oyster if desired"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted vegan butter or additional olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for finishing and richer mouthfeel"
+      },
+      {
+        "display_name": "yellow onion, medium, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 150 g diced"
+      },
+      {
+        "display_name": "carrots, peeled and sliced 1/2-inch",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "celery stalks, sliced 1/4-inch",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 33,
+        "ml": null,
+        "optional": false,
+        "notes": "concentrated, for depth"
+      },
+      {
+        "display_name": "all-purpose flour (for thickening)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "can use gluten-free 1:1 if avoiding gluten"
+      },
+      {
+        "display_name": "dry red wine",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "use good drinking wine like pinot noir or merlot"
+      },
+      {
+        "display_name": "vegetable stock, low-sodium",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "warm before adding"
+      },
+      {
+        "display_name": "soy sauce or tamari",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "tamari for gluten-free option"
+      },
+      {
+        "display_name": "maple syrup or brown sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": null,
+        "optional": true,
+        "notes": "balances acidity (optional)"
+      },
+      {
+        "display_name": "fresh thyme sprigs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tsp dried thyme"
+      },
+      {
+        "display_name": "bay leaves",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra to finish"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "small potatoes, peeled and cut for mashing (optional serving)",
+        "quantity": 900,
+        "unit": "g",
+        "grams": 900,
+        "ml": null,
+        "optional": true,
+        "notes": "for 4 servings mashed potatoes"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 105,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare all produce: trim and halve mushrooms, dice onion, slice carrots and celery, mince garlic, and measure liquids; have thyme and bay leaves ready.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat 2 tablespoons olive oil in a large heavy-bottomed skillet or Dutch oven over medium-high heat until shimmering. Working in batches to avoid steaming, add mushrooms in a single layer and brown until deeply caramelized on both sides, about 6-8 minutes per batch. Remove browned mushrooms to a plate and set aside.",
+        "time_min": 18
+      },
+      {
+        "step_no": 3,
+        "text": "Lower heat to medium, add remaining 1 tablespoon oil and sauté onion, carrots, and celery until softened and beginning to color, about 6-8 minutes. Stir often to prevent burning.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic and tomato paste to the softened vegetables and cook, stirring constantly, until fragrant and tomato paste darkens slightly, about 1-2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Sprinkle the flour over the vegetables and stir to combine, cooking for about 1 minute to remove raw flour taste and to create a roux that will thicken the sauce.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Deglaze the pan by pouring in the red wine, scraping up browned bits from the bottom with a wooden spoon; simmer briskly until the wine reduces by roughly half, about 5-7 minutes.",
+        "time_min": 7
+      },
+      {
+        "step_no": 7,
+        "text": "Return the browned mushrooms to the pot. Add warm vegetable stock, soy sauce, maple syrup (if using), thyme sprigs, bay leaves, salt, and pepper. Bring to a gentle simmer.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Lower heat to maintain a gentle simmer, cover partially, and cook until vegetables are tender and sauce is reduced and glossy, stirring occasionally, about 25-30 minutes. Remove thyme stems and bay leaves before serving.",
+        "time_min": 30
+      },
+      {
+        "step_no": 9,
+        "text": "While stew simmers, prepare mashed potatoes if serving: cook potatoes in salted boiling water until fork-tender, drain, mash with vegan butter, salt and pepper to taste.",
+        "time_min": 20
+      },
+      {
+        "step_no": 10,
+        "text": "Finish the bourguignon by stirring in vegan butter (if using) and adjusting seasoning. Sprinkle chopped parsley on top and serve over mashed potatoes or with crusty bread.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

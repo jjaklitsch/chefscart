@@ -1,0 +1,298 @@
+{
+  "slug": "chicken-waffles",
+  "title": "Chicken & Waffles",
+  "description": "Crisp buttermilk fried chicken served on golden, fluffy waffles with a drizzle of maple butter and hot honey for contrast. Combines Southern-style fried chicken seasoning and a tender waffle batter for sweet, savory, and slightly spicy bites.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "southern",
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "buttermilk",
+    "flour",
+    "eggs",
+    "butter",
+    "maple syrup",
+    "hot honey",
+    "vegetable oil",
+    "baking powder",
+    "milk",
+    "sugar",
+    "salt",
+    "pepper",
+    "paprika",
+    "cayenne",
+    "garlic powder"
+  ],
+  "spice_level": 2,
+  "time_total_min": 90,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "chicken",
+    "waffles",
+    "fried chicken",
+    "buttermilk",
+    "maple syrup",
+    "southern",
+    "brined chicken",
+    "crispy",
+    "breakfast for dinner",
+    "sweet and savory",
+    "hot honey",
+    "weekend brunch",
+    "comfort food",
+    "deep fry",
+    "waffle iron",
+    "breaded chicken",
+    "spiced flour",
+    "maple butter",
+    "easy brunch",
+    "crispy skin"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in chicken thighs (skin-on), or boneless skin-on thighs",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 1600,
+        "ml": null,
+        "optional": false,
+        "notes": "about 200 g per thigh; can use drumsticks or boneless thighs"
+      },
+      {
+        "display_name": "buttermilk",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": 480,
+        "optional": false,
+        "notes": "for marinade"
+      },
+      {
+        "display_name": "large eggs (for batter and wash)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "2 for waffle batter, 1 for dredge (beaten)"
+      },
+      {
+        "display_name": "all-purpose flour (for dredge and waffles)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 cups for dredge, 2 cups for waffles"
+      },
+      {
+        "display_name": "cornstarch (for extra crisp)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 64,
+        "ml": null,
+        "optional": false,
+        "notes": "mix with flour for dredge"
+      },
+      {
+        "display_name": "baking powder (for waffles)",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "slightly sweeten waffles"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "divided between chicken and waffles"
+      },
+      {
+        "display_name": "black pepper (ground)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "paprika",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for dredge seasoning"
+      },
+      {
+        "display_name": "cayenne pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for heat"
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "whole milk",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "for waffle batter"
+      },
+      {
+        "display_name": "unsalted butter (melted)",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": 85,
+        "ml": 90,
+        "optional": false,
+        "notes": "for waffle batter and maple butter"
+      },
+      {
+        "display_name": "vegetable oil (for frying)",
+        "quantity": 1.75,
+        "unit": "cup",
+        "grams": 400,
+        "ml": 420,
+        "optional": false,
+        "notes": "enough for 2-3 inch deep fry in a Dutch oven"
+      },
+      {
+        "display_name": "maple syrup",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 180,
+        "optional": false,
+        "notes": "for serving and maple butter"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 30,
+        "optional": false,
+        "notes": "for hot honey drizzle"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "for hot honey"
+      },
+      {
+        "display_name": "powdered sugar (optional garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "vegetable oil or neutral oil (for waffle pan, spray or brush)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "to grease waffle iron"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 90,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the chicken: pat chicken dry, season lightly with salt and pepper, then submerge in buttermilk in a nonreactive container. Cover and refrigerate to marinate for at least 30 minutes (up to 8 hours) to tenderize.",
+        "time_min": 30
+      },
+      {
+        "step_no": 2,
+        "text": "Make dredge: in a wide bowl combine flour, cornstarch, paprika, garlic powder, cayenne (if using), salt, and pepper. Whisk to evenly distribute spices.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Heat oil for frying: pour oil into a heavy pot to a depth of 2–3 inches, place a thermometer and heat to 350°F (about 175°C). Maintain temperature during frying.",
+        "time_min": 10
+      },
+      {
+        "step_no": 4,
+        "text": "Dredge and fry chicken: remove chicken from buttermilk, let excess drip, dip in beaten egg if using, then press into seasoned flour mixture to coat completely. Fry in batches without overcrowding until internal temperature reaches 165°F (74°C) and crust is deep golden, about 12–14 minutes per batch for bone-in (8–10 minutes for smaller pieces). Drain on a wire rack set over a sheet pan.",
+        "time_min": 20
+      },
+      {
+        "step_no": 5,
+        "text": "Make waffle batter: in a large bowl whisk together flour, baking powder, sugar, remaining salt, and pepper. In a separate bowl combine milk, two eggs, and melted butter, then fold wet into dry until just combined. Preheat waffle iron and lightly grease.",
+        "time_min": 7
+      },
+      {
+        "step_no": 6,
+        "text": "Cook waffles: cook batter in a hot waffle iron according to manufacturer instructions until golden and crisp. Keep waffles warm in a low oven (about 200°F/95°C) on a wire rack while finishing remaining waffles.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Prepare maple butter and hot honey: whisk melted butter with maple syrup to make maple butter. Gently warm honey with red pepper flakes in a small saucepan for 1–2 minutes, remove from heat to infuse; strain if desired.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble and serve: place a waffle on each plate, top with a piece or two of fried chicken, drizzle with maple butter and hot honey, and finish with additional maple syrup or powdered sugar if desired. Serve immediately.",
+        "time_min": 8
+      }
+    ]
+  },
+  "image_url": null
+}

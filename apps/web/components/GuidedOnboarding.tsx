@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useState, useRef, useCallback, useEffect } from 'react'
-import { ShoppingCart, ArrowRight, ArrowLeft, Check, Upload, X, Camera, Plus, Menu, CheckCircle } from 'lucide-react'
-import { UserPreferences } from '../types'
+import { ShoppingCart, ArrowRight, ArrowLeft, Check, Upload, X, Camera, Plus, Menu, CheckCircle, Store } from 'lucide-react'
+import { UserPreferences, InstacartRetailer, RetailersResponse } from '../types'
 import Header from './Header'
 
 interface GuidedOnboardingProps {
@@ -32,40 +32,16 @@ const onboardingSteps: OnboardingStep[] = [
     required: false
   },
   {
+    id: 'cuisinePreferences',
+    title: 'Favorite cuisines',
+    question: 'What cuisines do you enjoy most?',
+    required: false
+  },
+  {
     id: 'foodsToAvoid',
     title: 'Foods to avoid',
     question: 'Are there any foods you need to avoid?',
     required: false
-  },
-  {
-    id: 'healthGoal',
-    title: 'Health goals',
-    question: 'What is your primary health goal?',
-    required: true
-  },
-  {
-    id: 'cookingTime',
-    title: 'Cooking time',
-    question: 'How much time do you prefer to spend cooking?',
-    required: true
-  },
-  {
-    id: 'cookingSkill',
-    title: 'Cooking skill',
-    question: 'How would you describe your cooking experience?',
-    required: true
-  },
-  {
-    id: 'budgetSensitivity',
-    title: 'Budget preference',
-    question: 'What is your budget preference for meals?',
-    required: true
-  },
-  {
-    id: 'organicPreference',
-    title: 'Organic preference',
-    question: 'How do you feel about organic ingredients?',
-    required: true
   },
   {
     id: 'favoriteFoods',
@@ -74,20 +50,32 @@ const onboardingSteps: OnboardingStep[] = [
     required: false
   },
   {
-    id: 'cuisinePreferences',
-    title: 'Favorite cuisines',
-    question: 'What cuisines do you enjoy most?',
+    id: 'organicPreference',
+    title: 'Organic preference',
+    question: 'How do you feel about organic ingredients?',
+    required: true
+  },
+  {
+    id: 'spiceTolerance',
+    title: 'Spice tolerance',
+    question: 'How spicy do you like your food?',
     required: false
   },
   {
-    id: 'additionalConsiderations',
-    title: 'Additional notes',
-    question: 'Any other dietary considerations or preferences?',
+    id: 'cookingTimePreference',
+    title: 'Cooking time preference',
+    question: 'How long do you want to spend cooking on average?',
     required: false
+  },
+  {
+    id: 'retailerSelection',
+    title: 'Preferred store',
+    question: 'Select your preferred grocery store for delivery',
+    required: true
   },
   {
     id: 'fridgePantryPhotos',
-    title: 'Got ingredients already?',
+    title: 'Pantry upload',
     question: 'Upload photos of your fridge and pantry to help us use what you already have',
     required: false
   }
@@ -96,98 +84,93 @@ const onboardingSteps: OnboardingStep[] = [
 // Dietary style options
 const dietaryStyleOptions = [
   { id: 'none', label: 'None', value: [], icon: '✅' },
+  { id: 'keto', label: 'Keto', value: ['keto'], icon: '🥑' },
+  { id: 'low_carb', label: 'Low-carb', value: ['low-carb'], icon: '🥒' },
+  { id: 'mediterranean', label: 'Mediterranean', value: ['mediterranean'], icon: '🫒' },
+  { id: 'paleo', label: 'Paleo', value: ['paleo'], icon: '🥩' },
+  { id: 'pescatarian', label: 'Pescatarian', value: ['pescatarian'], icon: '🐟' },
+  { id: 'plant_forward', label: 'Plant-forward (Flexitarian)', value: ['plant-forward'], icon: '🌿' },
   { id: 'vegan', label: 'Vegan', value: ['vegan'], icon: '🌱' },
   { id: 'vegetarian', label: 'Vegetarian', value: ['vegetarian'], icon: '🥬' },
-  { id: 'keto', label: 'Keto', value: ['keto'], icon: '🥑' },
-  { id: 'paleo', label: 'Paleo', value: ['paleo'], icon: '🥩' },
-  { id: 'gluten_free', label: 'Gluten-Free', value: ['gluten-free'], icon: '🌾' },
-  { id: 'low_carb', label: 'Low-Carb', value: ['low-carb'], icon: '🥒' },
-  { id: 'pescatarian', label: 'Pescatarian', value: ['pescatarian'], icon: '🐟' },
-  { id: 'mediterranean', label: 'Mediterranean', value: ['mediterranean'], icon: '🫒' },
-  { id: 'whole30', label: 'Whole30', value: ['whole30'], icon: '🥗' },
-  { id: 'dairy_free', label: 'Dairy-Free', value: ['dairy-free'], icon: '🥛' },
-  { id: 'nut_free', label: 'Nut-Free', value: ['nut-free'], icon: '🥜' },
-  { id: 'other', label: 'Other', value: 'other', icon: '✏️' }
+  { id: 'whole30', label: 'Whole30', value: ['whole30'], icon: '🥗' }
 ]
 
-// Favorite foods options  
+// Foods to avoid options (intolerances)
+const foodsToAvoidOptions = [
+  { id: 'none', label: 'None', value: [], icon: '✅' },
+  { id: 'dairy', label: 'Dairy', value: ['dairy'], icon: '🥛' },
+  { id: 'egg', label: 'Egg', value: ['egg'], icon: '🥚' },
+  { id: 'gluten', label: 'Gluten', value: ['gluten'], icon: '🌾' },
+  { id: 'grain', label: 'Grain', value: ['grain'], icon: '🌾' },
+  { id: 'peanut', label: 'Peanut', value: ['peanut'], icon: '🥜' },
+  { id: 'seafood', label: 'Seafood', value: ['seafood'], icon: '🦐' },
+  { id: 'sesame', label: 'Sesame', value: ['sesame'], icon: '🫘' },
+  { id: 'shellfish', label: 'Shellfish', value: ['shellfish'], icon: '🦪' },
+  { id: 'soy', label: 'Soy', value: ['soy'], icon: '🫛' },
+  { id: 'sulfite', label: 'Sulfite', value: ['sulfite'], icon: '🧪' },
+  { id: 'tree_nut', label: 'Tree Nut', value: ['tree_nut'], icon: '🌰' },
+  { id: 'wheat', label: 'Wheat', value: ['wheat'], icon: '🌾' }
+]
+
+// Favorite foods options - Proteins and Meal Formats
 const favoriteFoodsOptions = [
+  // Proteins
   { id: 'chicken', label: 'Chicken', value: ['chicken'], icon: '🐔' },
-  { id: 'steak', label: 'Steak', value: ['steak'], icon: '🥩' },
+  { id: 'beef_steak', label: 'Beef/Steak', value: ['beef', 'steak'], icon: '🥩' },
   { id: 'salmon', label: 'Salmon', value: ['salmon'], icon: '🐟' },
   { id: 'shrimp', label: 'Shrimp', value: ['shrimp'], icon: '🦐' },
-  { id: 'tofu', label: 'Tofu', value: ['tofu'], icon: '🧀' },
+  { id: 'tofu_tempeh', label: 'Tofu/Tempeh', value: ['tofu', 'tempeh'], icon: '🌱' },
+  { id: 'beans_lentils', label: 'Beans/Lentils', value: ['beans', 'lentils'], icon: '🫘' },
   { id: 'eggs', label: 'Eggs', value: ['eggs'], icon: '🥚' },
-  { id: 'rice_bowls', label: 'Rice Bowls', value: ['rice bowls'], icon: '🍚' },
+  // Meal Formats
   { id: 'pasta', label: 'Pasta', value: ['pasta'], icon: '🍝' },
+  { id: 'bowls', label: 'Bowls', value: ['bowls', 'rice bowls'], icon: '🍚' },
   { id: 'tacos', label: 'Tacos', value: ['tacos'], icon: '🌮' },
-  { id: 'stir_fry', label: 'Stir-Fry', value: ['stir-fry'], icon: '🥘' },
-  { id: 'salads', label: 'Salads', value: ['salads'], icon: '🥗' },
-  { id: 'soups', label: 'Soups', value: ['soups'], icon: '🍲' },
+  { id: 'stir_fry', label: 'Stir-fry', value: ['stir-fry'], icon: '🍳' },
   { id: 'burgers', label: 'Burgers', value: ['burgers'], icon: '🍔' },
-  { id: 'smoothies', label: 'Smoothies', value: ['smoothies'], icon: '🥤' },
+  { id: 'sandwiches_wraps', label: 'Sandwiches/Wraps', value: ['sandwiches', 'wraps'], icon: '🥪' },
+  { id: 'pizza', label: 'Pizza', value: ['pizza'], icon: '🍕' },
+  { id: 'salads', label: 'Salads', value: ['salads'], icon: '🥗' },
+  { id: 'soups_stews', label: 'Soups/Stews', value: ['soups', 'stews'], icon: '🍲' },
   { id: 'oatmeal', label: 'Oatmeal', value: ['oatmeal'], icon: '🥣' },
-  { id: 'yogurt', label: 'Yogurt', value: ['yogurt'], icon: '🥛' },
-  { id: 'roasted_veggies', label: 'Roasted Veggies', value: ['roasted vegetables'], icon: '🥕' }
+  { id: 'yogurt_parfaits', label: 'Yogurt Parfaits', value: ['yogurt', 'parfaits'], icon: '🥛' },
+  { id: 'roasted_vegetables', label: 'Roasted Vegetables', value: ['roasted vegetables'], icon: '🥕' }
 ]
 
-// Health goal options
-const healthGoalOptions = [
-  { id: 'weight_loss', label: 'Weight loss', value: 'weight_loss', icon: '📉' },
-  { id: 'muscle_gain', label: 'Muscle gain', value: 'muscle_gain', icon: '💪' },
-  { id: 'maintain', label: 'Maintain current health', value: 'maintain', icon: '⚖️' },
-  { id: 'family_balanced', label: 'Family balanced nutrition', value: 'family_balanced', icon: '👨‍👩‍👧‍👦' },
-  { id: 'athletic', label: 'Athletic performance', value: 'athletic', icon: '🏃‍♂️' }
+// Spice tolerance options (1-5 scale)
+const spiceToleranceOptions = [
+  { id: '1', label: '1 - Mild', value: '1', icon: '😊', description: 'No heat, very mild flavors' },
+  { id: '2', label: '2 - Low', value: '2', icon: '🙂', description: 'Just a hint of warmth' },
+  { id: '3', label: '3 - Medium', value: '3', icon: '😋', description: 'Moderate spice, noticeable heat' },
+  { id: '4', label: '4 - Hot', value: '4', icon: '🔥', description: 'Spicy with significant heat' },
+  { id: '5', label: '5 - Very Spicy', value: '5', icon: '🌶️', description: 'Maximum heat, very spicy' }
 ]
 
-// Cooking time options
-const cookingTimeOptions = [
-  { id: '15min', label: '15 minutes', value: 15, icon: '⚡' },
-  { id: '30min', label: '30 minutes', value: 30, icon: '⏰' },
-  { id: '45min', label: '45 minutes', value: 45, icon: '🧘' },
-  { id: '60min', label: '60 minutes', value: 60, icon: '👨‍🍳' }
+// Cooking time preference options
+const cookingTimePreferenceOptions = [
+  { id: 'under_15', label: '≤15 minutes', value: '≤15', icon: '⚡', description: 'Quick and simple meals' },
+  { id: 'under_30', label: '≤30 minutes', value: '≤30', icon: '⏰', description: 'Moderate cooking time' },
+  { id: 'under_45', label: '≤45 minutes', value: '≤45', icon: '⏲️', description: 'More elaborate meals' },
+  { id: 'no_preference', label: 'No preference', value: 'no_preference', icon: '🍳', description: 'Any cooking time is fine' }
 ]
 
-// Cooking skill options
-const cookingSkillOptions = [
-  { id: 'beginner', label: 'Beginner', value: 'beginner', icon: '🔰' },
-  { id: 'intermediate', label: 'Intermediate', value: 'intermediate', icon: '👨‍🍳' },
-  { id: 'advanced', label: 'Advanced', value: 'advanced', icon: '👨‍🍳' }
-]
-
-// Budget options
-const budgetOptions = [
-  { id: 'no_limit', label: 'No limit', value: 'no_limit', icon: '💳' },
-  { id: 'under_8', label: '≤ $8 per serving', value: 'under_8', icon: '💵' },
-  { id: 'under_12', label: '≤ $12 per serving', value: 'under_12', icon: '💵' },
-  { id: 'under_18', label: '≤ $18 per serving', value: 'under_18', icon: '💵' },
-  { id: 'custom', label: 'Custom amount (specify)', value: 'custom', icon: '✏️' }
-]
+// Removed: health goal, cooking skill, and budget options (no longer used)
 
 // Cuisine preference options
 const cuisinePreferenceOptions = [
-  { id: 'italian', label: 'Italian', value: ['italian'], icon: '🇮🇹' },
-  { id: 'mexican', label: 'Mexican', value: ['mexican'], icon: '🌮' },
-  { id: 'asian', label: 'Asian', value: ['asian'], icon: '🥢' },
-  { id: 'mediterranean', label: 'Mediterranean', value: ['mediterranean'], icon: '🫒' },
   { id: 'american', label: 'American', value: ['american'], icon: '🇺🇸' },
-  { id: 'indian', label: 'Indian', value: ['indian'], icon: '🍛' },
-  { id: 'thai', label: 'Thai', value: ['thai'], icon: '🌶️' },
+  { id: 'caribbean', label: 'Caribbean', value: ['caribbean'], icon: '🏝️' },
   { id: 'chinese', label: 'Chinese', value: ['chinese'], icon: '🥡' },
+  { id: 'french', label: 'French', value: ['french'], icon: '🇫🇷' },
+  { id: 'indian', label: 'Indian', value: ['indian'], icon: '🍛' },
+  { id: 'italian', label: 'Italian', value: ['italian'], icon: '🇮🇹' },
   { id: 'japanese', label: 'Japanese', value: ['japanese'], icon: '🍣' },
   { id: 'korean', label: 'Korean', value: ['korean'], icon: '🇰🇷' },
-  { id: 'french', label: 'French', value: ['french'], icon: '🇫🇷' },
-  { id: 'greek', label: 'Greek', value: ['greek'], icon: '🇬🇷' },
-  { id: 'spanish', label: 'Spanish', value: ['spanish'], icon: '🇪🇸' },
-  { id: 'middle_eastern', label: 'Middle Eastern', value: ['middle_eastern'], icon: '🧆' },
-  { id: 'moroccan', label: 'Moroccan', value: ['moroccan'], icon: '🇲🇦' },
-  { id: 'vietnamese', label: 'Vietnamese', value: ['vietnamese'], icon: '🇻🇳' },
-  { id: 'brazilian', label: 'Brazilian', value: ['brazilian'], icon: '🇧🇷' },
-  { id: 'peruvian', label: 'Peruvian', value: ['peruvian'], icon: '🇵🇪' },
-  { id: 'ethiopian', label: 'Ethiopian', value: ['ethiopian'], icon: '🇪🇹' },
-  { id: 'jamaican', label: 'Jamaican', value: ['jamaican'], icon: '🇯🇲' },
-  { id: 'variety', label: 'Mix it up!', value: ['italian', 'mexican', 'asian', 'american', 'indian', 'mediterranean'], icon: '🌍' },
-  { id: 'other', label: 'Other', value: 'other', icon: '✏️' }
+  { id: 'mediterranean', label: 'Mediterranean', value: ['mediterranean'], icon: '🫒' },
+  { id: 'mexican', label: 'Mexican', value: ['mexican'], icon: '🌮' },
+  { id: 'southern', label: 'Southern/Soul', value: ['southern'], icon: '🍗' },
+  { id: 'thai', label: 'Thai', value: ['thai'], icon: '🌶️' },
+  { id: 'vietnamese', label: 'Vietnamese', value: ['vietnamese'], icon: '🇻🇳' }
 ]
 
 // LocalStorage utilities for preference persistence
@@ -240,7 +223,6 @@ const convertPreferencesToAnswers = (preferences: UserPreferences): Record<strin
     dietaryStyle: preferences.dietaryStyle || preferences.diets || [],
     foodsToAvoid: preferences.foodsToAvoid || preferences.avoidIngredients || [],
     healthGoal: preferences.healthGoal || 'maintain',
-    cookingTime: preferences.maxCookingTime || preferences.maxCookTime || 30,
     cookingSkill: preferences.cookingSkillLevel || 'intermediate',
     budgetSensitivity: preferences.budgetSensitivity || 'no_limit',
     customBudgetAmount: preferences.customBudgetAmount || '',
@@ -252,7 +234,10 @@ const convertPreferencesToAnswers = (preferences: UserPreferences): Record<strin
     // Photo upload related
     identifiedIngredients: preferences.identifiedIngredients || [],
     manuallyAddedIngredients: preferences.manuallyAddedIngredients || [],
-    skipPhotoUpload: preferences.skipPhotoUpload || false
+    skipPhotoUpload: preferences.skipPhotoUpload || false,
+    
+    // Retailer selection
+    preferredRetailer: preferences.preferredRetailer || null
   }
 }
 
@@ -264,7 +249,10 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     servingsPerMeal: 3,
     breakfastMeals: 0,
     lunchMeals: 5,
-    dinnerMeals: 5
+    dinnerMeals: 5,
+    // Default values for new steps
+    spiceTolerance: '3', // Default to medium spice level
+    cookingTimePreference: '≤30' // Default to 30 minutes
   })
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [isDragging, setIsDragging] = useState(false)
@@ -280,6 +268,43 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   const [editingValue, setEditingValue] = useState('')
   const [showPasteModal, setShowPasteModal] = useState(false)
   const [pasteText, setPasteText] = useState('')
+  const [retailers, setRetailers] = useState<InstacartRetailer[]>([])
+  const [loadingRetailers, setLoadingRetailers] = useState(false)
+  const [retailersError, setRetailersError] = useState<string | null>(null)
+
+  // Fetch retailers when component mounts
+  useEffect(() => {
+    const fetchRetailers = async () => {
+      const zipCode = localStorage.getItem('chefscart_zipcode')
+      if (!zipCode) return
+      
+      setLoadingRetailers(true)
+      setRetailersError(null)
+      
+      try {
+        const response = await fetch('/api/retailers', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ zipCode })
+        })
+        
+        const data: RetailersResponse = await response.json()
+        
+        if (data.success && data.retailers.length > 0) {
+          setRetailers(data.retailers)
+        } else {
+          setRetailersError('No stores available in your area')
+        }
+      } catch (error) {
+        console.error('Error fetching retailers:', error)
+        setRetailersError('Unable to load stores. Please try again.')
+      } finally {
+        setLoadingRetailers(false)
+      }
+    }
+    
+    fetchRetailers()
+  }, [])
 
   // Load preferences from localStorage or initialPreferences on component mount
   useEffect(() => {
@@ -449,25 +474,12 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       return (answers.breakfastMeals || 0) > 0 || (answers.lunchMeals || 0) > 0 || (answers.dinnerMeals || 0) > 0
     }
     
-    // Health Goal - must select a health goal
-    if (currentStepData?.id === 'healthGoal') {
-      return answers.healthGoal && answers.healthGoal.trim() !== ''
+    // Retailer Selection - must select a retailer
+    if (currentStepData?.id === 'retailerSelection') {
+      return answers.preferredRetailer != null
     }
     
-    // Cooking Time - must select a time preference
-    if (currentStepData?.id === 'cookingTime') {
-      return answers.cookingTime && answers.cookingTime > 0
-    }
-    
-    // Cooking Skill - must select a skill level
-    if (currentStepData?.id === 'cookingSkill') {
-      return answers.cookingSkill && answers.cookingSkill.trim() !== ''
-    }
-    
-    // Budget Sensitivity - must select a budget preference
-    if (currentStepData?.id === 'budgetSensitivity') {
-      return answers.budgetSensitivity && answers.budgetSensitivity.trim() !== ''
-    }
+    // Removed validation for: healthGoal, cookingSkill, budgetSensitivity
     
     // All other steps are optional (dietaryStyle, foodsToAvoid, organicPreference, favoriteFoods, cuisinePreferences, additionalConsiderations, fridgePantryPhotos)
     return true
@@ -535,12 +547,12 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           }, [])
         })(),
         
-        // Health and cooking preferences
-        healthGoal: answers.healthGoal || 'maintain',
-        maxCookingTime: answers.cookingTime || 30,
-        cookingSkillLevel: answers.cookingSkill || 'intermediate',
-        budgetSensitivity: answers.budgetSensitivity || 'no_limit',
-        customBudgetAmount: answers.customBudgetAmount || '',
+        // Cooking preferences (defaults for removed steps)
+        healthGoal: 'maintain', // Default since health goal step removed
+        maxCookingTime: 30, // Default since cooking time step removed  
+        cookingSkillLevel: 'intermediate', // Default since cooking skill step removed
+        budgetSensitivity: 'no_limit', // Default since budget step removed
+        customBudgetAmount: '',
         organicPreference: answers.organicPreference || 'no_preference',
         
         // Process cuisine preferences - expand multi-value options
@@ -557,21 +569,19 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
             return [...acc, item]
           }, [])
           
-          // Add other cuisine preference if specified
-          if (answers.cuisinePreferencesOther) {
-            processed.push(answers.cuisinePreferencesOther)
-          }
-          
           return processed
         })(),
         
         // Meal participation settings
         mealParticipation: answers.mealParticipation || 'yes',
         
-        // Additional considerations
-        additionalConsiderations: answers.additionalConsiderations || '',
+        // Additional considerations (removed step)
+        additionalConsiderations: '',
         dietaryStyleOther: answers.dietaryStyleOther || '',
-        cuisinePreferencesOther: answers.cuisinePreferencesOther || '',
+        
+        // New preference fields
+        spiceTolerance: answers.spiceTolerance || '3',
+        cookingTimePreference: answers.cookingTimePreference || '≤30',
         
         // Photo and ingredient identification
         fridgePantryPhotos: answers.fridgePantryPhotos || [],
@@ -611,7 +621,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
             answers.foodsToAvoid.split(',').map((s: string) => s.trim()).filter(s => s.length > 0) : 
             []) : 
           [],
-        maxCookTime: answers.cookingTime || 30,
+        maxCookTime: 30, // Default since cooking time step removed
         preferredCuisines: (() => {
           const cuisineAnswers = answers.cuisinePreferences || []
           const processed = cuisineAnswers.reduce((acc: string[], item: string) => {
@@ -624,11 +634,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
             }
             return [...acc, item]
           }, [])
-          
-          // Add other cuisine preference if specified
-          if (answers.cuisinePreferencesOther) {
-            processed.push(answers.cuisinePreferencesOther)
-          }
           
           return processed
         })(),
@@ -656,7 +661,10 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         ],
         
         // Photo and ingredient identification (legacy compatibility)
-        pantryItems: [...identifiedIngredients, ...(answers.manuallyAddedIngredients || [])]
+        pantryItems: [...identifiedIngredients, ...(answers.manuallyAddedIngredients || [])],
+        
+        // Preferred retailer from selection
+        preferredRetailer: answers.preferredRetailer || undefined
       }
       
       // Clear stored preferences since we're completing the flow
@@ -694,18 +702,10 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     if (stepData.id === 'planSelector') {
       return (answers.breakfastMeals || 0) > 0 || (answers.lunchMeals || 0) > 0 || (answers.dinnerMeals || 0) > 0
     }
-    if (stepData.id === 'healthGoal') {
-      return answers.healthGoal && answers.healthGoal.trim() !== ''
+    if (stepData.id === 'retailerSelection') {
+      return answers.preferredRetailer != null
     }
-    if (stepData.id === 'cookingTime') {
-      return answers.cookingTime && answers.cookingTime > 0
-    }
-    if (stepData.id === 'cookingSkill') {
-      return answers.cookingSkill && answers.cookingSkill.trim() !== ''
-    }
-    if (stepData.id === 'budgetSensitivity') {
-      return answers.budgetSensitivity && answers.budgetSensitivity.trim() !== ''
-    }
+    // Removed validation for: healthGoal, cookingTime, cookingSkill, budgetSensitivity
     if (stepData.id === 'organicPreference') {
       return answers.organicPreference && answers.organicPreference.trim() !== ''
     }
@@ -899,7 +899,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       let message = `${rejectedCount} file(s) were skipped. `
       if (hasLargeFiles) message += 'Some files exceed 10MB. '
       if (hasUnsupportedFiles) message += 'Some files are not supported image formats. '
-      message += 'Supported: JPG, PNG, HEIC/HEIF from iPhone.'
+      message += 'Supported: JPG, PNG, HEIC/HEIF.'
       
       console.warn(message)
       // You could show a toast notification here
@@ -1303,7 +1303,160 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
             </div>
           )}
 
-          {/* Step 2: Dietary Style */}
+          {/* Step 7: Spice Tolerance */}
+          {currentStepData?.id === 'spiceTolerance' && (
+            <div className="space-y-4">
+              <p className="text-sm text-neutral-600 mb-4">Rate your spice tolerance from 1 (mild) to 5 (very spicy). Default is 3 (medium).</p>
+              <div className="space-y-3">
+                {spiceToleranceOptions.map((option) => (
+                  <button
+                    key={option.id}
+                    onClick={() => setAnswers(prev => ({ ...prev, spiceTolerance: option.value }))}
+                    className={`w-full p-4 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
+                      answers.spiceTolerance === option.value
+                        ? 'border-brand-500 bg-brand-50 text-brand-700'
+                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
+                    }`}
+                  >
+                    <span className="text-xl">{option.icon}</span>
+                    <div className="flex-1">
+                      <div className="font-medium">{option.label}</div>
+                      <div className="text-sm text-neutral-500">{option.description}</div>
+                    </div>
+                    {answers.spiceTolerance === option.value && (
+                      <Check className="w-4 h-4 text-brand-600" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Step 8: Cooking Time Preference */}
+          {currentStepData?.id === 'cookingTimePreference' && (
+            <div className="space-y-4">
+              <p className="text-sm text-neutral-600 mb-4">Lower times will mean simpler (yet still delicious) meals. Choose what works best for your schedule.</p>
+              <div className="space-y-3">
+                {cookingTimePreferenceOptions.map((option) => (
+                  <button
+                    key={option.id}
+                    onClick={() => setAnswers(prev => ({ ...prev, cookingTimePreference: option.value }))}
+                    className={`w-full p-4 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
+                      answers.cookingTimePreference === option.value
+                        ? 'border-brand-500 bg-brand-50 text-brand-700'
+                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
+                    }`}
+                  >
+                    <span className="text-xl">{option.icon}</span>
+                    <div className="flex-1">
+                      <div className="font-medium">{option.label}</div>
+                      <div className="text-sm text-neutral-500">{option.description}</div>
+                    </div>
+                    {answers.cookingTimePreference === option.value && (
+                      <Check className="w-4 h-4 text-brand-600" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Step 9: Retailer Selection */}
+          {currentStepData?.id === 'retailerSelection' && (
+            <div className="space-y-4">
+              {loadingRetailers && (
+                <div className="text-center py-8">
+                  <div className="loading-spinner mx-auto mb-4 w-8 h-8"></div>
+                  <p className="text-neutral-600">Loading nearby stores...</p>
+                </div>
+              )}
+              
+              {retailersError && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+                  <p className="text-red-700 mb-3">{retailersError}</p>
+                  <button
+                    onClick={() => {
+                      const fetchRetailers = async () => {
+                        const zipCode = localStorage.getItem('chefscart_zipcode')
+                        if (!zipCode) return
+                        
+                        setLoadingRetailers(true)
+                        setRetailersError(null)
+                        
+                        try {
+                          const response = await fetch('/api/retailers', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ zipCode })
+                          })
+                          
+                          const data: RetailersResponse = await response.json()
+                          
+                          if (data.success && data.retailers.length > 0) {
+                            setRetailers(data.retailers)
+                          } else {
+                            setRetailersError('No stores available in your area')
+                          }
+                        } catch (error) {
+                          console.error('Error fetching retailers:', error)
+                          setRetailersError('Unable to load stores. Please try again.')
+                        } finally {
+                          setLoadingRetailers(false)
+                        }
+                      }
+                      fetchRetailers()
+                    }}
+                    className="text-red-600 hover:text-red-700 font-medium underline"
+                  >
+                    Try again
+                  </button>
+                </div>
+              )}
+              
+              {!loadingRetailers && !retailersError && retailers.length > 0 && (
+                <div className="space-y-3">
+                  <p className="text-sm text-neutral-600 mb-4">
+                    Choose your preferred store for grocery delivery. We prioritize grocery stores to give you the best selection.
+                  </p>
+                  {retailers.map((retailer) => (
+                    <button
+                      key={retailer.retailer_key}
+                      onClick={() => setAnswers(prev => ({ ...prev, preferredRetailer: retailer }))}
+                      className={`w-full p-4 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-4 ${
+                        answers.preferredRetailer?.retailer_key === retailer.retailer_key
+                          ? 'border-brand-500 bg-brand-50 text-brand-700'
+                          : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
+                      }`}
+                    >
+                      <div className="w-12 h-12 bg-white rounded-lg border border-neutral-200 flex items-center justify-center">
+                        {retailer.retailer_logo_url ? (
+                          <img
+                            src={retailer.retailer_logo_url}
+                            alt={`${retailer.name} logo`}
+                            className="w-8 h-8 object-contain"
+                            onError={(e) => {
+                              // Fallback to store icon if logo fails to load
+                              e.currentTarget.style.display = 'none'
+                              e.currentTarget.nextElementSibling?.classList.remove('hidden')
+                            }}
+                          />
+                        ) : null}
+                        <Store className="w-6 h-6 text-neutral-400 hidden" />
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-medium block">{retailer.name}</span>
+                      </div>
+                      {answers.preferredRetailer?.retailer_key === retailer.retailer_key && (
+                        <Check className="w-5 h-5 text-brand-600 ml-auto" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Step 3: Dietary Style */}
           {currentStepData?.id === 'dietaryStyle' && (
             <div className="space-y-4">
               <div className="flex flex-wrap gap-2">
@@ -1339,164 +1492,78 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
             </div>
           )}
 
-          {/* Step 3: Foods to Avoid */}
+          {/* Step 4: Foods to Avoid */}
           {currentStepData?.id === 'foodsToAvoid' && (
-            <div>
-              <textarea
-                value={answers.foodsToAvoid || ''}
-                onChange={(e) => setAnswers(prev => ({ ...prev, foodsToAvoid: e.target.value }))}
-                className="w-full p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
-                rows={4}
-                placeholder="e.g. peanuts, shellfish, very spicy foods"
-              />
+            <div className="space-y-4">
+              <div className="flex flex-wrap gap-2">
+                {foodsToAvoidOptions.map((option) => (
+                  <button
+                    key={option.id}
+                    onClick={() => handlePillToggle('foodsToAvoid', option.value, foodsToAvoidOptions)}
+                    className={`inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 text-sm transition-all duration-200 ${
+                      isPillSelected('foodsToAvoid', option, foodsToAvoidOptions)
+                        ? 'border-brand-500 bg-brand-50 text-brand-700'
+                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
+                    }`}
+                  >
+                    <span>{option.icon}</span>
+                    <span className="font-medium">{option.label}</span>
+                    {isPillSelected('foodsToAvoid', option, foodsToAvoidOptions) && (
+                      <Check className="w-4 h-4 text-brand-600" />
+                    )}
+                  </button>
+                ))}
+              </div>
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Any other foods or ingredients you'd like to avoid?
+                </label>
+                <input
+                  type="text"
+                  value={answers.foodsToAvoidOther || ''}
+                  onChange={(e) => setAnswers(prev => ({ ...prev, foodsToAvoidOther: e.target.value }))}
+                  className="w-full p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
+                  placeholder="e.g. spicy food, mushrooms, onions"
+                />
+              </div>
             </div>
           )}
 
-          {/* Step 4: Health Goal */}
-          {currentStepData?.id === 'healthGoal' && (
-            <div className="space-y-3">
-              {healthGoalOptions.map((option) => (
-                <button
-                  key={option.id}
-                  onClick={() => setAnswers(prev => ({ ...prev, healthGoal: option.value }))}
-                  className={`w-full p-4 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
-                    answers.healthGoal === option.value
-                      ? 'border-brand-500 bg-brand-50 text-brand-700'
-                      : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
-                  }`}
-                >
-                  <span className="text-2xl">{option.icon}</span>
-                  <span className="font-medium">{option.label}</span>
-                  {answers.healthGoal === option.value && (
-                    <Check className="w-5 h-5 text-brand-600 ml-auto" />
-                  )}
-                </button>
-              ))}
-            </div>
-          )}
+          {/* Removed: Health Goal step */}
 
-          {/* Step 5: Cooking Time */}
-          {currentStepData?.id === 'cookingTime' && (
-            <div className="space-y-3">
-              {cookingTimeOptions.map((option) => (
-                <button
-                  key={option.id}
-                  onClick={() => setAnswers(prev => ({ ...prev, cookingTime: option.value }))}
-                  className={`w-full p-3 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
-                    answers.cookingTime === option.value
-                      ? 'border-brand-500 bg-brand-50 text-brand-700'
-                      : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
-                  }`}
-                >
-                  <span className="text-xl">{option.icon}</span>
-                  <span className="font-medium">{option.label}</span>
-                  {answers.cookingTime === option.value && (
-                    <Check className="w-4 h-4 text-brand-600 ml-auto" />
-                  )}
-                </button>
-              ))}
-            </div>
-          )}
 
-          {/* Step 6: Cooking Skill */}
-          {currentStepData?.id === 'cookingSkill' && (
-            <div className="space-y-3">
-              {cookingSkillOptions.map((option) => (
-                <button
-                  key={option.id}
-                  onClick={() => setAnswers(prev => ({ ...prev, cookingSkill: option.value }))}
-                  className={`w-full p-3 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
-                    answers.cookingSkill === option.value
-                      ? 'border-brand-500 bg-brand-50 text-brand-700'
-                      : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
-                  }`}
-                >
-                  <span className="text-xl">{option.icon}</span>
-                  <span className="font-medium">{option.label}</span>
-                  {answers.cookingSkill === option.value && (
-                    <Check className="w-4 h-4 text-brand-600 ml-auto" />
-                  )}
-                </button>
-              ))}
-            </div>
-          )}
+          {/* Removed: Cooking Skill step */}
 
-          {/* Step 7: Budget Sensitivity */}
-          {currentStepData?.id === 'budgetSensitivity' && (
-            <div className="space-y-3">
-              {budgetOptions.map((option) => (
-                <button
-                  key={option.id}
-                  onClick={() => setAnswers(prev => ({ ...prev, budgetSensitivity: option.value }))}
-                  className={`w-full p-3 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
-                    answers.budgetSensitivity === option.value
-                      ? 'border-brand-500 bg-brand-50 text-brand-700'
-                      : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
-                  }`}
-                >
-                  <span className="text-xl">{option.icon}</span>
-                  <span className="font-medium">{option.label}</span>
-                  {answers.budgetSensitivity === option.value && (
-                    <Check className="w-4 h-4 text-brand-600 ml-auto" />
-                  )}
-                </button>
-              ))}
-              {answers.budgetSensitivity === 'custom' && (
-                <div className="mt-3">
-                  <input
-                    type="text"
-                    value={answers.customBudgetAmount || ''}
-                    onChange={(e) => setAnswers(prev => ({ ...prev, customBudgetAmount: e.target.value }))}
-                    className="w-full p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
-                    placeholder="e.g. $6.50 per serving"
-                  />
-                </div>
-              )}
-            </div>
-          )}
+          {/* Removed: Budget Sensitivity step */}
 
-          {/* Step 8: Organic Preference */}
+          {/* Step 9: Organic Preference */}
           {currentStepData?.id === 'organicPreference' && (
             <div className="space-y-3">
               <button
-                onClick={() => setAnswers(prev => ({ ...prev, organicPreference: 'preferred' }))}
+                onClick={() => setAnswers(prev => ({ ...prev, organicPreference: 'yes' }))}
                 className={`w-full p-3 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
-                  answers.organicPreference === 'preferred'
+                  answers.organicPreference === 'yes'
                     ? 'border-brand-500 bg-brand-50 text-brand-700'
                     : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
                 }`}
               >
                 <span className="text-xl">🌱</span>
-                <span className="font-medium">Prefer organic when available</span>
-                {answers.organicPreference === 'preferred' && (
+                <span className="font-medium">Yes, prefer organic when available</span>
+                {answers.organicPreference === 'yes' && (
                   <Check className="w-4 h-4 text-brand-600 ml-auto" />
                 )}
               </button>
               <button
-                onClick={() => setAnswers(prev => ({ ...prev, organicPreference: 'only_if_within_10_percent' }))}
+                onClick={() => setAnswers(prev => ({ ...prev, organicPreference: 'no' }))}
                 className={`w-full p-3 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
-                  answers.organicPreference === 'only_if_within_10_percent'
+                  answers.organicPreference === 'no'
                     ? 'border-brand-500 bg-brand-50 text-brand-700'
                     : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
                 }`}
               >
                 <span className="text-xl">💰</span>
-                <span className="font-medium">Only if within 10% of regular price</span>
-                {answers.organicPreference === 'only_if_within_10_percent' && (
-                  <Check className="w-4 h-4 text-brand-600 ml-auto" />
-                )}
-              </button>
-              <button
-                onClick={() => setAnswers(prev => ({ ...prev, organicPreference: 'no_preference' }))}
-                className={`w-full p-3 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
-                  answers.organicPreference === 'no_preference'
-                    ? 'border-brand-500 bg-brand-50 text-brand-700'
-                    : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
-                }`}
-              >
-                <span className="text-xl">🤷‍♂️</span>
-                <span className="font-medium">No preference</span>
-                {answers.organicPreference === 'no_preference' && (
+                <span className="font-medium">No, go with the lowest cost option</span>
+                {answers.organicPreference === 'no' && (
                   <Check className="w-4 h-4 text-brand-600 ml-auto" />
                 )}
               </button>
@@ -1587,32 +1654,10 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                   </button>
                 ))}
               </div>
-              {answers.cuisinePreferences?.includes('other') && (
-                <div className="mt-3">
-                  <input
-                    type="text"
-                    value={answers.cuisinePreferencesOther || ''}
-                    onChange={(e) => setAnswers(prev => ({ ...prev, cuisinePreferencesOther: e.target.value }))}
-                    className="w-full p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
-                    placeholder="Please specify your preferred cuisine..."
-                  />
-                </div>
-              )}
             </div>
           )}
 
-          {/* Step 11: Additional Considerations */}
-          {currentStepData?.id === 'additionalConsiderations' && (
-            <div>
-              <textarea
-                value={answers.additionalConsiderations || ''}
-                onChange={(e) => setAnswers(prev => ({ ...prev, additionalConsiderations: e.target.value }))}
-                className="w-full p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
-                rows={4}
-                placeholder="Any other dietary considerations, family preferences, or cooking constraints we should know about?"
-              />
-            </div>
-          )}
+          {/* Removed: Additional Considerations step */}
 
           {/* Step 12: Fridge/Pantry Photos */}
           {currentStepData?.id === 'fridgePantryPhotos' && (
@@ -1658,7 +1703,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                           or <span className="text-brand-600 font-medium cursor-pointer">click to browse</span>
                         </p>
                         <p className="text-sm text-neutral-500">
-                          Upload up to 5 photos (JPG, PNG, HEIC/HEIF from iPhone). Max 10MB each.
+                          Upload up to 5 photos (JPG, PNG, HEIC/HEIF). Max 10MB each.
                         </p>
                       </div>
                     </div>

@@ -1,0 +1,293 @@
+{
+  "slug": "goan-fish-curry",
+  "title": "Goan Fish Curry",
+  "description": "A tangy, coconut-based curry from Goa featuring firm white fish simmered in a fragrant blend of roasted spices, tamarind and fresh coconut milk. Bright, slightly sour and mildly spicy, it pairs perfectly with steamed rice or konkani sannas.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "fish",
+  "ingredient_tags": [
+    "fish",
+    "coconut milk",
+    "tamarind",
+    "onion",
+    "garlic",
+    "ginger",
+    "red chili",
+    "coriander",
+    "cumin",
+    "mustard seed",
+    "curry leaf",
+    "turmeric",
+    "vegetable oil",
+    "salt"
+  ],
+  "spice_level": 3,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "goan fish curry",
+    "konkani curry",
+    "coconut curry",
+    "tamarind",
+    "white fish",
+    "kingfish",
+    "seabass",
+    "cod",
+    "spiced fish curry",
+    "roasted spice paste",
+    "coriander cumin paste",
+    "coconut milk curry",
+    "south indian",
+    "pescatarian",
+    "spicy sour curry",
+    "stewed fish",
+    "served with rice",
+    "goa recipe",
+    "weeknight dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "firm white fish (sea bass, cod or kingfish) cut into 6-8 pieces",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "skin on or off, cut into portions"
+      },
+      {
+        "display_name": "coconut milk (full-fat)",
+        "quantity": 400,
+        "unit": "ml",
+        "grams": null,
+        "ml": 400,
+        "optional": false,
+        "notes": "use canned or freshly extracted"
+      },
+      {
+        "display_name": "water",
+        "quantity": 200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 200,
+        "optional": false,
+        "notes": "adjust for desired consistency"
+      },
+      {
+        "display_name": "tamarind pulp, dissolved in warm water",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 tbsp paste loosened in 2 tbsp warm water"
+      },
+      {
+        "display_name": "onion, medium, finely sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "about 110 g sliced"
+      },
+      {
+        "display_name": "tomato, ripe, chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "about 120 g"
+      },
+      {
+        "display_name": "garlic cloves, peeled",
+        "quantity": 6,
+        "unit": "clove",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, peeled and chopped",
+        "quantity": 25,
+        "unit": "g",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried red chilies (kashmiri or byadgi for color)",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "remove stems"
+      },
+      {
+        "display_name": "coriander seeds",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cumin seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "mustard seeds (brown or yellow)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fenugreek seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional — small pinch adds bitterness if desired"
+      },
+      {
+        "display_name": "turmeric powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "coriander powder",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "balances tamarind acidity"
+      },
+      {
+        "display_name": "vegetable oil (or coconut oil)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh curry leaves",
+        "quantity": 10,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional but traditional"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "lime or lemon wedges for serving",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into wedges"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the fish: rinse pieces, pat dry, lightly salt and set aside while you prepare the spice paste and aromatics.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Roast the whole spices: in a dry skillet over medium heat, toast coriander seeds, cumin seeds, mustard seeds and dried red chilies until fragrant and slightly darker, shaking frequently—about a few minutes. Remove and cool.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Make the spice paste: transfer toasted spices to a blender with chopped garlic, ginger, chopped tomato, turmeric powder and a little water; blitz to a smooth paste, adding a splash of coconut milk if needed for consistency.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Sauté the aromatics: heat oil in a heavy-bottomed pan over medium heat, add curry leaves (if using) and sliced onion, and cook until translucent and beginning to brown, stirring regularly.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Cook the paste: add the blended spice paste to the pan with the onions and cook on medium-low, stirring, until the raw smell disappears and oil begins to separate from the masala, about 6–7 minutes.",
+        "time_min": 7
+      },
+      {
+        "step_no": 6,
+        "text": "Add liquids and simmer: pour in coconut milk, water and dissolved tamarind, stir to combine, bring to a gentle simmer and adjust salt and sugar; simmer uncovered for 5 minutes to meld flavors.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Add the fish and gently poach: gently slide fish pieces into the simmering curry, spoon sauce over them, cover and simmer on low heat until fish is just cooked through and flakes easily—about 6–8 minutes depending on thickness. Do not stir vigorously.",
+        "time_min": 7
+      },
+      {
+        "step_no": 8,
+        "text": "Finish and rest: remove pan from heat, let curry rest for 2–3 minutes to settle flavors, then taste and adjust seasoning. Serve hot with steamed rice or bread and lime wedges.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

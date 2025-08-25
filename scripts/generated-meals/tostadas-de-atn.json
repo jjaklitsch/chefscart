@@ -1,0 +1,238 @@
+{
+  "slug": "tostadas-de-atn",
+  "title": "Tostadas de Atún",
+  "description": "Crisp corn tostadas piled with a bright, citrusy tuna salad and crunchy vegetables, finished with creamy avocado and a hint of chile. Quick to assemble and perfect for a light lunch or casual dinner with bold Mexican-inspired flavors.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "tuna",
+  "ingredient_tags": [
+    "tuna",
+    "corn tostadas",
+    "avocado",
+    "red onion",
+    "tomato",
+    "cilantro",
+    "lime",
+    "jalapeño",
+    "mayonnaise",
+    "olive oil",
+    "cabbage",
+    "lettuce",
+    "salt",
+    "black pepper",
+    "cumin"
+  ],
+  "spice_level": 2,
+  "time_total_min": 20,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "seafood",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "tostadas",
+    "tuna tostadas",
+    "atún",
+    "mexican tuna salad",
+    "quick lunch",
+    "easy dinner",
+    "seafood",
+    "pescatarian",
+    "crispy tostadas",
+    "avocado",
+    "lime",
+    "cilantro",
+    "jalapeño",
+    "mayonnaise",
+    "fresh salsa",
+    "weeknight meal",
+    "light meal",
+    "boat-style tuna",
+    "corn tortillas",
+    "tuna salad recipe"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "canned tuna in water, drained",
+        "quantity": 14,
+        "unit": "oz",
+        "grams": 396,
+        "ml": null,
+        "optional": false,
+        "notes": "drain well and flake with fork"
+      },
+      {
+        "display_name": "corn tostadas",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 160,
+        "ml": null,
+        "optional": false,
+        "notes": "store-bought crisp tostadas"
+      },
+      {
+        "display_name": "ripe avocado, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled, pitted and diced"
+      },
+      {
+        "display_name": "mayonnaise",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "use light or regular"
+      },
+      {
+        "display_name": "red onion, finely diced",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 40,
+        "ml": 60,
+        "optional": false,
+        "notes": "about 1/4 cup"
+      },
+      {
+        "display_name": "tomato, seeded and diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium tomato"
+      },
+      {
+        "display_name": "shredded cabbage or romaine lettuce",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 70,
+        "ml": 240,
+        "optional": false,
+        "notes": "for crunch under the tuna"
+      },
+      {
+        "display_name": "cilantro, chopped",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": 60,
+        "optional": false,
+        "notes": "packed"
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lime"
+      },
+      {
+        "display_name": "jalapeño, seeded and minced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds shine and flavor"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": 1.25,
+        "optional": true,
+        "notes": "optional warm spice"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "hot sauce (optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "for added heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare produce: finely dice the red onion and tomato, chop the cilantro, seed and mince the jalapeño (if using), shred the cabbage or chop romaine, and dice the avocado; place separately ready for assembly.",
+        "time_min": 7
+      },
+      {
+        "step_no": 2,
+        "text": "Combine tuna and dressing: in a medium bowl, flake the drained tuna with a fork, add mayonnaise, lime juice, olive oil, ground cumin (if using), salt and pepper, then stir until evenly coated and slightly chunky.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Fold in fresh mix-ins: add the diced tomato, red onion, cilantro and minced jalapeño to the tuna mixture and gently fold to combine; taste and adjust seasoning with more salt, lime or hot sauce as desired.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Assemble tostadas: place a layer of shredded cabbage or lettuce on each tostada to protect from sogginess, divide the tuna mixture evenly among the tostadas, then top with diced avocado and an extra sprinkle of cilantro and black pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Finish and serve: serve immediately with lime wedges on the side; if preparing slightly ahead, keep assembled tostadas on a wire rack so they remain crisp and assemble avocado just before serving to prevent browning.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

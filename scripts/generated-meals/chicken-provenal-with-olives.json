@@ -1,0 +1,294 @@
+{
+  "slug": "chicken-provenal-with-olives",
+  "title": "Chicken Provençal with Olives",
+  "description": "Pan-seared chicken braised in a fragrant Provençal tomato and white wine sauce with garlic, rosemary, thyme and briny olives. Bright lemon and fresh herbs finish the dish for a rustic Mediterranean flavor profile.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "french",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "mediterranean"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "olive",
+    "tomato",
+    "white wine",
+    "garlic",
+    "onion",
+    "lemon",
+    "rosemary",
+    "thyme",
+    "bay leaf",
+    "olive oil",
+    "capers",
+    "chicken stock",
+    "butter",
+    "salt",
+    "black pepper",
+    "sugar"
+  ],
+  "spice_level": 1,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "chicken provençal",
+    "provençal chicken",
+    "chicken with olives",
+    "mediterranean chicken",
+    "braised chicken",
+    "white wine sauce",
+    "garlic rosemary chicken",
+    "lemon olives",
+    "tomato olive sauce",
+    "one-pan dinner",
+    "summer herbs",
+    "capers",
+    "comfort dinner",
+    "low spice",
+    "weeknight meal",
+    "olive tapenade style",
+    "pan sear then braise",
+    "french country",
+    "herb chicken",
+    "easy family dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in, skin-on chicken thighs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, pat dry"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "or to taste"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 40,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, smashed and thinly sliced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dry white wine (e.g., sauvignon blanc)",
+        "quantity": 3,
+        "unit": "oz",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": "can substitute additional stock"
+      },
+      {
+        "display_name": "canned crushed tomatoes",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "or passata"
+      },
+      {
+        "display_name": "low-sodium chicken stock",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "pitted niçoise or kalamata olives, halved",
+        "quantity": 3,
+        "unit": "oz",
+        "grams": 85,
+        "ml": null,
+        "optional": false,
+        "notes": "use a mix for best flavor"
+      },
+      {
+        "display_name": "capers, rinsed",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": 15,
+        "optional": true,
+        "notes": "optional but traditional"
+      },
+      {
+        "display_name": "fresh rosemary sprigs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tsp dried"
+      },
+      {
+        "display_name": "fresh thyme sprigs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tsp dried"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon, zested and juiced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": 15,
+        "optional": false,
+        "notes": "zest before juicing"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "balances acidity if needed"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "freshly grated Parmesan (optional garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "contains dairy allergen"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Season the chicken thighs all over with salt and pepper; let rest at room temperature while preparing other ingredients.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat olive oil and butter in a large heavy skillet over medium-high heat until shimmering; add chicken skin-side down and sear without moving until deep golden brown, about halfway cooked through; flip and brown the other side briefly. Remove chicken to a plate.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to medium; add sliced onion to the skillet and cook until softened and beginning to caramelize, stirring occasionally.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Add sliced garlic and cook until fragrant (do not burn), about one minute; deglaze the pan with white wine, scraping up browned bits and reducing the wine by about half.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in crushed tomatoes, chicken stock, lemon zest, sugar if using, rosemary, thyme and bay leaf; bring the sauce to a gentle simmer.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Return the seared chicken to the skillet, nestling pieces into the sauce skin-side up; scatter olives and capers around the chicken.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Cover the skillet partially and simmer gently until the chicken is cooked through and registers 75°C (165°F) at the thickest point, about 12–14 minutes depending on size.",
+        "time_min": 14
+      },
+      {
+        "step_no": 8,
+        "text": "Uncover, remove herb sprigs and bay leaf; spoon sauce over the chicken, add lemon juice and chopped parsley, adjust seasoning with salt and pepper, and simmer uncovered 1–2 minutes to meld flavors.",
+        "time_min": 4
+      },
+      {
+        "step_no": 9,
+        "text": "Serve chicken topped with pan sauce and optional grated Parmesan alongside crusty bread, rice, or roasted potatoes.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,269 @@
+{
+  "slug": "spinach-ricotta-lasagna",
+  "title": "Spinach & Ricotta Lasagna",
+  "description": "A comforting layered lasagna featuring tender pasta sheets, a creamy ricotta-spinach filling, and a bright tomato-basil sauce. Baked until bubbly and golden for a satisfying vegetarian main with classic Italian flavors.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "lasagna noodles",
+    "ricotta",
+    "spinach",
+    "parmesan",
+    "mozzarella",
+    "tomato",
+    "onion",
+    "garlic",
+    "olive oil",
+    "basil",
+    "egg",
+    "salt",
+    "pepper",
+    "nutmeg"
+  ],
+  "spice_level": 1,
+  "time_total_min": 95,
+  "servings_default": 6,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "lasagna",
+    "spinach ricotta",
+    "vegetarian lasagna",
+    "baked pasta",
+    "comfort food",
+    "tomato basil sauce",
+    "ricotta filling",
+    "weeknight dinner",
+    "make ahead",
+    "family meal",
+    "italian",
+    "cheesy",
+    "oven baked",
+    "layered pasta",
+    "meatless",
+    "spinach",
+    "parmesan",
+    "mozzarella",
+    "garlic",
+    "herby"
+  ],
+  "ingredients_json": {
+    "servings": 6,
+    "ingredients": [
+      {
+        "display_name": "lasagna noodles (dry or no-boil)",
+        "quantity": 12,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "standard 9x13 pan portion; if using fresh noodles, adjust cooking"
+      },
+      {
+        "display_name": "ricotta cheese",
+        "quantity": 900,
+        "unit": "g",
+        "grams": 900,
+        "ml": null,
+        "optional": false,
+        "notes": "whole-milk ricotta for best creaminess"
+      },
+      {
+        "display_name": "fresh spinach (packed)",
+        "quantity": 500,
+        "unit": "g",
+        "grams": 500,
+        "ml": null,
+        "optional": false,
+        "notes": "will wilt down when cooked; can substitute frozen thawed and squeezed"
+      },
+      {
+        "display_name": "mozzarella cheese, shredded",
+        "quantity": 350,
+        "unit": "g",
+        "grams": 350,
+        "ml": null,
+        "optional": false,
+        "notes": "part-skim or whole-milk depending on preference"
+      },
+      {
+        "display_name": "parmesan cheese, grated",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly grated for best flavor"
+      },
+      {
+        "display_name": "egg",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "helps bind the ricotta filling"
+      },
+      {
+        "display_name": "onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium yellow or white onion"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "crushed tomatoes (canned)",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": 800,
+        "optional": false,
+        "notes": "two 400g cans or equivalent; plain crushed or passata"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 34,
+        "ml": 30,
+        "optional": false,
+        "notes": "adds concentrated tomato flavor"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh basil, chopped",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a little for finishing"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "divided between sauce and filling; adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "nutmeg, ground",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "adds warmth to the ricotta"
+      },
+      {
+        "display_name": "butter (optional for pan or topping)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": true,
+        "notes": "optional dotting on top for browning"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 95,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 190°C (375°F). Lightly oil or butter a 9x13-inch (23x33 cm) baking dish.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Make the tomato sauce: heat olive oil in a skillet over medium heat, sauté chopped onion until translucent, add minced garlic and cook briefly until fragrant, stir in tomato paste, then add crushed tomatoes, dried oregano, half the salt and half the pepper; simmer gently to reduce and thicken while you prepare other components.",
+        "time_min": 20
+      },
+      {
+        "step_no": 3,
+        "text": "Cook or wilt the spinach: in a large pan, wilt fresh spinach with a splash of olive oil or steam until just collapsed; if using frozen, thaw and squeeze out excess moisture. Let cool slightly and chop coarsely.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Prepare the ricotta filling: combine ricotta, one beaten egg, grated parmesan (reserve some for topping), chopped spinach, nutmeg, remaining salt and pepper, and chopped basil in a bowl; mix until uniform and season to taste.",
+        "time_min": 7
+      },
+      {
+        "step_no": 5,
+        "text": "If using dry lasagna noodles that require boiling, cook them in salted boiling water until al dente, drain and separate sheets; if using no-boil noodles, ensure sauce is a bit thinner to allow proper hydration during baking.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Assemble the lasagna: spread a thin layer of tomato sauce on the bottom of the prepared dish, place a single layer of noodles to cover, spread one-third of the ricotta-spinach mixture, sprinkle a portion of shredded mozzarella, and spoon sauce over. Repeat for two more layers ending with sauce and remaining mozzarella and parmesan on top.",
+        "time_min": 7
+      },
+      {
+        "step_no": 7,
+        "text": "Cover the dish tightly with foil and bake in the preheated oven until heated through and bubbling, about 30 minutes. Remove foil for the last 8-10 minutes to brown the cheese top; if desired, dot with butter before the final browning.",
+        "time_min": 30
+      },
+      {
+        "step_no": 8,
+        "text": "Rest before serving: remove from oven and let the lasagna rest uncovered for 8 minutes to set the layers, then garnish with reserved basil, slice and serve warm.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,277 @@
+{
+  "slug": "beef-chow-fun",
+  "title": "Beef Chow Fun",
+  "description": "Wok-tossed wide rice noodles with tender stir-fried beef, crisped bean sprouts, scallions and a savory soy-based sauce. High-heat searing creates slightly charred edges on the noodles and beef for deep, smoky flavor.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "rice noodles",
+    "soy sauce",
+    "bean sprouts",
+    "scallions",
+    "onion",
+    "garlic",
+    "ginger",
+    "vegetable oil",
+    "sesame oil",
+    "cornstarch",
+    "sugar",
+    "black pepper",
+    "green onion",
+    "oyster sauce"
+  ],
+  "spice_level": 2,
+  "time_total_min": 27,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "gluten",
+    "sesame"
+  ],
+  "search_keywords": [
+    "beef chow fun",
+    "beef ho fun",
+    "stir-fry wide rice noodles",
+    "flat rice noodles",
+    "wok seared noodles",
+    "soy sauce beef",
+    "chinese stir fry",
+    "oyster sauce",
+    "bean sprouts",
+    "scallion",
+    "garlic ginger",
+    "weeknight dinner",
+    "takeout style",
+    "quick stir fry",
+    "smoky sear",
+    "beef and noodles",
+    "asian comfort food",
+    "restaurant style chow fun",
+    "high heat wok",
+    "marinated beef"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "flank steak, thinly sliced across the grain",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "slice 2-3 mm thick; partially freeze for easier slicing"
+      },
+      {
+        "display_name": "dried wide rice noodles (hor fun) or fresh wide rice noodles",
+        "quantity": 12,
+        "unit": "oz",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "if using dried, soak according to package until pliable but not mushy; if fresh, separate into portions"
+      },
+      {
+        "display_name": "soy sauce (regular or light)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dark soy sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for color and slight sweetness"
+      },
+      {
+        "display_name": "oyster sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for velveting the beef"
+      },
+      {
+        "display_name": "shaoxing wine or dry sherry",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for marinade"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "vegetable oil (neutral high-heat)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "for stir-frying"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "fresh ginger, minced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, thinly sliced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "about half a medium onion"
+      },
+      {
+        "display_name": "bean sprouts, rinsed and drained",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "scallions (green onions), cut into 1.5 inch pieces",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated"
+      },
+      {
+        "display_name": "white pepper or black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "used sparingly because soy sauces are salty"
+      },
+      {
+        "display_name": "water or beef broth (if noodles need loosening)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "add only if noodles are tough or to deglaze"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 27,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare noodles according to package: soak or briefly boil until pliable but still slightly firm. Drain and toss with a teaspoon of oil to prevent sticking, set aside.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Slice beef thinly and place in a bowl. Add cornstarch, 1 tablespoon soy sauce, shaoxing wine, and a pinch of pepper. Toss to coat and let marinate briefly while prepping vegetables.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Mix the stir-fry sauce in a small bowl: remaining soy sauce, dark soy sauce, oyster sauce, sugar and a splash of water or broth. Stir until combined and set aside.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Heat a wok or large skillet over high heat until very hot. Add 1 tablespoon vegetable oil and swirl. Add beef in a single layer and sear without moving until browned, about 45-60 seconds; stir-fry until just cooked through then remove beef to a plate.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Return wok to high heat, add remaining vegetable oil. Stir-fry onion, ginger and garlic briefly until fragrant, about 30 seconds, then add scallion whites and toss.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Add noodles to the wok and spread them out to contact the hot surface; allow to sit 30-45 seconds to develop light char, then toss and repeat once to get some caramelization without breaking the noodles.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Pour the prepared sauce over the noodles, toss quickly to coat. If mixture seems dry, add small amounts of water or broth to loosen. Return cooked beef and bean sprouts to the wok and toss together until everything is heated through and sauce is glossy.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Add scallion greens and drizzle sesame oil. Taste and adjust seasoning with salt or pepper. Remove from heat and serve immediately while hot.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

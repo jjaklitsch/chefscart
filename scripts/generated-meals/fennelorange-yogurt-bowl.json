@@ -1,0 +1,222 @@
+{
+  "slug": "fennelorange-yogurt-bowl",
+  "title": "Fennel–Orange Yogurt Bowl",
+  "description": "A crisp, refreshing yogurt bowl combining anise-scented fennel, bright segmented oranges, creamy yogurt and crunchy toasted almonds. Lightly dressed with honey and citrus zest for a balanced sweet-tart breakfast or snack with Mediterranean flavors.",
+  "courses": [
+    "breakfast",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "yogurt",
+  "ingredient_tags": [
+    "fennel",
+    "orange",
+    "yogurt",
+    "honey",
+    "almonds",
+    "lemon",
+    "olive oil",
+    "mint",
+    "vanilla",
+    "granola",
+    "cinnamon"
+  ],
+  "spice_level": 1,
+  "time_total_min": 14,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "fennel",
+    "orange",
+    "yogurt bowl",
+    "breakfast bowl",
+    "mediterranean",
+    "light snack",
+    "honey",
+    "toasted almonds",
+    "citrus",
+    "mint",
+    "vanilla yogurt",
+    "healthy breakfast",
+    "granola topping",
+    "anise",
+    "no-cook",
+    "quick breakfast",
+    "fresh fruit",
+    "cold yogurt",
+    "fennel salad",
+    "low prep"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "plain whole-milk yogurt",
+        "quantity": 340,
+        "unit": "g",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "preferably Greek-style for thickness, room-temperature or chilled"
+      },
+      {
+        "display_name": "fennel bulb",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed, fronds reserved, thinly sliced crosswise"
+      },
+      {
+        "display_name": "orange (navel or blood)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 320,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and segmented (supremes), reserve juices"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "for finishing drizzle"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 21,
+        "ml": 15,
+        "optional": false,
+        "notes": "adjust to taste or substitute maple syrup (vegan)"
+      },
+      {
+        "display_name": "toasted almonds, sliced",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly toasted until golden"
+      },
+      {
+        "display_name": "granola (optional for crunch)",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "use preferred variety"
+      },
+      {
+        "display_name": "fresh mint leaves",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "chiffonade or whole for garnish"
+      },
+      {
+        "display_name": "orange zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated, from one orange"
+      },
+      {
+        "display_name": "ground cinnamon",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional dusting"
+      },
+      {
+        "display_name": "vanilla extract",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "adds depth to yogurt"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to balance sweetness; fine salt"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, enhances fennel brightness"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 14,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare fruit and fennel: trim fennel bulb, reserve fronds, thinly slice crosswise; peel and segment the oranges over a bowl to catch juices and set segments aside.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Make dressing: whisk together lemon juice, honey, vanilla extract, orange juice from segmentation, salt and olive oil in a small bowl until emulsified.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Toss fennel with half the dressing in a bowl to lightly marinate and soften edges, then let rest briefly.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Assemble yogurt base: divide yogurt between bowls, stir a small drizzle of dressing into each portion to flavor, and spread to form a shallow well.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Top bowls: arrange marinated fennel and orange segments over yogurt, sprinkle toasted almonds, granola if using, orange zest and chopped mint; finish with a light drizzle of remaining dressing and a pinch of cinnamon or black pepper if desired.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

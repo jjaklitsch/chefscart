@@ -1,0 +1,217 @@
+{
+  "slug": "whole30-herb-roasted-chicken-thighs",
+  "title": "Whole30 Herb-Roasted Chicken Thighs",
+  "description": "Bone-in, skin-on chicken thighs roasted with a bright herb-garlic marinade until the skin is crisp and the meat is juicy. Finished with lemon and fresh parsley for a bright, Whole30-compliant weeknight or meal-prep dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "whole30",
+    "paleo",
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "chicken thighs",
+    "garlic",
+    "lemon",
+    "olive oil",
+    "fresh herbs",
+    "parsley",
+    "thyme",
+    "rosemary",
+    "salt",
+    "black pepper",
+    "paprika",
+    "onion powder"
+  ],
+  "spice_level": 1,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "whole30",
+    "herb roasted",
+    "chicken thighs",
+    "bone-in",
+    "skin-on",
+    "meal prep",
+    "paleo",
+    "low carb",
+    "weeknight dinner",
+    "lemon garlic",
+    "crispy skin",
+    "rosemary",
+    "thyme",
+    "parsley",
+    "oven roasted",
+    "easy dinner",
+    "gluten free",
+    "dairy free",
+    "healthy",
+    "family meal"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in, skin-on chicken thighs",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 1600,
+        "ml": null,
+        "optional": false,
+        "notes": "about 200g per thigh; patted dry"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 40,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about juice of 1 lemon"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced fine"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": 240,
+        "optional": false,
+        "notes": "loosely packed"
+      },
+      {
+        "display_name": "fresh thyme leaves, chopped (stems removed)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh rosemary, finely chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": 15,
+        "optional": false,
+        "notes": "needles only"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "onion powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.4,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "adjust if using table salt"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon, sliced into rounds (for roasting and garnish)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for extra brightness"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 425°F (220°C). Position a rack in the middle of the oven and line a rimmed baking sheet with parchment or foil for easier cleanup.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare the herb-garlic marinade by whisking together the olive oil, lemon juice, minced garlic, chopped parsley, thyme, rosemary, smoked paprika, onion powder, salt, and pepper in a bowl until combined.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Pat the chicken thighs very dry with paper towels. Place the thighs skin-side up on the prepared baking sheet spaced at least an inch apart. Reserve any excess marinade for basting.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Brush or spoon about half of the herb marinade over the skin of each thigh, massaging gently so the marinade adheres to the skin and under the edges where possible.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Roast the thighs in the preheated oven for 25 minutes without disturbing to allow the skin to crisp and the meat to begin cooking through.",
+        "time_min": 25
+      },
+      {
+        "step_no": 6,
+        "text": "Remove the baking sheet and baste the thighs with the reserved marinade, add lemon slices between thighs if using, then return to the oven and roast an additional 5 minutes or until an instant-read thermometer inserted into the thickest part reads 165°F (74°C) and skin is deeply golden.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Transfer the thighs to a cutting board and let rest for 5 minutes to redistribute juices. Spoon any pan juices over the thighs, sprinkle with additional chopped parsley and serve with lemon wedges.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

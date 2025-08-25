@@ -1,0 +1,230 @@
+{
+  "slug": "apple-walnut-gorgonzola-balsamic-salad",
+  "title": "Apple Walnut Gorgonzola Balsamic Salad",
+  "description": "A crisp, refreshing salad combining sweet-tart apples, crunchy toasted walnuts and creamy gorgonzola, finished with a bright honey-balsamic vinaigrette. Quick to assemble, it balances sweet, savory and tangy flavors for a versatile lunch or side dish.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "apple",
+  "ingredient_tags": [
+    "apple",
+    "walnuts",
+    "gorgonzola",
+    "mixed greens",
+    "arugula",
+    "balsamic vinegar",
+    "honey",
+    "olive oil",
+    "shallot",
+    "lemon",
+    "mustard",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 20,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "apple salad",
+    "gorgonzola",
+    "walnut salad",
+    "balsamic vinaigrette",
+    "honey mustard dressing",
+    "mixed greens",
+    "arugula salad",
+    "fall salad",
+    "autumn flavors",
+    "quick salad",
+    "lunch salad",
+    "vegetarian salad",
+    "toasted walnuts",
+    "crisp apples",
+    "cheese salad",
+    "side dish",
+    "easy recipe",
+    "no-cook",
+    "salad with fruit",
+    "light dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "mixed salad greens (spring mix or mesclun)",
+        "quantity": 6,
+        "unit": "oz",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "washed and spun dry"
+      },
+      {
+        "display_name": "arugula",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "peppery arugula to mix with greens"
+      },
+      {
+        "display_name": "apple (firm variety, e.g., Honeycrisp or Fuji), cored and thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "walnuts, toasted and roughly chopped",
+        "quantity": 3,
+        "unit": "oz",
+        "grams": 85,
+        "ml": null,
+        "optional": false,
+        "notes": "toast in dry skillet until fragrant"
+      },
+      {
+        "display_name": "gorgonzola (crumbly or dolce), crumbled",
+        "quantity": 4,
+        "unit": "oz",
+        "grams": 113,
+        "ml": null,
+        "optional": false,
+        "notes": "can substitute blue cheese"
+      },
+      {
+        "display_name": "extra virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 54,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "balsamic vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 26,
+        "ml": 30,
+        "optional": false,
+        "notes": "use good-quality aged balsamic if available"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 21,
+        "ml": 15,
+        "optional": false,
+        "notes": "adjust to taste for sweetness"
+      },
+      {
+        "display_name": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": "helps emulsify dressing"
+      },
+      {
+        "display_name": "shallot, finely minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "or 2 tbsp minced red onion"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "prevents apple browning and brightens dressing"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; use kosher if preferred"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "extra walnuts for garnish (optional)",
+        "quantity": 0.5,
+        "unit": "oz",
+        "grams": 14,
+        "ml": null,
+        "optional": true,
+        "notes": "reserve some pieces for topping"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Toast the walnuts in a dry skillet over medium heat, stirring frequently until fragrant and slightly browned; transfer to a bowl to cool.",
+        "time_min": 4
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare the dressing by whisking together balsamic vinegar, honey, Dijon mustard, minced shallot, lemon juice, salt and pepper in a bowl, then slowly whisk in the olive oil until emulsified.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Core and thinly slice the apples; toss slices immediately with a small splash of lemon juice if not using dressing right away to prevent browning.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Combine mixed greens and optional arugula in a large salad bowl and gently toss to mix.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Add apple slices, toasted walnuts and crumbled gorgonzola to the greens, then drizzle about three-quarters of the dressing over the salad and toss gently to coat evenly.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Taste and adjust seasoning with additional salt, pepper or dressing as needed, then plate and finish with reserved walnut pieces and a light drizzle of any remaining dressing.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,352 @@
+{
+  "slug": "bn-tht-nng-vermicelli-bowl",
+  "title": "Bún Thịt Nướng (Vermicelli Bowl)",
+  "description": "A refreshing Vietnamese vermicelli bowl featuring caramelized grilled pork, crisp pickled vegetables, fresh herbs, crunchy peanuts and a tangy sweet-sour fish sauce dressing. Balances smoky char from the meat with bright herbs and textural contrasts for a vibrant, satisfying meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "vietnamese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "rice vermicelli",
+    "rice noodles",
+    "fish sauce",
+    "garlic",
+    "shallot",
+    "sugar",
+    "lime",
+    "cucumber",
+    "carrot",
+    "lettuce",
+    "mint",
+    "cilantro",
+    "peanut",
+    "chili",
+    "vegetable oil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 90,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "peanut",
+    "soy",
+    "sesame",
+    "grain",
+    "gluten"
+  ],
+  "search_keywords": [
+    "bun thit nuong",
+    "vermicelli bowl",
+    "grilled pork",
+    "rice vermicelli",
+    "bun",
+    "nuoc cham",
+    "vietnamese",
+    "pickled carrots",
+    "nuoc mam",
+    "fresh herbs",
+    "mint",
+    "cilantro",
+    "crushed peanuts",
+    "charred pork",
+    "summer bowl",
+    "light dinner",
+    "grilled meat",
+    "hoisin substitute",
+    "garlic marinade",
+    "table sauce"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "pork shoulder or pork butt, thinly sliced",
+        "quantity": 700,
+        "unit": "g",
+        "grams": 700,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, slice 3-4 mm thick across the grain or ask butcher to slice"
+      },
+      {
+        "display_name": "rice vermicelli (dried)",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "soak or cook according to package until tender"
+      },
+      {
+        "display_name": "fish sauce (nuoc mam)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "for marinade and dressing combined"
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adds color and umami to marinade"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 38,
+        "ml": null,
+        "optional": false,
+        "notes": "use for caramelizing marinade"
+      },
+      {
+        "display_name": "shallots, minced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 small shallots"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "roughly minced"
+      },
+      {
+        "display_name": "vegetable oil (neutral)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for marinade and grilling brushing"
+      },
+      {
+        "display_name": "black pepper, ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "for finishing in marinade (optional)"
+      },
+      {
+        "display_name": "carrots, julienned",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "for quick pickling"
+      },
+      {
+        "display_name": "daikon or white radish, julienned",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "can substitute with more carrot"
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 100,
+        "unit": "ml",
+        "grams": null,
+        "ml": 100,
+        "optional": false,
+        "notes": "for quick pickle"
+      },
+      {
+        "display_name": "water (for pickling and sauce)",
+        "quantity": 200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 200,
+        "optional": false,
+        "notes": "split between pickle and sauce"
+      },
+      {
+        "display_name": "lime juice (fresh)",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "about 2 limes"
+      },
+      {
+        "display_name": "warm water (for nuoc cham dilution)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "helps dissolve sugar and balance sauce"
+      },
+      {
+        "display_name": "granulated sugar (for nuoc cham)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 38,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "garlic, minced (for nuoc cham)",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "minced finely"
+      },
+      {
+        "display_name": "bird's eye chili or thai chili, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for spice level"
+      },
+      {
+        "display_name": "cucumber, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "seeded if desired"
+      },
+      {
+        "display_name": "butter lettuce or mixed lettuce leaves, torn",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "for freshness"
+      },
+      {
+        "display_name": "fresh mint leaves",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "pick leaves from stems"
+      },
+      {
+        "display_name": "fresh cilantro leaves",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "leaves only"
+      },
+      {
+        "display_name": "roasted peanuts, coarsely chopped",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fried shallots or crispy shallots",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "optional crunchy topping"
+      },
+      {
+        "display_name": "neutral oil for grilling (brush)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "to prevent sticking"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 90,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the marinade: combine fish sauce, light soy sauce, granulated sugar, minced shallots, minced garlic, vegetable oil, black pepper and optional sesame oil in a bowl until sugar dissolves; taste to balance sweet-salty-acidity.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Marinate the pork: add thinly sliced pork to the marinade, toss to coat thoroughly, cover and refrigerate for at least 30 minutes to 2 hours for best flavor (minimum marinate time assumed here).",
+        "time_min": 30
+      },
+      {
+        "step_no": 3,
+        "text": "Make quick pickles: combine rice vinegar, water, and sugar in a jar or bowl until sugar dissolves; add julienned carrots and daikon, press to submerge and refrigerate for 15 minutes to quick-pickle while other components are prepared.",
+        "time_min": 15
+      },
+      {
+        "step_no": 4,
+        "text": "Prepare nuoc cham (dressing): dissolve sugar in warm water, stir in fish sauce and fresh lime juice, then add minced garlic and sliced chili; adjust balance of sweet, salty and sour to taste and set aside at room temperature.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Cook vermicelli: bring a large pot of water to a boil, add rice vermicelli and cook according to package instructions until just tender (usually 3–5 minutes), drain and rinse under cold water to stop cooking; toss lightly with a little oil if not serving immediately.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Grill or pan-sear the pork: heat a grill pan or outdoor grill over high heat and brush with neutral oil; remove excess marinade from pork, then grill slices in a single layer until nicely charred and cooked through, about 2–3 minutes per side depending on thickness; work in batches to avoid crowding.",
+        "time_min": 12
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble bowls: divide cooked vermicelli among bowls, top with torn lettuce, sliced cucumber, drained pickled carrots and daikon, grilled pork, fresh mint and cilantro, then sprinkle with chopped roasted peanuts and optional fried shallots.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Serve with nuoc cham on the side and allow diners to drizzle dressing over their bowls or spoon it over the meat and noodles; garnish with extra lime wedges and chili if desired.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

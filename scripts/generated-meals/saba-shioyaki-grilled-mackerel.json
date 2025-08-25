@@ -1,0 +1,162 @@
+{
+  "slug": "saba-shioyaki-grilled-mackerel",
+  "title": "Saba Shioyaki (Grilled Mackerel)",
+  "description": "Saba Shioyaki is a classic Japanese preparation of mackerel simply seasoned with salt and grilled until the skin is crisp and flesh is tender and oily. Bright lemon or grated daikon often accompanies the fish to cut through the richness, highlighting clean umami and smoky char from grilling.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "low-carb"
+  ],
+  "primary_ingredient": "mackerel",
+  "ingredient_tags": [
+    "mackerel",
+    "fish",
+    "salt",
+    "lemon",
+    "daikon",
+    "vegetable",
+    "oil",
+    "pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 35,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "saba",
+    "shioyaki",
+    "grilled mackerel",
+    "japanese grilled fish",
+    "salt grilled fish",
+    "mackerel recipe",
+    "daikon oroshi",
+    "lemon",
+    "pescatarian",
+    "low-carb",
+    "quick weeknight",
+    "charred skin",
+    "umami",
+    "simple seasoning",
+    "fish fillet",
+    "yakitori grill alternative",
+    "broiler method",
+    "pan-fry option",
+    "healthy fats",
+    "omega-3"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "saba (mackerel) fillets, skin-on, butterflied or halved",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "about 180 g per fillet; pat very dry with paper towel"
+      },
+      {
+        "display_name": "coarse sea salt (or kosher salt)",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning; adjust to taste"
+      },
+      {
+        "display_name": "neutral oil (grapeseed or vegetable) for brushing",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "to prevent sticking and help crisp skin"
+      },
+      {
+        "display_name": "lemon wedges",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "daikon radish, peeled and grated (daikon oroshi)",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": true,
+        "notes": "serve chilled alongside fish; squeeze out excess liquid if desired"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional finishing seasoning"
+      },
+      {
+        "display_name": "soy sauce (for serving)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": true,
+        "notes": "optional dip for daikon or fish; omit if avoiding soy"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the fish: if whole or butterflied, trim any bones and ensure fillets are roughly equal thickness. Pat skin and flesh thoroughly dry with paper towels to promote even browning.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Salt the fish: sprinkle coarse sea salt evenly over both sides of each fillet, concentrating slightly more on the skin side. Place fillets skin-side up on a rack or plate and allow to rest in the refrigerator for 15 minutes to draw out moisture and season.",
+        "time_min": 15
+      },
+      {
+        "step_no": 3,
+        "text": "Preheat grill or broiler: set grill to medium-high or preheat broiler with rack positioned 6–8 inches from heat. If using a heavy skillet, heat to medium-high and lightly oil.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Oil and cook skin-side down: lightly brush skin with neutral oil. Place fillets skin-side down on the grill grates, broiler pan, or skillet. Cook without moving until skin is crisp and deeply browned, about 4–6 minutes depending on heat and thickness.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Flip and finish cooking: carefully turn fillets and cook flesh-side down briefly until just cooked through and opaque (internal temperature around 60–63°C / 140–145°F) and juices run clear, about 2–3 minutes. Avoid overcooking to preserve moist texture.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Rest and plate: remove from heat and let rest 1 minute. Arrange on plates with a small mound of grated daikon and lemon wedge. Optionally add a small splash of soy sauce to the daikon or a light dusting of black pepper.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

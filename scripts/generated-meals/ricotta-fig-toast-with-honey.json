@@ -1,0 +1,208 @@
+{
+  "slug": "ricotta-fig-toast-with-honey",
+  "title": "Ricotta & Fig Toast with Honey",
+  "description": "Creamy ricotta spread layered on toasted rustic bread, topped with fresh figs, a drizzle of honey and a sprinkle of lemon zest and toasted nuts for texture. Bright, slightly sweet and creamy — an easy no-fuss assembly perfect for breakfast, brunch or a light lunch.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "ricotta",
+  "ingredient_tags": [
+    "ricotta",
+    "fresh figs",
+    "honey",
+    "bread",
+    "lemon",
+    "walnuts",
+    "olive oil",
+    "salt",
+    "black pepper",
+    "garlic",
+    "fresh herbs",
+    "microgreens"
+  ],
+  "spice_level": 1,
+  "time_total_min": 15,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "ricotta toast",
+    "fig toast",
+    "ricotta and fig",
+    "honey toast",
+    "breakfast toast",
+    "brunch recipe",
+    "mediterranean breakfast",
+    "fresh figs",
+    "toasted walnuts",
+    "lemon zest",
+    "easy breakfast",
+    "vegetarian",
+    "open faced sandwich",
+    "ricotta spread",
+    "sweet and savory",
+    "quick lunch",
+    "seasonal fruit toast",
+    "olive oil drizzle",
+    "garlic rub",
+    "microgreens topping"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "rustic country bread (sliced about 1/2 inch)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "sourdough or country loaf, about 1/2-inch slices"
+      },
+      {
+        "display_name": "whole-milk ricotta",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "stirred smooth"
+      },
+      {
+        "display_name": "fresh figs (ripe)",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "quartered if medium, halved if small"
+      },
+      {
+        "display_name": "honey (mild floral like acacia or wildflower)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 64,
+        "ml": 45,
+        "optional": false,
+        "notes": "for drizzling"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for brushing toast"
+      },
+      {
+        "display_name": "lemon (zest)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 5,
+        "ml": null,
+        "optional": false,
+        "notes": "zest of one small lemon"
+      },
+      {
+        "display_name": "toasted walnuts (coarsely chopped)",
+        "quantity": 1,
+        "unit": "oz",
+        "grams": 28,
+        "ml": null,
+        "optional": true,
+        "notes": "lightly toasted for crunch"
+      },
+      {
+        "display_name": "sea salt (fine)",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to season ricotta"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.2,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "garlic clove (halved)",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "for rubbing toasted bread if desired"
+      },
+      {
+        "display_name": "fresh basil or mint leaves (small leaves) or microgreens",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 15,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat a skillet or grill pan over medium-high heat or preheat your toaster/oven to broil. Lightly brush both sides of bread slices with olive oil.",
+        "time_min": 3
+      },
+      {
+        "step_no": 2,
+        "text": "Toast the bread slices until golden and crisp on both sides using the skillet (about 1–2 minutes per side) or under the broiler (1–2 minutes per side), watching carefully to avoid burning.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "If using, rub the warm toasted bread lightly with the cut side of the garlic clove to impart a mild garlic flavor.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "In a bowl, season the ricotta with a pinch of sea salt and a grind of black pepper; stir until smooth and slightly whipped.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Spread a generous layer of the seasoned ricotta onto each toasted bread slice, then arrange fig quarters or halves evenly on top.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Drizzle honey over the figs and ricotta, sprinkle with lemon zest and the chopped toasted walnuts, and finish with a small scatter of basil or microgreens and an extra crack of black pepper.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Serve immediately while toast is warm for best texture and contrast of flavors.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

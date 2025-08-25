@@ -1,0 +1,217 @@
+{
+  "slug": "nghu-hp-s-clams-with-lemongrass",
+  "title": "Nghêu Hấp Sả (Clams with Lemongrass)",
+  "description": "Fresh clams steamed quickly with fragrant bruised lemongrass, ginger and scallions, finished with fish sauce, lime and a hit of chili. Bright, aromatic and light — perfect as a starter or a seafood main served with steamed rice or crusty bread.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "vietnamese"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "clams",
+  "ingredient_tags": [
+    "clams",
+    "lemongrass",
+    "ginger",
+    "scallion",
+    "fish sauce",
+    "lime",
+    "chili",
+    "garlic",
+    "sugar",
+    "white pepper",
+    "water",
+    "vegetable oil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "shellfish",
+    "seafood",
+    "soy"
+  ],
+  "search_keywords": [
+    "clams",
+    "ngheu",
+    "lemongrass",
+    "sả",
+    "vietnamese",
+    "steamed clams",
+    "seafood",
+    "easy dinner",
+    "pescatarian",
+    "garlic",
+    "ginger",
+    "fish sauce",
+    "lime",
+    "quick",
+    "appetizer",
+    "stovetop",
+    "spicy optional",
+    "scallion",
+    "weeknight",
+    "fragrant"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "fresh littleneck or Manila clams (cleaned)",
+        "quantity": 1.2,
+        "unit": "lb",
+        "grams": 545,
+        "ml": null,
+        "optional": false,
+        "notes": "scrubbed, bearded removed, soaked 20–30 minutes in cold salted water to purge sand"
+      },
+      {
+        "display_name": "lemongrass stalks",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed, outer layers removed, bruised and halved lengthwise"
+      },
+      {
+        "display_name": "fresh ginger",
+        "quantity": 35,
+        "unit": "g",
+        "grams": 35,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and thinly sliced"
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly smashed"
+      },
+      {
+        "display_name": "scallions (green onions)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 4–5 cm lengths"
+      },
+      {
+        "display_name": "fish sauce (nuoc mam)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lime"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "balances acidity"
+      },
+      {
+        "display_name": "small red bird's eye chilies",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "thinly sliced; add more for increased heat"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for blooming aromatics"
+      },
+      {
+        "display_name": "water",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "or low-sodium chicken/seafood stock"
+      },
+      {
+        "display_name": "white pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare clams by scrubbing shells and soaking them in cold water with a tablespoon of salt for 20–30 minutes; drain and rinse well to remove sand.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "While clams soak, trim outer layers of lemongrass, bruise stalks with the back of a knife and cut each stalk in half lengthwise; peel and slice ginger, smash garlic, and slice scallions and chilies.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Heat neutral oil in a large wide pot or deep skillet over medium heat until shimmering, add bruised lemongrass, sliced ginger and smashed garlic, and sauté briefly until aromatic (about 30–45 seconds) being careful not to burn.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add water (or stock) and bring to a rolling simmer; add clams to the pot in a single layer, scatter scallions and chilies over them, cover with a tight-fitting lid and steam.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Keep covered and steam until all clams open, shaking the pot once or twice to redistribute heat (about 4–6 minutes); discard any clams that remain closed after cooking.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Remove lid, drizzle fish sauce and lime juice over the clams, add sugar and a pinch of white pepper, then toss gently with scallions and aromatics to combine; simmer uncovered 30–60 seconds to meld flavors.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Taste and adjust seasoning with extra fish sauce or lime as desired. Transfer clams and broth to a serving bowl and serve immediately with steamed rice or crusty bread to soak up the broth.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

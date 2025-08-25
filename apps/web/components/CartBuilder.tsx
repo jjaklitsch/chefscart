@@ -95,7 +95,7 @@ function parseGroceryItem(line: string): { name: string; amount: number; unit: s
     name = match[3] || cleanLine
     
     // All recognized units (recipe + purchase + count)
-    const allUnits = [...RECIPE_UNITS, ...PURCHASE_UNITS, ...COUNT_UNITS]
+    const allUnits = [...Array.from(RECIPE_UNITS), ...Array.from(PURCHASE_UNITS), ...Array.from(COUNT_UNITS)]
     if (allUnits.includes(potentialUnit.toLowerCase())) {
       unit = potentialUnit
     } else {

@@ -1,0 +1,216 @@
+{
+  "slug": "smoked-mackerel-egg-breakfast-bowl",
+  "title": "Smoked Mackerel & Egg Breakfast Bowl",
+  "description": "A savory, protein-packed breakfast bowl combining flaky smoked mackerel, soft-boiled eggs, and bright lemon-herb dressing over crunchy greens and tender new potatoes. Quick to assemble with bold smoky, briny, and citrus notes for a satisfying morning meal.",
+  "courses": [
+    "breakfast",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "low-carb"
+  ],
+  "primary_ingredient": "mackerel",
+  "ingredient_tags": [
+    "mackerel",
+    "egg",
+    "potato",
+    "mixed greens",
+    "lemon",
+    "olive oil",
+    "capers",
+    "red onion",
+    "parsley",
+    "dijon mustard",
+    "black pepper",
+    "salt"
+  ],
+  "spice_level": 1,
+  "time_total_min": 30,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 4,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "egg",
+    "seafood"
+  ],
+  "search_keywords": [
+    "smoked mackerel",
+    "breakfast bowl",
+    "soft boiled eggs",
+    "protein packed",
+    "pescatarian breakfast",
+    "lemon vinaigrette",
+    "potato and greens",
+    "quick breakfast",
+    "smoky fish",
+    "healthy breakfast",
+    "low carb option",
+    "capers",
+    "dijon dressing",
+    "herb salad",
+    "weekend brunch",
+    "meal prep breakfast",
+    "easy assembly",
+    "flaky fish",
+    "nutritious",
+    "savory bowl"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "smoked mackerel fillets, skin removed and flaked",
+        "quantity": 220,
+        "unit": "g",
+        "grams": 220,
+        "ml": null,
+        "optional": false,
+        "notes": "scale or flake into bite-sized pieces; remove skin if desired"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "for soft-boiled eggs"
+      },
+      {
+        "display_name": "new potatoes, halved or quartered depending on size",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "boiled until tender"
+      },
+      {
+        "display_name": "mixed salad greens (arugula, baby spinach, or mixed leaves)",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "washed and spun dry"
+      },
+      {
+        "display_name": "extra virgin olive oil (for dressing)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "use good quality for flavor"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 22.5,
+        "optional": false,
+        "notes": "about half a large lemon"
+      },
+      {
+        "display_name": "dijon mustard",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "for emulsifying dressing"
+      },
+      {
+        "display_name": "capers, rinsed and drained",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "roughly chopped if large"
+      },
+      {
+        "display_name": "red onion, very thinly sliced",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "soak in cold water 5 minutes if you want milder flavor"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "flat-leaf parsley preferred"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste and account for salted mackerel"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "smoked paprika (optional garnish)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "adds color and extra smoky aroma"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a medium saucepan of salted water to a rolling simmer and add the new potatoes. Cook until tender when pierced with a knife, about 12-14 minutes depending on size; drain and set aside to cool slightly.",
+        "time_min": 14
+      },
+      {
+        "step_no": 2,
+        "text": "While potatoes cook, bring another small saucepan of water to a gentle boil for eggs; lower in the eggs carefully and cook for 6 minutes for soft-boiled yolks. Immediately transfer eggs to an ice bath and cool for 2 minutes before peeling.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Prepare the dressing by whisking together lemon juice, dijon mustard, olive oil, salt, and pepper until emulsified; taste and adjust acidity or seasoning as desired.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Flake the smoked mackerel into large pieces, removing any bones, and combine with chopped parsley, capers (if using), and thinly sliced red onion in a bowl; toss gently with a small amount of the dressing to coat.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Divide mixed greens between bowls, add halved or quartered warm potatoes, top with flaked mackerel mixture, and place two peeled soft-boiled eggs halved on each bowl. Drizzle remaining dressing over the bowls and finish with a sprinkle of smoked paprika and extra black pepper.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

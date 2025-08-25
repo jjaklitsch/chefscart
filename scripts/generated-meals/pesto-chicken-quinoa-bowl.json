@@ -1,0 +1,224 @@
+{
+  "slug": "pesto-chicken-quinoa-bowl",
+  "title": "Pesto Chicken Quinoa Bowl",
+  "description": "A bright, protein-packed bowl featuring herbaceous basil pesto-marinated chicken served over fluffy quinoa with roasted cherry tomatoes, baby spinach and a lemony finish. Quick skillet-cooked chicken and simple roasted veg make this an easy weeknight lunch or dinner with fresh Mediterranean flavors.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "quinoa",
+    "basil",
+    "parmesan",
+    "garlic",
+    "cherry tomatoes",
+    "spinach",
+    "olive oil",
+    "pine nuts",
+    "lemon"
+  ],
+  "spice_level": 1,
+  "time_total_min": 52,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "pesto",
+    "pesto chicken",
+    "quinoa bowl",
+    "basil pesto",
+    "roasted tomatoes",
+    "skillet chicken",
+    "meal prep",
+    "healthy dinner",
+    "mediterranean",
+    "protein bowl",
+    "spinach",
+    "parmesan",
+    "pine nuts",
+    "lemon",
+    "garlic",
+    "weeknight meal",
+    "gluten free option",
+    "quick dinner",
+    "balanced meal"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts (trimmed and halved if large)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, slice into 1\" cutlets if thick"
+      },
+      {
+        "display_name": "quinoa (uncooked, rinsed)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed under cold water to remove saponins"
+      },
+      {
+        "display_name": "water or low-sodium chicken broth",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "broth for more flavor"
+      },
+      {
+        "display_name": "basil pesto (store-bought or homemade)",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": 90,
+        "ml": 90,
+        "optional": false,
+        "notes": "reserve 2 tbsp for finishing if desired"
+      },
+      {
+        "display_name": "cherry tomatoes (halved)",
+        "quantity": 12,
+        "unit": "oz",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "halved for roasting"
+      },
+      {
+        "display_name": "baby spinach (trimmed)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly wilt into warm quinoa or serve raw"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for roasting and skillet"
+      },
+      {
+        "display_name": "lemon (zest and juice)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "zest and 1 tbsp juice for dressing, remaining juice optional"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for chicken marinade and quinoa flavor"
+      },
+      {
+        "display_name": "parmesan cheese (freshly grated)",
+        "quantity": 1,
+        "unit": "oz",
+        "grams": 28,
+        "ml": null,
+        "optional": false,
+        "notes": "for pesto and garnish"
+      },
+      {
+        "display_name": "pine nuts (lightly toasted)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": true,
+        "notes": "toast in dry skillet until fragrant"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; for quinoa and chicken seasoning"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for optional heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 52,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Toss halved cherry tomatoes with 1 tablespoon olive oil, a pinch of salt and a little black pepper on a rimmed baking sheet and roast until blistered and slightly caramelized.",
+        "time_min": 12
+      },
+      {
+        "step_no": 2,
+        "text": "While oven heats, rinse quinoa in a fine mesh sieve under cold water. Combine rinsed quinoa and water or broth in a saucepan, bring to a boil, reduce to a simmer, cover and cook until liquid is absorbed and quinoa is fluffy.",
+        "time_min": 18
+      },
+      {
+        "step_no": 3,
+        "text": "Pat chicken dry and season with salt and pepper. In a bowl, coat chicken with most of the pesto (reserve some for finishing) and minced garlic; let sit for 5 minutes while skillet heats.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Heat remaining olive oil in a large skillet over medium-high heat. Add pesto-coated chicken and cook until golden and cooked through, about 4-6 minutes per side depending on thickness. Transfer to a cutting board and rest.",
+        "time_min": 12
+      },
+      {
+        "step_no": 5,
+        "text": "If quinoa is done, fluff with a fork and stir in lemon zest, lemon juice and a small spoonful of reserved pesto to taste. Add baby spinach and gently toss to wilt slightly from the residual heat.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Slice rested chicken and assemble bowls with a base of pesto quinoa, topped with sliced chicken, roasted tomatoes, toasted pine nuts, grated parmesan and a drizzle of extra pesto or olive oil. Finish with additional lemon juice, salt and pepper to taste.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

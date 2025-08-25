@@ -1,0 +1,333 @@
+{
+  "slug": "chipotle-lime-chicken-elote-bowl",
+  "title": "Chipotle-Lime Chicken Elote Bowl",
+  "description": "A vibrant bowl layering smoky chipotle-lime grilled chicken over charred street-style corn, cilantro-lime rice, black beans, and a creamy cotija sauce. Bright, smoky, and tangy flavors with crisp vegetables and a slightly charred finish for contrast.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican",
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "chipotle",
+    "lime",
+    "corn",
+    "rice",
+    "black beans",
+    "cotija",
+    "sour cream",
+    "cilantro",
+    "avocado",
+    "red onion",
+    "tomato",
+    "olive oil",
+    "garlic",
+    "cumin"
+  ],
+  "spice_level": 3,
+  "time_total_min": 70,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "chipotle",
+    "lime",
+    "chicken bowl",
+    "elote",
+    "street corn",
+    "grilled chicken",
+    "cilantro lime rice",
+    "black beans",
+    "cotija",
+    "southwest",
+    "mexican bowl",
+    "weeknight dinner",
+    "meal prep",
+    "smoky",
+    "creamy sauce",
+    "avocado",
+    "charred corn",
+    "chipotle marinade",
+    "healthy dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs (trimmed)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1/2- to 1-inch strips or left whole"
+      },
+      {
+        "display_name": "chipotle peppers in adobo (minced)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "from a can, finely chopped"
+      },
+      {
+        "display_name": "lime juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "olive oil (for marinade + cooking)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "plus more to taste"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "long-grain white rice",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 185,
+        "ml": 240,
+        "optional": false,
+        "notes": "rinsed"
+      },
+      {
+        "display_name": "water or low-sodium chicken stock (for rice)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 360,
+        "optional": false,
+        "notes": "use stock for more flavor"
+      },
+      {
+        "display_name": "cilantro (chopped)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed, for rice and garnish"
+      },
+      {
+        "display_name": "corn kernels (fresh or frozen)",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 450,
+        "ml": 720,
+        "optional": false,
+        "notes": "if using fresh, cut from 4-5 ears"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "for charring and sauce"
+      },
+      {
+        "display_name": "mayonnaise",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 115,
+        "ml": 120,
+        "optional": false,
+        "notes": "for creamy elote sauce"
+      },
+      {
+        "display_name": "sour cream",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 60,
+        "ml": 60,
+        "optional": false,
+        "notes": "for creamy elote sauce"
+      },
+      {
+        "display_name": "cotija cheese (crumbled)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for garnish"
+      },
+      {
+        "display_name": "black beans (canned, drained and rinsed)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 260,
+        "ml": null,
+        "optional": false,
+        "notes": "heated before serving"
+      },
+      {
+        "display_name": "red onion (small, finely diced)",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "for topping"
+      },
+      {
+        "display_name": "tomato (roma or cherry, diced)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 180,
+        "ml": null,
+        "optional": true,
+        "notes": "for topping"
+      },
+      {
+        "display_name": "avocado (sliced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "extra lime wedges",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "fresh cilantro leaves (for garnish)",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 7,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "chili powder (optional, for extra heat)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil spray or extra oil (for grill/pan)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 70,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make the chipotle-lime marinade by combining minced chipotle peppers, lime juice, olive oil, minced garlic, ground cumin, smoked paprika, salt, and black pepper in a bowl; add chicken and toss to coat, then marinate for 15 minutes at room temperature or up to 2 hours chilled.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Start the rice: rinse rice until water runs clear, then combine with water or stock in a saucepan, bring to a simmer, cover and cook until liquid is absorbed, then remove from heat and let rest covered for 10 minutes; fluff and stir in chopped cilantro and a squeeze of lime.",
+        "time_min": 25
+      },
+      {
+        "step_no": 3,
+        "text": "Prepare the elote (street corn): heat a large skillet or grill over medium-high heat, add butter and a little oil, then spread corn in an even layer and cook without stirring until charred in spots, stirring occasionally until most kernels are golden and blistered; transfer to a bowl.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Make the creamy elote sauce by whisking together mayonnaise, sour cream, a tablespoon of lime juice, 1 tablespoon of melted butter from the pan if desired, a pinch of smoked paprika, and salt to taste; fold most of the cotija into the sauce, reserving some for topping.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Cook the chicken: heat a grill pan or skillet over medium-high heat with oil, remove excess marinade from chicken, then cook chicken until browned and cooked through, about 4-6 minutes per side for whole thighs or 3-4 minutes per side for strips; rest briefly and slice if necessary.",
+        "time_min": 12
+      },
+      {
+        "step_no": 6,
+        "text": "Heat the black beans in a small saucepan over low heat until warmed through, season with a pinch of salt and a squeeze of lime, then keep covered until serving.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble bowls by dividing cilantro-lime rice among bowls, topping with charred corn, black beans, sliced chicken, diced tomato and red onion, avocado slices, a drizzle of creamy elote sauce, and a sprinkle of reserved cotija and chopped cilantro; serve with lime wedges.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

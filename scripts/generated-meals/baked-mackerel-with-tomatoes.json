@@ -1,0 +1,212 @@
+{
+  "slug": "baked-mackerel-with-tomatoes",
+  "title": "Baked Mackerel with Tomatoes",
+  "description": "A simple, flavorful baked whole mackerel dish featuring juicy roasted tomatoes, garlic and herbs. Fast to prepare and oven-finished for a crisp skin and tender, oily flesh with bright, acidic tomato notes.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "keto",
+    "low-carb",
+    "paleo",
+    "mediterranean"
+  ],
+  "primary_ingredient": "mackerel",
+  "ingredient_tags": [
+    "mackerel",
+    "tomatoes",
+    "olive oil",
+    "garlic",
+    "lemon",
+    "parsley",
+    "oregano",
+    "salt",
+    "black pepper",
+    "red pepper flakes",
+    "onion"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "mackerel",
+    "baked fish",
+    "roasted tomatoes",
+    "mediterranean",
+    "pescatarian",
+    "healthy dinner",
+    "quick fish recipe",
+    "lemon garlic",
+    "olive oil",
+    "oven baked",
+    "weeknight meal",
+    "low carb",
+    "keto friendly",
+    "herbs",
+    "parsley",
+    "oregano",
+    "garlic",
+    "light dinner",
+    "skin on fish"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "whole mackerel, gutted and scaled",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 700,
+        "ml": null,
+        "optional": false,
+        "notes": "about 300-380 g each whole fish; leave head on or remove per preference; score skin 2-3 times per side"
+      },
+      {
+        "display_name": "cherry tomatoes, halved",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "or use plum tomatoes cut into wedges"
+      },
+      {
+        "display_name": "extra virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided: most for tomatoes and a little to brush fish"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "about 3 g per clove"
+      },
+      {
+        "display_name": "small red onion, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "adds sweetness; optional"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "plus wedges to serve"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for slight heat"
+      },
+      {
+        "display_name": "lemon wedges to serve",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into 4 wedges"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 200°C (392°F). Line a baking tray with parchment or lightly oil it so the fish doesn't stick.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare the mackerel: rinse and pat dry. Using a sharp knife, score the skin 2-3 times per side and season both cavities and skin with half the salt and pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "In a bowl, combine halved tomatoes, sliced onion (if using), minced garlic, olive oil, remaining salt, pepper, dried oregano and red pepper flakes; toss to coat.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Arrange the tomato mixture on the prepared tray to form a bed. Place the mackerel on top of the tomatoes and brush the fish skin lightly with a little olive oil and a drizzle of lemon juice.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Bake in the preheated oven until the fish is just cooked through and skin is crisp at the edges, and tomatoes are blistered and saucy—about 15 minutes depending on fish size. Check doneness by flaky flesh near the backbone.",
+        "time_min": 15
+      },
+      {
+        "step_no": 6,
+        "text": "Remove from oven, spoon some pan juices over the fish, scatter chopped parsley and add lemon wedges. Let rest 2 minutes before serving.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

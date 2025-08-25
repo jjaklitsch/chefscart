@@ -1,0 +1,298 @@
+{
+  "slug": "jajangmyeon-black-bean-noodles",
+  "title": "Jajangmyeon (Black Bean Noodles)",
+  "description": "A comforting Korean-Chinese noodle dish featuring chewy wheat noodles tossed in a savory, slightly sweet black bean and pork sauce with chunky vegetables. Quick stir-frying and a glossy chunjang-based sauce create rich umami flavors and a satisfying texture contrast.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "korean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "noodles",
+    "pork",
+    "onion",
+    "potato",
+    "zucchini",
+    "cabbage",
+    "carrot",
+    "garlic",
+    "ginger",
+    "black bean paste",
+    "soy sauce",
+    "sugar",
+    "cornstarch",
+    "vegetable oil",
+    "sesame oil",
+    "green onion",
+    "cucumber"
+  ],
+  "spice_level": 1,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "jajangmyeon",
+    "black bean noodles",
+    "jjajangmyeon",
+    "chunjang",
+    "korean chinese",
+    "noodles",
+    "pork black bean sauce",
+    "stir-fry",
+    "comfort food",
+    "weeknight dinner",
+    "chewy noodles",
+    "vegetable sauce",
+    "homemade jajang",
+    "easy korean",
+    "soy based sauce",
+    "cucumber garnish",
+    "noodle bowl",
+    "savory umami",
+    "glossy black sauce",
+    "sauce thickened with cornstarch"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "fresh wheat noodles or dried thick noodles (udon or jajangmyeon noodles)",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "if using dried, cook according to package until al dente and drain"
+      },
+      {
+        "display_name": "pork shoulder or pork belly, finely diced",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/4-inch dice"
+      },
+      {
+        "display_name": "chunjang (Korean black bean paste)",
+        "quantity": 90,
+        "unit": "g",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "use Korean-style black bean paste (chunjang)"
+      },
+      {
+        "display_name": "vegetable oil (for frying)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "neutral oil like canola"
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "balances bitterness of paste"
+      },
+      {
+        "display_name": "soy sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": 15,
+        "optional": false,
+        "notes": "light soy sauce preferred"
+      },
+      {
+        "display_name": "onion, medium, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into roughly 1 cm pieces"
+      },
+      {
+        "display_name": "potato, medium, peeled and diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "small dice to help thicken sauce"
+      },
+      {
+        "display_name": "zucchini, medium, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "remove seeds if large"
+      },
+      {
+        "display_name": "cabbage, shredded (napa or regular), packed",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "adds texture; optional"
+      },
+      {
+        "display_name": "carrot, medium, julienned or small dice",
+        "quantity": 50,
+        "unit": "g",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for color and crunch"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, minced",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": true,
+        "notes": "optional for aromatics"
+      },
+      {
+        "display_name": "water or low-sodium chicken stock",
+        "quantity": 600,
+        "unit": "ml",
+        "grams": null,
+        "ml": 600,
+        "optional": false,
+        "notes": "used to simmer vegetables and loosen sauce"
+      },
+      {
+        "display_name": "cornstarch slurry (cornstarch and water)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": 30,
+        "optional": false,
+        "notes": "mix 2 tbsp cornstarch with 2 tbsp cold water"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "added at end for flavor"
+      },
+      {
+        "display_name": "green onions, sliced for garnish",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 20,
+        "ml": null,
+        "optional": true,
+        "notes": "thinly sliced"
+      },
+      {
+        "display_name": "cucumber, julienned for garnish",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "serve raw as a cool garnish"
+      },
+      {
+        "display_name": "toasted sesame seeds for garnish",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": 5,
+        "optional": true,
+        "notes": "optional"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare vegetables and pork: dice pork, peel and dice potato, dice onion, dice zucchini, mince garlic and ginger, and julienne cucumber for garnish.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Bring a large pot of water to a rolling boil, add a pinch of salt, and cook the noodles until al dente according to package instructions. Drain, toss with a little vegetable oil to prevent sticking, and set aside warm.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large skillet or wok over medium-high heat, add vegetable oil, then sauté the diced pork until browned and cooked through, breaking up any clumps.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Push the pork to the side, add a little more oil if needed, then add minced garlic and ginger and cook briefly until fragrant (about 30 seconds).",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add diced onion, potato, and carrot to the pan and stir-fry until edges begin to soften, about 3–4 minutes.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Stir in diced zucchini and shredded cabbage (if using) and continue to stir-fry another 2 minutes until vegetables are slightly tender but still hold shape.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Add the black bean paste to the pan and fry it briefly with the solids for 1–2 minutes to develop flavor; then add soy sauce and sugar and stir to combine.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Pour in the water or stock, scrape up any browned bits, bring to a simmer, then reduce heat and simmer until potatoes are fully tender, about 6–8 minutes.",
+        "time_min": 8
+      },
+      {
+        "step_no": 9,
+        "text": "Stir the cornstarch slurry and gradually add it to the simmering sauce while stirring until the sauce thickens to a glossy, coating consistency. Adjust seasoning with a little more sugar or soy sauce if needed.",
+        "time_min": 2
+      },
+      {
+        "step_no": 10,
+        "text": "Stir in sesame oil, then remove pan from heat. Plate noodles into bowls and ladle the black bean sauce over the noodles; garnish with julienned cucumber, sliced green onion, and toasted sesame seeds.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

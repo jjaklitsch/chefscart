@@ -1,0 +1,190 @@
+{
+  "slug": "prosciutto-peach-breakfast-tartine",
+  "title": "Prosciutto & Peach Breakfast Tartine",
+  "description": "Open-faced tartines topped with tangy ricotta, thinly sliced ripe peaches, and silky prosciutto, finished with a drizzle of honey and lemon zest for bright contrast. Quick to assemble and ideal for a leisurely breakfast or light brunch with a balance of sweet, salty, and creamy textures.",
+  "courses": [
+    "breakfast",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "prosciutto",
+  "ingredient_tags": [
+    "prosciutto",
+    "peach",
+    "bread",
+    "ricotta",
+    "honey",
+    "lemon",
+    "olive oil",
+    "black pepper",
+    "basil",
+    "salt"
+  ],
+  "spice_level": 1,
+  "time_total_min": 20,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "prosciutto",
+    "peach",
+    "tartine",
+    "open-faced sandwich",
+    "breakfast",
+    "brunch",
+    "ricotta",
+    "honey",
+    "lemon",
+    "quick",
+    "mediterranean",
+    "light",
+    "sweet and salty",
+    "easy recipe",
+    "summer",
+    "toast",
+    "basil",
+    "olive oil",
+    "fresh fruit"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ripe peaches, sliced thin (about 1/4-inch)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "ripe but firm; slice thinly"
+      },
+      {
+        "display_name": "prosciutto slices",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly sliced, about 2 slices per tartine"
+      },
+      {
+        "display_name": "rustic country bread (sourdough or ciabatta), sliced 1/2-inch",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "one slice per tartine; approximately 90 g per slice"
+      },
+      {
+        "display_name": "whole-milk ricotta",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 250,
+        "ml": 240,
+        "optional": false,
+        "notes": "room temperature for easy spreading"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided: for toasting and finishing"
+      },
+      {
+        "display_name": "fresh lemon (zest and a little juice)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "zest of half and 1 tsp juice"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 30,
+        "optional": false,
+        "notes": "for drizzling"
+      },
+      {
+        "display_name": "fresh basil leaves, torn",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "small leaves for garnish"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to season ricotta lightly"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for finishing"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep peaches: wash and thinly slice peaches into 1/4-inch wedges; set aside and keep at room temperature.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare ricotta spread: in a small bowl combine ricotta, a pinch of sea salt, lemon zest from half a lemon, and about 1 tsp lemon juice; whisk to a spreadable consistency and set aside.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Toast bread: heat a large skillet over medium heat, brush both sides of bread slices lightly with 1 tbsp olive oil, and toast 1-2 minutes per side until golden and slightly crisp.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Assemble base: spread a generous layer of the ricotta mixture on each toasted slice of bread while still warm.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Layer toppings: arrange peach slices evenly over ricotta, then drape prosciutto slices on top, tearing them to fit if necessary.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Finish and serve: drizzle remaining olive oil and honey over each tartine, scatter torn basil leaves, grind fresh black pepper over top, and serve immediately.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

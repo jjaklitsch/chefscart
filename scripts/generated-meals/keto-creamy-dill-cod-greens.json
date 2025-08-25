@@ -1,0 +1,277 @@
+{
+  "slug": "keto-creamy-dill-cod-greens",
+  "title": "Keto Creamy Dill Cod & Greens",
+  "description": "Pan-seared cod in a silky lemon-dill cream sauce served over wilted leafy greens. Bright citrus and fresh dill balance a rich, low-carb cream base for a satisfying weeknight keto dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb",
+    "pescatarian"
+  ],
+  "primary_ingredient": "cod",
+  "ingredient_tags": [
+    "cod",
+    "fish",
+    "cream",
+    "butter",
+    "lemon",
+    "dill",
+    "garlic",
+    "spinach",
+    "kale",
+    "olive oil",
+    "capers",
+    "shallot",
+    "parmesan",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 31,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "seafood"
+  ],
+  "search_keywords": [
+    "keto",
+    "low carb",
+    "creamy fish",
+    "cod recipe",
+    "dill sauce",
+    "lemon cream",
+    "pan seared cod",
+    "spinach",
+    "kale",
+    "pescatarian",
+    "weeknight dinner",
+    "quick meal",
+    "gluten free",
+    "low calorie",
+    "garlic butter",
+    "capers",
+    "shallot",
+    "parmesan",
+    "one pan",
+    "healthy fats"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "cod fillets, skinless",
+        "quantity": 12,
+        "unit": "oz",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed and patted dry"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13.5,
+        "ml": 15,
+        "optional": false,
+        "notes": "for searing"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "for sauce"
+      },
+      {
+        "display_name": "shallot, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small shallot"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dry white wine or chicken broth",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "use broth to keep alcohol-free"
+      },
+      {
+        "display_name": "heavy cream",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "full-fat for best texture"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1/2 lemon"
+      },
+      {
+        "display_name": "fresh dill, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "loosely packed"
+      },
+      {
+        "display_name": "capers, drained",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "rinsed if very salty"
+      },
+      {
+        "display_name": "fresh baby spinach",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "packed"
+      },
+      {
+        "display_name": "lacinato kale, stems removed and thinly sliced",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "can use all spinach if preferred"
+      },
+      {
+        "display_name": "grated parmesan cheese",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "zest from 1/2 lemon"
+      },
+      {
+        "display_name": "crushed red pepper flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for a touch of heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 31,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Pat the cod fillets dry and season both sides with salt and pepper; let rest while you prepare other ingredients.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large skillet over medium-high heat and add olive oil. When shimmering, add the cod and sear undisturbed until a golden crust forms, about 3-4 minutes per side depending on thickness; transfer fish to a plate and tent loosely to keep warm.",
+        "time_min": 9
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to medium, add butter to the same skillet and once melted add chopped shallot and cook until softened, stirring, about 1-2 minutes; add minced garlic and cook until fragrant, about 30 seconds.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Deglaze the pan with white wine or broth, scraping up brown bits, and simmer until mostly reduced, about 1-2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Pour in heavy cream, bring to a gentle simmer, then reduce heat to low and simmer until the sauce thickens slightly, about 3-4 minutes.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Stir in lemon juice, lemon zest, chopped dill and capers if using; season sauce to taste with salt, pepper, and an optional pinch of red pepper flakes.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "In a separate large skillet, warm a drizzle of olive oil over medium heat and add kale first; sauté 1-2 minutes, then add spinach and cook until wilted but still bright, about 2-3 minutes. Season lightly with salt and pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Return the cod to the skillet with the cream sauce for 1-2 minutes to reheat and finish cooking through, spooning sauce over the fillets; ensure internal temperature reaches 62°C/145°F or flakes easily.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Serve each cod fillet over a bed of the wilted greens, spoon the lemon-dill cream sauce over the fish, and finish with grated parmesan and additional fresh dill if desired.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

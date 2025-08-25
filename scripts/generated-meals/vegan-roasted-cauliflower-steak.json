@@ -1,0 +1,236 @@
+{
+  "slug": "vegan-roasted-cauliflower-steak",
+  "title": "Vegan Roasted Cauliflower Steak",
+  "description": "Thick cauliflower 'steaks' are seasoned with a smoky, herby spice rub and roasted until caramelized and tender, finished with a bright lemon-tahini drizzle and toasted parsley. This plant-forward main offers savory umami, gentle heat, and crisp edges with a creamy, tangy sauce for contrast.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegan",
+    "vegetarian"
+  ],
+  "primary_ingredient": "cauliflower",
+  "ingredient_tags": [
+    "cauliflower",
+    "tahini",
+    "lemon",
+    "olive oil",
+    "garlic",
+    "smoked paprika",
+    "cumin",
+    "parsley",
+    "red pepper flakes",
+    "salt",
+    "black pepper",
+    "maple syrup",
+    "water"
+  ],
+  "spice_level": 2,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "sesame"
+  ],
+  "search_keywords": [
+    "cauliflower steak",
+    "roasted cauliflower",
+    "vegan main",
+    "plant-based",
+    "tahini sauce",
+    "lemon garlic",
+    "smoky paprika",
+    "weeknight dinner",
+    "easy vegan",
+    "mediterranean vegan",
+    "sheet pan",
+    "healthy dinner",
+    "vegetarian main",
+    "gluten-free",
+    "dairy-free",
+    "maple glaze",
+    "parsley garnish",
+    "roasted vegetables",
+    "meatless monday",
+    "comforting vegan"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "cauliflower (whole head), trimmed and sliced into steaks",
+        "quantity": 1.2,
+        "unit": "lb",
+        "grams": 540,
+        "ml": null,
+        "optional": false,
+        "notes": "remove outer leaves, trim stem so head sits flat; cut into 3/4–1-inch thick slices"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided: part for rubbing steaks and part for roasting if needed"
+      },
+      {
+        "display_name": "tahini",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 64,
+        "ml": 60,
+        "optional": false,
+        "notes": "for lemon-tahini drizzle"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 medium lemon"
+      },
+      {
+        "display_name": "warm water",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "to thin tahini sauce to pouring consistency"
+      },
+      {
+        "display_name": "maple syrup",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds gentle sweetness to glaze"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for rub and sauce"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adds smoky flavor"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust or omit for heat preference"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided: for seasoning steaks and sauce"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh flat-leaf parsley, chopped",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": 60,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "olive oil for finishing (optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "drizzle for gloss"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 220°C (425°F). Line a large rimmed baking sheet with parchment paper or lightly oil it so steaks won't stick.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare the cauliflower: remove outer leaves and trim the stem flush so the head sits flat. Slice the head into 3/4–1-inch thick 'steaks' working from the center; reserve any loose florets for roasting alongside the steaks.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Make the spice rub: combine smoked paprika, ground cumin, minced garlic, red pepper flakes (if using), salt, black pepper, and most of the olive oil to form a paste.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Brush both sides of each cauliflower steak and any reserved florets with the spice rub, ensuring even coverage. Arrange steaks in a single layer on the prepared sheet without overcrowding.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Roast the steaks: place the baking sheet on the middle rack and roast at high heat until deeply caramelized and tender when pierced with a knife, flipping once halfway through to encourage even browning.",
+        "time_min": 22
+      },
+      {
+        "step_no": 6,
+        "text": "While the cauliflower roasts, whisk together tahini, lemon juice, warm water, maple syrup, remaining minced garlic and a pinch of salt until smooth; adjust thickness with small amounts of water to reach a pourable drizzle consistency.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "When steaks are done, remove from oven. Arrange on a serving platter, spoon or drizzle the lemon-tahini sauce over each steak, sprinkle with chopped parsley and an optional drizzle of olive oil, and serve immediately.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,250 @@
+{
+  "slug": "ackee-saltfish-bowl",
+  "title": "Ackee & Saltfish (Bowl)",
+  "description": "A classic Jamaican savory bowl pairing tender ackee with flaky salted cod sautéed with scallions, bell pepper and Scotch bonnet for bright heat. Served over steamed rice and topped with fresh herbs for a balanced, comforting meal showcasing coastal Caribbean flavors.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "caribbean"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "saltfish",
+  "ingredient_tags": [
+    "ackee",
+    "saltfish",
+    "salted cod",
+    "rice",
+    "bell pepper",
+    "scallion",
+    "onion",
+    "garlic",
+    "tomato",
+    "scotch bonnet",
+    "thyme",
+    "lime",
+    "vegetable oil",
+    "black pepper"
+  ],
+  "spice_level": 3,
+  "time_total_min": 70,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "ackee",
+    "saltfish",
+    "salted cod",
+    "jamaican",
+    "caribbean",
+    "breakfast bowl",
+    "rice bowl",
+    "spicy",
+    "scotch bonnet",
+    "one pan",
+    "pescatarian",
+    "weekend brunch",
+    "comfort food",
+    "flaky fish",
+    "bell pepper",
+    "thyme",
+    "quick",
+    "seafood bowl",
+    "island flavors",
+    "stovetop"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "salted cod (saltfish), dessalted and flaked",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "soak in cold water 12-24 hours with 2-3 water changes, or simmer 15–20 min then flake"
+      },
+      {
+        "display_name": "canned ackee, drained",
+        "quantity": 540,
+        "unit": "g",
+        "grams": 540,
+        "ml": null,
+        "optional": false,
+        "notes": "use canned ackee in brine, drain gently and remove any hard bits"
+      },
+      {
+        "display_name": "long-grain white rice, uncooked",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "yields about 3.5–4 cups cooked"
+      },
+      {
+        "display_name": "vegetable oil (or neutral oil)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium onion"
+      },
+      {
+        "display_name": "bell pepper (red or green), seeded and thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium pepper"
+      },
+      {
+        "display_name": "scallions, sliced (green and white parts)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "slice on bias"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato, seeded and diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "adds freshness; optional"
+      },
+      {
+        "display_name": "fresh thyme sprigs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tsp dried thyme"
+      },
+      {
+        "display_name": "scotch bonnet or habanero pepper, whole (pierced) or seeded-chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "leave whole and pierce for mild heat, chop with seeds for hotter"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lime, cut into wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "salt (if needed, to taste)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": true,
+        "notes": "use sparingly since saltfish may still be salty"
+      },
+      {
+        "display_name": "fresh parsley or cilantro, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 70,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare saltfish: if using pre-soaked salt cod, pat dry and remove any bones and skin; if salted, simmer in fresh water 15–20 minutes to reduce salt, drain and flake with a fork.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "Cook rice: rinse rice until water runs clear; combine rice with measured water in a saucepan, bring to a boil, reduce to low, cover and simmer until tender, then rest covered off heat.",
+        "time_min": 25
+      },
+      {
+        "step_no": 3,
+        "text": "Heat oil in a large skillet over medium heat, add sliced onion and bell pepper and sauté until softened and beginning to brown.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic, scallions (reserve some green tops for garnish), and thyme; sauté briefly until aromatic.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add flaked saltfish to the pan and stir to combine, breaking up any large pieces; sauté 3–4 minutes to heat through and develop a little color.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Add drained ackee gently to the skillet, folding carefully to avoid mashing; tuck in whole pierced scotch bonnet or add chopped pepper for heat and cook until ackee is warmed through and just set.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "If using diced tomato, stir in now and cook another 1–2 minutes; season with black pepper and adjust salt only if necessary.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble bowls: spoon cooked rice into bowls, top with ackee and saltfish mixture, garnish with reserved scallion tops and chopped parsley or cilantro, and serve with lime wedges.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

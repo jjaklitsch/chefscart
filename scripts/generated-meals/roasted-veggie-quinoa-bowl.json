@@ -1,0 +1,285 @@
+{
+  "slug": "roasted-veggie-quinoa-bowl",
+  "title": "Roasted Veggie & Quinoa Bowl",
+  "description": "A colorful, nutrient-packed bowl of oven-roasted vegetables over fluffy quinoa, finished with a bright lemon-tahini dressing. Robust roasted flavors, tender quinoa, and a tangy-creamy dressing make this an easy weeknight vegetarian meal or make-ahead lunch.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward",
+    "vegan",
+    "mediterranean"
+  ],
+  "primary_ingredient": "quinoa",
+  "ingredient_tags": [
+    "quinoa",
+    "bell pepper",
+    "zucchini",
+    "red onion",
+    "carrot",
+    "chickpeas",
+    "garlic",
+    "lemon",
+    "olive oil",
+    "tahini",
+    "salt",
+    "pepper",
+    "cumin",
+    "paprika",
+    "parsley"
+  ],
+  "spice_level": 1,
+  "time_total_min": 70,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "sesame",
+    "grain"
+  ],
+  "search_keywords": [
+    "quinoa bowl",
+    "roasted vegetables",
+    "vegan bowl",
+    "vegetarian lunch",
+    "meal prep",
+    "lemon tahini",
+    "roasted zucchini",
+    "roasted bell pepper",
+    "roasted carrot",
+    "chickpea bowl",
+    "healthy dinner",
+    "mediterranean bowl",
+    "gluten-free",
+    "plant-forward",
+    "weeknight meal",
+    "buddha bowl",
+    "roasted red onion",
+    "savory quinoa",
+    "protein-packed",
+    "easy recipe"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "quinoa, rinsed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 170,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed well to remove bitterness"
+      },
+      {
+        "display_name": "water or low-sodium vegetable broth",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "for cooking quinoa"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided between veggies and finishing"
+      },
+      {
+        "display_name": "red bell pepper, cut into 1-inch pieces",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow or orange bell pepper, cut into 1-inch pieces",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "zucchini, halved lengthwise and cut into 1/2-inch slices",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "carrots, peeled and cut into 1/2-inch thick coins or sticks",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red onion, cut into wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "canned chickpeas, drained and rinsed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 standard 15 oz can drained"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "or regular paprika"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "lemon, juiced (about 2 tbsp)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 2 tablespoons juice"
+      },
+      {
+        "display_name": "tahini",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "warm water (for thinning dressing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adjust as needed"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "optional toasted pumpkin seeds or pine nuts",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": true,
+        "notes": "for crunch"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 70,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 425°F (220°C). Line a large rimmed baking sheet with parchment paper or lightly oil it.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare the vegetables: cut bell peppers, zucchini, carrots, and red onion into even-sized pieces so they roast uniformly. Place on the prepared baking sheet.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Toss the prepared vegetables and chickpeas with half of the olive oil, half the minced garlic, cumin, smoked paprika, half the salt, and half the pepper. Spread in a single layer.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Roast the vegetables and chickpeas in the preheated oven until tender and lightly caramelized, turning once halfway through.",
+        "time_min": 25
+      },
+      {
+        "step_no": 5,
+        "text": "While vegetables roast, cook the quinoa: bring water or broth to a boil in a medium saucepan, add rinsed quinoa, reduce to a simmer, cover, and cook until all liquid is absorbed and quinoa is tender. Let rest covered to steam.",
+        "time_min": 18
+      },
+      {
+        "step_no": 6,
+        "text": "Make the lemon-tahini dressing: in a small bowl whisk together tahini, lemon juice, remaining olive oil, remaining minced garlic, warm water to thin, remaining salt and pepper until smooth and pourable. Taste and adjust seasoning.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Fluff the cooked quinoa with a fork and divide among bowls. Top with roasted vegetables and chickpeas, drizzle with lemon-tahini dressing, and garnish with chopped parsley and optional toasted seeds or nuts.",
+        "time_min": 6
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -32,29 +32,7 @@ vi.mock('next/navigation', () => ({
   useSearchParams: () => new URLSearchParams()
 }))
 
-// Mock Firebase
-vi.mock('@/lib/firebase', () => ({
-  auth: {
-    currentUser: null,
-    signInAnonymously: vi.fn(),
-    signOut: vi.fn()
-  },
-  db: {
-    collection: vi.fn(),
-    doc: vi.fn()
-  }
-}))
-
-// Mock Firebase Admin
-vi.mock('@/lib/firebase-admin', () => ({
-  adminAuth: {
-    verifyIdToken: vi.fn()
-  },
-  adminDb: {
-    collection: vi.fn(),
-    doc: vi.fn()
-  }
-}))
+// Removed Firebase mocks (migrating to Supabase)
 
 // Mock OpenAI
 vi.mock('openai', () => ({
@@ -79,14 +57,6 @@ vi.mock('openai', () => ({
 
 // Mock environment variables
 process.env.NODE_ENV = 'test'
-process.env.NEXT_PUBLIC_FIREBASE_CONFIG = JSON.stringify({
-  apiKey: 'test-api-key',
-  authDomain: 'test.firebaseapp.com',
-  projectId: 'test-project',
-  storageBucket: 'test.appspot.com',
-  messagingSenderId: '123456789',
-  appId: 'test-app-id'
-})
 
 // Global test utilities
 global.ResizeObserver = vi.fn().mockImplementation(() => ({

@@ -1,0 +1,258 @@
+{
+  "slug": "low-carb-greek-turkey-meatballs",
+  "title": "Low-Carb Greek Turkey Meatballs",
+  "description": "Lean turkey meatballs seasoned with classic Greek flavors—garlic, oregano, lemon and feta—pan-seared then finished in a light tomato-olive sauce. Low-carb and high-protein, they’re perfect served over zucchini noodles or a crisp salad.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "low-carb",
+    "keto",
+    "mediterranean",
+    "paleo"
+  ],
+  "primary_ingredient": "turkey",
+  "ingredient_tags": [
+    "turkey",
+    "ground turkey",
+    "feta",
+    "eggs",
+    "garlic",
+    "onion",
+    "olive oil",
+    "tomato",
+    "olives",
+    "lemon",
+    "oregano",
+    "parsley",
+    "zucchini",
+    "pepper",
+    "salt"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg"
+  ],
+  "search_keywords": [
+    "low-carb",
+    "keto",
+    "greek",
+    "turkey meatballs",
+    "feta",
+    "zucchini noodles",
+    "mediterranean",
+    "ground turkey",
+    "olive oil",
+    "lemon",
+    "oregano",
+    "garlic",
+    "tomato sauce",
+    "easy dinner",
+    "high protein",
+    "gluten-free",
+    "paleo-friendly",
+    "weeknight meal",
+    "pan-seared",
+    "healthy"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ground turkey (93% lean)",
+        "quantity": 680,
+        "unit": "g",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "feta cheese, crumbled",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "use full-fat for best flavor"
+      },
+      {
+        "display_name": "large egg",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly beaten"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red onion, finely grated and squeezed dry",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 55,
+        "ml": null,
+        "optional": false,
+        "notes": "removes excess moisture"
+      },
+      {
+        "display_name": "fresh parsley, finely chopped",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/2 cup loosely packed"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 2.6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for searing"
+      },
+      {
+        "display_name": "cherry tomatoes, halved",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "or use canned crushed tomatoes for a saucier finish"
+      },
+      {
+        "display_name": "kalamata olives, pitted and halved",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "adds briny flavor"
+      },
+      {
+        "display_name": "lemon zest and juice",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": 15,
+        "optional": false,
+        "notes": "zest and 1 tbsp juice"
+      },
+      {
+        "display_name": "low-sodium chicken broth or water",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "to deglaze and loosen sauce"
+      },
+      {
+        "display_name": "zucchini, spiralized (for serving)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 800,
+        "ml": null,
+        "optional": true,
+        "notes": "approx. 200g each; optional base"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for a touch of heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare meatball mixture by combining ground turkey, crumbled feta, beaten egg, minced garlic, grated and squeezed onion, chopped parsley, dried oregano, salt and pepper in a large bowl; mix gently until just combined.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Portion mixture into even meatballs (about 60 g / 2 oz each) using a scoop or hands and place on a tray; refrigerate for 5 minutes to help them hold shape.",
+        "time_min": 7
+      },
+      {
+        "step_no": 3,
+        "text": "Heat olive oil in a large skillet over medium-high heat until shimmering; add meatballs in a single layer without crowding and sear, turning occasionally, until golden on most sides (about 8 minutes total). Work in batches if needed.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Remove excess oil, then add cherry tomatoes to the skillet and cook until they begin to burst; deglaze with chicken broth or water, scraping up browned bits.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Return meatballs to the pan, add olives if using, lemon zest and juice, and reduce heat to medium-low; simmer gently, uncovered, until meatballs are cooked through (internal temp 74°C/165°F) and sauce thickens slightly.",
+        "time_min": 7
+      },
+      {
+        "step_no": 6,
+        "text": "While meatballs simmer, quickly sauté spiralized zucchini in a separate skillet with a small drizzle of olive oil for 1–2 minutes to warm and slightly soften, then season lightly.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Finish by tasting and adjusting seasoning, sprinkle extra chopped parsley and optional red pepper flakes, then serve meatballs and sauce over zucchini noodles or a salad.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

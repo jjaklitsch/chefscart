@@ -1,0 +1,324 @@
+{
+  "slug": "vegan-cauliflower-tikka-masala",
+  "title": "Vegan Cauliflower Tikka Masala",
+  "description": "Roasted cauliflower florets simmered in a creamy, spiced tomato-cashew tikka masala sauce. Aromatic spices, ginger-garlic, and a touch of lemon create bright, savory flavors ideal for serving with rice or flatbread.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "cauliflower",
+  "ingredient_tags": [
+    "cauliflower",
+    "tomato",
+    "onion",
+    "garlic",
+    "ginger",
+    "cashews",
+    "coconut milk",
+    "vegetable broth",
+    "rice",
+    "cilantro",
+    "lemon",
+    "spices",
+    "oil"
+  ],
+  "spice_level": 3,
+  "time_total_min": 70,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "vegan",
+    "cauliflower",
+    "tikka masala",
+    "plant-based",
+    "indian",
+    "spiced tomato",
+    "cashew cream",
+    "roasted cauliflower",
+    "weeknight dinner",
+    "comfort food",
+    "crockpot alternative",
+    "gluten-free",
+    "dairy-free",
+    "easy",
+    "rice pairing",
+    "cilantro",
+    "ginger garlic",
+    "meal prep",
+    "moderate spice",
+    "one-pot sauce"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "cauliflower, cut into florets",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed into bite-size florets"
+      },
+      {
+        "display_name": "extra-virgin olive oil or neutral oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garam masala",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for finishing"
+      },
+      {
+        "display_name": "turmeric",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "oil (for sauce, e.g., neutral vegetable oil)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1.5 tbsp"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 33,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "canned crushed tomatoes",
+        "quantity": 14,
+        "unit": "oz",
+        "grams": 400,
+        "ml": 400,
+        "optional": false,
+        "notes": "one standard can"
+      },
+      {
+        "display_name": "raw cashews, soaked in hot water",
+        "quantity": 3,
+        "unit": "oz",
+        "grams": 85,
+        "ml": null,
+        "optional": false,
+        "notes": "soak 20 minutes then drain"
+      },
+      {
+        "display_name": "hot water (for blending cashews)",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": "adjust to reach smooth cream"
+      },
+      {
+        "display_name": "unsweetened full-fat coconut milk",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "for richness; can substitute additional cashew cream"
+      },
+      {
+        "display_name": "vegetable broth or water",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "adjust for sauce consistency"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "brown sugar or maple syrup",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "balances acidity"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "red chili flakes (optional)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for extra heat"
+      },
+      {
+        "display_name": "basmati rice or naan, for serving",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 720,
+        "ml": 720,
+        "optional": true,
+        "notes": "cooked rice volume or 4 naan equivalent"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 70,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 220°C (425°F). Toss cauliflower florets with 2 tablespoons oil, half the salt, ground coriander, ground cumin, smoked paprika, and turmeric until evenly coated. Spread on a rimmed baking sheet in a single layer.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Roast the cauliflower in the preheated oven until golden at the edges and tender when pierced, turning once halfway through for even browning.",
+        "time_min": 20
+      },
+      {
+        "step_no": 3,
+        "text": "While cauliflower roasts, soak cashews in hot water for at least 20 minutes. Drain and blend cashews with hot water to a smooth cream; set aside.",
+        "time_min": 20
+      },
+      {
+        "step_no": 4,
+        "text": "Heat remaining oil in a wide skillet or saucepan over medium heat. Add chopped onion and remaining salt and cook, stirring occasionally, until translucent and starting to brown.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Add minced garlic and grated ginger to the onions and cook until fragrant, then stir in tomato paste and cook briefly to caramelize the paste.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Stir in ground spices including garam masala and turmeric. Add crushed tomatoes and vegetable broth, bring to a gentle simmer, scraping up any browned bits from the pan.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Whisk in cashew cream and coconut milk, then simmer gently until sauce thickens slightly and flavors meld. Adjust seasoning with lemon juice and sugar, adding chili flakes if desired.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Fold roasted cauliflower into the simmering sauce, ensuring florets are coated. Simmer for a short time to let cauliflower absorb sauce flavors and warm through.",
+        "time_min": 3
+      },
+      {
+        "step_no": 9,
+        "text": "Finish with a sprinkle of garam masala and chopped cilantro. Serve hot with cooked basmati rice or flatbread.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

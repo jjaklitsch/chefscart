@@ -1,0 +1,271 @@
+{
+  "slug": "pork-chops-with-calvados-apples",
+  "title": "Pork Chops with Calvados Apples",
+  "description": "Pan-seared pork chops finished with a silky pan sauce of browned butter, Calvados apple brandy, and caramelized apples. The dish balances savory pork with bright apple-accented sweetness and a hint of mustard and thyme for a classic French-inspired weeknight or dinner-party entree.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "french",
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "pork chop",
+    "apple",
+    "calvados",
+    "butter",
+    "shallot",
+    "garlic",
+    "dijon mustard",
+    "thyme",
+    "chicken stock",
+    "olive oil",
+    "brown sugar",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "pork chops",
+    "calvados",
+    "apples",
+    "pan seared",
+    "brown butter",
+    "apple brandy",
+    "dijon mustard",
+    "caramelized apples",
+    "thyme",
+    "weeknight dinner",
+    "french inspired",
+    "fall recipe",
+    "comfort food",
+    "easy pork recipe",
+    "shallow fry",
+    "pan sauce",
+    "glaze",
+    "quick dinner",
+    "apple pork",
+    "sauce reduction"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in pork chops, about 1 to 1 1/4-inch thick",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, bring to room temperature"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "all-purpose flour (for light dredge)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 24,
+        "ml": null,
+        "optional": true,
+        "notes": "optional — light coating helps browning"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 45,
+        "optional": false,
+        "notes": "for searing and sauce"
+      },
+      {
+        "display_name": "large apple (e.g., honeycrisp or gala), cored and sliced 1/2-inch thick",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "peel if desired"
+      },
+      {
+        "display_name": "shallot, minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "brown sugar (lightly packed)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "for caramelizing apples"
+      },
+      {
+        "display_name": "Calvados apple brandy (or apple brandy / applejack)",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "can be flamed off in pan or simmered to reduce"
+      },
+      {
+        "display_name": "low-sodium chicken stock",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "use warm"
+      },
+      {
+        "display_name": "dijon mustard",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "for finishing sauce"
+      },
+      {
+        "display_name": "fresh thyme leaves",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "plus sprigs for searing if desired"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": "brightens apples"
+      },
+      {
+        "display_name": "finish butter (cold, cubed)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "to mount sauce for shine"
+      },
+      {
+        "display_name": "optional parsley, chopped (for garnish)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Pat pork chops dry and season both sides with half the salt and pepper; if using, lightly dredge in flour and shake off excess. Let rest at room temperature for 10 minutes.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large heavy skillet over medium-high heat until hot, add olive oil and 1 tablespoon butter; when foam subsides, add pork chops and sear 3–4 minutes without moving until golden-brown.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Flip chops and add a sprig of thyme if using; sear second side 3–4 minutes until golden and an instant-read thermometer reads 140–145°F (60–63°C) for medium. Transfer chops to a warm plate and tent loosely with foil to rest.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Reduce heat to medium; add remaining butter to the pan. Add shallot and garlic, sauté 30–45 seconds until fragrant but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add apple slices and brown sugar to the pan, sauté 3–4 minutes until apples begin to caramelize and soften, stirring to coat in butter and browned bits.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Carefully pour in Calvados to deglaze pan; if desired and safe, tilt pan away from face and ignite briefly to flambé so alcohol cooks off (or simmer 30–45 seconds until aromatic). Scrape up browned bits.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Add warm chicken stock and simmer 2–3 minutes to reduce slightly, then whisk in Dijon mustard and lemon juice. Taste and adjust seasoning with remaining salt and pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Return pork chops to the pan with any resting juices and spoon sauce and apples over them; cook 1–2 minutes to rewarm and finish to target temperature (internal temp ~145°F/63°C).",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Remove chops to serving plates; stir cold cubed butter and thyme into sauce off heat to thicken and gloss, then spoon apples and sauce over chops. Garnish with chopped parsley if using and serve immediately.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

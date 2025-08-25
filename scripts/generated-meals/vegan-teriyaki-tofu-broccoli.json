@@ -1,0 +1,251 @@
+{
+  "slug": "vegan-teriyaki-tofu-broccoli",
+  "title": "Vegan Teriyaki Tofu & Broccoli",
+  "description": "Crispy pan-seared tofu tossed with a glossy, homemade teriyaki-style sauce and bright steamed broccoli. Fast, savory, slightly sweet, and perfect served over rice or noodles for a weeknight vegan meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "tofu",
+  "ingredient_tags": [
+    "tofu",
+    "broccoli",
+    "soy sauce",
+    "garlic",
+    "ginger",
+    "brown sugar",
+    "rice",
+    "sesame oil",
+    "cornstarch",
+    "scallion",
+    "vegetable oil",
+    "sesame seeds",
+    "water"
+  ],
+  "spice_level": 1,
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "soy",
+    "sesame",
+    "gluten"
+  ],
+  "search_keywords": [
+    "tofu",
+    "teriyaki",
+    "broccoli",
+    "vegan",
+    "plant-based",
+    "stir-fry",
+    "pan-seared",
+    "weeknight",
+    "easy dinner",
+    "asian",
+    "japanese-style",
+    "garlic",
+    "ginger",
+    "sesame",
+    "rice bowl",
+    "gluten",
+    "soy sauce",
+    "healthy",
+    "low spice",
+    "crispy tofu"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "extra-firm tofu, pressed and cut into 1-inch cubes",
+        "quantity": 454,
+        "unit": "g",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "press 20-30 minutes to remove excess water, cut into 1-inch cubes"
+      },
+      {
+        "display_name": "broccoli florets",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "trim into bite-sized florets"
+      },
+      {
+        "display_name": "soy sauce (or tamari for gluten-free)",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "use tamari to make gluten-free"
+      },
+      {
+        "display_name": "water",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "brown sugar, packed",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "can substitute coconut sugar"
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 10,
+        "unit": "ml",
+        "grams": null,
+        "ml": 10,
+        "optional": false,
+        "notes": "to finish sauce"
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 tbsp grated"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for sauce slurry (about 1 tbsp)"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for pan-frying tofu"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "cooked jasmine rice or noodles (to serve)",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": true,
+        "notes": "approx. 1.5 cups uncooked rice yields this cooked amount"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste for broccoli steaming if desired"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Press the tofu for 20–30 minutes to remove excess water, then cut into 1-inch cubes; while tofu presses, trim broccoli into bite-sized florets and mince garlic and grate ginger.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare the teriyaki sauce by whisking together soy sauce, water, brown sugar, rice vinegar, grated ginger, and minced garlic in a bowl; reserve a small portion of cornstarch for slurry.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Combine the cornstarch with a little cold water to make a smooth slurry and set aside; this will thicken the sauce later.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Heat neutral oil in a large nonstick or cast-iron skillet over medium-high heat; add tofu cubes in a single layer and pan-sear without crowding until golden brown on one side, about 3–4 minutes per side, turning to get even color and crisp edges.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "While tofu sears, steam or blanch broccoli in a steamer basket over boiling water for about 3–4 minutes until bright green and tender-crisp, then drain and set aside.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Reduce heat under the skillet to medium, push tofu to the side, pour the prepared teriyaki sauce into the pan and bring to a gentle simmer, then stir in the cornstarch slurry and cook until sauce thickens to a glossy glaze, about 1–2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Toss the seared tofu and steamed broccoli in the skillet to coat evenly with the sauce; drizzle sesame oil, adjust seasoning, and warm through for 1–2 minutes so flavors meld.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Serve immediately over cooked rice or noodles, garnished with sliced scallions and toasted sesame seeds.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

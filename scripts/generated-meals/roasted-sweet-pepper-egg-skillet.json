@@ -1,0 +1,245 @@
+{
+  "slug": "roasted-sweet-pepper-egg-skillet",
+  "title": "Roasted Sweet Pepper Egg Skillet",
+  "description": "A bright, rustic skillet of roasted sweet peppers, caramelized onions, and tender baked eggs finished with fresh herbs and a touch of sharp cheese. Quick to assemble and baked until eggs are just set, it’s a comforting one-pan meal perfect for breakfast, lunch, or a light dinner.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "egg",
+  "ingredient_tags": [
+    "egg",
+    "sweet pepper",
+    "bell pepper",
+    "onion",
+    "garlic",
+    "tomato",
+    "olive oil",
+    "feta",
+    "parsley",
+    "thyme",
+    "salt",
+    "black pepper",
+    "red pepper flakes"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "roasted peppers",
+    "egg skillet",
+    "shakshuka-style",
+    "baked eggs",
+    "breakfast skillet",
+    "one-pan meal",
+    "vegetarian",
+    "brunch",
+    "bell peppers",
+    "feta cheese",
+    "garlic",
+    "caramelized onion",
+    "easy dinner",
+    "mediterranean flavors",
+    "weeknight meal",
+    "quick breakfast",
+    "meal prep",
+    "herbs",
+    "olive oil"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "large eggs",
+        "quantity": 8,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "red bell pepper (seeded and sliced into 1/2-inch strips)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 150 g"
+      },
+      {
+        "display_name": "yellow bell pepper (seeded and sliced into 1/2-inch strips)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 150 g"
+      },
+      {
+        "display_name": "orange or green bell pepper (seeded and sliced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for color, about 150 g"
+      },
+      {
+        "display_name": "yellow onion (thinly sliced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 150 g"
+      },
+      {
+        "display_name": "roma tomato (diced) or 1/2 cup canned diced tomatoes",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "about 120 g fresh or substitute canned"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh thyme leaves",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1/2 tsp dried thyme"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for mild heat"
+      },
+      {
+        "display_name": "feta cheese (crumbled)",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "about 1/2 cup crumbled"
+      },
+      {
+        "display_name": "fresh parsley (chopped)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "lemon (optional, for finishing - wedges)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into wedges"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 400°F (200°C). Place a 10- to 12-inch ovenproof skillet on the counter and gather ingredients.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat the skillet over medium heat, add olive oil, then add sliced onions and a pinch of salt. Sauté, stirring occasionally, until onions begin to soften and caramelize.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Add the sliced sweet peppers to the skillet with the onions. Season with salt, black pepper, and thyme. Cook, stirring every 2 minutes, until peppers are softened and edges show light browning.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in minced garlic and diced tomato (if using) and cook for another 1–2 minutes until fragrant and most tomato juices reduce slightly. Taste and adjust seasoning; add red pepper flakes if desired.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Use a spoon to make 6–8 small wells in the pepper-onion mixture. Crack eggs into a small bowl one at a time and gently slip them into the wells, spacing evenly. Sprinkle crumbled feta over the top if using.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Transfer the skillet to the preheated oven and bake until egg whites are set but yolks remain slightly runny, about 8–10 minutes. For firmer yolks, bake an additional 1–2 minutes.",
+        "time_min": 10
+      },
+      {
+        "step_no": 7,
+        "text": "Remove skillet from oven, let rest 1–2 minutes. Garnish with chopped parsley and a squeeze of lemon if desired. Serve directly from the skillet with crusty bread or a light salad.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

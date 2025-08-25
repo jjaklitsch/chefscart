@@ -1,0 +1,246 @@
+{
+  "slug": "herbed-couscous-breakfast-bowl-with-egg",
+  "title": "Herbed Couscous Breakfast Bowl with Egg",
+  "description": "A bright, herb-forward couscous bowl topped with a runny fried egg for a comforting, quick breakfast. Flavors include lemon, fresh parsley and mint, toasted pine nuts, and a drizzle of olive oil for a Mediterranean-inspired morning meal.",
+  "courses": [
+    "breakfast",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "egg",
+  "ingredient_tags": [
+    "couscous",
+    "egg",
+    "olive oil",
+    "lemon",
+    "parsley",
+    "mint",
+    "scallion",
+    "tomato",
+    "cucumber",
+    "pine nuts",
+    "feta",
+    "salt",
+    "black pepper",
+    "paprika",
+    "garlic"
+  ],
+  "spice_level": 1,
+  "time_total_min": 20,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 4,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "grain",
+    "dairy"
+  ],
+  "search_keywords": [
+    "herbed couscous",
+    "breakfast bowl",
+    "fried egg",
+    "quick breakfast",
+    "mediterranean breakfast",
+    "lemon parsley",
+    "mint couscous",
+    "pine nuts",
+    "feta",
+    "single pan",
+    "vegetarian breakfast",
+    "couscous salad",
+    "healthy breakfast",
+    "weeknight breakfast",
+    "30 minute meal",
+    "light brunch",
+    "tomato cucumber",
+    "olive oil",
+    "scallion",
+    "runny yolk"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "instant couscous",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 160,
+        "ml": null,
+        "optional": false,
+        "notes": "uncooked"
+      },
+      {
+        "display_name": "water or low-sodium vegetable broth",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "hot"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "plus extra for frying egg"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lemon"
+      },
+      {
+        "display_name": "fresh parsley",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "fresh mint",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "scallion (green onion)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly sliced"
+      },
+      {
+        "display_name": "small tomato",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": "diced"
+      },
+      {
+        "display_name": "small cucumber",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "diced, seeds removed if large"
+      },
+      {
+        "display_name": "pine nuts",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": true,
+        "notes": "lightly toasted"
+      },
+      {
+        "display_name": "crumbled feta cheese",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "one per serving"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 0.5,
+        "unit": "clove",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 4.5,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.6,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground, divided"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for sprinkling"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring the water or broth to a simmer in a small saucepan, add a pinch of salt and the minced garlic, then remove from heat; stir in the couscous and 1 tablespoon olive oil, cover and let steam until liquid is absorbed and couscous is tender.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "While couscous steams, toast the pine nuts in a dry skillet over medium heat, stirring, until lightly golden and fragrant; transfer to a bowl to stop cooking.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Fluff the couscous with a fork, then stir in lemon juice, remaining olive oil, chopped parsley, chopped mint (if using), sliced scallion, diced tomato and cucumber, season with half the salt and half the pepper to taste.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Heat a nonstick skillet over medium heat with a little olive oil; crack the eggs into the pan and fry until whites are set and edges are crisp while yolks remain runny, or cook to preferred doneness. Season eggs with remaining salt, pepper and a light dusting of smoked paprika if desired.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Divide the herbed couscous between bowls, top each with a fried egg, sprinkle with toasted pine nuts and crumbled feta, drizzle a little extra olive oil and serve immediately.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

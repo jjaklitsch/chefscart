@@ -1,0 +1,312 @@
+{
+  "slug": "paneer-tikka-masala",
+  "title": "Paneer Tikka Masala",
+  "description": "Charred paneer marinated in spiced yogurt and finished in a creamy, tomato-based masala sauce. Bright aromatics, warm spices and a silky finish make this a restaurant-style vegetarian favorite.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "paneer",
+  "ingredient_tags": [
+    "paneer",
+    "tomato",
+    "yogurt",
+    "onion",
+    "garlic",
+    "ginger",
+    "cream",
+    "butter",
+    "garam masala",
+    "cumin",
+    "coriander",
+    "turmeric",
+    "chili",
+    "cilantro",
+    "lemon"
+  ],
+  "spice_level": 3,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "paneer tikka",
+    "paneer tikka masala",
+    "vegetarian indian",
+    "tomato gravy",
+    "marinated paneer",
+    "tikka masala",
+    "creamy curry",
+    "grilled paneer",
+    "garam masala",
+    "yogurt marinade",
+    "restaurant-style curry",
+    "indian spices",
+    "weeknight dinner",
+    "paneer recipe",
+    "tomato cream sauce",
+    "cilantro garnish",
+    "ginger garlic",
+    "mildly spicy",
+    "veg curry"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "paneer, cubed (about 1-inch)",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1-inch cubes"
+      },
+      {
+        "display_name": "plain full-fat yogurt (for marinade)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "use thick yogurt"
+      },
+      {
+        "display_name": "ginger-garlic paste (for marinade)",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 22.5,
+        "optional": false,
+        "notes": "or freshly grated/pounded"
+      },
+      {
+        "display_name": "lemon juice (for marinade)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garam masala (for marinade)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin (for marinade)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt (divided)",
+        "quantity": 1.25,
+        "unit": "tsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": "divide between marinade and sauce"
+      },
+      {
+        "display_name": "vegetable oil (for searing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 150 g, finely diced"
+      },
+      {
+        "display_name": "ginger, minced (for sauce)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": 15,
+        "optional": false,
+        "notes": "freshly minced"
+      },
+      {
+        "display_name": "garlic, minced (for sauce)",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "tomato puree (canned or blendered fresh tomatoes)",
+        "quantity": 15,
+        "unit": "oz",
+        "grams": 425,
+        "ml": 450,
+        "optional": false,
+        "notes": "one 15 oz can (approx 425 g)"
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "paprika (sweet)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "adds color and mild flavor"
+      },
+      {
+        "display_name": "kashmiri chili powder or mild chili powder",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": 3.75,
+        "optional": false,
+        "notes": "adjust for heat preference"
+      },
+      {
+        "display_name": "hot water or stock (to adjust sauce consistency)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "more as needed"
+      },
+      {
+        "display_name": "heavy cream",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "can substitute cashew cream for richer texture"
+      },
+      {
+        "display_name": "fenugreek leaves (dried kasuri methi)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": "crushed between palms"
+      },
+      {
+        "display_name": "fresh cilantro, chopped (for garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "optional garnish"
+      },
+      {
+        "display_name": "lemon wedges (for serving)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "optional"
+      },
+      {
+        "display_name": "salt & pepper (to taste)",
+        "quantity": null,
+        "unit": null,
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust seasoning"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the marinade: combine yogurt, ginger-garlic paste, lemon juice, garam masala, ground cumin and half of the salt in a bowl until smooth. Add the cubed paneer and toss gently to coat. Cover and refrigerate for at least 20 minutes to 2 hours.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "While paneer marinates, prep sauce aromatics: finely chop the onion and mince additional ginger and garlic. Measure spices and open the tomato puree.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Sear or char the marinated paneer: heat oil in a heavy skillet over medium-high heat. Add paneer pieces in a single layer and cook until golden and lightly charred on at least two sides. Remove and set aside.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Make the masala base: reduce heat to medium and add butter to the same pan. Sauté the chopped onion until soft and golden, then add minced ginger and garlic and cook briefly until fragrant.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Add dry spices to the aromatics and toast briefly to bloom flavors. Pour in the tomato puree, stir to combine, and simmer until the raw tomato smell dissipates and oil begins to separate at the edges.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Adjust sauce consistency by adding hot water or stock, bring to a gentle simmer and season with remaining salt. Simmer to achieve a slightly thick but spoonable gravy.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Finish the curry: stir in cream and crushed dried fenugreek, then add seared paneer into the sauce. Gently simmer for a couple of minutes to allow flavors to marry and to warm the paneer through.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Taste and adjust seasoning and heat. Turn off the heat, garnish with chopped cilantro and serve with lemon wedges alongside basmati rice or naan.",
+        "time_min": -1
+      }
+    ]
+  },
+  "image_url": null
+}

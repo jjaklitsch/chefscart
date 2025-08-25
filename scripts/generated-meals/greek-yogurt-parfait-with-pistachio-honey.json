@@ -1,0 +1,185 @@
+{
+  "slug": "greek-yogurt-parfait-with-pistachio-honey",
+  "title": "Greek Yogurt Parfait with Pistachio & Honey",
+  "description": "A creamy layered parfait combining thick Greek yogurt, crunchy chopped pistachios, sweet honey and bright fresh fruit for a balanced breakfast or snack. Easy no-cook assembly highlights texture contrast and natural sweetness.",
+  "courses": [
+    "breakfast",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "yogurt",
+  "ingredient_tags": [
+    "greek yogurt",
+    "pistachio",
+    "honey",
+    "berries",
+    "banana",
+    "granola",
+    "vanilla",
+    "lemon",
+    "mint",
+    "salt"
+  ],
+  "spice_level": 1,
+  "time_total_min": 10,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "greek yogurt parfait",
+    "pistachio honey parfait",
+    "yogurt breakfast",
+    "healthy snack",
+    "quick breakfast",
+    "no cook",
+    "fruit and yogurt",
+    "granola parfait",
+    "mediterranean breakfast",
+    "protein rich breakfast",
+    "vegetarian breakfast",
+    "berries and yogurt",
+    "banana yogurt",
+    "crunchy pistachio",
+    "honey drizzle",
+    "vanilla yogurt",
+    "lemon zest",
+    "mint garnish",
+    "make ahead parfait"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "full-fat Greek yogurt",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "strained, chilled"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 64,
+        "ml": 45,
+        "optional": false,
+        "notes": "plus extra for drizzling if desired"
+      },
+      {
+        "display_name": "pistachios",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": 105,
+        "ml": null,
+        "optional": false,
+        "notes": "shelled and roughly chopped"
+      },
+      {
+        "display_name": "mixed berries (strawberries, blueberries, raspberries)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "halved larger berries"
+      },
+      {
+        "display_name": "banana",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "ripe, sliced"
+      },
+      {
+        "display_name": "granola (crispy)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "use nut-free if avoiding additional nuts"
+      },
+      {
+        "display_name": "vanilla extract",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 2.5,
+        "optional": true,
+        "notes": "for stirring into yogurt"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "freshly grated for brightness"
+      },
+      {
+        "display_name": "pinch of salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.4,
+        "ml": null,
+        "optional": false,
+        "notes": "to enhance sweetness"
+      },
+      {
+        "display_name": "fresh mint leaves",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 10,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "If using, stir vanilla extract, lemon zest and a pinch of salt into the Greek yogurt in a bowl until smooth and slightly glossy; chill briefly if desired.",
+        "time_min": 2
+      },
+      {
+        "step_no": 2,
+        "text": "Roughly chop the pistachios and slice any larger fruit (berries halved, banana sliced) and set out granola and honey for assembly.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Using two serving glasses or bowls, spoon a few tablespoons of yogurt into the bottom of each to create the first layer.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add a layer of fruit, then a sprinkle of chopped pistachios and a small spoonful of granola, followed by another layer of yogurt to fill about three-quarters of the vessel.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Top with remaining fruit, a final sprinkle of pistachios and granola for crunch, then drizzle honey over each parfait and garnish with mint leaves.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

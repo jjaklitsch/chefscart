@@ -1,0 +1,302 @@
+{
+  "slug": "saag-paneer",
+  "title": "Saag Paneer",
+  "description": "A creamy, spiced spinach curry studded with golden-browned cubes of paneer. Bright aromatics, warming spices, and a smooth spinach base make this a comforting vegetarian main served with rice or flatbreads.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "spinach",
+  "ingredient_tags": [
+    "spinach",
+    "paneer",
+    "onion",
+    "garlic",
+    "ginger",
+    "tomato",
+    "ghee",
+    "oil",
+    "garam masala",
+    "cumin",
+    "turmeric",
+    "chili",
+    "cream",
+    "yogurt",
+    "lemon",
+    "salt"
+  ],
+  "spice_level": 2,
+  "time_total_min": 43,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "saag",
+    "saag paneer",
+    "spinach curry",
+    "paneer",
+    "indian vegetarian",
+    "creamy spinach",
+    "palak paneer",
+    "garam masala",
+    "weeknight dinner",
+    "vegetarian main",
+    "flatbread",
+    "basmati rice",
+    "mild curry",
+    "comfort food",
+    "spinach recipe",
+    "paneer recipe",
+    "ginger garlic",
+    "tofu alternative",
+    "dinner for 4",
+    "stovetop curry"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "fresh spinach, washed and trimmed",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "can substitute half spinach half mustard greens if desired"
+      },
+      {
+        "display_name": "paneer, cut into 2 cm cubes",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "store-bought or homemade; press briefly to remove excess moisture"
+      },
+      {
+        "display_name": "vegetable oil or neutral oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": "for frying paneer"
+      },
+      {
+        "display_name": "ghee (clarified butter) or oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "for tempering spices and sautéing aromatics"
+      },
+      {
+        "display_name": "large onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 cup chopped"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "or 120 g canned crushed tomato"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "turmeric powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red chili powder (adjust to taste)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "can increase for more heat"
+      },
+      {
+        "display_name": "garam masala",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.6,
+        "ml": 5,
+        "optional": false,
+        "notes": "add near end of cooking"
+      },
+      {
+        "display_name": "plain yogurt (whole-milk) or cream",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "use cream for richer finish; whisk before adding"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "or to taste"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.25,
+        "unit": "tsp",
+        "grams": 7.5,
+        "ml": 6.25,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "water",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "for simmering and adjusting consistency"
+      },
+      {
+        "display_name": "kasuri methi (dried fenugreek leaves) crushed",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": true,
+        "notes": "adds traditional flavor if available"
+      },
+      {
+        "display_name": "fresh cilantro, chopped (for garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 30,
+        "optional": true,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 43,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare spinach by washing thoroughly and trimming stems; blanch or wilt in boiling water for 2 minutes, then plunge into ice water to preserve color. Drain and squeeze out excess water, then roughly chop.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat 1–2 tablespoons oil in a skillet over medium-high heat and pan-fry paneer cubes until golden on all sides, about 2–3 minutes per side; transfer to a plate lined with paper towel.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "In a heavy-bottomed pan, warm ghee or oil over medium heat; add chopped onion and sauté until translucent and beginning to brown.",
+        "time_min": 6
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic and grated ginger to the onions and cook, stirring, until fragrant.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in chopped tomato and cook until softened and the mixture becomes saucy, scraping any browned bits from the bottom of the pan.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Add ground cumin, ground coriander, turmeric, and red chili powder; toast spices for about a minute to bloom their flavors.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Add the drained chopped spinach to the pan with a splash of water; simmer gently for a few minutes to combine flavors and reduce excess moisture.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Use an immersion blender or transfer to a blender to purée the spinach mixture to a smooth or slightly textured consistency; return to the pan.",
+        "time_min": 3
+      },
+      {
+        "step_no": 9,
+        "text": "Stir in yogurt or cream, water to adjust consistency, and salt; simmer gently for 3–4 minutes to meld flavors.",
+        "time_min": 4
+      },
+      {
+        "step_no": 10,
+        "text": "Fold in garam masala and crushed kasuri methi if using; add the fried paneer and simmer 2–3 minutes to heat through and let paneer absorb flavors.",
+        "time_min": 3
+      },
+      {
+        "step_no": 11,
+        "text": "Finish with lemon juice and garnish with chopped cilantro; adjust seasoning and serve hot with rice or flatbread.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

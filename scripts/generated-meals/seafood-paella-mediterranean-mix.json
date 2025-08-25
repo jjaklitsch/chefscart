@@ -1,0 +1,307 @@
+{
+  "slug": "seafood-paella-mediterranean-mix",
+  "title": "Seafood Paella (Mediterranean Mix)",
+  "description": "A vibrant Mediterranean-style seafood paella with saffron-scented saffron rice, sweet peppers, tomatoes and a mix of shrimp, mussels and firm white fish. Cooked in a wide pan to achieve a flavorful socarrat and finished with lemon and parsley for bright, coastal flavors.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "rice",
+  "ingredient_tags": [
+    "rice",
+    "shrimp",
+    "mussels",
+    "white fish",
+    "saffron",
+    "tomato",
+    "bell pepper",
+    "peas",
+    "onion",
+    "garlic",
+    "olive oil",
+    "lemon",
+    "parsley",
+    "paprika",
+    "seafood broth"
+  ],
+  "spice_level": 2,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "shellfish",
+    "grain"
+  ],
+  "search_keywords": [
+    "paella",
+    "seafood paella",
+    "saffron rice",
+    "mussels",
+    "shrimp",
+    "white fish",
+    "mediterranean",
+    "one pan",
+    "socarrat",
+    "stovetop",
+    "party dinner",
+    "pescatarian",
+    "tomato pepper",
+    "spanish style",
+    "olive oil",
+    "paprika",
+    "lemon parsley",
+    "weekend recipe",
+    "seafood mix"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "short-grain rice (paella or bomba)",
+        "quantity": 320,
+        "unit": "g",
+        "grams": 320,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed and drained"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 40,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "large onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "red bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "julienned or diced"
+      },
+      {
+        "display_name": "yellow bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "julienned or diced"
+      },
+      {
+        "display_name": "ripe tomatoes",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and finely chopped or 1 can (14 oz) crushed"
+      },
+      {
+        "display_name": "sweet paprika (preferably smoked)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "saffron threads",
+        "quantity": 0.15,
+        "unit": "g",
+        "grams": 0.15,
+        "ml": null,
+        "optional": false,
+        "notes": "steeped in warm stock"
+      },
+      {
+        "display_name": "medium shrimp, peeled and deveined",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "tails on or off per preference"
+      },
+      {
+        "display_name": "mussels, cleaned and debearded",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "discard any open shells that don't close"
+      },
+      {
+        "display_name": "firm white fish (cod or haddock), cut into 2 cm pieces",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "frozen peas, thawed",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "low-sodium seafood or fish stock",
+        "quantity": 900,
+        "unit": "ml",
+        "grams": null,
+        "ml": 900,
+        "optional": false,
+        "notes": "warmed; amount may vary slightly"
+      },
+      {
+        "display_name": "dry white wine",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": true,
+        "notes": "for deglazing"
+      },
+      {
+        "display_name": "lemon",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into wedges for serving"
+      },
+      {
+        "display_name": "fresh flat-leaf parsley",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "chopped for garnish"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare mise en place: rinse rice until water runs almost clear, chop vegetables, peel and devein shrimp, clean mussels, cut fish into chunks, warm the seafood stock in a saucepan and steep saffron threads in a small amount of the warm stock.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a wide paella pan or large shallow skillet over medium heat and add olive oil. Sauté the chopped onion until translucent and soft.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic and diced/julienned bell peppers and cook until peppers soften and garlic is fragrant, stirring frequently to avoid burning.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in chopped tomatoes and cook down until the mixture is reduced and jammy, then add the paprika and bay leaf and cook for another minute to bloom the spices.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Add the rinsed rice to the pan and toast briefly, stirring to coat grains with the sofrito so each grain is glossy and fragrant.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Deglaze with white wine if using, allowing alcohol to evaporate for a minute, then pour in the warm saffron-infused stock and distribute rice evenly. Season with salt and pepper, bring to a steady simmer without stirring further.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Maintain a medium-low simmer and cook uncovered for about 12 minutes, rotating the pan occasionally to ensure even cooking. Do not stir; this helps develop the socarrat crust on the bottom.",
+        "time_min": 12
+      },
+      {
+        "step_no": 8,
+        "text": "Arrange shrimp, mussels and fish pieces evenly over the rice, pressing lightly so they contact the rice. Scatter peas if using. Continue to cook uncovered until rice is tender, seafood is cooked through, and mussels have opened (about 8–10 minutes).",
+        "time_min": 10
+      },
+      {
+        "step_no": 9,
+        "text": "If liquid remains but rice is almost done, increase heat for 1–2 minutes to encourage socarrat formation, then remove from heat. Cover the pan loosely with foil or a lid and rest for 5 minutes to finish steaming.",
+        "time_min": 7
+      },
+      {
+        "step_no": 10,
+        "text": "Garnish with chopped parsley and lemon wedges, discard any unopened mussels, and serve directly from the pan.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

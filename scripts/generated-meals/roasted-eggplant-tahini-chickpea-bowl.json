@@ -1,0 +1,289 @@
+{
+  "slug": "roasted-eggplant-tahini-chickpea-bowl",
+  "title": "Roasted Eggplant Tahini & Chickpea Bowl",
+  "description": "A hearty Mediterranean-inspired bowl featuring caramelized roasted eggplant, spiced chickpeas, and a creamy lemon-tahini drizzle. Bright herbs, crunchy toasted seeds, and a pop of preserved lemon or sumac balance savory roasted flavors for an easy weeknight meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegan",
+    "vegetarian"
+  ],
+  "primary_ingredient": "eggplant",
+  "ingredient_tags": [
+    "eggplant",
+    "chickpeas",
+    "tahini",
+    "lemon",
+    "garlic",
+    "olive oil",
+    "cumin",
+    "paprika",
+    "parsley",
+    "cilantro",
+    "red onion",
+    "tomato",
+    "yogurt",
+    "sesame",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 60,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "sesame"
+  ],
+  "search_keywords": [
+    "roasted eggplant",
+    "tahini sauce",
+    "chickpea bowl",
+    "mediterranean bowl",
+    "vegan dinner",
+    "plant-based protein",
+    "easy weeknight meal",
+    "roasted vegetables",
+    "lemon tahini",
+    "sumac",
+    "preserved lemon",
+    "healthy bowls",
+    "meal prep",
+    "garlic",
+    "cumin",
+    "paprika",
+    "herb garnish",
+    "toasted sesame",
+    "gluten free",
+    "protein rich"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "eggplant (large), cut into 1-inch cubes",
+        "quantity": 1.5,
+        "unit": "lb",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "trim ends and cut into roughly 1-inch cubes for even roasting"
+      },
+      {
+        "display_name": "canned chickpeas (drained and rinsed)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 320,
+        "ml": null,
+        "optional": false,
+        "notes": "drain and rinse well; can use home-cooked chickpeas"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided between eggplant and chickpeas"
+      },
+      {
+        "display_name": "tahini",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": 180,
+        "ml": 180,
+        "optional": false,
+        "notes": "for tahini sauce"
+      },
+      {
+        "display_name": "water (for thinning tahini)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "add gradually to reach desired sauce consistency"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1 large lemon; divide between sauce and finishing"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "one clove for tahini, one for chickpeas or roasting"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": "use for spiced chickpeas"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": "adds smoky depth to chickpeas"
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.15,
+        "ml": null,
+        "optional": true,
+        "notes": "optional warm spice"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided, adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "red onion, thinly sliced",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "for freshness and crunch"
+      },
+      {
+        "display_name": "tomato, diced (optional)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "ripe tomato for brightness"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "or a mix of parsley and cilantro"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "toast in a dry pan until lightly brown"
+      },
+      {
+        "display_name": "olive oil (finishing drizzle)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for finishing the bowls"
+      },
+      {
+        "display_name": "sumac or smoked paprika (for garnish)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.15,
+        "ml": null,
+        "optional": true,
+        "notes": "sumac adds lemony brightness"
+      },
+      {
+        "display_name": "plain dairy-free yogurt (optional for serving)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": true,
+        "notes": "use dairy yogurt if not vegan; optional cooling element"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 60,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 425°F (220°C). Line two baking sheets with parchment paper or lightly oil them.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Toss the cubed eggplant with half the olive oil, 1 tsp salt and 1/4 tsp pepper on a baking sheet in a single layer to ensure even browning.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "On the second baking sheet, toss the drained chickpeas with remaining olive oil, cumin, smoked paprika, remaining salt and pepper; spread them in a single layer.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Roast eggplant and chickpeas in the preheated oven. Roast chickpeas for 25 minutes, shaking the pan halfway through. Roast eggplant for 25–30 minutes until caramelized and tender, turning once after 15 minutes.",
+        "time_min": 30
+      },
+      {
+        "step_no": 5,
+        "text": "While vegetables roast, make the tahini sauce by whisking tahini, lemon juice, one minced garlic clove, 1/2 tsp salt and a few tablespoons of water; add more water until the sauce is smooth and pourable. Adjust acidity and salt to taste.",
+        "time_min": 7
+      },
+      {
+        "step_no": 6,
+        "text": "If using, thinly slice red onion and dice tomato; chop parsley. Toast sesame seeds in a small dry skillet over medium heat until fragrant, 2–3 minutes, stirring constantly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Remove roasted eggplant and chickpeas from the oven. If desired, toss roasted eggplant with a tablespoon of lemon juice or a pinch of sumac to brighten flavor.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble bowls: divide roasted eggplant and chickpeas among bowls, add sliced red onion and tomato if using, drizzle generously with tahini sauce and a small spoonful of yogurt if using, garnish with chopped parsley and toasted sesame seeds, and finish with a drizzle of olive oil and sumac or smoked paprika.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

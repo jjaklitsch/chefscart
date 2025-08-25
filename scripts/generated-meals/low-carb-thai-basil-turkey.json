@@ -1,0 +1,272 @@
+{
+  "slug": "low-carb-thai-basil-turkey",
+  "title": "Low-Carb Thai Basil Turkey",
+  "description": "A quick, aromatic stir-fry of lean ground turkey with Thai holy basil, bright lime, and savory-sweet sauce. Low in carbs and high in flavor, it comes together in under 30 minutes for an easy weeknight lunch or dinner served over leafy greens or cauliflower rice.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [
+    "low-carb",
+    "keto"
+  ],
+  "primary_ingredient": "turkey",
+  "ingredient_tags": [
+    "turkey",
+    "ground turkey",
+    "basil",
+    "thai basil",
+    "garlic",
+    "shallot",
+    "chilies",
+    "fish sauce",
+    "soy sauce",
+    "coconut aminos",
+    "lime",
+    "bell pepper",
+    "green beans",
+    "olive oil",
+    "sesame oil",
+    "erythritol",
+    "cauliflower rice"
+  ],
+  "spice_level": 3,
+  "time_total_min": 28,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "thai basil turkey",
+    "low-carb thai",
+    "keto basil turkey",
+    "thai stir fry",
+    "ground turkey recipe",
+    "cauliflower rice pairing",
+    "low carb dinner",
+    "weeknight meal",
+    "garlic and chilies",
+    "fish sauce",
+    "coconut aminos",
+    "spicy thai",
+    "high protein",
+    "paleo-friendly option",
+    "quick skillet meal",
+    "fresh basil",
+    "lime",
+    "sugar-free",
+    "healthy comfort food",
+    "one-pan"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ground turkey (93% lean)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature for even browning"
+      },
+      {
+        "display_name": "fresh Thai basil leaves, packed",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 48,
+        "ml": null,
+        "optional": false,
+        "notes": "remove large stems; lightly chop or leave whole leaves"
+      },
+      {
+        "display_name": "neutral oil (canola or avocado) or olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for stir-frying"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "shallot, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "or small yellow onion"
+      },
+      {
+        "display_name": "Thai bird's eye chilies or serrano, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to spice preference; remove seeds to reduce heat"
+      },
+      {
+        "display_name": "red bell pepper, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "adds color and crunch; optional to keep lower carb"
+      },
+      {
+        "display_name": "green beans, trimmed and halved",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "optional vegetable; can substitute snap peas"
+      },
+      {
+        "display_name": "fish sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "use high-quality fish sauce"
+      },
+      {
+        "display_name": "coconut aminos (or low-sodium soy sauce for non-paleo)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "coconut aminos keeps it soy-free; use soy sauce if preferred"
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1/2 lime"
+      },
+      {
+        "display_name": "granulated erythritol or monk fruit sweetener",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "balances savory flavors; omit if not desired"
+      },
+      {
+        "display_name": "toasted sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste after fish sauce"
+      },
+      {
+        "display_name": "lime wedges (to serve)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "cauliflower rice (to serve, optional)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 960,
+        "ml": null,
+        "optional": true,
+        "notes": "for low-carb serving; can use leafy greens instead"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 28,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep all ingredients: mince garlic, chop shallot, slice chilies and pepper, trim and halve green beans, measure fish sauce and coconut aminos, squeeze lime. Have basil leaves washed and dried.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large heavy skillet or wok over medium-high heat until very hot, then add neutral oil and swirl to coat the surface.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add shallot and stir-fry for 30-45 seconds until fragrant and just beginning to soften, then add minced garlic and sliced chilies and stir for another 15-20 seconds without burning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add ground turkey, breaking it up with a spatula; spread into an even layer and let sear without stirring for 1 minute to develop browning, then continue to cook and stir for 3-4 minutes until mostly cooked through and no longer pink.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "If using bell pepper or green beans, push turkey to one side and add vegetables to the hot side of the pan with a small splash of oil; stir-fry 2-3 minutes until crisp-tender, then combine with turkey.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Pour in fish sauce and coconut aminos, add sweetener if using, and stir thoroughly to deglaze the pan and evenly coat the turkey; simmer for 1-2 minutes to allow flavors to concentrate and moisture to reduce slightly.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Turn off direct heat, add lime juice, toasted sesame oil, black pepper, and most of the basil leaving a small handful for garnish; toss vigorously until basil wilts and is well distributed.",
+        "time_min": 1
+      },
+      {
+        "step_no": 8,
+        "text": "Taste and adjust seasoning with salt or additional fish sauce and lime as needed. Serve immediately over cauliflower rice or on a bed of leafy greens, topped with remaining fresh basil and lime wedges.",
+        "time_min": 9
+      }
+    ]
+  },
+  "image_url": null
+}

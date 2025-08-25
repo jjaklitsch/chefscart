@@ -2,33 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export const dynamic = 'force-dynamic'
 
-// Mock ZIP codes with Instacart coverage for demonstration
-// Later we'll integrate with Instacart's delivery API
-const INSTACART_COVERAGE_ZIPS = new Set([
-  // New York
-  '10001', '10002', '10003', '10004', '10005', '10010', '10011', '10012', '10013', '10014',
-  // Los Angeles / Beverly Hills
-  '90210', '90211', '90212', '90213', '90214', '90215', '90220', '90221', '90222', '90223',
-  // San Francisco
-  '94102', '94103', '94104', '94105', '94106', '94107', '94108', '94109', '94110', '94111',
-  // Chicago
-  '60601', '60602', '60603', '60604', '60605', '60606', '60607', '60608', '60609', '60610',
-  // Boston
-  '02101', '02102', '02103', '02104', '02105', '02106', '02107', '02108', '02109', '02110',
-  // Dallas
-  '75201', '75202', '75203', '75204', '75205', '75206', '75207', '75208', '75209', '75210',
-  // Miami
-  '33101', '33102', '33103', '33104', '33105', '33106', '33107', '33108', '33109', '33110',
-  // Seattle
-  '98101', '98102', '98103', '98104', '98105', '98106', '98107', '98108', '98109', '98110',
-  // Atlanta
-  '30301', '30302', '30303', '30304', '30305', '30306', '30307', '30308', '30309', '30310',
-  // Phoenix
-  '85001', '85002', '85003', '85004', '85005', '85006', '85007', '85008', '85009', '85010',
-  // Test ZIP codes for development
-  '12345', '54321',
-])
-
 export async function POST(request: NextRequest) {
   try {
     const { zipCode } = await request.json()
@@ -42,21 +15,72 @@ export async function POST(request: NextRequest) {
       }, { status: 400 })
     }
 
-    // TODO: INSTACART API INTEGRATION
-    // Replace this hardcoded ZIP lookup with real-time Instacart coverage API
-    // This should check actual service availability for the specific ZIP code
-    // including store availability, delivery windows, and service zones
-    // API endpoint: https://www.instacart.com/v3/retailers/availability
-    // For now, using mock data:
-    const hasInstacartCoverage = INSTACART_COVERAGE_ZIPS.has(zipCode)
+    const apiKey = process.env.INSTACART_API_KEY
+    
+    // If no API key, fall back to allowing all valid ZIP codes
+    if (!apiKey) {
+      console.warn('INSTACART_API_KEY not configured, allowing all ZIP codes')
+      return NextResponse.json({
+        isValid: true,
+        hasInstacartCoverage: true,
+        message: 'Great! ChefsCart is available in your area.'
+      })
+    }
 
-    return NextResponse.json({
-      isValid: true,
-      hasInstacartCoverage,
-      message: hasInstacartCoverage 
-        ? 'Great! ChefsCart is available in your area.'
-        : 'ChefsCart isn\'t available in your area yet.'
-    })
+    // Call Instacart API to check if retailers are available
+    try {
+      const instacartResponse = await fetch(
+        `${process.env.INSTACART_IDP_BASE_URL}/idp/v1/retailers?postal_code=${zipCode}&country_code=US`,
+        {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        }
+      )
+
+      if (!instacartResponse.ok) {
+        // If we get a 404, it means no coverage
+        if (instacartResponse.status === 404) {
+          return NextResponse.json({
+            isValid: true,
+            hasInstacartCoverage: false,
+            message: 'ChefsCart isn\'t available in your area yet.'
+          })
+        }
+        
+        // For other errors, log but allow the user to proceed
+        console.error('Instacart API error:', instacartResponse.status)
+        return NextResponse.json({
+          isValid: true,
+          hasInstacartCoverage: true,
+          message: 'Great! ChefsCart is available in your area.'
+        })
+      }
+
+      const data = await instacartResponse.json()
+      const hasRetailers = data.retailers && data.retailers.length > 0
+
+      return NextResponse.json({
+        isValid: true,
+        hasInstacartCoverage: hasRetailers,
+        message: hasRetailers 
+          ? 'Great! ChefsCart is available in your area.'
+          : 'ChefsCart isn\'t available in your area yet.',
+        retailerCount: hasRetailers ? data.retailers.length : 0
+      })
+
+    } catch (apiError) {
+      // If the API call fails, log the error but allow the user to proceed
+      console.error('Error calling Instacart API:', apiError)
+      return NextResponse.json({
+        isValid: true,
+        hasInstacartCoverage: true,
+        message: 'Great! ChefsCart is available in your area.'
+      })
+    }
 
   } catch (error) {
     console.error('ZIP validation error:', error)

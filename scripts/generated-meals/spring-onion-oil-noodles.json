@@ -1,0 +1,219 @@
+{
+  "slug": "spring-onion-oil-noodles",
+  "title": "Spring Onion Oil Noodles",
+  "description": "Quick, fragrant noodles tossed in hot spring onion oil that blooms sweet, savory aromatics. Simple wok technique delivers glossy, flavorful strands finished with light soy and toasted sesame for a comforting, fast meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "wheat noodles",
+    "spring onion",
+    "scallion",
+    "soy sauce",
+    "sesame oil",
+    "vegetable oil",
+    "garlic",
+    "sugar",
+    "salt",
+    "pepper",
+    "chili flakes",
+    "ginger",
+    "toasted sesame seeds"
+  ],
+  "spice_level": 2,
+  "time_total_min": 19,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "spring onion oil noodles",
+    "scallion oil noodles",
+    "congees alternative",
+    "chinese noodles",
+    "quick noodle recipe",
+    "15 minute dinner",
+    "spring onion oil",
+    "scallion oil",
+    "soy sesame noodles",
+    "vegetarian chinese",
+    "stovetop noodles",
+    "garlic noodles",
+    "weeknight meal",
+    "noodle stir",
+    "toasted sesame",
+    "comfort noodles",
+    "easy asian",
+    "pan sauce noodles",
+    "olive oil alternative",
+    "cold weather comfort"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "fresh or dried wheat noodles (e.g., Chinese egg noodles or spaghetti)",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "if using dried, cook until al dente; fresh cooks faster"
+      },
+      {
+        "display_name": "spring onions (scallions), white and green parts separated",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "whites finely sliced, greens thinly diagonal-sliced for garnish"
+      },
+      {
+        "display_name": "neutral oil (vegetable, canola, or peanut oil)",
+        "quantity": 80,
+        "unit": "ml",
+        "grams": null,
+        "ml": 80,
+        "optional": false,
+        "notes": "used to make hot spring onion oil"
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adjust saltiness to taste"
+      },
+      {
+        "display_name": "sesame oil (to finish)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "added off-heat for fragrance"
+      },
+      {
+        "display_name": "garlic, finely minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "used in oil or added to noodles depending on preference"
+      },
+      {
+        "display_name": "fresh ginger, finely minced",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, adds brightness"
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "balances soy"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste, especially if soy is salty"
+      },
+      {
+        "display_name": "crushed red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for added heat"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "neutral oil for boiling water (optional splash to prevent sticking)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "only if using sticky noodles"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 19,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of salted water to a rolling boil and cook the noodles until just al dente; reserve about 60 ml of the cooking water, then drain the noodles.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "While the noodles cook, prepare the spring onions: separate whites and greens, thinly slice the white parts and chop the green parts on the diagonal for garnish.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Combine the sliced spring onion whites and minced garlic (and ginger if using) in a heatproof bowl large enough for the noodles; set aside.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Heat the neutral oil in a small saucepan or skillet over medium-high until shimmering and just beginning to smoke; carefully pour the hot oil over the spring onion and garlic mixture to sizzle and bloom the aromatics.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "In a large mixing bowl or the empty pot, combine soy sauce, sugar, sesame oil, optional chili flakes, a pinch of salt, and the reserved noodle cooking water; mix to form a glossy sauce.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Add the drained hot noodles to the sauce and toss vigorously to coat evenly; pour the hot spring onion oil and aromatic solids over the noodles and toss again so the oil is distributed and the noodles shine.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Taste and adjust seasoning with additional soy or salt if needed. Transfer to serving bowls and finish with chopped spring onion greens and toasted sesame seeds.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

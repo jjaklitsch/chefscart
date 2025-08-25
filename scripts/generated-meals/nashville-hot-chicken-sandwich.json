@@ -1,0 +1,346 @@
+{
+  "slug": "nashville-hot-chicken-sandwich",
+  "title": "Nashville Hot Chicken Sandwich",
+  "description": "Crispy double-dredged fried chicken coated in a spicy cayenne butter glaze, served on a soft toasted bun with pickles and cool slaw for balance. Bold, smoky heat with crunchy texture and tangy accents — a classic Southern sandwich technique elevated for home cooks.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "southern",
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "buttermilk",
+    "flour",
+    "cayenne",
+    "paprika",
+    "garlic",
+    "onion",
+    "eggs",
+    "vegetable oil",
+    "mayonnaise",
+    "vinegar",
+    "pickles",
+    "buns",
+    "sugar",
+    "salt",
+    "black pepper",
+    "hot sauce",
+    "butter",
+    "coleslaw"
+  ],
+  "spice_level": 4,
+  "time_total_min": 85,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "nashville hot chicken",
+    "spicy fried chicken sandwich",
+    "southern chicken sandwich",
+    "buttermilk fried chicken",
+    "cayenne butter glaze",
+    "crispy chicken",
+    "pickles",
+    "colslaw",
+    "hot sauce",
+    "fried sandwich",
+    "comfort food",
+    "spicy sandwich",
+    "weeknight dinner",
+    "sandwich recipe",
+    "deep fry chicken",
+    "double dredge",
+    "southern heat",
+    "toasted buns",
+    "home fried chicken",
+    "quick brine"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skin-on chicken thighs (trimmed, pounded to even thickness)",
+        "quantity": 1.25,
+        "unit": "lb",
+        "grams": 568,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, leave small skin portions for crispiness"
+      },
+      {
+        "display_name": "buttermilk (for brine/marinade)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 360,
+        "ml": 360,
+        "optional": false,
+        "notes": "can substitute with milk + 1 tbsp vinegar if needed"
+      },
+      {
+        "display_name": "hot sauce (in marinade)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "adds heat to marinade"
+      },
+      {
+        "display_name": "all-purpose flour (for dredge)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cornstarch (for extra crisp)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "mix with flour"
+      },
+      {
+        "display_name": "baking powder (in dredge)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "onion powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sweet paprika",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": "for color and mild sweetness"
+      },
+      {
+        "display_name": "salt (divided)",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "half in marinade, half in flour"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "eggs (for egg wash)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "beat lightly"
+      },
+      {
+        "display_name": "vegetable oil (for frying, canola or peanut oil)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 360,
+        "optional": false,
+        "notes": "enough for 1.5-2 inches in skillet or dutch oven"
+      },
+      {
+        "display_name": "unsalted butter (for hot oil glaze)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 57,
+        "ml": 60,
+        "optional": false,
+        "notes": "melted to make spicy glaze"
+      },
+      {
+        "display_name": "cayenne pepper (for heat mix)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "smoked paprika (for heat mix)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "brown sugar (pinch to balance spice)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, balances heat"
+      },
+      {
+        "display_name": "hamburger buns (soft, 4)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "brioche or potato buns preferred"
+      },
+      {
+        "display_name": "dill pickles (sliced)",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "2 slices per sandwich"
+      },
+      {
+        "display_name": "mayonnaise (for sauce/slaw)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "used for slaw dressing and optional sandwich spread"
+      },
+      {
+        "display_name": "apple cider vinegar (for slaw)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "coleslaw mix (shredded cabbage and carrots)",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": true,
+        "notes": "makes quick slaw to cool the sandwich"
+      },
+      {
+        "display_name": "granulated sugar (in slaw)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "salted butter (for toasting buns)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "melt and brush buns before toasting"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 85,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare marinade: combine buttermilk, hot sauce and half the salt in a bowl; submerge trimmed chicken thighs, cover and refrigerate for at least 30 minutes or up to 8 hours.",
+        "time_min": 30
+      },
+      {
+        "step_no": 2,
+        "text": "Make slaw: whisk mayonnaise, apple cider vinegar, sugar, pinch of salt and pepper; toss with coleslaw mix, chill until ready to assemble.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Mix dry dredge: in a wide bowl combine flour, cornstarch, baking powder, garlic powder, onion powder, paprika, remaining salt and black pepper; set aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Set up breading station: place beaten eggs in one shallow dish and the flour mixture in another; remove chicken from marinade, let excess drip, then coat in flour, dip in egg, and dredge again in flour for a double coating.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Heat oil to 350°F (175°C) in a heavy pot or deep skillet with enough oil for 1.5–2 inches depth; maintain temperature with a thermometer for even frying.",
+        "time_min": 7
+      },
+      {
+        "step_no": 6,
+        "text": "Fry chicken in batches without overcrowding: carefully lower pieces into oil and fry until deep golden and internal temperature reaches 165°F (74°C), about 6–8 minutes per side depending on thickness; transfer to a wire rack set over a sheet pan to drain and rest.",
+        "time_min": 16
+      },
+      {
+        "step_no": 7,
+        "text": "Prepare Nashville hot oil glaze: melt butter in a small saucepan or microwave, whisk in cayenne, smoked paprika, optional brown sugar and a pinch of salt; add a splash of frying oil (strainer optional) to loosen and bloom spices.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Brush or spoon hot glaze over each fried chicken piece while still hot, letting it soak for a minute; repeat for desired heat and color.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Toast buns: brush cut sides with melted butter and toast in a skillet or oven until golden, about 2–3 minutes.",
+        "time_min": 3
+      },
+      {
+        "step_no": 10,
+        "text": "Assemble sandwiches: spread mayo on bottom bun (optional), place glazed chicken, top with pickles and a scoop of slaw, cap with top bun and serve immediately.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

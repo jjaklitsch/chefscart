@@ -1,0 +1,207 @@
+{
+  "slug": "tomato-egg-stir-fry",
+  "title": "Tomato & Egg Stir-Fry",
+  "description": "A quick, homely stir-fry of softly scrambled eggs with bright, saucy tomatoes. Savory, slightly sweet, and silky in texture, this dish comes together in minutes for a comforting breakfast, lunch, or weeknight dinner.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "egg",
+  "ingredient_tags": [
+    "egg",
+    "tomato",
+    "scallion",
+    "garlic",
+    "oil",
+    "sugar",
+    "salt",
+    "soy sauce",
+    "sesame oil",
+    "water",
+    "pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 20,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "soy"
+  ],
+  "search_keywords": [
+    "tomato",
+    "egg",
+    "stir-fry",
+    "tomato egg",
+    "chinese",
+    "quick",
+    "weeknight",
+    "breakfast",
+    "lunch",
+    "dinner",
+    "comfort food",
+    "savory",
+    "umami",
+    "scrambled eggs",
+    "vegetarian",
+    "10-minute",
+    "one-pan",
+    "scallion",
+    "garlic",
+    "simple"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "large eggs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "beaten lightly with pinch of salt"
+      },
+      {
+        "display_name": "ripe tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1–1.5 cm wedges"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided (for eggs and for tomatoes)"
+      },
+      {
+        "display_name": "scallion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green separated, sliced thin (whites minced, greens for garnish)"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "balances acidity of tomatoes"
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "adds salt and umami"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "for final seasoning"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.2,
+        "ml": null,
+        "optional": true,
+        "notes": "freshly ground, optional"
+      },
+      {
+        "display_name": "water",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "to create light sauce"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": true,
+        "notes": "for finishing aroma"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep ingredients: beat eggs until homogeneous; cut tomatoes into wedges; slice scallion separating whites and greens; mince garlic.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a wok or large nonstick skillet over medium-high heat. Add half the neutral oil. When hot but not smoking, pour in beaten eggs and let set briefly, then scramble gently until just-cooked but still soft. Transfer eggs to a plate and set aside.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Add remaining oil to the same pan. Stir-fry scallion whites and minced garlic briefly until fragrant (about 10–15 seconds) but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add tomato wedges and a pinch of salt. Stir-fry on high for 1–2 minutes until juices begin to release.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Add sugar, light soy sauce, and water; reduce heat to medium and simmer tomatoes for 2–3 minutes until softened and a saucy consistency forms.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Return scrambled eggs to the pan and gently fold them into the tomato sauce, stirring 30–45 seconds to combine and heat through. Adjust seasoning with a pinch of salt and optional black pepper.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Turn off heat, drizzle sesame oil if using, toss in scallion greens, and give a final gentle stir. Serve immediately over steamed rice or on its own.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,283 @@
+{
+  "slug": "low-carb-chicken-fajita-bowl-no-rice",
+  "title": "Low-Carb Chicken Fajita Bowl (No Rice)",
+  "description": "A vibrant low-carb take on classic fajitas with lime‑marinated chicken, charred bell peppers and onions, and a creamy avocado cilantro drizzle. Quick skillet cooking locks in smoky, tangy flavors for a satisfying bowl without rice.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [
+    "low-carb",
+    "keto",
+    "paleo"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "bell pepper",
+    "onion",
+    "avocado",
+    "lime",
+    "olive oil",
+    "garlic",
+    "cumin",
+    "chili powder",
+    "cilantro",
+    "lettuce",
+    "sour cream",
+    "cheddar cheese",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "low carb",
+    "keto",
+    "chicken fajita bowl",
+    "no rice",
+    "paleo",
+    "skillet",
+    "grilled peppers",
+    "avocado cilantro sauce",
+    "lime marinade",
+    "weeknight dinner",
+    "meal prep",
+    "gluten free",
+    "high protein",
+    "southwestern",
+    "cheddar",
+    "sour cream",
+    "garlic",
+    "cumin",
+    "bell pepper",
+    "lettuce bowl"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts, trimmed and sliced into 1/2-inch strips",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "slice against the grain into strips"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided (marinade + cooking)"
+      },
+      {
+        "display_name": "lime juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced finely"
+      },
+      {
+        "display_name": "chili powder",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "optional for smokiness"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "bell peppers (mixed colors), seeded and sliced into 1/2-inch strips",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "use red, yellow, and green for color"
+      },
+      {
+        "display_name": "yellow onion, halved and thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "romaine lettuce, shredded (bowl base)",
+        "quantity": 6,
+        "unit": "cup",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "can substitute mixed greens"
+      },
+      {
+        "display_name": "ripe avocado, pitted and peeled",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "for sauce"
+      },
+      {
+        "display_name": "plain full-fat sour cream",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "can use Greek yogurt as substitute"
+      },
+      {
+        "display_name": "fresh cilantro leaves, chopped",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "packed"
+      },
+      {
+        "display_name": "water (for thinning sauce)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adjust for desired sauce consistency"
+      },
+      {
+        "display_name": "shredded cheddar cheese",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 112,
+        "ml": null,
+        "optional": true,
+        "notes": "optional garnish"
+      },
+      {
+        "display_name": "lime wedges, for serving",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for extra heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the chicken by trimming and slicing into even 1/2-inch strips; place in a bowl and add half the olive oil, lime juice, minced garlic, chili powder, cumin, smoked paprika, half the salt and half the pepper; toss to coat and let marinate at room temperature while you prep vegetables.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Slice bell peppers and onion into 1/2-inch strips and shred the romaine; set aside so bowls can be assembled quickly after cooking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large heavy skillet over medium-high heat and add remaining olive oil; when oil is shimmering add the marinated chicken in a single layer (work in batches if needed) and cook without moving until the underside is browned, about 3 minutes.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Flip or stir the chicken strips and continue cooking until cooked through and an instant-read thermometer reads 165°F (74°C), about 2–3 more minutes; transfer cooked chicken to a plate and tent with foil to rest.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Return the skillet to medium-high heat and add the sliced peppers and onions; sprinkle with remaining salt and pepper and sauté, stirring occasionally, until edges are charred and vegetables are softened but still slightly crisp, about 5–6 minutes.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "While vegetables finish, make the avocado cilantro sauce by combining avocado, sour cream, cilantro, water, a squeeze of lime, and a pinch of salt in a blender or bowl and purée/whisk until smooth; adjust thickness with water and taste for seasoning.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble bowls by dividing shredded romaine among bowls, topping with cooked chicken, sautéed peppers and onions, a drizzle of avocado cilantro sauce, optional shredded cheddar, lime wedges and red pepper flakes if using; serve immediately.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

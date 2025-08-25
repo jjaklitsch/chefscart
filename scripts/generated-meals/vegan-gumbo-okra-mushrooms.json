@@ -1,0 +1,311 @@
+{
+  "slug": "vegan-gumbo-okra-mushrooms",
+  "title": "Vegan Gumbo (Okra & Mushrooms)",
+  "description": "A hearty, plant-based take on classic Creole gumbo featuring tender okra, meaty mushrooms and a deeply flavored roux-based broth. Smoky paprika, warm thyme and a hit of file powder finish a rich, vegetable-forward stew served over steamed rice.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "southern"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "okra",
+  "ingredient_tags": [
+    "okra",
+    "mushrooms",
+    "bell pepper",
+    "onion",
+    "celery",
+    "garlic",
+    "tomato",
+    "vegetable broth",
+    "rice",
+    "flour",
+    "oil",
+    "thyme",
+    "bay leaf",
+    "paprika",
+    "cayenne",
+    "file powder",
+    "soy sauce",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 80,
+  "servings_default": 6,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "gluten",
+    "soy"
+  ],
+  "search_keywords": [
+    "vegan gumbo",
+    "okra gumbo",
+    "mushroom gumbo",
+    "plant-based gumbo",
+    "creole vegan",
+    "okra stew",
+    "roux gumbo",
+    "vegan southern",
+    "comfort stew",
+    "file powder",
+    "vegan dinner",
+    "one-pot gumbo",
+    "rice and gumbo",
+    "smoky paprika",
+    "vegan cajun",
+    "vegan comfort food",
+    "thyme and bay leaf",
+    "vegetable broth stew",
+    "okras and mushrooms",
+    "stewed okra"
+  ],
+  "ingredients_json": {
+    "servings": 6,
+    "ingredients": [
+      {
+        "display_name": "okra, trimmed and halved lengthwise",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "trim ends and slice lengthwise or into 1/2-in pieces if preferred"
+      },
+      {
+        "display_name": "mixed mushrooms ( cremini + shiitake ), cleaned and sliced",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "slice into 1/4-1/2-in pieces"
+      },
+      {
+        "display_name": "yellow onion, medium, diced",
+        "quantity": 1.5,
+        "unit": "each",
+        "grams": 225,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1.5 medium onions, diced"
+      },
+      {
+        "display_name": "green bell pepper, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "common in the holy trinity for gumbo"
+      },
+      {
+        "display_name": "celery stalks, diced",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 3 medium stalks"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 34,
+        "ml": 30,
+        "optional": false,
+        "notes": "concentrated tomato paste"
+      },
+      {
+        "display_name": "all-purpose flour (for roux)",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "for dark roux"
+      },
+      {
+        "display_name": "neutral oil (canola or vegetable) for roux",
+        "quantity": 90,
+        "unit": "ml",
+        "grams": 82,
+        "ml": 90,
+        "optional": false,
+        "notes": "use an oil with a high smoke point"
+      },
+      {
+        "display_name": "vegetable broth, low sodium",
+        "quantity": 1200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 1200,
+        "optional": false,
+        "notes": "warm before adding to roux"
+      },
+      {
+        "display_name": "low-sodium soy sauce (or tamari)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "adds umami; use tamari for gluten-free"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": "adds smoky depth"
+      },
+      {
+        "display_name": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 sprig fresh per 2 cups liquid"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "remove before serving"
+      },
+      {
+        "display_name": "cayenne pepper",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "file powder (gumbo filé)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "sprinkle at the end for thickening and flavor"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "cooked long-grain white rice, for serving",
+        "quantity": 720,
+        "unit": "g",
+        "grams": 720,
+        "ml": null,
+        "optional": false,
+        "notes": "equivalent to about 3 cups cooked rice"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 80,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep all produce: trim and slice okra, clean and slice mushrooms, dice onion, bell pepper and celery, mince garlic, and measure spices and liquids.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Make a dark roux: heat oil in a heavy-bottomed Dutch oven over medium heat, add flour and whisk constantly until it turns a deep brown (like peanut butter to chocolate), 12–18 minutes. Reduce heat as needed to avoid burning.",
+        "time_min": 16
+      },
+      {
+        "step_no": 3,
+        "text": "Add the holy trinity: add diced onion, bell pepper and celery to the roux and cook, stirring frequently, until softened and aromatic.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Add garlic and tomato paste: stir in minced garlic and tomato paste and cook for a minute to bloom flavors and remove rawness.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Deglaze and build the broth: gradually whisk in warm vegetable broth to the roux mixture until smooth, scraping up any fond, then add soy sauce, smoked paprika, thyme, bay leaves, cayenne, salt and pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Simmer mushrooms: add sliced mushrooms to the pot and simmer gently for about 10 minutes to concentrate their flavor and release moisture into the broth.",
+        "time_min": 10
+      },
+      {
+        "step_no": 7,
+        "text": "Add okra and cook: add the prepared okra to the gumbo, stir to combine, and simmer uncovered until okra is tender and the gumbo has slightly thickened, about 15 minutes.",
+        "time_min": 15
+      },
+      {
+        "step_no": 8,
+        "text": "Adjust seasoning and thicken with file: remove bay leaves, taste and adjust salt and pepper. Off heat, sprinkle file powder gradually while stirring to desired thickness and flavor.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Finish and rest: let the gumbo rest covered off heat for 5 minutes to allow flavors to meld and the file to swell.",
+        "time_min": 5
+      },
+      {
+        "step_no": 10,
+        "text": "Serve: spoon hot gumbo over cooked rice, garnish with chopped parsley and an extra grind of black pepper. Serve immediately.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

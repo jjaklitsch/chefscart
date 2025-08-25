@@ -1,0 +1,188 @@
+{
+  "slug": "tamago-kake-gohan-egg-rice",
+  "title": "Tamago Kake Gohan (Egg Rice)",
+  "description": "A classic Japanese comfort breakfast of steaming short-grain rice topped with a raw beaten egg and seasoned soy. Creamy, savory, and silky with optional toppings for texture and umami, ready in minutes.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "snack"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "rice",
+  "ingredient_tags": [
+    "rice",
+    "egg",
+    "soy sauce",
+    "scallion",
+    "sesame oil",
+    "nori",
+    "furikake",
+    "mirin",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 10,
+  "servings_default": 1,
+  "servings_min": 1,
+  "servings_max": 4,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "soy",
+    "sesame",
+    "grain"
+  ],
+  "search_keywords": [
+    "tamago kake gohan",
+    "egg rice",
+    "japanese breakfast",
+    "raw egg",
+    "steaming rice",
+    "umami",
+    "soy sauce",
+    "nori",
+    "furikake",
+    "quick meal",
+    "comfort food",
+    "scallion",
+    "sesame oil",
+    "simple recipe",
+    "single serving",
+    "traditional",
+    "rice bowl",
+    "weeknight breakfast",
+    "protein breakfast"
+  ],
+  "ingredients_json": {
+    "servings": 1,
+    "ingredients": [
+      {
+        "display_name": "short-grain white rice (cooked, hot)",
+        "quantity": 180,
+        "unit": "g",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly cooked and hot (about 1 cup cooked)"
+      },
+      {
+        "display_name": "large egg",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature if possible"
+      },
+      {
+        "display_name": "soy sauce (light/shoyu)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "or tamari for gluten-free"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 1.25,
+        "optional": true,
+        "notes": "toasted sesame oil for aroma"
+      },
+      {
+        "display_name": "scallion (thinly sliced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "green part, thinly sliced"
+      },
+      {
+        "display_name": "nori (toasted seaweed), shredded",
+        "quantity": 1,
+        "unit": "g",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into thin strips"
+      },
+      {
+        "display_name": "furikake (optional seasoning)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "for extra umami"
+      },
+      {
+        "display_name": "mirin (optional, small splash)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 2.5,
+        "optional": true,
+        "notes": "adds mild sweetness and gloss"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.4,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, adds slight heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 10,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare hot cooked short-grain rice: cook rice according to package or rice cooker instructions until tender and steaming. Fluff and transfer a single serving to a warmed bowl.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Crack the large egg into a small bowl and beat vigorously with chopsticks or a fork until homogenous and slightly frothy.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add soy sauce (and mirin if using) to the beaten egg and mix briefly to combine.",
+        "time_min": 0.5
+      },
+      {
+        "step_no": 4,
+        "text": "Make a shallow well in the surface of the hot rice, pour the seasoned beaten egg over the rice, and stir quickly and thoroughly until the egg emulsifies with the rice and creates a creamy coating.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Finish by drizzling a tiny amount of toasted sesame oil if desired, then sprinkle sliced scallions, shredded nori, and/or furikake. Season with a pinch of salt and pepper to taste and serve immediately.",
+        "time_min": 1.5
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,281 @@
+{
+  "slug": "whole30-chimichurri-steak-veg",
+  "title": "Whole30 Chimichurri Steak & Veg",
+  "description": "Juicy pan-seared flank steak served with vibrant, herb-forward chimichurri and blistered seasonal vegetables. Bright, garlicky parsley and cilantro sauce brightens rich beef for a Whole30-compliant weeknight dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "whole30",
+    "paleo"
+  ],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "flank steak",
+    "parsley",
+    "cilantro",
+    "garlic",
+    "olive oil",
+    "red wine vinegar",
+    "bell pepper",
+    "zucchini",
+    "red onion",
+    "carrot",
+    "salt",
+    "black pepper",
+    "red pepper flakes",
+    "lemon"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "whole30",
+    "chimichurri",
+    "steak",
+    "flank steak",
+    "pan seared",
+    "grilled style",
+    "herb sauce",
+    "parsley",
+    "cilantro",
+    "garlic",
+    "roasted vegetables",
+    "zucchini",
+    "bell pepper",
+    "easy dinner",
+    "paleo",
+    "low carb",
+    "weeknight meal",
+    "meal prep",
+    "anti inflammatory",
+    "dairy free"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "flank steak, trimmed",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, score surface lightly against the grain"
+      },
+      {
+        "display_name": "fresh parsley, packed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed"
+      },
+      {
+        "display_name": "fresh cilantro, packed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "stems trimmed"
+      },
+      {
+        "display_name": "fresh oregano leaves (or 1 tsp dried)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "optional but traditional"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced fine"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": 82,
+        "ml": 90,
+        "optional": false,
+        "notes": "use good quality for chimichurri"
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for chimichurri acidity"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "adds brightness (optional)"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided between steak and chimichurri"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust for spice level"
+      },
+      {
+        "display_name": "olive oil (for searing)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "high heat oil"
+      },
+      {
+        "display_name": "zucchini, cut into 1/2-inch rounds or half moons",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "medium zucchini"
+      },
+      {
+        "display_name": "red bell pepper, cut into 1-inch pieces",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "seeded"
+      },
+      {
+        "display_name": "carrot, cut on diagonal into 1/4-inch slices",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium carrots"
+      },
+      {
+        "display_name": "red onion, cut into wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium"
+      },
+      {
+        "display_name": "salt (for vegetables)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "black pepper (for vegetables)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "optional finishing lemon wedges",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "serve on side"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make the chimichurri: in a bowl combine chopped parsley, chopped cilantro, oregano, minced garlic, red wine vinegar, lemon juice if using, red pepper flakes, half the salt and half the black pepper, then whisk in olive oil until emulsified. Taste and adjust salt/acid. Set aside at room temperature to let flavors meld.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare vegetables: cut zucchini, bell pepper, carrots, and red onion into uniform pieces so they cook evenly; toss with remaining salt, pepper and a small drizzle of olive oil in a large bowl.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large heavy skillet or cast-iron pan over medium-high heat until very hot, add oil for searing and swirl to coat.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Sear the flank steak: place the steak in the hot pan and sear without moving for about 3-4 minutes until a brown crust forms; flip and sear the other side 3-4 minutes for medium-rare (internal temperature ~130-135°F). Reduce time slightly for rarer, add a minute or two per side for medium.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Transfer the steak to a cutting board, tent loosely with foil and rest for 8 minutes to allow juices to redistribute while you cook the vegetables.",
+        "time_min": 8
+      },
+      {
+        "step_no": 6,
+        "text": "Using the same hot skillet (add a touch more oil if needed), add the prepared vegetables in a single layer and cook, stirring or tossing occasionally, until vegetables are nicely blistered and tender-crisp about 7-8 minutes. Taste and adjust seasoning.",
+        "time_min": 8
+      },
+      {
+        "step_no": 7,
+        "text": "Slice the rested steak thinly against the grain, arrange on a platter with blistered vegetables, spoon chimichurri over the steak and vegetables, and serve with optional lemon wedges.",
+        "time_min": -1
+      }
+    ]
+  },
+  "image_url": null
+}

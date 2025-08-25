@@ -1,0 +1,197 @@
+{
+  "slug": "avocado-feta-chili-flake-toast",
+  "title": "Avocado Feta & Chili Flake Toast",
+  "description": "Creamy ripe avocado mashed with tangy crumbled feta and bright lemon, served on crisp toasted bread and finished with crunchy chili flakes and olive oil. Ready in minutes, this savory open-faced sandwich balances creamy, salty and spicy flavors for a quick breakfast, lunch or snack.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "avocado",
+  "ingredient_tags": [
+    "avocado",
+    "feta",
+    "bread",
+    "olive oil",
+    "lemon",
+    "chili flakes",
+    "salt",
+    "black pepper",
+    "extra virgin olive oil"
+  ],
+  "spice_level": 3,
+  "time_total_min": 12,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "avocado toast",
+    "feta",
+    "chili flakes",
+    "quick breakfast",
+    "open faced sandwich",
+    "mediterranean toast",
+    "creamymash",
+    "lemon zest",
+    "healthy snack",
+    "vegetarian",
+    "plant-forward",
+    "easy lunch",
+    "toasted bread",
+    "olive oil drizzle",
+    "salt and pepper",
+    "brunch recipe",
+    "crunchy",
+    "savory",
+    "30-minute-or-less",
+    "simple ingredients"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "ripe avocado (medium)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "ripe but still slightly firm, halved and pitted"
+      },
+      {
+        "display_name": "feta cheese",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "crumbled"
+      },
+      {
+        "display_name": "country or sourdough bread slices",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "about 60 g per slice"
+      },
+      {
+        "display_name": "extra virgin olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "plus extra for drizzling"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1/2 lemon"
+      },
+      {
+        "display_name": "chili flakes (crushed red pepper)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "fine sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "split between toast and avocado mash; adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "optional: fresh herbs (mint or parsley), finely chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "optional: flaky sea salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for finishing"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 12,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep ingredients: halve and pit the avocado, crumble the feta, juice the lemon, and measure spices and oil.",
+        "time_min": 2
+      },
+      {
+        "step_no": 2,
+        "text": "Toast the bread slices in a toaster or under a broiler until golden and crisp on the edges and still slightly tender in the center.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Mash the avocado in a bowl with a fork until mostly smooth with some small chunks remaining; add lemon juice, half the sea salt, half the black pepper and the olive oil and stir to combine.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Fold most of the crumbled feta into the mashed avocado, reserving a small amount for topping; taste and adjust seasoning with more salt, pepper or lemon as needed.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Divide the avocado-feta mash across the toasted bread, spreading evenly to the edges.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Finish each toast by sprinkling remaining crumbled feta, chili flakes, a light drizzle of olive oil and optional fresh herbs; add a pinch of flaky sea salt if using.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Serve immediately while the toast is still warm for best texture and flavor.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

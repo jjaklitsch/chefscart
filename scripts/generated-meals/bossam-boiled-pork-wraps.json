@@ -1,0 +1,302 @@
+{
+  "slug": "bossam-boiled-pork-wraps",
+  "title": "Bossam (Boiled Pork Wraps)",
+  "description": "Tender, gently simmered pork belly served in crisp napa cabbage leaves with tangy, spicy kimchi and pungent condiments. The long, fragrant poaching with garlic, ginger and aromatics yields silky meat perfect for wraps and communal dining.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "korean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "pork belly",
+    "napa cabbage",
+    "kimchi",
+    "garlic",
+    "ginger",
+    "scallions",
+    "soy sauce",
+    "rice wine",
+    "doenjang",
+    "ssamjang",
+    "sesame oil",
+    "salt",
+    "sugar",
+    "pepper",
+    "mustard greens",
+    "perilla leaves",
+    "ssam vegetables"
+  ],
+  "spice_level": 2,
+  "time_total_min": 160,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "sesame",
+    "gluten"
+  ],
+  "search_keywords": [
+    "bossam",
+    "boiled pork",
+    "pork belly",
+    "korean",
+    "wraps",
+    "ssam",
+    "kimchi",
+    "napa cabbage",
+    "doenjang",
+    "ssamjang",
+    "garlic ginger poach",
+    "communal meal",
+    "korean pork",
+    "leaf wraps",
+    "scallions",
+    "perilla",
+    "mustard greens",
+    "pickled radish",
+    "soy sauce",
+    "sesame oil"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "pork belly, skin on",
+        "quantity": 1600,
+        "unit": "g",
+        "grams": 1600,
+        "ml": null,
+        "optional": false,
+        "notes": "one slab, about 3.5 lb; score skin lightly if desired"
+      },
+      {
+        "display_name": "water",
+        "quantity": 4000,
+        "unit": "ml",
+        "grams": null,
+        "ml": 4000,
+        "optional": false,
+        "notes": "for poaching, enough to cover pork"
+      },
+      {
+        "display_name": "garlic cloves, smashed",
+        "quantity": 8,
+        "unit": "clove",
+        "grams": 24,
+        "ml": null,
+        "optional": false,
+        "notes": "smashed to release flavor"
+      },
+      {
+        "display_name": "fresh ginger, sliced",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "about 6–8 slices"
+      },
+      {
+        "display_name": "onion, halved",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium onion, cut in half"
+      },
+      {
+        "display_name": "daikon radish, large chunk",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and halved"
+      },
+      {
+        "display_name": "scallions (green onions), tied",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "tied in a bundle"
+      },
+      {
+        "display_name": "whole black peppercorns",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "soy sauce (for poach)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "adds savory depth"
+      },
+      {
+        "display_name": "rice wine (mirin or cooking rice wine)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "deglaze and soften aroma"
+      },
+      {
+        "display_name": "doenjang (fermented soybean paste)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": "optional: adds umami to poaching liquid"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste during or after cooking"
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "balances flavors"
+      },
+      {
+        "display_name": "napa cabbage leaves, blanched or raw for wrapping",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "separate leaves, blanch briefly if desired"
+      },
+      {
+        "display_name": "kimchi (well-fermented), sliced",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "serve on side"
+      },
+      {
+        "display_name": "ssamjang (or make with doenjang + gochujang)",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "commercial ssamjang or homemade"
+      },
+      {
+        "display_name": "raw garlic slices",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly sliced for placing in wraps"
+      },
+      {
+        "display_name": "pickled radish or raw radish slices",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "optional crunchy topping"
+      },
+      {
+        "display_name": "toasted sesame oil (for drizzle)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13,
+        "ml": 15,
+        "optional": false,
+        "notes": "for final seasoning"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "garnish"
+      },
+      {
+        "display_name": "perilla leaves or fresh lettuce (for alternate wraps)",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, for variety"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 160,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep the pork: rinse and pat the pork belly dry; if desired, score the skin lightly. Tie the slab with kitchen twine every 2–3 inches to keep shape during poaching.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Build the poaching liquid: in a large stockpot combine water, smashed garlic, sliced ginger, halved onion, daikon, tied scallions, whole peppercorns, soy sauce, rice wine, doenjang, sugar and salt. Bring to a gentle simmer over medium heat.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Poach the pork: reduce heat so liquid is at a bare, steady simmer (small bubbles). Submerge the pork belly, cover partially, and simmer gently until meat is tender and fully cooked through, about 70–90 minutes depending on thickness. Spoon foam off surface occasionally.",
+        "time_min": 90
+      },
+      {
+        "step_no": 4,
+        "text": "Rest and cool: remove the pork from the liquid and transfer to a cutting board. Rest 10–15 minutes to let juices settle so slices hold shape; reserve poaching liquid for soup or dipping if desired.",
+        "time_min": 15
+      },
+      {
+        "step_no": 5,
+        "text": "Slice pork: remove twine and slice pork into 3–6 mm (thin) slices across the grain for tender mouthfeel. Arrange on a platter.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Prepare accompaniments: arrange napa cabbage leaves, kimchi, ssamjang, garlic slices, pickled radish, perilla leaves and toasted sesame oil on serving plates. Warm cabbage leaves briefly in the poaching liquid or blanch in boiling water if you prefer softer wraps.",
+        "time_min": 15
+      },
+      {
+        "step_no": 7,
+        "text": "Serve and assemble: diners take a leaf, add a slice of pork, a dab of ssamjang, a piece of kimchi and a garlic slice; fold into a bite-sized wrap. Drizzle sesame oil or sprinkle sesame seeds as desired.",
+        "time_min": 10
+      }
+    ]
+  },
+  "image_url": null
+}

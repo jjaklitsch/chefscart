@@ -1,0 +1,318 @@
+{
+  "slug": "shoyu-ramen",
+  "title": "Shoyu Ramen",
+  "description": "Classic Japanese shoyu ramen with a clear, savory soy-based broth, tender braised pork, springy alkaline noodles and bright aromatics. Combines slow-simmered stock, toasted aromatics and a seasoned tare for a balanced, umami-forward bowl.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "chicken bones",
+    "water",
+    "soy sauce",
+    "mirin",
+    "sake",
+    "ginger",
+    "garlic",
+    "green onion",
+    "ramen noodles",
+    "egg",
+    "nori",
+    "bamboo shoots",
+    "sesame oil",
+    "vegetable oil",
+    "sugar",
+    "mushrooms",
+    "carrot"
+  ],
+  "spice_level": 1,
+  "time_total_min": 285,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "egg",
+    "gluten",
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "shoyu ramen",
+    "soy sauce ramen",
+    "japanese ramen",
+    "pork ramen",
+    "braised pork",
+    "ramen broth",
+    "homemade tare",
+    "soft boiled egg",
+    "ajitsuke tamago",
+    "spring onion",
+    "nori",
+    "bamboo shoots",
+    "umami",
+    "noodle soup",
+    "comfort food",
+    "quick broth tips",
+    "toasted aromatics",
+    "mirin",
+    "sake",
+    "mushroom dashi"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "pork belly, skin removed, cut into 1.5-inch pieces",
+        "quantity": 700,
+        "unit": "g",
+        "grams": 700,
+        "ml": null,
+        "optional": false,
+        "notes": "for chashu; can substitute pork shoulder"
+      },
+      {
+        "display_name": "chicken carcass or chicken bones",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "for broth base"
+      },
+      {
+        "display_name": "water",
+        "quantity": 3000,
+        "unit": "ml",
+        "grams": null,
+        "ml": 3000,
+        "optional": false,
+        "notes": "approximate total for simmering broth"
+      },
+      {
+        "display_name": "kombu (dried kelp)",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "for subtle umami; remove before boiling"
+      },
+      {
+        "display_name": "dried shiitake mushrooms",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "soak briefly to rehydrate, add soaking liquid to broth"
+      },
+      {
+        "display_name": "onion, halved",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "char or brown for depth"
+      },
+      {
+        "display_name": "ginger, smashed",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly smashed to release flavor"
+      },
+      {
+        "display_name": "garlic, whole cloves smashed",
+        "quantity": 6,
+        "unit": "clove",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "smash, keep skins on"
+      },
+      {
+        "display_name": "soy sauce (shoyu)",
+        "quantity": 140,
+        "unit": "ml",
+        "grams": null,
+        "ml": 140,
+        "optional": false,
+        "notes": "use Japanese shoyu for best flavor"
+      },
+      {
+        "display_name": "mirin",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "sweet rice wine"
+      },
+      {
+        "display_name": "sake",
+        "quantity": 40,
+        "unit": "ml",
+        "grams": null,
+        "ml": 40,
+        "optional": false,
+        "notes": "cooking sake"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 10,
+        "unit": "ml",
+        "grams": null,
+        "ml": 10,
+        "optional": false,
+        "notes": "to finish bowls"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for searing chashu and toasting aromatics"
+      },
+      {
+        "display_name": "fresh ramen noodles (alkaline), portioned",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "about 100 g per serving"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "for ajitsuke tamago (marinated soft-boiled eggs)"
+      },
+      {
+        "display_name": "green onions, thinly sliced",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "nori sheets, cut into strips",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "menma (seasoned bamboo shoots)",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "store-bought is ready to use"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 5,
+        "unit": "g",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "carrot, sliced (optional for broth)",
+        "quantity": 50,
+        "unit": "g",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "adds sweetness to broth"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 285,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Blanch pork pieces and chicken bones in a large pot of cold water brought to a boil for 5 minutes to remove impurities; drain and rinse bones and pot.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Return cleaned bones and pork to the pot, add fresh water and kombu, bring to a simmer over medium-low heat; maintain a very gentle simmer, skimming foam occasionally.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Add charred onion, smashed ginger, smashed garlic, dried shiitake and carrot to the pot; continue to simmer gently uncovered for 2 to 3 hours to extract flavor.",
+        "time_min": 150
+      },
+      {
+        "step_no": 4,
+        "text": "While broth simmers, prepare chashu: sear pork pieces in neutral oil until browned on all sides, then add sake, mirin and a splash of soy sauce and braise in a covered pan with 250 ml water for 35–40 minutes until tender; reserve braising liquid.",
+        "time_min": 45
+      },
+      {
+        "step_no": 5,
+        "text": "Strain the long-simmered broth through a fine-mesh sieve into a clean pot, discard solids; reduce over medium heat if desired to concentrate flavor, keep warm.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Make tare (seasoning sauce) by combining soy sauce, mirin, sake, sugar and a ladle of hot broth; taste and adjust balance so it is savory-sweet and slightly salty.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Prepare ajitsuke tamago: bring a small pot of water to a gentle boil, lower eggs and cook for 6–7 minutes for soft-runny yolks; cool in ice water, peel and marinate in a mixture of tare and water (equal parts) for at least 30 minutes.",
+        "time_min": 40
+      },
+      {
+        "step_no": 8,
+        "text": "Bring a separate pot of water to a rolling boil and cook fresh ramen noodles according to package instructions (typically 1–2 minutes); drain and portion into bowls.",
+        "time_min": 5
+      },
+      {
+        "step_no": 9,
+        "text": "To assemble, place a measured amount of tare into each bowl (about 30–35 ml per serving), ladle hot strained broth over the tare and taste to ensure seasoning is balanced, then add noodles.",
+        "time_min": 5
+      },
+      {
+        "step_no": 10,
+        "text": "Top each bowl with sliced chashu, halved marinated egg, menma, sliced green onions, nori strips and a few drops of sesame oil; serve immediately.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,279 @@
+{
+  "slug": "whole30-stuffed-bell-peppers",
+  "title": "Whole30 Stuffed Bell Peppers",
+  "description": "Colorful bell peppers roasted until tender and filled with a savory, herb-forward ground turkey and vegetable mixture. This Whole30-compliant skillet filling is flavored with tomato, garlic, and fresh herbs for a bright, satisfying one-pan dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american",
+    "mexican"
+  ],
+  "diets_supported": [
+    "whole30",
+    "paleo"
+  ],
+  "primary_ingredient": "ground turkey",
+  "ingredient_tags": [
+    "ground turkey",
+    "bell pepper",
+    "onion",
+    "garlic",
+    "tomato",
+    "carrot",
+    "zucchini",
+    "spinach",
+    "olive oil",
+    "fresh parsley",
+    "fresh cilantro",
+    "ground cumin",
+    "paprika",
+    "salt",
+    "black pepper",
+    "chicken broth"
+  ],
+  "spice_level": 2,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "whole30",
+    "stuffed peppers",
+    "ground turkey",
+    "paleo",
+    "gluten-free",
+    "dinner",
+    "meal prep",
+    "healthy",
+    "baked peppers",
+    "tomato",
+    "garlic",
+    "olive oil",
+    "weeknight",
+    "low fodmap option",
+    "mediterranean inspired",
+    "family friendly",
+    "low dairy",
+    "herbs",
+    "easy dinner",
+    "balanced meal"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bell peppers (mixed colors), tops removed and seeded",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 880,
+        "ml": null,
+        "optional": false,
+        "notes": "choose large bell peppers (about 220 g each) to hold filling"
+      },
+      {
+        "display_name": "ground turkey (lean, 93/7)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "can substitute ground chicken or beef if desired (not Whole30 if added dairy)"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium onion"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "carrot, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "zucchini, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "optional but adds bulk and moisture"
+      },
+      {
+        "display_name": "canned crushed tomatoes (no sugar added)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "or fresh tomatoes, finely chopped"
+      },
+      {
+        "display_name": "chicken broth (or compliant vegetable broth)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "use low-sodium compliant broth"
+      },
+      {
+        "display_name": "fresh spinach, roughly chopped",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "folded into filling at the end"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": 30,
+        "optional": false,
+        "notes": "for garnish and freshness"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": 15,
+        "optional": true,
+        "notes": "optional, for a brighter flavor"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "paprika (sweet)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "smoked paprika can be used for depth"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "lemon juice (fresh)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "optional brightener just before serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 375°F (190°C). Prepare the bell peppers by cutting off the tops, removing seeds and membranes, and trimming the bottom slightly if needed so they sit upright. Place peppers in a baking dish and set aside.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat olive oil in a large skillet over medium heat. Add diced onion and carrot and sauté until soft and translucent, stirring occasionally.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic to the skillet and cook until fragrant, stirring constantly so it does not brown.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Increase heat to medium-high and add ground turkey. Break meat into small pieces and cook until no longer pink, stirring and scraping browned bits from the pan.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in diced zucchini if using, then add crushed tomatoes, chicken broth, ground cumin, paprika, salt, and pepper. Bring mixture to a gentle simmer and reduce heat to medium-low.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Simmer the filling until slightly thickened and flavors meld, stirring occasionally. If adding spinach, stir it in toward the last minute of cooking to wilt.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Remove skillet from heat and stir in chopped parsley and cilantro and optional lemon juice. Adjust seasoning to taste.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Spoon the turkey mixture evenly into the prepared bell peppers, packing gently but not overfilling. Pour a small amount of water or broth into the bottom of the baking dish (about 1/4 cup) to help steam the peppers.",
+        "time_min": 4
+      },
+      {
+        "step_no": 9,
+        "text": "Cover the baking dish tightly with foil and bake in the preheated oven until peppers are tender and filling is heated through.",
+        "time_min": 15
+      },
+      {
+        "step_no": 10,
+        "text": "Remove foil and bake uncovered for 2–3 minutes if you want slightly roasted edges. Let peppers rest a few minutes, then serve warm garnished with additional fresh parsley or cilantro.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

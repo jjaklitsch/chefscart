@@ -1,0 +1,320 @@
+{
+  "slug": "carne-asada-burrito",
+  "title": "Carne Asada Burrito",
+  "description": "Grilled, marinated flank steak (carne asada) wrapped with seasoned rice, refried beans, pico de gallo, avocado, and cheese in a warm flour tortilla. Bright citrus and smoky char from the grill combine with creamy avocado and tangy salsa for a satisfying handheld meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "flank steak",
+    "beef",
+    "flour tortilla",
+    "rice",
+    "beans",
+    "avocado",
+    "tomato",
+    "onion",
+    "cilantro",
+    "lime",
+    "cheddar",
+    "sour cream",
+    "olive oil",
+    "garlic",
+    "cumin",
+    "chili powder",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 3,
+  "time_total_min": 94,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "carne asada",
+    "steak burrito",
+    "flank steak",
+    "grilled beef",
+    "burrito",
+    "mexican",
+    "cilantro lime",
+    "pico de gallo",
+    "refried beans",
+    "cheese",
+    "avocado",
+    "rice",
+    "grill",
+    "weeknight dinner",
+    "meal prep",
+    "handheld",
+    "spicy",
+    "citrus marinade",
+    "charred",
+    "flour tortilla"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "flank steak (carne asada cut)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 2 limes"
+      },
+      {
+        "display_name": "orange juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "freshly squeezed if possible"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "chili powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "preferably Mexican oregano"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "white rice, long grain (uncooked)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "yields about 3 cups cooked"
+      },
+      {
+        "display_name": "water or low-sodium chicken stock",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "for cooking rice"
+      },
+      {
+        "display_name": "canned refried beans",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 260,
+        "ml": null,
+        "optional": false,
+        "notes": "warmed"
+      },
+      {
+        "display_name": "roma tomatoes, diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "for pico de gallo"
+      },
+      {
+        "display_name": "small red onion, finely diced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cilantro, chopped",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "packed"
+      },
+      {
+        "display_name": "jalapeño, seeded and minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for heat"
+      },
+      {
+        "display_name": "avocado, sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "ripe"
+      },
+      {
+        "display_name": "shredded sharp cheddar",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 112,
+        "ml": null,
+        "optional": true,
+        "notes": "or Mexican blend"
+      },
+      {
+        "display_name": "sour cream",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "for drizzling"
+      },
+      {
+        "display_name": "large flour tortillas (10-inch)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "warmed"
+      },
+      {
+        "display_name": "vegetable oil (for grill pan)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 94,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make the marinade by whisking together lime juice, orange juice, olive oil, minced garlic, cumin, chili powder, oregano, salt, and black pepper in a bowl.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Place the flank steak in a resealable bag or shallow dish and pour the marinade over it, massaging to coat. Refrigerate and marinate for at least 30 minutes and up to 4 hours.",
+        "time_min": 30
+      },
+      {
+        "step_no": 3,
+        "text": "While the steak marinates, rinse the rice, then combine rice and water (or stock) in a pot, bring to a boil, reduce to low, cover, and simmer until water is absorbed and rice is tender.",
+        "time_min": 18
+      },
+      {
+        "step_no": 4,
+        "text": "Prepare pico de gallo by combining diced tomatoes, diced red onion, chopped cilantro, minced jalapeño (if using), and a pinch of salt and a squeeze of lime; taste and adjust seasoning.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Preheat a hot grill or grill pan to high. Remove steak from marinade and pat dry; brush grill grates or pan with oil to prevent sticking.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Grill the steak 3-5 minutes per side until desired doneness (medium-rare to medium recommended), aiming for a good char. Remove and let rest 8 minutes before slicing thinly against the grain.",
+        "time_min": 16
+      },
+      {
+        "step_no": 7,
+        "text": "Warm the refried beans in a saucepan over low heat until smooth; keep warm. Warm tortillas in a dry skillet or wrapped in foil in a low oven until pliable.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble each burrito by spreading a portion of rice and refried beans onto the center of a tortilla, adding sliced carne asada, pico de gallo, sliced avocado, shredded cheese, and a drizzle of sour cream if desired. Fold sides in and roll tightly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 9,
+        "text": "Optional: Toast the assembled burrito seam-side down in a hot skillet 1-2 minutes per side until golden and sealed. Serve immediately with lime wedges.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

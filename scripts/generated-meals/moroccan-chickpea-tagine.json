@@ -1,0 +1,313 @@
+{
+  "slug": "moroccan-chickpea-tagine",
+  "title": "Moroccan Chickpea Tagine",
+  "description": "A fragrant, vegetable-forward tagine featuring tender chickpeas stewed with tomatoes, preserved lemon, olives and warming Moroccan spices. Slow-simmered until thick and glossy, it delivers bright citrus, earthy cumin and mild heat — perfect over couscous or rice.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegan",
+    "vegetarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "chickpeas",
+  "ingredient_tags": [
+    "chickpeas",
+    "tomatoes",
+    "onion",
+    "garlic",
+    "carrot",
+    "preserved lemon",
+    "olives",
+    "olive oil",
+    "cumin",
+    "paprika",
+    "turmeric",
+    "coriander",
+    "ginger",
+    "cilantro",
+    "parsley",
+    "vegetable broth",
+    "harissa",
+    "couscous"
+  ],
+  "spice_level": 2,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "moroccan",
+    "tagine",
+    "chickpeas",
+    "vegetarian",
+    "vegan",
+    "plant-forward",
+    "mediterranean",
+    "couscous",
+    "preserved lemon",
+    "olives",
+    "one-pot",
+    "stew",
+    "comfort food",
+    "spiced",
+    "cumin",
+    "paprika",
+    "turmeric",
+    "easy dinner",
+    "meal prep",
+    "gluten-free option"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "canned chickpeas (drained and rinsed)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "drained and rinsed well"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion (medium, sliced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "sliced thin"
+      },
+      {
+        "display_name": "garlic (cloves, minced)",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "carrot (medium, diced)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1/2-inch pieces"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 33,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "canned crushed tomatoes",
+        "quantity": 14,
+        "unit": "oz",
+        "grams": 400,
+        "ml": 400,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "vegetable broth (low-sodium)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "or water"
+      },
+      {
+        "display_name": "preserved lemon (rind only, finely chopped) or zest of 1 lemon + 1 tsp salt",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "preserved lemon is traditional; optional if unavailable"
+      },
+      {
+        "display_name": "green olives (pitted, halved)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "kalamata or castelvetrano work"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": "can use sweet paprika for milder flavor"
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground turmeric",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground ginger (or 1 tsp fresh grated)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tsp fresh ginger"
+      },
+      {
+        "display_name": "harissa paste (optional, for heat)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": true,
+        "notes": "adjust or omit for milder"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh cilantro (chopped)",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fresh parsley (chopped)",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "couscous or rice (to serve)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": true,
+        "notes": "cooked according to package for 4 servings"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: drain and rinse chickpeas, slice onion, mince garlic, dice carrots, chop herbs and preserved lemon if using.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat olive oil in a wide heavy-bottomed pot or tagine over medium heat until shimmering. Add sliced onion and a pinch of salt, sauté until softened and translucent.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic and diced carrot, cook, stirring, until garlic is fragrant and carrots begin to soften.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Stir in tomato paste and spices (cumin, smoked paprika, coriander, turmeric, ginger) and cook briefly to bloom the spices, stirring constantly so paste darkens slightly but does not burn.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Add crushed tomatoes, vegetable broth, drained chickpeas, and harissa if using. Stir to combine, scraping any browned bits from the bottom of the pan.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Bring mixture to a gentle simmer, then reduce heat to low and cover partially. Simmer gently to concentrate flavors and thicken the sauce.",
+        "time_min": 25
+      },
+      {
+        "step_no": 7,
+        "text": "About 8 minutes before the end of simmering, stir in chopped preserved lemon or lemon zest and chopped olives if using, then continue to simmer uncovered to meld flavors and slightly reduce.",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "Taste and adjust seasoning with salt, pepper and a squeeze of fresh lemon if desired. Fold in most of the chopped cilantro and parsley, reserving some for garnish.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Serve the tagine hot over couscous, rice or crusty bread and garnish with remaining herbs. Optionally drizzle with extra olive oil or a spoon of plain yogurt if not keeping vegan.",
+        "time_min": 6
+      }
+    ]
+  },
+  "image_url": null
+}

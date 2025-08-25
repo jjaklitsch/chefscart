@@ -1,0 +1,233 @@
+{
+  "slug": "paleo-lemon-garlic-chicken-broccoli",
+  "title": "Paleo Lemon-Garlic Chicken & Broccoli",
+  "description": "Pan-seared chicken breasts brightened with lemon, garlic, and fresh herbs, finished with tender-crisp broccoli for a simple one-skillet paleo meal. Fast to prepare, high-protein, and full of bright, savory flavors with a light pan sauce.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "paleo",
+    "whole30",
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "broccoli",
+    "garlic",
+    "lemon",
+    "olive oil",
+    "salt",
+    "pepper",
+    "paprika",
+    "thyme",
+    "parsley",
+    "chicken stock",
+    "ghee"
+  ],
+  "spice_level": 1,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "paleo",
+    "lemon garlic",
+    "chicken",
+    "broccoli",
+    "one-skillet",
+    "low-carb",
+    "whole30",
+    "gluten-free",
+    "dairy-free",
+    "quick dinner",
+    "weeknight",
+    "high protein",
+    "pan-seared",
+    "healthy",
+    "easy",
+    "herb",
+    "lemony",
+    "garlicky",
+    "simple",
+    "family"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken breasts (trimmed)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "pounded to even thickness if needed (about 4 small/medium breasts)"
+      },
+      {
+        "display_name": "broccoli florets (trimmed)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into bite-sized florets"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ghee or avocado oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "use ghee for richer flavor or avocado oil for neutral"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1 large lemon"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "garlic cloves (minced)",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced finely"
+      },
+      {
+        "display_name": "low-sodium chicken stock",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "or bone broth"
+      },
+      {
+        "display_name": "fresh parsley (chopped)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fresh thyme leaves (or 1/2 tsp dried)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "fresh leaves removed from stems"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "chili flakes (optional)",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for a touch of heat"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep chicken and aromatics: pat chicken dry and season both sides with salt, pepper and smoked paprika; zest and juice lemon; mince garlic; trim and cut broccoli into bite-sized florets.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large skillet over medium-high heat with olive oil and ghee. When oil shimmers, add chicken in a single layer and sear undisturbed until golden brown on the first side.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Flip chicken and add half the minced garlic and thyme to the pan; continue cooking until the second side is golden and chicken is nearly cooked through (internal temperature about 150°F/65°C).",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Remove chicken to a plate and cover loosely. Add broccoli to the same skillet, add remaining garlic, season with a pinch of salt and toss to coat in pan fond.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Pour in chicken stock and lemon juice, scrape up browned bits, then return chicken to the skillet nestling it among the broccoli. Reduce heat to medium-low, cover and steam until broccoli is tender-crisp and chicken reaches 165°F/74°C.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Uncover, remove chicken briefly to rest, and simmer sauce uncovered for 1–2 minutes to reduce slightly if needed. Taste and adjust seasoning, stir in lemon zest and chopped parsley.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Slice or serve whole chicken with broccoli, spoon pan sauce over top, and garnish with additional parsley and a sprinkle of chili flakes if desired.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

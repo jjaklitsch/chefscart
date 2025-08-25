@@ -1,0 +1,285 @@
+{
+  "slug": "chicken-pot-pie-skillet",
+  "title": "Chicken Pot Pie Skillet",
+  "description": "A cozy one-skillet take on classic chicken pot pie with tender diced chicken, creamy herb sauce, and a flaky biscuit topping finished in the oven. Savory, comforting flavors from butter, thyme, and sweet vegetables come together for an easy family-style meal.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "carrot",
+    "peas",
+    "celery",
+    "onion",
+    "garlic",
+    "butter",
+    "flour",
+    "milk",
+    "chicken broth",
+    "thyme",
+    "bay leaf",
+    "frozen peas",
+    "corn",
+    "biscuit dough",
+    "salt",
+    "black pepper",
+    "olive oil"
+  ],
+  "spice_level": 1,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten",
+    "egg"
+  ],
+  "search_keywords": [
+    "chicken pot pie",
+    "skillet pot pie",
+    "one pan dinner",
+    "creamy chicken",
+    "biscuit topping",
+    "comfort food",
+    "weeknight dinner",
+    "leftover chicken",
+    "easy family meal",
+    "vegetable pot pie",
+    "buttery biscuit",
+    "chicken and vegetables",
+    "savory pie filling",
+    "homemade gravy",
+    "herb thyme",
+    "spring peas",
+    "carrots and celery",
+    "pan to oven",
+    "quick comfort food",
+    "stovetop to oven"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs, trimmed and diced",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1/2-inch pieces"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "yellow onion, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 cup diced"
+      },
+      {
+        "display_name": "carrots, peeled and diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "medium carrots, about 1 cup"
+      },
+      {
+        "display_name": "celery stalks, diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "about 3/4 cup"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "for roux"
+      },
+      {
+        "display_name": "chicken broth (low-sodium preferred)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": 480,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "whole milk",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "can substitute half-and-half for richer filling"
+      },
+      {
+        "display_name": "frozen peas (thawed)",
+        "quantity": 3,
+        "unit": "oz",
+        "grams": 85,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/2 cup"
+      },
+      {
+        "display_name": "frozen corn (optional)",
+        "quantity": 1,
+        "unit": "oz",
+        "grams": 28,
+        "ml": null,
+        "optional": true,
+        "notes": "about 1/4 cup, optional"
+      },
+      {
+        "display_name": "fresh thyme leaves",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tsp dried thyme"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "remove before serving"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for searing"
+      },
+      {
+        "display_name": "refrigerated biscuit dough (10-12 oz can) or homemade biscuits",
+        "quantity": 10,
+        "unit": "oz",
+        "grams": 283,
+        "ml": null,
+        "optional": false,
+        "notes": "use 10-12 oz can or equivalent homemade dough"
+      },
+      {
+        "display_name": "egg, beaten (for biscuit glaze)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "optional for brushing"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 400°F (205°C). Pat the diced chicken dry and season lightly with salt and pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a 10- to 12-inch ovenproof skillet over medium-high heat, add olive oil and 1 tablespoon of butter, then sear the chicken until lightly browned but not cooked through; remove chicken to a bowl and set aside.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Reduce heat to medium and add remaining butter; add diced onion, carrots, and celery and cook, stirring occasionally, until softened and translucent.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic and cook briefly until fragrant, then sprinkle the flour over the vegetables and cook, stirring, for about 2 minutes to form a roux and remove raw flour taste.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Slowly whisk in the chicken broth and milk, scraping the pan bottom to incorporate the roux; add thyme, bay leaf, salt, and pepper and simmer until the sauce thickens to a cream sauce consistency.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Return the seared chicken to the skillet and stir in peas (and corn if using); simmer gently for a few minutes to finish cooking chicken and meld flavors, then remove and discard the bay leaf.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Arrange biscuit dough or pieces of biscuit dough evenly over the hot filling in the skillet, spacing to allow expansion; brush the biscuits with beaten egg if desired.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Transfer the skillet to the preheated oven and bake until the biscuit topping is puffed and golden and the filling is bubbling, about 16–18 minutes.",
+        "time_min": 18
+      },
+      {
+        "step_no": 9,
+        "text": "Remove skillet from oven and let rest for 5 minutes before serving to set the filling slightly; serve warm directly from the skillet.",
+        "time_min": 10
+      }
+    ]
+  },
+  "image_url": null
+}

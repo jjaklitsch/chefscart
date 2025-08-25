@@ -1,0 +1,206 @@
+{
+  "slug": "whole30-salmon-with-roasted-asparagus",
+  "title": "Whole30 Salmon with Roasted Asparagus",
+  "description": "Oven-roasted salmon fillets seasoned with lemon, garlic, and fresh herbs served alongside tender-crisp roasted asparagus. Bright citrus and herb notes balance the rich, flaky salmon for a simple, Whole30-compliant weeknight or dinner-party main.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "american",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "whole30",
+    "pescatarian",
+    "paleo",
+    "low-carb",
+    "keto",
+    "mediterranean"
+  ],
+  "primary_ingredient": "salmon",
+  "ingredient_tags": [
+    "salmon",
+    "asparagus",
+    "olive oil",
+    "lemon",
+    "garlic",
+    "fresh herbs",
+    "parsley",
+    "dill",
+    "salt",
+    "black pepper",
+    "red pepper flakes"
+  ],
+  "spice_level": 1,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "whole30",
+    "salmon",
+    "roasted asparagus",
+    "lemon garlic salmon",
+    "weeknight dinner",
+    "healthy",
+    "paleo",
+    "keto",
+    "low-carb",
+    "pescatarian",
+    "oven roasted",
+    "easy salmon recipe",
+    "herb salmon",
+    "gluten-free",
+    "dairy-free",
+    "one-pan",
+    "meal prep",
+    "quick 30 minute meal",
+    "family friendly",
+    "summer"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "salmon fillets, skin-on",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "approx 6 oz (170 g) each, skin on"
+      },
+      {
+        "display_name": "asparagus, trimmed",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "woody ends removed"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided (about 2 tbsp for asparagus, 1 tbsp for salmon)"
+      },
+      {
+        "display_name": "lemon, zested and juiced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 65,
+        "ml": 30,
+        "optional": false,
+        "notes": "zest 1 tsp, juice about 1 tbsp"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish and flavor"
+      },
+      {
+        "display_name": "fresh dill, chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, pairs well with salmon"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "for a mild kick, optional"
+      },
+      {
+        "display_name": "lemon wedges",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Line a rimmed baking sheet with foil or parchment and lightly oil the surface.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare asparagus: trim woody ends and toss with two-thirds of the oil, half the salt, half the pepper, and the minced garlic. Spread in a single layer on one side of the prepared sheet pan.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Season salmon: pat fillets dry, drizzle with remaining oil, sprinkle with remaining salt and pepper, lemon zest, and optional red pepper flakes. Place fillets skin-side down on the other side of the sheet pan leaving space between pieces.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Roast both salmon and asparagus in the preheated oven until asparagus is tender-crisp and salmon reaches opaque flakiness (salmon should register 125–130°F / 52–54°C for medium-rare to medium). Rotate pan once halfway through if necessary.",
+        "time_min": 12
+      },
+      {
+        "step_no": 5,
+        "text": "Remove from oven. Squeeze lemon juice over salmon and asparagus, sprinkle with chopped parsley and dill if using. Let salmon rest 2 minutes before serving.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Serve warm with lemon wedges alongside. Adjust seasoning with additional salt and pepper to taste.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

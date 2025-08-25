@@ -1,0 +1,238 @@
+{
+  "slug": "gnocchi-al-pesto",
+  "title": "Gnocchi al Pesto",
+  "description": "Pillowy potato gnocchi tossed in a bright, herbaceous Genovese pesto with toasted pine nuts, lemon and aged Parmesan. Ready in under 30 minutes, this comforting Italian classic is vibrant, fresh and perfect for a quick weeknight dinner or elegant lunch.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "potato",
+    "gnocchi",
+    "basil",
+    "parmesan",
+    "pine nuts",
+    "garlic",
+    "olive oil",
+    "lemon",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 26,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "gnocchi",
+    "pesto",
+    "basil",
+    "parmesan",
+    "potato dumplings",
+    "italian",
+    "weeknight dinner",
+    "quick pasta",
+    "vegetarian",
+    "garlic",
+    "pine nuts",
+    "olive oil",
+    "lemon zest",
+    "comfort food",
+    "fresh herbs",
+    "stovetop",
+    "sauce",
+    "pasta substitute",
+    "simple",
+    "30 minutes"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "store-bought potato gnocchi",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "fresh or refrigerated; if frozen, thaw per package"
+      },
+      {
+        "display_name": "fresh basil leaves",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "packed leaves, stems removed"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 90,
+        "unit": "ml",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "grated Parmigiano-Reggiano",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "aged 12-24 months for best flavor"
+      },
+      {
+        "display_name": "pine nuts, toasted",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly toasted in dry skillet"
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1/2 lemon"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "coarse kosher salt (for pasta water)",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "approx 1 tbsp"
+      },
+      {
+        "display_name": "fine salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning pesto to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "reserved gnocchi cooking water",
+        "quantity": 200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 200,
+        "optional": false,
+        "notes": "used to loosen pesto"
+      },
+      {
+        "display_name": "extra Parmesan for serving",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": true,
+        "notes": "shaved or grated"
+      },
+      {
+        "display_name": "extra pine nuts for garnish",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "optional"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 26,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of water to a rolling boil. Add coarse kosher salt to the water; it should taste like the sea. This prepares the cooking water for gnocchi.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "While the water heats, make the pesto: in a food processor combine basil leaves, toasted pine nuts, grated Parmesan, garlic cloves, lemon zest and fine salt. Pulse until coarsely chopped.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "With the processor running, stream in extra-virgin olive oil until the mixture forms a smooth, emulsified paste. Stop and scrape down the bowl as needed, then adjust seasoning with lemon juice, black pepper and additional salt to taste.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Add the gnocchi to the boiling water in a single layer (work in batches if necessary). Stir gently to prevent sticking. Cook just until gnocchi float to the surface and then for an additional 30–60 seconds.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Use a slotted spoon to transfer cooked gnocchi to a large sauté pan reserved over medium heat, reserving about 200 ml of the cooking water. Do not rinse gnocchi.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Add a few tablespoons of the reserved cooking water to the pesto to loosen it into a glossy sauce. Add the pesto to the sauté pan with gnocchi and gently toss, adding more reserved water as needed to coat evenly and create a silky finish.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Continue to toss and heat for another 1–2 minutes so gnocchi absorb the sauce and finish cooking. Taste and adjust salt, pepper and lemon if needed.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Serve immediately, topped with extra Parmesan shavings and additional toasted pine nuts if desired.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

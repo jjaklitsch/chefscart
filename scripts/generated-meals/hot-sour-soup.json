@@ -1,0 +1,317 @@
+{
+  "slug": "hot-sour-soup",
+  "title": "Hot & Sour Soup",
+  "description": "A classic Chinese-style Hot & Sour Soup with a savory broth, bright vinegar tang, and warming white pepper heat. Silky tofu, tender shiitake mushrooms, bamboo shoots and egg ribbons combine with scallions and a splash of sesame oil for layered umami and spice.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "vegetarian"
+  ],
+  "primary_ingredient": "tofu",
+  "ingredient_tags": [
+    "tofu",
+    "shiitake mushrooms",
+    "bamboo shoots",
+    "chicken broth",
+    "soy sauce",
+    "rice vinegar",
+    "egg",
+    "cornstarch",
+    "scallion",
+    "sesame oil",
+    "white pepper",
+    "carrot",
+    "garlic",
+    "ginger"
+  ],
+  "spice_level": 3,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "soy",
+    "egg",
+    "sesame",
+    "gluten"
+  ],
+  "search_keywords": [
+    "hot and sour soup",
+    "hot & sour",
+    "chinese soup",
+    "tofu soup",
+    "shiitake",
+    "bamboo shoots",
+    "egg drop",
+    "spicy soup",
+    "tangy soup",
+    "umami",
+    "weeknight dinner",
+    "comfort soup",
+    "vegetarian soup",
+    "pescatarian",
+    "starter",
+    "broth",
+    "white pepper",
+    "rice vinegar",
+    "cornstarch slurry",
+    "sesame oil"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "vegetable or low-sodium chicken broth",
+        "quantity": 1200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 1200,
+        "optional": false,
+        "notes": "use vegetable broth for vegetarian version; warm before using"
+      },
+      {
+        "display_name": "firm tofu, drained and cut into 1/2-inch strips",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "press briefly to remove excess water"
+      },
+      {
+        "display_name": "dried shiitake mushrooms, rehydrated and sliced",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "soak in hot water 20–25 minutes, reserve soaking liquid"
+      },
+      {
+        "display_name": "bamboo shoots, julienned (canned, drained)",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "drain and rinse if canned in brine"
+      },
+      {
+        "display_name": "carrot, julienned",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "adds color and mild sweetness"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, minced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1 tbsp finely minced"
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "use gluten-free tamari to remove gluten"
+      },
+      {
+        "display_name": "dark soy sauce (for color, optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": true,
+        "notes": "adds depth and color"
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "adjust to taste for sourness"
+      },
+      {
+        "display_name": "white pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "gives traditional heat and aroma"
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": true,
+        "notes": "balances acidity"
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 24,
+        "ml": 45,
+        "optional": false,
+        "notes": "for thickening; mix with water to make slurry"
+      },
+      {
+        "display_name": "cold water (for slurry)",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "mix with cornstarch to create slurry"
+      },
+      {
+        "display_name": "egg, lightly beaten",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "pour in slowly to create ribbons"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve some for garnish"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "finish for aroma"
+      },
+      {
+        "display_name": "chili garlic sauce or fresh chili (optional)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": true,
+        "notes": "increase for higher heat"
+      },
+      {
+        "display_name": "reserved mushroom soaking liquid",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": true,
+        "notes": "strain and add to broth for extra umami"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for sautéing aromatics"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: rehydrate dried shiitake in hot water 20–25 minutes and slice; press and cut tofu into strips; julienne bamboo shoots and carrot; mince garlic and ginger; beat eggs and slice scallions.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "Heat neutral oil in a large pot over medium heat, add minced garlic and ginger and sauté until fragrant, about 30–45 seconds, stirring constantly.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add sliced shiitake, bamboo shoots and carrot to the pot and sauté 1–2 minutes until edges soften and flavors release.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Pour in broth and reserved mushroom soaking liquid if using, bring to a gentle boil over medium-high heat.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in soy sauce, dark soy (if using), rice vinegar, white pepper and sugar; taste and adjust sour-salty balance.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Add tofu strips to the simmering broth and simmer gently for 2–3 minutes to warm through and allow flavors to meld.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Whisk cornstarch with cold water to make a smooth slurry, then slowly drizzle the slurry into the simmering soup while stirring to thicken to a slightly viscous consistency; simmer 1–2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Reduce heat to low. Slowly pour the beaten egg in a thin stream while stirring the soup gently to create delicate egg ribbons; do not over-stir.",
+        "time_min": 1
+      },
+      {
+        "step_no": 9,
+        "text": "Turn off heat, stir in sesame oil and sliced scallions, and add chili garlic sauce if using; adjust seasoning with salt, extra vinegar or white pepper as needed.",
+        "time_min": 1
+      },
+      {
+        "step_no": 10,
+        "text": "Ladle soup into bowls and garnish with additional scallions or a drizzle of sesame oil, serve immediately while hot.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

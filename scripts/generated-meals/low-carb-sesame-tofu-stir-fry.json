@@ -1,0 +1,261 @@
+{
+  "slug": "low-carb-sesame-tofu-stir-fry",
+  "title": "Low-Carb Sesame Tofu Stir-Fry",
+  "description": "Crisp-pan seared tofu tossed with crunchy low-carb vegetables in a savory sesame-ginger sauce. Fast, satisfying stir-fry with nutty sesame flavor and bright aromatics, perfect for a weeknight low-carb dinner.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [
+    "low-carb",
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "tofu",
+  "ingredient_tags": [
+    "tofu",
+    "sesame",
+    "ginger",
+    "garlic",
+    "broccoli",
+    "bell pepper",
+    "zucchini",
+    "green onion",
+    "tamari",
+    "sesame oil",
+    "rice vinegar",
+    "erythritol",
+    "chili flakes",
+    "olive oil"
+  ],
+  "spice_level": 2,
+  "time_total_min": 43,
+  "servings_default": 3,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "sesame",
+    "soy"
+  ],
+  "search_keywords": [
+    "tofu",
+    "sesame",
+    "low-carb",
+    "keto-friendly",
+    "vegan stir-fry",
+    "low-carb dinner",
+    "stir fry",
+    "tamari",
+    "ginger garlic",
+    "weeknight meal",
+    "broccoli stir fry",
+    "bell pepper",
+    "zucchini",
+    "plant-based protein",
+    "sesame oil",
+    "low carb vegetables",
+    "quick dinner",
+    "high protein",
+    "low sugar",
+    "calorie conscious"
+  ],
+  "ingredients_json": {
+    "servings": 3,
+    "ingredients": [
+      {
+        "display_name": "extra-firm tofu, pressed and cut into 1-inch cubes",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "press at least 20 minutes to remove excess water"
+      },
+      {
+        "display_name": "broccoli florets (medium pieces)",
+        "quantity": 250,
+        "unit": "g",
+        "grams": 250,
+        "ml": null,
+        "optional": false,
+        "notes": "trim into bite-sized florets"
+      },
+      {
+        "display_name": "red bell pepper, seeded and thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "slice into strips"
+      },
+      {
+        "display_name": "zucchini, halved lengthwise and sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into half-moons"
+      },
+      {
+        "display_name": "green onions, sliced (white and green parts separated)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "slice thinly; reserve greens for garnish"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, peeled and minced",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tamari (gluten-free soy sauce) or soy sauce",
+        "quantity": 45,
+        "unit": "ml",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "use tamari for gluten-free"
+      },
+      {
+        "display_name": "toasted sesame oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13,
+        "ml": 15,
+        "optional": false,
+        "notes": "for finishing and sauce flavor"
+      },
+      {
+        "display_name": "neutral oil (avocado or light olive oil) for frying",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": 21,
+        "ml": 22.5,
+        "optional": false,
+        "notes": "for pan-searing tofu and vegetables"
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "erythritol or monk fruit sweetener (optional low-carb sweetener)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": true,
+        "notes": "balances acidity; omit if desired"
+      },
+      {
+        "display_name": "sesame seeds, toasted",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": true,
+        "notes": "adjust for heat preference"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "to taste; for tofu seasoning"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": 1.25,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 43,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Press the tofu to remove excess water for at least 20 minutes using a tofu press or weighted plate with paper towels, then cut into 1-inch cubes.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "While tofu presses, prepare vegetables: cut broccoli into bite-sized florets, slice bell pepper and zucchini, mince garlic and ginger, and slice white parts of green onions separately from greens.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Mix the sauce in a small bowl: combine tamari, rice vinegar, toasted sesame oil, erythritol (if using), minced garlic and ginger, and red pepper flakes; set aside.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Heat a large nonstick or well-seasoned cast-iron skillet over medium-high heat, add neutral oil, then add tofu cubes in a single layer; sear without moving until golden on one side, about 3-4 minutes per side, turning to brown all sides.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Remove seared tofu to a plate and wipe skillet if excess residue; add another small splash of neutral oil if needed and add broccoli florets; stir-fry for 2 minutes until bright green and beginning to caramelize.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Add sliced bell pepper and zucchini to the pan with broccoli, continue stir-frying for about 2-3 minutes until vegetables are crisp-tender.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Return tofu to the pan, pour the prepared sauce over, toss gently to coat, and cook for another 1-2 minutes to warm through and let the sauce thicken slightly.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Taste and adjust seasoning with salt and pepper if needed, sprinkle toasted sesame seeds and sliced green onion greens, then remove from heat and serve immediately.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

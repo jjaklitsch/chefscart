@@ -1,0 +1,250 @@
+{
+  "slug": "bunless-bacon-cheeseburger-bowl",
+  "title": "Bunless Bacon Cheeseburger Bowl",
+  "description": "A hearty deconstructed cheeseburger served in a bowl — seasoned ground beef, crispy bacon, melted cheddar, and crisp veggies tossed with a tangy pickle-mayo dressing. Quick pan-searing and shallow-sautéing concentrate savory flavors while keeping it low-carb and satisfying.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb"
+  ],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "ground beef",
+    "bacon",
+    "cheddar",
+    "lettuce",
+    "tomato",
+    "red onion",
+    "pickles",
+    "mayonnaise",
+    "mustard",
+    "olive oil",
+    "garlic powder",
+    "onion powder",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 29,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg"
+  ],
+  "search_keywords": [
+    "bunless",
+    "bacon cheeseburger",
+    "cheeseburger bowl",
+    "keto",
+    "low-carb",
+    "ground beef",
+    "cheddar",
+    "crispy bacon",
+    "pickle mayo",
+    "weeknight dinner",
+    "high protein",
+    "gluten free",
+    "pan seared",
+    "easy",
+    "meal prep",
+    "lettuce bowl",
+    "no bun",
+    "dinner bowl",
+    "comfort food",
+    "quick"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ground beef (80/20)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "break into crumbles while cooking"
+      },
+      {
+        "display_name": "bacon strips",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 224,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1-inch pieces"
+      },
+      {
+        "display_name": "sharp cheddar cheese, shredded",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 112,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a little for garnish"
+      },
+      {
+        "display_name": "romaine lettuce, chopped",
+        "quantity": 6,
+        "unit": "cup",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "washed and chopped"
+      },
+      {
+        "display_name": "tomato, diced",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium tomato"
+      },
+      {
+        "display_name": "red onion, thinly sliced",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "mild raw crunch, optional to omit"
+      },
+      {
+        "display_name": "dill pickles, diced",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "use crunchy dill pickles"
+      },
+      {
+        "display_name": "mayonnaise",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 115,
+        "ml": 120,
+        "optional": false,
+        "notes": "use full-fat mayonnaise for best texture"
+      },
+      {
+        "display_name": "yellow mustard",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "for dressing and tang"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13.5,
+        "ml": 15,
+        "optional": false,
+        "notes": "for sauteing if needed"
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.8,
+        "ml": 5,
+        "optional": false,
+        "notes": "for seasoning beef"
+      },
+      {
+        "display_name": "onion powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.4,
+        "ml": 5,
+        "optional": false,
+        "notes": "for seasoning beef"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "apple cider vinegar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": false,
+        "notes": "brightens dressing"
+      },
+      {
+        "display_name": "fresh chives, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 29,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: chop lettuce, dice tomato and pickles, thinly slice onion, shred cheddar, and chop chives for garnish.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Crisp the bacon in a large skillet over medium heat until browned and crisp, turning occasionally; transfer to a paper-towel-lined plate and drain. Reserve 1 tablespoon of bacon fat in the pan and discard the rest or save for another use.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Return the skillet with reserved bacon fat to medium-high heat, add olive oil if pan is dry, then add ground beef. Break into crumbles and cook without overcrowding until browned, about 5–7 minutes; season with garlic powder, onion powder, salt, and pepper during cooking.",
+        "time_min": 7
+      },
+      {
+        "step_no": 4,
+        "text": "Reduce heat to low, sprinkle shredded cheddar over the hot beef and cover the skillet briefly until cheese melts, about 1–2 minutes; stir gently to combine melted cheese into beef crumbles.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Make the pickle-mayo dressing by whisking together mayonnaise, mustard, diced pickles, apple cider vinegar, and a pinch of black pepper in a small bowl; taste and adjust salt or vinegar.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Build bowls: divide chopped lettuce among bowls, top with cheesy beef, crumbled bacon, diced tomato, sliced red onion, and extra diced pickles; drizzle with pickle-mayo dressing and garnish with chopped chives.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

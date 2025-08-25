@@ -1,0 +1,280 @@
+{
+  "slug": "crawfish-touffe",
+  "title": "Crawfish Étouffée",
+  "description": "A rich, deeply flavored Louisiana classic: tender crawfish tails simmered in a dark roux-based gravy with the holy trinity of onions, bell pepper and celery, finished with Cajun seasoning and served over steaming white rice. Comforting, savory, and silky — with a gentle spicy warmth that can be tuned to taste.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "southern"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "crawfish",
+  "ingredient_tags": [
+    "crawfish",
+    "shellfish",
+    "rice",
+    "onion",
+    "bell pepper",
+    "celery",
+    "butter",
+    "flour",
+    "garlic",
+    "tomato paste",
+    "chicken stock",
+    "cajun seasoning",
+    "bay leaf",
+    "parsley",
+    "green onion",
+    "lemon"
+  ],
+  "spice_level": 3,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "crawfish",
+    "etouffee",
+    "étouffée",
+    "louisiana",
+    "creole",
+    "cajun",
+    "shellfish stew",
+    "roux",
+    "holy trinity",
+    "rice",
+    "butter",
+    "comfort food",
+    "seafood",
+    "weeknight dinner",
+    "spicy",
+    "one-pot",
+    "stove-top",
+    "parsley",
+    "green onion"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "crawfish tails (fresh or thawed frozen), peeled",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "pick through for shells; tails only"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 57,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "for dark roux"
+      },
+      {
+        "display_name": "yellow onion, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "green bell pepper, finely diced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "celery stalks, finely diced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds color and depth"
+      },
+      {
+        "display_name": "low-sodium chicken stock",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": null,
+        "ml": 720,
+        "optional": false,
+        "notes": "can substitute seafood stock"
+      },
+      {
+        "display_name": "cajun or creole seasoning",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "remove before serving"
+      },
+      {
+        "display_name": "fresh flat-leaf parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "green onions, thinly sliced",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": true,
+        "notes": "optional brightness at finish"
+      },
+      {
+        "display_name": "cooked white rice (for serving), steamed",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 960,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 cup cooked per serving"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare mise en place: peel and measure crawfish tails, dice onion, bell pepper and celery, mince garlic, measure stock and seasonings, and cook rice if not already prepared.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a heavy-bottomed skillet or Dutch oven over medium heat and melt the butter until foaming, then add the flour to begin making a roux, stirring constantly.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Continue cooking and stirring the roux, lowering heat slightly as needed; cook until it reaches a peanut-butter to milk-chocolate color (deep blond-to-brown), about 12–18 minutes, taking care not to burn — stir frequently.",
+        "time_min": 15
+      },
+      {
+        "step_no": 4,
+        "text": "Once roux color is achieved, add the diced onion, bell pepper and celery to the pot and sauté in the roux until vegetables are soft and translucent.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in the minced garlic and tomato paste and cook briefly until fragrant, about 1 minute, stirring to combine with the roux and vegetables.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Slowly whisk or stir in the chicken stock in small additions to deglaze and build the sauce, smoothing any lumps, then add the bay leaf and cajun seasoning.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Bring the mixture to a gentle simmer, reduce heat to low, and simmer uncovered until slightly thickened and flavors meld, about 10 minutes; taste and adjust seasoning with salt and pepper.",
+        "time_min": 10
+      },
+      {
+        "step_no": 8,
+        "text": "Add the crawfish tails to the simmering étouffée and gently heat through for 3–5 minutes until just cooked and warmed; avoid overcooking to maintain tender texture.",
+        "time_min": 4
+      },
+      {
+        "step_no": 9,
+        "text": "Finish by stirring in chopped parsley and most of the sliced green onions; optionally add a squeeze of lemon juice for brightness. Remove and discard bay leaf.",
+        "time_min": 1
+      },
+      {
+        "step_no": 10,
+        "text": "Serve immediately over hot cooked white rice, garnishing with remaining green onion and additional parsley; provide hot sauce at the table if desired.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

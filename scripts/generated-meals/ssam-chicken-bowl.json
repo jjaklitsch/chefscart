@@ -1,0 +1,301 @@
+{
+  "slug": "ssam-chicken-bowl",
+  "title": "Ssam Chicken Bowl",
+  "description": "A vibrant Korean-inspired bowl featuring tender marinated chicken, crisp lettuce wraps, fragrant rice, and spicy-sweet ssam sauce. Fresh herbs, quick-pickled vegetables, and toasted sesame create layered textures and bold umami flavors.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "korean"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "short-grain rice",
+    "lettuce",
+    "ssamjang",
+    "gochujang",
+    "garlic",
+    "ginger",
+    "cucumber",
+    "carrot",
+    "scallion",
+    "cilantro",
+    "sesame",
+    "soy sauce",
+    "vinegar",
+    "sesame oil",
+    "lime"
+  ],
+  "spice_level": 3,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "sesame",
+    "grain",
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "ssam",
+    "ssamjang",
+    "ssam chicken",
+    "korean bowl",
+    "chicken bowl",
+    "lettuce wraps",
+    "gochujang",
+    "marinated chicken",
+    "short-grain rice",
+    "quick pickle",
+    "toasted sesame",
+    "weeknight dinner",
+    "meal prep",
+    "spicy",
+    "umami",
+    "scallion",
+    "cilantro",
+    "sesame oil",
+    "grilled chicken",
+    "rice bowl"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs, cut into 1-inch pieces",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "short-grain white rice (uncooked)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed until water runs clear"
+      },
+      {
+        "display_name": "romaine or butter lettuce leaves, washed and separated",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "use larger leaves for wrapping"
+      },
+      {
+        "display_name": "gochujang (Korean red pepper paste)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 40,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ssamjang (fermented soybean-chili sauce)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "store-bought or homemade"
+      },
+      {
+        "display_name": "low-sodium soy sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "for marinade"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": 21,
+        "ml": 22.5,
+        "optional": false,
+        "notes": "divided between marinade and finishing"
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "for quick pickles"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "for quick pickles"
+      },
+      {
+        "display_name": "water (for pickling and cooking rice)",
+        "quantity": 720,
+        "unit": "ml",
+        "grams": null,
+        "ml": 720,
+        "optional": false,
+        "notes": "420ml for rice cooking (1.75 cups), rest for pickling"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "for marinade"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "garnish and mix into sauce"
+      },
+      {
+        "display_name": "cucumber, julienned",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "for crunch"
+      },
+      {
+        "display_name": "carrot, julienned",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 70,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cilantro leaves, rough chop",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "garnish"
+      },
+      {
+        "display_name": "lime, cut into wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "to finish"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 10,
+        "optional": false,
+        "notes": "garnish"
+      },
+      {
+        "display_name": "neutral oil (canola or vegetable)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for pan-searing"
+      },
+      {
+        "display_name": "egg (soft-fried or sunny-side), optional topping",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "one per serving if desired"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "for rice and seasoning"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "for chicken"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse the short-grain rice until water runs clear, then combine rice with the measured water and a pinch of salt in a pot or rice cooker; bring to a simmer, cover, and cook until water is absorbed and rice is tender.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "While rice cooks, make quick pickles by combining rice vinegar, sugar, a pinch of salt and a small amount of water in a bowl, add julienned cucumber and carrot, stir and let sit to pickle briefly.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Prepare the chicken marinade by mixing soy sauce, half the sesame oil, grated ginger, half the minced garlic, gochujang, a little ssamjang, black pepper, and a small splash of water; toss the chicken pieces in the marinade and let sit while other prep continues.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Heat neutral oil in a large skillet or grill pan over medium-high heat; add marinated chicken in a single layer and sear until browned and cooked through, stirring once or twice to cook evenly; finish with the remaining sesame oil and remaining minced garlic in the last minute.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Warm the lettuce leaves, drain quick pickles, and arrange bowls: spoon rice into bowls, top with seared chicken, pickled vegetables, sliced scallions, cilantro, toasted sesame seeds and a dollop of ssamjang mixed with a bit of gochujang and sesame oil to form the ssam sauce; serve lime wedges and optional fried eggs alongside.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

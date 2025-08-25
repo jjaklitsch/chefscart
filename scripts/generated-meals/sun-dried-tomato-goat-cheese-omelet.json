@@ -1,0 +1,227 @@
+{
+  "slug": "sun-dried-tomato-goat-cheese-omelet",
+  "title": "Sun-Dried Tomato & Goat Cheese Omelet",
+  "description": "A fluffy three-egg omelet filled with tangy crumbled goat cheese, chewy oil-packed sun-dried tomatoes, and fresh herbs. Quick to prepare, it’s cooked gently in butter for a creamy interior and lightly golden exterior—perfect for a flavorful breakfast or light lunch.",
+  "courses": [
+    "breakfast",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "low-carb"
+  ],
+  "primary_ingredient": "eggs",
+  "ingredient_tags": [
+    "eggs",
+    "goat cheese",
+    "sun-dried tomatoes",
+    "butter",
+    "milk",
+    "shallot",
+    "garlic",
+    "chives",
+    "parsley",
+    "black pepper",
+    "salt",
+    "olive oil"
+  ],
+  "spice_level": 1,
+  "time_total_min": 10,
+  "servings_default": 1,
+  "servings_min": 1,
+  "servings_max": 4,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg"
+  ],
+  "search_keywords": [
+    "sun-dried tomato omelet",
+    "goat cheese omelette",
+    "mediterranean breakfast",
+    "easy brunch recipe",
+    "low-carb omelet",
+    "vegetarian breakfast",
+    "three egg omelet",
+    "herbed omelet",
+    "butter fried eggs",
+    "cheesy omelet",
+    "quick savory breakfast",
+    "olive oil tomatoes",
+    "chives and parsley",
+    "protein breakfast",
+    "small batch omelet",
+    "weekend brunch",
+    "light lunch omelet",
+    "kitchen skillet omelet",
+    "tangy goat cheese",
+    "sun dried tomatoes chopped"
+  ],
+  "ingredients_json": {
+    "servings": 1,
+    "ingredients": [
+      {
+        "display_name": "large eggs",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "whole milk",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "or cream for richer texture"
+      },
+      {
+        "display_name": "butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "unsalted"
+      },
+      {
+        "display_name": "sun-dried tomatoes",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "oil-packed, drained and chopped"
+      },
+      {
+        "display_name": "goat cheese",
+        "quantity": 45,
+        "unit": "g",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "soft log, crumbled"
+      },
+      {
+        "display_name": "shallot",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "finely minced"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 0.5,
+        "unit": "clove",
+        "grams": 1.5,
+        "ml": null,
+        "optional": true,
+        "notes": "minced"
+      },
+      {
+        "display_name": "fresh chives",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "fresh parsley",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 3,
+        "ml": null,
+        "optional": true,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "to coat sun-dried tomatoes if dry"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.125,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 10,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep ingredients: drain and finely chop sun-dried tomatoes if oil-packed; crumble goat cheese; mince shallot and garlic; chop chives and parsley; bring eggs to room temperature.",
+        "time_min": 3
+      },
+      {
+        "step_no": 2,
+        "text": "In a small bowl, whisk the eggs with milk and a pinch of salt and pepper until uniformly blended and slightly frothy.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Heat an 8-10 inch nonstick skillet over medium-low heat, add butter and let it melt until foaming but not browned.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced shallot (and garlic if using) to the butter and cook gently, stirring, until softened and aromatic but not colored.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Increase heat to medium, pour the beaten eggs into the skillet and let them sit undisturbed for about 10-15 seconds until the edges begin to set.",
+        "time_min": 0.5
+      },
+      {
+        "step_no": 6,
+        "text": "Using a silicone spatula, gently pull set edges toward the center while tilting the pan so uncooked egg flows to the edges; continue until most eggs are set but top still slightly glossy.",
+        "time_min": 1.5
+      },
+      {
+        "step_no": 7,
+        "text": "Evenly scatter chopped sun-dried tomatoes, crumbled goat cheese, chives and parsley over one half of the omelet.",
+        "time_min": 0.5
+      },
+      {
+        "step_no": 8,
+        "text": "Fold the empty half over the filling and let cook for another 30–60 seconds to warm the cheese through, keeping heat low to avoid overbrowning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 9,
+        "text": "Slide the omelet onto a plate, season with a final pinch of salt and freshly ground pepper, and serve immediately.",
+        "time_min": 0.5
+      }
+    ]
+  },
+  "image_url": null
+}

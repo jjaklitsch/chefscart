@@ -1,0 +1,263 @@
+{
+  "slug": "maple-mustard-brussels-caesar",
+  "title": "Maple-Mustard Brussels Caesar",
+  "description": "Crisp-roasted Brussels sprouts tossed in a bright, tangy maple-mustard Caesar-style dressing with shaved Parmesan and crunchy rye croutons. This side or light main balances sweet maple, sharp mustard, umami anchovy-Caesar notes, and toasted seeds for texture.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "brussels sprouts",
+  "ingredient_tags": [
+    "brussels sprouts",
+    "parmesan",
+    "maple syrup",
+    "dijon mustard",
+    "olive oil",
+    "rye bread",
+    "anchovy",
+    "lemon",
+    "garlic",
+    "walnut",
+    "salt",
+    "black pepper",
+    "capers",
+    "yogurt",
+    "sesame seeds"
+  ],
+  "spice_level": 1,
+  "time_total_min": 49,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten",
+    "sesame",
+    "egg"
+  ],
+  "search_keywords": [
+    "brussels sprouts",
+    "maple mustard",
+    "caesar dressing",
+    "roasted sprouts",
+    "vegetarian side",
+    "rye croutons",
+    "parmesan",
+    "anchovy caesar",
+    "maple syrup",
+    "dijon",
+    "garlic",
+    "lemon",
+    "toasted seeds",
+    "walnut",
+    "weeknight dinner",
+    "holiday side",
+    "salad bowl",
+    "crispy roasted",
+    "savory sweet",
+    "easy roast"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "brussels sprouts, trimmed and halved",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "trim root ends and halve through stem for even roasting"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "divided: most for roasting, a little for dressing if needed"
+      },
+      {
+        "display_name": "maple syrup (pure)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for glaze in dressing"
+      },
+      {
+        "display_name": "dijon mustard",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 22.5,
+        "optional": false,
+        "notes": "creates mustard-forward Caesar note"
+      },
+      {
+        "display_name": "plain Greek yogurt (full-fat)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "adds creaminess to dressing; can sub mayonnaise for similar texture"
+      },
+      {
+        "display_name": "anchovy fillets, minced",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "mince to dissolve into dressing for umami"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "mince finely"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lemon; brightens dressing"
+      },
+      {
+        "display_name": "grated Parmesan cheese",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a little for garnish; finely grated"
+      },
+      {
+        "display_name": "rye bread, cut into 1cm cubes (for croutons)",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "stale or day-old bread works best"
+      },
+      {
+        "display_name": "butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "melted for croutons; can use olive oil for dairy-free"
+      },
+      {
+        "display_name": "walnuts, roughly chopped",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "toasted for crunch; optional but recommended"
+      },
+      {
+        "display_name": "sesame seeds, toasted",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "for finishing texture"
+      },
+      {
+        "display_name": "capers, drained",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "adds briny pop if desired"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.25,
+        "unit": "tsp",
+        "grams": 7.5,
+        "ml": null,
+        "optional": false,
+        "notes": "divided between roasting and finishing"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste; divided"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 49,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 220°C (425°F). Line a large baking sheet with parchment and set rack in upper-middle position.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Toss trimmed and halved Brussels sprouts with 2 tbsp olive oil, half the salt, and half the pepper on the prepared sheet so cut sides are down and spaced in a single layer.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Roast sprouts in the preheated oven until deeply caramelized and tender when pierced, about 20 minutes, flipping once halfway through at 10 minutes for even browning.",
+        "time_min": 20
+      },
+      {
+        "step_no": 4,
+        "text": "While sprouts roast, make croutons: toss rye bread cubes with melted butter and a pinch of salt, spread on a small baking sheet and toast in oven or under broiler until golden and crisp, about 6–8 minutes, stirring once.",
+        "time_min": 8
+      },
+      {
+        "step_no": 5,
+        "text": "Toast walnuts in a small skillet over medium heat for 2–3 minutes until fragrant, then add sesame seeds for last 30 seconds; transfer to a bowl to cool.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Whisk together the dressing: combine yogurt, dijon mustard, maple syrup, minced anchovy, minced garlic, lemon juice, remaining olive oil and remaining salt and pepper until smooth and emulsified. Stir in grated Parmesan and optionally capers; taste and adjust acid or salt.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "When sprouts are done, transfer to a large bowl. While still warm, pour about two-thirds of the dressing over sprouts and toss to coat; reserve remaining dressing for serving.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Add croutons, toasted walnuts, and most of the shaved or grated Parmesan to the bowl; toss gently so croutons remain somewhat crisp. Finish with toasted sesame seeds and additional Parmesan to taste.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

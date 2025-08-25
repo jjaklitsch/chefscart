@@ -1,0 +1,236 @@
+{
+  "slug": "gyudon-beef-onion-rice-bowl",
+  "title": "Gyudon (Beef & Onion Rice Bowl)",
+  "description": "A classic Japanese rice bowl featuring thinly sliced beef and sweet-simmered onions in a savory-sweet soy-based broth. Quick to prepare, it layers tender, flavorful beef over steamed rice and is finished with a softly cooked egg and scallions for contrast.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "beef",
+  "ingredient_tags": [
+    "beef",
+    "onion",
+    "rice",
+    "egg",
+    "soy sauce",
+    "mirin",
+    "sake",
+    "dashi",
+    "sugar",
+    "scallion",
+    "ginger"
+  ],
+  "spice_level": 1,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "egg",
+    "gluten",
+    "soy"
+  ],
+  "search_keywords": [
+    "gyudon",
+    "beef bowl",
+    "japanese rice bowl",
+    "sukiyaki style",
+    "thinly sliced beef",
+    "onion",
+    "soy sauce",
+    "mirin",
+    "sake",
+    "dashi",
+    "steamed rice",
+    "soft egg",
+    "quick weeknight",
+    "comfort food",
+    "donburi",
+    "scallion",
+    "ginger",
+    "sugar",
+    "savory sweet",
+    "easy dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "short-grain white rice (uncooked)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": 480,
+        "optional": false,
+        "notes": "rinse until water runs clear; yields ~4 cups cooked"
+      },
+      {
+        "display_name": "thinly sliced beef (ribeye or sirloin), partially frozen for slicing if needed",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "slice thinly across the grain if not pre-sliced"
+      },
+      {
+        "display_name": "yellow onion, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "about 180 g each, sliced into half-moons"
+      },
+      {
+        "display_name": "dashi stock (hon-dashi dissolved or homemade)",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "use low-sodium if available"
+      },
+      {
+        "display_name": "soy sauce",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "regular or low-sodium"
+      },
+      {
+        "display_name": "mirin",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sake (cooking sake)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "can substitute additional dashi + small sugar if avoiding alcohol"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste for sweetness"
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "adds brightness; optional but recommended"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for softening onions"
+      },
+      {
+        "display_name": "eggs (soft-poached or raw onsen-style per preference)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "1 egg per serving; optional"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "pickled ginger (beni shoga)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "traditional garnish"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning onions while cooking"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Rinse the rice under cold water until the water runs clear, then drain. Combine rinsed rice with the appropriate water in a rice cooker or pot and cook according to your appliance instructions until tender and keep warm.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "While the rice cooks, heat a wide skillet or sauté pan over medium heat and add neutral oil. Add thinly sliced onions and a pinch of salt, then cook, stirring occasionally, until the onions are soft and translucent but not browned.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Pour dashi into the pan with the softened onions and bring to a gentle simmer. Add soy sauce, mirin, sake, sugar, and optional grated ginger. Stir to dissolve the sugar and taste; adjust sweetness or salt as needed.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Increase heat to medium-high. Add the thinly sliced beef in an even layer, separating pieces so they contact the liquid; cook until the beef just loses its raw color and is tender, about 1–2 minutes, stirring to incorporate with the broth and onions.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Reduce heat to low and simmer briefly so flavors meld; remove from heat when beef is cooked through but still tender. If using eggs, prepare soft-poached or gently heat eggs separately and time to finish with bowls.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "To assemble, divide hot steamed rice among bowls, spoon beef and onions with generous broth over the rice, top each with an egg if using, and garnish with sliced scallions, pickled ginger, and toasted sesame seeds as desired. Serve immediately.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

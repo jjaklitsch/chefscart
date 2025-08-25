@@ -1,0 +1,275 @@
+{
+  "slug": "hot-honey-fried-chicken-thighs",
+  "title": "Hot Honey Fried Chicken Thighs",
+  "description": "Crispy, double-coated bone-in chicken thighs fried to golden brown and finished with a glossy hot honey glaze. The balance of crunchy, savory crust, warm chile heat and sweet honey makes this a craveable main for weeknights or gatherings.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "southern",
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "honey",
+    "buttermilk",
+    "flour",
+    "cornstarch",
+    "garlic",
+    "smoked paprika",
+    "cayenne",
+    "vegetable oil",
+    "butter",
+    "lemon"
+  ],
+  "spice_level": 3,
+  "time_total_min": 207,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "egg",
+    "gluten",
+    "dairy"
+  ],
+  "search_keywords": [
+    "fried chicken",
+    "hot honey",
+    "spicy honey chicken",
+    "southern fried",
+    "buttermilk brine",
+    "double dredge",
+    "crispy chicken thighs",
+    "bone-in chicken",
+    "honey glaze",
+    "cayenne",
+    "smoked paprika",
+    "weeknight dinner",
+    "party food",
+    "comfort food",
+    "pan fry",
+    "deep fry",
+    "sweet and spicy",
+    "garlic powder",
+    "cornstarch",
+    "lemon"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in, skin-on chicken thighs",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 1600,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat, score skin lightly"
+      },
+      {
+        "display_name": "buttermilk",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": 480,
+        "optional": false,
+        "notes": "for brine/marinade"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "beat and mix with buttermilk for dredge"
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "for dredge"
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "adds extra crisp"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "for brine/dredge, divided"
+      },
+      {
+        "display_name": "black pepper, ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "onion powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cayenne pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust for heat preference"
+      },
+      {
+        "display_name": "neutral oil for frying (vegetable or peanut)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 360,
+        "optional": false,
+        "notes": "for deep or shallow frying; amount depends on pan"
+      },
+      {
+        "display_name": "honey",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 170,
+        "ml": 120,
+        "optional": false,
+        "notes": "for glaze"
+      },
+      {
+        "display_name": "sriracha or other chili sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": "for hot honey (adjust to taste)"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds shine to glaze"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": true,
+        "notes": "brightens glaze"
+      },
+      {
+        "display_name": "fresh chives or parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 207,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare the chicken: pat thighs dry, trim excess fat and lightly score skin. Season all over with half the salt and half the black pepper.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Make the buttermilk marinade: whisk together buttermilk and eggs until combined. Submerge seasoned thighs in the mixture in a nonreactive container, cover, and refrigerate to marinate for at least 2 hours or up to overnight.",
+        "time_min": 120
+      },
+      {
+        "step_no": 3,
+        "text": "Mix the dry dredge: in a large bowl combine flour, cornstarch, smoked paprika, garlic powder, onion powder, cayenne, remaining salt and pepper. Whisk to distribute spices evenly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Set up the dredging station: remove one chicken thigh at a time from the marinade, letting excess drip off, then coat thoroughly in the dry mix pressing to adhere. For extra crisp, dip the coated thigh briefly back into the marinade and into the dry mix again for a double coat. Place on a wire rack and let rest while heating oil.",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "Heat oil: in a heavy skillet or Dutch oven heat oil to 350°F (175°C). If you don't have a thermometer, test by dropping a pinch of flour — it should sizzle steadily. Maintain oil temperature between 325–350°F during frying.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Fry the chicken: working in batches to avoid overcrowding, carefully add thighs skin-side down and fry until golden and crisp, about 6–8 minutes per side. Turn once partway through. Adjust heat to maintain oil temperature. Use a thermometer to ensure internal temperature reaches 165°F (74°C). Total frying time per batch ~14–18 minutes.",
+        "time_min": 40
+      },
+      {
+        "step_no": 7,
+        "text": "Drain and rest: transfer cooked thighs to a wire rack set over a baking sheet and rest for 5 minutes to drain excess oil and let juices redistribute.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Make the hot honey glaze: in a small saucepan combine honey, sriracha, and butter over low heat until warm and combined; stir in lemon juice if using. Warm just until fluid and emulsified, about 2–3 minutes. Do not boil aggressively.",
+        "time_min": 5
+      },
+      {
+        "step_no": 9,
+        "text": "Glaze the chicken: brush or drizzle the hot honey over the rested fried thighs, coating evenly. Reserve extra glaze to serve alongside if desired.",
+        "time_min": 2
+      },
+      {
+        "step_no": 10,
+        "text": "Garnish and serve: sprinkle with chopped chives or parsley and a light pinch of flaky salt. Serve hot with lemon wedges and desired sides.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

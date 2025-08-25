@@ -1,0 +1,335 @@
+{
+  "slug": "cm-tm-sn-broken-rice-pork-chop",
+  "title": "Cơm Tấm Sườn (Broken Rice Pork Chop)",
+  "description": "Cơm Tấm Sườn pairs tender, caramelized Vietnamese-style grilled pork chops with fluffy broken rice, pickled vegetables, and a savory-sweet fish sauce dressing. The pork is marinated with garlic, shallot, fish sauce and caramelized sugar then charred for smoky edges and deep flavor.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "vietnamese"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "pork",
+  "ingredient_tags": [
+    "pork",
+    "broken rice",
+    "rice",
+    "fish sauce",
+    "garlic",
+    "shallot",
+    "sugar",
+    "soy sauce",
+    "vegetable oil",
+    "vegetables",
+    "cucumber",
+    "carrot",
+    "daikon",
+    "egg",
+    "scallion",
+    "lime",
+    "chili",
+    "pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 100,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "gluten",
+    "soy",
+    "seafood"
+  ],
+  "search_keywords": [
+    "cơm tấm",
+    "broken rice",
+    "sườn",
+    "pork chop",
+    "vietnamese grilled pork",
+    "com tam suon",
+    "fish sauce dressing",
+    "nuoc cham",
+    "pickled carrots",
+    "daikon pickles",
+    "garlic shallot marinade",
+    "charred pork",
+    "broken rice bowl",
+    "rice and pork",
+    "street food",
+    "grilled meat",
+    "caramelized sugar",
+    "scallion oil",
+    "fried egg",
+    "cucumber"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "broken rice (rinsed)",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "rinse until water runs clear"
+      },
+      {
+        "display_name": "pork shoulder or pork chop, boneless and pounded to 1/2 inch thickness",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": null,
+        "optional": false,
+        "notes": "slice into 4 equal chops and tenderize"
+      },
+      {
+        "display_name": "fish sauce (for marinade and nuoc cham)",
+        "quantity": 90,
+        "unit": "ml",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": "split between marinade and dipping sauce"
+      },
+      {
+        "display_name": "soy sauce (light)",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds color and umami to marinade"
+      },
+      {
+        "display_name": "granulated sugar (or palm sugar)",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "use for marinade caramelization"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for marinade and grill brushing"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 6,
+        "unit": "clove",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "minced fine"
+      },
+      {
+        "display_name": "shallot, minced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "minced fine"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cooking oil for grill or pan",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for searing"
+      },
+      {
+        "display_name": "for nuoc cham (dipping sauce): lime juice",
+        "quantity": 45,
+        "unit": "ml",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1.5 limes"
+      },
+      {
+        "display_name": "for nuoc cham: water",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "for nuoc cham: sugar",
+        "quantity": 25,
+        "unit": "g",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "dissolve into water/lime"
+      },
+      {
+        "display_name": "red or bird's eye chili, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to spice preference"
+      },
+      {
+        "display_name": "cucumber, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "carrot, julienned (for quick pickle)",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "combine with daikon for pickles"
+      },
+      {
+        "display_name": "daikon radish, julienned (for quick pickle)",
+        "quantity": 100,
+        "unit": "g",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "combine with carrot for pickles"
+      },
+      {
+        "display_name": "rice vinegar (for quick pickle)",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "dissolve with sugar and water"
+      },
+      {
+        "display_name": "water (for quick pickle)",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sugar (for quick pickle)",
+        "quantity": 20,
+        "unit": "g",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt (for pickles and rice seasoning)",
+        "quantity": 5,
+        "unit": "g",
+        "grams": 5,
+        "ml": null,
+        "optional": false,
+        "notes": "split between rice cooking and pickling"
+      },
+      {
+        "display_name": "eggs (for optional fried egg topping)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "fry sunny-side-up"
+      },
+      {
+        "display_name": "scallion oil (scallions chopped + hot oil)",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": true,
+        "notes": "garnish: heat oil over scallions to release aroma"
+      },
+      {
+        "display_name": "lime wedges (for serving)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 100,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare rice: rinse broken rice until water runs clear, then combine with salted water in a rice cooker or pot and cook until tender; keep warm until plating.",
+        "time_min": 35
+      },
+      {
+        "step_no": 2,
+        "text": "Make quick pickles: combine julienned carrot and daikon with vinegar, water, sugar, and salt; stir to dissolve sugar and let sit at room temperature to soften and pickle.",
+        "time_min": 20
+      },
+      {
+        "step_no": 3,
+        "text": "Mix marinade: combine fish sauce, soy sauce, minced garlic, minced shallot, sugar, vegetable oil and ground pepper in a bowl until sugar dissolves.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Marinate pork: score or pound pork, place in marinade ensuring full contact; refrigerate and marinate for at least 20 minutes (can be longer for deeper flavor).",
+        "time_min": 20
+      },
+      {
+        "step_no": 5,
+        "text": "Cook pork: heat a grill pan or outdoor grill to medium-high, oil grates or pan, remove excess marinade, then grill or pan-sear pork until caramelized and cooked through with charred edges, flipping once; resting briefly after cooking.",
+        "time_min": 10
+      },
+      {
+        "step_no": 6,
+        "text": "Prepare nuoc cham dipping sauce: dissolve sugar into warm water, add fish sauce, lime juice and sliced chili; taste and adjust balance of sweet/sour/salty.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Optional fry eggs: in a small pan with oil, fry eggs sunny-side-up until whites set and edges crisp; keep warm.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble and serve: portion broken rice into bowls or plates, top with grilled pork chop (sliced if desired), add pickled vegetables, cucumber slices, optional fried egg, drizzle scallion oil and serve nuoc cham on the side with lime wedges.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,18 @@
+[dotenv@17.2.1] injecting env (12) from .env.local -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+🚀 ChefsCart Meal Data Generator
+================================
+📝 Processing 529 meals from scripts/all-meals-list.txt...
+
+
+🔄 Processing: Ackee & Saltfish (Bowl)
+--------------------------------------------------
+🤖 Generating data for: Ackee & Saltfish (Bowl)
+✅ Generated and validated data for: Ackee & Saltfish (Bowl)
+💾 Upserting: Ackee & Saltfish (Bowl)
+✅ Stored: Ackee & Saltfish (Bowl) (ID: 8c22ed32-629c-4068-a690-2ec324c0907d)
+📁 Saved backup: ackee-saltfish-bowl.json
+⏳ Waiting 2 seconds...
+
+🔄 Processing: Al Pastor Bowls (Griddle)
+--------------------------------------------------
+🤖 Generating data for: Al Pastor Bowls (Griddle)

@@ -1,0 +1,272 @@
+{
+  "slug": "salsa-verde-chicken-chilaquiles",
+  "title": "Salsa Verde Chicken Chilaquiles",
+  "description": "Crisp tortilla chips simmered in bright tomatillo salsa verde and tender shredded chicken, finished with crema, queso fresco, and fresh cilantro. A quick, satisfying Mexican-style skillet meal that's tangy, savory and perfect for brunch or weeknight dinner.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "tomatillo",
+    "jalapeño",
+    "onion",
+    "garlic",
+    "tortilla chips",
+    "corn tortilla",
+    "cilantro",
+    "lime",
+    "queso fresco",
+    "sour cream",
+    "vegetable oil",
+    "chicken broth",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 3,
+  "time_total_min": 38,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "salsa verde",
+    "chicken chilaquiles",
+    "tomatillo",
+    "tortilla chips",
+    "mexican brunch",
+    "weeknight dinner",
+    "shredded chicken",
+    "queso fresco",
+    "crema",
+    "cilantro",
+    "lime",
+    "easy skillet",
+    "spicy",
+    "comfort food",
+    "leftover chicken",
+    "green salsa",
+    "homemade",
+    "tomatillo salsa",
+    "breakfast tacos alternative",
+    "one pan"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "tomatillos, husked and rinsed",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "quartered if large"
+      },
+      {
+        "display_name": "jalapeño peppers",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "stemmed; seeds kept or removed to taste"
+      },
+      {
+        "display_name": "white onion, quartered",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled"
+      },
+      {
+        "display_name": "fresh cilantro leaves, packed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 25,
+        "ml": null,
+        "optional": false,
+        "notes": "stems removed"
+      },
+      {
+        "display_name": "lime, juiced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 30 ml juice"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "low-sodium chicken broth",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "warmed"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; divided"
+      },
+      {
+        "display_name": "black pepper, ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "store-bought or homemade tortilla chips",
+        "quantity": 8,
+        "unit": "oz",
+        "grams": 224,
+        "ml": null,
+        "optional": false,
+        "notes": "thick-cut or restaurant style"
+      },
+      {
+        "display_name": "corn tortillas (for making fresh chips) - optional",
+        "quantity": 6,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "if making homemade chips, cut into wedges and fry or bake"
+      },
+      {
+        "display_name": "queso fresco, crumbled",
+        "quantity": 4,
+        "unit": "oz",
+        "grams": 112,
+        "ml": null,
+        "optional": false,
+        "notes": "or cotija"
+      },
+      {
+        "display_name": "Mexican crema or sour cream",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "for drizzling"
+      },
+      {
+        "display_name": "avocado, sliced (optional)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "red onion, thinly sliced (for garnish)",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "optional pickled red onions work well"
+      },
+      {
+        "display_name": "olive oil or oil for frying chips",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": null,
+        "ml": 60,
+        "optional": true,
+        "notes": "if frying homemade chips"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 38,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Poach the chicken: place chicken thighs in a medium saucepan and add enough water to just cover; add 1/2 tsp salt. Bring to a gentle simmer over medium heat, reduce heat to low and simmer until cooked through (internal temp 165°F/74°C), about 12 minutes. Remove chicken and let rest before shredding.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Make the salsa verde: while chicken cooks, char tomatillos, jalapeños and quartered onion in a dry skillet over medium-high heat, turning occasionally, until softened and blistered, about 6 minutes total.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Blend the salsa: transfer charred tomatillos, jalapeños, onion and garlic to a blender; add cilantro, lime juice, remaining 1/2 tsp salt, 1/2 tsp black pepper and 1/4 cup of warm chicken broth. Purée until smooth, adjusting seasoning with additional salt or lime as needed.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Shred the chicken: using two forks or your hands, shred the rested chicken into bite-sized pieces and stir in remaining warm chicken broth to keep moist.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Heat the salsa: in a large ovenproof or heavy-bottomed skillet, warm 1 tbsp oil over medium heat, pour in the blended salsa and simmer gently for 2-3 minutes to cook raw garlic and deepen flavor.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Combine chicken and chips: add shredded chicken to the salsa and stir to coat; then add tortilla chips in batches, gently folding so chips absorb salsa but retain some texture. Add additional up to 1/2 cup warm chicken broth if sauce is too thick. Cook until chips are warmed and slightly softened, about 2 minutes.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Finish and garnish: remove skillet from heat and top with crumbled queso fresco, drizzles of crema, sliced avocado and cilantro. Serve immediately so chips keep a mix of crunchy and saucy textures.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,296 @@
+{
+  "slug": "moussaka-weeknight",
+  "title": "Moussaka (Weeknight)",
+  "description": "A lighter, weeknight-friendly moussaka layering seared eggplant with a spiced ground beef-tomato ragu and a quick béchamel. Comforting Mediterranean flavors delivered in a streamlined, 60-minute oven-to-table recipe.",
+  "courses": [
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "mediterranean"
+  ],
+  "primary_ingredient": "eggplant",
+  "ingredient_tags": [
+    "eggplant",
+    "ground beef",
+    "tomato",
+    "onion",
+    "garlic",
+    "olive oil",
+    "milk",
+    "flour",
+    "butter",
+    "parmesan",
+    "oregano",
+    "cinnamon",
+    "bay leaf",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 70,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "moussaka",
+    "weeknight",
+    "eggplant casserole",
+    "mediterranean dinner",
+    "ground beef",
+    "béchamel",
+    "quick moussaka",
+    "layered eggplant",
+    "comfort food",
+    "easy casserole",
+    "greek inspired",
+    "tomato ragu",
+    "parmesan",
+    "one pan ragu",
+    "family dinner",
+    "oven baked",
+    "savory spices",
+    "cinnamon in savory",
+    "midweek meal",
+    "30-60 minute dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "eggplants, sliced lengthwise 1/4-1/2 inch",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 1000,
+        "ml": null,
+        "optional": false,
+        "notes": "slice and salt lightly if desired to reduce bitterness (pat dry)"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "for searing and ragu"
+      },
+      {
+        "display_name": "ground beef (80/20)",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, finely chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 33,
+        "ml": 30,
+        "optional": false,
+        "notes": "concentrated flavor base"
+      },
+      {
+        "display_name": "crushed tomatoes",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "canned crushed or passata"
+      },
+      {
+        "display_name": "dry red wine or beef broth",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": true,
+        "notes": "use broth to keep alcohol-free"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cinnamon",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adds warm savory note"
+      },
+      {
+        "display_name": "bay leaf",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "remove before assembling"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground preferred"
+      },
+      {
+        "display_name": "butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": null,
+        "optional": false,
+        "notes": "for béchamel"
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": null,
+        "optional": false,
+        "notes": "for thickening béchamel (contains gluten)"
+      },
+      {
+        "display_name": "whole milk",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": 480,
+        "optional": false,
+        "notes": "warmed slightly for béchamel"
+      },
+      {
+        "display_name": "grated parmesan cheese",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve a tablespoon for topping"
+      },
+      {
+        "display_name": "egg, beaten",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "temper into béchamel to enrich"
+      },
+      {
+        "display_name": "olive oil spray or extra oil for pan",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "for greasing baking dish and brushing eggplant"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 70,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 375°F (190°C). Lightly oil a 9x9 inch (or similar) baking dish and set aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large skillet over medium-high heat, add half the oil and sear eggplant slices in batches until golden and softened, about 2-3 minutes per side; transfer to a tray while you cook remaining slices.",
+        "time_min": 15
+      },
+      {
+        "step_no": 3,
+        "text": "In the same skillet, add remaining oil and sauté chopped onion over medium heat until soft and translucent, about 4 minutes. Add minced garlic and cook until fragrant, about 30 seconds.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Add ground beef to the skillet, break up with a spoon, and cook until browned, about 6 minutes. Drain excess fat if needed.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in tomato paste and cook 1 minute, then add crushed tomatoes and wine or broth, oregano, cinnamon, bay leaf, salt and pepper. Simmer uncovered until sauce thickens slightly, about 8 minutes. Remove bay leaf and adjust seasoning.",
+        "time_min": 8
+      },
+      {
+        "step_no": 6,
+        "text": "While ragu simmers, make the béchamel: melt butter in a small saucepan over medium heat, whisk in flour and cook 1 minute, then gradually whisk in warmed milk until smooth. Simmer gently until slightly thickened, about 4 minutes.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Off heat, whisk a small amount of hot béchamel into the beaten egg to temper, then whisk egg mixture back into the béchamel. Stir in most of the grated Parmesan and season to taste.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble: layer half the seared eggplant in the prepared dish, spread the meat ragu evenly over, then top with the remaining eggplant. Pour béchamel over the top and sprinkle remaining Parmesan.",
+        "time_min": 4
+      },
+      {
+        "step_no": 9,
+        "text": "Bake in the preheated oven until the top is set and golden, about 20 minutes. For a deeper golden finish, broil 1-2 minutes watching closely.",
+        "time_min": 12
+      },
+      {
+        "step_no": 10,
+        "text": "Remove from oven and let rest 8 minutes before slicing to set the layers. Serve warm.",
+        "time_min": 7
+      }
+    ]
+  },
+  "image_url": null
+}

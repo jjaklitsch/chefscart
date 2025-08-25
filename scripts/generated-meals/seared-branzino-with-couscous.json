@@ -1,0 +1,246 @@
+{
+  "slug": "seared-branzino-with-couscous",
+  "title": "Seared Branzino with Couscous",
+  "description": "Crisp-skinned seared branzino served over fluffy lemon-herb couscous with a bright parsley-caper vinaigrette. Simple pan-searing develops golden flavor while light, fragrant couscous soaks up citrus and olive oil for a Mediterranean-style weeknight dinner.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "branzino",
+  "ingredient_tags": [
+    "branzino",
+    "couscous",
+    "lemon",
+    "olive oil",
+    "parsley",
+    "capers",
+    "garlic",
+    "butter",
+    "salt",
+    "black pepper",
+    "chicken broth",
+    "white wine",
+    "red pepper flakes"
+  ],
+  "spice_level": 1,
+  "time_total_min": 30,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "grain",
+    "dairy"
+  ],
+  "search_keywords": [
+    "branzino",
+    "seared fish",
+    "couscous",
+    "lemon herb",
+    "mediterranean",
+    "pescatarian",
+    "weeknight dinner",
+    "pan seared",
+    "quick dinner",
+    "light meal",
+    "capers",
+    "parsley",
+    "garlic",
+    "olive oil",
+    "butter",
+    "white wine",
+    "side dish couscous",
+    "crispy skin fish",
+    "30 minute meal",
+    "healthy dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "whole branzino, scaled and gutted (about 8-10 oz each)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "rinse and pat dry; leave head on or remove per preference; score skin 2-3 shallow slashes per side"
+      },
+      {
+        "display_name": "fine couscous",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "regular couscous (not Israeli/pearl)"
+      },
+      {
+        "display_name": "low-sodium chicken broth (or vegetable broth for pescatarian)",
+        "quantity": 2.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 600,
+        "optional": false,
+        "notes": "hot"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 5,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 75,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "lemon juice (fresh)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1 large lemon"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "finely grated"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "packed, flat-leaf parsley"
+      },
+      {
+        "display_name": "capers, rinsed",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "roughly chopped if large"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dry white wine",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": null,
+        "ml": 60,
+        "optional": true,
+        "notes": "used for deglazing; may substitute additional broth"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for light heat"
+      },
+      {
+        "display_name": "lemon wedges for serving",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into 4-6 wedges"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 30,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep ingredients: rinse and pat the branzino dry, score the skin, season inside cavity and both sides with half the salt and pepper; measure and chop parsley, zest and juice lemons, rinse capers, and bring broth to a simmer.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Cook couscous: bring hot broth, 1 tbsp olive oil and 1 tbsp butter to a simmer in a medium saucepan; stir in couscous, cover, remove from heat and let steam until liquid is absorbed; fluff with a fork and stir in lemon zest, half the lemon juice, chopped parsley, capers, a pinch of salt and remaining olive oil.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large heavy skillet (preferably cast iron) over medium-high heat until very hot; add remaining 2 tbsp olive oil and 1 tbsp butter and swirl to coat.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Sear fish: place branzino skin-side down in the hot pan and press gently to ensure even contact; cook undisturbed until skin is deeply golden and releases easily from the pan, about 3-4 minutes depending on thickness.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Flip fish carefully and add minced garlic and optional white wine to the pan to deglaze; spoon pan juices over the fish and cook until fish is just cooked through and flakes easily, about 2-3 minutes.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Finish sauce: remove fish to a warm plate; reduce heat to low, add remaining butter, remaining lemon juice, red pepper flakes if using and any accumulated juices, swirl to emulsify a quick vinaigrette-like sauce, then spoon over fish.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Plate: divide couscous among plates, top with seared branzino, spoon lemon-caper sauce over, garnish with additional parsley and lemon wedges, and serve immediately.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

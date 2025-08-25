@@ -1,0 +1,226 @@
+{
+  "slug": "keto-eggspinach-breakfast-skillet",
+  "title": "Keto Egg–Spinach Breakfast Skillet",
+  "description": "A quick, savory one-skillet breakfast combining tender spinach, sautéed aromatics, and gently cooked eggs finished with melted cheese. Bright lemon and optional red pepper flakes add brightness and a touch of heat for a satisfying low-carb start to the day.",
+  "courses": [
+    "breakfast"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "keto",
+    "low-carb",
+    "paleo"
+  ],
+  "primary_ingredient": "egg",
+  "ingredient_tags": [
+    "egg",
+    "spinach",
+    "cheddar",
+    "butter",
+    "olive oil",
+    "garlic",
+    "onion",
+    "lemon",
+    "red pepper flakes",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 20,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 4,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "keto",
+    "low-carb",
+    "breakfast skillet",
+    "eggs and spinach",
+    "one pan breakfast",
+    "quick breakfast",
+    "cheesy eggs",
+    "paleo option",
+    "garlic",
+    "lemon",
+    "weeknight breakfast",
+    "meal prep",
+    "vegetable eggs",
+    "sautéed spinach",
+    "breakfast recipe",
+    "high protein",
+    "gluten free",
+    "simple ingredients",
+    "low calorie",
+    "family friendly"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "large eggs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "fresh baby spinach",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "trim large stems if necessary"
+      },
+      {
+        "display_name": "sharp cheddar cheese, shredded",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "or substitute mozzarella"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "small yellow onion, finely diced",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/2 small onion"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "grams": 4.5,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep ingredients: wash and dry spinach, shred cheese, finely dice onion, mince garlic, and crack eggs into a small bowl without mixing. Keep seasonings and lemon near the stove.",
+        "time_min": 4
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a 10-inch (25 cm) oven-safe or stovetop skillet over medium heat, add olive oil and butter until butter foams and the oil shimmers.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add diced onion and cook, stirring frequently, until translucent and softened.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic and red pepper flakes (if using); cook briefly until fragrant, about 30–45 seconds, taking care not to burn garlic.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Add spinach in batches, stirring and folding until fully wilted and any liquid has mostly evaporated; season with half the salt and a pinch of black pepper.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Create four shallow wells in the wilted spinach and gently pour one egg into each well (or distribute eggs evenly for desired portions). Reduce heat to low.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Cover the skillet with a lid and cook on low until egg whites are set but yolks remain runny, or longer to desired doneness. Alternatively, place skillet under a broiler to set tops—watch closely.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Sprinkle shredded cheddar evenly over the eggs and spinach; cover briefly or return to broiler for 30–60 seconds to melt cheese.",
+        "time_min": 1
+      },
+      {
+        "step_no": 9,
+        "text": "Remove from heat, finish with lemon juice, remaining salt and pepper to taste, and garnish with chopped parsley before serving straight from the skillet.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

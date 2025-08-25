@@ -1,0 +1,263 @@
+{
+  "slug": "low-carb-buffalo-turkey-lettuce-wraps",
+  "title": "Low-Carb Buffalo Turkey Lettuce Wraps",
+  "description": "Lean ground turkey seasoned and tossed in a tangy, spicy buffalo sauce, served in crisp butter lettuce leaves with a cooling yogurt-ranch slaw. Quick to prepare, high-protein and low-carb for a flavorful lunch or dinner option.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "low-carb",
+    "keto",
+    "paleo",
+    "whole30"
+  ],
+  "primary_ingredient": "turkey",
+  "ingredient_tags": [
+    "turkey",
+    "butter lettuce",
+    "hot sauce",
+    "olive oil",
+    "greek yogurt",
+    "celery",
+    "green onion",
+    "garlic",
+    "lime",
+    "butter",
+    "ranch seasoning",
+    "salt",
+    "black pepper",
+    "paprika",
+    "chives"
+  ],
+  "spice_level": 3,
+  "time_total_min": 25,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "low-carb",
+    "buffalo",
+    "turkey",
+    "lettuce wraps",
+    "keto",
+    "whole30",
+    "paleo",
+    "high-protein",
+    "quick dinner",
+    "lunch",
+    "gluten-free",
+    "spicy",
+    "yogurt ranch",
+    "butter lettuce",
+    "ground turkey",
+    "hot sauce",
+    "meal prep",
+    "low-calorie",
+    "weeknight meal",
+    "healthy"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "lean ground turkey",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "93% lean or leaner"
+      },
+      {
+        "display_name": "butter lettuce leaves (whole, washed)",
+        "quantity": 12,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "use outer large leaves for wraps"
+      },
+      {
+        "display_name": "hot sauce (buffalo-style, e.g., Frank's RedHot)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "for making buffalo sauce with hot sauce"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for sautéing turkey"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "finely minced"
+      },
+      {
+        "display_name": "celery (small dice)",
+        "quantity": 2,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "for slaw and crunch"
+      },
+      {
+        "display_name": "green onion (thinly sliced)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated"
+      },
+      {
+        "display_name": "plain full-fat Greek yogurt",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "for quick ranch-style dressing"
+      },
+      {
+        "display_name": "ranch seasoning (dry mix) or substitute",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "or 1 tbsp each dried dill and parsley + 1 tsp onion powder"
+      },
+      {
+        "display_name": "lime juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "freshly squeezed"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; divide between turkey and dressing"
+      },
+      {
+        "display_name": "black pepper (freshly ground)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "optional smoked paprika for depth"
+      },
+      {
+        "display_name": "chopped fresh chives (for garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "finely chopped"
+      },
+      {
+        "display_name": "ice water (to thin dressing if needed)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": true,
+        "notes": "use sparingly to reach desired consistency"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 25,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare produce: wash and dry butter lettuce leaves, trim cores if necessary, finely dice celery, thinly slice green onions, and mince garlic.",
+        "time_min": 6
+      },
+      {
+        "step_no": 2,
+        "text": "Make quick ranch-yogurt dressing: in a bowl combine Greek yogurt, ranch seasoning, lime juice, half the salt and pepper, and sliced green onion whites; whisk until smooth and adjust consistency with a small amount of ice water if needed.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large skillet over medium-high heat, add olive oil, then add minced garlic and cook briefly until fragrant (do not brown).",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add ground turkey to the skillet, break into small pieces with a spatula, season with remaining salt, pepper and paprika, and cook until no longer pink, stirring occasionally.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "While turkey finishes cooking, melt butter in a small saucepan over low heat, stir in hot sauce to create the buffalo sauce and warm through but do not boil; taste and adjust heat level by adding more hot sauce if desired.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Pour the warmed buffalo sauce over cooked turkey in the skillet, stir to evenly coat, and cook together 1–2 minutes to allow flavors to meld; remove from heat.",
+        "time_min": 2
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble wraps: place butter lettuce leaves on a platter, spoon a portion of buffalo turkey into each leaf, top with diced celery, a drizzle or dollop of yogurt-ranch dressing, sliced green onion greens, and chopped chives as garnish.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Serve immediately while warm, with extra dressing and hot sauce on the side for guests to customize.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

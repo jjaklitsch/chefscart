@@ -1,0 +1,212 @@
+{
+  "slug": "tahinibanana-overnight-oats",
+  "title": "Tahini–Banana Overnight Oats",
+  "description": "Creamy, nutty overnight oats made with tahini and ripe banana for natural sweetness and a silky texture. No-cook, make-ahead breakfast that's ready in the morning—stir, chill, and top for a quick energizing start.",
+  "courses": [
+    "breakfast",
+    "snack"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "oats",
+  "ingredient_tags": [
+    "oats",
+    "tahini",
+    "banana",
+    "milk",
+    "maple syrup",
+    "yogurt",
+    "chia seeds",
+    "vanilla",
+    "salt",
+    "cinnamon",
+    "walnut",
+    "almond"
+  ],
+  "spice_level": 1,
+  "time_total_min": 480,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "grain",
+    "sesame"
+  ],
+  "search_keywords": [
+    "overnight oats",
+    "tahini",
+    "banana",
+    "make ahead breakfast",
+    "no cook",
+    "plant-forward",
+    "vegetarian",
+    "quick breakfast",
+    "silky oats",
+    "tahini banana",
+    "chia seeds",
+    "maple syrup",
+    "yogurt option",
+    "healthy breakfast",
+    "meal prep",
+    "cold oats",
+    "nutty flavor",
+    "easy recipe",
+    "breakfast jars",
+    "grab and go"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "rolled oats",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 90,
+        "ml": null,
+        "optional": false,
+        "notes": "old-fashioned rolled oats for texture"
+      },
+      {
+        "display_name": "tahini",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "well-stirred creamy tahini"
+      },
+      {
+        "display_name": "milk (dairy or plant-based)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "use almond, oat, or cow's milk"
+      },
+      {
+        "display_name": "plain yogurt (optional for creaminess)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 125,
+        "ml": 120,
+        "optional": true,
+        "notes": "Greek or plant-based yogurt"
+      },
+      {
+        "display_name": "ripe banana (mashed)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "medium ripe banana, mashed to sweeten and flavor"
+      },
+      {
+        "display_name": "maple syrup",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": 15,
+        "optional": true,
+        "notes": "adjust to taste or omit for less sweetness"
+      },
+      {
+        "display_name": "chia seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "helps thicken overnight"
+      },
+      {
+        "display_name": "ground cinnamon",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.3,
+        "ml": null,
+        "optional": true,
+        "notes": "adds warm flavor"
+      },
+      {
+        "display_name": "fine sea salt",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": null,
+        "optional": false,
+        "notes": "balances sweetness and enhances flavor"
+      },
+      {
+        "display_name": "walnuts (chopped) for topping",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": true,
+        "notes": "toasted if desired"
+      },
+      {
+        "display_name": "banana slices for topping",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "fresh for garnish in morning"
+      },
+      {
+        "display_name": "extra tahini drizzle (optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": true,
+        "notes": "for finishing"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 480,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "In a medium mixing bowl, combine the rolled oats, chia seeds, ground cinnamon, and sea salt; whisk briefly to distribute dry ingredients evenly.",
+        "time_min": 3
+      },
+      {
+        "step_no": 2,
+        "text": "In a separate bowl or measuring cup, mash the ripe banana until smooth with small chunks remaining if desired, then whisk in tahini, milk, maple syrup (if using), and yogurt (if using) until a smooth, slightly runny mixture forms.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Pour the wet mixture over the dry oats and stir thoroughly until all oats are saturated and the mixture is homogeneous; scrape sides to incorporate any tahini that sticks.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Divide the mixture between 2 airtight jars or containers, press a layer down to eliminate large air pockets, then seal and refrigerate upright for at least 6 hours or overnight to thicken and meld flavors.",
+        "time_min": 360
+      },
+      {
+        "step_no": 5,
+        "text": "In the morning, open the jars, stir to loosen if separation occurred, adjust consistency with a splash of milk if too thick, then top with banana slices, chopped walnuts, and an optional drizzle of extra tahini before serving.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Leftovers can be stored refrigerated for up to 3 days; stir before eating and add fresh toppings each serving.",
+        "time_min": 105
+      }
+    ]
+  },
+  "image_url": null
+}

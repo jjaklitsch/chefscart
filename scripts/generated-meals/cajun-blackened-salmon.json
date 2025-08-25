@@ -1,0 +1,234 @@
+{
+  "slug": "cajun-blackened-salmon",
+  "title": "Cajun Blackened Salmon",
+  "description": "Cajun Blackened Salmon features a crisp, spice-crusted exterior and a moist, flaky interior. Seared in a hot skillet with butter and oil, the salmon is seasoned with a robust blend of paprika, cayenne, thyme and garlic for smoky, savory heat.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "southern"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "keto",
+    "low-carb",
+    "paleo"
+  ],
+  "primary_ingredient": "salmon",
+  "ingredient_tags": [
+    "salmon",
+    "butter",
+    "olive oil",
+    "paprika",
+    "cayenne",
+    "thyme",
+    "oregano",
+    "garlic",
+    "onion powder",
+    "salt",
+    "black pepper",
+    "lemon",
+    "parsley"
+  ],
+  "spice_level": 4,
+  "time_total_min": 23,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "dairy"
+  ],
+  "search_keywords": [
+    "cajun",
+    "blackened",
+    "salmon",
+    "pan-seared",
+    "spice crust",
+    "southern",
+    "pescatarian",
+    "keto",
+    "low-carb",
+    "paleo",
+    "dinner",
+    "lunch",
+    "paprika",
+    "cayenne",
+    "lemon",
+    "herbs",
+    "butter",
+    "quick",
+    "high-heat",
+    "garlic"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "skin-on salmon fillets",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 680,
+        "ml": null,
+        "optional": false,
+        "notes": "about 6 oz (170 g) each, patted dry"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "room temperature or melted"
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for high-heat searing"
+      },
+      {
+        "display_name": "paprika (preferably smoked)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "for base of rub"
+      },
+      {
+        "display_name": "onion powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cayenne pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to heat preference"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra to season salmon if desired"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 120,
+        "ml": 45,
+        "optional": false,
+        "notes": "halved; juice for finishing"
+      },
+      {
+        "display_name": "fresh parsley",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "finely chopped for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 23,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Make the blackening spice by combining paprika, onion powder, garlic powder, dried thyme, dried oregano, cayenne, kosher salt, and black pepper in a small bowl and mix until even.",
+        "time_min": 3
+      },
+      {
+        "step_no": 2,
+        "text": "Pat salmon fillets thoroughly dry with paper towels; remove any pin bones and lightly season both sides with a pinch of salt. Spread a thin layer of butter on the flesh side of each fillet to help the spice adhere.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Liberally press the blackening spice onto the flesh side of each fillet so the spice forms an even crust; set fillets spice-side up for a minute to let the rub adhere.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Heat a heavy skillet (cast-iron preferred) over medium-high to high heat until very hot. Add olive oil and swirl to coat the pan. When oil is shimmering, add a small piece of butter and let it foam briefly.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Place fillets in the pan spice-side down and press gently to ensure contact. Sear without moving until a deep brown-black crust forms, about 2 to 3 minutes depending on heat intensity.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Flip the fillets and reduce heat to medium. Continue cooking on the skin side until the salmon reaches desired doneness (internal temperature 120–125°F for medium-rare or 130–135°F for medium) and flakes easily, about 3 to 4 minutes more. Spoon pan juices over fillets while cooking.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Transfer salmon to a plate and rest for 2 minutes. Squeeze fresh lemon juice over each fillet and garnish with chopped parsley before serving.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Serve immediately with preferred sides; wipe and cool skillet safely. Adjust seasoning if needed.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

@@ -1,0 +1,289 @@
+{
+  "slug": "sopa-de-tortilla",
+  "title": "Sopa de Tortilla",
+  "description": "A warm, tangy Mexican tortilla soup featuring a roasted tomato-chile broth, shredded chicken, crisp fried tortilla strips and creamy avocado. Bright lime and cilantro finish each bowl for a balance of smoky, savory and fresh flavors.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "tortilla",
+    "corn",
+    "tomato",
+    "onion",
+    "garlic",
+    "chipotle",
+    "avocado",
+    "lime",
+    "cilantro",
+    "cheddar",
+    "cotija",
+    "chicken-broth",
+    "vegetable-oil"
+  ],
+  "spice_level": 3,
+  "time_total_min": 75,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "sopa de tortilla",
+    "tortilla soup",
+    "mexican soup",
+    "chicken tortilla soup",
+    "roasted tomato soup",
+    "chipotle",
+    "avocado",
+    "cilantro",
+    "lime",
+    "tortilla strips",
+    "comfort food",
+    "weeknight dinner",
+    "one-pot",
+    "spicy soup",
+    "homemade broth",
+    "fried tortillas",
+    "cheddar",
+    "cotija",
+    "gluten-containing tortilla",
+    "roast tomatoes"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "trimmed"
+      },
+      {
+        "display_name": "roma tomatoes",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 720,
+        "ml": null,
+        "optional": false,
+        "notes": "halved"
+      },
+      {
+        "display_name": "white onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled and quartered"
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "peeled"
+      },
+      {
+        "display_name": "dried guajillo chiles (stemmed, seeds removed)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "rehydrate before blending"
+      },
+      {
+        "display_name": "chipotle in adobo",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "add more for heat"
+      },
+      {
+        "display_name": "vegetable oil (for roasting and frying)",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "chicken broth (low-sodium)",
+        "quantity": 1.5,
+        "unit": "cup",
+        "grams": null,
+        "ml": 360,
+        "optional": false,
+        "notes": "hot"
+      },
+      {
+        "display_name": "water",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": null,
+        "ml": 480,
+        "optional": false,
+        "notes": "hot"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "cumin",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1.5,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "ground"
+      },
+      {
+        "display_name": "corn tortillas",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1/2-inch strips"
+      },
+      {
+        "display_name": "avocado",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "peeled, pitted, sliced for garnish"
+      },
+      {
+        "display_name": "fresh cilantro",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": 120,
+        "optional": false,
+        "notes": "chopped, for garnish"
+      },
+      {
+        "display_name": "lime",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into wedges"
+      },
+      {
+        "display_name": "shredded cheddar (or monterey jack)",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": 85,
+        "ml": 180,
+        "optional": true,
+        "notes": "for topping"
+      },
+      {
+        "display_name": "crumbled cotija cheese",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 30,
+        "ml": 60,
+        "optional": true,
+        "notes": "for topping"
+      },
+      {
+        "display_name": "olive oil (for finishing)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "drizzle if desired"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 75,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 220°C (430°F). Arrange halved tomatoes, quartered onion and peeled garlic on a rimmed baking sheet, brush with 1 tablespoon oil and roast until charred and softened.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "Meanwhile, season chicken thighs with 1/2 tsp salt and a pinch of pepper. Heat a large heavy pot over medium-high heat, add 1 tbsp oil and sear chicken 2-3 minutes per side until lightly browned; remove and set aside.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Toast dried guajillo chiles in a dry skillet 30 seconds per side until fragrant, then soak in hot water for 10 minutes to soften.",
+        "time_min": 11
+      },
+      {
+        "step_no": 4,
+        "text": "Transfer roasted tomatoes, onion, garlic, softened chiles and chipotle to a blender with a splash of the soaking liquid; blend until very smooth and fragrant.",
+        "time_min": 6
+      },
+      {
+        "step_no": 5,
+        "text": "Return the pot to medium heat, add 1 tbsp oil, pour in the blended puree and cook, stirring, 3-4 minutes to deepen flavors; season with cumin, remaining salt and pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Pour in hot chicken broth and water, add the seared chicken to the pot, bring to a simmer, then reduce heat and cook gently until chicken is cooked through and tender.",
+        "time_min": 12
+      },
+      {
+        "step_no": 7,
+        "text": "Remove chicken to a cutting board, shred with two forks and return shredded meat to the pot; taste and adjust seasoning.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "While soup simmers, heat remaining oil in a skillet over medium-high heat and fry tortilla strips in batches until crisp and golden; drain on paper towels and season with a pinch of salt.",
+        "time_min": 6
+      },
+      {
+        "step_no": 9,
+        "text": "Ladle soup into bowls, top with tortilla strips, sliced avocado, cilantro, cheese if using, and a lime wedge; drizzle with olive oil if desired and serve immediately.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

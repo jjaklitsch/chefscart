@@ -1,0 +1,242 @@
+{
+  "slug": "korean-corn-cheese-skillet",
+  "title": "Korean Corn Cheese Skillet",
+  "description": "A gooey, sweet-and-savory skillet of corn sautéed with butter, a touch of mayonnaise and sugar, then baked under a blanket of melted mozzarella for creamy, caramelized bites. Classic Korean banchan-style flavors with crisp edges and cheesy pull, perfect as a shareable appetizer or comforting side.",
+  "courses": [
+    "snack",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "korean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "corn",
+  "ingredient_tags": [
+    "corn",
+    "mozzarella",
+    "butter",
+    "mayonnaise",
+    "sugar",
+    "green onion",
+    "garlic",
+    "cheddar",
+    "salt",
+    "black pepper",
+    "gochugaru",
+    "vegetable oil",
+    "parsley",
+    "lime"
+  ],
+  "spice_level": 2,
+  "time_total_min": 26,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg"
+  ],
+  "search_keywords": [
+    "korean corn",
+    "corn cheese",
+    "skillet",
+    "banchan",
+    "korean appetizer",
+    "melty cheese",
+    "mozzarella",
+    "sweet corn",
+    "mayonnaise",
+    "butter",
+    "house party appetizer",
+    "comfort food",
+    "easy side dish",
+    "stovetop to oven",
+    "gochugaru",
+    "cheesy corn",
+    "caramelized corn",
+    "green onion",
+    "quick skillet",
+    "shareable appetizer"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "frozen sweet corn kernels (thawed) or canned drained",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "if using canned, drain well; if using fresh, cut off cob and measure after cooking"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 28,
+        "ml": 30,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "mayonnaise",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "helps glossy texture"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": 15,
+        "optional": false,
+        "notes": "balances savory"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "mozzarella cheese, shredded",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "for melty topping"
+      },
+      {
+        "display_name": "sharp cheddar cheese, shredded",
+        "quantity": 50,
+        "unit": "g",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for more flavor"
+      },
+      {
+        "display_name": "green onions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated"
+      },
+      {
+        "display_name": "gochugaru (Korean red pepper flakes)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust for spice preference"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 3,
+        "unit": "tsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": "divided; adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": false,
+        "notes": "for pan-searing"
+      },
+      {
+        "display_name": "fresh parsley or cilantro, chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "lime wedges",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": true,
+        "notes": "for serving"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 26,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 425°F (220°C). Place a 10-inch ovenproof skillet (cast-iron recommended) on the stovetop while the oven heats so the pan is warm.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Pat thawed or drained corn dry with paper towels. Heat the skillet over medium-high heat and add vegetable oil and 1 tablespoon butter until melted and shimmering.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "Add the corn to the skillet in an even layer and let it sear, undisturbed, 2–3 minutes to develop some color. Stir and continue to cook, stirring occasionally, until edges are lightly caramelized.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Reduce heat to medium, push corn to one side and add remaining butter and minced garlic to the cleared space; cook 20–30 seconds until fragrant, then stir into the corn.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Stir in mayonnaise, sugar, half the sliced green onion whites, 1 teaspoon salt, black pepper, and gochugaru. Cook, stirring, 1–2 minutes until mixture is glossy and slightly thickened. Taste and adjust salt.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Level the corn in the skillet and sprinkle the shredded mozzarella (and cheddar if using) evenly over the top. Scatter remaining green onion greens over the cheese.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Transfer the skillet to the preheated oven and broil/bake until the cheese is melted, bubbling, and starting to brown on top, about 6–8 minutes (watch closely to prevent burning).",
+        "time_min": 8
+      },
+      {
+        "step_no": 8,
+        "text": "Remove from oven using oven mitts, let rest 1–2 minutes. Sprinkle with chopped parsley or cilantro if using, squeeze lime if desired, and serve hot directly from the skillet.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

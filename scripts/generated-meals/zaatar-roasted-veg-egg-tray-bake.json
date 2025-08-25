@@ -1,0 +1,249 @@
+{
+  "slug": "zaatar-roasted-veg-egg-tray-bake",
+  "title": "Zaatar Roasted Veg & Egg Tray Bake",
+  "description": "A vibrant one-sheet tray bake of seasonal vegetables rubbed with aromatic zaatar and olive oil, finished with eggs baked until just set. Bright lemon and tangy yogurt serve optional at the table for a fresh, Mediterranean-style finish.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "eggs",
+  "ingredient_tags": [
+    "eggs",
+    "zucchini",
+    "bell pepper",
+    "red onion",
+    "cherry tomatoes",
+    "eggplant",
+    "olive oil",
+    "zaatar",
+    "lemon",
+    "garlic",
+    "fresh parsley",
+    "plain yogurt",
+    "salt",
+    "black pepper",
+    "feta"
+  ],
+  "spice_level": 2,
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "egg",
+    "dairy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "zaatar",
+    "roasted vegetables",
+    "tray bake",
+    "sheet pan",
+    "baked eggs",
+    "mediterranean",
+    "vegetarian",
+    "brunch",
+    "easy dinner",
+    "one pan",
+    "lemon",
+    "yogurt",
+    "feta",
+    "garlic",
+    "olive oil",
+    "summer vegetables",
+    "comfort food",
+    "healthy",
+    "meal prep",
+    "family friendly"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "eggs",
+        "quantity": 8,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "large, room temperature"
+      },
+      {
+        "display_name": "zucchini",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, sliced into 1/2-inch (1 cm) rounds"
+      },
+      {
+        "display_name": "red bell pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "seeded and cut into 1-inch pieces"
+      },
+      {
+        "display_name": "eggplant",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "medium, cut into 1-inch cubes"
+      },
+      {
+        "display_name": "red onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1/2-inch wedges"
+      },
+      {
+        "display_name": "cherry tomatoes",
+        "quantity": 250,
+        "unit": "g",
+        "grams": 250,
+        "ml": null,
+        "optional": false,
+        "notes": "halved if large"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": 54,
+        "ml": 60,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "zaatar spice blend",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "store-bought or homemade"
+      },
+      {
+        "display_name": "garlic",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "lemon",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "zested and juiced"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground, divided"
+      },
+      {
+        "display_name": "plain yogurt (for serving)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": true,
+        "notes": "whole-milk or Greek, stirred smooth"
+      },
+      {
+        "display_name": "feta cheese",
+        "quantity": 75,
+        "unit": "g",
+        "grams": 75,
+        "ml": null,
+        "optional": true,
+        "notes": "crumbled"
+      },
+      {
+        "display_name": "fresh parsley",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "finely chopped for garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 220°C (425°F). Line a large rimmed baking sheet with parchment paper and set aside.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "In a large mixing bowl, combine the chopped zucchini, bell pepper, eggplant, red onion and cherry tomatoes. Add half of the olive oil, minced garlic, half the zaatar, lemon zest, half the salt and half the pepper. Toss to coat evenly.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Spread the seasoned vegetables in a single layer on the prepared baking sheet, leaving some spaces for eggs to be added later. Drizzle a little extra oil over any drier pieces.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Roast the vegetables on the middle rack until they begin to brown and soften, about 20 minutes. Toss once halfway through to promote even caramelization.",
+        "time_min": 20
+      },
+      {
+        "step_no": 5,
+        "text": "Remove the tray from the oven and use the back of a spoon to make 6 shallow wells among the vegetables. Crack the eggs directly into the wells, spacing them evenly. Sprinkle the remaining zaatar, salt and pepper over the eggs and vegetables, and drizzle the remaining olive oil around the tray.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "Return the tray to the oven and bake until egg whites are set but yolks remain slightly runny (or to your preferred doneness), about 7 minutes for soft yolks or up to 10 minutes for firmer yolks.",
+        "time_min": 9
+      },
+      {
+        "step_no": 7,
+        "text": "Remove from the oven, squeeze fresh lemon juice over the tray, scatter crumbled feta and chopped parsley if using, and let rest 2 minutes before serving. Serve with dollops of yogurt on the side.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

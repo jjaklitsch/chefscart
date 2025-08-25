@@ -1,0 +1,236 @@
+{
+  "slug": "lemonblueberry-olive-oil-muffins",
+  "title": "Lemon–Blueberry Olive Oil Muffins",
+  "description": "Tender, moist muffins scented with bright lemon and studded with juicy blueberries, made with extra-virgin olive oil for a delicate, fruit-forward crumb. Quick to mix and baked until golden with a slight domed top, these are perfect for breakfast or an uplifting snack.",
+  "courses": [
+    "breakfast",
+    "snack"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "blueberries",
+  "ingredient_tags": [
+    "blueberries",
+    "lemon",
+    "all-purpose flour",
+    "olive oil",
+    "sugar",
+    "eggs",
+    "milk",
+    "baking powder",
+    "baking soda",
+    "salt",
+    "vanilla",
+    "powdered sugar"
+  ],
+  "spice_level": 1,
+  "time_total_min": 50,
+  "servings_default": 12,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "lemon blueberry muffins",
+    "olive oil muffins",
+    "berry breakfast",
+    "quick bread",
+    "easy muffins",
+    "moist muffins",
+    "breakfast snack",
+    "citrus blueberry",
+    "olive oil baking",
+    "tray bake",
+    "lemon zest",
+    "blueberry burst",
+    "weekend baking",
+    "brunch recipe",
+    "vegetarian baking",
+    "no butter",
+    "simple pantry",
+    "small batch muffins",
+    "tea time",
+    "portable breakfast"
+  ],
+  "ingredients_json": {
+    "servings": 12,
+    "ingredients": [
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "sifted"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "baking powder",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": "measure level"
+      },
+      {
+        "display_name": "baking soda",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fine salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "whole milk",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 120,
+        "unit": "ml",
+        "grams": null,
+        "ml": 120,
+        "optional": false,
+        "notes": "mild-flavored"
+      },
+      {
+        "display_name": "lemon zest",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "from 2 medium lemons"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lemon"
+      },
+      {
+        "display_name": "pure vanilla extract",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh blueberries",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "washed and drained"
+      },
+      {
+        "display_name": "powdered sugar (optional glaze)",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": true,
+        "notes": "mixed with a little lemon juice to drizzle"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 50,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to 375°F (190°C). Line a 12-cup muffin tin with paper liners or lightly grease the cups.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Whisk together the dry ingredients: sift or whisk flour, granulated sugar, baking powder, baking soda, and salt in a large bowl until evenly combined.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "In a separate medium bowl, combine the wet ingredients: whisk eggs, milk, olive oil, lemon zest, lemon juice, and vanilla until smooth and homogenous.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Make a well in the center of the dry ingredients and pour in the wet mixture. Stir gently with a spatula or wooden spoon just until combined; batter should be slightly lumpy. Do not overmix.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Gently fold in the blueberries with a few strokes, saving a small handful to press on top of muffins before baking to create attractive tops.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Divide the batter evenly among the prepared muffin cups, filling each about three-quarters full. Press reserved blueberries into the tops if using.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Bake in the preheated oven on the center rack for 18–22 minutes, or until the tops are golden and a toothpick inserted into the center comes out with a few moist crumbs.",
+        "time_min": 20
+      },
+      {
+        "step_no": 8,
+        "text": "Remove the pan from the oven and let muffins cool in the tin for 5 minutes, then transfer to a wire rack to cool completely or until warm to the touch.",
+        "time_min": 7
+      },
+      {
+        "step_no": 9,
+        "text": "If making the optional glaze, whisk powdered sugar with a little lemon juice to a drizzling consistency and spoon or drizzle over cooled muffins. Allow glaze to set before serving.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

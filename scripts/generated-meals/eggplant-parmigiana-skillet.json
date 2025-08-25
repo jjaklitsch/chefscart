@@ -1,0 +1,270 @@
+{
+  "slug": "eggplant-parmigiana-skillet",
+  "title": "Eggplant Parmigiana (Skillet)",
+  "description": "A rustic, skillet-style Eggplant Parmigiana showcasing tender pan-seared eggplant layered in bright tomato sauce and melted mozzarella with a crisp basil finish. Quick-to-prepare and oven-finished in one pan for concentrated flavors and a golden cheesy top.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "eggplant",
+  "ingredient_tags": [
+    "eggplant",
+    "tomato",
+    "mozzarella",
+    "parmesan",
+    "basil",
+    "garlic",
+    "olive oil",
+    "bread crumbs",
+    "eggs",
+    "onion",
+    "oregano",
+    "salt",
+    "black pepper",
+    "sugar"
+  ],
+  "spice_level": 1,
+  "time_total_min": 61,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "grain",
+    "gluten"
+  ],
+  "search_keywords": [
+    "eggplant parmigiana",
+    "skillet eggplant parmesan",
+    "pan fried eggplant",
+    "italian vegetarian",
+    "baked cheese eggplant",
+    "one pan dinner",
+    "tomato basil",
+    "mozzarella bake",
+    "parmesan crust",
+    "weeknight dinner",
+    "comfort food",
+    "meatless meal",
+    "breaded eggplant",
+    "italian herbs",
+    "garlic tomato sauce",
+    "crispy eggplant",
+    "skip frying option",
+    "family style",
+    "oven finish",
+    "vegetarian parm"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "eggplant (large)",
+        "quantity": 1.25,
+        "unit": "lb",
+        "grams": 567.5,
+        "ml": null,
+        "optional": false,
+        "notes": "cut into 1/2-inch rounds (about 8–10 slices)"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "grams": 9,
+        "ml": 7.5,
+        "optional": false,
+        "notes": "for salting eggplant and seasoning"
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "for dredging"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "lightly beaten"
+      },
+      {
+        "display_name": "plain dried breadcrumbs (panko or regular)",
+        "quantity": 0.75,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "for coating"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "for pan-frying and sauce"
+      },
+      {
+        "display_name": "yellow onion",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "finely diced"
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "minced"
+      },
+      {
+        "display_name": "crushed tomatoes (canned)",
+        "quantity": 28,
+        "unit": "oz",
+        "grams": 794,
+        "ml": 828,
+        "optional": false,
+        "notes": "one 28-oz can"
+      },
+      {
+        "display_name": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": 15,
+        "optional": false,
+        "notes": "for concentrated flavor"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "balances acidity"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 5,
+        "optional": false,
+        "notes": "or Italian seasoning"
+      },
+      {
+        "display_name": "fresh basil leaves",
+        "quantity": 12,
+        "unit": "each",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "torn, for layering and garnish"
+      },
+      {
+        "display_name": "fresh mozzarella",
+        "quantity": 8,
+        "unit": "oz",
+        "grams": 227,
+        "ml": null,
+        "optional": false,
+        "notes": "sliced or torn"
+      },
+      {
+        "display_name": "grated Parmesan cheese",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "for sprinkling"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "fine bread crumbs (optional extra for topping)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": true,
+        "notes": "for extra crisp top"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 61,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Salt the eggplant slices on both sides and arrange them in a single layer on a rack or paper towels; let sit 20 minutes to draw out moisture, then pat dry.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "Prepare three shallow bowls: one with flour, one with beaten eggs, and one with breadcrumbs; dredge each dried eggplant slice in flour, shake off excess, dip in egg, then coat with breadcrumbs.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Heat 2 tablespoons olive oil in a large oven-safe skillet over medium heat; working in batches, pan-fry breaded eggplant until golden-brown on both sides (about 2–3 minutes per side); transfer to a plate lined with paper towels and add more oil between batches as needed.",
+        "time_min": 12
+      },
+      {
+        "step_no": 4,
+        "text": "Discard excess oil leaving about 1 tablespoon in the skillet; add remaining olive oil and sauté diced onion over medium heat until translucent, then add minced garlic and cook until fragrant, about 1 minute.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Add crushed tomatoes, tomato paste, sugar, dried oregano, salt, and pepper to the skillet; simmer the sauce gently until slightly thickened, stirring occasionally, about 6 minutes.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Arrange half of the fried eggplant slices in a single layer over the tomato sauce in the skillet, sprinkle torn basil and half of the mozzarella and a third of the Parmesan over the eggplant, then spoon more sauce and layer remaining eggplant, basil, mozzarella and remaining Parmesan; optionally sprinkle extra breadcrumbs on top.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Preheat broiler (or oven to 425°F/220°C if no broiler) and place the skillet under the broiler or in the oven until cheese is bubbly and golden, about 4 minutes under broiler or 10–12 minutes at 425°F; watch closely to prevent burning.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Remove skillet from heat and let rest 3 minutes; garnish with additional torn basil, slice and serve warm.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

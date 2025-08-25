@@ -1,0 +1,262 @@
+{
+  "slug": "black-bean-roasted-pepper-tacos",
+  "title": "Black Bean & Roasted Pepper Tacos",
+  "description": "Smoky roasted red peppers and spiced black beans tucked into warm corn tortillas, topped with bright lime crema and cilantro for a fresh finish. Fast, vegetarian tacos with layered textures—soft beans, charred pepper, crisp onion—for weeknight dinners or casual entertaining.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward",
+    "vegan"
+  ],
+  "primary_ingredient": "beans",
+  "ingredient_tags": [
+    "black beans",
+    "red bell pepper",
+    "corn tortilla",
+    "lime",
+    "onion",
+    "garlic",
+    "cumin",
+    "smoked paprika",
+    "cilantro",
+    "avocado",
+    "olive oil",
+    "salt",
+    "black pepper",
+    "jalapeño",
+    "plain yogurt"
+  ],
+  "spice_level": 2,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "gluten"
+  ],
+  "search_keywords": [
+    "black bean tacos",
+    "roasted pepper",
+    "vegetarian tacos",
+    "vegan option",
+    "weeknight dinner",
+    "corn tortillas",
+    "smoky",
+    "cumin",
+    "smoked paprika",
+    "lime crema",
+    "cilantro",
+    "quick tacos",
+    "meal prep",
+    "healthy",
+    "plant-based",
+    "southwestern",
+    "easy",
+    "black beans",
+    "grilled peppers",
+    "jalapeño"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "canned black beans, drained and rinsed",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 480,
+        "ml": null,
+        "optional": false,
+        "notes": "drain and rinse well"
+      },
+      {
+        "display_name": "red bell pepper, roasted, peeled and sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "roast whole peppers until charred, then peel and slice"
+      },
+      {
+        "display_name": "corn tortillas",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "6-8 inch tortillas, warm before serving"
+      },
+      {
+        "display_name": "yellow onion, finely diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "medium onion"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "use hot smoked paprika to increase heat if desired"
+      },
+      {
+        "display_name": "coarse salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus more to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "about 1 lime"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish and folding into beans"
+      },
+      {
+        "display_name": "jalapeño, seeded and minced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 20,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for extra heat"
+      },
+      {
+        "display_name": "avocado, sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": true,
+        "notes": "for topping"
+      },
+      {
+        "display_name": "plain yogurt (or vegan yogurt for vegan option)",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 120,
+        "ml": 120,
+        "optional": false,
+        "notes": "used to make lime crema"
+      },
+      {
+        "display_name": "honey or agave (for vegan option use agave)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 7,
+        "ml": null,
+        "optional": true,
+        "notes": "balances crema; omit for savory-only"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat broiler or grill to high and roast whole red bell peppers, turning until skins are charred on all sides; transfer to a bowl and cover to steam for 10 minutes then peel, seed, and slice.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large skillet over medium heat and add olive oil; once shimmering, add diced onion and sauté until softened and translucent.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Add minced garlic, ground cumin, and smoked paprika to the skillet; cook, stirring constantly, until fragrant.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add drained black beans to the skillet with sautéed aromatics; gently mash roughly with the back of a spoon or potato masher to create a textured filling and cook until heated through.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Season the bean mixture with salt, black pepper, and fresh lime juice; stir in chopped cilantro and adjust seasoning to taste. If using jalapeño, fold it in now.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Warm corn tortillas in a dry skillet or directly over a low flame, 20-30 seconds per side, until pliable and slightly charred; keep warm covered in a towel.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Prepare lime crema by whisking plain yogurt with lime juice and honey or agave (if using) until smooth; season lightly with salt.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Assemble tacos by spooning bean mixture onto warm tortillas, topping with roasted pepper slices, avocado if using, a drizzle of lime crema, and finish with extra cilantro and a squeeze of lime.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

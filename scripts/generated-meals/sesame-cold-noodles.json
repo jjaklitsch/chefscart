@@ -1,0 +1,255 @@
+{
+  "slug": "sesame-cold-noodles",
+  "title": "Sesame Cold Noodles",
+  "description": "Chilled wheat noodles tossed in a creamy toasted sesame sauce with bright rice vinegar and a hint of chili for balance. Ready in under 30 minutes, this refreshing dish is topped with crisp cucumber, scallions and toasted sesame for contrast.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "wheat noodles",
+    "sesame paste",
+    "soy sauce",
+    "rice vinegar",
+    "sesame oil",
+    "garlic",
+    "ginger",
+    "cucumber",
+    "scallion",
+    "sugar",
+    "chili oil",
+    "peanut (optional)"
+  ],
+  "spice_level": 2,
+  "time_total_min": 25,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "sesame",
+    "soy",
+    "peanut"
+  ],
+  "search_keywords": [
+    "sesame noodles",
+    "cold noodles",
+    "chilled noodles",
+    "cold sesame sauce",
+    "wheat noodles",
+    "peanut sauce alternative",
+    "easy lunch",
+    "asian pasta salad",
+    "no-cook sauce",
+    "make-ahead",
+    "vegetarian asian",
+    "spicy sesame",
+    "sichuan inspired",
+    "cucumber",
+    "scallions",
+    "garlic ginger",
+    "rice vinegar",
+    "soy sauce",
+    "sesame oil",
+    "quick dinner"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "wheat noodles (spaghetti, ramen, or Chinese egg noodles)",
+        "quantity": 340,
+        "unit": "g",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "dry weight"
+      },
+      {
+        "display_name": "tahini or toasted sesame paste",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": 90,
+        "ml": 90,
+        "optional": false,
+        "notes": "smooth"
+      },
+      {
+        "display_name": "soy sauce (light)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "rice vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "toasted sesame oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola) or warm water",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "to loosen sesame paste; can use warm water for lighter sauce"
+      },
+      {
+        "display_name": "granulated sugar or honey",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "fresh garlic (minced)",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "finely minced"
+      },
+      {
+        "display_name": "fresh ginger (minced)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "optional, finely minced"
+      },
+      {
+        "display_name": "chili oil (sambal oelek or chili crisp)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": true,
+        "notes": "start with less for milder spice"
+      },
+      {
+        "display_name": "cucumber (julienned)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "English or Persian preferred"
+      },
+      {
+        "display_name": "scallions (thinly sliced)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 45,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated if desired"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "crushed roasted peanuts (optional)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": null,
+        "optional": true,
+        "notes": "for crunch"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "for noodle cooking water and to taste"
+      },
+      {
+        "display_name": "cold water or ice",
+        "quantity": 500,
+        "unit": "ml",
+        "grams": null,
+        "ml": 500,
+        "optional": false,
+        "notes": "for shocking noodles"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 25,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of salted water to a rolling boil and add the noodles; cook until just al dente according to package directions.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "While noodles cook, prepare an ice bath in a large bowl with cold water and ice.",
+        "time_min": 2
+      },
+      {
+        "step_no": 3,
+        "text": "When noodles are al dente, reserve a small ladle (about 60ml) of the cooking water, then drain the noodles and immediately transfer them to the ice bath to stop cooking; rinse briefly and chill.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "In a mixing bowl, whisk together sesame paste, soy sauce, rice vinegar, toasted sesame oil, neutral oil or warm water, sugar, minced garlic and minced ginger until smooth and emulsified; thin with reserved cooking water a little at a time to reach a creamy, pourable consistency.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Taste the sauce and adjust seasoning with more soy, vinegar, sugar, or chili oil for heat. If using chili oil, add gradually to reach desired spice level.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Drain the chilled noodles thoroughly and transfer to a large mixing bowl; toss with most of the sauce until evenly coated, reserving a small amount for serving.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Fold in julienned cucumber and most of the sliced scallions; plate and garnish with toasted sesame seeds, remaining scallions and optional crushed peanuts. Serve immediately cold or chilled.",
+        "time_min": 2
+      }
+    ]
+  },
+  "image_url": null
+}

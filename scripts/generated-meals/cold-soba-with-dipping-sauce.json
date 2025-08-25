@@ -1,0 +1,237 @@
+{
+  "slug": "cold-soba-with-dipping-sauce",
+  "title": "Cold Soba with Dipping Sauce",
+  "description": "Chilled buckwheat soba noodles served with a bright, savory soy-dashi dipping sauce and crisp garnishes. Light, refreshing, and quick to assemble—perfect for warm weather or a simple weeknight meal.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "vegetarian"
+  ],
+  "primary_ingredient": "pasta",
+  "ingredient_tags": [
+    "soba noodles",
+    "buckwheat",
+    "soy sauce",
+    "dashi",
+    "mirin",
+    "scallion",
+    "nori",
+    "ginger",
+    "sesame",
+    "cold noodles",
+    "wasabi",
+    "tofu",
+    "sesame oil"
+  ],
+  "spice_level": 1,
+  "time_total_min": 20,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "cold soba",
+    "zaru soba",
+    "soba noodles",
+    "dipping sauce",
+    "tsuyu",
+    "chilled noodles",
+    "buckwheat",
+    "japanese",
+    "quick lunch",
+    "pescatarian",
+    "vegetarian",
+    "summer meal",
+    "soy dashi",
+    "mirin",
+    "scallions",
+    "nori",
+    "ginger",
+    "easy dinner",
+    "light meal",
+    "no-cook sauce"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "dried soba noodles (100% buckwheat or buckwheat blend)",
+        "quantity": 180,
+        "unit": "g",
+        "grams": 180,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "water (for cooking noodles and cooling)",
+        "quantity": 2000,
+        "unit": "ml",
+        "grams": null,
+        "ml": 2000,
+        "optional": false,
+        "notes": "for boiling and ice bath"
+      },
+      {
+        "display_name": "dashi stock (ready-made or prepared)",
+        "quantity": 240,
+        "unit": "ml",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "can be kombu-katsuo or kombu-based for vegetarian"
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "mirin (sweet rice cooking wine)",
+        "quantity": 15,
+        "unit": "ml",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sugar",
+        "quantity": 4,
+        "unit": "g",
+        "grams": 4,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "ice cubes",
+        "quantity": 12,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "for rapid cooling"
+      },
+      {
+        "display_name": "scallions (green onions), thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated if desired"
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": true,
+        "notes": "for serving"
+      },
+      {
+        "display_name": "wasabi paste",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 8,
+        "ml": 10,
+        "optional": true,
+        "notes": "for individual dipping bowls"
+      },
+      {
+        "display_name": "toasted nori (seaweed), julienned",
+        "quantity": 2,
+        "unit": "g",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "cut into thin strips as garnish"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 9,
+        "ml": 15,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": true,
+        "notes": "optional drizzle in sauce for aroma"
+      },
+      {
+        "display_name": "soft tofu, chilled and cubed (optional accompaniment)",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "serve on side for added protein"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Bring a large pot of water to a rolling boil over high heat; add soba noodles and stir gently to separate.",
+        "time_min": 2
+      },
+      {
+        "step_no": 2,
+        "text": "Cook noodles uncovered at a vigorous simmer according to package time (typically 4–6 minutes) until just tender but not mushy, stirring occasionally.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "While noodles cook, combine dashi, soy sauce, mirin and sugar in a heatproof bowl and stir until sugar dissolves; taste and adjust balance between salty and sweet. Optionally add a small drizzle of sesame oil for aroma.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Prepare an ice bath in a large bowl with cold water and ice cubes. When noodles are done, promptly drain them in a colander and transfer to the ice bath to stop cooking and firm the texture; rinse gently to remove surface starch.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "Drain noodles thoroughly for serving by lifting and shaking the colander, then portion onto chilled plates or a bamboo zaru if available.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Divide the dipping sauce into individual small bowls; place sliced scallions, grated ginger, wasabi and nori on the side as condiments for each diner.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "To eat, pick up a portion of chilled soba with chopsticks, dip into the sauce briefly, and enjoy with preferred garnishes and optional tofu or sesame seeds.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

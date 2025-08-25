@@ -1,0 +1,238 @@
+{
+  "slug": "grilled-eggplant-with-tahini",
+  "title": "Grilled Eggplant with Tahini",
+  "description": "Smoky grilled eggplant slices dressed with a creamy, lemony tahini sauce and finished with fresh herbs and crunchy toasted pine nuts. A simple, plant-forward dish delivering charred depth, nutty richness, and bright acidity — great as a main for vegans or as a side.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegan",
+    "vegetarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "eggplant",
+  "ingredient_tags": [
+    "eggplant",
+    "tahini",
+    "lemon",
+    "olive oil",
+    "garlic",
+    "parsley",
+    "pine nuts",
+    "salt",
+    "black pepper",
+    "cumin",
+    "paprika",
+    "red pepper flakes",
+    "water"
+  ],
+  "spice_level": 2,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "sesame"
+  ],
+  "search_keywords": [
+    "grilled eggplant",
+    "eggplant with tahini",
+    "mediterranean eggplant",
+    "vegan grilled vegetables",
+    "plant-forward",
+    "tahini sauce",
+    "smoky eggplant",
+    "lemon garlic dressing",
+    "easy vegan dinner",
+    "meze",
+    "side dish",
+    "pine nuts",
+    "olive oil grill",
+    "weeknight recipe",
+    "make ahead",
+    "bbq eggplant",
+    "charred vegetables",
+    "healthy vegetarian",
+    "low cost",
+    "summer recipe"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "eggplants (large)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 1000,
+        "ml": null,
+        "optional": false,
+        "notes": "trim stem; cut into 1/2-inch (1.25 cm) slices lengthwise"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 41,
+        "ml": 45,
+        "optional": false,
+        "notes": "for brushing eggplant and finishing"
+      },
+      {
+        "display_name": "tahini (sesame paste)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "use well-stirred tahini"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1-2 lemons"
+      },
+      {
+        "display_name": "warm water",
+        "quantity": 6,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 90,
+        "optional": false,
+        "notes": "to thin tahini to drizzling consistency"
+      },
+      {
+        "display_name": "garlic cloves (minced)",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "finely minced for sauce"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adds warmth to tahini sauce"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "for smoky finishing sprinkle"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste; for eggplant and sauce combined"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided between eggplant and sauce"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for heat"
+      },
+      {
+        "display_name": "fresh parsley (chopped)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "pine nuts (toasted)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 24,
+        "ml": null,
+        "optional": false,
+        "notes": "toast in a dry skillet until golden"
+      },
+      {
+        "display_name": "optional: pomegranate seeds",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "for bright garnish"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare eggplant: wash and trim ends, then slice each eggplant lengthwise into 1/2-inch thick slices. Lay slices on a tray and lightly salt both sides; rest 10 minutes to draw out bitterness, then pat dry with paper towel.",
+        "time_min": 15
+      },
+      {
+        "step_no": 2,
+        "text": "Make tahini sauce: in a bowl combine tahini, lemon juice, minced garlic, ground cumin, half of the salt and half of the black pepper. Whisk while gradually adding warm water to reach a smooth, pourable but still creamy consistency (about the thickness of yogurt). Adjust seasoning to taste.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Heat grill or grill pan to medium-high (around 400°F / medium-high). Brush both sides of eggplant slices lightly with olive oil and season with remaining salt and pepper.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Grill eggplant: place slices on the hot grill or grill pan in a single layer. Cook until pronounced char marks form and flesh is tender, about 3–4 minutes per side depending on thickness. Transfer to a platter as they finish.",
+        "time_min": 10
+      },
+      {
+        "step_no": 5,
+        "text": "Toast pine nuts in a small dry skillet over medium heat, stirring constantly, until golden and fragrant (30–60 seconds). Remove from heat to avoid burning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 6,
+        "text": "Assemble: arrange warm grilled eggplant on a serving platter. Spoon or drizzle tahini sauce over the slices, sprinkle with toasted pine nuts, chopped parsley, smoked paprika, and optional red pepper flakes or pomegranate seeds. Finish with a light drizzle of olive oil.",
+        "time_min": 5
+      },
+      {
+        "step_no": 7,
+        "text": "Serve warm or at room temperature. Leftovers can be refrigerated in an airtight container for up to 3 days; bring to room temperature before serving.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

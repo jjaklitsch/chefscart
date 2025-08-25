@@ -1,0 +1,296 @@
+{
+  "slug": "ratatouille-with-herbed-polenta",
+  "title": "Ratatouille with Herbed Polenta",
+  "description": "A rustic Provençal vegetable stew of slow-simmered eggplant, zucchini, bell pepper and tomatoes served over creamy herbed polenta. Bright herbs and a splash of balsamic lift the vegetables while the polenta provides a comforting, silky base.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "french",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward",
+    "vegan"
+  ],
+  "primary_ingredient": "vegetables",
+  "ingredient_tags": [
+    "eggplant",
+    "zucchini",
+    "bell pepper",
+    "tomato",
+    "onion",
+    "garlic",
+    "polenta",
+    "cornmeal",
+    "olive oil",
+    "basil",
+    "thyme",
+    "parsley",
+    "balsamic vinegar",
+    "vegetable broth",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [],
+  "search_keywords": [
+    "ratatouille",
+    "polenta",
+    "herbed polenta",
+    "vegetable stew",
+    "eggplant",
+    "zucchini",
+    "bell pepper",
+    "tomato",
+    "provençal",
+    "balsamic",
+    "creamy polenta",
+    "vegan dinner",
+    "vegetarian lunch",
+    "plant-forward",
+    "mediterranean",
+    "one-pot vegetables",
+    "comforting",
+    "summer vegetables",
+    "slow-simmer"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "yellow onion, medium, diced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 cup diced"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "eggplant, medium, cut into 1-inch cubes",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "peel optional"
+      },
+      {
+        "display_name": "zucchini, medium, sliced into 1/2-inch rounds",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red bell pepper, seeded and chopped",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tomatoes, canned crushed or ripe tomatoes chopped",
+        "quantity": 800,
+        "unit": "g",
+        "grams": 800,
+        "ml": 800,
+        "optional": false,
+        "notes": "about two 14-oz cans or 800 g fresh"
+      },
+      {
+        "display_name": "balsamic vinegar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "adds brightness"
+      },
+      {
+        "display_name": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh basil, chopped",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "reserve some for garnish"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 10,
+        "unit": "g",
+        "grams": 10,
+        "ml": null,
+        "optional": false,
+        "notes": "for polenta and garnish"
+      },
+      {
+        "display_name": "sugar (optional, to balance acidity)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": null,
+        "optional": true,
+        "notes": "use only if tomatoes are very acidic"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "vegetable broth or water",
+        "quantity": 200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 200,
+        "optional": false,
+        "notes": "for thinning ratatouille if needed"
+      },
+      {
+        "display_name": "coarse polenta (cornmeal)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 160,
+        "ml": 240,
+        "optional": false,
+        "notes": "also labeled instant or coarse; adjust water for texture"
+      },
+      {
+        "display_name": "water (for polenta)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": null,
+        "ml": 960,
+        "optional": false,
+        "notes": "or a mix of water and vegetable broth for extra flavor"
+      },
+      {
+        "display_name": "olive oil or vegan butter (for polenta)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "for creaminess"
+      },
+      {
+        "display_name": "nutritional yeast (optional, for cheesy flavor)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "for vegan 'cheesy' finish"
+      },
+      {
+        "display_name": "freshly chopped herbs for garnish (basil/parsley)",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare all vegetables: dice onion, mince garlic, cube eggplant, slice zucchini, and chop bell pepper and tomatoes if using fresh.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat half the olive oil in a large wide skillet or Dutch oven over medium-high heat. Add eggplant in a single layer and cook until lightly browned and softened, about 6–8 minutes, stirring occasionally to avoid sticking. Remove eggplant to a bowl.",
+        "time_min": 8
+      },
+      {
+        "step_no": 3,
+        "text": "Add remaining olive oil to the pan, then sauté onion until translucent, about 4 minutes. Add garlic and cook until fragrant, about 30 seconds.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Add bell pepper and zucchini to the pan and cook until they begin to soften, about 5 minutes, stirring so they take on light color but retain shape.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Return the eggplant to the pan with the vegetables, add crushed tomatoes, thyme, balsamic vinegar, salt, pepper and optional sugar. Stir to combine, reduce heat to medium-low, partially cover and simmer to meld flavors until vegetables are tender and sauce thickens, about 20 minutes. Add a splash of vegetable broth if the mixture becomes too dry.",
+        "time_min": 20
+      },
+      {
+        "step_no": 6,
+        "text": "While ratatouille simmers, bring water (or water plus broth) to a boil in a medium saucepan. Gradually whisk in polenta, reduce heat to low, and simmer, stirring frequently, until thick and creamy—about 8–10 minutes for quick polenta or 25–30 minutes for coarse traditional polenta (use timing appropriate to your polenta type). Stir in olive oil or vegan butter, chopped parsley, nutritional yeast if using, and season with salt and pepper.",
+        "time_min": 10
+      },
+      {
+        "step_no": 7,
+        "text": "Taste ratatouille and adjust seasoning; stir in chopped basil and parsley just before serving for freshness.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Plate by spooning a generous portion of polenta onto each plate and top with a ladle of ratatouille. Garnish with extra fresh herbs and a drizzle of olive oil or balsamic if desired and serve warm.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

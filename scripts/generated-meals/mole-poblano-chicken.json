@@ -1,0 +1,326 @@
+{
+  "slug": "mole-poblano-chicken",
+  "title": "Mole Poblano Chicken",
+  "description": "Tender braised chicken simmered in a complex, slightly smoky and mildly spicy mole poblano sauce made from toasted chiles, nuts, seeds, chocolate and aromatic spices. Rich, layered flavors are developed by toasting and gently blending ingredients, then slowly simmering the sauce with chicken until deeply glazed.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "ancho chile",
+    "pasilla chile",
+    "mulato chile",
+    "tomato",
+    "onion",
+    "garlic",
+    "almond",
+    "pumpkin seeds",
+    "sesame seeds",
+    "spanish bread",
+    "dark chocolate",
+    "chicken stock",
+    "cinnamon",
+    "clove",
+    "cumin",
+    "oil",
+    "salt",
+    "pepper"
+  ],
+  "spice_level": 3,
+  "time_total_min": 125,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "grain",
+    "sesame"
+  ],
+  "search_keywords": [
+    "mole",
+    "mole poblano",
+    "chicken mole",
+    "mexican",
+    "ancho chile",
+    "pasilla",
+    "mulato",
+    "toasted seeds",
+    "pumpkin seeds",
+    "almonds",
+    "dark chocolate",
+    "braised chicken",
+    "festive dinner",
+    "traditional sauce",
+    "slow simmer",
+    "simmered chicken",
+    "rich sauce",
+    "make-ahead",
+    "comfort food",
+    "holiday"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in, skin-on chicken thighs",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 1600,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "dried ancho chiles (stemmed, seeded)",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "toasted briefly before soaking"
+      },
+      {
+        "display_name": "dried pasilla chiles (stemmed, seeded)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 20,
+        "ml": null,
+        "optional": false,
+        "notes": "toasted briefly before soaking"
+      },
+      {
+        "display_name": "dried mulato chile (stemmed, seeded)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 10,
+        "ml": null,
+        "optional": true,
+        "notes": "adds depth; substitute another ancho if unavailable"
+      },
+      {
+        "display_name": "roma tomatoes, halved",
+        "quantity": 3,
+        "unit": "each",
+        "grams": 360,
+        "ml": null,
+        "optional": false,
+        "notes": "roasted or charred"
+      },
+      {
+        "display_name": "yellow onion, halved",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "charred or roasted"
+      },
+      {
+        "display_name": "garlic cloves",
+        "quantity": 6,
+        "unit": "clove",
+        "grams": 18,
+        "ml": null,
+        "optional": false,
+        "notes": "roasted until soft"
+      },
+      {
+        "display_name": "almonds, blanched",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 140,
+        "ml": null,
+        "optional": false,
+        "notes": "toasted"
+      },
+      {
+        "display_name": "raw pumpkin seeds (pepitas)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "toasted"
+      },
+      {
+        "display_name": "sesame seeds",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 24,
+        "ml": null,
+        "optional": false,
+        "notes": "toasted; reserve a teaspoon for garnish"
+      },
+      {
+        "display_name": "day-old bolillo or baguette, torn into pieces",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "toasted; thickens sauce"
+      },
+      {
+        "display_name": "dark chocolate (70% cacao), chopped",
+        "quantity": 2,
+        "unit": "oz",
+        "grams": 56,
+        "ml": null,
+        "optional": false,
+        "notes": "adds bitterness and sheen"
+      },
+      {
+        "display_name": "chicken stock (low sodium)",
+        "quantity": 3,
+        "unit": "cup",
+        "grams": null,
+        "ml": 720,
+        "optional": false,
+        "notes": "hot"
+      },
+      {
+        "display_name": "vegetable oil or neutral oil",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 42,
+        "ml": 45,
+        "optional": false,
+        "notes": "for toasting and searing"
+      },
+      {
+        "display_name": "olive oil (for finishing)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": 15,
+        "optional": true,
+        "notes": "optional, for gloss"
+      },
+      {
+        "display_name": "ground cinnamon",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.6,
+        "ml": null,
+        "optional": false,
+        "notes": "or a small cinnamon stick toasted"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cloves",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.3,
+        "ml": null,
+        "optional": false,
+        "notes": "use sparingly"
+      },
+      {
+        "display_name": "dried oregano (preferably Mexican)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "freshly ground"
+      },
+      {
+        "display_name": "lime wedges (for serving)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "optional"
+      },
+      {
+        "display_name": "fresh cilantro (for garnish)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "chopped"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 125,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare dried chiles: remove stems and seeds, then toast lightly in a dry skillet over medium heat until fragrant and slightly darkened (watch carefully to avoid burning); transfer to a bowl and cover with hot water to soak for 20 minutes until softened.",
+        "time_min": 25
+      },
+      {
+        "step_no": 2,
+        "text": "Toast and roast aromatics and bread: in same skillet toast almonds, pumpkin seeds and sesame until golden, about 4–6 minutes, then remove; char or roast tomatoes and halved onion directly on a hot skillet or under broiler until blackened in spots, about 8 minutes total; roast garlic cloves wrapped in foil or on skillet until soft, about 10 minutes (these can overlap with toasting).",
+        "time_min": 15
+      },
+      {
+        "step_no": 3,
+        "text": "Sear chicken: pat chicken dry, season lightly with salt and pepper, then sear skin-side down in a large heavy pot with oil over medium-high heat until deep golden, 6–8 minutes per side; remove and set aside.",
+        "time_min": 18
+      },
+      {
+        "step_no": 4,
+        "text": "Blend mole base: drain chiles and reserve soaking liquid. In a blender combine soaked chiles, toasted nuts and seeds, toasted bread, charred tomatoes, onion, roasted garlic, spices, a cup of hot chicken stock and a few tablespoons of chile soaking liquid. Blend until very smooth, adding more stock as needed to reach a thick sauce consistency (use caution when blending hot ingredients).",
+        "time_min": 12
+      },
+      {
+        "step_no": 5,
+        "text": "Cook mole sauce: return a tablespoon of oil to the pot over medium heat, strain blended sauce through a fine sieve into the pot or directly pour and simmer, stirring often to prevent sticking. Add remaining chicken stock slowly to loosen sauce to a silky but thick consistency. Simmer gently for 15 minutes to develop flavor, stirring and adjusting seasoning.",
+        "time_min": 20
+      },
+      {
+        "step_no": 6,
+        "text": "Finish sauce with chocolate and aromatics: stir in chopped dark chocolate, remaining spices, salt and pepper; simmer 5 minutes until chocolate melts and integrates, taste and adjust seasoning and heat with reserved chile soaking liquid if needed.",
+        "time_min": 7
+      },
+      {
+        "step_no": 7,
+        "text": "Braise chicken in mole: nestle seared chicken pieces into the sauce, skin-side up. Spoon sauce over to coat, cover pot, and simmer gently until chicken is cooked through and tender, about 20 minutes (internal temperature 74°C/165°F for chicken). Uncover and simmer 3–5 minutes more to thicken and glaze the chicken.",
+        "time_min": 28
+      },
+      {
+        "step_no": 8,
+        "text": "Rest and serve: transfer chicken to a serving platter, spoon extra sauce over the top, garnish with reserved toasted sesame seeds and chopped cilantro, and serve with lime wedges and warm tortillas or rice.",
+        "time_min": 0
+      }
+    ]
+  },
+  "image_url": null
+}

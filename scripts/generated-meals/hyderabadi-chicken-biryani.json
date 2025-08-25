@@ -1,0 +1,328 @@
+{
+  "slug": "hyderabadi-chicken-biryani",
+  "title": "Hyderabadi Chicken Biryani",
+  "description": "A classic layered biryani from Hyderabad featuring fragrant basmati rice, marinated chicken cooked with yogurt, spices and caramelized onions, finished with saffron and ghee for a rich, aromatic one-pot meal. The dum (steam) cooking seals in floral, tangy and savory flavors for tender, flavorful chicken and separate, fluffy rice.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "indian"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "basmati rice",
+    "yogurt",
+    "onion",
+    "garlic",
+    "ginger",
+    "saffron",
+    "ghee",
+    "oil",
+    "green chili",
+    "mint",
+    "cilantro",
+    "lemon",
+    "whole spices",
+    "turmeric",
+    "chili powder",
+    "garam masala",
+    "cashew",
+    "milk",
+    "rose water",
+    "kewra water",
+    "salt"
+  ],
+  "spice_level": 3,
+  "time_total_min": 170,
+  "servings_default": 6,
+  "servings_min": 1,
+  "servings_max": 12,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "grain"
+  ],
+  "search_keywords": [
+    "hyderabadi biryani",
+    "chicken biryani",
+    "dum biryani",
+    "basmati rice",
+    "marinated chicken",
+    "saffron",
+    "ghee",
+    "caramelized onions",
+    "mint cilantro",
+    "yogurt marinade",
+    "whole spices",
+    "indian rice dish",
+    "layered biryani",
+    "fragrant",
+    "spicy",
+    "slow steam",
+    "kewra",
+    "rose water",
+    "holiday meal",
+    "one-pot rice"
+  ],
+  "ingredients_json": {
+    "servings": 6,
+    "ingredients": [
+      {
+        "display_name": "chicken (bone-in, cut into medium pieces)",
+        "quantity": 1.8,
+        "unit": "g",
+        "grams": 1800,
+        "ml": null,
+        "optional": false,
+        "notes": "skin removed if preferred"
+      },
+      {
+        "display_name": "basmati rice",
+        "quantity": 900,
+        "unit": "g",
+        "grams": 900,
+        "ml": null,
+        "optional": false,
+        "notes": "soaked 30 minutes and drained"
+      },
+      {
+        "display_name": "plain yogurt (full-fat)",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "for marinade"
+      },
+      {
+        "display_name": "onions, thinly sliced",
+        "quantity": 500,
+        "unit": "g",
+        "grams": 500,
+        "ml": null,
+        "optional": false,
+        "notes": "for caramelizing (birista)"
+      },
+      {
+        "display_name": "ginger-garlic paste",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "green chilies, slit",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to heat preference"
+      },
+      {
+        "display_name": "fresh mint leaves, chopped",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh cilantro (coriander) leaves, chopped",
+        "quantity": 30,
+        "unit": "g",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "saffron threads",
+        "quantity": 0.15,
+        "unit": "g",
+        "grams": 0.15,
+        "ml": null,
+        "optional": false,
+        "notes": "soaked in warm milk"
+      },
+      {
+        "display_name": "warm milk",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "for saffron"
+      },
+      {
+        "display_name": "rose water",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": true,
+        "notes": "authentic flavoring"
+      },
+      {
+        "display_name": "kewra water (or additional rose water)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": true,
+        "notes": "optional floral essence"
+      },
+      {
+        "display_name": "ghee",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": "clarified butter for finishing"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 80,
+        "unit": "ml",
+        "grams": null,
+        "ml": 80,
+        "optional": false,
+        "notes": "for frying onions and initial cooking"
+      },
+      {
+        "display_name": "cashew nuts, lightly toasted",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "garam masala powder",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 10,
+        "optional": false,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "turmeric powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red chili powder",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 7,
+        "ml": 15,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 2.5,
+        "unit": "tbsp",
+        "grams": 40,
+        "ml": 37.5,
+        "optional": false,
+        "notes": "total; adjust to taste"
+      },
+      {
+        "display_name": "yogurt marinade spice mix (cumin powder)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "cumin powder"
+      },
+      {
+        "display_name": "whole spices (cinnamon stick, green cardamom, cloves, bay leaves)",
+        "quantity": 8,
+        "unit": "each",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "example: 2 sticks cinnamon, 6 cardamom pods, 6 cloves, 2 bay leaves"
+      },
+      {
+        "display_name": "water",
+        "quantity": 1200,
+        "unit": "ml",
+        "grams": null,
+        "ml": 1200,
+        "optional": false,
+        "notes": "for parboiling rice and cooking"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 170,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: trim and pat dry chicken pieces; rinse basmati rice until water runs clear then soak in cold water for 30 minutes; thinly slice onions and set aside.",
+        "time_min": 40
+      },
+      {
+        "step_no": 2,
+        "text": "Caramelize onions (birista): heat oil in a wide skillet, fry sliced onions in batches over medium heat until deep golden brown and crisp, stirring frequently to avoid burning; drain on paper towel and reserve.",
+        "time_min": 25
+      },
+      {
+        "step_no": 3,
+        "text": "Make chicken marinade: combine yogurt, ginger-garlic paste, turmeric, red chili powder, cumin powder, half the garam masala, lemon juice, chopped mint and cilantro, slit green chilies, and salt; toss chicken pieces to coat thoroughly and marinate for at least 30 minutes (can be refrigerated up to 4 hours).",
+        "time_min": 35
+      },
+      {
+        "step_no": 4,
+        "text": "Par-cook rice: bring a large pot of water to a rolling boil with salt and whole spices; add drained rice and cook until 70% done (grains still have a slight bite), about 6-8 minutes; drain rice and set aside.",
+        "time_min": 12
+      },
+      {
+        "step_no": 5,
+        "text": "Brown chicken: in a heavy, oven-safe or heavy-bottomed wide pot, heat a portion of ghee and a little oil, add whole spices, then add marinated chicken and cook on medium-high heat until chicken is browned on outside and about 70% cooked, stirring occasionally; remove excess marinade juices if excessive but keep some for moisture.",
+        "time_min": 12
+      },
+      {
+        "step_no": 6,
+        "text": "Layering: reduce heat to low; spread half of the par-cooked rice over the chicken in an even layer, sprinkle half the caramelized onions, some chopped mint and cilantro, a pinch of garam masala, and drizzle half the saffron-infused warm milk and a little ghee; repeat with remaining rice and toppings to create two layers; sprinkle rose water and kewra water if using.",
+        "time_min": 6
+      },
+      {
+        "step_no": 7,
+        "text": "Seal and cook (dum): cover pot with a tight-fitting lid or seal with dough; cook on very low heat for 25-30 minutes to steam through (use a heat diffuser or place pot on a griddle for even gentle heat).",
+        "time_min": 30
+      },
+      {
+        "step_no": 8,
+        "text": "Rest and finish: turn off heat and let biryani rest sealed for 10 minutes; open carefully, fluff the rice gently from the edges to mix layers without breaking grains; garnish with remaining fried onions and toasted cashews and drizzle remaining ghee if desired before serving.",
+        "time_min": 10
+      }
+    ]
+  },
+  "image_url": null
+}

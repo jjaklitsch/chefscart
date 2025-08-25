@@ -1,0 +1,269 @@
+{
+  "slug": "spicy-tahini-chicken-kale",
+  "title": "Spicy Tahini Chicken & Kale",
+  "description": "Pan-seared chicken tossed in a creamy, spicy tahini sauce with sautéed kale and bright lemon — a quick, savory weeknight meal with Middle Eastern–Mediterranean flavors and a punch of heat. Fast to make and easily scaled, it balances rich sesame notes, garlic, and chile with leafy greens for a satisfying bowl.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "low-carb"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "tahini",
+    "kale",
+    "garlic",
+    "lemon",
+    "olive oil",
+    "chili",
+    "paprika",
+    "cumin",
+    "salt",
+    "pepper",
+    "water",
+    "honey",
+    "red pepper flakes",
+    "parsley",
+    "onion"
+  ],
+  "spice_level": 3,
+  "time_total_min": 29,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "sesame"
+  ],
+  "search_keywords": [
+    "chicken",
+    "tahini",
+    "kale",
+    "spicy",
+    "lemon",
+    "garlic",
+    "weeknight",
+    "mediterranean",
+    "pan-seared",
+    "bowl",
+    "low-carb",
+    "quick dinner",
+    "sesame",
+    "red pepper flakes",
+    "creamy sauce",
+    "healthy",
+    "one-skillet",
+    "protein",
+    "leafy greens",
+    "meal-prep"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "boneless skinless chicken thighs, trimmed and patted dry",
+        "quantity": 1,
+        "unit": "lb",
+        "grams": 454,
+        "ml": null,
+        "optional": false,
+        "notes": "slice into 1-inch strips or bite-size pieces"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "tahini (sesame paste)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": 240,
+        "optional": false,
+        "notes": "stirred smooth before measuring"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "about 1 large lemon"
+      },
+      {
+        "display_name": "warm water (to thin tahini)",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "adjust for desired sauce consistency"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to heat preference"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "honey (or maple syrup)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 7,
+        "ml": 5,
+        "optional": true,
+        "notes": "for slight sweetness to balance acidity"
+      },
+      {
+        "display_name": "coarse salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kale, stems removed and leaves torn into 1-2 inch pieces",
+        "quantity": 8,
+        "unit": "oz",
+        "grams": 227,
+        "ml": null,
+        "optional": false,
+        "notes": "about 6-7 cups firmly packed"
+      },
+      {
+        "display_name": "yellow onion, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "medium"
+      },
+      {
+        "display_name": "water or low-sodium chicken broth (for deglazing/steam)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "use more if needed to loosen sauce"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "lemon wedges (for serving)",
+        "quantity": 2,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 29,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: trim and slice chicken into bite-size pieces, wash and tear kale leaves removing tough stems, mince garlic, and slice the onion.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Whisk the tahini sauce in a bowl by combining tahini, lemon juice, warm water, minced garlic, red pepper flakes, smoked paprika, cumin, honey (if using), salt and pepper until smooth and pourable; adjust water for desired consistency.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Heat a large skillet over medium-high heat and add 1 tbsp olive oil. Add the chicken in a single layer and sear without crowding until golden on one side, about 3 minutes.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Flip and continue to cook the chicken until cooked through and an internal temperature of 165°F is reached, about 3-4 minutes more depending on thickness; transfer chicken to a plate and tent loosely.",
+        "time_min": 4
+      },
+      {
+        "step_no": 5,
+        "text": "In the same skillet, add remaining 1 tbsp olive oil and sliced onion; sauté over medium heat until softened and translucent, about 4 minutes, scraping up browned bits from the pan.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Add torn kale to the skillet, season lightly with a pinch of salt, and sauté until wilted and bright green, about 3 minutes; if mixture is dry, add the deglazing water or chicken broth and stir to loosen fond.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Return the cooked chicken to the skillet, pour the prepared tahini sauce over the chicken and kale, and toss gently over low heat until everything is evenly coated and warmed through, about 2 minutes. Taste and adjust salt, lemon, or red pepper flakes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Serve immediately garnished with chopped parsley and lemon wedges for squeezing over the top.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

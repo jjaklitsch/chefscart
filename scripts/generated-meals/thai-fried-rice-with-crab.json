@@ -1,0 +1,288 @@
+{
+  "slug": "thai-fried-rice-with-crab",
+  "title": "Thai Fried Rice with Crab",
+  "description": "Fragrant wok-fried jasmine rice tossed with sweet-salty crab meat, bright lime, and crisp vegetables. Finished with fish sauce, soy, and scallions for an authentic Thai balance of savory, tangy, and aromatic flavors.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "crab",
+  "ingredient_tags": [
+    "crab",
+    "rice",
+    "jasmine rice",
+    "eggs",
+    "scallions",
+    "onion",
+    "garlic",
+    "carrot",
+    "peas",
+    "lime",
+    "fish sauce",
+    "soy sauce",
+    "oyster sauce",
+    "chili",
+    "cilantro",
+    "oil",
+    "sugar"
+  ],
+  "spice_level": 2,
+  "time_total_min": 21,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "egg",
+    "seafood",
+    "shellfish",
+    "soy",
+    "grain"
+  ],
+  "search_keywords": [
+    "thai fried rice",
+    "crab fried rice",
+    "jasmine rice",
+    "seafood fried rice",
+    "easy thai dinner",
+    "wok fried rice",
+    "fish sauce",
+    "soy sauce",
+    "lime",
+    "scallions",
+    "cilantro",
+    "garlic",
+    "eggs",
+    "weeknight meal",
+    "pescatarian",
+    "low spice",
+    "carrot peas",
+    "oyster sauce",
+    "leftover rice",
+    "restaurant style"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "cooked jasmine rice (preferably day-old)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 960,
+        "ml": null,
+        "optional": false,
+        "notes": "cold, grains separated"
+      },
+      {
+        "display_name": "cooked crab meat (lump or claw), picked over for shells",
+        "quantity": 12,
+        "unit": "oz",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "fresh or thawed, flaked"
+      },
+      {
+        "display_name": "large eggs, lightly beaten",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "shallot, finely diced (or small yellow onion)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 3,
+        "unit": "clove",
+        "grams": 9,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "carrot, small dice",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 130,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 medium carrot"
+      },
+      {
+        "display_name": "frozen peas, thawed",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "scallions, sliced (white and green separated)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "whites for cooking, greens for garnish"
+      },
+      {
+        "display_name": "fish sauce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 30,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "oyster sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 18,
+        "ml": 15,
+        "optional": true,
+        "notes": "adds depth, optional"
+      },
+      {
+        "display_name": "white granulated sugar",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 5,
+        "optional": false,
+        "notes": "balances fish sauce"
+      },
+      {
+        "display_name": "fresh lime juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lime"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "fresh red chili or bird's eye (sliced) or crushed red pepper",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 5,
+        "ml": null,
+        "optional": true,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "salt and ground white pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 21,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: flake crab and remove shells if needed, measure cold cooked rice and break up any clumps, dice vegetables, mince garlic, slice scallion whites and greens separately, beat eggs and combine sauce components in a small bowl.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a large wok or heavy skillet over high heat until very hot, then add neutral oil and swirl to coat the surface.",
+        "time_min": 1
+      },
+      {
+        "step_no": 3,
+        "text": "Add beaten eggs and swirl quickly to scramble into soft curds; push eggs to the side of the wok when just set.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add a little more oil if needed, then add shallot, garlic and scallion whites; stir-fry until fragrant and translucent, about until edges brown slightly.",
+        "time_min": 2
+      },
+      {
+        "step_no": 5,
+        "text": "Add diced carrot and peas and stir-fry until vegetables are tender-crisp, about 2 minutes.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Increase heat to high, add cold rice and spread it across the wok; let rice sit 20-30 seconds to sear, then stir and toss to combine with vegetables and eggs, breaking up any remaining clumps.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Add crab meat and pour in fish sauce, soy sauce, oyster sauce (if using), sugar, and lime juice; toss quickly and thoroughly so sauces coat the rice evenly without making it soggy.",
+        "time_min": 2
+      },
+      {
+        "step_no": 8,
+        "text": "Taste and adjust seasoning with a pinch of salt or a dash more fish sauce or lime as needed; add a splash of sesame oil and toss, then stir in most of the scallion greens and optional sliced chili.",
+        "time_min": 1
+      },
+      {
+        "step_no": 9,
+        "text": "Transfer to a serving platter or individual bowls, garnish with remaining scallion greens and chopped cilantro, and serve immediately with lime wedges on the side.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

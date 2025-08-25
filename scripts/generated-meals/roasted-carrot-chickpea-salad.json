@@ -1,0 +1,256 @@
+{
+  "slug": "roasted-carrot-chickpea-salad",
+  "title": "Roasted Carrot & Chickpea Salad",
+  "description": "A bright, hearty salad of oven-roasted carrots and crispy chickpeas tossed with lemony tahini dressing and fresh herbs. Sweet caramelized carrots, nutty chickpeas and a creamy citrus dressing deliver balanced textures and Mediterranean flavors.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "plant-forward",
+    "vegan",
+    "vegetarian"
+  ],
+  "primary_ingredient": "chickpeas",
+  "ingredient_tags": [
+    "carrots",
+    "chickpeas",
+    "tahini",
+    "lemon",
+    "olive oil",
+    "garlic",
+    "parsley",
+    "cumin",
+    "paprika",
+    "red onion",
+    "mixed greens",
+    "maple syrup",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 2,
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "sesame"
+  ],
+  "search_keywords": [
+    "roasted carrots",
+    "chickpea salad",
+    "tahini dressing",
+    "mediterranean salad",
+    "vegan salad",
+    "plant-forward",
+    "healthy lunch",
+    "meal prep",
+    "roasted vegetables",
+    "crispy chickpeas",
+    "lemony dressing",
+    "herb salad",
+    "cumin",
+    "smoky paprika",
+    "maple glazed carrots",
+    "easy dinner",
+    "gluten free",
+    "dairy free",
+    "cold salad",
+    "spring salad"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "carrots, peeled and cut into 1/2-inch sticks",
+        "quantity": 600,
+        "unit": "g",
+        "grams": 600,
+        "ml": null,
+        "optional": false,
+        "notes": "about 6 medium carrots"
+      },
+      {
+        "display_name": "canned chickpeas, drained and rinsed",
+        "quantity": 2,
+        "unit": "cup",
+        "grams": 330,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 x 400 g cans drained (use equivalent cooked chickpeas if preferred)"
+      },
+      {
+        "display_name": "olive oil, divided",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "2 tbsp for carrots, 1 tbsp for chickpeas"
+      },
+      {
+        "display_name": "maple syrup or honey (use maple for vegan)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 20,
+        "ml": 15,
+        "optional": false,
+        "notes": "for glazing carrots"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "divided between carrots and chickpeas"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "for chickpeas"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divided; adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      },
+      {
+        "display_name": "tahini",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": 45,
+        "ml": 45,
+        "optional": false,
+        "notes": "for dressing"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": "from about 1 large lemon"
+      },
+      {
+        "display_name": "water (to thin dressing)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adjust for desired dressing consistency"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "for dressing"
+      },
+      {
+        "display_name": "red onion, thinly sliced",
+        "quantity": 0.25,
+        "unit": "each",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for bite"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small bunch"
+      },
+      {
+        "display_name": "mixed salad greens or baby spinach",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 120,
+        "ml": null,
+        "optional": true,
+        "notes": "optional base for serving"
+      },
+      {
+        "display_name": "lemon zest (optional)",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": true,
+        "notes": "for finishing"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 55,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat oven to 425°F (220°C). Line a large baking sheet with parchment paper or lightly oil it.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Toss peeled carrot sticks with 2 tablespoons olive oil, maple syrup, 1/2 teaspoon ground cumin and half of the salt and pepper on the prepared sheet; spread in a single layer.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "On the same or a second sheet, toss drained chickpeas with 1 tablespoon olive oil, remaining cumin, smoked paprika, and a pinch of salt; spread them in a single layer separate from carrots.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Roast carrots and chickpeas in the preheated oven: roast carrots for 25 minutes until caramelized and tender, and roast chickpeas for 18-20 minutes until crisp, turning chickpeas halfway through. If using one sheet, stagger placement or remove chickpeas earlier.",
+        "time_min": 25
+      },
+      {
+        "step_no": 5,
+        "text": "While vegetables roast, whisk together tahini, lemon juice, minced garlic, remaining salt and pepper, and water to a smooth, pourable dressing; adjust water and lemon to taste.",
+        "time_min": 5
+      },
+      {
+        "step_no": 6,
+        "text": "When chickpeas and carrots are done, let them cool slightly (about 5 minutes). Combine roasted carrots, crispy chickpeas, chopped parsley, and thinly sliced red onion in a large bowl. Add mixed greens if using.",
+        "time_min": 7
+      },
+      {
+        "step_no": 7,
+        "text": "Drizzle dressing over the warm salad, gently toss to coat evenly, taste and adjust seasoning, then finish with lemon zest if using and serve warm or room temperature.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

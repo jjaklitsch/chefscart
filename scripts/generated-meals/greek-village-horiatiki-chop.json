@@ -1,0 +1,236 @@
+{
+  "slug": "greek-village-horiatiki-chop",
+  "title": "Greek Village Horiatiki Chop",
+  "description": "A bright, rustic Greek village-style chopped salad layered with ripe tomatoes, crisp cucumber, Kalamata olives and creamy feta, tossed in a tangy oregano-lemon vinaigrette. No lettuce required—this hearty, refreshing salad showcases bold Mediterranean flavors and simple, quick assembly.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "mediterranean",
+    "pescatarian",
+    "vegetarian"
+  ],
+  "primary_ingredient": "tomatoes",
+  "ingredient_tags": [
+    "tomatoes",
+    "cucumber",
+    "red onion",
+    "kalamata olives",
+    "feta",
+    "green bell pepper",
+    "extra virgin olive oil",
+    "red wine vinegar",
+    "dried oregano",
+    "lemon",
+    "salt",
+    "black pepper"
+  ],
+  "spice_level": 1,
+  "time_total_min": 20,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy"
+  ],
+  "search_keywords": [
+    "horiatiki",
+    "greek salad",
+    "village salad",
+    "tomato cucumber salad",
+    "kalamata olives",
+    "feta cheese",
+    "mediterranean",
+    "oregano vinaigrette",
+    "red wine vinegar",
+    "summer salad",
+    "no lettuce",
+    "easy lunch",
+    "side dish",
+    "vegetarian",
+    "pescatarian",
+    "quick salad",
+    "lemon dressing",
+    "chopped salad",
+    "authentic greek",
+    "olive oil"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "ripe tomatoes, large (cut into 1/2-inch pieces)",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 900,
+        "ml": null,
+        "optional": false,
+        "notes": "use a mix of vine-ripened or beefsteak for best flavor"
+      },
+      {
+        "display_name": "english cucumber (seeded and chopped)",
+        "quantity": 1.5,
+        "unit": "each",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "halve lengthwise and scoop seeds if very watery"
+      },
+      {
+        "display_name": "red onion (thinly sliced)",
+        "quantity": 0.5,
+        "unit": "each",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": "soak sliced onion in cold water 5 minutes to mellow if desired"
+      },
+      {
+        "display_name": "green bell pepper (seeded and diced)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "use a crisp bell pepper for crunch"
+      },
+      {
+        "display_name": "kalamata olives (pitted, halved)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "or use whole olives halved"
+      },
+      {
+        "display_name": "feta cheese (block, cut into small cubes)",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "preferably a good-quality brined feta"
+      },
+      {
+        "display_name": "extra virgin olive oil",
+        "quantity": 4,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "use fresh, fruity olive oil"
+      },
+      {
+        "display_name": "red wine vinegar",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "about half a lemon"
+      },
+      {
+        "display_name": "dried oregano",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "preferably Greek oregano"
+      },
+      {
+        "display_name": "sea salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "plus more to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "fresh parsley (chopped)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 8,
+        "ml": null,
+        "optional": true,
+        "notes": "for garnish"
+      },
+      {
+        "display_name": "optional crusty bread or toasted pita (for serving)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": true,
+        "notes": "serve alongside to soak vinaigrette"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare vegetables: wash and dry tomatoes and cucumber; core and dice tomatoes into roughly 1/2-inch pieces and chop cucumber into similar-sized pieces.",
+        "time_min": 8
+      },
+      {
+        "step_no": 2,
+        "text": "Seed and dice the green bell pepper and thinly slice half a red onion; if you prefer a milder onion flavor, place slices in cold water for a few minutes then drain.",
+        "time_min": 3
+      },
+      {
+        "step_no": 3,
+        "text": "Combine chopped tomatoes, cucumber, bell pepper, and sliced red onion in a large mixing bowl; add halved Kalamata olives.",
+        "time_min": 2
+      },
+      {
+        "step_no": 4,
+        "text": "Make the dressing by whisking together extra virgin olive oil, red wine vinegar, fresh lemon juice, dried oregano, salt, and black pepper in a small bowl until emulsified.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Pour the dressing over the chopped vegetables and toss gently to coat, taking care not to break up the tomato pieces; let sit for 2–3 minutes to marry flavors.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Add cubed feta to the salad and fold through gently, reserving a little for garnish; taste and adjust seasoning with salt, pepper, or more vinegar if needed.",
+        "time_min": 1
+      },
+      {
+        "step_no": 7,
+        "text": "Transfer to a serving bowl or platter, sprinkle chopped parsley and remaining feta on top, and serve immediately with crusty bread or pita if desired.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

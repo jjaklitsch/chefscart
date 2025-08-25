@@ -1,0 +1,284 @@
+{
+  "slug": "whole30-moroccan-chicken",
+  "title": "Whole30 Moroccan Chicken",
+  "description": "A fragrant, spice-forward braised chicken cooked with caramelized onions, tomatoes, and preserved-lemon inspired flavors, finished with bright fresh herbs and olives. This one-pan Whole30-friendly dish delivers warm Moroccan spices without added sugar and is perfect served with cauliflower rice or roasted vegetables.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "whole30",
+    "paleo"
+  ],
+  "primary_ingredient": "chicken",
+  "ingredient_tags": [
+    "chicken",
+    "onion",
+    "garlic",
+    "tomato",
+    "olive",
+    "lemon",
+    "ginger",
+    "carrot",
+    "cilantro",
+    "parsley",
+    "spice",
+    "paprika",
+    "cumin",
+    "coriander"
+  ],
+  "spice_level": 2,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "whole30",
+    "moroccan chicken",
+    "braised chicken",
+    "spiced chicken",
+    "cumin",
+    "paprika",
+    "coriander",
+    "harissa optional",
+    "cauliflower rice",
+    "one pan",
+    "gluten free",
+    "dairy free",
+    "paleo",
+    "mediterranean",
+    "weeknight dinner",
+    "meal prep",
+    "olive",
+    "preserved lemon",
+    "cilantro",
+    "roasted carrots"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "bone-in, skin-on chicken thighs",
+        "quantity": 1.5,
+        "unit": "lb",
+        "grams": 681,
+        "ml": null,
+        "optional": false,
+        "notes": "trim excess fat"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "large onion, thinly sliced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "yellow or white"
+      },
+      {
+        "display_name": "large carrots, peeled and cut into 1/2-inch rounds",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1 thumb-sized piece"
+      },
+      {
+        "display_name": "ground cumin",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 4,
+        "ml": 10,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "ground coriander",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "sweet paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 5,
+        "optional": false,
+        "notes": "smoked paprika may be used"
+      },
+      {
+        "display_name": "ground turmeric",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "crushed red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": 1.25,
+        "optional": true,
+        "notes": "optional for slight heat"
+      },
+      {
+        "display_name": "canned diced tomatoes, undrained",
+        "quantity": 14,
+        "unit": "oz",
+        "grams": 400,
+        "ml": 414,
+        "optional": false,
+        "notes": "one 14 oz can"
+      },
+      {
+        "display_name": "low-sodium chicken broth",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "or water"
+      },
+      {
+        "display_name": "green olives, pitted and halved",
+        "quantity": 0.5,
+        "unit": "cup",
+        "grams": 75,
+        "ml": null,
+        "optional": false,
+        "notes": "try Castelvetrano or Niçoise"
+      },
+      {
+        "display_name": "lemon, juiced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "use juice only; preserved lemon rind optional (see notes)"
+      },
+      {
+        "display_name": "fresh cilantro, chopped",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "plus extra for garnish"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 0.25,
+        "unit": "cup",
+        "grams": 15,
+        "ml": null,
+        "optional": false,
+        "notes": "flat-leaf preferred"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": 5,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": 2.5,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep chicken by patting dry and seasoning both sides with half the salt and pepper; bring to room temperature while you prepare other ingredients.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil in a large heavy skillet or Dutch oven over medium-high heat until shimmering; add chicken skin-side down in a single layer and brown until deep golden, about 5–6 minutes, then flip and brown other side 3–4 minutes. Work in batches if necessary.",
+        "time_min": 12
+      },
+      {
+        "step_no": 3,
+        "text": "Remove browned chicken to a plate. Reduce heat to medium, add sliced onion and carrots to the pan and cook, stirring occasionally, until softened and starting to caramelize.",
+        "time_min": 8
+      },
+      {
+        "step_no": 4,
+        "text": "Add minced garlic and grated ginger to the softened vegetables and cook, stirring, until fragrant, about 1 minute. Stir in cumin, coriander, paprika, turmeric and crushed red pepper if using, to bloom the spices for 30–45 seconds.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Pour in diced tomatoes with their juices and chicken broth, scraping up browned bits from the bottom of the pan; bring mixture to a gentle simmer.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Return chicken to the pan, nestling pieces into the sauce skin-side up; reduce heat to low, cover partially, and simmer gently until chicken is cooked through and tender, about 18–20 minutes (internal temperature 165°F/74°C).",
+        "time_min": 20
+      },
+      {
+        "step_no": 7,
+        "text": "Uncover, add olives and lemon juice, and simmer uncovered 2–3 minutes to meld flavors; taste and adjust seasoning with remaining salt and pepper as needed.",
+        "time_min": 3
+      },
+      {
+        "step_no": 8,
+        "text": "Remove pan from heat, sprinkle with chopped cilantro and parsley, and let rest 2 minutes before serving. Serve with cauliflower rice or roasted vegetables.",
+        "time_min": 5
+      }
+    ]
+  },
+  "image_url": null
+}

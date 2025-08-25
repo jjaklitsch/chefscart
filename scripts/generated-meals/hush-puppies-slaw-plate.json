@@ -1,0 +1,320 @@
+{
+  "slug": "hush-puppies-slaw-plate",
+  "title": "Hush Puppies & Slaw Plate",
+  "description": "Crisp, golden hush puppies served alongside a tangy, creamy coleslaw for contrast — a classic Southern plate combining fried cornmeal fritters with bright vinegar-mayo slaw. Balanced textures and flavors: crunchy exterior, tender corn interior, and a refreshing, slightly sweet-sour slaw.",
+  "courses": [
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "cuisines": [
+    "southern",
+    "american"
+  ],
+  "diets_supported": [],
+  "primary_ingredient": "cornmeal",
+  "ingredient_tags": [
+    "cornmeal",
+    "all-purpose flour",
+    "onion",
+    "eggs",
+    "milk",
+    "buttermilk",
+    "baking powder",
+    "baking soda",
+    "sugar",
+    "salt",
+    "black pepper",
+    "vegetable oil",
+    "cabbage",
+    "carrot",
+    "apple cider vinegar",
+    "mayonnaise",
+    "mustard",
+    "honey",
+    "scallion"
+  ],
+  "spice_level": 1,
+  "time_total_min": 65,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "hush puppies",
+    "cornmeal fritters",
+    "southern side",
+    "coleslaw",
+    "creamy slaw",
+    "fried hushpuppies",
+    "buttermilk",
+    "deep fry",
+    "comfort food",
+    "picnic",
+    "barbecue side",
+    "crispy fritters",
+    "tangy slaw",
+    "easy sides",
+    "party appetizer",
+    "fried corn",
+    "homestyle",
+    "scallion",
+    "onion",
+    "apple cider vinegar"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "yellow cornmeal",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "medium-grind"
+      },
+      {
+        "display_name": "all-purpose flour",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "baking powder",
+        "quantity": 2,
+        "unit": "tsp",
+        "grams": 8,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "baking soda",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "divide between batter and slaw"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "small yellow onion, grated",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 110,
+        "ml": null,
+        "optional": false,
+        "notes": "squeeze excess moisture"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "egg, beaten",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "buttermilk",
+        "quantity": 180,
+        "unit": "ml",
+        "grams": null,
+        "ml": 180,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "milk (or additional buttermilk)",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "adjust to achieve drop batter consistency"
+      },
+      {
+        "display_name": "vegetable oil (for frying)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": null,
+        "ml": 240,
+        "optional": false,
+        "notes": "plus more for deep frying as needed"
+      },
+      {
+        "display_name": "green cabbage, shredded",
+        "quantity": 300,
+        "unit": "g",
+        "grams": 300,
+        "ml": null,
+        "optional": false,
+        "notes": "thinly shredded"
+      },
+      {
+        "display_name": "carrot, grated",
+        "quantity": 70,
+        "unit": "g",
+        "grams": 70,
+        "ml": null,
+        "optional": false,
+        "notes": "medium carrot"
+      },
+      {
+        "display_name": "mayonnaise",
+        "quantity": 60,
+        "unit": "g",
+        "grams": 60,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "apple cider vinegar",
+        "quantity": 30,
+        "unit": "ml",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "honey",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 21,
+        "ml": null,
+        "optional": false,
+        "notes": "or sugar"
+      },
+      {
+        "display_name": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "optional brightener for slaw"
+      },
+      {
+        "display_name": "black pepper (slaw)",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 65,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prep and shred vegetables: thinly shred cabbage, grate carrot, thinly slice scallions and grate the onion; place cabbage and carrot in a large mixing bowl and set aside.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Make slaw dressing: in a small bowl whisk together mayonnaise, apple cider vinegar, Dijon mustard, honey, salt and pepper (and lemon juice if using); taste and adjust seasoning.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Toss slaw: pour dressing over shredded cabbage mix, add scallions, toss thoroughly until evenly coated, then refrigerate to meld flavors while preparing hush puppies.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Prepare hush puppy batter dry mix: in a medium bowl combine cornmeal, flour, baking powder, baking soda, sugar, salt and black pepper; whisk to evenly distribute leaveners.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Combine wet ingredients: in a separate bowl beat the egg with buttermilk and milk, then fold in grated onion and sliced scallions.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Make batter: pour wet mix into dry ingredients and stir gently until just combined (do not overmix) into a thick drop-batter; let rest 5 minutes to hydrate cornmeal.",
+        "time_min": 7
+      },
+      {
+        "step_no": 7,
+        "text": "Heat oil: pour enough vegetable oil into a heavy pot or deep fryer to reach 2.5–5 cm depth and heat to 175°C (350°F) or until a small batter dollop sizzles and browns slowly; maintain temperature.",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Fry hush puppies: drop rounded tablespoons of batter into hot oil, working in batches to avoid crowding; fry until deep golden brown on all sides, about 3–4 minutes per batch, turning as needed; drain on a wire rack or paper towels.",
+        "time_min": 16
+      },
+      {
+        "step_no": 9,
+        "text": "Finish slaw and rest: give slaw a final toss, taste and adjust acidity or sweetness if needed; let sit refrigerated at least 5 minutes for flavors to marry (can be longer).",
+        "time_min": 5
+      },
+      {
+        "step_no": 10,
+        "text": "Plate and serve: arrange warm hush puppies with a generous scoop of slaw alongside; optionally serve with hot sauce or honey butter on the side.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

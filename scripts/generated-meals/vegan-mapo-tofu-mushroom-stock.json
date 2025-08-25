@@ -1,0 +1,304 @@
+{
+  "slug": "vegan-mapo-tofu-mushroom-stock",
+  "title": "Vegan Mapo Tofu (Mushroom Stock)",
+  "description": "A deeply savory, spicy vegan take on classic Sichuan mapo tofu using an umami-rich mushroom stock instead of meat. Silky tofu and wood-ear mushrooms swim in a glossy, chili-bean and fermented black bean sauce brightened with sesame oil and scallions.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "chinese"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "tofu",
+  "ingredient_tags": [
+    "tofu",
+    "mushroom",
+    "shiitake",
+    "wood-ear mushroom",
+    "garlic",
+    "ginger",
+    "scallion",
+    "doubanjiang",
+    "fermented black beans",
+    "soy sauce",
+    "mushroom stock",
+    "cornstarch",
+    "sesame oil",
+    "vegetable oil",
+    "sugar",
+    "sichuan pepper",
+    "white pepper",
+    "chili oil",
+    "rice",
+    "green onion"
+  ],
+  "spice_level": 4,
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "soy",
+    "sesame",
+    "grain"
+  ],
+  "search_keywords": [
+    "vegan mapo tofu",
+    "mushroom stock",
+    "mapo tofu vegan",
+    "spicy tofu",
+    "doubanjiang",
+    "fermented black beans",
+    "shiitake",
+    "wood ear mushroom",
+    "sichuan pepper",
+    "chili oil",
+    "plant-based mapo",
+    "tofu dinner",
+    "quick weeknight",
+    "stir-fry",
+    "silken tofu",
+    "comfort food",
+    "asian vegan",
+    "mapo tofu recipe",
+    "savory umami",
+    "spicy chinese tofu"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "firm tofu (cubed)",
+        "quantity": 450,
+        "unit": "g",
+        "grams": 450,
+        "ml": null,
+        "optional": false,
+        "notes": "press 15–30 minutes and cut into 2-cm cubes"
+      },
+      {
+        "display_name": "dried shiitake mushrooms",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": false,
+        "notes": "soak in warm water 20 minutes then slice"
+      },
+      {
+        "display_name": "dried wood-ear mushrooms",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "soak and slice thinly"
+      },
+      {
+        "display_name": "vegetable oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "doubanjiang (spicy fermented broad bean paste)",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "grams": 22.5,
+        "ml": 22.5,
+        "optional": false,
+        "notes": "adjust for heat preference"
+      },
+      {
+        "display_name": "fermented black beans (douchi), rinsed and roughly chopped",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": "rinsing reduces saltiness"
+      },
+      {
+        "display_name": "garlic (minced)",
+        "quantity": 4,
+        "unit": "clove",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "fresh ginger (minced)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 6,
+        "ml": 15,
+        "optional": false,
+        "notes": "about 1 tbsp minced"
+      },
+      {
+        "display_name": "scallions (white and green separated, sliced)",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 100,
+        "ml": null,
+        "optional": false,
+        "notes": "slice white and green parts separately"
+      },
+      {
+        "display_name": "mushroom stock (hot) or strong vegetable stock",
+        "quantity": 400,
+        "unit": "ml",
+        "grams": null,
+        "ml": 400,
+        "optional": false,
+        "notes": "homemade or store-bought, hot"
+      },
+      {
+        "display_name": "light soy sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 15,
+        "ml": 15,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "dark soy sauce",
+        "quantity": 0.5,
+        "unit": "tbsp",
+        "grams": 7.5,
+        "ml": 7.5,
+        "optional": true,
+        "notes": "for color"
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 2.5,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cornstarch slurry (cornstarch mixed with cold water)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 16,
+        "ml": 30,
+        "optional": false,
+        "notes": "mix 2 tbsp cornstarch with 3 tbsp cold water"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": 2.5,
+        "optional": false,
+        "notes": "to finish"
+      },
+      {
+        "display_name": "sichuan peppercorns (toasted and ground)",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 1,
+        "ml": null,
+        "optional": true,
+        "notes": "toast and grind for numbing flavor"
+      },
+      {
+        "display_name": "chili oil (for serving)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": true,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "neutral oil for deep-frying or pan-frying tofu (optional)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": 27,
+        "ml": 30,
+        "optional": true,
+        "notes": "for crisper tofu; can omit"
+      },
+      {
+        "display_name": "steamed rice (to serve)",
+        "quantity": 4,
+        "unit": "cup",
+        "grams": 760,
+        "ml": 960,
+        "optional": true,
+        "notes": "approximate cooked rice; not included in cook time"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 35,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: press and cube the tofu, soak and slice dried mushrooms, mince garlic and ginger, and separate scallion whites and greens; have mushroom stock hot and cornstarch slurry mixed.",
+        "time_min": 10
+      },
+      {
+        "step_no": 2,
+        "text": "Optional—pan-fry or shallow-fry the tofu in a wide skillet with neutral oil until light golden on all sides to firm the texture, then transfer to a plate.",
+        "time_min": 6
+      },
+      {
+        "step_no": 3,
+        "text": "Heat vegetable oil in a wok or deep skillet over medium-high heat until shimmering, then add minced garlic, ginger and the white parts of the scallions and stir-fry briefly until aromatic without browning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 4,
+        "text": "Add the doubanjiang and chopped fermented black beans to the aromatics and stir-fry 30–45 seconds until the oil is infused and paste becomes fragrant.",
+        "time_min": 1
+      },
+      {
+        "step_no": 5,
+        "text": "Toss in the sliced shiitake and wood-ear mushrooms and stir to coat with the spicy paste, cooking 1–2 minutes until mushrooms begin to soften.",
+        "time_min": 2
+      },
+      {
+        "step_no": 6,
+        "text": "Pour in the hot mushroom stock and bring the mixture to a gentle simmer, scraping any browned bits; add light soy sauce, dark soy sauce if using, and sugar, then simmer 3–4 minutes to concentrate flavors.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Gently slide the tofu cubes into the simmering sauce in a single layer and simmer undisturbed 3–4 minutes so tofu heats through and absorbs flavor.",
+        "time_min": 4
+      },
+      {
+        "step_no": 8,
+        "text": "Stir the cornstarch slurry to re-mix and slowly drizzle into the simmering sauce while stirring gently to thicken; continue cooking 1–2 minutes until the sauce is glossy and coats the tofu.",
+        "time_min": 2
+      },
+      {
+        "step_no": 9,
+        "text": "Turn off the heat, swirl in sesame oil, sprinkle ground sichuan pepper if using, and fold in scallion greens; taste and adjust seasoning.",
+        "time_min": 1
+      },
+      {
+        "step_no": 10,
+        "text": "Serve hot over steamed rice with a drizzle of chili oil to taste and extra scallions/scallion greens as garnish.",
+        "time_min": 4
+      }
+    ]
+  },
+  "image_url": null
+}

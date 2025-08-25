@@ -1,0 +1,230 @@
+{
+  "slug": "roasted-pepper-mozzarella-breakfast-wrap",
+  "title": "Roasted Pepper & Mozzarella Breakfast Wrap",
+  "description": "A warm breakfast wrap filled with sweet roasted red pepper, creamy fresh mozzarella, and fluffy scrambled eggs with herbs. Quick to assemble and lightly pan-toasted for a golden, slightly crisp exterior — bright, savory, and satisfying.",
+  "courses": [
+    "breakfast",
+    "lunch"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "vegetarian"
+  ],
+  "primary_ingredient": "eggs",
+  "ingredient_tags": [
+    "eggs",
+    "mozzarella",
+    "red pepper",
+    "bell pepper",
+    "spinach",
+    "tortilla",
+    "olive oil",
+    "basil",
+    "onion",
+    "garlic",
+    "black pepper",
+    "salt"
+  ],
+  "spice_level": 1,
+  "time_total_min": 20,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten"
+  ],
+  "search_keywords": [
+    "breakfast wrap",
+    "roasted pepper",
+    "mozzarella",
+    "scrambled eggs",
+    "vegetarian breakfast",
+    "pan toasted wrap",
+    "quick breakfast",
+    "mediterranean flavors",
+    "spinach wrap",
+    "herbed eggs",
+    "red bell pepper",
+    "easy morning meal",
+    "cheesy wrap",
+    "eggs and cheese",
+    "griddled tortilla",
+    "breakfast to go",
+    "light spice",
+    "olive oil roasted",
+    "fresh basil",
+    "onion garlic"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "large eggs",
+        "quantity": 4,
+        "unit": "each",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature"
+      },
+      {
+        "display_name": "large flour tortillas",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "8-10 inch tortilla"
+      },
+      {
+        "display_name": "fresh mozzarella, sliced or torn",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 1/2 cups shredded or torn"
+      },
+      {
+        "display_name": "roasted red bell pepper, jarred or homemade, sliced",
+        "quantity": 150,
+        "unit": "g",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 large pepper worth"
+      },
+      {
+        "display_name": "fresh spinach, loosely packed",
+        "quantity": 40,
+        "unit": "g",
+        "grams": 40,
+        "ml": null,
+        "optional": true,
+        "notes": "about 1.5 cups"
+      },
+      {
+        "display_name": "small yellow onion, finely diced",
+        "quantity": 50,
+        "unit": "g",
+        "grams": 50,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/4 cup diced"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 13,
+        "ml": 15,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "for scrambling and toasting"
+      },
+      {
+        "display_name": "fresh basil leaves, chiffonade",
+        "quantity": 6,
+        "unit": "each",
+        "grams": 6,
+        "ml": null,
+        "optional": true,
+        "notes": "or 1 tsp dried oregano if unavailable"
+      },
+      {
+        "display_name": "salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.7,
+        "ml": null,
+        "optional": false,
+        "notes": "divided"
+      },
+      {
+        "display_name": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": true,
+        "notes": "optional for slight heat"
+      },
+      {
+        "display_name": "lemon juice",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 5,
+        "ml": 5,
+        "optional": true,
+        "notes": "optional, brightens roasted pepper"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 20,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Prepare ingredients: drain and slice roasted red pepper if using jarred; slice or tear mozzarella; wash and loosely chop spinach; dice onion and mince garlic; crack eggs into a bowl and whisk with half the salt and pepper.",
+        "time_min": 4
+      },
+      {
+        "step_no": 2,
+        "text": "Heat a nonstick skillet over medium heat and add half the olive oil. Sauté diced onion until translucent and soft, then add minced garlic and cook until fragrant. Add spinach and cook just until wilted; remove mixture to a bowl to reserve.",
+        "time_min": 4
+      },
+      {
+        "step_no": 3,
+        "text": "Wipe the skillet clean, add butter and return to medium-low heat. Pour in whisked eggs and gently scramble, folding frequently until soft curds form and eggs are just set; season with remaining salt and pepper. Remove eggs from heat.",
+        "time_min": 4
+      },
+      {
+        "step_no": 4,
+        "text": "Assemble wraps: lay a tortilla flat, layer half the mozzarella, roasted pepper slices, sautéed onion-spinach mixture, and scrambled eggs. Sprinkle basil and optional red pepper flakes and a drizzle of lemon juice if using. Top with remaining mozzarella and fold into a burrito-style wrap.",
+        "time_min": 3
+      },
+      {
+        "step_no": 5,
+        "text": "Heat remaining olive oil in the skillet over medium heat. Place assembled wraps seam-side down in the pan and press gently with a spatula or a weight; cook until golden and crisp, about 90 seconds, then flip and toast the other side until cheese is warm and tortilla is golden.",
+        "time_min": 4
+      },
+      {
+        "step_no": 6,
+        "text": "Rest briefly on a cutting board for one minute, slice in half, and serve warm.",
+        "time_min": 1
+      }
+    ]
+  },
+  "image_url": null
+}

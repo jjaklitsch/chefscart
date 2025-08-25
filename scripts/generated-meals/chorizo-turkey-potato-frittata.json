@@ -1,0 +1,252 @@
+{
+  "slug": "chorizo-turkey-potato-frittata",
+  "title": "Chorizo (Turkey) & Potato Frittata",
+  "description": "A hearty, golden frittata studded with lean turkey chorizo, tender pan-fried potatoes and sweet onions. Finished under the broiler for a crisp top and soft, custardy interior—brightened with parsley and a squeeze of lemon.",
+  "courses": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american",
+    "mexican"
+  ],
+  "diets_supported": [
+    "low-carb"
+  ],
+  "primary_ingredient": "egg",
+  "ingredient_tags": [
+    "turkey chorizo",
+    "eggs",
+    "potatoes",
+    "onion",
+    "bell pepper",
+    "garlic",
+    "olive oil",
+    "butter",
+    "cheddar",
+    "parsley",
+    "lemon",
+    "salt",
+    "black pepper",
+    "paprika"
+  ],
+  "spice_level": 3,
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 1,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "egg",
+    "dairy"
+  ],
+  "search_keywords": [
+    "turkey chorizo",
+    "potato frittata",
+    "egg bake",
+    "one pan",
+    "brunch",
+    "weeknight dinner",
+    "pan fried potatoes",
+    "broiled frittata",
+    "cheddar",
+    "easy breakfast",
+    "low-carb option",
+    "savory eggs",
+    "southwest flavors",
+    "meal prep",
+    "gluten free",
+    "herbs",
+    "parsley",
+    "smoky",
+    "paprika",
+    "lemon"
+  ],
+  "ingredients_json": {
+    "servings": 4,
+    "ingredients": [
+      {
+        "display_name": "turkey chorizo (casings removed if applicable)",
+        "quantity": 240,
+        "unit": "g",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "crumbled"
+      },
+      {
+        "display_name": "medium potatoes (Yukon Gold), peeled and diced 1/2-inch",
+        "quantity": 400,
+        "unit": "g",
+        "grams": 400,
+        "ml": null,
+        "optional": false,
+        "notes": "even dice for quick frying"
+      },
+      {
+        "display_name": "large eggs",
+        "quantity": 8,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": false,
+        "notes": "room temperature, beaten"
+      },
+      {
+        "display_name": "whole milk or cream",
+        "quantity": 60,
+        "unit": "ml",
+        "grams": null,
+        "ml": 60,
+        "optional": false,
+        "notes": "for custardy texture"
+      },
+      {
+        "display_name": "yellow onion, finely chopped",
+        "quantity": 120,
+        "unit": "g",
+        "grams": 120,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1 small-medium onion"
+      },
+      {
+        "display_name": "red bell pepper, seeded and diced",
+        "quantity": 90,
+        "unit": "g",
+        "grams": 90,
+        "ml": null,
+        "optional": true,
+        "notes": "adds sweetness and color"
+      },
+      {
+        "display_name": "garlic cloves, minced",
+        "quantity": 2,
+        "unit": "clove",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "shredded sharp cheddar",
+        "quantity": 80,
+        "unit": "g",
+        "grams": 80,
+        "ml": null,
+        "optional": true,
+        "notes": "can substitute pepper jack"
+      },
+      {
+        "display_name": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 14,
+        "ml": null,
+        "optional": false,
+        "notes": "for skillet richness"
+      },
+      {
+        "display_name": "fresh parsley, chopped",
+        "quantity": 15,
+        "unit": "g",
+        "grams": 15,
+        "ml": null,
+        "optional": true,
+        "notes": "for finishing"
+      },
+      {
+        "display_name": "lemon, zested and juiced",
+        "quantity": 1,
+        "unit": "each",
+        "grams": null,
+        "ml": null,
+        "optional": true,
+        "notes": "zest and 1 tsp juice for brightness"
+      },
+      {
+        "display_name": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 6,
+        "ml": null,
+        "optional": false,
+        "notes": "adjust to taste"
+      },
+      {
+        "display_name": "freshly ground black pepper",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 40,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Preheat the oven to broil (or 260°C/500°F) or set to 220°C (425°F) if your broiler is uneven. Place a 10-inch (25 cm) oven-safe nonstick or cast-iron skillet on the stove to warm.",
+        "time_min": 5
+      },
+      {
+        "step_no": 2,
+        "text": "Heat oil and butter in the skillet over medium heat until butter foams. Add diced potatoes in a single layer and cook, stirring occasionally, until edges are golden and potatoes are tender when pierced, about 10 minutes.",
+        "time_min": 10
+      },
+      {
+        "step_no": 3,
+        "text": "Push potatoes to the perimeter, add turkey chorizo to the center and break up with a spatula. Cook until browned and cooked through, about 5 minutes. Stir the potatoes and chorizo together.",
+        "time_min": 5
+      },
+      {
+        "step_no": 4,
+        "text": "Add chopped onion and diced bell pepper to the skillet; cook, stirring, until softened, about 4 minutes. Add minced garlic and smoked paprika and cook 30 seconds until fragrant. Season with half the salt and pepper.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "While vegetables cook, whisk eggs with milk or cream in a bowl until blended. Stir in remaining salt and pepper and half the shredded cheese if using.",
+        "time_min": 3
+      },
+      {
+        "step_no": 6,
+        "text": "Pour the egg mixture evenly over the skillet ingredients, shaking the pan gently to distribute. Cook over medium-low heat without stirring until the edges begin to set, about 4 minutes. Use a spatula to lift set edges so uncooked egg flows underneath.",
+        "time_min": 4
+      },
+      {
+        "step_no": 7,
+        "text": "Sprinkle remaining cheese on top and transfer the skillet to the oven. Broil (or bake at 220°C/425°F) until the top is puffed and lightly browned, about 5 minutes (watch closely to prevent burning).",
+        "time_min": 5
+      },
+      {
+        "step_no": 8,
+        "text": "Remove skillet and let the frittata rest for 3 minutes. Finish with lemon zest, a squeeze of lemon juice and chopped parsley. Slice into wedges and serve warm.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}

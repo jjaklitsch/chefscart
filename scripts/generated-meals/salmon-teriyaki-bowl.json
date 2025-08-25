@@ -1,0 +1,285 @@
+{
+  "slug": "salmon-teriyaki-bowl",
+  "title": "Salmon Teriyaki Bowl",
+  "description": "Pan-seared salmon glazed with a glossy homemade teriyaki sauce served over steamed jasmine rice with crisp-edged broccolini and pickled cucumber. Bright, savory-sweet flavors with a hint of toasted sesame create a balanced, restaurant-style bowl made at home.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "japanese"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "salmon",
+  "ingredient_tags": [
+    "salmon",
+    "rice",
+    "broccolini",
+    "cucumber",
+    "soy sauce",
+    "mirin",
+    "sugar",
+    "sesame oil",
+    "garlic",
+    "ginger",
+    "scallion",
+    "rice vinegar",
+    "cornstarch",
+    "water",
+    "vegetable oil",
+    "sesame seeds"
+  ],
+  "spice_level": 1,
+  "time_total_min": 45,
+  "servings_default": 2,
+  "servings_min": 1,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "soy",
+    "sesame",
+    "grain"
+  ],
+  "search_keywords": [
+    "salmon teriyaki",
+    "teriyaki bowl",
+    "japanese bowl",
+    "pescatarian dinner",
+    "pan seared salmon",
+    "glazed salmon",
+    "jasmine rice bowl",
+    "broccolini",
+    "pickled cucumber",
+    "homemade teriyaki sauce",
+    "sesame seeds",
+    "quick weeknight",
+    "rice bowl",
+    "ginger garlic",
+    "mirin soy glaze",
+    "healthy dinner",
+    "asian flavors",
+    "stovetop recipe",
+    "easy teriyaki",
+    "restaurant-style bowl"
+  ],
+  "ingredients_json": {
+    "servings": 2,
+    "ingredients": [
+      {
+        "display_name": "salmon fillets, skin-on",
+        "quantity": 12,
+        "unit": "oz",
+        "grams": 340,
+        "ml": null,
+        "optional": false,
+        "notes": "about 2 fillets (6 oz each), patted dry"
+      },
+      {
+        "display_name": "jasmine rice (uncooked)",
+        "quantity": 1,
+        "unit": "cup",
+        "grams": 240,
+        "ml": null,
+        "optional": false,
+        "notes": "rinsed until water runs clear"
+      },
+      {
+        "display_name": "water (for rice)",
+        "quantity": 1.25,
+        "unit": "cup",
+        "grams": null,
+        "ml": 300,
+        "optional": false,
+        "notes": "adjust per rice package if needed"
+      },
+      {
+        "display_name": "broccolini (trimmed)",
+        "quantity": 200,
+        "unit": "g",
+        "grams": 200,
+        "ml": null,
+        "optional": false,
+        "notes": "trim ends, halved if thick"
+      },
+      {
+        "display_name": "cucumber, thinly sliced (for quick-pickle)",
+        "quantity": 1,
+        "unit": "each",
+        "grams": 150,
+        "ml": null,
+        "optional": false,
+        "notes": "english or Persian cucumber"
+      },
+      {
+        "display_name": "rice vinegar (for pickling)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": "plus 1 tsp sugar and pinch salt"
+      },
+      {
+        "display_name": "mirin",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "soy sauce (regular or low-sodium)",
+        "quantity": 3,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 45,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "water (for teriyaki sauce)",
+        "quantity": 2,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 30,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "granulated sugar",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": 12,
+        "ml": null,
+        "optional": false,
+        "notes": "can substitute brown sugar"
+      },
+      {
+        "display_name": "fresh ginger, grated",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2,
+        "ml": null,
+        "optional": false,
+        "notes": "about 1/2-inch piece"
+      },
+      {
+        "display_name": "garlic, minced",
+        "quantity": 1,
+        "unit": "clove",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": null
+      },
+      {
+        "display_name": "cornstarch",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 2.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to thicken sauce"
+      },
+      {
+        "display_name": "neutral oil (vegetable or canola)",
+        "quantity": 1,
+        "unit": "tbsp",
+        "grams": null,
+        "ml": 15,
+        "optional": false,
+        "notes": "for searing salmon"
+      },
+      {
+        "display_name": "sesame oil",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": null,
+        "ml": 5,
+        "optional": false,
+        "notes": "to finish sauce"
+      },
+      {
+        "display_name": "scallions, thinly sliced",
+        "quantity": 2,
+        "unit": "each",
+        "grams": 30,
+        "ml": null,
+        "optional": false,
+        "notes": "white and green parts separated if desired"
+      },
+      {
+        "display_name": "toasted sesame seeds",
+        "quantity": 1,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "white or mixed"
+      },
+      {
+        "display_name": "kosher salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "grams": 3,
+        "ml": null,
+        "optional": false,
+        "notes": "for seasoning salmon and vegetables"
+      },
+      {
+        "display_name": "black pepper, freshly ground",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "grams": 0.5,
+        "ml": null,
+        "optional": false,
+        "notes": "to taste"
+      }
+    ]
+  },
+  "instructions_json": {
+    "time_total_min": 45,
+    "steps": [
+      {
+        "step_no": 1,
+        "text": "Start rice: rinse rice until water runs clear, combine rinsed rice and measured water in a small pot, bring to a simmer with lid on, reduce heat to low and cook covered until water is absorbed and rice is tender; keep covered off heat for a few minutes.",
+        "time_min": 20
+      },
+      {
+        "step_no": 2,
+        "text": "Quick-pickle cucumber: combine rice vinegar, sugar, and a pinch of salt in a bowl, stir until sugar dissolves, add thinly sliced cucumber and let sit while you prepare other components.",
+        "time_min": 5
+      },
+      {
+        "step_no": 3,
+        "text": "Make teriyaki sauce: whisk together mirin, soy sauce, water, sugar, grated ginger and minced garlic in a small bowl; mix cornstarch with a little cold water to create a slurry and set aside.",
+        "time_min": 3
+      },
+      {
+        "step_no": 4,
+        "text": "Cook broccolini: heat a skillet over medium-high heat with a small splash of oil, add broccolini and a pinch of salt, cook until bright green and tender-crisp with some browned edges, about a few minutes; remove and keep warm.",
+        "time_min": 5
+      },
+      {
+        "step_no": 5,
+        "text": "Sear salmon: pat salmon dry, season skin and flesh lightly with salt and pepper; heat oil in a nonstick or cast-iron skillet over medium-high heat, place salmon skin-side down and cook without moving until skin is crisp and salmon is cooked about two-thirds of the way up the side, then flip briefly to finish.",
+        "time_min": 6
+      },
+      {
+        "step_no": 6,
+        "text": "Glaze salmon: reduce heat to medium-low, pour teriyaki mixture into the skillet or a small saucepan, bring to a simmer, stir in cornstarch slurry and cook until sauce is glossy and slightly thickened, stir in sesame oil; spoon or brush sauce over cooked salmon to glaze.",
+        "time_min": 3
+      },
+      {
+        "step_no": 7,
+        "text": "Assemble bowls: divide steamed rice between bowls, top with broccolini and glazed salmon, add pickled cucumber, sprinkle sliced scallions and toasted sesame seeds, and serve immediately.",
+        "time_min": 3
+      }
+    ]
+  },
+  "image_url": null
+}
