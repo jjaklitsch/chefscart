@@ -23,6 +23,56 @@ npm run test:ui       # Run tests with UI
 npm run test:coverage # Run tests with coverage report
 ```
 
+## Staging & Production Environments
+
+### Environment Setup
+- **Production**: `chefscart.ai` (main branch)
+- **Staging**: `chefscart.vercel.app` (staging branch)
+
+### Staging Workflow
+```bash
+# Switch to staging branch
+git checkout staging
+
+# Merge changes from main
+git merge main
+
+# Push to staging (auto-deploys to chefscart.vercel.app)
+git push origin staging
+
+# View staging site
+open https://chefscart.vercel.app
+```
+
+### Production Deployment
+```bash
+# Switch to main branch
+git checkout main
+
+# Merge tested changes from staging
+git merge staging
+
+# Push to production (auto-deploys to chefscart.ai)
+git push origin main
+
+# View production site
+open https://chefscart.ai
+```
+
+### Vercel Configuration
+1. **In Vercel Dashboard**:
+   - Production Branch: `main` → deploys to `chefscart.ai`
+   - Preview Deployments: All other branches
+   - Staging URL: `chefscart.vercel.app` (automatically available)
+
+2. **Environment Variables**:
+   - Set same variables for both staging and production
+   - Use Vercel's environment settings to manage different values if needed
+
+3. **Domain Management**:
+   - `chefscart.ai` → Production (main branch)
+   - `chefscart.vercel.app` → Staging (staging branch or latest preview)
+
 ## Architecture Overview
 
 ### Tech Stack

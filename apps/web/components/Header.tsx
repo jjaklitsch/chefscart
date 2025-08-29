@@ -70,16 +70,16 @@ export default function Header() {
             ) : (
               <>
                 <Link
+                  href="/quick-plan"
+                  className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
+                >
+                  Meal Planner
+                </Link>
+                <Link
                   href="/recipes"
                   className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
                 >
                   Recipes
-                </Link>
-                <Link
-                  href="/quick-plan"
-                  className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
-                >
-                  Quick Plan
                 </Link>
                 <Link
                   href="/profile"
