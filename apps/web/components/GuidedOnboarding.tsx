@@ -569,26 +569,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         })(),
         mealsPerWeek: (answers.breakfastMeals || 0) + (answers.lunchMeals || 5) + (answers.dinnerMeals || 5),
         peoplePerMeal: answers.peoplePerMeal || 2,
-        mealTypes: [
-          ...((answers.breakfastMeals || 0) > 0 ? [{
-            type: 'breakfast' as const,
-            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, answers.breakfastMeals || 0),
-            adults: Math.ceil((answers.peoplePerMeal || 2) * 0.7),
-            kids: Math.floor((answers.peoplePerMeal || 2) * 0.3 / 0.5)
-          }] : []),
-          ...((answers.lunchMeals || 5) > 0 ? [{
-            type: 'lunch' as const,
-            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, answers.lunchMeals || 5),
-            adults: Math.ceil((answers.peoplePerMeal || 2) * 0.7),
-            kids: Math.floor((answers.peoplePerMeal || 2) * 0.3 / 0.5)
-          }] : []),
-          ...((answers.dinnerMeals || 5) > 0 ? [{
-            type: 'dinner' as const,
-            days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, answers.dinnerMeals || 5),
-            adults: Math.ceil((answers.peoplePerMeal || 2) * 0.7),
-            kids: Math.floor((answers.peoplePerMeal || 2) * 0.3 / 0.5)
-          }] : [])
-        ],
+        mealTypes: [], // Legacy field - using new breakfastsPerWeek, lunchesPerWeek, dinnersPerWeek instead
         
         // Photo and ingredient identification (legacy compatibility)
         pantryItems: [...identifiedIngredients, ...(answers.manuallyAddedIngredients || [])],
