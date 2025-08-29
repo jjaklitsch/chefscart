@@ -70,7 +70,7 @@ export default function RecipePage() {
       // Get all meals and find by slug matching
       const { data: allMeals, error } = await supabase
         .from('meals')
-        .select('*')
+        .select('*') as { data: any[] | null, error: any }
       
       if (error) {
         throw error
@@ -399,7 +399,7 @@ export default function RecipePage() {
           {/* Related Recipes */}
           <div className="mt-12">
             <RelatedRecipes 
-              currentRecipe={recipe}
+              currentRecipe={{ ...recipe, cooking_difficulty: recipe.cooking_difficulty || 'medium' }}
               cuisine={recipe.cuisines?.[0] || 'International'}
               course={recipe.courses?.[0] || 'Main Course'}
             />

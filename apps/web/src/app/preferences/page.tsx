@@ -109,15 +109,8 @@ export default function PreferencesPage() {
           const data = JSON.parse(stored)
           setPreferences(data.preferences || {})
         } else {
-          // Default preferences
-          setPreferences({
-            cuisinePreferences: [],
-            dietaryStyle: [],
-            ingredientsToAvoid: [],
-            spiceTolerance: '3',
-            organicPreference: 'no_preference',
-            peoplePerMeal: 2
-          })
+          // No stored preferences
+          setPreferences(null)
         }
       }
     } catch (error) {
@@ -163,7 +156,7 @@ export default function PreferencesPage() {
     }
   }
 
-  const toggleArrayPreference = (category: 'cuisinePreferences' | 'dietaryStyle' | 'ingredientsToAvoid' | 'favoriteFoods', value: string | string[]) => {
+  const toggleArrayPreference = (category: 'cuisinePreferences' | 'dietaryStyle' | 'foodsToAvoid' | 'favoriteFoods', value: string | string[]) => {
     if (!preferences) return
     
     const current = preferences[category] || []
@@ -187,7 +180,7 @@ export default function PreferencesPage() {
     })
   }
 
-  const isOptionSelected = (category: 'cuisinePreferences' | 'dietaryStyle' | 'ingredientsToAvoid' | 'favoriteFoods', value: string | string[]) => {
+  const isOptionSelected = (category: 'cuisinePreferences' | 'dietaryStyle' | 'foodsToAvoid' | 'favoriteFoods', value: string | string[]) => {
     if (!preferences) return false
     const current = preferences[category] || []
     const valueArray = Array.isArray(value) ? value : [value]
@@ -341,9 +334,9 @@ export default function PreferencesPage() {
                 {avoidOptions.map(option => (
                   <button
                     key={option.id}
-                    onClick={() => toggleArrayPreference('ingredientsToAvoid', option.value)}
+                    onClick={() => toggleArrayPreference('foodsToAvoid', option.value)}
                     className={`px-4 py-2 rounded-lg border-2 font-medium transition-colors flex items-center gap-2 ${
-                      isOptionSelected('ingredientsToAvoid', option.value)
+                      isOptionSelected('foodsToAvoid', option.value)
                         ? 'bg-red-600 border-red-600 text-white'
                         : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
                     }`}
@@ -419,7 +412,7 @@ export default function PreferencesPage() {
                 ].map(option => (
                   <button
                     key={option.value}
-                    onClick={() => setPreferences({ ...preferences, organicPreference: option.value })}
+                    onClick={() => setPreferences({ ...preferences, organicPreference: option.value as "preferred" | "only_if_within_10_percent" | "no_preference" })}
                     className={`px-4 py-3 rounded-lg border-2 font-medium transition-colors ${
                       preferences.organicPreference === option.value
                         ? 'bg-green-600 border-green-600 text-white'

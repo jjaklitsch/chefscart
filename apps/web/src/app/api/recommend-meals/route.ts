@@ -245,7 +245,7 @@ export async function POST(request: NextRequest) {
     // TODO: Re-implement servings filter with proper Supabase syntax
 
     // Execute query with a higher limit for filtering
-    const { data: meals, error } = await query.limit(200)
+    const { data: meals, error } = await query.limit(200) as { data: SupabaseMeal[] | null, error: any }
 
     if (error) {
       console.error('Supabase query error:', error)
@@ -339,7 +339,7 @@ export async function POST(request: NextRequest) {
             const neededForCourse = courseMealCounts[courseType] || 0
             
             // Add to primary meals if we need more for this course
-            if (mealsByType[courseType].length < neededForCourse) {
+            if (mealsByType[courseType] && mealsByType[courseType].length < neededForCourse) {
               mealsByType[courseType].push(meal)
               assigned = true
               break
@@ -350,9 +350,9 @@ export async function POST(request: NextRequest) {
         // Add to backups for ALL applicable courses (not just first match)
         if (includeBackups) {
           for (const courseType of ['breakfast', 'lunch', 'dinner']) {
-            if (courses.includes(courseType) && backupMealsByType[courseType].length < 50) {
+            if (courses.includes(courseType) && backupMealsByType[courseType] && backupMealsByType[courseType].length < 50) {
               // Only add if not already in primary meals for this course
-              if (!mealsByType[courseType].some(m => m.id === meal.id)) {
+              if (mealsByType[courseType] && !mealsByType[courseType].some(m => m.id === meal.id)) {
                 backupMealsByType[courseType].push(meal)
               }
             }
@@ -361,16 +361,16 @@ export async function POST(request: NextRequest) {
       }
 
       // Debug: Log meal counts by type
-      console.log(`  Breakfast: ${mealsByType.breakfast.length} (needed: ${courseMealCounts.breakfast || 0})`)
-      console.log(`  Lunch: ${mealsByType.lunch.length} (needed: ${courseMealCounts.lunch || 0})`)
-      console.log(`  Dinner: ${mealsByType.dinner.length} (needed: ${courseMealCounts.dinner || 0})`)
+      console.log(`  Breakfast: ${mealsByType.breakfast?.length || 0} (needed: ${courseMealCounts.breakfast || 0})`)
+      console.log(`  Lunch: ${mealsByType.lunch?.length || 0} (needed: ${courseMealCounts.lunch || 0})`)
+      console.log(`  Dinner: ${mealsByType.dinner?.length || 0} (needed: ${courseMealCounts.dinner || 0})`)
       
 
       // Collect all selected meals for compatibility
       const finalMeals = [
-        ...mealsByType.breakfast,
-        ...mealsByType.lunch,
-        ...mealsByType.dinner
+        ...(mealsByType.breakfast || []),
+        ...(mealsByType.lunch || []),
+        ...(mealsByType.dinner || [])
       ]
 
 

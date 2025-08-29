@@ -11,6 +11,7 @@ import Footer from '../../../components/Footer'
 interface RecentMealPlan {
   id: string
   createdAt: string
+  cartUrl?: string
   recipes: Array<{
     title: string
     mealType: string
@@ -196,7 +197,7 @@ export default function DashboardPage() {
                           Meal Plan - {formatDate(plan.createdAt)}
                         </h3>
                         <p className="text-sm text-gray-600 mt-1">
-                          {plan.mealPlan?.recipes?.length || 0} delicious recipes ready to cook
+                          {plan.recipes?.length || 0} delicious recipes ready to cook
                         </p>
                       </div>
                       
@@ -216,10 +217,10 @@ export default function DashboardPage() {
                   </div>
 
                   {/* Recipe Grid */}
-                  {plan.mealPlan?.recipes && (
+                  {plan.recipes && (
                     <div className="p-6">
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                        {plan.mealPlan.recipes.slice(0, 5).map((recipe: any, index: number) => (
+                        {plan.recipes.slice(0, 5).map((recipe: any, index: number) => (
                           <div key={index} className="bg-white rounded-lg border border-gray-200 overflow-hidden group hover:shadow-sm transition-shadow">
                             {recipe.image ? (
                               <div className="aspect-video bg-gray-100 relative">
@@ -245,11 +246,11 @@ export default function DashboardPage() {
                           </div>
                         ))}
                         
-                        {plan.mealPlan.recipes.length > 5 && (
+                        {plan.recipes.length > 5 && (
                           <div className="bg-white rounded-lg border border-gray-200 flex items-center justify-center p-4">
                             <div className="text-center">
                               <div className="text-2xl font-bold text-gray-400 mb-1">
-                                +{plan.mealPlan.recipes.length - 5}
+                                +{plan.recipes.length - 5}
                               </div>
                               <div className="text-xs text-gray-600">
                                 more recipes

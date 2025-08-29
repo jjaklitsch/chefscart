@@ -38,3 +38,9 @@ functions/.env
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# development files
+apps/web/monitor.log
+apps/web/dev-server.pid
+*.pid
+*.log

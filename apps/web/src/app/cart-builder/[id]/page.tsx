@@ -108,10 +108,14 @@ export default function CartBuilderPage() {
     )
   }
 
+  if (!preferences) {
+    return <div>Loading preferences...</div>
+  }
+
   return (
     <CartBuilder
       recipes={mealPlan.recipes}
-      pantryItems={preferences?.pantryItems || []}
+      pantryItems={preferences.pantryItems || []}
       preferences={preferences}
       onProceedToCheckout={handleCartBuilderComplete}
       onBack={handleBack}

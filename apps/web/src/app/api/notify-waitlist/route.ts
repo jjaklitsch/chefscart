@@ -93,18 +93,12 @@ function createNotificationEmail(user: WaitlistUser) {
           </a>
         </div>
         
-        <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 25px 0;">
-          <h4 style="margin: 0 0 10px 0; color: #333;">✨ Special Launch Offer</h4>
-          <p style="margin: 0; color: #666;">As one of our early waitlist members, you get priority access to all our premium features - completely free during our launch period!</p>
-        </div>
         
-        <p>Questions? We're here to help! Reply to this email or visit our help center.</p>
+        <p>Questions? We're here to help! Reply to this email or visit our <a href="https://chefscart.ai/faq" style="color: #f97316;">FAQ page</a>.</p>
         
         <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
         
         <p style="font-size: 14px; color: #666; text-align: center;">
-          Thanks for your patience while we expanded to ${location}!<br>
-          ChefsCart Team 🧑‍🍳<br><br>
           You received this email because you joined our waitlist for ZIP ${user.zip_code}.<br>
           <a href="mailto:support@chefscart.ai" style="color: #f97316;">support@chefscart.ai</a>
         </p>
@@ -129,15 +123,9 @@ Create your first personalized meal plan in just 2 minutes:
 • Automatic shopping lists: Instacart-ready with all ingredients
 • Smart pantry management: Upload photos to optimize your groceries
 
-✨ Special Launch Offer
-As one of our early waitlist members, you get priority access to all our premium features - completely free during our launch period!
-
 Get started now: https://chefscart.ai?utm_source=waitlist&utm_medium=email&utm_campaign=zip_available&zip=${user.zip_code}
 
-Questions? We're here to help! Reply to this email or visit our help center.
-
-Thanks for your patience while we expanded to ${location}!
-ChefsCart Team 🧑‍🍳
+Questions? We're here to help! Reply to this email or visit our FAQ page: https://chefscart.ai/faq
 
 You received this email because you joined our waitlist for ZIP ${user.zip_code}.
 Contact us: support@chefscart.ai

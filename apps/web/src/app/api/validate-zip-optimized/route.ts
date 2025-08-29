@@ -119,8 +119,8 @@ export async function POST(request: NextRequest) {
           last_api_check: new Date().toISOString(),
           api_response_status: instacartResponse.status
         })
-        .then(() => console.log(`💾 Cached result for ZIP ${zipCode}`))
-        .catch((err) => console.error('Error caching result:', err))
+      
+      console.log(`💾 Cached result for ZIP ${zipCode}`)
 
       return NextResponse.json({
         isValid: true,

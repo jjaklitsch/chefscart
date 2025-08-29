@@ -53,13 +53,13 @@ export default function CuisinePage() {
       // First, get all cuisines to find the exact match
       const { data: allMeals, error: mealsError } = await supabase
         .from('meals')
-        .select('cuisines')
+        .select('cuisines') as { data: any[] | null, error: any }
 
       if (mealsError) throw mealsError
 
       // Find the cuisine name that matches our slug
       const allCuisines = new Set<string>()
-      allMeals.forEach(meal => {
+      allMeals?.forEach(meal => {
         meal.cuisines.forEach((cuisine: string) => allCuisines.add(cuisine))
       })
 
@@ -79,17 +79,17 @@ export default function CuisinePage() {
         .from('meals')
         .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url')
         .contains('cuisines', [matchingCuisine])
-        .order('title')
+        .order('title') as { data: any[] | null, error: any }
 
       if (error) throw error
 
       // Generate slugs and format data
-      const formattedRecipes = data.map(recipe => ({
+      const formattedRecipes = data?.map(recipe => ({
         ...recipe,
         slug: recipe.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
       }))
 
-      setRecipes(formattedRecipes)
+      setRecipes(formattedRecipes || [])
     } catch (error) {
       console.error('Error loading cuisine recipes:', error)
       notFound()

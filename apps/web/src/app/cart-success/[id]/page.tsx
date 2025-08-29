@@ -40,6 +40,7 @@ export default function CartSuccessPage() {
 
       return () => clearInterval(timer)
     }
+    return undefined
   }, [user, mealPlanData, loading, router])
 
   const loadMealPlanData = () => {

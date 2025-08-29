@@ -147,7 +147,7 @@ export default function CartPreparationPage() {
         onContinue={handleCartPreparation}
         onBack={handleBack}
         isLoading={isCreatingCart}
-        defaultEmail={user?.email}
+        defaultEmail={user?.email || ''}
       />
     </div>
   )

@@ -1,0 +1,16 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/instacart-sync",
+      "schedule": "0 0 1 * *"
+    }
+  ],
+  "functions": {
+    "apps/web/src/app/api/cron/instacart-sync/route.ts": {
+      "maxDuration": 300
+    },
+    "apps/web/src/app/api/notify-waitlist/route.ts": {
+      "maxDuration": 60
+    }
+  }
+}

@@ -120,8 +120,8 @@ export async function GET(request: NextRequest) {
         console.error('Auth callback error - FULL DETAILS:', {
           error,
           message: error.message,
-          status: error.status,
-          code: error.code,
+          status: (error as any).status,
+          code: (error as any).code,
           details: error
         })
         return NextResponse.redirect(`${requestUrl.origin}/login?error=auth_failed&message=${encodeURIComponent(error.message || 'Unknown error')}`)

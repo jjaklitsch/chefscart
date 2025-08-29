@@ -207,7 +207,7 @@ export default function QuickPlanPage() {
         id: mealPlanId,
         userId: user?.id || `temp_${Date.now()}`,
         email: user?.email,
-        zipCode: savedPreferences.zipCode || localStorage.getItem('chefscart_zipcode'),
+        zipCode: localStorage.getItem('chefscart_zipcode') || (savedPreferences as any).zipCode,
         mealPlan,
         consolidatedCart: [],
         createdAt: new Date().toISOString(),
@@ -302,7 +302,7 @@ export default function QuickPlanPage() {
                 <span className="font-medium">Spice Level:</span> {savedPreferences.spiceTolerance === '1' ? 'Mild' : savedPreferences.spiceTolerance === '3' ? 'Medium' : 'Hot'}
               </div>
               <div>
-                <span className="font-medium">Avoided:</span> {savedPreferences.ingredientsToAvoid?.join(', ') || 'None'}
+                <span className="font-medium">Avoided:</span> {savedPreferences.foodsToAvoid?.join(', ') || 'None'}
               </div>
             </div>
           </div>

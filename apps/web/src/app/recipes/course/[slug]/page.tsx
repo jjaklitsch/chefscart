@@ -53,13 +53,13 @@ export default function CoursePage() {
       // First, get all courses to find the exact match
       const { data: allMeals, error: mealsError } = await supabase
         .from('meals')
-        .select('courses')
+        .select('courses') as { data: any[] | null, error: any }
 
       if (mealsError) throw mealsError
 
       // Find the course name that matches our slug
       const allCourses = new Set<string>()
-      allMeals.forEach(meal => {
+      allMeals?.forEach(meal => {
         meal.courses.forEach((course: string) => allCourses.add(course))
       })
 
@@ -79,17 +79,17 @@ export default function CoursePage() {
         .from('meals')
         .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url')
         .contains('courses', [matchingCourse])
-        .order('title')
+        .order('title') as { data: any[] | null, error: any }
 
       if (error) throw error
 
       // Generate slugs and format data
-      const formattedRecipes = data.map(recipe => ({
+      const formattedRecipes = data?.map(recipe => ({
         ...recipe,
         slug: recipe.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
       }))
 
-      setRecipes(formattedRecipes)
+      setRecipes(formattedRecipes || [])
     } catch (error) {
       console.error('Error loading course recipes:', error)
       notFound()

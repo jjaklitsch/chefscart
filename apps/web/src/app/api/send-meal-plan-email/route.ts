@@ -79,6 +79,7 @@ export async function POST(request: NextRequest) {
         servings: recipe.servings,
         ingredients: recipe.ingredients
       })),
+      totalServings: mealPlan.recipes.reduce((total: number, recipe: any) => total + (recipe.servings || 0), 0),
       consolidatedCart: consolidatedCart.map((item: any) => ({
         name: item.name,
         shoppableName: item.shoppableName,

@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
 
 
     // Get the meal plan data from the request
-    let consolidatedCart = []
+    let consolidatedCart: any[] = []
     
     if (mealPlanData && mealPlanData.consolidatedCart) {
       consolidatedCart = mealPlanData.consolidatedCart

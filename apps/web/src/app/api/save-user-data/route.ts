@@ -60,6 +60,9 @@ export async function POST(request: NextRequest) {
       user = newUser.user
     } else {
       // Update existing user metadata
+      if (!user) {
+        throw new Error('User not found but isNewUser is false')
+      }
       const { data: updatedUser, error: updateError } = await supabase.auth.admin.updateUserById(
         user.id,
         {

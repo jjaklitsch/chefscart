@@ -13,7 +13,7 @@ interface Recipe {
   prep_time?: number
   cook_time?: number
   time_total_min?: number
-  cooking_difficulty?: string
+  cooking_difficulty: string
   cuisines: string[]
   diets_supported: string[]
   courses: string[]
