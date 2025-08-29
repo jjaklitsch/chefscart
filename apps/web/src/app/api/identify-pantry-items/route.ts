@@ -16,7 +16,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate that all files are actual File objects and are images
-    console.log(`🔍 API: Starting validation of ${files.length} files`)
     
     const validFiles = files.filter(file => {
       if (!(file instanceof File)) {
@@ -25,10 +24,8 @@ export async function POST(request: NextRequest) {
       }
       
       // Detailed logging for debugging
-      console.log(`🔍 API: Validating file: ${file.name}`)
       console.log(`  - Size: ${file.size} bytes (${(file.size / 1024 / 1024).toFixed(2)}MB)`)
       console.log(`  - Type: "${file.type}" (${file.type ? 'has type' : 'NO TYPE SET'})`)
-      console.log(`  - Last modified: ${file.lastModified}`)
       
       const fileName = file.name.toLowerCase()
       const isHeic = file.type === 'image/heic' || file.type === 'image/heif' ||
@@ -41,7 +38,6 @@ export async function POST(request: NextRequest) {
                                fileName.endsWith('.png') || fileName.endsWith('.webp') || 
                                fileName.endsWith('.heic') || fileName.endsWith('.heif')
       
-      console.log(`  - Type validation: hasValidImageType=${hasValidImageType}, hasValidExtension=${hasValidExtension}`)
       
       if (!hasValidImageType && !hasValidExtension) {
         console.warn(`❌ Non-image file rejected: type="${file.type}", name="${file.name}"`)
@@ -54,10 +50,8 @@ export async function POST(request: NextRequest) {
       }
       
       if (isHeic) {
-        console.log(`✅ HEIC file detected and validated: ${file.name}`)
       }
       
-      console.log(`✅ File ${file.name}: VALID`)
       return true
     })
 
@@ -73,7 +67,6 @@ export async function POST(request: NextRequest) {
       }, { status: 500 })
     }
 
-    console.log(`Analyzing ${validFiles.length} photos for pantry items`)
 
     // Convert images to base64 for GPT-4 Vision
     const imagePromises = validFiles.map(async (file, index) => {
@@ -89,14 +82,11 @@ export async function POST(request: NextRequest) {
                       file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif')
         
         if (isHeic) {
-          console.log(`🔄 Converting HEIF/HEIC file to PNG using Sharp: ${file.name}`)
           console.log(`  - Original size: ${(buffer.byteLength / 1024 / 1024).toFixed(2)}MB`)
-          console.log(`  - Original MIME type: "${file.type}"`)
           console.log(`  - Sharp version: ${require('sharp').versions.sharp}`)
           
           try {
             // Check if Sharp can read the file first
-            console.log(`🔍 Checking if Sharp can read HEIC file...`)
             const metadata = await sharp(Buffer.from(buffer)).metadata()
             console.log(`✅ Sharp metadata:`, {
               format: metadata.format,
@@ -107,7 +97,6 @@ export async function POST(request: NextRequest) {
             })
             
             // Use sharp to convert HEIF/HEIC to PNG
-            console.log(`🔄 Starting Sharp conversion to PNG...`)
             const pngBuffer = await sharp(Buffer.from(buffer))
               .png({ quality: 90, compressionLevel: 6 })
               .toBuffer()
@@ -127,7 +116,6 @@ export async function POST(request: NextRequest) {
             
             processedBuffer = pngBuffer
             mimeType = 'image/png'
-            console.log(`✅ Successfully converted HEIF/HEIC to PNG: ${file.name}`)
             console.log(`  - Size change: ${(buffer.byteLength / 1024 / 1024).toFixed(2)}MB → ${(pngBuffer.byteLength / 1024 / 1024).toFixed(2)}MB`)
           } catch (convertError) {
             console.error(`❌ Failed to convert HEIF/HEIC file ${file.name}:`, convertError)
@@ -148,12 +136,10 @@ export async function POST(request: NextRequest) {
                 .png()
                 .toBuffer()
               
-              console.log(`📊 Retry result: ${pngBuffer.byteLength} bytes`)
               
               if (pngBuffer.byteLength > 0) {
                 processedBuffer = pngBuffer
                 mimeType = 'image/png'
-                console.log(`✅ Successfully converted on retry: ${file.name}`)
               } else {
                 throw new Error('Retry also produced empty buffer')
               }
@@ -162,7 +148,6 @@ export async function POST(request: NextRequest) {
               
               // Try heic-convert as final fallback
               try {
-                console.log(`🔄 Final fallback: Trying heic-convert library for ${file.name}`)
                 const jpegBuffer = await convert({
                   buffer: Buffer.from(buffer),
                   format: 'JPEG',
@@ -174,7 +159,6 @@ export async function POST(request: NextRequest) {
                 if (jpegBuffer.byteLength > 0) {
                   processedBuffer = jpegBuffer
                   mimeType = 'image/jpeg'
-                  console.log(`✅ Successfully converted with heic-convert: ${file.name}`)
                   console.log(`  - Size change: ${(buffer.byteLength / 1024 / 1024).toFixed(2)}MB → ${(jpegBuffer.byteLength / 1024 / 1024).toFixed(2)}MB`)
                 } else {
                   throw new Error('heic-convert produced empty buffer')
@@ -229,7 +213,6 @@ export async function POST(request: NextRequest) {
 
     const images = (await Promise.all(imagePromises)).filter(img => img !== null)
     
-    console.log(`📊 Image processing results: ${images.length} successful out of ${validFiles.length} total files`)
     
     if (images.length === 0) {
       // Log which files failed for debugging
@@ -284,11 +267,17 @@ Be conservative - only list what you can clearly see. If you can't determine the
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini', // GPT-4o-mini supports vision and is more cost-effective
-        messages,
-        max_tokens: 1000,
-        temperature: 0.3,
-        response_format: { type: "json_object" }
+        model: 'gpt-5-mini', // GPT-5-mini supports vision and is more cost-effective
+        input: messages.map(msg => ({ 
+          role: msg.role === 'system' ? 'developer' : msg.role, 
+          content: msg.content 
+        })),
+        reasoning: {
+          effort: 'medium' // Medium reasoning for accurate ingredient identification
+        },
+        text: {
+          verbosity: 'medium' // Medium verbosity for detailed ingredient lists
+        }
       })
     })
 
@@ -299,7 +288,20 @@ Be conservative - only list what you can clearly see. If you can't determine the
     }
 
     const data = await response.json()
-    const content = data.choices?.[0]?.message?.content
+    
+    // Extract content from GPT-5-mini response format
+    let content = "";
+    if (data.output) {
+      for (const item of data.output) {
+        if (item.content) {
+          for (const contentPart of item.content) {
+            if (contentPart.text) {
+              content += contentPart.text;
+            }
+          }
+        }
+      }
+    }
 
     if (!content) {
       throw new Error('No content returned from vision analysis')
@@ -313,7 +315,6 @@ Be conservative - only list what you can clearly see. If you can't determine the
       parsedItems = Array.isArray(jsonResponse) ? jsonResponse : (jsonResponse.items || [])
     } catch (parseError) {
       console.error('Failed to parse JSON response:', parseError)
-      console.log('Raw response:', content)
       
       // Fallback: try to extract items from the text
       const items = content.match(/[\w\s]+/g) || []
@@ -334,7 +335,6 @@ Be conservative - only list what you can clearly see. If you can't determine the
       }))
       .slice(0, 30) // Limit to 30 items max
 
-    console.log(`✅ Identified ${identifiedItems.length} pantry items with quantities`)
 
     return NextResponse.json({
       success: true,

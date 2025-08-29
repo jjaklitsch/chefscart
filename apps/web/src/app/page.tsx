@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { ChefHat, MapPin, Clock, DollarSign, Plus, Minus, ShoppingCart, ArrowRight, CheckCircle } from 'lucide-react'
+import { MapPin, Clock, DollarSign, Plus, Minus, ShoppingCart, ArrowRight, CheckCircle } from 'lucide-react'
 import ZipCodeInput from '../../components/ZipCodeInput'
 import HeadlineABTest from '../../components/HeadlineABTest'
 import Header from '../../components/Header'
@@ -13,6 +13,8 @@ import analytics from '../../lib/analytics'
 export default function Home() {
   const [zipCode, setZipCode] = useState('')
   const [isValidZip, setIsValidZip] = useState(false)
+  const [validationMessage, setValidationMessage] = useState('')
+  const [validationState, setValidationState] = useState<'idle' | 'valid' | 'invalid' | 'no-coverage'>('idle')
   const [openFaqItems, setOpenFaqItems] = useState<Set<number>>(new Set())
   const router = useRouter()
 
@@ -22,26 +24,14 @@ export default function Home() {
     analytics.trackPageView('landing', userId);
   }, []);
 
-  const handleZipValidation = async (zip: string) => {
-    try {
-      const response = await fetch('/api/validate-zip', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ zipCode: zip })
-      })
-      
-      if (response.ok) {
-        const data = await response.json()
-        setIsValidZip(data.isValid)
-      } else {
-        setIsValidZip(false)
-      }
-    } catch (error) {
-      console.error('ZIP validation error:', error)
-      setIsValidZip(false)
-    }
+  const handleZipValidation = (zip: string, isValid: boolean) => {
+    setZipCode(zip)
+    setIsValidZip(isValid)
+  }
+
+  const handleValidationMessage = (message: string, state: 'idle' | 'valid' | 'invalid' | 'no-coverage') => {
+    setValidationMessage(message)
+    setValidationState(state)
   }
 
   const handleGetStarted = () => {
@@ -136,46 +126,25 @@ export default function Home() {
 
         {/* ZIP Code Section */}
         <div className="max-w-lg mx-auto mb-16 animate-slide-up">
-          <div className="flex flex-col sm:flex-row gap-3 mb-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <div className="flex-1">
-              <input
-                type="text"
-                placeholder="Enter your ZIP code"
-                value={zipCode}
-                onChange={(e) => {
-                  const newZip = e.target.value.replace(/\D/g, '').slice(0, 5)
-                  setZipCode(newZip)
-                  if (newZip.length === 5) {
-                    handleZipValidation(newZip)
-                  } else {
-                    setIsValidZip(false)
-                  }
-                }}
-                onKeyPress={(e) => {
-                  if (e.key === 'Enter' && isValidZip) {
-                    handleGetStarted()
-                  }
-                }}
-                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-green-500 rounded-lg focus:ring-0 transition-colors text-lg"
+              <ZipCodeInput 
+                onZipValidation={handleZipValidation}
+                onSubmit={handleGetStarted}
+                showFullWidthMessage={false}
+                onValidationMessage={handleValidationMessage}
               />
             </div>
             <button 
               onClick={handleGetStarted}
               disabled={!isValidZip}
-              className="w-full sm:w-auto px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center sm:whitespace-nowrap"
+              className="w-full sm:w-auto sm:mt-7 px-6 h-[60px] border-2 border-green-600 bg-green-600 text-white text-lg font-medium rounded-xl hover:bg-green-700 hover:border-green-700 disabled:bg-gray-400 disabled:border-gray-400 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center sm:whitespace-nowrap"
             >
               Get Started →
             </button>
           </div>
-          {isValidZip && (
-            <p className="text-green-700 text-sm flex items-center">
-              <CheckCircle className="h-4 w-4 mr-1" />
-              Great! ChefsCart is available in your area.
-            </p>
-          )}
-          {zipCode.length === 5 && !isValidZip && (
-            <p className="text-red-600 text-sm">Please enter a valid ZIP code</p>
-          )}
+          
+          {/* Note: Validation message is handled by ZipCodeInput since showFullWidthMessage={false} */}
         </div>
 
         {/* How It Works Section */}
@@ -233,7 +202,7 @@ export default function Home() {
             </div>
             <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft">
               <div className="bg-brand-600 hover:bg-brand-700 rounded-full p-3 flex-shrink-0 shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
-                <ChefHat className="h-6 w-6 text-white" />
+                <ShoppingCart className="h-6 w-6 text-white" />
               </div>
               <div>
                 <h3 className="font-display font-semibold mb-2 text-lg text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Personalized</h3>

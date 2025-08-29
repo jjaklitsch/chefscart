@@ -1,5 +1,9 @@
+'use client'
+
 import { ShoppingCart, Mail, Instagram, Youtube } from 'lucide-react'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { getSupabaseClient } from '../lib/supabase'
 
 // TikTok icon component (not available in lucide-react)
 function TikTokIcon({ className }: { className?: string }) {
@@ -16,8 +20,78 @@ function TikTokIcon({ className }: { className?: string }) {
 }
 
 export default function Footer() {
+  const [popularCategories, setPopularCategories] = useState<{
+    cuisines: string[]
+    courses: string[]
+    diets: string[]
+  }>({ cuisines: [], courses: [], diets: [] })
+
+  useEffect(() => {
+    loadPopularCategories()
+  }, [])
+
+  const loadPopularCategories = async () => {
+    try {
+      const supabase = getSupabaseClient()
+      const { data, error } = await supabase
+        .from('meals')
+        .select('cuisines, courses, diets_supported')
+        .limit(100) // Load a sample to get popular categories
+
+      if (error) {
+        console.warn('Failed to load categories for footer:', error)
+        return
+      }
+
+      // Count frequency of each category
+      const cuisineCount: { [key: string]: number } = {}
+      const courseCount: { [key: string]: number } = {}
+      const dietCount: { [key: string]: number } = {}
+
+      data.forEach((meal: any) => {
+        meal.cuisines?.forEach((cuisine: string) => {
+          cuisineCount[cuisine] = (cuisineCount[cuisine] || 0) + 1
+        })
+        meal.courses?.forEach((course: string) => {
+          courseCount[course] = (courseCount[course] || 0) + 1
+        })
+        meal.diets_supported?.forEach((diet: string) => {
+          dietCount[diet] = (dietCount[diet] || 0) + 1
+        })
+      })
+
+      // Get top categories by frequency
+      const topCuisines = Object.entries(cuisineCount)
+        .sort(([, a], [, b]) => b - a)
+        .slice(0, 4)
+        .map(([cuisine]) => cuisine)
+
+      const topCourses = Object.entries(courseCount)
+        .sort(([, a], [, b]) => b - a)
+        .slice(0, 4)
+        .map(([course]) => course)
+
+      const topDiets = Object.entries(dietCount)
+        .sort(([, a], [, b]) => b - a)
+        .slice(0, 4)
+        .map(([diet]) => diet)
+
+      setPopularCategories({
+        cuisines: topCuisines,
+        courses: topCourses,
+        diets: topDiets
+      })
+    } catch (error) {
+      console.warn('Error loading popular categories:', error)
+    }
+  }
+
+  const createCategorySlug = (category: string) => {
+    return category.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+  }
+
   return (
-    <footer className="bg-gradient-to-br from-neutral-50 to-sage-50 border-t border-neutral-200 mt-24">
+    <footer className="bg-gradient-to-br from-neutral-50 to-sage-50 border-t border-neutral-200 mt-8">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -46,21 +120,77 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Recipes */}
           <div>
-            <h3 className="font-display font-semibold text-neutral-800 mb-4">Quick Links</h3>
+            <h3 className="font-display font-semibold text-neutral-800 mb-4">Recipes</h3>
             <ul className="space-y-3">
               <li>
                 <Link 
-                  href="/grocery-list" 
+                  href="/recipes" 
                   className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
                 >
-                  AI Grocery List
+                  Browse All Recipes
+                </Link>
+              </li>
+              {/* Dynamic popular cuisines */}
+              {popularCategories.cuisines.slice(0, 2).map(cuisine => (
+                <li key={cuisine}>
+                  <Link 
+                    href={`/recipes?cuisine=${encodeURIComponent(cuisine)}`}
+                    className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  >
+                    {cuisine.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')} Recipes
+                  </Link>
+                </li>
+              ))}
+              {/* Dynamic popular courses */}
+              {popularCategories.courses.slice(0, 2).map(course => (
+                <li key={course}>
+                  <Link 
+                    href={`/recipes?course=${encodeURIComponent(course)}`}
+                    className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  >
+                    {course.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')} Recipes
+                  </Link>
+                </li>
+              ))}
+              {/* Dynamic popular diet */}
+              {popularCategories.diets.slice(0, 1).map(diet => (
+                <li key={diet}>
+                  <Link 
+                    href={`/recipes?diet=${encodeURIComponent(diet)}`}
+                    className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  >
+                    {diet.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')} Recipes
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Popular Categories */}
+          <div>
+            <h3 className="font-display font-semibold text-neutral-800 mb-4">Popular</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link 
+                  href="/recipes?difficulty=easy"
+                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                >
+                  Quick & Easy
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="#faq" 
+                  href="/quick-plan" 
+                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                >
+                  Meal Planner
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/#faq" 
                   className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
                 >
                   FAQ
@@ -123,10 +253,10 @@ export default function Footer() {
         <div className="border-t border-neutral-200 pt-8 mt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-neutral-500 text-sm">
-              © 2024 ChefsCart. All rights reserved.
+              © {new Date().getFullYear()} ChefsCart. All rights reserved.
             </p>
             <p className="text-neutral-500 text-sm mt-2 sm:mt-0">
-              Made with care for your kitchen
+              AI-Powered Meal Planning & Grocery Shopping
             </p>
           </div>
         </div>

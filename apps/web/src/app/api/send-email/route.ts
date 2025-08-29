@@ -21,7 +21,6 @@ export async function POST(request: NextRequest) {
       }, { status: 400 })
     }
 
-    console.log('Sending email via Resend...')
 
     const resend = getResendClient()
     const { data, error } = await resend.emails.send({
@@ -37,7 +36,6 @@ export async function POST(request: NextRequest) {
       throw new Error(error.message || 'Failed to send email')
     }
 
-    console.log('Email sent successfully:', data?.id)
 
     return NextResponse.json({
       success: true,

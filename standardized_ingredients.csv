@@ -1,0 +1,951 @@
+standardized_name,original_names,purchasable_unit,min_quantity,category,user_remapped,questions,consolidation_count
+"achiote paste","Achiote Paste",bottle,1,Condiments,"","",1
+"ackee","Ackee",bottle,1,Pantry Staples,"","",1
+"allspice","Allspice; Ground Allspice",bottle,1,Pantry Staples,"","",2
+"almond butter","Almond Butter",package,1,Dairy & Eggs,"","",1
+"almond flour","Almond Flour",bag,1,Pantry Staples,"","",1
+"almond meal","Almond Meal",bag,1,Pantry Staples,"","? what is this?",1
+"almonds","Almonds; Sliced Almonds",bottle,1,Pantry Staples,"","",2
+"american cheese slices","American Cheese Slices",lb,0.5,Dairy & Eggs,"","",1
+"ancho chiles","Ancho Chiles; Dried Ancho Chiles",bottle,1,Pantry Staples,"","",2
+"anchovy","Dried Anchovies; Dried Anchovies Or Kombu",bottle,1,Pantry Staples,"","",2
+"anchovy broth","Anchovy Broth",can,1,Canned Goods,"","",1
+"anchovy fillet","Anchovy Fillet; Anchovy Fillets",bottle,1,Pantry Staples,"Anchovy Fillets","",2
+"andouille sausage","Andouille Sausage",lb,1,Meat & Seafood,"","",1
+"aonori","Aonori",bottle,1,Pantry Staples,"","",1
+"apple","Apple; Apples",each,1,Produce,"","",2
+"apple cider","Apple Cider",each,1,Produce,"Apple Cider Vinegar","",1
+"apple cider vinegar","Apple Cider Vinegar",each,1,Produce,"","",1
+"arborio rice","Arborio Rice",bag,1,Pantry Staples,"","",1
+"arrowroot powder","Arrowroot Powder",container,1,Spices & Seasonings,"","",1
+"artichoke hearts","Artichoke Hearts",bottle,1,Pantry Staples,"","",1
+"arugula","Arugula; Baby Arugula",bag,1,Produce,"","",2
+"asafoetida","Asafoetida",bottle,1,Pantry Staples,"","",1
+"asparagus","Asparagus",bag,1,Produce,"","",1
+"assorted vegetables","Assorted Vegetables",bottle,1,Pantry Staples,"","? Needs more specificity",1
+"avocado","Avocado; Avocados",each,1,Produce,"","",2
+"avocado oil","Avocado Oil",each,1,Produce,"","",1
+"bacon","Bacon; Bacon Strips",lb,1,Meat & Seafood,"","",2
+"bacon fat","Bacon Fat",lb,1,Meat & Seafood,"","",1
+"baguette","Baguette",bottle,1,Pantry Staples,"","",1
+"baked beans","Baked Beans",bottle,1,Pantry Staples,"","",1
+"baking powder","Baking Powder",container,1,Spices & Seasonings,"","",1
+"baking soda","Baking Soda",bottle,1,Pantry Staples,"","",1
+"balsamic glaze","Balsamic Glaze",bottle,1,Pantry Staples,"","",1
+"balsamic vinegar","Balsamic Vinegar",bottle,1,Oils & Vinegars,"","",1
+"bamboo shoots","Bamboo Shoots",bottle,1,Pantry Staples,"","",1
+"bamboo skewers","Bamboo Skewers",bottle,1,Pantry Staples,"","",1
+"banana","Banana",each,1,Produce,"","",1
+"barbecue sauce","Barbecue Sauce",bottle,1,Condiments,"","",1
+"basil","Basil; Dried Basil; Fresh Basil; Fresh Basil Or Mint; Fresh Basil Or Mint Leaves Or Microgreens",bunch,1,Produce,"","Confirm if this is basil or basil leaves",5
+"basil leaf","Basil Leaves; Fresh Basil Leaves",bunch,1,Produce,"","Confirm if this is basil or basil leaves",2
+"basil pesto","Basil Pesto",bunch,1,Produce,"","",1
+"basmati rice","Basmati Rice",bag,1,Pantry Staples,"","",1
+"bay leaf","Bay Leaf; Bay Leaves",bottle,1,Pantry Staples,"Bay Leaves","",2
+"bbq sauce","Bbq Sauce",bottle,1,Condiments,"","",1
+"bean sprouts","Bean Sprouts",bottle,1,Pantry Staples,"","",1
+"beef","Beef; Ground Beef",lb,1,Meat & Seafood,"","What kind of beef? needs more specificity",2
+"beef bouillon paste","Beef Bouillon Paste",lb,1,Meat & Seafood,"","",1
+"beef brisket","Beef Brisket",lb,1,Meat & Seafood,"","",1
+"beef broth","Beef Broth",lb,1,Meat & Seafood,"","",1
+"beef chuck","Beef Chuck",lb,1,Meat & Seafood,"","",1
+"beef chuck roast","Beef Chuck Roast",lb,1,Meat & Seafood,"Beef Chuck","",1
+"beef neck bones","Beef Neck Bones",lb,1,Meat & Seafood,"","",1
+"beef shank","Beef Shank",lb,1,Meat & Seafood,"","",1
+"beef short ribs","Beef Short Ribs",lb,1,Meat & Seafood,"","",1
+"beef stock","Beef Stock",lb,1,Meat & Seafood,"","Is this the same as beef broth?",1
+"beets","Beets",bottle,1,Pantry Staples,"","",1
+"bell pepper","Bell Pepper; Bell Peppers; Green Bell Pepper; Green Bell Peppers",each,1,Produce,"","",4
+"beni shoga","Beni Shoga",bottle,1,Pantry Staples,"","",1
+"berries","Fresh Berries Or Sliced Fruit",bottle,1,Pantry Staples,"","no ors.",1
+"bird's eye chilies","Bird's Eye Chilies",bottle,1,Pantry Staples,"","",1
+"bitter greens","Bitter Greens",bottle,1,Pantry Staples,"","What is this?",1
+"black beans","Black Beans; Canned Black Beans",bottle,1,Pantry Staples,"","",2
+"black olives","Black Olives",bottle,1,Pantry Staples,"","",1
+"black pepper","Black Pepper; Ground Black Pepper",container,1,Spices & Seasonings,"","",2
+"black peppercorns","Black Peppercorns",bottle,1,Pantry Staples,"","",1
+"black sesame seeds","Black Sesame Seeds",bottle,1,Pantry Staples,"","",1
+"blanched almonds","Blanched Almonds",bottle,1,Pantry Staples,"","",1
+"blue cheese","Blue Cheese",lb,0.5,Dairy & Eggs,"","",1
+"blueberries","Blueberries",bottle,1,Pantry Staples,"","",1
+"bok choy","Baby Bok Choy; Bok Choy",bottle,1,Pantry Staples,"","",2
+"bolillo","Bolillo Or Baguette",bottle,1,Pantry Staples,"","Pick one only. no or",1
+"bone broth","Bone Broth",can,1,Canned Goods,"","Same as beef broth or different?",1
+"bone-in chicken pieces","Bone-in Chicken Pieces",lb,1,Meat & Seafood,"Bone-in Chicken","",1
+"bone-in pork chops","Bone-in Pork Chops",lb,1,Meat & Seafood,"","",1
+"boneless skin-on chicken thighs","Boneless Skin-on Chicken Thighs",lb,1,Meat & Seafood,"","",1
+"boneless skinless chicken breasts","Boneless Skinless Chicken Breasts",lb,1,Meat & Seafood,"","",1
+"boneless skinless chicken thighs","Boneless Skinless Chicken Thighs",lb,1,Meat & Seafood,"","",1
+"bonito flakes","Bonito Flakes",bottle,1,Pantry Staples,"","",1
+"branzino","Branzino; Whole Branzino",bottle,1,Pantry Staples,"","",2
+"bread","Bread",bag,1,Pantry Staples,"","what kind of bread?",1
+"bread crumbs","Bread Crumbs",bag,1,Pantry Staples,"Breadcrumbs","",1
+"breadcrumbs","Breadcrumbs",bottle,1,Pantry Staples,"","",1
+"brioche buns","Brioche Buns",bottle,1,Pantry Staples,"","",1
+"broccoli","Broccoli",bag,1,Produce,"","",1
+"broccoli florets","Broccoli Florets",bag,1,Produce,"","",1
+"broccolini","Broccolini",bottle,1,Pantry Staples,"","",1
+"broken rice","Broken Rice",bag,1,Pantry Staples,"","",1
+"broth","Broth",can,1,Canned Goods,"","what kind? more specific",1
+"brown erythritol","Brown Erythritol",bottle,1,Pantry Staples,"","",1
+"brown lentils","Brown Lentils",bottle,1,Pantry Staples,"","",1
+"brown rice","Brown Rice",bag,1,Pantry Staples,"","",1
+"brown sugar","Brown Sugar",bottle,1,Pantry Staples,"","",1
+"brussels sprouts","Brussels Sprouts",bag,1,Produce,"","",1
+"buffalo hot sauce","Buffalo Hot Sauce",bottle,1,Condiments,"","Is there a difference vs buffalo sauce?",1
+"buffalo sauce","Buffalo Sauce",bottle,1,Condiments,"","Is there a difference vs buffalo hot sauce?",1
+"buffalo vinaigrette","Buffalo Vinaigrette",bottle,1,Pantry Staples,"","",1
+"burrata","Burrata",bottle,1,Pantry Staples,"Burrata Cheese","",1
+"burrata cheese","Burrata Cheese",lb,0.5,Dairy & Eggs,"","",1
+"butter","Butter; Butter Or Ghee; Butter Or Olive Oil",package,1,Dairy & Eggs,"","",3
+"butter beans","Butter Beans",package,1,Dairy & Eggs,"","",1
+"butter lettuce leaves","Butter Lettuce Leaves",bag,1,Produce,"","",1
+"buttermilk","Buttermilk",bottle,1,Pantry Staples,"","what is buttermilk alone?",1
+"butternut squash","Butternut Squash",bottle,1,Pantry Staples,"","",1
+"buttery finishing oil","Buttery Finishing Oil",bottle,1,Oils & Vinegars,"","Is this an ingredient?",1
+"button mushrooms","Button Mushrooms",bag,1,Produce,"","",1
+"cabbage","Cabbage",bottle,1,Pantry Staples,"","",1
+"caesar dressing","Caesar Dressing",bottle,1,Pantry Staples,"","",1
+"cajun seasoning","Cajun Seasoning",bottle,1,Pantry Staples,"","",1
+"calamari rings","Calamari Rings",bottle,1,Pantry Staples,"","",1
+"callaloo","Callaloo",bottle,1,Pantry Staples,"","",1
+"cannellini beans","Canned Cannellini Beans; Cannellini Beans",bottle,1,Pantry Staples,"","",2
+"capers","Capers",bottle,1,Pantry Staples,"","",1
+"carrot","Carrot; Carrots",bottle,1,Pantry Staples,"","",2
+"cashew nuts","Cashew Nuts",bottle,1,Pantry Staples,"","",1
+"cashews","Cashews",bottle,1,Pantry Staples,"Cashew Nuts","",1
+"cassia cinnamon stick","Cassia Cinnamon Stick",bottle,1,Pantry Staples,"","",1
+"catfish fillets","Catfish Fillets",bottle,1,Pantry Staples,"","",1
+"cauliflower","Cauliflower",bag,1,Produce,"","",1
+"cauliflower florets","Cauliflower Florets",bag,1,Produce,"","",1
+"cauliflower head","Cauliflower Head",bag,1,Produce,"Cauliflower","",1
+"cauliflower rice","Cauliflower Rice",bag,1,Produce,"","",1
+"cayenne pepper","Cayenne Pepper",container,1,Spices & Seasonings,"","",1
+"celery","Celery",bottle,1,Pantry Staples,"","",1
+"celery stalk","Celery Stalk",bottle,1,Pantry Staples,"Celery","",1
+"celery stalks","Celery Stalks",bottle,1,Pantry Staples,"Celery","",1
+"chana dal","Chana Dal",bottle,1,Pantry Staples,"","",1
+"cheddar cheese","Cheddar Cheese",lb,0.5,Dairy & Eggs,"","",1
+"cheese","Cheese",lb,0.5,Dairy & Eggs,"","? be specific",1
+"cherry tomatoes","Cherry Tomatoes",bottle,1,Pantry Staples,"","",1
+"cherrystone clams","Cherrystone Clams",lb,0.5,Meat & Seafood,"","",1
+"chia seeds","Chia Seeds",bottle,1,Pantry Staples,"","",1
+"chicken","Chicken; Chicken (Bone-in); Chicken Or Vegetable Stock; Ground Chicken; Whole Chicken",lb,1,Meat & Seafood,"","be specific",5
+"chicken bones","Chicken Bones",lb,1,Meat & Seafood,"Bone-in Chicken","",1
+"chicken breast","Chicken Breast",lb,1,Meat & Seafood,"","",1
+"chicken breasts","Chicken Breasts",lb,1,Meat & Seafood,"Chicken Breast","",1
+"chicken broth","Chicken Broth",lb,1,Meat & Seafood,"","",1
+"chicken chops","Chicken Chops",lb,1,Meat & Seafood,"","",1
+"chicken legs","Chicken Legs",lb,1,Meat & Seafood,"","",1
+"chicken pieces","Chicken Pieces",lb,1,Meat & Seafood,"","be specific. what type?",1
+"chicken sausages","Chicken Sausages",lb,1,Meat & Seafood,"","",1
+"chicken stock","Chicken Stock",lb,1,Meat & Seafood,"","",1
+"chicken thigh","Ground Chicken Thigh",lb,1,Meat & Seafood,"","",1
+"chicken thighs","Chicken Thighs",lb,1,Meat & Seafood,"","",1
+"chicken wings","Chicken Wings",lb,1,Meat & Seafood,"","",1
+"chickpea cooking liquid","Chickpea Cooking Liquid",bottle,1,Pantry Staples,"","",1
+"chickpea flour","Chickpea Flour",bag,1,Pantry Staples,"","",1
+"chickpeas","Canned Chickpeas; Chickpeas; Dried Chickpeas",bottle,1,Pantry Staples,"","",3
+"chile oil","Chile Oil",bottle,1,Oils & Vinegars,"","",1
+"chili","Fresh Chili",bottle,1,Pantry Staples,"","",1
+"chili flakes","Chili Flakes",bottle,1,Pantry Staples,"","",1
+"chili garlic sauce","Chili Garlic Sauce",each,1,Produce,"","",1
+"chili oil","Chili Oil",bottle,1,Oils & Vinegars,"","",1
+"chili powder","Chili Powder; Dried Chili Powder",container,1,Spices & Seasonings,"","",2
+"chinese black vinegar","Chinese Black Vinegar",bottle,1,Oils & Vinegars,"","",1
+"chinese broccoli","Chinese Broccoli",bag,1,Produce,"","",1
+"chipotle in adobo","Chipotle In Adobo",bottle,1,Pantry Staples,"","",1
+"chipotle peppers","Chipotle Peppers",bottle,1,Pantry Staples,"","",1
+"chipotle peppers in adobo","Chipotle Peppers In Adobo",bottle,1,Pantry Staples,"","",1
+"chives","Chives; Chives Or Parsley; Fresh Chives; Fresh Chives Or Parsley",bottle,1,Pantry Staples,"","",4
+"ciabatta rolls","Ciabatta Rolls",bottle,1,Pantry Staples,"","",1
+"cilantro","Cilantro; Fresh Cilantro",bunch,1,Produce,"","",2
+"cilantro leaves","Cilantro Leaves; Fresh Cilantro Leaves",bunch,1,Produce,"Cilantro","",2
+"cilantro roots","Cilantro Roots",bunch,1,Produce,"","",1
+"cinnamon","Cinnamon; Ground Cinnamon",bottle,1,Pantry Staples,"","",2
+"cinnamon stick","Cinnamon Stick",bottle,1,Pantry Staples,"Cinnamon Sticks","",1
+"cinnamon sticks","Cinnamon Sticks",bottle,1,Pantry Staples,"","",1
+"clams","Clams",lb,0.5,Meat & Seafood,"","",1
+"clove","Cloves; Ground Cloves; Whole Cloves",bottle,1,Pantry Staples,"","",3
+"coarse polenta","Coarse Polenta",bottle,1,Pantry Staples,"","",1
+"coarse salt","Coarse Salt",container,1,Spices & Seasonings,"Coarse Sea Salt","",1
+"coarse sea salt","Coarse Sea Salt",container,1,Spices & Seasonings,"","",1
+"coconut","Fresh Coconut (Grated)",bottle,1,Pantry Staples,"","",1
+"coconut aminos","Coconut Aminos",bottle,1,Pantry Staples,"","",1
+"coconut milk","Canned Coconut Milk; Coconut Milk",gallon,0.5,Dairy & Eggs,"","",2
+"coconut oil","Coconut Oil",bottle,1,Oils & Vinegars,"","",1
+"coconut sugar","Coconut Sugar",bottle,1,Pantry Staples,"","",1
+"coconut water","Coconut Water",bottle,1,Pantry Staples,"","",1
+"cod","Cod",lb,0.5,Meat & Seafood,"Cod Fillets","",1
+"cod fillets","Cod Fillets",lb,0.5,Meat & Seafood,"","",1
+"cold water","Cold Water",bottle,1,Pantry Staples,"","",1
+"coleslaw mix","Coleslaw Mix",bottle,1,Pantry Staples,"","",1
+"collard greens","Collard Greens",bottle,1,Pantry Staples,"","",1
+"cooked basmati rice","Cooked Basmati Rice",bag,1,Pantry Staples,"","",1
+"cooked chickpeas","Cooked Chickpeas",bottle,1,Pantry Staples,"","",1
+"cooked crab meat","Cooked Crab Meat",lb,0.5,Meat & Seafood,"","",1
+"cooked ham","Cooked Ham",lb,1,Meat & Seafood,"","",1
+"cooked jasmine rice","Cooked Jasmine Rice",bag,1,Pantry Staples,"","",1
+"cooked long-grain rice","Cooked Long-grain Rice",bag,1,Pantry Staples,"","",1
+"cooked long-grain white rice","Cooked Long-grain White Rice",bag,1,Pantry Staples,"Cooked Long-grain Rice","",1
+"cooked short-grain rice","Cooked Short-grain Rice",bag,1,Pantry Staples,"","",1
+"cooked shrimp","Cooked Shrimp",lb,0.5,Meat & Seafood,"","",1
+"cooking oil","Cooking Oil",bottle,1,Oils & Vinegars,"","",1
+"coriander","Coriander; Ground Coriander",bottle,1,Pantry Staples,"","",2
+"coriander powder","Coriander Powder",container,1,Spices & Seasonings,"","",1
+"coriander seeds","Coriander Seeds",bottle,1,Pantry Staples,"","",1
+"corn","Baby Corn",bottle,1,Pantry Staples,"","",1
+"corn kernels","Corn Kernels",bottle,1,Pantry Staples,"","",1
+"corn on the cob","Corn On The Cob",bottle,1,Pantry Staples,"","",1
+"corn tortillas","Corn Tortillas",bottle,1,Pantry Staples,"","",1
+"corn tostadas","Corn Tostadas",bottle,1,Pantry Staples,"","",1
+"cornmeal","Cornmeal",bag,1,Pantry Staples,"","",1
+"cornstarch","Cornstarch",bottle,1,Pantry Staples,"","",1
+"cornstarch slurry","Cornstarch Slurry",bottle,1,Pantry Staples,"","",1
+"cotija cheese","Cotija Cheese",lb,0.5,Dairy & Eggs,"","",1
+"cottage cheese","Cottage Cheese",lb,0.5,Dairy & Eggs,"","",1
+"country bread","Country Bread Or Sourdough Bread",bag,1,Pantry Staples,"","pick one. no Ors",1
+"country loaf bread","Country Loaf Bread",bag,1,Pantry Staples,"","",1
+"country-style bread","Country-style Bread",bag,1,Pantry Staples,"Country Loaf Bread","",1
+"couscous","Couscous",bottle,1,Pantry Staples,"","",1
+"crab","Crab",lb,0.5,Meat & Seafood,"","",1
+"crab meat","Crab Meat",lb,0.5,Meat & Seafood,"","",1
+"cranberries","Dried Cranberries",bottle,1,Pantry Staples,"","",1
+"crawfish tails","Crawfish Tails",bottle,1,Pantry Staples,"","",1
+"cream cheese","Cream Cheese",gallon,0.5,Dairy & Eggs,"","",1
+"creamy peanut butter","Creamy Peanut Butter",package,1,Dairy & Eggs,"","",1
+"crema","Crema",bottle,1,Pantry Staples,"","",1
+"crème fraîche","Crème Fraîche",bottle,1,Pantry Staples,"","",1
+"cremini mushrooms","Cremini Mushrooms",bag,1,Produce,"","",1
+"creole mustard","Creole Mustard",bottle,1,Condiments,"","",1
+"crimini mushrooms","Crimini Mushrooms",bag,1,Produce,"","",1
+"crispy wonton strips","Crispy Wonton Strips Or Crushed Roasted Almonds",bottle,1,Pantry Staples,"","pick one. no Ors",1
+"croutons","Croutons",bottle,1,Pantry Staples,"","",1
+"crushed peanuts","Crushed Peanuts",bottle,1,Pantry Staples,"","",1
+"crushed red pepper","Crushed Red Pepper; Crushed Red Pepper Or Paprika",container,1,Spices & Seasonings,"","",2
+"crushed red pepper flakes","Crushed Red Pepper Flakes",container,1,Spices & Seasonings,"Crushed Red Pepper","",1
+"crushed roasted peanuts","Crushed Roasted Peanuts",bottle,1,Pantry Staples,"","",1
+"crushed tomato","Canned Crushed Tomato",each,1,Produce,"Canned Crushed Tomatoes","",1
+"crushed tomatoes","Canned Crushed Tomatoes; Crushed Tomatoes",bottle,1,Pantry Staples,"","",2
+"crusty bread","Crusty Bread; Crusty Bread Or Toasted Pita",bag,1,Pantry Staples,"","",2
+"cube steaks","Cube Steaks",bottle,1,Pantry Staples,"","",1
+"cucumber","Cucumber",each,1,Produce,"","",1
+"cumin","Cumin; Ground Cumin",container,1,Spices & Seasonings,"","",2
+"cumin powder","Cumin Powder",container,1,Spices & Seasonings,"","",1
+"cumin seeds","Cumin Seeds",container,1,Spices & Seasonings,"","",1
+"curly kale","Curly Kale",bag,1,Produce,"","",1
+"curry leaves","Curry Leaves; Fresh Curry Leaves",bottle,1,Pantry Staples,"","",2
+"curry powder","Curry Powder",container,1,Spices & Seasonings,"","",1
+"curry roux","Curry Roux",bottle,1,Pantry Staples,"","",1
+"daikon","Daikon",bottle,1,Pantry Staples,"","",1
+"daikon radish","Daikon Radish",bottle,1,Pantry Staples,"","",1
+"dark chocolate","Dark Chocolate",bottle,1,Pantry Staples,"","",1
+"dark molasses","Dark Molasses",bottle,1,Pantry Staples,"","",1
+"dark rum","Dark Rum",bottle,1,Pantry Staples,"","",1
+"dark soy sauce","Dark Soy Sauce",bottle,1,Condiments,"","",1
+"dashi","Dashi",bottle,1,Pantry Staples,"","",1
+"dashi stock","Dashi Stock",can,1,Canned Goods,"","",1
+"dashi stock granules","Dashi Stock Granules",can,1,Canned Goods,"Dashi Stock","",1
+"diced tomatoes","Canned Diced Tomatoes",bottle,1,Pantry Staples,"","",1
+"dijon mustard","Dijon Mustard",bottle,1,Condiments,"","",1
+"dill","Dill; Dried Dill; Fresh Dill",bottle,1,Pantry Staples,"","",3
+"dill pickle juice","Dill Pickle Juice",bottle,1,Pantry Staples,"","",1
+"dill pickle slices","Dill Pickle Slices",bottle,1,Pantry Staples,"","",1
+"dill pickles","Dill Pickles",bottle,1,Pantry Staples,"","",1
+"ditalini pasta","Ditalini Pasta",bag,1,Pantry Staples,"","",1
+"doenjang","Doenjang",bottle,1,Pantry Staples,"","",1
+"doubanjiang","Doubanjiang",bottle,1,Pantry Staples,"","",1
+"dry brown","Dry Brown Or Green Lentils",bottle,1,Pantry Staples,"","",1
+"dry egg noodles","Dry Egg Noodles",bag,1,Pantry Staples,"","",1
+"dry lasagna noodles","Dry Lasagna Noodles",bag,1,Pantry Staples,"","",1
+"dry marsala wine","Dry Marsala Wine",bottle,1,Pantry Staples,"","",1
+"dry red chilies","Dry Red Chilies",bottle,1,Pantry Staples,"","",1
+"dry red wine","Dry Red Wine",bottle,1,Pantry Staples,"","",1
+"dry white wine","Dry White Wine; Dry White Wine Or Chicken Broth",bottle,1,Pantry Staples,"","",2
+"duck breast","Duck Breast",lb,1,Meat & Seafood,"","",1
+"duck confit","Duck Confit",lb,1,Meat & Seafood,"","",1
+"edamame","Edamame",bottle,1,Pantry Staples,"","",1
+"egg","Egg; Eggs",bottle,1,Pantry Staples,"","",2
+"egg noodles","Egg Noodles; Fresh Egg Noodles",bag,1,Pantry Staples,"","",2
+"egg wash","Egg Wash",bottle,1,Pantry Staples,"","",1
+"egg whites","Egg Whites",bottle,1,Pantry Staples,"","",1
+"egg yolk","Egg Yolk",bottle,1,Pantry Staples,"","",1
+"eggplant","Eggplant",each,1,Produce,"","",1
+"eggplants","Eggplants",bottle,1,Pantry Staples,"Eggplant","",1
+"elbow macaroni","Elbow Macaroni",bottle,1,Pantry Staples,"","",1
+"english cucumber","English Cucumber",each,1,Produce,"","",1
+"erythritol","Erythritol; Erythritol Or Keto Sweetener; Erythritol Or Monk Fruit Sweetener",bottle,1,Pantry Staples,"","",3
+"evaporated coconut milk","Evaporated Coconut Milk",gallon,0.5,Dairy & Eggs,"","",1
+"extra-firm tofu","Extra-firm Tofu",bottle,1,Pantry Staples,"","",1
+"farro","Farro",bottle,1,Pantry Staples,"","",1
+"farro and brown rice blend","Farro And Brown Rice Blend",bag,1,Pantry Staples,"","",1
+"fennel bulb","Fennel Bulb",bottle,1,Pantry Staples,"","",1
+"fenugreek leaves","Dried Fenugreek Leaves; Fenugreek Leaves; Fresh Fenugreek Leaves",bottle,1,Pantry Staples,"","",3
+"fenugreek seeds","Fenugreek Seeds",bottle,1,Pantry Staples,"","",1
+"fermented black beans","Fermented Black Beans",bottle,1,Pantry Staples,"","",1
+"feta cheese","Feta Cheese",lb,0.5,Dairy & Eggs,"","",1
+"figs","Fresh Figs",bottle,1,Pantry Staples,"","",1
+"file powder","File Powder",container,1,Spices & Seasonings,"","",1
+"fine bread crumbs","Fine Bread Crumbs",bag,1,Pantry Staples,"","",1
+"fine bulgur","Fine Bulgur",bottle,1,Pantry Staples,"","",1
+"fine cornmeal","Fine Cornmeal",bag,1,Pantry Staples,"","",1
+"fine couscous","Fine Couscous",bottle,1,Pantry Staples,"","",1
+"fine salt","Fine Salt",container,1,Spices & Seasonings,"","",1
+"fine sea salt","Fine Sea Salt",container,1,Spices & Seasonings,"","",1
+"firm tofu","Firm Tofu",bottle,1,Pantry Staples,"","",1
+"firm white fish","Firm White Fish",lb,0.5,Meat & Seafood,"","",1
+"fish","Whole Fish",lb,0.5,Meat & Seafood,"","",1
+"fish fillets","Fish Fillets",lb,0.5,Meat & Seafood,"","",1
+"fish sauce","Fish Sauce",lb,0.5,Meat & Seafood,"","",1
+"fish stock","Fish Stock",lb,0.5,Meat & Seafood,"","",1
+"five-spice powder","Five-spice Powder",container,1,Spices & Seasonings,"","",1
+"flaky sea salt","Flaky Sea Salt",container,1,Spices & Seasonings,"","",1
+"flank steak","Flank Steak",lb,1,Meat & Seafood,"","",1
+"flat rice noodles","Dried Flat Rice Noodles; Flat Rice Noodles",bag,1,Pantry Staples,"","",2
+"flat-leaf parsley","Flat-leaf Parsley; Fresh Flat-leaf Parsley",bunch,1,Produce,"","",2
+"flatbread","Flatbread",bottle,1,Pantry Staples,"","",1
+"flatbreads","Flatbreads",bottle,1,Pantry Staples,"Flatbread","",1
+"flaxseed","Ground Flaxseed",bottle,1,Pantry Staples,"","",1
+"flour","All-purpose Flour; Flour",bag,1,Pantry Staples,"Flour","",2
+"flour tortillas","Flour Tortillas",bag,1,Pantry Staples,"","",1
+"fontina cheese","Fontina Cheese",lb,0.5,Dairy & Eggs,"","",1
+"freekeh","Freekeh",bottle,1,Pantry Staples,"","",1
+"french rolls","French Rolls",bottle,1,Pantry Staples,"","",1
+"fried garlic crisps","Fried Garlic Crisps",each,1,Produce,"","",1
+"fried shallots","Fried Shallots",bottle,1,Pantry Staples,"","",1
+"frisée","Frisée Or Curly Endive",bottle,1,Pantry Staples,"","",1
+"fruit jam","Fruit Jam",jar,1,Pantry Staples,"","",1
+"full-fat coconut milk","Full-fat Coconut Milk",gallon,0.5,Dairy & Eggs,"","",1
+"furikake","Furikake",bottle,1,Pantry Staples,"","",1
+"galangal","Galangal",bottle,1,Pantry Staples,"","",1
+"garam masala","Garam Masala",bottle,1,Pantry Staples,"Garam Masala Powder","",1
+"garam masala powder","Garam Masala Powder",container,1,Spices & Seasonings,"","",1
+"garlic","Fresh Garlic; Garlic",each,1,Produce,"","",2
+"garlic clove","Garlic Clove; Garlic Cloves",each,1,Produce,"Garlic Cloves","",2
+"garlic powder","Garlic Powder",each,1,Produce,"","",1
+"ghee","Ghee",bottle,1,Pantry Staples,"","",1
+"ginger","Fresh Ginger; Ginger; Ground Ginger",each,1,Produce,"","",3
+"ginger-garlic paste","Ginger-garlic Paste",each,1,Produce,"","",1
+"glass noodles","Glass Noodles",bag,1,Pantry Staples,"","",1
+"gnocchi cooking water","Gnocchi Cooking Water",bottle,1,Pantry Staples,"","",1
+"goat cheese","Goat Cheese",lb,0.5,Dairy & Eggs,"","",1
+"goat meat","Goat Meat",bottle,1,Pantry Staples,"","",1
+"gochugaru","Gochugaru",bottle,1,Pantry Staples,"","",1
+"gochujang","Gochujang",bottle,1,Pantry Staples,"","",1
+"gochujang sauce mix","Gochujang Sauce Mix",bottle,1,Condiments,"","",1
+"gorgonzola cheese","Gorgonzola Cheese",lb,0.5,Dairy & Eggs,"","",1
+"grain dijon mustard","Whole Grain Dijon Mustard",bottle,1,Condiments,"","",1
+"gram flour","Gram Flour",bag,1,Pantry Staples,"","",1
+"granola","Granola",bottle,1,Pantry Staples,"","",1
+"granulated sugar","Granulated Sugar",bottle,1,Pantry Staples,"","",1
+"grapefruit","Grapefruit",bottle,1,Pantry Staples,"","",1
+"grated coconut","Grated Coconut",bottle,1,Pantry Staples,"","",1
+"grated ginger","Grated Ginger",each,1,Produce,"","",1
+"grated parmesan","Grated Parmesan",lb,0.5,Dairy & Eggs,"","",1
+"grated parmesan cheese","Grated Parmesan Cheese",lb,0.5,Dairy & Eggs,"","",1
+"greek yogurt","Greek Yogurt",gallon,0.5,Dairy & Eggs,"","",1
+"green apple","Green Apple",each,1,Produce,"","",1
+"green beans","Green Beans",bag,1,Produce,"","",1
+"green cabbage","Green Cabbage",bottle,1,Pantry Staples,"","",1
+"green cardamom pods","Green Cardamom Pods",bottle,1,Pantry Staples,"","",1
+"green chili","Green Chili",bottle,1,Pantry Staples,"","",1
+"green chilies","Fresh Green Chilies; Green Chilies",bottle,1,Pantry Staples,"","",2
+"green curry paste","Green Curry Paste",bottle,1,Condiments,"","",1
+"green leaf lettuce","Green Leaf Lettuce",bag,1,Produce,"","",1
+"green olives","Green Olives",bottle,1,Pantry Staples,"","",1
+"green onion","Green Onion",each,1,Produce,"","",1
+"green onions","Green Onions",bunch,1,Produce,"Green Onion","",1
+"green papaya","Green Papaya",bottle,1,Pantry Staples,"","",1
+"green peas","Green Peas",bottle,1,Pantry Staples,"","",1
+"green tea","Green Tea",bottle,1,Pantry Staples,"","",1
+"green tomatoes","Green Tomatoes",bottle,1,Pantry Staples,"","",1
+"gruyere cheese","Gruyere Cheese",lb,0.5,Dairy & Eggs,"","",1
+"gruyère cheese","Gruyère Cheese",lb,0.5,Dairy & Eggs,"","",1
+"guajillo chiles","Dried Guajillo Chiles; Guajillo Chiles",bottle,1,Pantry Staples,"","",2
+"guanciale","Guanciale",bottle,1,Pantry Staples,"","",1
+"habanero pepper","Habanero Pepper",container,1,Spices & Seasonings,"","",1
+"halibut fillets","Halibut Fillets",lb,0.5,Meat & Seafood,"","",1
+"halloumi cheese","Halloumi Cheese",lb,0.5,Dairy & Eggs,"","",1
+"hamburger buns","Hamburger Buns",bottle,1,Pantry Staples,"","",1
+"hard-boiled egg","Hard-boiled Egg",bottle,1,Oils & Vinegars,"Eggs","",1
+"hard-boiled eggs","Hard-boiled Eggs",package,1,Dairy & Eggs,"Eggs","",1
+"harissa paste","Harissa Paste",bottle,1,Condiments,"","",1
+"heavy cream","Heavy Cream",gallon,0.5,Dairy & Eggs,"","",1
+"heirloom tomatoes","Heirloom Tomatoes",bottle,1,Pantry Staples,"","",1
+"herbs","Fresh Herbs",bottle,1,Pantry Staples,"","",1
+"hoisin sauce","Hoisin Sauce",bottle,1,Condiments,"","",1
+"holy basil leaves","Holy Basil Leaves",bunch,1,Produce,"","",1
+"hominy","Hominy",bottle,1,Pantry Staples,"","",1
+"honey","Honey; Honey Or Maple Syrup",jar,1,Pantry Staples,"","",2
+"hot chili powder","Hot Chili Powder",container,1,Spices & Seasonings,"","",1
+"hot dogs","Hot Dogs",bottle,1,Pantry Staples,"","",1
+"hot honey","Hot Honey",jar,1,Pantry Staples,"","",1
+"hot paprika","Hot Paprika",container,1,Spices & Seasonings,"","",1
+"hot sauce","Hot Sauce; Hot Sauce Or Diced Jalapeño",bottle,1,Condiments,"","",2
+"hot water","Hot Water Or Stock",bottle,1,Pantry Staples,"","No ors",1
+"hummus","Hummus",bottle,1,Pantry Staples,"","",1
+"ice","Ice",bottle,1,Pantry Staples,"","",1
+"ice water","Ice Water",bottle,1,Pantry Staples,"","",1
+"iceberg lettuce","Iceberg Lettuce",bag,1,Produce,"","",1
+"instant couscous","Instant Couscous",bottle,1,Pantry Staples,"","",1
+"instant dry yeast","Instant Dry Yeast",bottle,1,Pantry Staples,"","",1
+"italian pork sausage","Italian Pork Sausage",lb,1,Meat & Seafood,"","",1
+"italian sausage","Italian Sausage",lb,1,Meat & Seafood,"","",1
+"italian seasoning","Italian Seasoning",bottle,1,Pantry Staples,"","",1
+"jalapeno","Jalapeno; Jalapeno Or Thai Chili",bottle,1,Pantry Staples,"","",2
+"jalapeño","Jalapeño",each,1,Produce,"","",1
+"jalapeno chili","Jalapeno Chili",bottle,1,Pantry Staples,"","",1
+"jalapeño pepper","Jalapeño Pepper",each,1,Produce,"","",1
+"jalapeño peppers","Jalapeño Peppers",each,1,Produce,"","",1
+"jalapeños","Jalapeños",bottle,1,Pantry Staples,"","",1
+"jasmine rice","Jasmine Rice",bag,1,Pantry Staples,"","",1
+"jerk seasoning","Jerk Seasoning",bottle,1,Pantry Staples,"","",1
+"kadai masala","Kadai Masala",bottle,1,Pantry Staples,"","",1
+"kaffir lime leaves","Kaffir Lime Leaves",each,1,Produce,"","",1
+"kalamata olives","Kalamata Olives",bottle,1,Pantry Staples,"","",1
+"kale","Kale",bag,1,Produce,"","",1
+"kashmiri chili powder","Kashmiri Chili Powder",container,1,Spices & Seasonings,"","",1
+"kasuri methi","Kasuri Methi",bottle,1,Pantry Staples,"","",1
+"kelp","Dried Kelp; Dried Kelp Or Anchovy",bottle,1,Pantry Staples,"","",2
+"ketchup","Ketchup",bottle,1,Condiments,"","",1
+"kewra water","Kewra Water",bottle,1,Pantry Staples,"","",1
+"kidney beans","Kidney Beans",bottle,1,Pantry Staples,"","",1
+"kimchi","Kimchi",bottle,1,Pantry Staples,"","",1
+"kombu","Dried Kombu; Kombu",bottle,1,Pantry Staples,"","",2
+"korean black bean paste","Korean Black Bean Paste",bottle,1,Condiments,"","",1
+"korean chili oil","Korean Chili Oil",bottle,1,Oils & Vinegars,"","",1
+"korean fish cake","Korean Fish Cake",lb,0.5,Meat & Seafood,"","",1
+"korean pear","Korean Pear",bottle,1,Pantry Staples,"","",1
+"korean rice cakes","Korean Rice Cakes",bag,1,Pantry Staples,"","",1
+"kosher salt","Kosher Salt",container,1,Spices & Seasonings,"","",1
+"labneh","Labneh",bottle,1,Pantry Staples,"","",1
+"lacinato kale","Lacinato Kale",bag,1,Produce,"","",1
+"lamb","Ground Lamb; Lamb",lb,1,Meat & Seafood,"","",2
+"lamb leg","Lamb Leg Or Shoulder",lb,1,Meat & Seafood,"","",1
+"lamb shoulder","Lamb Shoulder",lb,1,Meat & Seafood,"","",1
+"large bell peppers","Large Bell Peppers",bottle,1,Pantry Staples,"","",1
+"large carrots","Large Carrots",bag,1,Produce,"","",1
+"large egg","Large Egg",bottle,1,Pantry Staples,"","",1
+"large egg yolks","Large Egg Yolks",bottle,1,Pantry Staples,"","",1
+"large eggplant","Large Eggplant",each,1,Produce,"","",1
+"large eggplants","Large Eggplants",bottle,1,Pantry Staples,"","",1
+"large eggs","Large Eggs",package,1,Dairy & Eggs,"","",1
+"large flour tortillas","Large Flour Tortillas",bag,1,Pantry Staples,"","",1
+"large onion","Large Onion",each,1,Produce,"","",1
+"large onions","Large Onions",bottle,1,Pantry Staples,"","",1
+"large prawns","Large Prawns",bottle,1,Pantry Staples,"","",1
+"large sea scallops","Large Sea Scallops",lb,0.5,Meat & Seafood,"","",1
+"large shallot","Large Shallot",bottle,1,Pantry Staples,"","",1
+"large shrimp","Large Shrimp",lb,0.5,Meat & Seafood,"","",1
+"large zucchini","Large Zucchini",each,1,Produce,"","",1
+"lasagna noodles","Lasagna Noodles",bag,1,Pantry Staples,"","",1
+"lean ground beef","Lean Ground Beef",lb,1,Meat & Seafood,"","",1
+"lemon","Fresh Lemon; Lemon; Lemon Or Lime Wedges",each,1,Produce,"","Is this meant to be lemon juice or an actual lemon",3
+"lemon juice","Fresh Lemon Juice; Lemon Juice",each,1,Produce,"","",2
+"lemon slices","Lemon Slices",each,1,Produce,"","",1
+"lemon wedges","Lemon Wedges",each,1,Produce,"","",1
+"lemon zest","Fresh Lemon Zest; Lemon Zest",each,1,Produce,"","",2
+"lemon zest and juice","Lemon Zest And Juice",each,1,Produce,"","",1
+"lemon-herb vinaigrette","Lemon-herb Vinaigrette",each,1,Produce,"","",1
+"lemongrass","Lemongrass",bottle,1,Pantry Staples,"","",1
+"lemongrass stalk","Lemongrass Stalk",bottle,1,Pantry Staples,"","",1
+"lemongrass stalks","Lemongrass Stalks",bottle,1,Pantry Staples,"","",1
+"lemons","Lemons",bottle,1,Pantry Staples,"","",1
+"lettuce","Lettuce",bag,1,Produce,"","",1
+"lettuce leaves","Lettuce Leaves",bag,1,Produce,"","",1
+"light brown sugar","Light Brown Sugar",bottle,1,Pantry Staples,"","",1
+"light soy sauce","Light Soy Sauce",bottle,1,Condiments,"","",1
+"lime","Lime; Lime Or Lemon",each,1,Produce,"","",2
+"lime juice","Fresh Lime Juice; Lime Juice",each,1,Produce,"","",2
+"lime wedges","Fresh Lime Wedges; Lime Wedges",each,1,Produce,"","",2
+"lime zest","Lime Zest",each,1,Produce,"","",1
+"limes","Limes",bottle,1,Pantry Staples,"","",1
+"linguine pasta","Linguine Pasta",bag,1,Pantry Staples,"","",1
+"littleneck clams","Littleneck Clams",lb,0.5,Meat & Seafood,"","",1
+"long grain white rice","Long Grain White Rice",bag,1,Pantry Staples,"","",1
+"long-grain parboiled rice","Long-grain Parboiled Rice",bag,1,Pantry Staples,"","",1
+"long-grain white rice","Long-grain White Rice",bag,1,Pantry Staples,"","",1
+"low-sodium chicken","Low-sodium Chicken Or Vegetable Stock",lb,1,Meat & Seafood,"","",1
+"low-sodium chicken broth","Low-sodium Chicken Broth",lb,1,Meat & Seafood,"","",1
+"low-sodium chicken stock","Low-sodium Chicken Stock",lb,1,Meat & Seafood,"","",1
+"low-sodium soy sauce","Low-sodium Soy Sauce",bottle,1,Condiments,"","",1
+"low-sodium vegetable","Low-sodium Vegetable Or Chicken Broth",bottle,1,Pantry Staples,"","",1
+"mackerel","Whole Mackerel",lb,0.5,Meat & Seafood,"","",1
+"mackerel fillets","Mackerel Fillets",lb,0.5,Meat & Seafood,"","",1
+"mandu","Mandu Or Wonton Wrappers",bottle,1,Pantry Staples,"","",1
+"mango","Mango",bottle,1,Pantry Staples,"","",1
+"mango pickle","Mango Pickle",bottle,1,Pantry Staples,"","",1
+"maple syrup","Maple Syrup",bottle,1,Pantry Staples,"","",1
+"marinated artichoke hearts","Marinated Artichoke Hearts",bottle,1,Pantry Staples,"","",1
+"masa harina","Masa Harina",bottle,1,Pantry Staples,"","",1
+"mayo","Mayo",bottle,1,Condiments,"","",1
+"mayonnaise","Mayonnaise",bottle,1,Pantry Staples,"","",1
+"medium onions","Medium Onions",bottle,1,Pantry Staples,"","",1
+"medium shrimp","Medium Shrimp",lb,0.5,Meat & Seafood,"","",1
+"medium zucchini","Medium Zucchini",each,1,Produce,"","",1
+"medjool dates","Medjool Dates",bottle,1,Pantry Staples,"","",1
+"menma","Menma",bottle,1,Pantry Staples,"","",1
+"mexican chorizo","Mexican Chorizo",lb,1,Meat & Seafood,"","",1
+"mexican crema","Mexican Crema",bottle,1,Pantry Staples,"","",1
+"mexican oregano","Dried Mexican Oregano",container,1,Spices & Seasonings,"","",1
+"microgreens","Microgreens; Microgreens Or Cilantro; Microgreens Or Pea Shoots",bottle,1,Pantry Staples,"","",3
+"milk","Milk; Whole Milk",gallon,0.5,Dairy & Eggs,"","",2
+"mini slider buns","Mini Slider Buns",bottle,1,Pantry Staples,"","",1
+"mint","Fresh Mint; Mint",bunch,1,Produce,"","",2
+"mint leaf","Fresh Mint Leaves; Mint Leaves",bunch,1,Produce,"Fresh Mint","",2
+"mirin","Mirin",bottle,1,Pantry Staples,"","",1
+"mixed baby greens","Mixed Baby Greens",bottle,1,Pantry Staples,"","",1
+"mixed berries","Mixed Berries",bottle,1,Pantry Staples,"","",1
+"mixed greens","Mixed Greens",bottle,1,Pantry Staples,"","",1
+"mixed leafy greens","Mixed Leafy Greens",bottle,1,Pantry Staples,"","",1
+"mixed lettuce","Mixed Lettuce Or Baby Greens",bag,1,Produce,"","",1
+"mixed mushrooms","Mixed Mushrooms",bag,1,Produce,"","",1
+"mixed olives","Mixed Olives",bottle,1,Pantry Staples,"","",1
+"mixed salad greens","Mixed Salad Greens",bottle,1,Pantry Staples,"","",1
+"mixed seafood","Mixed Seafood",bottle,1,Pantry Staples,"","",1
+"mixed supergreens","Mixed Supergreens",bottle,1,Pantry Staples,"","",1
+"mixed vegetables","Mixed Vegetables",bottle,1,Pantry Staples,"","",1
+"mixed vegetables for sambar","Mixed Vegetables For Sambar",bottle,1,Pantry Staples,"","",1
+"molasses","Molasses",bottle,1,Pantry Staples,"","",1
+"monterey jack cheese","Monterey Jack Cheese",lb,0.5,Dairy & Eggs,"","",1
+"mozzarella","Fresh Mozzarella",lb,0.5,Dairy & Eggs,"","",1
+"mozzarella cheese","Mozzarella Cheese",lb,0.5,Dairy & Eggs,"","",1
+"mulato chile","Dried Mulato Chile",bottle,1,Pantry Staples,"","",1
+"mung bean sprouts","Mung Bean Sprouts",bottle,1,Pantry Staples,"","",1
+"mushroom","Mushrooms",bottle,1,Pantry Staples,"","",1
+"mushroom soaking liquid","Mushroom Soaking Liquid",bottle,1,Pantry Staples,"","",1
+"mushroom stock","Mushroom Stock",can,1,Canned Goods,"","",1
+"mussels","Fresh Mussels; Mussels",lb,0.5,Meat & Seafood,"","",2
+"mustard","Yellow Mustard",bottle,1,Condiments,"","",1
+"mustard oil","Mustard Oil",bottle,1,Oils & Vinegars,"","",1
+"mustard powder","Mustard Powder",bottle,1,Condiments,"","",1
+"mustard seeds","Mustard Seeds",bottle,1,Condiments,"","",1
+"napa cabbage","Napa Cabbage",bottle,1,Pantry Staples,"","",1
+"napa cabbage kimchi","Napa Cabbage Kimchi",bottle,1,Pantry Staples,"","",1
+"navel orange","Navel Orange",each,1,Produce,"","",1
+"neutral cooking oil","Neutral Cooking Oil",bottle,1,Oils & Vinegars,"","",1
+"neutral frying oil","Neutral Frying Oil",bottle,1,Oils & Vinegars,"","",1
+"neutral oil","Neutral Oil",bottle,1,Oils & Vinegars,"","",1
+"new potatoes","New Potatoes",bottle,1,Pantry Staples,"","",1
+"nonstick cooking spray","Nonstick Cooking Spray",bottle,1,Pantry Staples,"","",1
+"nopales","Fresh Nopales",bottle,1,Pantry Staples,"","",1
+"nori","Nori",bottle,1,Pantry Staples,"","",1
+"nori seaweed","Nori Seaweed",bottle,1,Pantry Staples,"","",1
+"nori sheets","Nori Sheets",bottle,1,Pantry Staples,"","",1
+"nutmeg","Ground Nutmeg; Nutmeg",bottle,1,Pantry Staples,"","",2
+"nutritional yeast","Nutritional Yeast",bottle,1,Pantry Staples,"","",1
+"oaxaca cheese","Oaxaca Cheese",lb,0.5,Dairy & Eggs,"","",1
+"okra","Okra",bottle,1,Pantry Staples,"","",1
+"olive oil","Extra Virgin Olive Oil; Extra-virgin Olive Oil; Olive Oil; Olive Oil Or Vegan Butter",bottle,1,Oils & Vinegars,"Olive Oil","",4
+"olive oil spray","Olive Oil Spray",bottle,1,Oils & Vinegars,"","",1
+"olives","Olives",bottle,1,Pantry Staples,"","",1
+"onion","Onion; Onions; White Onion; Yellow Onion",each,1,Produce,"","",4
+"onion powder","Onion Powder",each,1,Produce,"","",1
+"optional protein","Optional Protein Or Sugar Snap Peas",bottle,1,Pantry Staples,"","",1
+"optional toppings","Optional Toppings",bottle,1,Pantry Staples,"","",1
+"orange","Orange; Orange Or Green Bell Pepper",each,1,Produce,"","",2
+"orange juice","Fresh Orange Juice; Orange Juice",each,1,Produce,"","",2
+"orange zest","Orange Zest",each,1,Produce,"","",1
+"oregano","Dried Oregano; Fresh Oregano; Oregano",container,1,Spices & Seasonings,"","",3
+"oregano leaves","Fresh Oregano Leaves",container,1,Spices & Seasonings,"Fresh Oregano","",1
+"orzo","Orzo",bottle,1,Pantry Staples,"","",1
+"oxtail","Oxtail",lb,1,Meat & Seafood,"","",1
+"oyster sauce","Oyster Sauce; Oyster Sauce Or Mushroom Stir-fry Sauce",bottle,1,Condiments,"","",2
+"paleo bbq sauce","Paleo Bbq Sauce",bottle,1,Condiments,"","",1
+"palm sugar","Palm Sugar",bottle,1,Pantry Staples,"","",1
+"panang curry paste","Panang Curry Paste",bottle,1,Condiments,"","",1
+"paneer","Paneer",bottle,1,Pantry Staples,"","",1
+"panko breadcrumbs","Panko Breadcrumbs",bottle,1,Pantry Staples,"","",1
+"paprika","Paprika",container,1,Spices & Seasonings,"","",1
+"parchment paper","Parchment Paper",bottle,1,Pantry Staples,"","",1
+"parmesan cheese","Parmesan Cheese",lb,0.5,Dairy & Eggs,"","",1
+"parmesan rind","Parmesan Rind",lb,0.5,Dairy & Eggs,"","",1
+"parmigiano-reggiano","Parmigiano-reggiano",bottle,1,Pantry Staples,"","",1
+"parmigiano-reggiano cheese","Parmigiano-reggiano Cheese",lb,0.5,Dairy & Eggs,"","",1
+"parsley","Fresh Parsley; Fresh Parsley Or Cilantro; Parsley",bunch,1,Produce,"","",3
+"parsley leaves","Parsley Leaves",bunch,1,Produce,"","",1
+"parsnips","Parsnips",bottle,1,Pantry Staples,"","",1
+"pasilla chiles","Dried Pasilla Chiles",bottle,1,Pantry Staples,"","",1
+"pasta cooking water","Pasta Cooking Water",bag,1,Pantry Staples,"","",1
+"pav bhaji masala","Pav Bhaji Masala",bottle,1,Pantry Staples,"","",1
+"pav buns","Pav Buns",bottle,1,Pantry Staples,"","",1
+"pea","Frozen Peas; Peas; Peas (Shelled)",bottle,1,Pantry Staples,"","",3
+"peanut oil","Peanut Oil",bottle,1,Oils & Vinegars,"","",1
+"peanuts","Peanuts",bottle,1,Pantry Staples,"","",1
+"pear","Pear",bottle,1,Pantry Staples,"","",1
+"pearl barley","Pearl Barley",bottle,1,Pantry Staples,"","",1
+"pearl onions","Pearl Onions",bottle,1,Pantry Staples,"","",1
+"pearled farro","Pearled Farro",bottle,1,Pantry Staples,"","",1
+"pecans","Pecans",bottle,1,Pantry Staples,"","",1
+"pecorino romano","Pecorino Romano",bottle,1,Pantry Staples,"","",1
+"pecorino romano cheese","Pecorino Romano Cheese",lb,0.5,Dairy & Eggs,"","",1
+"penne rigate","Penne Rigate",bottle,1,Pantry Staples,"","",1
+"pepitas","Pepitas",bottle,1,Pantry Staples,"","",1
+"pepper","Ground Pepper",container,1,Spices & Seasonings,"","",1
+"perilla leaves","Perilla Leaves",bottle,1,Pantry Staples,"","",1
+"phyllo pastry sheets","Phyllo Pastry Sheets",bottle,1,Pantry Staples,"","",1
+"pickled carrot and daikon","Pickled Carrot And Daikon",bottle,1,Pantry Staples,"","",1
+"pickled cucumber","Pickled Cucumber",each,1,Produce,"","",1
+"pickled ginger","Pickled Ginger",each,1,Produce,"","",1
+"pickled mustard greens","Pickled Mustard Greens",bottle,1,Condiments,"","",1
+"pickled red onion","Pickled Red Onion",each,1,Produce,"","",1
+"pickled vegetables","Pickled Vegetables",bottle,1,Pantry Staples,"","",1
+"pickles","Pickles",bottle,1,Pantry Staples,"","",1
+"pico de gallo","Pico De Gallo",bottle,1,Pantry Staples,"","",1
+"pigeon peas","Pigeon Peas",bottle,1,Pantry Staples,"","",1
+"pimento peppers","Pimento Peppers",bottle,1,Pantry Staples,"","",1
+"pine nuts","Pine Nuts",bottle,1,Pantry Staples,"","",1
+"pineapple","Pineapple",bottle,1,Pantry Staples,"","",1
+"pineapple chunks","Pineapple Chunks",bottle,1,Pantry Staples,"","",1
+"pineapple juice","Pineapple Juice",bottle,1,Pantry Staples,"","",1
+"pinto beans","Pinto Beans",bottle,1,Pantry Staples,"","",1
+"pistachios","Pistachios",bottle,1,Pantry Staples,"","",1
+"pita bread","Pita Bread; Pita Bread Or Flatbreads",bag,1,Pantry Staples,"","",2
+"pizza dough","Pizza Dough",bottle,1,Pantry Staples,"","",1
+"plain breadcrumbs","Plain Breadcrumbs",bottle,1,Pantry Staples,"","",1
+"plain dried breadcrumbs","Plain Dried Breadcrumbs",container,1,Spices & Seasonings,"","",1
+"plain full-fat greek yogurt","Plain Full-fat Greek Yogurt",gallon,0.5,Dairy & Eggs,"","",1
+"plain full-fat yogurt","Plain Full-fat Yogurt",gallon,0.5,Dairy & Eggs,"","",1
+"plain greek yogurt","Plain Greek Yogurt",gallon,0.5,Dairy & Eggs,"","",1
+"plain whole-milk yogurt","Plain Whole-milk Yogurt",gallon,0.5,Dairy & Eggs,"","",1
+"plain yogurt","Plain Yogurt",gallon,0.5,Dairy & Eggs,"","",1
+"plant-based milk","Plant-based Milk",gallon,0.5,Dairy & Eggs,"","",1
+"plant-based yogurt","Plant-based Yogurt",gallon,0.5,Dairy & Eggs,"","",1
+"plum tomatoes","Plum Tomatoes",bottle,1,Pantry Staples,"","",1
+"poblano chiles","Poblano Chiles",bottle,1,Pantry Staples,"","",1
+"poblano peppers","Poblano Peppers",bottle,1,Pantry Staples,"","",1
+"poha","Poha (Flattened Rice)",bottle,1,Pantry Staples,"","",1
+"polenta","Polenta",bottle,1,Pantry Staples,"","",1
+"pomegranate seeds","Pomegranate Seeds",bottle,1,Pantry Staples,"","",1
+"pork","Ground Pork; Pork",lb,1,Meat & Seafood,"","",2
+"pork belly","Pork Belly",lb,1,Meat & Seafood,"","",1
+"pork bones","Pork Bones",lb,1,Meat & Seafood,"","",1
+"pork chops","Pork Chops",lb,1,Meat & Seafood,"","",1
+"pork cutlets","Pork Cutlets",lb,1,Meat & Seafood,"","",1
+"pork loin chops","Pork Loin Chops",lb,1,Meat & Seafood,"","",1
+"pork ribs","Pork Ribs",lb,1,Meat & Seafood,"","",1
+"pork rinds","Pork Rinds",lb,1,Meat & Seafood,"","",1
+"pork sausage","Pork Sausage",lb,1,Meat & Seafood,"","",1
+"pork shoulder","Pork Shoulder; Pork Shoulder Or Loin",lb,1,Meat & Seafood,"","",2
+"pork tenderloin","Pork Tenderloin",lb,1,Meat & Seafood,"","",1
+"portobello mushrooms","Portobello Mushrooms",bag,1,Produce,"","",1
+"potato","Baby Potatoes; Potato; Potatoes",each,1,Produce,"","",3
+"potato buns","Potato Buns",each,1,Produce,"","",1
+"potato gnocchi","Potato Gnocchi",each,1,Produce,"","",1
+"potato starch","Potato Starch",each,1,Produce,"","",1
+"powdered sugar","Powdered Sugar",container,1,Spices & Seasonings,"","",1
+"preserved lemon rind","Preserved Lemon Rind",each,1,Produce,"","",1
+"preserved mustard greens","Preserved Mustard Greens",bottle,1,Condiments,"","",1
+"prosciutto","Prosciutto; Prosciutto Or Bacon Slices",lb,1,Meat & Seafood,"","",2
+"pulled pork","Pulled Pork",lb,1,Meat & Seafood,"","",1
+"pumpkin","Pumpkin",bottle,1,Pantry Staples,"","",1
+"pumpkin seeds","Pumpkin Seeds",bottle,1,Pantry Staples,"","",1
+"pure maple syrup","Pure Maple Syrup",bottle,1,Pantry Staples,"","",1
+"pure vanilla extract","Pure Vanilla Extract",bottle,1,Pantry Staples,"","",1
+"queso fresco","Queso Fresco",bottle,1,Pantry Staples,"","",1
+"quinoa","Quinoa",bottle,1,Pantry Staples,"","",1
+"radishes","Radishes",bottle,1,Pantry Staples,"","",1
+"ramen noodles","Fresh Ramen Noodles; Ramen Noodles",bag,1,Pantry Staples,"","",2
+"ranch dressing","Ranch Dressing",bottle,1,Pantry Staples,"","",1
+"ranch seasoning","Ranch Seasoning",bottle,1,Pantry Staples,"","",1
+"raw almonds","Raw Almonds",bottle,1,Pantry Staples,"","",1
+"raw cashews","Raw Cashews",bottle,1,Pantry Staples,"","",1
+"raw eye of round beef","Raw Eye Of Round Beef",lb,1,Meat & Seafood,"","",1
+"raw peanuts","Raw Peanuts",bottle,1,Pantry Staples,"","",1
+"raw pumpkin seeds","Raw Pumpkin Seeds",bottle,1,Pantry Staples,"","",1
+"raw whole almonds","Raw Whole Almonds",bottle,1,Pantry Staples,"","",1
+"red bell pepper","Red Bell Pepper; Red Bell Peppers",each,1,Produce,"","",2
+"red cabbage","Red Cabbage",bottle,1,Pantry Staples,"","",1
+"red chile powder","Red Chile Powder",container,1,Spices & Seasonings,"","",1
+"red chili","Fresh Red Chili; Red Chili",bottle,1,Pantry Staples,"","",2
+"red chili flakes","Dried Red Chili Flakes; Red Chili Flakes",bottle,1,Pantry Staples,"","",2
+"red chili powder","Red Chili Powder",container,1,Spices & Seasonings,"","",1
+"red chilies","Dried Red Chilies; Red Chilies",bottle,1,Pantry Staples,"","",2
+"red curry paste","Red Curry Paste",bottle,1,Condiments,"","",1
+"red kidney beans","Dried Red Kidney Beans; Red Kidney Beans",bottle,1,Pantry Staples,"","",2
+"red onion","Red Onion",each,1,Produce,"","",1
+"red pepper flakes","Red Pepper Flakes",container,1,Spices & Seasonings,"","",1
+"red snapper","Whole Red Snapper",bottle,1,Pantry Staples,"","",1
+"red snapper fillets","Red Snapper Fillets",bottle,1,Pantry Staples,"","",1
+"red thai chili","Red Thai Chili",bottle,1,Pantry Staples,"","",1
+"red wine","Red Wine",bottle,1,Pantry Staples,"","",1
+"red wine vinegar","Red Wine Vinegar",bottle,1,Oils & Vinegars,"","",1
+"refried beans","Refried Beans",bottle,1,Pantry Staples,"","",1
+"ribeye steak","Ribeye Steak",lb,1,Meat & Seafood,"","",1
+"rice","Rice",bag,1,Pantry Staples,"","",1
+"rice cakes","Rice Cakes",bag,1,Pantry Staples,"","",1
+"rice flour","Rice Flour",bag,1,Pantry Staples,"","",1
+"rice noodles","Rice Noodles",bag,1,Pantry Staples,"","",1
+"rice paper wrappers","Rice Paper Wrappers",bag,1,Pantry Staples,"","",1
+"rice syrup","Rice Syrup",bag,1,Pantry Staples,"","",1
+"rice vermicelli","Rice Vermicelli",bag,1,Pantry Staples,"","",1
+"rice vermicelli noodles","Rice Vermicelli Noodles",bag,1,Pantry Staples,"","",1
+"rice vinegar","Rice Vinegar",bottle,1,Oils & Vinegars,"","",1
+"rice wine","Rice Wine",bag,1,Pantry Staples,"","",1
+"ricotta","Ricotta",bottle,1,Pantry Staples,"","",1
+"ricotta cheese","Ricotta Cheese",lb,0.5,Dairy & Eggs,"","",1
+"ripe avocado","Ripe Avocado",each,1,Produce,"","",1
+"ripe avocados","Ripe Avocados",bottle,1,Pantry Staples,"","",1
+"ripe peaches","Ripe Peaches",bottle,1,Pantry Staples,"","",1
+"ripe plantains","Ripe Plantains",bottle,1,Pantry Staples,"","",1
+"ripe tomato","Ripe Tomato",each,1,Produce,"","",1
+"ripe tomatoes","Ripe Tomatoes",bottle,1,Pantry Staples,"","",1
+"roasted cashews","Roasted Cashews",bottle,1,Pantry Staples,"","",1
+"roasted peanuts","Roasted Peanuts",bottle,1,Pantry Staples,"","",1
+"roasted red bell pepper","Roasted Red Bell Pepper",each,1,Produce,"","",1
+"roasted rice powder","Roasted Rice Powder",bag,1,Pantry Staples,"","",1
+"roasted turkey slices","Roasted Turkey Slices",lb,1,Meat & Seafood,"","",1
+"roasted unsalted peanuts","Roasted Unsalted Peanuts",bottle,1,Pantry Staples,"","",1
+"rock sugar","Rock Sugar",bottle,1,Pantry Staples,"","",1
+"rolled oats","Rolled Oats",bottle,1,Pantry Staples,"","",1
+"roma tomato","Roma Tomato",each,1,Produce,"","",1
+"roma tomatoes","Roma Tomatoes",bottle,1,Pantry Staples,"","",1
+"romaine","Romaine Or Butter Lettuce Leaves",bottle,1,Pantry Staples,"","",1
+"romaine hearts","Romaine Hearts",bottle,1,Pantry Staples,"","",1
+"romaine lettuce","Romaine Lettuce",bag,1,Produce,"","",1
+"romaine lettuce hearts","Romaine Lettuce Hearts",bag,1,Produce,"","",1
+"rose water","Rose Water",bottle,1,Pantry Staples,"","",1
+"rosemary","Fresh Rosemary; Rosemary",bunch,1,Produce,"","",2
+"rosemary sprig","Rosemary Sprig",bunch,1,Produce,"","",1
+"rosemary sprigs","Rosemary Sprigs",bunch,1,Produce,"","",1
+"russet potato","Russet Potato",each,1,Produce,"","",1
+"russet potatoes","Russet Potatoes",bottle,1,Pantry Staples,"","",1
+"rustic country bread","Rustic Country Bread",bag,1,Pantry Staples,"","",1
+"rye bread","Rye Bread",bag,1,Pantry Staples,"","",1
+"rye bread slices","Rye Bread Slices",bag,1,Pantry Staples,"","",1
+"saffron threads","Saffron Threads",bottle,1,Pantry Staples,"","",1
+"sage","Sage",bunch,1,Produce,"","",1
+"sage leaves","Fresh Sage Leaves",bunch,1,Produce,"","",1
+"sake","Sake",bottle,1,Pantry Staples,"","",1
+"salad greens","Salad Greens",bottle,1,Pantry Staples,"","",1
+"salmon","Salmon",lb,0.5,Meat & Seafood,"","",1
+"salmon fillet","Salmon Fillet",lb,0.5,Meat & Seafood,"","",1
+"salmon fillets","Salmon Fillets",lb,0.5,Meat & Seafood,"","",1
+"salsa","Salsa",bottle,1,Pantry Staples,"","",1
+"salt","Salt",container,1,Spices & Seasonings,"","",1
+"salt and black pepper","Salt And Black Pepper",container,1,Spices & Seasonings,"","",1
+"salt and pepper","Salt And Pepper",container,1,Spices & Seasonings,"","",1
+"salt and white pepper","Salt And White Pepper",container,1,Spices & Seasonings,"","",1
+"salted butter","Salted Butter",package,1,Dairy & Eggs,"","",1
+"salted cod","Salted Cod",lb,0.5,Meat & Seafood,"","",1
+"saltfish","Saltfish",bottle,1,Pantry Staples,"","",1
+"sambal oelek","Sambal Oelek",bottle,1,Pantry Staples,"","",1
+"sambar powder","Sambar Powder",container,1,Spices & Seasonings,"","",1
+"sardines","Fresh Sardines",lb,0.5,Meat & Seafood,"","",1
+"sardines in olive oil","Canned Sardines In Olive Oil",lb,0.5,Meat & Seafood,"Canned Sardines","",1
+"sausages","Sausages",bottle,1,Pantry Staples,"","",1
+"scallion","Scallion",bottle,1,Pantry Staples,"","",1
+"scallion greens","Scallion Greens",bottle,1,Pantry Staples,"","",1
+"scallions","Scallions",bunch,1,Produce,"","",1
+"scotch bonnet pepper","Scotch Bonnet Pepper",container,1,Spices & Seasonings,"","",1
+"sea salt","Sea Salt",container,1,Spices & Seasonings,"","",1
+"sea scallops","Sea Scallops",lb,0.5,Meat & Seafood,"","",1
+"seafood stock","Seafood Stock",can,1,Canned Goods,"","",1
+"seedless watermelon","Seedless Watermelon",bottle,1,Pantry Staples,"","",1
+"semolina","Semolina",bottle,1,Pantry Staples,"","",1
+"serrano pepper","Serrano Pepper",container,1,Spices & Seasonings,"","",1
+"sesame oil","Sesame Oil",bottle,1,Oils & Vinegars,"","",1
+"sesame paste","Sesame Paste",bottle,1,Condiments,"","",1
+"sesame seeds","Sesame Seeds",bottle,1,Pantry Staples,"","",1
+"shallot","Shallot",bottle,1,Pantry Staples,"","",1
+"shallots","Shallots",bottle,1,Pantry Staples,"","",1
+"shaoxing rice wine","Shaoxing Rice Wine",bag,1,Pantry Staples,"","",1
+"shaoxing wine","Shaoxing Wine",bottle,1,Pantry Staples,"","",1
+"sharp cheddar cheese","Sharp Cheddar Cheese",lb,0.5,Dairy & Eggs,"","",1
+"shelled edamame","Shelled Edamame",bottle,1,Pantry Staples,"","",1
+"sherry vinegar","Sherry Vinegar",bottle,1,Oils & Vinegars,"","",1
+"shichimi togarashi","Shichimi Togarashi",bottle,1,Pantry Staples,"","",1
+"shiitake mushrooms","Dried Shiitake Mushrooms; Shiitake Mushrooms",bag,1,Produce,"","",2
+"short pasta","Short Pasta",bag,1,Pantry Staples,"","",1
+"short-grain japanese rice","Short-grain Japanese Rice",bag,1,Pantry Staples,"","",1
+"short-grain rice","Short-grain Rice",bag,1,Pantry Staples,"","",1
+"short-grain sushi rice","Short-grain Sushi Rice",bag,1,Pantry Staples,"","",1
+"short-grain white rice","Short-grain White Rice",bag,1,Pantry Staples,"","",1
+"shredded cabbage","Shredded Cabbage",bottle,1,Pantry Staples,"","",1
+"shredded cheddar cheese","Shredded Cheddar Cheese",lb,0.5,Dairy & Eggs,"","",1
+"shredded cheese","Shredded Cheese",lb,0.5,Dairy & Eggs,"","?",1
+"shredded coconut","Shredded Coconut",bottle,1,Pantry Staples,"","",1
+"shredded mozzarella cheese","Shredded Mozzarella Cheese",lb,0.5,Dairy & Eggs,"","",1
+"shrimp","Dried Shrimp; Shrimp",lb,0.5,Meat & Seafood,"","",2
+"shrimp paste","Shrimp Paste",lb,0.5,Meat & Seafood,"","",1
+"sichuan doubanjiang","Sichuan Doubanjiang",bottle,1,Pantry Staples,"","",1
+"sichuan peppercorns","Sichuan Peppercorns",bottle,1,Pantry Staples,"","",1
+"silken tofu","Silken Tofu",bottle,1,Pantry Staples,"","",1
+"sirloin beef","Sirloin Beef",lb,1,Meat & Seafood,"","",1
+"skewers","Skewers",bottle,1,Pantry Staples,"","",1
+"slivered almonds","Slivered Almonds",bottle,1,Pantry Staples,"","",1
+"small potatoes","Small Potatoes",bottle,1,Pantry Staples,"","",1
+"small raw shrimp","Small Raw Shrimp",lb,0.5,Meat & Seafood,"","",1
+"smoked bacon","Smoked Bacon",lb,1,Meat & Seafood,"","",1
+"smoked mackerel fillets","Smoked Mackerel Fillets",lb,0.5,Meat & Seafood,"","",1
+"smoked paprika","Smoked Paprika",container,1,Spices & Seasonings,"","",1
+"smoked salmon","Smoked Salmon",lb,0.5,Meat & Seafood,"","",1
+"smoked trout fillets","Smoked Trout Fillets",bottle,1,Pantry Staples,"","",1
+"smoked turkey","Smoked Turkey",lb,1,Meat & Seafood,"","",1
+"smooth peanut butter","Smooth Peanut Butter",package,1,Dairy & Eggs,"","",1
+"snap peas","Snap Peas",bottle,1,Pantry Staples,"","",1
+"snapper","Whole Snapper",bottle,1,Pantry Staples,"","",1
+"soba noodles","Soba Noodles",bag,1,Pantry Staples,"","",1
+"soft pita pockets","Soft Pita Pockets",bottle,1,Pantry Staples,"","",1
+"soft silken tofu","Soft Silken Tofu",bottle,1,Pantry Staples,"","",1
+"soft tofu","Soft Tofu",bottle,1,Pantry Staples,"","",1
+"sole fillets","Sole Fillets",bottle,1,Pantry Staples,"","",1
+"sour cream","Sour Cream",gallon,0.5,Dairy & Eggs,"","",1
+"sourdough boule","Sourdough Boule",bottle,1,Pantry Staples,"","",1
+"sourdough bread","Sourdough Bread",bag,1,Pantry Staples,"","",1
+"sourdough bread slices","Sourdough Bread Slices",bag,1,Pantry Staples,"","",1
+"soy sauce","Soy Sauce",bottle,1,Condiments,"","",1
+"soy yogurt","Soy Yogurt",gallon,0.5,Dairy & Eggs,"","",1
+"soy-ginger dressing","Soy-ginger Dressing",each,1,Produce,"","",1
+"spaghetti","Dried Spaghetti; Spaghetti",bottle,1,Pantry Staples,"","",2
+"spaghetti squash","Spaghetti Squash",bottle,1,Pantry Staples,"","",1
+"spam","Spam",bottle,1,Pantry Staples,"","",1
+"sparkling water","Sparkling Water",bottle,1,Pantry Staples,"","",1
+"spices","Whole Spices",bottle,1,Pantry Staples,"","",1
+"spinach","Baby Spinach; Baby Spinach Or Kale; Fresh Spinach; Fresh Spinach Or Napa Cabbage Leaves; Spinach; Spinach Or Kale",bag,1,Produce,"","",6
+"spring onions","Spring Onions",bottle,1,Pantry Staples,"","",1
+"squid","Squid",bottle,1,Pantry Staples,"","",1
+"sriracha","Sriracha",bottle,1,Condiments,"","",1
+"sriracha sauce","Sriracha Sauce",bottle,1,Condiments,"","",1
+"ssamjang","Ssamjang",bottle,1,Pantry Staples,"","",1
+"star anise","Star Anise",bottle,1,Pantry Staples,"","",1
+"steamed jasmine rice","Steamed Jasmine Rice",bag,1,Pantry Staples,"","",1
+"steamed rice","Steamed Rice",bag,1,Pantry Staples,"","",1
+"steel-cut oats","Steel-cut Oats",bottle,1,Pantry Staples,"","",1
+"sticky rice","Sticky Rice",bag,1,Pantry Staples,"","",1
+"stone-ground grits","Stone-ground Grits",container,1,Spices & Seasonings,"","",1
+"straw mushrooms","Straw Mushrooms",bag,1,Produce,"","",1
+"strawberries","Strawberries",bottle,1,Pantry Staples,"","",1
+"sturdy sandwich bread slices","Sturdy Sandwich Bread Slices",bag,1,Pantry Staples,"","",1
+"sugar","Sugar",bottle,1,Pantry Staples,"","",1
+"sumac","Dried Sumac; Sumac",bottle,1,Pantry Staples,"","",2
+"sun-dried tomatoes","Sun-dried Tomatoes",container,1,Spices & Seasonings,"","",1
+"sunflower seeds","Sunflower Seeds",bottle,1,Pantry Staples,"","",1
+"supergrain blend","Supergrain Blend",bottle,1,Pantry Staples,"","",1
+"supergreens","Supergreens",bottle,1,Pantry Staples,"","",1
+"sushi rice","Sushi Rice",bag,1,Pantry Staples,"","",1
+"sweet corn kernels","Sweet Corn Kernels",bottle,1,Pantry Staples,"","",1
+"sweet paprika","Sweet Paprika",container,1,Spices & Seasonings,"","",1
+"sweet potato","Sweet Potato",each,1,Produce,"","",1
+"sweet potatoes","Sweet Potatoes",bottle,1,Pantry Staples,"","",1
+"sweet smoked paprika","Sweet Smoked Paprika",container,1,Spices & Seasonings,"","",1
+"swordfish steaks","Swordfish Steaks",bottle,1,Pantry Staples,"","",1
+"tagliatelle pasta","Tagliatelle Pasta",bag,1,Pantry Staples,"","",1
+"tahini","Tahini",jar,1,Pantry Staples,"","",1
+"tamari","Tamari; Tamari Or Soy Sauce",bottle,1,Pantry Staples,"","",2
+"tamarind concentrate","Tamarind Concentrate",bottle,1,Pantry Staples,"","",1
+"tamarind paste","Tamarind Paste",bottle,1,Condiments,"","",1
+"tamarind pulp","Tamarind Pulp",bottle,1,Pantry Staples,"","",1
+"tarragon","Fresh Tarragon",bottle,1,Pantry Staples,"","",1
+"tempeh","Tempeh",bottle,1,Pantry Staples,"","",1
+"thai basil","Thai Basil",bunch,1,Produce,"","",1
+"thai basil leaves","Thai Basil Leaves",bunch,1,Produce,"","",1
+"thai bird chiles","Thai Bird Chiles",bottle,1,Pantry Staples,"","",1
+"thai bird chilies","Thai Bird Chilies",bottle,1,Pantry Staples,"","",1
+"thai bird's eye chilies","Thai Bird's Eye Chilies",bottle,1,Pantry Staples,"","",1
+"thai eggplant","Thai Eggplant",each,1,Produce,"","",1
+"thai red chilies","Thai Red Chilies",bottle,1,Pantry Staples,"","",1
+"thick rice noodles","Thick Rice Noodles",bag,1,Pantry Staples,"","",1
+"thick wheat noodles","Thick Wheat Noodles",bag,1,Pantry Staples,"","",1
+"thick-cut bacon","Thick-cut Bacon",lb,1,Meat & Seafood,"","",1
+"thick-cut bacon strips","Thick-cut Bacon Strips",lb,1,Meat & Seafood,"","",1
+"thick-sliced bread","Thick-sliced Bread",bag,1,Pantry Staples,"","",1
+"thin wheat noodles","Thin Wheat Noodles",bag,1,Pantry Staples,"","",1
+"thinly sliced beef","Thinly Sliced Beef",lb,1,Meat & Seafood,"","",1
+"thyme","Dried Thyme; Fresh Thyme; Thyme",bunch,1,Produce,"","",3
+"thyme leaves","Fresh Thyme Leaves; Thyme Leaves",bunch,1,Produce,"","",2
+"thyme sprig","Thyme Sprig",bunch,1,Produce,"","",1
+"thyme sprigs","Fresh Thyme Sprigs; Thyme Sprigs",bunch,1,Produce,"","",2
+"tilapia","Tilapia",bottle,1,Pantry Staples,"","",1
+"toasted almonds","Toasted Almonds",bottle,1,Pantry Staples,"","",1
+"toasted bread","Toasted Bread",bag,1,Pantry Staples,"","",1
+"toasted breadcrumbs","Toasted Breadcrumbs",bottle,1,Pantry Staples,"","",1
+"toasted cashews","Toasted Cashews Or Slivered Almonds",bottle,1,Pantry Staples,"","",1
+"toasted peanuts","Toasted Peanuts",bottle,1,Pantry Staples,"","",1
+"toasted pine nuts","Toasted Pine Nuts Or Chopped Almonds; Toasted Pine Nuts Or Walnuts",bottle,1,Pantry Staples,"","",2
+"toasted rice powder","Toasted Rice Powder",bag,1,Pantry Staples,"","",1
+"toasted sesame oil","Toasted Sesame Oil",bottle,1,Oils & Vinegars,"","",1
+"toasted sesame seeds","Toasted Sesame Seeds",bottle,1,Pantry Staples,"","",1
+"toasted walnuts","Toasted Walnuts",bottle,1,Pantry Staples,"","",1
+"tofu","Tofu",bottle,1,Pantry Staples,"","",1
+"tomatillos","Fresh Tomatillos; Tomatillos",bottle,1,Pantry Staples,"","",2
+"tomato","Canned Tomatoes; Diced Tomato; Diced Tomatoes; Tomato; Tomatoes",each,1,Produce,"","",5
+"tomato paste","Tomato Paste",each,1,Produce,"","",1
+"tomato puree","Tomato Puree",each,1,Produce,"","",1
+"tomato sauce","Tomato Sauce",each,1,Produce,"","",1
+"tomato slices","Tomato Slices",each,1,Produce,"","",1
+"tonkatsu sauce","Tonkatsu Sauce",bottle,1,Condiments,"","",1
+"toor dal","Toor Dal (Pigeon Peas)",bottle,1,Pantry Staples,"","",1
+"tortilla chips","Tortilla Chips",bottle,1,Pantry Staples,"","",1
+"trout fillets","Trout Fillets",bottle,1,Pantry Staples,"","",1
+"tuna","Canned Tuna; Tuna",lb,0.5,Meat & Seafood,"","",2
+"tuna in olive oil","Canned Tuna In Olive Oil",lb,0.5,Meat & Seafood,"Canned Tuna","",1
+"tuna in water","Canned Tuna In Water",lb,0.5,Meat & Seafood,"Canned Tuna","",1
+"tuna steak","Ahi Tuna Steak; Fresh Tuna Steak; Fresh Tuna Steaks; Tuna Steaks",lb,1,Meat & Seafood,"","",4
+"turkey","Ground Turkey",lb,1,Meat & Seafood,"","",1
+"turkey breakfast sausage","Turkey Breakfast Sausage",lb,1,Meat & Seafood,"","",1
+"turkey chorizo","Turkey Chorizo",lb,1,Meat & Seafood,"","",1
+"turmeric","Ground Turmeric; Turmeric",bottle,1,Pantry Staples,"","",2
+"turmeric powder","Turmeric Powder",container,1,Spices & Seasonings,"","",1
+"udon noodles","Udon Noodles",bag,1,Pantry Staples,"","",1
+"umeboshi","Umeboshi",bottle,1,Pantry Staples,"","",1
+"unsalted butter","Unsalted Butter",package,1,Dairy & Eggs,"","",1
+"unsalted roasted peanuts","Unsalted Roasted Peanuts",bottle,1,Pantry Staples,"","",1
+"unsalted vegan butter","Unsalted Vegan Butter",package,1,Dairy & Eggs,"","",1
+"unsweetened almond milk","Unsweetened Almond Milk",gallon,0.5,Dairy & Eggs,"","",1
+"unsweetened soy","Unsweetened Soy Or Oat Milk",bottle,1,Pantry Staples,"","",1
+"urad dal","Urad Dal (Split Black Gram); Urad Dal (Split)",bottle,1,Pantry Staples,"","",2
+"vanilla extract","Vanilla Extract",bottle,1,Pantry Staples,"","",1
+"veal scaloppine","Veal Scaloppine",bottle,1,Pantry Staples,"","",1
+"veal shanks","Veal Shanks",bottle,1,Pantry Staples,"","",1
+"vegan parmesan","Vegan Parmesan Or Feta",lb,0.5,Dairy & Eggs,"","",1
+"vegan yogurt","Vegan Yogurt",gallon,0.5,Dairy & Eggs,"","",1
+"vegetable","Vegetable Or Chicken Broth; Vegetable Or Chicken Stock",bottle,1,Pantry Staples,"","",2
+"vegetable broth","Vegetable Broth; Vegetable Broth Or Water",can,1,Canned Goods,"","",2
+"vegetable oil","Vegetable Oil",bottle,1,Oils & Vinegars,"","",1
+"vegetable stock","Vegetable Stock",can,1,Canned Goods,"","",1
+"vegetarian oyster sauce","Vegetarian Oyster Sauce",bottle,1,Condiments,"","",1
+"vermicelli rice noodles","Vermicelli Rice Noodles",bag,1,Pantry Staples,"","",1
+"wakame seaweed","Dried Wakame Seaweed",bottle,1,Pantry Staples,"","",1
+"walnuts","Walnuts",bottle,1,Pantry Staples,"","",1
+"warm water","Warm Water",bottle,1,Pantry Staples,"","",1
+"wasabi paste","Wasabi Paste",bottle,1,Condiments,"","",1
+"water","Water; Water Or Light Anchovy Broth; Water Or Low-sodium Broth",bottle,1,Pantry Staples,"","",3
+"wheat noodles","Wheat Noodles",bag,1,Pantry Staples,"","",1
+"white beans","Canned White Beans; White Beans",bottle,1,Pantry Staples,"","",2
+"white bread","White Bread",bag,1,Pantry Staples,"","",1
+"white fish fillets","White Fish Fillets",lb,0.5,Meat & Seafood,"","",1
+"white miso","White Miso; White Miso Paste",bottle,1,Pantry Staples,"","",2
+"white pepper","Ground White Pepper; White Pepper",container,1,Spices & Seasonings,"","",2
+"white rice","White Rice; White Rice (Idli/rice Variety)",bag,1,Pantry Staples,"","",2
+"white rum","White Rum",bottle,1,Pantry Staples,"","",1
+"white sesame seeds","White Sesame Seeds",bottle,1,Pantry Staples,"","",1
+"white vinegar","White Vinegar",bottle,1,Oils & Vinegars,"","",1
+"white wine","White Wine",bottle,1,Pantry Staples,"","",1
+"white wine vinegar","White Wine Vinegar",bottle,1,Oils & Vinegars,"","",1
+"whole grain bread","Whole-grain Bread Slices",bag,1,Pantry Staples,"","",1
+"whole peeled tomatoes","Canned Whole Peeled Tomatoes",bottle,1,Pantry Staples,"Canned Whole Tomatoes","",1
+"whole plum tomatoes","Canned Whole Plum Tomatoes",bottle,1,Pantry Staples,"","",1
+"whole tomatoes","Canned Whole Tomatoes",bottle,1,Pantry Staples,"","",1
+"whole-wheat pasta","Whole-wheat Pasta",bag,1,Pantry Staples,"","",1
+"wide rice noodles","Wide Rice Noodles",bag,1,Pantry Staples,"","",1
+"wild rice blend","Wild Rice Blend",bag,1,Pantry Staples,"","",1
+"wonton wrappers","Wonton Wrappers",bottle,1,Pantry Staples,"","",1
+"wood-ear mushrooms","Dried Wood-ear Mushrooms",bag,1,Produce,"","",1
+"wooden","Wooden Or Metal Skewers",bottle,1,Pantry Staples,"","",1
+"wooden skewers","Wooden Skewers",bottle,1,Pantry Staples,"","",1
+"worcestershire sauce","Worcestershire Sauce",bottle,1,Condiments,"","",1
+"xanthan gum","Xanthan Gum",bottle,1,Pantry Staples,"","",1
+"yakisoba noodles","Yakisoba Noodles",bag,1,Pantry Staples,"","",1
+"yellow","Yellow Or Orange Bell Pepper",bottle,1,Pantry Staples,"","",1
+"yellow apples","Yellow Apples",bottle,1,Pantry Staples,"","",1
+"yellow bell pepper","Yellow Bell Pepper; Yellow Bell Peppers",each,1,Produce,"","",2
+"yellow cornmeal","Yellow Cornmeal",bag,1,Pantry Staples,"","",1
+"yellow lentils","Yellow Lentils",bottle,1,Pantry Staples,"","",1
+"yellow onions","Yellow Onions",bottle,1,Pantry Staples,"","",1
+"yellow potatoes","Yellow Potatoes",bottle,1,Pantry Staples,"","",1
+"yogurt","Whole-milk Yogurt; Yogurt",gallon,0.5,Dairy & Eggs,"","",2
+"za'atar","Za'atar",bottle,1,Pantry Staples,"","",1
+"za'atar spice blend","Za'atar Spice Blend",bottle,1,Pantry Staples,"","",1
+"zaatar spice blend","Zaatar Spice Blend",bottle,1,Pantry Staples,"","",1
+"zucchini","Zucchini",each,1,Produce,"","",1

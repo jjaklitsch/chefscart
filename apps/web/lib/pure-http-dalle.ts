@@ -79,7 +79,6 @@ export async function generateImageHTTP(
       
       // Retry with longer backoff for image generation
       const backoffMs = Math.min(2000 * Math.pow(2, attempt), 10000)
-      console.log(`Retrying DALL-E in ${backoffMs}ms...`)
       await new Promise(resolve => setTimeout(resolve, backoffMs))
     }
   }

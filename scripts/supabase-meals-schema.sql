@@ -15,7 +15,6 @@ CREATE TABLE meals (
     courses TEXT[] NOT NULL DEFAULT '{}', -- ['breakfast', 'lunch', 'dinner', 'snack']
     cuisines TEXT[] NOT NULL DEFAULT '{}', -- ['Mexican', 'American', 'Italian', etc.]
     diets_supported TEXT[] NOT NULL DEFAULT '{}', -- strict dietary compliance
-    dish_category VARCHAR(100), -- 'Bowl', 'Pasta', 'Salad', etc.
     primary_ingredient VARCHAR(100) NOT NULL DEFAULT 'none', -- 'chicken', 'beef', 'pasta', 'beans', etc.
     ingredient_tags TEXT[] NOT NULL DEFAULT '{}', -- ['chicken', 'pasta', 'tomatoes', etc.] for favorite foods matching
     

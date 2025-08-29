@@ -1,24 +1,51 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { ShoppingCart, Plus, Minus, X, ChevronRight, ArrowLeft, AlertCircle } from 'lucide-react'
-import { Recipe, Ingredient } from '../types'
+import { Recipe, UserPreferences } from '../types'
 
 interface CartBuilderProps {
   recipes: Recipe[]
   pantryItems: string[]
+  preferences?: UserPreferences
   onProceedToCheckout: (finalCart: ConsolidatedIngredient[]) => void
   onBack: () => void
 }
 
+// Enhanced ingredient structure from database
+interface ShoppableIngredient {
+  display_name: string
+  shoppable_name: string
+  quantity: number
+  unit: string
+  category: string
+  scale_type: 'linear' | 'fixed' | 'sqrt'
+  optional: boolean
+  notes?: string
+}
+
+interface MealIngredientBreakdown {
+  mealTitle: string
+  originalServings: number
+  targetServings: number
+  scaledQuantity: number
+  originalQuantity: number
+}
+
 interface ConsolidatedIngredient {
   name: string
+  shoppableName: string
   amount: number
   unit: string
-  category?: string
+  category: string
   fromRecipes: string[]
+  mealBreakdown: MealIngredientBreakdown[]
   isPantryItem?: boolean
   userAdded?: boolean
+  shoppingQuantity: number
+  shoppingUnit: string
+  notes?: string | undefined
+  isStrikethrough?: boolean
 }
 
 // Unit classification for intelligent conversion
@@ -172,7 +199,8 @@ function getRecommendedUnit(itemName: string): string {
   return 'pieces'
 }
 
-// Common units of measure for grocery items
+// Common units of measure for grocery items (currently used for validation)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const COMMON_UNITS = [
   // Count-based
   { value: 'pieces', label: 'pieces', category: 'Count' },
@@ -249,296 +277,314 @@ function normalizeCategory(category: string): string {
   return categoryMappings[normalized] || category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()
 }
 
-// Convert recipe units to purchasable store units with 10% buffer
-function convertToPurchasableUnits(name: string, amount: number, unit: string): { name: string; amount: number; unit: string } {
-  const lowerName = name.toLowerCase()
-  const unitLower = unit.toLowerCase()
+// Determine if an item should be sold by weight
+function isWeightBasedItem(name: string, category: string): boolean {
+  const lowerName = name.toLowerCase();
+  const lowerCategory = category.toLowerCase();
+  
+  // Weight-based categories
+  if (lowerCategory.includes('meat') || lowerCategory.includes('poultry') || lowerCategory.includes('seafood')) {
+    return true;
+  }
+  
+  // Some produce items sold by weight
+  if (lowerCategory.includes('produce')) {
+    const weightBasedProduce = ['potato', 'onion', 'carrot', 'apple', 'banana', 'orange', 
+                               'grape', 'cherry', 'berry', 'tomato', 'pepper', 'cucumber'];
+    return weightBasedProduce.some(item => lowerName.includes(item));
+  }
+  
+  return false;
+}
+
+// Convert recipe units to purchasable store units
+function convertToPurchasableUnits(name: string, amount: number, unit: string, category: string = ''): { name: string; amount: number; unit: string } {
+  const lowerName = name.toLowerCase();
+  const unitLower = unit.toLowerCase();
   
   // Skip water entirely
   if (lowerName === 'water' || lowerName.includes('water')) {
-    return { name: '', amount: 0, unit: '' }
+    return { name: '', amount: 0, unit: '' };
   }
   
-  // Capitalize first letter consistently
-  const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+  const isWeightBased = isWeightBasedItem(name, category);
   
-  // Apply 10% buffer first
-  const bufferedAmount = amount * 1.1
-  
-  // Define weight-based items (meat, fish, cold cuts)
-  const isWeightBased = lowerName.includes('chicken') || lowerName.includes('beef') || 
-                       lowerName.includes('pork') || lowerName.includes('lamb') ||
-                       lowerName.includes('fish') || lowerName.includes('salmon') ||
-                       lowerName.includes('tuna') || lowerName.includes('steak') ||
-                       lowerName.includes('ground') || lowerName.includes('turkey') ||
-                       lowerName.includes('ham') || lowerName.includes('bacon') ||
-                       lowerName.includes('sausage') || lowerName.includes('cold cuts') ||
-                       lowerName.includes('deli meat')
-  
-  // Enhanced name formatting with sizes where appropriate
-  let enhancedName = capitalizedName
-  if (lowerName.includes('pasta sauce') || lowerName.includes('tomato sauce')) {
-    enhancedName = capitalizedName + ' - 16oz'
-  } else if (lowerName.includes('broth') || lowerName.includes('stock')) {
-    enhancedName = capitalizedName + ' - 32oz'
-  } else if (lowerName.includes('milk')) {
-    enhancedName = capitalizedName + ' - 1 gallon'
-  } else if (lowerName.includes('yogurt')) {
-    enhancedName = capitalizedName + ' - 32oz container'
+  // For small quantities (spices, herbs, condiments), default to 1 item
+  if (unitLower.includes('tsp') || unitLower.includes('tbsp') || unitLower.includes('teaspoon') || unitLower.includes('tablespoon')) {
+    return { name, amount: 1, unit: isWeightBased ? 'lb' : '' };
   }
   
-  // Define packaged items that come in specific package sizes
-  const isPackagedItem = lowerName.includes('tortilla') || lowerName.includes('wrap') ||
-                        lowerName.includes('bread') || lowerName.includes('bagel') ||
-                        lowerName.includes('bun') || lowerName.includes('roll') ||
-                        lowerName.includes('pita') || lowerName.includes('naan') ||
-                        lowerName.includes('taco shell') || lowerName.includes('hot dog')
-  
-  // Convert cooking measurements to shopping quantities
-  if (unitLower.includes('teaspoon') || unitLower.includes('tsp') || 
-      unitLower.includes('tablespoon') || unitLower.includes('tbsp')) {
-    // Spices, herbs, and seasonings always become 1 container
-    if (lowerName.includes('salt') || lowerName.includes('pepper') || lowerName.includes('spice') || 
-        lowerName.includes('herbs') || lowerName.includes('seasoning') || lowerName.includes('garlic powder') ||
-        lowerName.includes('onion powder') || lowerName.includes('paprika') || lowerName.includes('cumin') ||
-        lowerName.includes('oregano') || lowerName.includes('basil') || lowerName.includes('thyme') ||
-        lowerName.includes('rosemary') || lowerName.includes('cinnamon') || lowerName.includes('vanilla')) {
-      return { name: enhancedName, amount: 1, unit: '' }
+  // Weight-based items keep their weight units
+  if (isWeightBased) {
+    if (unitLower.includes('oz') || unitLower.includes('ounce')) {
+      const pounds = amount >= 16 ? Math.round((amount / 16) * 4) / 4 : Math.round(amount * 4) / 4; // Round to quarter pounds/ounces
+      const finalUnit = amount >= 16 ? 'lb' : 'oz';
+      return { name, amount: pounds >= 16 ? pounds / 16 : pounds, unit: finalUnit };
     }
-    // All small quantity ingredients become 1 item
-    return { name: enhancedName, amount: 1, unit: '' }
+    if (unitLower.includes('lb') || unitLower.includes('pound')) {
+      return { name, amount: Math.round(amount * 4) / 4, unit: 'lb' }; // Round to quarter pounds
+    }
+    // Default to 1 lb for weight-based items without clear weight
+    return { name, amount: 1, unit: 'lb' };
   }
   
-  // Convert cups to practical shopping units
-  if (unitLower.includes('cup')) {
-    if (lowerName.includes('rice') || lowerName.includes('pasta') || lowerName.includes('flour') ||
-        lowerName.includes('sugar') || lowerName.includes('oats')) {
-      // Dry goods - keep as 1 item
-      return { name: enhancedName, amount: 1, unit: '' }
-    }
-    if (lowerName.includes('broth') || lowerName.includes('stock')) {
-      // Liquids - keep as 1 item  
-      return { name: enhancedName, amount: 1, unit: '' }
-    }
-    return { name: enhancedName, amount: Math.ceil(bufferedAmount), unit: '' }
+  // For everything else, convert to whole quantities without units (except weight-based)
+  let finalAmount = Math.ceil(amount);
+  
+  // Special handling for very small amounts - default to 1
+  if (finalAmount < 1) {
+    finalAmount = 1;
   }
   
-  // Handle weight-based items with weight labels
-  if (unitLower.includes('oz') || unitLower.includes('ounce')) {
-    if (isWeightBased) {
-      if (bufferedAmount >= 16) {
-        const pounds = (bufferedAmount / 16).toFixed(1)
-        return { name: enhancedName, amount: parseFloat(pounds), unit: 'lbs' }
-      } else {
-        return { name: enhancedName, amount: Math.ceil(bufferedAmount), unit: 'oz' }
-      }
-    }
-    // Non-weight items - keep as 1 item
-    return { name: enhancedName, amount: 1, unit: '' }
-  }
-  
-  if (unitLower.includes('lb') || unitLower.includes('pound')) {
-    if (isWeightBased) {
-      return { name: enhancedName, amount: Math.ceil(bufferedAmount * 10) / 10, unit: 'lbs' } // Round to nearest 0.1 lb
-    }
-    return { name: enhancedName, amount: Math.ceil(bufferedAmount), unit: '' }
-  }
-  
-  // Handle individual items (fruits, vegetables, etc.)
-  if (unitLower.includes('piece') || unitLower.includes('item') || unitLower === '' || unitLower === 'each') {
-    // For packaged items, show package info
-    if (isPackagedItem) {
-      if (lowerName.includes('tortilla') || lowerName.includes('wrap')) {
-        const packages = Math.ceil(bufferedAmount / 8) // Assume 8 per package
-        return { name: `${enhancedName} (pack of 8)`, amount: packages, unit: '' }
-      } else if (lowerName.includes('bread') || lowerName.includes('bagel')) {
-        const loaves = Math.ceil(bufferedAmount / 12) // Assume 12 slices/pieces per loaf/bag
-        return { name: `${enhancedName} (1 loaf/bag)`, amount: loaves, unit: '' }
-      } else if (lowerName.includes('bun') || lowerName.includes('roll')) {
-        const packages = Math.ceil(bufferedAmount / 6) // Assume 6 per package
-        return { name: `${enhancedName} (pack of 6)`, amount: packages, unit: '' }
-      } else if (lowerName.includes('pita') || lowerName.includes('naan')) {
-        const packages = Math.ceil(bufferedAmount / 4) // Assume 4 per package
-        return { name: `${enhancedName} (pack of 4)`, amount: packages, unit: '' }
-      } else if (lowerName.includes('taco shell')) {
-        const packages = Math.ceil(bufferedAmount / 12) // Assume 12 per package
-        return { name: `${enhancedName} (pack of 12)`, amount: packages, unit: '' }
-      }
-    }
-    
-    // Keep simple: use actual quantity unless it's extremely small
-    
-    return { name: enhancedName, amount: Math.ceil(bufferedAmount), unit: '' }
-  }
-  
-  // Handle cloves (garlic)
-  if (unitLower.includes('clove')) {
-    if (bufferedAmount <= 3) {
-      return { name: 'Garlic', amount: 1, unit: '' }
-    }
-    return { name: 'Garlic', amount: Math.ceil(bufferedAmount / 6), unit: '' }
-  }
-  
-  // Default: convert to shopping quantity (usually 1 item/container)
-  return { name: enhancedName, amount: 1, unit: '' }
+  return { name, amount: finalAmount, unit: '' };
 }
 
-export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout, onBack }: CartBuilderProps) {
+export default function CartBuilder({ recipes, pantryItems, preferences, onProceedToCheckout, onBack }: CartBuilderProps) {
   const [consolidatedIngredients, setConsolidatedIngredients] = useState<ConsolidatedIngredient[]>([])
+  const [isLoading, setIsLoading] = useState(true)
   const [showAddItem, setShowAddItem] = useState(false)
   const [newItemName, setNewItemName] = useState('')
   const [newItemAmount, setNewItemAmount] = useState('')
-  const [newItemUnit, setNewItemUnit] = useState('')
+  const [newItemUnit, setNewItemUnit] = useState('items')
   const [bulkItems, setBulkItems] = useState('')
   const [addMode, setAddMode] = useState<'single' | 'bulk'>('single')
   const [excludedItems, setExcludedItems] = useState<Set<string>>(new Set())
   const [showUpsellModal, setShowUpsellModal] = useState(false)
-  const [costEstimates, setCostEstimates] = useState<Record<string, number>>({})
-  const [isEstimatingCosts, setIsEstimatingCosts] = useState(false)
-  const [costEstimationError, setCostEstimationError] = useState<string | null>(null)
   const [upsellBulkItems, setUpsellBulkItems] = useState('')
 
-  // AI-based cost estimation function
-  const estimateIngredientCosts = async (ingredients: ConsolidatedIngredient[]) => {
-    if (ingredients.length === 0) return
+  // Filter out unwanted items like water and ice cubes
+  const shouldFilterItem = (name: string): boolean => {
+    const lowerName = name.toLowerCase()
+    return lowerName.includes('water') || 
+           lowerName.includes('ice cube') || 
+           lowerName.includes('ice cubes') ||
+           lowerName === 'water' ||
+           lowerName === 'ice'
+  }
 
-    setIsEstimatingCosts(true)
-    setCostEstimationError(null)
+  // Check if ingredient supports organic options and apply organic preference
+  const applyOrganicPreference = (shoppableName: string, ingredient: ShoppableIngredient): string => {
+    // Only apply organic if user has organic preference set
+    if (!preferences?.organicPreference || preferences.organicPreference === 'no_preference') {
+      return shoppableName
+    }
 
-    try {
-      // Get zipCode from localStorage 
-      const zipCode = localStorage.getItem('chefscart_zipcode') || ''
-
-      const response = await fetch('/api/estimate-ingredient-costs', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ingredients: ingredients.map(ing => ({
-            name: ing.name,
-            amount: ing.amount,
-            unit: ing.unit
-          })),
-          zipCode
-        })
-      })
-
-      if (!response.ok) {
-        throw new Error('Failed to estimate costs')
-      }
-
-      const data = await response.json()
+    // List of ingredients that commonly support organic options
+    const organicSupportedIngredients = [
+      // Produce
+      'apple', 'apples', 'banana', 'bananas', 'carrot', 'carrots', 'onion', 'onions',
+      'tomato', 'tomatoes', 'potato', 'potatoes', 'spinach', 'kale', 'lettuce',
+      'broccoli', 'bell pepper', 'bell peppers', 'cucumber', 'celery', 'avocado',
+      'lemon', 'lime', 'orange', 'strawberries', 'blueberries', 'mushrooms',
+      'garlic', 'ginger', 'herbs', 'cilantro', 'parsley', 'basil', 'rosemary',
       
-      if (data.success && data.estimates) {
-        const newCostEstimates: Record<string, number> = {}
-        data.estimates.forEach((estimate: any) => {
-          newCostEstimates[estimate.name] = estimate.estimatedCost
-        })
-        setCostEstimates(newCostEstimates)
-        console.log('✅ Updated cost estimates for', Object.keys(newCostEstimates).length, 'ingredients')
-      }
-    } catch (error) {
-      console.error('Error estimating ingredient costs:', error)
-      setCostEstimationError('Unable to estimate costs. Showing approximate pricing.')
-    } finally {
-      setIsEstimatingCosts(false)
-    }
-  }
+      // Grains and legumes
+      'rice', 'quinoa', 'oats', 'flour', 'bread', 'pasta', 'beans', 'lentils',
+      'chickpeas', 'black beans', 'kidney beans',
+      
+      // Dairy and eggs
+      'milk', 'eggs', 'cheese', 'yogurt', 'butter', 'cream',
+      
+      // Meat and poultry
+      'chicken', 'beef', 'pork', 'turkey', 'ground beef', 'chicken breast',
+      
+      // Pantry items
+      'olive oil', 'coconut oil', 'honey', 'maple syrup', 'vinegar',
+      'soy sauce', 'tomato sauce', 'canned tomatoes'
+    ]
 
-  // Fallback heuristic cost calculation (if AI fails)
-  const getHeuristicCost = (ingredient: ConsolidatedIngredient): number => {
-    const name = ingredient.name.toLowerCase()
-    const amount = ingredient.amount
+    const lowerShoppableName = shoppableName.toLowerCase()
+    const lowerDisplayName = ingredient.display_name.toLowerCase()
     
-    if (name.includes('meat') || name.includes('chicken') || name.includes('beef')) {
-      return amount * 8
-    }
-    if (name.includes('fish') || name.includes('salmon')) {
-      return amount * 12
-    }
-    if (name.includes('cheese') || name.includes('dairy')) {
-      return amount * 4
-    }
-    return Math.max(1.99, amount * 2) // Default minimum $1.99
-  }
+    // Check if this ingredient supports organic
+    const supportsOrganic = organicSupportedIngredients.some(organic => 
+      lowerShoppableName.includes(organic) || lowerDisplayName.includes(organic)
+    )
 
-  // Get cost for an ingredient (AI-based with fallback)
-  const getItemCost = (ingredient: ConsolidatedIngredient): number => {
-    const aiCost = costEstimates[ingredient.name]
-    return aiCost !== undefined ? aiCost : getHeuristicCost(ingredient)
+    // If ingredient supports organic and user wants organic, add "Organic" prefix
+    if (supportsOrganic && (preferences.organicPreference === 'preferred' || preferences.organicPreference === 'only_if_within_10_percent')) {
+      // Avoid double "Organic" prefix
+      if (!shoppableName.toLowerCase().startsWith('organic')) {
+        return `Organic ${shoppableName}`
+      }
+    }
+
+    return shoppableName
   }
 
   // Consolidate ingredients on mount
   useEffect(() => {
-    consolidateIngredients()
+    const loadIngredients = () => {
+      setIsLoading(true)
+      try {
+        consolidateIngredientsDirectly()
+      } catch (error) {
+        console.error('Error consolidating ingredients:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    
+    loadIngredients()
   }, [recipes, pantryItems])
 
-
-  const consolidateIngredients = () => {
-    const ingredientMap = new Map<string, ConsolidatedIngredient>()
+  // Scale ingredient quantity based on serving size and scale type
+  const scaleIngredientQuantity = (ingredient: ShoppableIngredient, originalServings: number, targetServings: number): number => {
+    const multiplier = targetServings / originalServings
     
-    // Process all recipe ingredients
+    switch (ingredient.scale_type) {
+      case 'linear':
+        return ingredient.quantity * multiplier
+      case 'fixed':
+        return ingredient.quantity // Don't scale (salt, spices)
+      case 'sqrt':
+        return ingredient.quantity * Math.sqrt(multiplier) // Some seasonings scale slower
+      default:
+        return ingredient.quantity * multiplier
+    }
+  }
+
+  // Convert scaled quantities to shopping units with better precision
+  const convertToShoppingUnits = (ingredient: ShoppableIngredient, scaledQuantity: number): { quantity: number; unit: string } => {
+    const result = convertToPurchasableUnits(ingredient.shoppable_name || ingredient.display_name, scaledQuantity, ingredient.unit, ingredient.category);
+    
+    // Fix floating point precision issues
+    let quantity = result.amount;
+    if (quantity % 1 !== 0) {
+      // If it has decimals, round to 2 decimal places to avoid long floating point numbers
+      quantity = Math.round(quantity * 100) / 100;
+    }
+    
+    return { 
+      quantity: quantity,
+      unit: result.unit
+    };
+  }
+
+  const consolidateIngredientsDirectly = () => {
+    const shoppableMap = new Map<string, ConsolidatedIngredient>()
+    
     recipes.forEach(recipe => {
-      recipe.ingredients?.forEach(ingredient => {
-        const key = ingredient.name.toLowerCase().trim()
+      // Get ingredients from ingredients_json (new structure) or fallback to ingredients
+      const ingredients: ShoppableIngredient[] = (recipe as Recipe & { ingredients_json?: { ingredients: ShoppableIngredient[], servings: number } }).ingredients_json?.ingredients || 
+        recipe.ingredients?.map(ing => ({
+          display_name: ing.name,
+          shoppable_name: ing.name, // Fallback only - real data has proper shoppable_name
+          quantity: ing.amount,
+          unit: ing.unit,
+          category: ing.category || 'other',
+          scale_type: 'linear' as const,
+          optional: false
+        })) || []
+      
+      // Debug: Check which data source we're using
+      const recipeWithMeta = recipe as Recipe & { ingredients_json?: { ingredients: ShoppableIngredient[], servings: number } }
+      if (recipe.title === recipes[0]?.title) {
+        console.log('Data source check:', {
+          'has ingredients_json?': !!recipeWithMeta.ingredients_json,
+          'using fallback?': !recipeWithMeta.ingredients_json?.ingredients,
+          'ingredient count': ingredients.length,
+          'sample raw ingredient': recipeWithMeta.ingredients_json?.ingredients?.[0]
+        })
+      }
+      
+      const originalServings = recipeWithMeta.ingredients_json?.servings || recipe.servings || 2
+      // IMPORTANT: Use user's selected serving size from onboarding, not recipe default
+      // This ensures ingredients are scaled to what the user actually wants to cook
+      const targetServings = preferences?.peoplePerMeal || 2
+      
+      // Debug log to verify scaling is working correctly
+      if (recipe.title === recipes[0]?.title) {
+        console.log(`Ingredient scaling for "${recipe.title}":`, {
+          originalServings,
+          targetServings,
+          scalingFactor: targetServings / originalServings,
+          userPreference: preferences?.peoplePerMeal
+        })
+      }
+      
+      ingredients.forEach(ingredient => {
+        if (shouldFilterItem(ingredient.display_name)) return
         
-        if (ingredientMap.has(key)) {
-          const existing = ingredientMap.get(key)!
-          // Add amounts if units match, otherwise keep separate entries
-          if (existing.unit === ingredient.unit) {
-            existing.amount += ingredient.amount
-            existing.fromRecipes.push(recipe.title)
-          } else {
-            // Create a new entry with unit suffix
-            const newKey = `${key} (${ingredient.unit})`
-            ingredientMap.set(newKey, {
-              name: ingredient.name,
-              amount: ingredient.amount,
-              unit: ingredient.unit,
-              category: normalizeCategory(ingredient.category || 'Other'),
-              fromRecipes: [recipe.title]
-            })
-          }
+        // Debug log to check ingredient structure
+        if (recipe.title === recipes[0]?.title && ingredients.indexOf(ingredient) === 0) {
+          console.log('First ingredient of first recipe:', {
+            display_name: ingredient.display_name,
+            shoppable_name: ingredient.shoppable_name,
+            'has shoppable_name?': !!ingredient.shoppable_name
+          })
+        }
+        
+        const scaledQuantity = scaleIngredientQuantity(ingredient, originalServings, targetServings)
+        const shopping = convertToShoppingUnits(ingredient, scaledQuantity)
+        
+        // Use shoppable_name + category as key for consolidation
+        const consolidationKey = `${(ingredient.shoppable_name || ingredient.display_name || 'unknown').toLowerCase()}_${ingredient.category}`
+        
+        if (shoppableMap.has(consolidationKey)) {
+          // Add to existing ingredient
+          const existing = shoppableMap.get(consolidationKey)!
+          existing.amount += scaledQuantity
+          existing.shoppingQuantity += shopping.quantity
+          existing.fromRecipes.push(recipe.title)
+          existing.mealBreakdown.push({
+            mealTitle: recipe.title,
+            originalServings,
+            targetServings,
+            scaledQuantity,
+            originalQuantity: ingredient.quantity
+          })
         } else {
-          ingredientMap.set(key, {
-            name: ingredient.name,
-            amount: ingredient.amount,
+          // Create new consolidated ingredient with organic preference applied
+          const baseShoppableName = ingredient.shoppable_name || ingredient.display_name
+          const organicShoppableName = applyOrganicPreference(baseShoppableName, ingredient)
+          
+          shoppableMap.set(consolidationKey, {
+            name: ingredient.display_name,
+            shoppableName: organicShoppableName,
+            amount: scaledQuantity,
             unit: ingredient.unit,
-            category: normalizeCategory(ingredient.category || 'Other'),
-            fromRecipes: [recipe.title]
+            category: normalizeCategory(ingredient.category),
+            fromRecipes: [recipe.title],
+            mealBreakdown: [{
+              mealTitle: recipe.title,
+              originalServings,
+              targetServings,
+              scaledQuantity,
+              originalQuantity: ingredient.quantity
+            }],
+            shoppingQuantity: shopping.quantity,
+            shoppingUnit: shopping.unit
+            // Note: Removed notes display as requested
           })
         }
       })
     })
-
-    // Convert to purchasable units and apply 10% buffer, filter out empty items (like water)
-    ingredientMap.forEach((ingredient, key) => {
-      const purchasableInfo = convertToPurchasableUnits(ingredient.name, ingredient.amount, ingredient.unit)
-      if (purchasableInfo.name === '' || purchasableInfo.amount === 0) {
-        // Remove water and other filtered items
-        ingredientMap.delete(key)
-      } else {
-        ingredient.amount = purchasableInfo.amount
-        ingredient.unit = purchasableInfo.unit
-        ingredient.name = purchasableInfo.name
-      }
-    })
-
+    
     // Mark pantry items
-    pantryItems.forEach(item => {
-      const key = item.toLowerCase().trim()
-      if (ingredientMap.has(key)) {
-        ingredientMap.get(key)!.isPantryItem = true
-      }
+    pantryItems.forEach(pantryItem => {
+      const itemLower = pantryItem.toLowerCase().trim()
+      shoppableMap.forEach(ingredient => {
+        if (ingredient.shoppableName.toLowerCase().includes(itemLower) || 
+            ingredient.name.toLowerCase().includes(itemLower)) {
+          ingredient.isPantryItem = true
+        }
+      })
     })
-
+    
     // Convert to array and sort by category
-    const consolidated = Array.from(ingredientMap.values()).sort((a, b) => {
-      if (a.category === b.category) return a.name.localeCompare(b.name)
-      return (a.category || 'Other').localeCompare(b.category || 'Other')
+    const consolidated = Array.from(shoppableMap.values()).sort((a, b) => {
+      if (a.category !== b.category) {
+        return a.category.localeCompare(b.category)
+      }
+      return a.shoppableName.localeCompare(b.shoppableName)
     })
-
+    
+    console.log('Sample ingredient:', consolidated[0] ? {
+      name: consolidated[0].name,
+      shoppableName: consolidated[0].shoppableName,
+      'Are they different?': consolidated[0].name !== consolidated[0].shoppableName
+    } : 'No ingredients')
     setConsolidatedIngredients(consolidated)
   }
 
@@ -549,7 +595,7 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
       
       // Check for existing ingredient with same name and unit
       const existingIndex = consolidatedIngredients.findIndex(ing => 
-        ing.name.toLowerCase() === itemName.toLowerCase() && ing.unit === newItemUnit
+        ing.shoppableName.toLowerCase() === itemName.toLowerCase() && ing.unit === newItemUnit
       )
       
       if (existingIndex >= 0) {
@@ -565,10 +611,14 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
         // Add new ingredient
         const newIngredient: ConsolidatedIngredient = {
           name: itemName,
+          shoppableName: itemName,
           amount: amount,
           unit: newItemUnit,
           category: normalizeCategory('Other'),
           fromRecipes: ['User Added'],
+          mealBreakdown: [],
+          shoppingQuantity: amount,
+          shoppingUnit: newItemUnit,
           userAdded: true
         }
         setConsolidatedIngredients([...consolidatedIngredients, newIngredient])
@@ -576,8 +626,7 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
       
       setNewItemName('')
       setNewItemAmount('')
-      setNewItemUnit('')
-      setShowAddItem(false)
+      // Keep form open and unit as 'items' for easier multiple additions
     }
   }
 
@@ -596,10 +645,14 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
 
       newIngredients.push({
         name: parsed.name,
+        shoppableName: parsed.name,
         amount: parsed.amount,
         unit: parsed.unit || getRecommendedUnit(parsed.name),
         category: normalizeCategory('Other'),
         fromRecipes: ['User Added'],
+        mealBreakdown: [],
+        shoppingQuantity: parsed.amount,
+        shoppingUnit: parsed.unit || getRecommendedUnit(parsed.name),
         userAdded: true
       })
     })
@@ -611,38 +664,35 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
     }
   }
 
-  const toggleExcludeItem = (ingredientName: string) => {
-    const newExcluded = new Set(excludedItems)
-    if (newExcluded.has(ingredientName)) {
-      newExcluded.delete(ingredientName)
-    } else {
-      newExcluded.add(ingredientName)
-    }
-    setExcludedItems(newExcluded)
-    // Cost calculation will be instant using cached estimates - no API needed
-  }
-
-  const updateQuantity = (ingredientName: string, delta: number) => {
+  const toggleStrikethrough = (ingredientName: string) => {
     setConsolidatedIngredients(prev => 
       prev.map(ing => {
-        if (ing.name === ingredientName) {
-          const newAmount = ing.amount + delta
-          // Validate quantity: minimum 0, maximum 999 for safety
-          const validatedAmount = Math.max(0, Math.min(999, newAmount))
-          return { ...ing, amount: validatedAmount }
+        if (ing.shoppableName === ingredientName) {
+          return { ...ing, isStrikethrough: !ing.isStrikethrough }
         }
         return ing
       })
     )
   }
 
+
   const removeItem = (ingredientName: string) => {
-    setConsolidatedIngredients(prev => prev.filter(ing => ing.name !== ingredientName))
+    setConsolidatedIngredients(prev => prev.filter(ing => ing.shoppableName !== ingredientName))
   }
 
   const getFinalCart = () => {
     return consolidatedIngredients.filter(ing => 
-      !excludedItems.has(ing.name) && ing.amount > 0
+      !ing.isStrikethrough && ing.shoppingQuantity > 0
+    )
+  }
+
+  // Common pantry items that users often already have
+  const getCommonPantryItems = () => {
+    const pantryItems = ['Flour', 'Sugar', 'Salt', 'Black Pepper', 'Olive Oil', 
+                        'Vegetable Oil', 'Rice', 'Pasta', 'Oats']
+    
+    return consolidatedIngredients.filter(ing => 
+      pantryItems.some(pantry => ing.shoppableName.toLowerCase().includes(pantry.toLowerCase()))
     )
   }
 
@@ -650,11 +700,11 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
   const getCommonGroceryItems = () => {
     const allItems = ['Milk', 'Eggs', 'Bread', 'Butter', 'Cheese', 'Yogurt', 'Bananas', 
                      'Apples', 'Onions', 'Garlic', 'Potatoes', 'Carrots', 'Tomatoes',
-                     'Lettuce', 'Bell peppers', 'Avocados', 'Lemons', 'Limes', 'Oranges',
-                     'Coffee', 'Tea', 'Sugar', 'Salt', 'Black pepper', 'Olive oil',
+                     'Lettuce', 'Bell Peppers', 'Avocados', 'Lemons', 'Limes', 'Oranges',
+                     'Coffee', 'Tea', 'Sugar', 'Salt', 'Black Pepper', 'Olive Oil',
                      'Rice', 'Pasta', 'Flour', 'Oats', 'Cereal', 'Crackers', 'Snacks']
     
-    const existingItems = consolidatedIngredients.map(ing => ing.name.toLowerCase())
+    const existingItems = consolidatedIngredients.map(ing => ing.shoppableName.toLowerCase())
     return allItems.filter(item => !existingItems.includes(item.toLowerCase()))
   }
 
@@ -670,10 +720,14 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
   const addQuickItem = (itemName: string) => {
     const newIngredient: ConsolidatedIngredient = {
       name: itemName,
+      shoppableName: itemName,
       amount: 1,
       unit: '',
       category: normalizeCategory('Other'),
       fromRecipes: ['User Added'],
+      mealBreakdown: [],
+      shoppingQuantity: 1,
+      shoppingUnit: '',
       userAdded: true
     }
     setConsolidatedIngredients([...consolidatedIngredients, newIngredient])
@@ -694,10 +748,14 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
 
       newIngredients.push({
         name: parsed.name,
+        shoppableName: parsed.name,
         amount: parsed.amount,
         unit: parsed.unit || getRecommendedUnit(parsed.name),
         category: normalizeCategory('Other'),
         fromRecipes: ['User Added'],
+        mealBreakdown: [],
+        shoppingQuantity: parsed.amount,
+        shoppingUnit: parsed.unit || getRecommendedUnit(parsed.name),
         userAdded: true
       })
     })
@@ -708,32 +766,30 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
     }
   }
 
-  const groupedIngredients = consolidatedIngredients.reduce((groups, ingredient) => {
-    const category = ingredient.category || 'Other'
-    if (!groups[category]) groups[category] = []
-    groups[category].push(ingredient)
+  // Group ingredients with custom items at top, then by category
+  const groupedIngredients = (() => {
+    const customItems = consolidatedIngredients.filter(ing => ing.userAdded)
+    const recipeIngredients = consolidatedIngredients.filter(ing => !ing.userAdded)
+
+    const groups: Record<string, ConsolidatedIngredient[]> = {}
+    
+    // Add custom items section if there are any
+    if (customItems.length > 0) {
+      groups['Custom Items'] = customItems
+    }
+
+    // Group recipe ingredients by category
+    recipeIngredients.forEach(ingredient => {
+      const category = ingredient.category || 'Other'
+      if (!groups[category]) groups[category] = []
+      groups[category].push(ingredient)
+    })
+
     return groups
-  }, {} as Record<string, ConsolidatedIngredient[]>)
+  })()
 
   const totalItems = getFinalCart().length
   
-  // Estimate costs only when new ingredients are added, not when items are excluded
-  useEffect(() => {
-    const finalCart = getFinalCart()
-    if (finalCart.length > 0) {
-      // Only estimate if we don't have cost estimates for some ingredients
-      const needsEstimation = finalCart.some(ing => !(ing.name in costEstimates))
-      if (needsEstimation) {
-        estimateIngredientCosts(finalCart)
-      }
-    }
-  }, [consolidatedIngredients]) // Removed excludedItems to prevent unnecessary API calls
-  
-  const totalCost = getFinalCart().reduce((sum, ing) => sum + getItemCost(ing), 0)
-  const costRange = {
-    low: Math.round(totalCost * 0.8),
-    high: Math.round(totalCost * 1.2)
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 pb-32">
@@ -757,55 +813,42 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
         </div>
 
         {/* Summary Stats - Mobile Optimized */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
-          <div className="bg-white rounded-xl p-3 sm:p-4 shadow-sm border border-gray-100">
-            <div className="flex items-center">
-              <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5 text-orange-600 mr-2 sm:mr-3" />
+        <div className="mb-6">
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100 text-center">
+            <div className="flex items-center justify-center">
+              <ShoppingCart className="h-6 w-6 sm:h-8 sm:w-8 text-orange-600 mr-3 sm:mr-4" />
               <div>
-                <p className="text-xs text-gray-500 uppercase">Total Items</p>
-                <p className="text-lg sm:text-xl font-bold text-gray-900">{totalItems}</p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-3 sm:p-4 shadow-sm border border-gray-100">
-            <div className="flex items-start">
-              <div className="min-w-0 flex-1">
-                <p className="text-xs text-gray-500 uppercase">
-                  Est. Cost {isEstimatingCosts && '(Updating...)'}
+                <p className="text-sm text-gray-500 uppercase font-medium">
+                  {isLoading ? 'Processing ingredients...' : 'Total Items Ready for Instacart'}
                 </p>
-                {isEstimatingCosts ? (
-                  <div className="flex items-center">
-                    <div className="animate-spin rounded-full h-3 w-3 sm:h-4 sm:w-4 border-b-2 border-green-600 mr-2"></div>
-                    <p className="text-sm sm:text-lg font-semibold text-gray-600">Calculating...</p>
-                  </div>
-                ) : (
-                  <p className="text-lg sm:text-xl font-bold text-gray-900">${costRange.low}-${costRange.high}</p>
-                )}
-                {costEstimationError && (
-                  <p className="text-xs text-orange-600 mt-1 leading-tight">{costEstimationError}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-gray-900">
+                  {isLoading ? '...' : totalItems}
+                </p>
+                {!isLoading && (
+                  <p className="text-xs text-gray-400 mt-1">
+                    From {recipes.length} meals • {consolidatedIngredients.filter(ing => ing.mealBreakdown.length > 1).length} shared ingredients
+                  </p>
                 )}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Pantry Items Notice */}
-        {pantryItems.length > 0 && (
-          <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <div className="flex items-start">
-              <AlertCircle className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-sm text-blue-800 font-medium">Pantry items identified</p>
-                <p className="text-xs text-blue-600 mt-1">
-                  Items you already have are marked below. Uncheck them to exclude from your cart.
-                </p>
-              </div>
+        {/* Usage Instructions */}
+        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <div className="flex items-start">
+            <AlertCircle className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="text-sm text-blue-800 font-medium">Customize your shopping cart</p>
+              <p className="text-xs text-blue-600 mt-1">
+                Already have this item at home? Hit the "×" to remove it from your cart. Items you already have are marked as "In Pantry".
+              </p>
             </div>
           </div>
-        )}
+        </div>
 
         {/* Add Item Button */}
-        {!showAddItem && (
+        {!showAddItem && !isLoading && (
           <div className="flex justify-center mb-6">
             <button
               onClick={() => setShowAddItem(true)}
@@ -855,9 +898,12 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
                   onChange={(e) => {
                     const itemName = e.target.value
                     setNewItemName(itemName)
-                    // Auto-suggest unit based on item name if unit is empty
-                    if (itemName && !newItemUnit) {
-                      setNewItemUnit(getRecommendedUnit(itemName))
+                    // Auto-suggest unit based on item name if unit is still default
+                    if (itemName && newItemUnit === 'items') {
+                      const recommendedUnit = getRecommendedUnit(itemName)
+                      if (recommendedUnit === 'lbs') {
+                        setNewItemUnit('lbs')
+                      }
                     }
                   }}
                   className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent md:col-span-2"
@@ -874,48 +920,30 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
                   onChange={(e) => setNewItemUnit(e.target.value)}
                   className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white"
                 >
-                  <option value="">Select unit...</option>
-                  <optgroup label="Count">
-                    <option value="pieces">pieces</option>
-                    <option value="items">items</option>
-                    <option value="each">each</option>
-                  </optgroup>
-                  <optgroup label="Weight">
-                    <option value="lbs">pounds (lbs)</option>
-                    <option value="oz">ounces (oz)</option>
-                    <option value="kg">kilograms (kg)</option>
-                    <option value="g">grams (g)</option>
-                  </optgroup>
-                  <optgroup label="Volume">
-                    <option value="cups">cups</option>
-                    <option value="tbsp">tablespoons</option>
-                    <option value="tsp">teaspoons</option>
-                    <option value="fl oz">fluid ounces</option>
-                    <option value="ml">milliliters (ml)</option>
-                    <option value="liters">liters</option>
-                  </optgroup>
-                  <optgroup label="Packaging">
-                    <option value="packages">packages</option>
-                    <option value="boxes">boxes</option>
-                    <option value="cans">cans</option>
-                    <option value="bottles">bottles</option>
-                    <option value="jars">jars</option>
-                    <option value="bags">bags</option>
-                    <option value="containers">containers</option>
-                  </optgroup>
+                  <option value="items">items</option>
+                  <option value="lbs">pounds (lbs)</option>
+                  <option value="oz">ounces (oz)</option>
+                  <option value="bottles">bottles</option>
+                  <option value="cans">cans</option>
+                  <option value="boxes">boxes</option>
                 </select>
               </div>
             ) : (
               <div>
                 <textarea
-                  placeholder="Paste your shopping list here, one item per line:&#10;6 bananas&#10;2 lbs chicken breast&#10;olive oil&#10;1.5 cups rice (→ 1 bag rice)&#10;2 tbsp salt (→ 1 container salt)"
+                  placeholder="Paste your shopping list here, one item per line with quantity:
+6 bananas
+2 lbs chicken breast
+olive oil
+salt
+3 apples"
                   value={bulkItems}
                   onChange={(e) => setBulkItems(e.target.value)}
                   rows={6}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
                 />
                 <p className="text-xs text-gray-500 mt-1">
-                  Supported formats: "5 bananas", "2 lbs chicken", "olive oil"
+                  Supported formats: &quot;5 bananas&quot;, &quot;2 lbs chicken&quot;, &quot;olive oil&quot;
                 </p>
               </div>
             )}
@@ -923,17 +951,30 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
             <div className="flex gap-2 mt-3">
               <button
                 onClick={addMode === 'single' ? handleAddItem : handleAddBulkItems}
-                disabled={addMode === 'single' ? !newItemName || !newItemAmount || !newItemUnit : !bulkItems.trim()}
+                disabled={addMode === 'single' ? !newItemName || !newItemAmount : !bulkItems.trim()}
                 className="px-4 py-2 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
               >
                 {addMode === 'single' ? 'Add Item' : 'Add Items'}
               </button>
+              {addMode === 'single' && (
+                <button
+                  onClick={() => {
+                    setShowAddItem(false)
+                    setNewItemName('')
+                    setNewItemAmount('')
+                    setNewItemUnit('items')
+                  }}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                >
+                  Done Adding
+                </button>
+              )}
               <button
                 onClick={() => {
                   setShowAddItem(false)
                   setNewItemName('')
                   setNewItemAmount('')
-                  setNewItemUnit('')
+                  setNewItemUnit('items')
                   setBulkItems('')
                   setAddMode('single')
                 }}
@@ -946,86 +987,113 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
         )}
 
         {/* Ingredient Categories */}
-        <div className="space-y-6 mb-8">
-          {Object.entries(groupedIngredients).map(([category, ingredients]) => (
-            <div key={category} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-              <div className="px-4 py-3 bg-gray-50 border-b border-gray-200">
-                <h3 className="font-semibold text-gray-900">{category}</h3>
+        {isLoading ? (
+          <div className="space-y-6 mb-8">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+              <div className="flex items-center justify-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-600 mr-3"></div>
+                <div className="text-gray-600">
+                  <p className="font-medium">Organizing your shopping list...</p>
+                  <p className="text-sm text-gray-500 mt-1">Consolidating ingredients across meals and scaling quantities</p>
+                </div>
               </div>
-              <div className="divide-y divide-gray-200">
-                {ingredients.map(ingredient => (
-                  <div 
-                    key={ingredient.name} 
-                    className={`p-4 ${excludedItems.has(ingredient.name) ? 'opacity-50' : ''}`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center flex-1">
-                        <input
-                          type="checkbox"
-                          checked={!excludedItems.has(ingredient.name)}
-                          onChange={() => toggleExcludeItem(ingredient.name)}
-                          className="h-5 w-5 text-orange-600 rounded focus:ring-orange-500 flex-shrink-0"
-                        />
-                        <div className="ml-3">
-                          <p className="font-medium text-gray-900">
-                            {ingredient.name}
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-6 mb-8">
+            {Object.entries(groupedIngredients).map(([category, ingredients]) => (
+              <div key={category} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="px-4 py-3 bg-gray-50 border-b border-gray-200">
+                  <h3 className="font-semibold text-gray-900">{category}</h3>
+                  {category === 'Custom Items' && (
+                    <p className="text-xs text-gray-500 mt-1">
+                      Items you added to your list
+                    </p>
+                  )}
+                </div>
+                <div className="divide-y divide-gray-200">
+                  {ingredients.map(ingredient => (
+                    <div 
+                      key={ingredient.shoppableName} 
+                      className={`p-4 ${ingredient.isStrikethrough ? 'opacity-50' : ''}`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2">
+                            <p className={`font-medium text-gray-900 ${ingredient.isStrikethrough ? 'line-through' : ''}`}>
+                              {ingredient.shoppableName}
+                            </p>
+                            <span className="text-sm text-gray-600">
+                              ({Math.round(ingredient.amount * 100) / 100} {ingredient.unit})
+                            </span>
+                            {ingredient.mealBreakdown.length > 1 && (
+                              <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">
+                                {ingredient.mealBreakdown.length} meals
+                              </span>
+                            )}
                             {ingredient.isPantryItem && (
-                              <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                              <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
                                 In Pantry
                               </span>
                             )}
-                          </p>
-                          <p className="text-xs text-gray-500">
-                            Used in: {ingredient.fromRecipes.join(', ')}
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center bg-gray-100 rounded-lg">
-                          <button
-                            onClick={() => updateQuantity(ingredient.name, -1)}
-                            className="p-1 hover:bg-gray-200 rounded-l-lg transition-colors"
-                            disabled={excludedItems.has(ingredient.name)}
-                          >
-                            <Minus className="h-4 w-4" />
-                          </button>
-                          <span className="px-3 py-1 text-sm font-medium">
-                            {ingredient.unit ? `${ingredient.amount} ${ingredient.unit}` : ingredient.amount}
-                          </span>
-                          <button
-                            onClick={() => updateQuantity(ingredient.name, 1)}
-                            className="p-1 hover:bg-gray-200 rounded-r-lg transition-colors"
-                            disabled={excludedItems.has(ingredient.name)}
-                          >
-                            <Plus className="h-4 w-4" />
-                          </button>
+                            {ingredient.userAdded && (
+                              <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
+                                Custom
+                              </span>
+                            )}
+                          </div>
+                          {!ingredient.userAdded && ingredient.mealBreakdown.length > 0 && (
+                            <div className="text-xs text-gray-700 mt-1">
+                              <p className={ingredient.isStrikethrough ? 'line-through' : ''}>
+                                Used in: {ingredient.mealBreakdown.map((breakdown) => 
+                                  `${breakdown.mealTitle} (${Math.round(breakdown.scaledQuantity * 100) / 100} ${ingredient.unit})`
+                                ).join(', ')}
+                              </p>
+                            </div>
+                          )}
                         </div>
                         
-                        {ingredient.userAdded && (
+                        <div className="flex items-center gap-2">
                           <button
-                            onClick={() => removeItem(ingredient.name)}
-                            className="p-1 text-red-600 hover:bg-red-50 rounded transition-colors"
+                            onClick={() => toggleStrikethrough(ingredient.shoppableName)}
+                            className={`p-2 rounded-full transition-colors ${
+                              ingredient.isStrikethrough 
+                                ? 'bg-gray-100 text-gray-500 hover:bg-gray-200' 
+                                : 'text-red-600 hover:bg-red-50'
+                            }`}
+                            title={ingredient.isStrikethrough ? 'Add back to cart' : 'Remove from cart'}
                           >
                             <X className="h-4 w-4" />
                           </button>
-                        )}
+                          
+                          {ingredient.userAdded && (
+                            <button
+                              onClick={() => removeItem(ingredient.shoppableName)}
+                              className="p-2 text-red-600 hover:bg-red-50 rounded-full transition-colors"
+                              title="Delete item permanently"
+                            >
+                              <X className="h-4 w-4" strokeWidth={3} />
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Note */}
-        <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl mb-8">
-          <p className="text-sm text-amber-800">
-            <strong>Note:</strong> We've added 10% extra to all quantities to ensure you have enough ingredients. 
-            Actual prices may vary based on store and brand selection.
-          </p>
-        </div>
+        {!isLoading && (
+          <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl mb-8">
+            <p className="text-sm text-amber-800">
+              <strong>Smart Shopping List:</strong> We&apos;ve consolidated ingredients across your selected meals and scaled quantities to match your serving preferences. 
+              Items are organized by category. Cross out items you don&apos;t need, but they&apos;ll stay visible for reference.
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Fixed Bottom Footer */}
@@ -1033,10 +1101,20 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
         <div className="max-w-4xl mx-auto flex justify-center">
           <button
             onClick={handleContinueClick}
-            className="flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg"
+            disabled={isLoading}
+            className="flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg"
           >
-            <ChevronRight className="h-5 w-5 md:h-6 md:w-6 mr-2" />
-            Continue to Instacart ({totalItems} items)
+            {isLoading ? (
+              <>
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                Processing...
+              </>
+            ) : (
+              <>
+                <ChevronRight className="h-5 w-5 md:h-6 md:w-6 mr-2" />
+                Continue to Instacart ({totalItems} items)
+              </>
+            )}
           </button>
         </div>
       </div>
@@ -1047,7 +1125,7 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
           <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Add Common Grocery Items</h3>
-              <p className="text-gray-600 mb-6">Don't forget these common items you might need!</p>
+              <p className="text-gray-600 mb-6">Don&apos;t forget these common items you might need!</p>
               
               {/* Quick Add Pills */}
               <div className="mb-6">
@@ -1072,7 +1150,11 @@ export default function CartBuilder({ recipes, pantryItems, onProceedToCheckout,
                   value={upsellBulkItems}
                   onChange={(e) => setUpsellBulkItems(e.target.value)}
                   className="w-full h-24 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
-                  placeholder="Add items one per line:&#10;6 bananas&#10;2 lbs ground beef&#10;Toilet paper&#10;3 bottles olive oil"
+                  placeholder="Add items one per line with quantity:
+6 bananas
+2 lbs ground beef
+toilet paper
+olive oil"
                 />
                 {upsellBulkItems.trim() && (
                   <button

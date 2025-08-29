@@ -11,96 +11,120 @@ cd apps/web && npm run dev  # Start Next.js dev server (runs on localhost:3001)
 npm run lint                # Run ESLint checks
 npm run build              # Build production Next.js app
 
-# Firebase Functions (from /functions directory)
-cd functions
-npm run build      # Compile TypeScript
-npm run serve      # Start local Firebase emulators
-npm run deploy     # Deploy functions to Firebase
+# Meal Data Generation
+npm run generate-meals     # Generate new meals with OpenAI + Supabase (from apps/web)
 ```
 
 ### Testing
 ```bash
-# No test commands configured yet
-# Consider adding: npm test, npm run test:watch
+# Frontend testing (from apps/web directory)
+npm test              # Run Vitest unit tests
+npm run test:ui       # Run tests with UI
+npm run test:coverage # Run tests with coverage report
 ```
 
 ## Architecture Overview
 
 ### Tech Stack
-- **Frontend**: Next.js 14 (App Router) + TypeScript + Tailwind CSS
-- **Backend**: Firebase Cloud Functions (Node.js 20)
-- **AI**: OpenAI GPT-4o-mini for meal planning
-- **Database**: Firestore
+- **Frontend**: Next.js 14 (App Router) + TypeScript + Tailwind CSS  
+- **Database**: Supabase (PostgreSQL) with 532+ curated meals
+- **Deployment**: Vercel (seamless Next.js deployment with automatic builds)
+- **AI**: OpenAI GPT-5-mini for selective analysis and content generation
 - **External APIs**: Instacart IDP, Resend
+- **Testing**: Vitest + React Testing Library
 
 ### Core User Flow
 1. ZIP validation → Check Instacart coverage with prioritized grocery retailers
-2. 10-step chat wizard → Collect preferences  
-3. GPT generation → Create personalized meal plans
-4. Instacart integration → Build shopping cart
-5. Email confirmation → Send cart link
+2. 9-step guided onboarding → Collect preferences (cuisines, diets, spice tolerance, allergens, etc.)
+3. Supabase meal matching → Filter 532+ meals by preferences using intelligent scoring
+4. Instacart integration → Build shopping cart with scaled ingredients  
+5. Email confirmation → Send cart link via Resend
+
+## Authentication System
+
+### Magic Link Authentication
+The application uses Supabase Auth with magic links (passwordless email authentication) using PKCE flow.
+
+#### Authentication Flow
+1. **User requests magic link** at `/login`
+   - `createAuthClient().auth.signInWithOtp()` called with email
+   - `emailRedirectTo` set to `${window.location.origin}/auth/callback`
+   - Magic link sent via Resend SMTP to user's email
+
+2. **Magic link format** (in email):
+   ```
+   https://[resend-tracking]/CL0/https://[project].supabase.co/auth/v1/verify?token=pkce_[token]&type=magiclink&redirect_to=http://localhost:3001/auth/callback
+   ```
+
+3. **User clicks magic link**:
+   - Goes to Resend tracking → Supabase verify endpoint
+   - Supabase verifies PKCE token and sets auth cookies
+   - Redirects to our `/auth/callback` route with session established
+
+4. **Auth callback processing** (`/src/app/auth/callback/route.ts`):
+   - Checks for existing session in cookies via `createServerAuthClient().auth.getSession()`
+   - If session exists → redirects to `/dashboard` (or `/dashboard?welcome=true` for new users)
+   - If no session → attempts token exchange/verification
+   - On failure → redirects to `/login?error=auth_failed`
+
+#### Critical Configuration
+- **Supabase client instances**: Use singleton pattern to avoid "Multiple GoTrueClient instances" errors
+  - Server-side: `createServerAuthClient()` from `lib/supabase-server.ts`
+  - Client-side: `createAuthClient()` from `lib/supabase.ts` (singleton)
+  - API/Components: `getSupabaseClient()` or `createClient()` (alias) from `lib/supabase.ts`
+
+- **Environment Requirements**:
+  - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` must be set
+  - Supabase Dashboard → Auth → URL Configuration:
+    - Site URL: `http://localhost:3001` (local) or `https://chefscart.ai` (prod)
+    - Redirect URLs: Include `http://localhost:3001/auth/callback`
+
+#### Common Issues & Solutions
+- **"Multiple GoTrueClient instances"**: Ensure all imports use singleton clients
+- **"Auth session missing" or "link_expired"**: Magic links expire quickly (1 hour), use fresh links
+- **Import errors**: Ensure `createClient` alias exists in `lib/supabase.ts`
+- **PKCE token errors**: Don't try to handle PKCE tokens directly - let Supabase verify first
+
+#### Testing Magic Links
+1. Start dev server: `cd apps/web && npm run dev`
+2. Go to `http://localhost:3001/login`
+3. Send magic link and click **immediately** (links expire fast)
+4. Watch terminal for detailed auth logs
+5. Should redirect to `/dashboard` on success
 
 ### Key Files & Patterns
 
 #### Frontend Structure
 - `src/app/` - Next.js App Router pages
-- `components/PreferencesChat.tsx` - Main chat wizard (10 steps)
+- `components/GuidedOnboarding.tsx` - Main onboarding wizard (9 steps)
+- `src/app/api/recommend-meals/route.ts` - Core meal recommendation API with Supabase
 - `types/index.ts` - All TypeScript interfaces
-- API routes in `src/app/api/` handle backend calls
-
-#### Firebase Functions
-- `functions/src/gptPlan.ts` - GPT meal plan generation
-- `functions/src/createList.ts` - Instacart cart creation  
-- `functions/src/emailSend.ts` - Resend integration
-- Deploy with `npm run deploy` from `/functions`
+- API routes in `src/app/api/` handle all backend functionality
 
 #### Configuration
-- `.env.local` - Frontend and API environment variables (located at project root)
-- `functions/.env` - Backend environment variables for Firebase Functions
-- `apps/web/apphosting.yaml` - Firebase App Hosting deployment configuration
-- Copy from `.env.local.example` and `functions/.env.example`
+- `.env.local` - All environment variables (located at project root)
+- Contains Supabase, OpenAI, Resend, and Instacart API credentials
 - Note: Server restart required after .env.local changes
 
-#### Firebase App Hosting Secrets Management
-The `apps/web/apphosting.yaml` file configures environment variables and secrets for production deployment.
+#### Database Schema
+- **Meals Table**: 532+ curated meals with comprehensive metadata
+  - Timing: `prep_time`, `cook_time`, `time_total_min`
+  - Difficulty: `cooking_difficulty` (easy/medium/challenging)
+  - Classification: `courses`, `cuisines`, `diets_supported`
+  - Ingredients: `ingredients_json` with scaling support
+  - Search: `search_keywords`, `allergens_present`
 
-**Current configured secrets:**
-- `firebase_api_key` → `NEXT_PUBLIC_FIREBASE_API_KEY`
-- `firebase_private_key` → `FIREBASE_PRIVATE_KEY`
-- `openai_api_key` → `OPENAI_API_KEY`
-- `resend_api_key` → `RESEND_API_KEY`
+### Working with the Guided Onboarding
+The guided onboarding (`GuidedOnboarding.tsx`) uses a step-based flow:
+- 9 steps: plan selector, dietary style, cuisines, foods to avoid, favorites, organic preference, spice tolerance, retailer selection, pantry photos
+- State managed in `answers` object, converted to `UserPreferences` on completion
+- Steps defined in `onboardingSteps` array
+- Special handling for meal plan configuration (breakfasts/lunches/dinners per week)
 
-**To add a new secret:**
-1. Add to `apphosting.yaml`:
-   ```yaml
-   - variable: NEW_ENV_VAR_NAME
-     secret: new_secret_name
-   ```
-2. Set the secret value:
-   ```bash
-   echo "SECRET_VALUE" | firebase apphosting:secrets:set new_secret_name --data-file -
-   ```
-3. Grant access to the backend:
-   ```bash
-   firebase apphosting:secrets:grantaccess new_secret_name --backend chefscart
-   ```
-4. Deploy to apply changes:
-   ```bash
-   git commit -am "Add new secret" && git push origin main
-   ```
-
-**Important:** Never commit actual secret values to git. Always use secret references in `apphosting.yaml`.
-
-### Working with the Chat Wizard
-The chat wizard (`PreferencesChat.tsx`) uses a step-based flow:
-- Each step has a type: 'text', 'select', 'multiselect', 'file', 'meal-config'
-- State managed in `userPreferences` object
-- Steps defined in `chatSteps` array
-- Special handling for meal configuration (days/adults/kids per meal type)
-
-### API Integration Patterns
-- Frontend API routes proxy to Firebase Functions
-- Mock endpoints available (e.g., `/api/generate-mealplan/mock`)
+### API Integration Patterns  
+- All backend logic handled by Next.js API routes in `src/app/api/`
+- Core meal recommendation: `/api/recommend-meals` - filters Supabase meals by user preferences
+- Mock endpoints available for testing (e.g., `/api/create-cart-mock`)
 - Error handling with try-catch and proper status codes
 - TypeScript interfaces ensure type safety across API boundaries
 - Retailers API with intelligent grocery store prioritization:
@@ -110,7 +134,152 @@ The chat wizard (`PreferencesChat.tsx`) uses a step-based flow:
   - Filters out convenience/drug stores when ≥3 grocery options available
 
 ### Common Tasks
-- Add new chat step: Update `chatSteps` array in `PreferencesChat.tsx`
-- Modify GPT prompt: Edit `functions/src/gptPlan.ts`
-- Change email template: Update `functions/src/emailSend.ts`
-- Add new API endpoint: Create route in `src/app/api/` and function in `functions/src/`
+- Add new onboarding step: Update `onboardingSteps` array in `GuidedOnboarding.tsx`
+- Modify meal filtering: Edit meal recommendation logic in `/api/recommend-meals/route.ts`
+- Add new API endpoint: Create new route in `src/app/api/[endpoint]/route.ts`
+- Update user preferences: Modify `UserPreferences` interface in `types/index.ts`
+
+### Database Migrations
+**Important**: Supabase restricts DDL operations through API for security. Use this process:
+
+1. **Manual DDL** (via Supabase Dashboard SQL Editor):
+   - Go to: https://supabase.com/dashboard/project/bcbpcuzjkuptyxinjchg/sql
+   - Run DDL commands (ALTER TABLE, CREATE INDEX, etc.)
+
+2. **Data Migration** (via API scripts):
+   - Use `scripts/create-migration-function.js` to detect schema changes needed
+   - Use `scripts/run-migration-rest.js` to populate/update data after DDL
+   - Scripts handle batch processing and data integrity checks
+
+**Schema Update Pattern**:
+```sql
+-- Add new columns
+ALTER TABLE meals ADD COLUMN IF NOT EXISTS new_column_name TYPE;
+-- Add constraints/indexes  
+CREATE INDEX IF NOT EXISTS idx_name ON meals (column_name);
+```
+
+**Migration Scripts**:
+- `scripts/generate-meal-data.js` - Generate new meals with OpenAI + Supabase
+- `scripts/run-migration-rest.js` - Migrate existing data after schema changes
+- `npm run generate-meals` - Run meal generation (from apps/web directory)
+
+### Cooking Difficulty Assessment
+The `cooking_difficulty` field is determined by AI analysis during meal generation, considering:
+
+**Factors Analyzed**:
+- **Technique complexity**: knife skills, timing coordination, temperature control
+- **Skill requirements**: multitasking, precision, experience needed  
+- **Failure risk**: how forgiving the recipe is vs easy to mess up
+- **Equipment mastery**: specialized tools or cooking methods
+
+**Categories**:
+- **Easy**: Simple techniques, forgiving recipes (roasted vegetables, basic pasta)
+- **Medium**: Some technique required, moderate attention (stir-fry, braised meats) 
+- **Challenging**: Complex techniques, high skill needed (risotto, soufflé, emulsification)
+
+Current distribution: 125 easy (23%), 307 medium (58%), 100 challenging (19%)
+
+## AI Usage Strategy
+
+### Where We Use AI (Essential):
+- **Pantry photo analysis**: Computer vision for ingredient identification from photos
+- **Meal data generation**: Creating comprehensive, consistent meal metadata at scale  
+- **Cooking difficulty assessment**: AI-based technique analysis (built into generation)
+
+### Where We Use Pure Logic (Optimal):
+- **Meal recommendation**: Database filtering + mathematical scoring for speed & reliability
+- **Ingredient scaling**: Mathematical ratios for different serving sizes
+- **User preference matching**: Rule-based filtering on cuisines, diets, allergens, etc.
+
+### Future Optimization Opportunities:
+- **Ingredient categorization**: Consider static lookup tables vs AI
+- **Cost estimation**: Explore pricing APIs vs AI estimation
+
+## MCP (Model Context Protocol) Setup
+
+The project uses MCP servers for browser automation and testing. The `.mcp.json` file is configured with two MCP servers:
+
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "url": "http://[::1]:3002/mcp"
+    },
+    "browsermcp": {
+      "command": "npx",
+      "args": ["@browsermcp/mcp@latest"]
+    }
+  }
+}
+```
+
+### Playwright MCP Server
+**Configuration**: URL-based server running on port 3002
+
+**Setup:**
+1. Start the Playwright server manually:
+   ```bash
+   npx @playwright/mcp@latest --headless --host localhost --port 3002
+   ```
+
+2. Or use the provided startup script:
+   ```bash
+   ./start-mcp-servers.sh
+   ```
+
+3. Verify it's running by checking: `http://[::1]:3002/mcp`
+
+**Features**: Browser automation, screenshots, web interaction, headless operation
+
+**Status**: ✅ Successfully tested and working for ChefsCart application testing
+
+### Browser MCP Server
+**Configuration**: Command-based server with Chrome extension dependency
+
+**Setup:**
+1. Install the Browser MCP Chrome extension from https://browsermcp.io/
+2. Pin the extension to your Chrome toolbar
+3. Click the extension icon and press "Connect" to link your browser session
+4. The server starts automatically when the extension is connected
+
+**Features**: Direct browser control, preserves login sessions, avoids bot detection
+
+### Development Workflow
+To start the full development environment:
+
+1. Start ChefsCart dev server: `npm run dev` (port 3001)
+2. Start MCP servers: `./start-mcp-servers.sh` (port 3002)
+3. Setup Browser MCP extension in Chrome (one-time setup)
+
+**Troubleshooting**: Ensure port 3002 is available, Playwright server is running, and Chrome extension is connected.
+
+### Recent Testing & Fixes (August 2025)
+
+**Issues Resolved:**
+1. **Favorite Foods UI**: Fixed display issue where selected items showed internal IDs (e.g., "beef_steak") instead of user-friendly labels ("Beef/Steak")
+   - Updated `handlePillToggle` and `isPillSelected` functions for consistency
+   - Modified chip display logic to show proper labels for predefined options
+
+2. **Meal Variety**: Enhanced meal recommendation randomization to prevent repeated selections
+   - Added score-tier randomization (10-point bands) to diversify high-scoring meals
+   - Improved diversity algorithm with stricter cuisine limits (max 2 initially, up to 3 with new proteins)
+   - Added comprehensive logging for debugging score distribution and selection process
+
+3. **Timing Display**: Successfully updated all UI components to show prep and cook time separately
+   - Updated MealCard, MealPlanPreview components to show "Xm prep + Ym cook" format
+   - Fixed API field mapping to use database prep_time/cook_time fields correctly
+   - All components now display detailed timing information instead of just total time
+
+**Testing Confirmed:**
+- ✅ MCP server integration working for application testing
+- ✅ Meal recommendation API returning varied results with randomization
+- ✅ Favorite foods selection UI displaying proper labels
+- ✅ Timing displays working across all meal components
+
+## Additional Setup Files
+
+### Documentation
+- `scripts/MEAL_GENERATOR_SETUP.md` - Detailed meal generation setup guide
+- `docs/BRAND_STYLE_GUIDE.md` - Brand guidelines and design system
+- `docs/STYLE_GUIDE_IMPLEMENTATION.md` - Implementation of brand guidelines

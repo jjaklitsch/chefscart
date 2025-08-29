@@ -1,6 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
+import { createBrowserClient } from '@supabase/ssr'
 
-// Lazy initialization to prevent build-time issues
+// Single browser client instance to avoid multiple instances
+let browserClientInstance: ReturnType<typeof createBrowserClient> | null = null
+
+// Legacy client for API routes (server-side)
 let supabaseInstance: ReturnType<typeof createClient> | null = null
 
 export function getSupabaseClient() {
@@ -16,6 +20,32 @@ export function getSupabaseClient() {
   }
 
   return supabaseInstance
+}
+
+// Export createClient as an alias for compatibility with existing code
+export { getSupabaseClient as createClient }
+
+// Single auth client instance for browser usage - prevents multiple instances
+export const createAuthClient = () => {
+  if (!browserClientInstance) {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    
+    browserClientInstance = createBrowserClient(supabaseUrl, supabaseKey)
+  }
+  
+  return browserClientInstance
+}
+
+// User profile interface
+export interface UserProfile {
+  id: string
+  email: string
+  zipCode?: string
+  preferences?: any
+  completedOnboarding?: boolean
+  createdAt: string
+  updatedAt: string
 }
 
 // Database interfaces

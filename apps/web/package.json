@@ -10,16 +10,19 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "generate-meals": "node ../../scripts/generate-meal-data.js"
   },
   "dependencies": {
     "@sentry/nextjs": "^9.42.0",
+    "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.56.0",
     "dotenv": "^17.2.1",
     "heic-convert": "^2.1.0",
     "lucide-react": "^0.525.0",
     "next": "14.2.30",
     "openai": "^4.0.0",
+    "playwright": "^1.55.0",
     "react": "^18",
     "react-dom": "^18",
     "resend": "^4.7.0"

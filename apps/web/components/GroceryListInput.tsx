@@ -266,7 +266,6 @@ export default function GroceryListInput({ onBack }: GroceryListInputProps) {
       }
 
       const data = await response.json()
-      console.log('Cart created:', data)
       
       // Redirect to Instacart cart
       if (data.cartUrl) {

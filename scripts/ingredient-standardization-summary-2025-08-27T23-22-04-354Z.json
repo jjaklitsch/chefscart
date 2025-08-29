@@ -1,0 +1,1152 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-27T23:22:04.358Z",
+    "total_consolidations": 75,
+    "total_separations": 51,
+    "total_mappings": 308
+  },
+  "consolidations": [
+    {
+      "groupKey": "jasmine rice",
+      "originalIngredients": [
+        "Jasmine Rice",
+        "Cooked Jasmine Rice"
+      ],
+      "standardizedName": "Jasmine Rice",
+      "reasoning": "Both 'Jasmine Rice' and 'Cooked Jasmine Rice' refer to the same base ingredient, with the latter being a prepared version of the former. They can be consolidated as they represent different states of the same product that shoppers would typically buy together."
+    },
+    {
+      "groupKey": "bell pepper",
+      "originalIngredients": [
+        "Red Bell Pepper",
+        "Bell Pepper",
+        "Green Bell Pepper",
+        "Yellow Bell Pepper"
+      ],
+      "standardizedName": "Bell Pepper",
+      "reasoning": "All variations refer to the same type of bell pepper, differing only in color and preparation methods. They can be grouped under a single product as shoppers typically purchase bell peppers without needing to specify the color or cut."
+    },
+    {
+      "groupKey": "black pepper",
+      "originalIngredients": [
+        "Black Pepper",
+        "Ground Black Pepper"
+      ],
+      "standardizedName": "Black Pepper",
+      "reasoning": "Both 'Black Pepper' and 'Ground Black Pepper' refer to the same spice, with 'Ground Black Pepper' being a specific form of 'Black Pepper'. They can be consolidated as they represent the same purchasable product."
+    },
+    {
+      "groupKey": "parsley",
+      "originalIngredients": [
+        "Parsley",
+        "Fresh Parsley"
+      ],
+      "standardizedName": "Fresh Parsley",
+      "reasoning": "Both 'Parsley' and 'Fresh Parsley' refer to the same ingredient, with variations in naming that do not affect the product's identity. They are used interchangeably in recipes and represent the same purchasable item."
+    },
+    {
+      "groupKey": "orange juice",
+      "originalIngredients": [
+        "Orange Juice",
+        "Fresh Orange Juice"
+      ],
+      "standardizedName": "Orange Juice",
+      "reasoning": "Both 'Orange Juice' and 'Fresh Orange Juice' refer to the same base product, with the distinction being minor variations in naming and preparation state. Fresh orange juice is simply a more specific descriptor of the same product."
+    },
+    {
+      "groupKey": "cumin",
+      "originalIngredients": [
+        "Cumin",
+        "Ground Cumin"
+      ],
+      "standardizedName": "Ground Cumin",
+      "reasoning": "Both 'Cumin' and 'Ground Cumin' refer to the same spice in its ground form, which is the only form that is relevant for the recipes listed. The variations in naming do not indicate different products."
+    },
+    {
+      "groupKey": "cilantro",
+      "originalIngredients": [
+        "Cilantro",
+        "Fresh Cilantro"
+      ],
+      "standardizedName": "Fresh Cilantro",
+      "reasoning": "All variations refer to the same base ingredient, cilantro, with minor differences in naming or preparation (fresh, chopped, leaves). They can be grouped under a single product as they represent the same purchasable item."
+    },
+    {
+      "groupKey": "black beans",
+      "originalIngredients": [
+        "Black Beans",
+        "Canned Black Beans"
+      ],
+      "standardizedName": "Canned Black Beans",
+      "reasoning": "All variations refer to the same product, which is canned black beans, with minor differences in descriptions regarding preparation (drained, rinsed, cooked). These variations do not represent different purchasable items."
+    },
+    {
+      "groupKey": "almonds",
+      "originalIngredients": [
+        "Sliced Almonds",
+        "Almonds",
+        "Raw Almonds",
+        "Raw Whole Almonds"
+      ],
+      "standardizedName": "Almonds",
+      "reasoning": "All variations refer to almonds in different forms or preparations, which can be considered the same base product. They can be consolidated under a single name as they are commonly used interchangeably in recipes."
+    },
+    {
+      "groupKey": "sesame seeds",
+      "originalIngredients": [
+        "Sesame Seeds",
+        "White Sesame Seeds"
+      ],
+      "standardizedName": "Sesame Seeds",
+      "reasoning": "Both 'Sesame Seeds' and 'White Sesame Seeds' refer to the same base ingredient, with 'White Sesame Seeds' being a specific type of sesame seed. They can be grouped under a single product as they are commonly used interchangeably in recipes."
+    },
+    {
+      "groupKey": "carrots",
+      "originalIngredients": [
+        "Carrots",
+        "Large Carrots"
+      ],
+      "standardizedName": "Carrots",
+      "reasoning": "Both 'Carrots' and 'Large Carrots' refer to the same base ingredient, with 'Large Carrots' being a size variation of the standard 'Carrots'. They can be purchased as one item in a grocery store."
+    },
+    {
+      "groupKey": "potatoes",
+      "originalIngredients": [
+        "Potatoes",
+        "Yellow Potatoes",
+        "Small Potatoes"
+      ],
+      "standardizedName": "Potatoes",
+      "reasoning": "All variations refer to the same base ingredient, potatoes, with minor differences in naming and preparation states. They can be grouped under a single product as shoppers typically buy potatoes without needing to specify the type or size."
+    },
+    {
+      "groupKey": "ginger",
+      "originalIngredients": [
+        "Ginger",
+        "Fresh Ginger",
+        "Ground Ginger"
+      ],
+      "standardizedName": "Ginger",
+      "reasoning": "All variations refer to the same base ingredient, ginger, in different forms (fresh, ground) or preparations (minced, grated, sliced). They can be consolidated as they represent the same purchasable product."
+    },
+    {
+      "groupKey": "tomato",
+      "originalIngredients": [
+        "Tomato",
+        "Diced Tomato"
+      ],
+      "standardizedName": "Tomato",
+      "reasoning": "Both 'Tomato' and 'Diced Tomato' refer to the same base ingredient, with 'Diced Tomato' being a specific preparation of the tomato. They can be consolidated as they represent the same purchasable product in different forms."
+    },
+    {
+      "groupKey": "shallot",
+      "originalIngredients": [
+        "Shallot",
+        "Large Shallot"
+      ],
+      "standardizedName": "Shallot",
+      "reasoning": "Both 'Shallot' and 'Large Shallot' refer to the same base ingredient, with 'Large Shallot' being a size variation. Since shoppers typically purchase shallots without needing to specify size, they can be consolidated."
+    },
+    {
+      "groupKey": "lemon juice",
+      "originalIngredients": [
+        "Lemon Juice",
+        "Fresh Lemon Juice"
+      ],
+      "standardizedName": "Lemon Juice",
+      "reasoning": "Both 'Lemon Juice' and 'Fresh Lemon Juice' refer to the same product, which is lemon juice derived from fresh lemons. The variations in naming do not indicate different purchasable items."
+    },
+    {
+      "groupKey": "garlic",
+      "originalIngredients": [
+        "Garlic",
+        "Fresh Garlic"
+      ],
+      "standardizedName": "Garlic",
+      "reasoning": "Both 'Garlic' and 'Fresh Garlic' refer to the same base ingredient, with 'Fresh Garlic' being a more specific descriptor of the same product. They can be used interchangeably in recipes."
+    },
+    {
+      "groupKey": "eggs",
+      "originalIngredients": [
+        "Eggs",
+        "Large Eggs"
+      ],
+      "standardizedName": "Large Eggs",
+      "reasoning": "Both 'Eggs' and 'Large Eggs' refer to the same product, specifically large chicken eggs, with minor variations in naming and context. They are used interchangeably in recipes and represent the same purchasable item."
+    },
+    {
+      "groupKey": "milk",
+      "originalIngredients": [
+        "Milk",
+        "Whole Milk"
+      ],
+      "standardizedName": "Milk (Whole)",
+      "reasoning": "Both 'Milk' and 'Whole Milk' refer to the same base product, with 'Whole Milk' being a specific type of milk. Since 'Milk' can be interpreted as whole milk in many contexts, they can be consolidated under a single product."
+    },
+    {
+      "groupKey": "chives",
+      "originalIngredients": [
+        "Chives",
+        "Fresh Chives"
+      ],
+      "standardizedName": "Chives",
+      "reasoning": "Both 'Chives' and 'Fresh Chives' refer to the same herb, with minor variations in naming and preparation states. They are all used in similar contexts and can be purchased as one item."
+    },
+    {
+      "groupKey": "butter",
+      "originalIngredients": [
+        "Butter",
+        "Unsalted Butter",
+        "Salted Butter"
+      ],
+      "standardizedName": "Butter",
+      "reasoning": "All variations of butter (unsalted, salted, and general butter) are commonly used interchangeably in recipes, and shoppers typically purchase them as a single item. The distinction between salted and unsalted can be noted in the product description."
+    },
+    {
+      "groupKey": "lemon zest",
+      "originalIngredients": [
+        "Lemon Zest",
+        "Fresh Lemon Zest"
+      ],
+      "standardizedName": "Lemon Zest",
+      "reasoning": "Both 'Lemon Zest' and 'Fresh Lemon Zest' refer to the same ingredient, which is the zest of a lemon. The term 'fresh' is often implied in the context of zest, as it is typically used fresh in cooking."
+    },
+    {
+      "groupKey": "rosemary",
+      "originalIngredients": [
+        "Rosemary",
+        "Fresh Rosemary"
+      ],
+      "standardizedName": "Fresh Rosemary",
+      "reasoning": "Both 'Rosemary' and 'Fresh Rosemary' refer to the same herb, with variations in naming and preparation (chopped, sprigs, finely chopped). They can be consolidated as they represent the same purchasable product."
+    },
+    {
+      "groupKey": "thyme",
+      "originalIngredients": [
+        "Thyme",
+        "Dried Thyme",
+        "Fresh Thyme"
+      ],
+      "standardizedName": "Thyme",
+      "reasoning": "All variations of thyme (fresh and dried) are essentially the same herb in different forms. Shoppers typically purchase thyme as either fresh or dried, and the variations in naming (e.g., 'fresh thyme leaves', 'dried thyme') do not represent different purchasable products but rather different states of the same herb."
+    },
+    {
+      "groupKey": "lemon",
+      "originalIngredients": [
+        "Lemon",
+        "Fresh Lemon"
+      ],
+      "standardizedName": "Lemon",
+      "reasoning": "Both 'Lemon' and 'Fresh Lemon' refer to the same base ingredient, which is lemon. The variations in naming do not represent different purchasable products, as shoppers typically buy lemons without needing to specify freshness."
+    },
+    {
+      "groupKey": "chili flakes",
+      "originalIngredients": [
+        "Chili Flakes",
+        "Red Chili Flakes",
+        "Dried Red Chili Flakes"
+      ],
+      "standardizedName": "Chili Flakes",
+      "reasoning": "All variations refer to the same product, which is crushed dried chili peppers. The distinctions in naming (Chili Flakes, Red Chili Flakes, Dried Red Chili Flakes) do not indicate different products but rather slight variations in description."
+    },
+    {
+      "groupKey": "chicken breasts",
+      "originalIngredients": [
+        "Chicken Breasts",
+        "Boneless Skinless Chicken Breasts"
+      ],
+      "standardizedName": "Boneless Skinless Chicken Breasts",
+      "reasoning": "Both 'Chicken Breasts' and 'Boneless Skinless Chicken Breasts' refer to the same product, with the latter being a more specific description. They are used interchangeably in various meal contexts and represent the same purchasable item."
+    },
+    {
+      "groupKey": "dill",
+      "originalIngredients": [
+        "Dried Dill",
+        "Fresh Dill",
+        "Dill"
+      ],
+      "standardizedName": "Dill",
+      "reasoning": "Dried Dill, Fresh Dill, and Dill all refer to the same herb in different forms or states. They can be consolidated as they represent the same purchasable product, with dried and fresh being common variations."
+    },
+    {
+      "groupKey": "lime juice",
+      "originalIngredients": [
+        "Lime Juice",
+        "Fresh Lime Juice"
+      ],
+      "standardizedName": "Lime Juice",
+      "reasoning": "Both 'Lime Juice' and 'Fresh Lime Juice' refer to the same product, which is lime juice, with 'fresh' being a descriptor that does not change the nature of the product. They are used interchangeably in recipes and represent the same purchasable item."
+    },
+    {
+      "groupKey": "coconut milk",
+      "originalIngredients": [
+        "Coconut Milk",
+        "Canned Coconut Milk"
+      ],
+      "standardizedName": "Coconut Milk",
+      "reasoning": "Both 'Coconut Milk' and 'Canned Coconut Milk' refer to the same product type, which is canned coconut milk. The variations in naming do not indicate different purchasable items, as they are all used interchangeably in recipes."
+    },
+    {
+      "groupKey": "tomatoes",
+      "originalIngredients": [
+        "Tomatoes",
+        "Canned Diced Tomatoes",
+        "Canned Tomatoes",
+        "Green Tomatoes",
+        "Diced Tomatoes",
+        "Canned Whole Tomatoes"
+      ],
+      "standardizedName": "Tomatoes",
+      "reasoning": "All variations of tomatoes, whether fresh or canned, represent the same base ingredient that shoppers commonly purchase. The distinctions in preparation (diced, whole, crushed) do not warrant separate listings as they are all forms of tomatoes that can be used interchangeably in recipes."
+    },
+    {
+      "groupKey": "olives",
+      "originalIngredients": [
+        "Olives",
+        "Green Olives"
+      ],
+      "standardizedName": "Pitted Green Olives",
+      "reasoning": "Both 'Olives' and 'Green Olives' refer to the same base ingredient, with 'Green Olives' being a specific type of olives. Since the variations primarily involve preparation states (pitted, halved, sliced) and do not represent fundamentally different products, they can be consolidated."
+    },
+    {
+      "groupKey": "crushed tomatoes",
+      "originalIngredients": [
+        "Canned Crushed Tomatoes",
+        "Crushed Tomatoes"
+      ],
+      "standardizedName": "Canned Crushed Tomatoes",
+      "reasoning": "Both 'Canned Crushed Tomatoes' and 'Crushed Tomatoes' refer to the same product type, which is canned crushed tomatoes. The variations in naming do not indicate different products, as they are used interchangeably in recipes."
+    },
+    {
+      "groupKey": "brown sugar",
+      "originalIngredients": [
+        "Brown Sugar",
+        "Light Brown Sugar"
+      ],
+      "standardizedName": "Brown Sugar",
+      "reasoning": "Both 'Brown Sugar' and 'Light Brown Sugar' are variations of the same product, with light brown sugar being a specific type of brown sugar. They are often used interchangeably in recipes, and the context indicates that they can be substituted for one another."
+    },
+    {
+      "groupKey": "turmeric",
+      "originalIngredients": [
+        "Turmeric",
+        "Ground Turmeric"
+      ],
+      "standardizedName": "Ground Turmeric",
+      "reasoning": "Both 'Turmeric' and 'Ground Turmeric' refer to the same product in different forms of naming. They are all ground forms of turmeric, which is the same purchasable store product."
+    },
+    {
+      "groupKey": "spinach",
+      "originalIngredients": [
+        "Spinach",
+        "Fresh Spinach"
+      ],
+      "standardizedName": "Fresh Spinach",
+      "reasoning": "Both 'Spinach' and 'Fresh Spinach' refer to the same base ingredient, which is fresh spinach. The variations in naming and preparation do not warrant separate listings as they are all purchasable as fresh spinach in stores."
+    },
+    {
+      "groupKey": "ancho chiles",
+      "originalIngredients": [
+        "Ancho Chiles",
+        "Dried Ancho Chiles"
+      ],
+      "standardizedName": "Dried Ancho Chiles",
+      "reasoning": "Both 'Ancho Chiles' and 'Dried Ancho Chiles' refer to the same product, which is dried ancho chiles. The variations in naming do not indicate different purchasable items, as they are all used in similar contexts and preparations."
+    },
+    {
+      "groupKey": "guajillo chiles",
+      "originalIngredients": [
+        "Guajillo Chiles",
+        "Dried Guajillo Chiles"
+      ],
+      "standardizedName": "Dried Guajillo Chiles",
+      "reasoning": "All variations refer to the same ingredient, guajillo chiles, with minor differences in preparation or description that do not affect the product's identity as a purchasable item."
+    },
+    {
+      "groupKey": "cinnamon",
+      "originalIngredients": [
+        "Cinnamon",
+        "Ground Cinnamon"
+      ],
+      "standardizedName": "Ground Cinnamon",
+      "reasoning": "Both 'Cinnamon' and 'Ground Cinnamon' refer to the same product, which is ground cinnamon. The variations in naming do not indicate different purchasable items."
+    },
+    {
+      "groupKey": "basil",
+      "originalIngredients": [
+        "Basil",
+        "Dried Basil",
+        "Fresh Basil"
+      ],
+      "standardizedName": "Basil",
+      "reasoning": "All variations of basil (fresh and dried) can be considered the same base ingredient, as they are commonly used interchangeably in recipes, and shoppers typically buy them as one item. The distinctions in freshness and form (dried vs. fresh) are minor enough to warrant consolidation."
+    },
+    {
+      "groupKey": "allspice",
+      "originalIngredients": [
+        "Allspice",
+        "Ground Allspice"
+      ],
+      "standardizedName": "Ground Allspice",
+      "reasoning": "Both 'Allspice' and 'Ground Allspice' refer to the same product in its ground form, which is commonly used in recipes. The variations in naming do not indicate different purchasable items."
+    },
+    {
+      "groupKey": "flour tortillas",
+      "originalIngredients": [
+        "Flour Tortillas",
+        "Large Flour Tortillas"
+      ],
+      "standardizedName": "Flour Tortillas",
+      "reasoning": "Both 'Flour Tortillas' and 'Large Flour Tortillas' refer to the same type of product, with the size distinction being minor and not affecting the overall product category. They are used interchangeably in various meal contexts."
+    },
+    {
+      "groupKey": "mint",
+      "originalIngredients": [
+        "Mint",
+        "Fresh Mint"
+      ],
+      "standardizedName": "Fresh Mint",
+      "reasoning": "Both 'Mint' and 'Fresh Mint' refer to the same herb, with variations in naming and preparation (e.g., chopped, finely chopped). They are used interchangeably across various meals and cuisines, indicating they represent the same purchasable product."
+    },
+    {
+      "groupKey": "coriander",
+      "originalIngredients": [
+        "Ground Coriander",
+        "Coriander"
+      ],
+      "standardizedName": "Ground Coriander",
+      "reasoning": "Both 'Ground Coriander' and 'Coriander' refer to the same spice in its ground form, which is commonly used in various cuisines. The variations in naming do not indicate different products, as they are both used interchangeably in recipes."
+    },
+    {
+      "groupKey": "spaghetti",
+      "originalIngredients": [
+        "Spaghetti",
+        "Dried Spaghetti"
+      ],
+      "standardizedName": "Spaghetti",
+      "reasoning": "Both 'Spaghetti' and 'Dried Spaghetti' refer to the same type of pasta product, which is typically sold dried in stores. The term 'dried' is often implied in the context of pasta, making it reasonable to consolidate these variations."
+    },
+    {
+      "groupKey": "tomatillos",
+      "originalIngredients": [
+        "Tomatillos",
+        "Fresh Tomatillos"
+      ],
+      "standardizedName": "Tomatillos",
+      "reasoning": "Both 'Tomatillos' and 'Fresh Tomatillos' refer to the same base ingredient, with minor variations in naming and preparation states. They are used interchangeably in recipes and represent the same purchasable product."
+    },
+    {
+      "groupKey": "cornmeal",
+      "originalIngredients": [
+        "Cornmeal",
+        "Yellow Cornmeal"
+      ],
+      "standardizedName": "Cornmeal",
+      "reasoning": "Both 'Cornmeal' and 'Yellow Cornmeal' refer to similar products made from ground corn, with 'Yellow Cornmeal' being a specific type of cornmeal. They can be consolidated as they are often used interchangeably in recipes and represent the same base ingredient."
+    },
+    {
+      "groupKey": "basmati rice",
+      "originalIngredients": [
+        "Basmati Rice",
+        "Cooked Basmati Rice"
+      ],
+      "standardizedName": "Basmati Rice",
+      "reasoning": "Both 'Basmati Rice' and 'Cooked Basmati Rice' refer to the same base ingredient, with the latter being a prepared version of the former. Shoppers typically purchase rice in its uncooked form, and the cooked version is often understood as a preparation of the same product."
+    },
+    {
+      "groupKey": "chickpeas",
+      "originalIngredients": [
+        "Chickpeas",
+        "Canned Chickpeas",
+        "Cooked Chickpeas",
+        "Dried Chickpeas"
+      ],
+      "standardizedName": "Chickpeas",
+      "reasoning": "All variations of chickpeas represent the same base ingredient, which can be purchased in different forms (canned, cooked, dried). They are used interchangeably in recipes, and shoppers typically look for chickpeas as a single product regardless of their state."
+    },
+    {
+      "groupKey": "peas",
+      "originalIngredients": [
+        "Peas",
+        "Frozen Peas",
+        "Green Peas",
+        "Peas (Shelled)"
+      ],
+      "standardizedName": "Peas (Frozen or Fresh)",
+      "reasoning": "All variations refer to the same base ingredient, peas, with minor differences in preparation or state (fresh vs frozen, shelled vs unshelled). They can be grouped under a single product as they are commonly used interchangeably in recipes."
+    },
+    {
+      "groupKey": "pepper",
+      "originalIngredients": [
+        "White Pepper",
+        "Ground White Pepper",
+        "Ground Pepper"
+      ],
+      "standardizedName": "White Pepper",
+      "reasoning": "All variations refer to the same product, which is white pepper in different forms or descriptions. 'White Pepper' and 'Ground White Pepper' are essentially the same spice, with 'Ground Pepper' being a broader term that can include both white and black pepper. However, in the context of these meals, they are used interchangeably."
+    },
+    {
+      "groupKey": "egg",
+      "originalIngredients": [
+        "Egg",
+        "Large Egg"
+      ],
+      "standardizedName": "Egg",
+      "reasoning": "Both 'Egg' and 'Large Egg' refer to the same base ingredient, which is eggs. The variations in naming do not represent different purchasable products, as they are all types of eggs that can be used interchangeably in recipes."
+    },
+    {
+      "groupKey": "pumpkin seeds",
+      "originalIngredients": [
+        "Pumpkin Seeds",
+        "Raw Pumpkin Seeds"
+      ],
+      "standardizedName": "Pumpkin Seeds (Pepitas)",
+      "reasoning": "Both 'Pumpkin Seeds' and 'Raw Pumpkin Seeds' refer to the same base ingredient, with the distinction being in their preparation state. Since shoppers typically purchase pumpkin seeds without specifying whether they are raw or toasted, they can be consolidated under a single product."
+    },
+    {
+      "groupKey": "curry leaves",
+      "originalIngredients": [
+        "Curry Leaves",
+        "Fresh Curry Leaves"
+      ],
+      "standardizedName": "Curry Leaves",
+      "reasoning": "Both 'Curry Leaves' and 'Fresh Curry Leaves' refer to the same ingredient, with 'Fresh' being an implied characteristic of the product. They are used interchangeably in various Indian dishes and represent the same purchasable item."
+    },
+    {
+      "groupKey": "eggplant",
+      "originalIngredients": [
+        "Eggplant",
+        "Large Eggplant"
+      ],
+      "standardizedName": "Eggplant",
+      "reasoning": "Both 'Eggplant' and 'Large Eggplant' refer to the same type of vegetable, with 'Large Eggplant' being a specific size variant of the more general 'Eggplant'. They can be treated as the same purchasable product since shoppers typically buy eggplants without needing to differentiate by size in most contexts."
+    },
+    {
+      "groupKey": "plain breadcrumbs",
+      "originalIngredients": [
+        "Plain Breadcrumbs",
+        "Plain Dried Breadcrumbs"
+      ],
+      "standardizedName": "Plain Breadcrumbs",
+      "reasoning": "Both 'Plain Breadcrumbs' and 'Plain Dried Breadcrumbs' refer to the same type of product, which is breadcrumbs that can be used interchangeably in recipes. The term 'dried' is often used to describe the state of breadcrumbs, but it does not indicate a different product that would require separate purchasing."
+    },
+    {
+      "groupKey": "basil leaves",
+      "originalIngredients": [
+        "Fresh Basil Leaves",
+        "Basil Leaves"
+      ],
+      "standardizedName": "Basil Leaves",
+      "reasoning": "Both 'Fresh Basil Leaves' and 'Basil Leaves' refer to the same base ingredient, with minor variations in naming and preparation states. They can be consolidated as they represent the same purchasable product."
+    },
+    {
+      "groupKey": "lime wedges",
+      "originalIngredients": [
+        "Lime Wedges",
+        "Fresh Lime Wedges"
+      ],
+      "standardizedName": "Lime Wedges",
+      "reasoning": "Both 'Lime Wedges' and 'Fresh Lime Wedges' refer to the same product, which is lime cut into wedges. The term 'fresh' is implied in the context of produce and does not represent a different purchasable item."
+    },
+    {
+      "groupKey": "thyme sprigs",
+      "originalIngredients": [
+        "Fresh Thyme Sprigs",
+        "Thyme Sprigs"
+      ],
+      "standardizedName": "Fresh Thyme Sprigs",
+      "reasoning": "Both 'Fresh Thyme Sprigs' and 'Thyme Sprigs' refer to the same product, which is fresh thyme in sprig form. The variations in naming do not indicate different purchasable items, as they are used interchangeably in recipes."
+    },
+    {
+      "groupKey": "mint leaves",
+      "originalIngredients": [
+        "Mint Leaves",
+        "Fresh Mint Leaves"
+      ],
+      "standardizedName": "Fresh Mint Leaves",
+      "reasoning": "Both 'Mint Leaves' and 'Fresh Mint Leaves' refer to the same product, which is fresh mint in various preparations. The variations in naming and preparation (whole, chopped, picked) do not warrant separate listings as they are all commonly understood as fresh mint leaves."
+    },
+    {
+      "groupKey": "long-grain rice",
+      "originalIngredients": [
+        "Cooked Long-grain Rice",
+        "Long-grain White Rice",
+        "Cooked Long-grain White Rice"
+      ],
+      "standardizedName": "Long-grain White Rice",
+      "reasoning": "The variations represent different states of the same base ingredient, long-grain white rice. 'Cooked Long-grain Rice' and 'Cooked Long-grain White Rice' are essentially the same product, while 'Long-grain White Rice' refers to the uncooked version. All can be consolidated under a single product with clear distinctions for cooked and uncooked states."
+    },
+    {
+      "groupKey": "cilantro leaves",
+      "originalIngredients": [
+        "Cilantro Leaves",
+        "Fresh Cilantro Leaves"
+      ],
+      "standardizedName": "Fresh Cilantro Leaves",
+      "reasoning": "Both 'Cilantro Leaves' and 'Fresh Cilantro Leaves' refer to the same ingredient, with minor variations in naming. They are used interchangeably in various cuisines and contexts, and shoppers would typically purchase them as one item."
+    },
+    {
+      "groupKey": "nutmeg",
+      "originalIngredients": [
+        "Ground Nutmeg",
+        "Nutmeg"
+      ],
+      "standardizedName": "Ground Nutmeg",
+      "reasoning": "Both 'Ground Nutmeg' and 'Nutmeg' refer to the same spice, with 'Ground Nutmeg' being a specific form of nutmeg. They can be consolidated as they represent the same purchasable product, which is ground nutmeg."
+    },
+    {
+      "groupKey": "flat-leaf parsley",
+      "originalIngredients": [
+        "Flat-leaf Parsley",
+        "Fresh Flat-leaf Parsley"
+      ],
+      "standardizedName": "Flat-leaf Parsley",
+      "reasoning": "Both 'Flat-leaf Parsley' and 'Fresh Flat-leaf Parsley' refer to the same type of parsley, with minor variations in naming. They are used interchangeably in recipes and represent the same purchasable product."
+    },
+    {
+      "groupKey": "thyme leaves",
+      "originalIngredients": [
+        "Fresh Thyme Leaves",
+        "Thyme Leaves"
+      ],
+      "standardizedName": "Fresh Thyme Leaves",
+      "reasoning": "Both 'Fresh Thyme Leaves' and 'Thyme Leaves' refer to the same base ingredient, with 'Fresh Thyme Leaves' being a more specific descriptor. They are used interchangeably in recipes and represent the same purchasable product."
+    },
+    {
+      "groupKey": "cannellini beans",
+      "originalIngredients": [
+        "Canned Cannellini Beans",
+        "Cannellini Beans"
+      ],
+      "standardizedName": "Canned Cannellini Beans",
+      "reasoning": "Both 'Canned Cannellini Beans' and 'Cannellini Beans' refer to the same product, with variations in naming and preparation states. They are all canned beans that can be used interchangeably in recipes."
+    },
+    {
+      "groupKey": "chives or parsley",
+      "originalIngredients": [
+        "Fresh Chives Or Parsley",
+        "Chives Or Parsley"
+      ],
+      "standardizedName": "Chives or Parsley, Fresh, Chopped",
+      "reasoning": "Both variations refer to the same types of herbs (chives and parsley) used for garnish, and the differences in naming do not represent distinct purchasable products."
+    },
+    {
+      "groupKey": "mussels",
+      "originalIngredients": [
+        "Mussels",
+        "Fresh Mussels"
+      ],
+      "standardizedName": "Mussels",
+      "reasoning": "Both 'Mussels' and 'Fresh Mussels' refer to the same base product, with minor variations in naming and preparation states. They are both mussels that are cleaned and debearded, which shoppers would typically consider as one item."
+    },
+    {
+      "groupKey": "sumac",
+      "originalIngredients": [
+        "Dried Sumac",
+        "Sumac"
+      ],
+      "standardizedName": "Sumac",
+      "reasoning": "Both 'Dried Sumac' and 'Sumac' refer to the same spice used in various Mediterranean dishes, and they are interchangeable in cooking contexts. The term 'dried' is often implied for spices, making them effectively the same product."
+    },
+    {
+      "groupKey": "cashews",
+      "originalIngredients": [
+        "Cashews",
+        "Raw Cashews"
+      ],
+      "standardizedName": "Cashews",
+      "reasoning": "Both 'Cashews' and 'Raw Cashews' refer to the same base ingredient, with variations primarily in preparation methods (soaked or not). They can be considered the same purchasable product as they are commonly sold as raw cashews in stores."
+    },
+    {
+      "groupKey": "kombu",
+      "originalIngredients": [
+        "Dried Kombu",
+        "Kombu"
+      ],
+      "standardizedName": "Dried Kombu (Kelp)",
+      "reasoning": "Both 'Dried Kombu' and 'Kombu' refer to the same ingredient, which is dried kelp used in Japanese cuisine. The variations in naming do not indicate different products, as they are both used in similar culinary contexts and preparation methods."
+    },
+    {
+      "groupKey": "tuna steaks",
+      "originalIngredients": [
+        "Tuna Steaks",
+        "Fresh Tuna Steaks"
+      ],
+      "standardizedName": "Tuna Steaks",
+      "reasoning": "Both 'Tuna Steaks' and 'Fresh Tuna Steaks' refer to the same type of product, with 'Fresh' being a descriptor that does not change the nature of the product itself. They can be considered the same purchasable item as they are both tuna steaks and can be used interchangeably in recipes."
+    },
+    {
+      "groupKey": "roasted peanuts",
+      "originalIngredients": [
+        "Roasted Peanuts",
+        "Roasted Unsalted Peanuts",
+        "Unsalted Roasted Peanuts"
+      ],
+      "standardizedName": "Roasted Peanuts",
+      "reasoning": "The variations 'Roasted Peanuts', 'Roasted Unsalted Peanuts', and 'Unsalted Roasted Peanuts' refer to the same base product with minor differences in salt content, which is not significant enough to warrant separate listings in a grocery shopping app."
+    },
+    {
+      "groupKey": "flat rice noodles",
+      "originalIngredients": [
+        "Flat Rice Noodles",
+        "Dried Flat Rice Noodles"
+      ],
+      "standardizedName": "Dried Flat Rice Noodles",
+      "reasoning": "Both 'Flat Rice Noodles' and 'Dried Flat Rice Noodles' refer to the same type of product, which is dried flat rice noodles used in various dishes. The variations in naming do not indicate different products, but rather different descriptions of the same item."
+    },
+    {
+      "groupKey": "branzino",
+      "originalIngredients": [
+        "Branzino",
+        "Whole Branzino"
+      ],
+      "standardizedName": "Whole Branzino",
+      "reasoning": "Both 'Branzino' and 'Whole Branzino' refer to the same type of fish, with only minor differences in wording and preparation state. They are both whole branzino fish that can be purchased in the same way, making them suitable for consolidation."
+    }
+  ],
+  "separations": [
+    {
+      "groupKey": "cod",
+      "ingredients": [
+        "Salted Cod",
+        "Cod"
+      ],
+      "reasoning": "Salted Cod and Cod represent different preparation methods and product types. Salted Cod is a preserved product used in specific dishes like Ackee & Saltfish, while Cod refers to fresh fillets used in different recipes like Baked Cod with Tomatoes & Olives."
+    },
+    {
+      "groupKey": "olive oil",
+      "ingredients": [
+        "Olive Oil",
+        "Extra Virgin Olive Oil"
+      ],
+      "reasoning": "Olive oil and extra virgin olive oil are distinct products with different flavor profiles and culinary uses. Extra virgin olive oil is typically used for dressings and finishing dishes due to its stronger flavor, while regular olive oil is often used for cooking at higher temperatures."
+    },
+    {
+      "groupKey": "oregano",
+      "ingredients": [
+        "Oregano",
+        "Dried Oregano",
+        "Fresh Oregano"
+      ],
+      "reasoning": "Fresh oregano, dried oregano, and dried Mexican oregano are distinct products with different uses and flavor profiles. Fresh oregano is typically used in dishes where a fresh herb flavor is desired, while dried oregano is used for its concentrated flavor in cooked dishes. Dried Mexican oregano has a unique flavor that differs from regular dried oregano, making it important to keep them separate for accurate shopping."
+    },
+    {
+      "groupKey": "rice",
+      "ingredients": [
+        "White Rice",
+        "Rice",
+        "White Rice (Idli/rice Variety)"
+      ],
+      "reasoning": "The variations represent different types of rice or preparation methods that are distinct enough to warrant separate listings. 'White Rice' is a general term that encompasses various forms of cooked rice, while 'White Rice (Idli/rice Variety)' refers specifically to a type of rice used in Indian cuisine, which is not interchangeable with the other forms."
+    },
+    {
+      "groupKey": "onions",
+      "ingredients": [
+        "Green Onions",
+        "Onions",
+        "Yellow Onions",
+        "Medium Onions",
+        "Large Onions"
+      ],
+      "reasoning": "The variations represent different types of onions with distinct characteristics and uses in cooking. Green onions (scallions) are different from yellow onions, medium onions, and large onions, which are all types of bulb onions. Each type has unique flavor profiles and culinary applications."
+    },
+    {
+      "groupKey": "soy sauce",
+      "ingredients": [
+        "Soy Sauce",
+        "Dark Soy Sauce",
+        "Light Soy Sauce",
+        "Low-sodium Soy Sauce"
+      ],
+      "reasoning": "Each type of soy sauce serves a different culinary purpose and has distinct flavor profiles, making them different purchasable store products. For example, dark soy sauce is thicker and sweeter, while light soy sauce is saltier and used for different dishes. Low-sodium soy sauce is specifically for those looking to reduce sodium intake."
+    },
+    {
+      "groupKey": "onion",
+      "ingredients": [
+        "Onion",
+        "Yellow Onion",
+        "Red Onion",
+        "White Onion",
+        "Large Onion",
+        "Green Onion"
+      ],
+      "reasoning": "Each onion type has distinct characteristics and culinary uses that cater to different flavor profiles and textures in various cuisines. They are not interchangeable in recipes, thus should be kept separate."
+    },
+    {
+      "groupKey": "chili",
+      "ingredients": [
+        "Green Chili",
+        "Red Chili",
+        "Fresh Chili",
+        "Fresh Red Chili"
+      ],
+      "reasoning": "The variations represent different types of chilis (green vs red) and different states of freshness or preparation (fresh vs dried, sliced vs minced), which are typically purchased separately in grocery stores."
+    },
+    {
+      "groupKey": "apples",
+      "ingredients": [
+        "Apples",
+        "Yellow Apples"
+      ],
+      "reasoning": "The term 'Yellow Apples' specifies a particular variety of apple, while 'Apples' is a broader term that can refer to multiple varieties. Since they may be used in different contexts and recipes, they should be kept separate."
+    },
+    {
+      "groupKey": "ramen noodles",
+      "ingredients": [
+        "Ramen Noodles",
+        "Fresh Ramen Noodles"
+      ],
+      "reasoning": "Fresh ramen noodles and regular ramen noodles are different products due to their preparation state and usage context. Fresh ramen noodles are typically used in dishes that require a specific texture and cooking time, while regular ramen noodles are often instant and used in different types of meals."
+    },
+    {
+      "groupKey": "bread",
+      "ingredients": [
+        "Bread",
+        "White Bread"
+      ],
+      "reasoning": "The term 'Bread' is a general category that can refer to various types of bread, while 'White Bread' specifies a particular type. They are used in different meal contexts and may not be interchangeable for shoppers."
+    },
+    {
+      "groupKey": "cabbage",
+      "ingredients": [
+        "Cabbage",
+        "Green Cabbage",
+        "Red Cabbage"
+      ],
+      "reasoning": "Green cabbage and red cabbage are distinct varieties with different flavors, colors, and uses in recipes. They are typically sold separately in stores and cater to different culinary needs."
+    },
+    {
+      "groupKey": "pork",
+      "ingredients": [
+        "Pork",
+        "Ground Pork"
+      ],
+      "reasoning": "Pork and Ground Pork are different forms of the same meat product. Pork refers to whole cuts or specific preparations, while Ground Pork is a processed form that is used in different recipes. They are typically sold in different sections of the grocery store and serve different culinary purposes."
+    },
+    {
+      "groupKey": "shrimp",
+      "ingredients": [
+        "Shrimp",
+        "Dried Shrimp",
+        "Large Shrimp",
+        "Medium Shrimp",
+        "Cooked Shrimp",
+        "Small Raw Shrimp"
+      ],
+      "reasoning": "The variations represent different types and preparations of shrimp that are commonly sold separately in grocery stores. For example, 'Dried Shrimp' is a distinct product from 'Raw Shrimp' and 'Cooked Shrimp', and each size (large, medium, small) can also be considered a different product due to their specific culinary uses."
+    },
+    {
+      "groupKey": "chicken",
+      "ingredients": [
+        "Chicken",
+        "Chicken Pieces",
+        "Chicken (Bone-in)",
+        "Bone-in Chicken Pieces",
+        "Ground Chicken",
+        "Whole Chicken"
+      ],
+      "reasoning": "The ingredient variations represent different cuts, forms, and types of chicken that are typically sold separately in grocery stores. For example, ground chicken is a different form than whole chicken, and bone-in pieces differ from boneless cuts."
+    },
+    {
+      "groupKey": "molasses",
+      "ingredients": [
+        "Molasses",
+        "Dark Molasses"
+      ],
+      "reasoning": "Molasses and dark molasses are distinct products with different flavor profiles and uses in cooking. Dark molasses has a stronger flavor and is often used in specific recipes, while regular molasses is milder. They are not interchangeable in all contexts."
+    },
+    {
+      "groupKey": "beef",
+      "ingredients": [
+        "Beef",
+        "Ground Beef"
+      ],
+      "reasoning": "Beef and Ground Beef are different forms of the same ingredient. Beef refers to whole cuts or slices, while Ground Beef is specifically minced meat, which requires different preparation and is used in different contexts."
+    },
+    {
+      "groupKey": "shiitake mushrooms",
+      "ingredients": [
+        "Shiitake Mushrooms",
+        "Dried Shiitake Mushrooms"
+      ],
+      "reasoning": "Shiitake mushrooms and dried shiitake mushrooms are different forms of the same ingredient, requiring different preparation methods and usage contexts. Fresh shiitake mushrooms are typically used in produce sections, while dried shiitake mushrooms are found in pantry staples and require rehydration before use."
+    },
+    {
+      "groupKey": "bell peppers",
+      "ingredients": [
+        "Red Bell Peppers",
+        "Green Bell Peppers",
+        "Yellow Bell Peppers",
+        "Large Bell Peppers",
+        "Bell Peppers"
+      ],
+      "reasoning": "The variations represent different types of bell peppers (red, green, yellow) and sizes (large vs. standard), which are commonly sold as distinct products in grocery stores. Each type and size may be used for different culinary purposes and recipes, thus requiring separate listings."
+    },
+    {
+      "groupKey": "fish fillets",
+      "ingredients": [
+        "White Fish Fillets",
+        "Fish Fillets"
+      ],
+      "reasoning": "The term 'White Fish Fillets' specifically refers to a type of fish that is typically mild and flaky, such as cod or tilapia, while 'Fish Fillets' is a broader term that could encompass various types of fish, not limited to white fish. This distinction is important for shoppers who may be looking for specific types of fish for their recipes."
+    },
+    {
+      "groupKey": "wine",
+      "ingredients": [
+        "Red Wine",
+        "White Wine"
+      ],
+      "reasoning": "Red wine and white wine are distinct products with different flavor profiles and uses in cooking, thus they should be kept separate."
+    },
+    {
+      "groupKey": "crab meat",
+      "ingredients": [
+        "Crab Meat",
+        "Cooked Crab Meat"
+      ],
+      "reasoning": "The two items represent different preparation states of crab meat. 'Crab Meat' refers to fresh crab meat, while 'Cooked Crab Meat' specifically indicates that it is already cooked and prepared, which may require different purchasing decisions."
+    },
+    {
+      "groupKey": "peanuts",
+      "ingredients": [
+        "Peanuts",
+        "Raw Peanuts"
+      ],
+      "reasoning": "Peanuts and raw peanuts represent different preparation states and uses. Crushed roasted peanuts are typically used as a topping or flavor enhancer, while raw peanuts are used in dishes where they may be cooked or roasted further. They are also sold in different forms and may be found in different sections of the store."
+    },
+    {
+      "groupKey": "chili powder",
+      "ingredients": [
+        "Red Chili Powder",
+        "Chili Powder",
+        "Dried Chili Powder"
+      ],
+      "reasoning": "The terms 'Red Chili Powder', 'Chili Powder', and 'Dried Chili Powder' refer to different types of chili products that are used in various cuisines and have distinct flavor profiles. 'Red Chili Powder' is commonly used in Indian cuisine, while 'Chili Powder' is more associated with Mexican cuisine. 'Dried Chili Powder' suggests a specific preparation that may not be interchangeable with the other two."
+    },
+    {
+      "groupKey": "beans",
+      "ingredients": [
+        "White Beans",
+        "Green Beans",
+        "Canned White Beans"
+      ],
+      "reasoning": "The ingredients represent different types of beans and forms. 'White Beans' and 'Canned White Beans' refer to the same type of bean but in different forms (canned vs. fresh), while 'Green Beans' is a completely different type of bean. Therefore, they should be kept separate."
+    },
+    {
+      "groupKey": "chicken thighs",
+      "ingredients": [
+        "Chicken Thighs",
+        "Boneless Skinless Chicken Thighs"
+      ],
+      "reasoning": "The variations represent different cuts and preparations of chicken thighs. 'Chicken Thighs' can refer to bone-in or skin-on options, while 'Boneless Skinless Chicken Thighs' specifically refers to a different preparation that is boneless and skinless. These differences warrant separate listings as they cater to different consumer needs and cooking methods."
+    },
+    {
+      "groupKey": "chicken broth",
+      "ingredients": [
+        "Chicken Broth",
+        "Low-sodium Chicken Broth"
+      ],
+      "reasoning": "The variations 'Chicken Broth' and 'Low-sodium Chicken Broth' represent different products due to their sodium content, which affects flavor and dietary considerations. They are distinct purchasable items."
+    },
+    {
+      "groupKey": "short-grain rice",
+      "ingredients": [
+        "Short-grain Rice",
+        "Short-grain White Rice",
+        "Cooked Short-grain Rice"
+      ],
+      "reasoning": "The variations represent different states of the same base ingredient (uncooked vs cooked) and specific types (white rice vs short-grain rice), which are typically sold separately in stores. Additionally, the cooking state (cooked vs uncooked) significantly affects how they are used in recipes."
+    },
+    {
+      "groupKey": "wine vinegar",
+      "ingredients": [
+        "Red Wine Vinegar",
+        "White Wine Vinegar"
+      ],
+      "reasoning": "Red wine vinegar and white wine vinegar are distinct products with different flavor profiles and uses in cooking, thus they should be kept separate."
+    },
+    {
+      "groupKey": "chicken stock",
+      "ingredients": [
+        "Chicken Stock",
+        "Low-sodium Chicken Stock"
+      ],
+      "reasoning": "Chicken stock and low-sodium chicken stock serve different dietary needs and preferences, making them distinct products that should be kept separate."
+    },
+    {
+      "groupKey": "tuna",
+      "ingredients": [
+        "Tuna",
+        "Canned Tuna"
+      ],
+      "reasoning": "Tuna and canned tuna represent different forms of the same ingredient. Tuna refers to fresh or sashimi-grade fish, while canned tuna is a processed product that is stored in a can. They are used in different culinary contexts and require different purchasing decisions."
+    },
+    {
+      "groupKey": "pork chops",
+      "ingredients": [
+        "Pork Chops",
+        "Bone-in Pork Chops"
+      ],
+      "reasoning": "The variations 'Pork Chops' and 'Bone-in Pork Chops' refer to different cuts of meat. 'Bone-in Pork Chops' specifically indicates that the chops have bones, while 'Pork Chops' could refer to boneless or bone-in cuts. Therefore, they should be kept separate as they represent different purchasable products."
+    },
+    {
+      "groupKey": "lamb",
+      "ingredients": [
+        "Lamb",
+        "Ground Lamb"
+      ],
+      "reasoning": "Lamb and Ground Lamb are different forms of the same meat product. Ground Lamb is a specific preparation of lamb that requires different purchasing considerations compared to whole cuts of lamb."
+    },
+    {
+      "groupKey": "zucchini",
+      "ingredients": [
+        "Zucchini",
+        "Medium Zucchini",
+        "Large Zucchini"
+      ],
+      "reasoning": "The variations 'Medium Zucchini' and 'Large Zucchini' indicate different sizes of zucchini, which can affect cooking times and preparation methods. Therefore, they should be kept separate to allow for precise shopping and cooking needs."
+    },
+    {
+      "groupKey": "dry wine",
+      "ingredients": [
+        "Dry White Wine",
+        "Dry Red Wine"
+      ],
+      "reasoning": "Dry white wine and dry red wine are distinct products with different flavor profiles and uses in cooking, which necessitates separate listings for shoppers."
+    },
+    {
+      "groupKey": "chilies",
+      "ingredients": [
+        "Green Chilies",
+        "Dried Red Chilies",
+        "Fresh Green Chilies",
+        "Red Chilies"
+      ],
+      "reasoning": "The variations represent different types of chilies (green vs red, fresh vs dried) that are used in distinct culinary contexts and have different flavor profiles. They are not interchangeable in recipes, thus should be kept separate."
+    },
+    {
+      "groupKey": "snapper",
+      "ingredients": [
+        "Whole Red Snapper",
+        "Whole Snapper"
+      ],
+      "reasoning": "The terms 'Whole Red Snapper' and 'Whole Snapper' refer to different species or types of snapper, which may have different flavors, textures, and culinary uses. Therefore, they should be treated as separate products."
+    },
+    {
+      "groupKey": "rum",
+      "ingredients": [
+        "White Rum",
+        "Dark Rum"
+      ],
+      "reasoning": "White rum and dark rum are distinct products with different flavor profiles and uses in cooking. They are not interchangeable and are typically found in different sections of a grocery store."
+    },
+    {
+      "groupKey": "curry paste",
+      "ingredients": [
+        "Green Curry Paste",
+        "Red Curry Paste"
+      ],
+      "reasoning": "Green Curry Paste and Red Curry Paste are distinct products with different flavor profiles and uses in Thai cuisine. They are not interchangeable and should be treated as separate items."
+    },
+    {
+      "groupKey": "vegetable or chicken broth",
+      "ingredients": [
+        "Vegetable Or Chicken Broth",
+        "Low-sodium Vegetable Or Chicken Broth"
+      ],
+      "reasoning": "The variations represent different types of broth based on sodium content, which affects their use in cooking and dietary preferences. Low-sodium broth is a distinct product from regular broth, as it caters to different health needs."
+    },
+    {
+      "groupKey": "kidney beans",
+      "ingredients": [
+        "Red Kidney Beans",
+        "Dried Red Kidney Beans",
+        "Kidney Beans"
+      ],
+      "reasoning": "The variations represent different forms and preparation states of kidney beans that shoppers would purchase differently. 'Red Kidney Beans' refers to canned beans, while 'Dried Red Kidney Beans' refers to dried beans that require soaking, and 'Kidney Beans' is a more general term that can refer to either canned or cooked beans. Each has distinct preparation methods and uses in recipes."
+    },
+    {
+      "groupKey": "fenugreek leaves",
+      "ingredients": [
+        "Fenugreek Leaves",
+        "Fresh Fenugreek Leaves",
+        "Dried Fenugreek Leaves"
+      ],
+      "reasoning": "The variations represent different forms of fenugreek leaves: fresh, dried, and crushed, which are used in different contexts and have distinct characteristics. Fresh fenugreek leaves are a produce item, while dried fenugreek leaves are spices, necessitating separate listings."
+    },
+    {
+      "groupKey": "egg noodles",
+      "ingredients": [
+        "Fresh Egg Noodles",
+        "Egg Noodles"
+      ],
+      "reasoning": "The variations represent different states of egg noodles: 'Fresh Egg Noodles' are specifically fresh and intended for frying, while 'Egg Noodles' can refer to dried noodles that are cooked according to package directions. These differences in preparation and usage context warrant keeping them separate."
+    },
+    {
+      "groupKey": "cloves",
+      "ingredients": [
+        "Whole Cloves",
+        "Ground Cloves",
+        "Cloves"
+      ],
+      "reasoning": "Whole cloves and ground cloves are different forms of the same spice, which are used in different contexts and require different preparation methods. They are typically sold separately in stores. The term 'cloves' is ambiguous and could refer to either form, so it should also be kept separate to avoid confusion."
+    },
+    {
+      "groupKey": "eggplants",
+      "ingredients": [
+        "Large Eggplants",
+        "Japanese (or globe) eggplants",
+        "Japanese or Chinese eggplants"
+      ],
+      "reasoning": "The variations refer to different types of eggplants, specifically 'large eggplants' and 'Japanese or globe eggplants'. They have distinct culinary uses and preparation methods, which justifies keeping them as separate items."
+    },
+    {
+      "groupKey": "chicken or vegetable stock",
+      "ingredients": [
+        "Chicken Or Vegetable Stock",
+        "Low-sodium Chicken Or Vegetable Stock"
+      ],
+      "reasoning": "The variations represent different types of stock with distinct sodium content, which affects their use in recipes. Low-sodium stock is a specific product that caters to dietary needs, while regular stock may not meet those requirements."
+    },
+    {
+      "groupKey": "urad dal",
+      "ingredients": [
+        "Urad Dal (Split Black Gram)",
+        "Urad Dal (Split)"
+      ],
+      "reasoning": "The two variations refer to different preparations and uses of urad dal. One is specifically for rinsed and soaked urad dal used in a dish, while the other is for tempering and adds crunch, indicating they serve different culinary purposes."
+    },
+    {
+      "groupKey": "salt and pepper",
+      "ingredients": [
+        "Salt And Pepper",
+        "Salt And White Pepper"
+      ],
+      "reasoning": "Salt and pepper are commonly used together, but the inclusion of white pepper in one variation indicates a distinct flavor profile and usage, warranting separate listings."
+    },
+    {
+      "groupKey": "plum tomatoes",
+      "ingredients": [
+        "Canned Whole Plum Tomatoes",
+        "Plum Tomatoes"
+      ],
+      "reasoning": "The two ingredients represent different forms and contexts of tomatoes. 'Canned Whole Plum Tomatoes' is a specific canned product, while 'Plum Tomatoes' refers to fresh tomatoes that can be used in various preparations. They are found in different store sections (canned goods vs produce) and have different uses in recipes."
+    },
+    {
+      "groupKey": "sea scallops",
+      "ingredients": [
+        "Sea Scallops",
+        "Large Sea Scallops"
+      ],
+      "reasoning": "The terms 'Sea Scallops' and 'Large Sea Scallops' refer to different sizes of scallops, which are typically sold as distinct products in grocery stores. The size difference affects cooking times and presentation, making them suitable for different recipes."
+    },
+    {
+      "groupKey": "apple",
+      "ingredients": [
+        "Apple",
+        "Green Apple"
+      ],
+      "reasoning": "Apple and Green Apple represent different varieties of apples that are used in distinct culinary contexts and have different flavor profiles. They are not interchangeable in recipes, thus should be kept separate."
+    }
+  ]
+}

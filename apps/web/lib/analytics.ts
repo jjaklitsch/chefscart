@@ -121,7 +121,6 @@ class Analytics {
 
     // In production, send to your analytics provider (PostHog, Mixpanel, etc.)
     if (typeof window !== 'undefined') {
-      console.log('Analytics Event:', analyticsEvent);
       
       // Send to analytics service (uncomment when ready)
       // this.sendToAnalyticsProvider(analyticsEvent);

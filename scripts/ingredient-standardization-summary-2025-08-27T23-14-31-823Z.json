@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-27T23:14:31.824Z",
+    "total_consolidations": 0,
+    "total_separations": 19,
+    "total_mappings": 42
+  },
+  "consolidations": [],
+  "separations": [
+    {
+      "groupKey": "cod",
+      "ingredients": [
+        "Salted Cod",
+        "Cod"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "bell pepper",
+      "ingredients": [
+        "Red Bell Pepper",
+        "Bell Pepper"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "parsley",
+      "ingredients": [
+        "Parsley",
+        "Fresh Parsley"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "cumin",
+      "ingredients": [
+        "Cumin",
+        "Ground Cumin"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "oregano",
+      "ingredients": [
+        "Oregano",
+        "Dried Oregano"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "onions",
+      "ingredients": [
+        "Green Onions",
+        "Onions"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "soy sauce",
+      "ingredients": [
+        "Soy Sauce",
+        "Dark Soy Sauce"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "onion",
+      "ingredients": [
+        "Onion",
+        "Yellow Onion",
+        "Red Onion",
+        "White Onion"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "chili",
+      "ingredients": [
+        "Green Chili",
+        "Red Chili"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "eggs",
+      "ingredients": [
+        "Eggs",
+        "Large Eggs"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "butter",
+      "ingredients": [
+        "Butter",
+        "Unsalted Butter"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "thyme",
+      "ingredients": [
+        "Thyme",
+        "Dried Thyme"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "cabbage",
+      "ingredients": [
+        "Cabbage",
+        "Green Cabbage",
+        "Red Cabbage"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "tomatoes",
+      "ingredients": [
+        "Tomatoes",
+        "Canned Diced Tomatoes",
+        "Canned Tomatoes"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "turmeric",
+      "ingredients": [
+        "Turmeric",
+        "Ground Turmeric"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "pork",
+      "ingredients": [
+        "Pork",
+        "Ground Pork"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "shrimp",
+      "ingredients": [
+        "Shrimp",
+        "Dried Shrimp"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "chicken",
+      "ingredients": [
+        "Chicken",
+        "Chicken Pieces"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    },
+    {
+      "groupKey": "beef",
+      "ingredients": [
+        "Beef",
+        "Ground Beef"
+      ],
+      "reasoning": "Error in AI analysis, keeping items separate for safety"
+    }
+  ]
+}

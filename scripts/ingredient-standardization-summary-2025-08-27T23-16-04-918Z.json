@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-27T23:16:04.919Z",
+    "total_consolidations": 4,
+    "total_separations": 1,
+    "total_mappings": 10
+  },
+  "consolidations": [
+    {
+      "groupKey": "bell pepper",
+      "originalIngredients": [
+        "Red Bell Pepper",
+        "Bell Pepper"
+      ],
+      "standardizedName": "Bell Pepper",
+      "reasoning": "Both 'Red Bell Pepper' and 'Bell Pepper' refer to the same type of vegetable, with 'Red Bell Pepper' being a specific variety of 'Bell Pepper'. The variations in preparation (diced, sliced) do not warrant separate listings as they are commonly understood to be the same product."
+    },
+    {
+      "groupKey": "parsley",
+      "originalIngredients": [
+        "Parsley",
+        "Fresh Parsley"
+      ],
+      "standardizedName": "Fresh Parsley",
+      "reasoning": "Both 'Parsley' and 'Fresh Parsley' refer to the same fresh herb, with variations in naming that do not affect the product being purchased. They are used in various meal contexts but represent the same purchasable item."
+    },
+    {
+      "groupKey": "cumin",
+      "originalIngredients": [
+        "Cumin",
+        "Ground Cumin"
+      ],
+      "standardizedName": "Ground Cumin",
+      "reasoning": "Both 'Cumin' and 'Ground Cumin' refer to the same spice in its ground form, which is commonly used in cooking. The variations in naming do not represent different purchasable products."
+    },
+    {
+      "groupKey": "oregano",
+      "originalIngredients": [
+        "Oregano",
+        "Dried Oregano"
+      ],
+      "standardizedName": "Dried Oregano",
+      "reasoning": "Both 'Oregano' and 'Dried Oregano' refer to the same product, which is dried oregano used in cooking. The variations in naming do not represent different purchasable items."
+    }
+  ],
+  "separations": [
+    {
+      "groupKey": "cod",
+      "ingredients": [
+        "Salted Cod",
+        "Cod"
+      ],
+      "reasoning": "Salted Cod and Cod represent different preparation methods and types of products. Salted Cod is a preserved form specifically used in Caribbean cuisine, while Cod refers to fresh fillets commonly used in Mediterranean dishes. They are not interchangeable in recipes and would be found in different sections of a grocery store."
+    }
+  ]
+}

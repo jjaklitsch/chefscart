@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { createClient } from '@supabase/supabase-js'
 
 export const dynamic = 'force-dynamic'
 
@@ -7,6 +8,11 @@ export const dynamic = 'force-dynamic'
 function getResendClient() {
   return new Resend(process.env.RESEND_API_KEY)
 }
+
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+)
 
 interface WaitlistEntry {
   email: string
@@ -41,15 +47,54 @@ async function validateZipCodeFormat(zipCode: string): Promise<boolean> {
 }
 
 async function checkExistingWaitlistEntry(email: string, zipCode: string): Promise<boolean> {
-  // TODO: Implement with Supabase
-  return false // For now, allow all entries
+  try {
+    const { data, error } = await supabase
+      .from('waitlist')
+      .select('id')
+      .eq('email', email)
+      .eq('zip_code', zipCode)
+      .single()
+
+    if (error && error.code !== 'PGRST116') { // PGRST116 = no rows found
+      console.error('Error checking waitlist entry:', error)
+      return false
+    }
+
+    return !!data
+  } catch (error) {
+    console.error('Error checking waitlist entry:', error)
+    return false
+  }
 }
 
 async function addToWaitlist(entry: WaitlistEntry): Promise<string> {
-  // TODO: Implement with Supabase
-  console.log('Waitlist entry (will save to Supabase):', entry)
-  const entryId = `waitlist_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
-  return entryId
+  try {
+    const { data, error } = await supabase
+      .from('waitlist')
+      .insert({
+        email: entry.email,
+        zip_code: entry.zipCode,
+        first_name: entry.firstName || null,
+        last_name: entry.lastName || null,
+        city: entry.city || null,
+        state: entry.state || null,
+        source: entry.source,
+        created_at: entry.createdAt.toISOString(),
+        notified: false
+      })
+      .select('id')
+      .single()
+
+    if (error) {
+      console.error('Error adding to waitlist:', error)
+      throw new Error(`Failed to add to waitlist: ${error.message}`)
+    }
+
+    return data.id
+  } catch (error) {
+    console.error('Error adding to waitlist:', error)
+    throw error
+  }
 }
 
 async function sendWaitlistConfirmationEmail(

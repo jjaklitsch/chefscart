@@ -8,6 +8,8 @@ import analytics from '../lib/analytics'
 interface ZipCodeInputProps {
   onZipValidation: (zip: string, isValid: boolean) => void
   onSubmit?: () => void
+  showFullWidthMessage?: boolean
+  onValidationMessage?: (message: string, validationState: 'idle' | 'valid' | 'invalid' | 'no-coverage') => void
 }
 
 interface WaitlistModalProps {
@@ -225,20 +227,31 @@ function WaitlistModal({ isOpen, onClose, zipCode, city, state }: WaitlistModalP
   )
 }
 
-export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInputProps) {
+export default function ZipCodeInput({ onZipValidation, onSubmit, showFullWidthMessage = false, onValidationMessage }: ZipCodeInputProps) {
   const [zipCode, setZipCode] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [validationState, setValidationState] = useState<'idle' | 'valid' | 'invalid' | 'no-coverage'>('idle')
   const [message, setMessage] = useState('')
   const [validationData, setValidationData] = useState<{ city?: string; state?: string }>({})
   const [showWaitlistModal, setShowWaitlistModal] = useState(false)
+  
+  // Client-side cache for instant repeat lookups
+  const [zipCache, setZipCache] = useState<Record<string, any>>({})
+
+  // Helper function to update validation state and notify parent
+  const updateValidationState = (newState: 'idle' | 'valid' | 'invalid' | 'no-coverage', newMessage: string) => {
+    setValidationState(newState)
+    setMessage(newMessage)
+    if (onValidationMessage) {
+      onValidationMessage(newMessage, newState)
+    }
+  }
 
   // Component starts with empty ZIP code input
 
   const validateZipCode = async (zip: string) => {
     if (zip.length !== 5 || !/^\d{5}$/.test(zip)) {
-      setValidationState('invalid')
-      setMessage('Please enter a valid 5-digit ZIP code')
+      updateValidationState('invalid', 'Please enter a valid 5-digit ZIP code')
       setValidationData({})
       onZipValidation(zip, false)
       
@@ -253,28 +266,45 @@ export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInput
       return
     }
 
+    // Check client-side cache first for instant response
+    if (zipCache[zip]) {
+      const data = zipCache[zip]
+      
+      if (data.hasInstacartCoverage) {
+        updateValidationState('valid', data.message || 'Great! ChefsCart is available in your area.')
+        setValidationData({ city: data.city, state: data.state })
+        onZipValidation(zip, true)
+      } else if (data.isValid) {
+        updateValidationState('no-coverage', data.message || 'Sorry, ChefsCart isn\'t available in your area yet. Join our waitlist!')
+        setValidationData({ city: data.city, state: data.state })
+        onZipValidation(zip, false)
+      }
+      return
+    }
+
     setIsLoading(true)
     try {
-      const response = await fetch('/api/validate-zip', {
+      const response = await fetch('/api/validate-zip-optimized', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ zipCode: zip })
       })
       
       const data: ZipCodeValidation = await response.json()
+      
+      // Cache the result for instant future lookups
+      setZipCache(prev => ({ ...prev, [zip]: data }))
       const userId = localStorage.getItem('chefscart_user_id') || '';
       
       if (data.hasInstacartCoverage) {
-        setValidationState('valid')
-        setMessage(data.message || 'Great! ChefsCart is available in your area.')
+        updateValidationState('valid', data.message || 'Great! ChefsCart is available in your area.')
         setValidationData({})
         onZipValidation(zip, true)
         
         // Track successful ZIP completion - key conversion event
         analytics.trackZipCompletion(zip, true, userId);
       } else if (data.isValid) {
-        setValidationState('no-coverage')
-        setMessage(data.message || 'Sorry, ChefsCart isn\'t available in your area yet. Join our waitlist!')
+        updateValidationState('no-coverage', data.message || 'Sorry, ChefsCart isn\'t available in your area yet. Join our waitlist!')
         setValidationData({})
         onZipValidation(zip, false)
         
@@ -285,8 +315,7 @@ export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInput
           conversion_blocker: 'no_instacart_coverage'
         }, userId);
       } else {
-        setValidationState('invalid')
-        setMessage(data.message || 'Invalid ZIP code')
+        updateValidationState('invalid', data.message || 'Invalid ZIP code')
         setValidationData({})
         onZipValidation(zip, false)
         
@@ -298,8 +327,7 @@ export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInput
         }, userId);
       }
     } catch (error) {
-      setValidationState('invalid')
-      setMessage('Unable to verify ZIP code. Please try again.')
+      updateValidationState('invalid', 'Unable to verify ZIP code. Please try again.')
       setValidationData({})
       onZipValidation(zip, false)
       
@@ -322,8 +350,7 @@ export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInput
     if (newZip.length === 5) {
       validateZipCode(newZip)
     } else {
-      setValidationState('idle')
-      setMessage('')
+      updateValidationState('idle', '')
       setValidationData({})
       onZipValidation(newZip, false)
     }
@@ -351,6 +378,18 @@ export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInput
     }
   }
 
+  const messageComponent = message && (
+    <div className={`mt-3 p-3 rounded-xl border flex items-start text-sm transition-all duration-300 ease-out ${
+      validationState === 'valid' 
+        ? 'bg-mint-50 border-mint-200 text-mint-800 animate-slide-up shadow-sm' 
+        : 'bg-red-50 border-red-200 text-red-800 animate-slide-up'
+    }`}>
+      {validationState === 'valid' && <CheckCircle className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-mint-600" />}
+      {(validationState === 'invalid' || validationState === 'no-coverage') && <AlertCircle className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5" />}
+      <span className="leading-relaxed">{message}</span>
+    </div>
+  )
+
   return (
     <>
       <div className="w-full">
@@ -365,7 +404,7 @@ export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInput
             onChange={handleZipChange}
             onKeyPress={handleKeyPress}
             placeholder="12345"
-            className={`w-full pl-12 pr-12 py-3 border-2 rounded-xl text-lg font-medium transition-all duration-200 ease-out focus:outline-none focus:ring-4 text-text-primary caret-brand-600 ${getInputBorderColor()}`}
+            className={`w-full h-[60px] pl-12 pr-12 border-2 rounded-xl text-lg font-medium transition-all duration-200 ease-out focus:outline-none focus:ring-4 text-text-primary caret-brand-600 ${getInputBorderColor()}`}
             maxLength={5}
             autoComplete="postal-code"
           />
@@ -378,18 +417,8 @@ export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInput
             )}
           </div>
         </div>
-        {message && (
-          <div className={`mt-3 p-3 rounded-xl border flex items-start text-sm transition-all duration-300 ease-out ${
-            validationState === 'valid' 
-              ? 'bg-mint-50 border-mint-200 text-mint-800 animate-slide-up shadow-sm' 
-              : 'bg-red-50 border-red-200 text-red-800 animate-slide-up'
-          }`}>
-            {validationState === 'valid' && <CheckCircle className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-mint-600" />}
-            {(validationState === 'invalid' || validationState === 'no-coverage') && <AlertCircle className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5" />}
-            <span className="leading-relaxed">{message}</span>
-          </div>
-        )}
-        {validationState === 'no-coverage' && (
+        {!showFullWidthMessage && messageComponent}
+        {validationState === 'no-coverage' && !showFullWidthMessage && (
           <button 
             onClick={() => setShowWaitlistModal(true)}
             className="btn-primary-new w-full mt-3"
@@ -398,6 +427,16 @@ export default function ZipCodeInput({ onZipValidation, onSubmit }: ZipCodeInput
           </button>
         )}
       </div>
+
+      {showFullWidthMessage && messageComponent}
+      {validationState === 'no-coverage' && showFullWidthMessage && (
+        <button 
+          onClick={() => setShowWaitlistModal(true)}
+          className="btn-primary-new w-full mt-3"
+        >
+          Join Waitlist
+        </button>
+      )}
 
       <WaitlistModal
         isOpen={showWaitlistModal}

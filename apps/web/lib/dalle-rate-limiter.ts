@@ -58,7 +58,6 @@ class DalleRateLimiter {
         const nextAvailableTime = this.getNextAvailableTime()
         const waitTime = Math.max(0, nextAvailableTime - Date.now())
         
-        console.log(`⏳ DALLE rate limit: waiting ${waitTime}ms before next request`)
         await this.sleep(waitTime)
         continue
       }
@@ -67,10 +66,8 @@ class DalleRateLimiter {
       this.requestTimestamps.push(Date.now())
 
       try {
-        console.log(`🎨 Processing DALLE request: ${request.id}`)
         const imageUrl = await this.makeActualRequest(request.prompt, request.size)
         request.resolve(imageUrl)
-        console.log(`✅ DALLE request completed: ${request.id}`)
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'Image generation failed'
         console.error(`❌ DALLE request failed: ${request.id} - ${errorMessage}`)

@@ -24,7 +24,7 @@ export default function GroceryListPage() {
     setZipError('')
 
     try {
-      const response = await fetch('/api/validate-zip', {
+      const response = await fetch('/api/validate-zip-cached', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ zipCode: zip })

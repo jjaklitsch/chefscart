@@ -92,8 +92,7 @@ Each generated meal includes:
   "courses": ["lunch", "dinner"],
   "cuisines": ["Mediterranean", "French"],
   "diets_supported": ["mediterranean"], // strict compliance
-  "dish_category": "Salad",
-  "primary_protein": "Fish",
+  "primary_ingredient": "fish",
   "spice_level": 2,
   "time_total_min": 25,
   "servings_default": 2,
@@ -139,7 +138,7 @@ The generated meals will be used to match user preferences from the onboarding f
 
 - **Cuisines**: Match `cuisinePreferences`
 - **Spice Level**: Match `spiceTolerance` 
-- **Cooking Time**: Match `cookingTimePreference`
+- **Cooking Difficulty**: Match `cooking_difficulty` (easy/medium/challenging)
 - **Diets**: Match `dietaryStyle`
 - **Allergens**: Exclude based on `foodsToAvoid`
 - **Proteins**: Match `favoriteFoods`

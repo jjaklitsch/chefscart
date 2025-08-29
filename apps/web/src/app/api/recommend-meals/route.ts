@@ -9,11 +9,15 @@ interface SupabaseMeal {
   description: string
   cuisines: string[]
   diets_supported: string[]
+  courses: string[]  // Added missing courses field for meal categorization
   time_total_min: number
   servings_default: number
   cost_per_serving: string
   allergens_present: string[]
   spice_level: number
+  prep_time?: number
+  cook_time?: number
+  cooking_difficulty?: 'easy' | 'medium' | 'challenging'
   ingredient_tags: string[]
   ingredients_json: {
     servings: number
@@ -53,7 +57,7 @@ function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): n
   // Dietary restrictions matching (high priority)
   if (preferences.diets && preferences.diets.length > 0) {
     const userDiets = preferences.diets.map(normalizeDietaryTag)
-    const mealTags = meal.diets_supported.map(normalizeDietaryTag)
+    const mealTags = (meal.diets_supported || []).map(normalizeDietaryTag)
     
     const dietMatches = userDiets.filter(diet => mealTags.includes(diet)).length
     score += dietMatches * 20 // High weight for dietary matches
@@ -79,7 +83,7 @@ function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): n
   // Cuisine preferences (medium priority)
   if (preferences.preferredCuisines && preferences.preferredCuisines.length > 0) {
     const normalizedUserCuisines = preferences.preferredCuisines.map(c => c.toLowerCase())
-    const hasCuisineMatch = meal.cuisines.some(cuisine => 
+    const hasCuisineMatch = (meal.cuisines || []).some(cuisine => 
       normalizedUserCuisines.includes(cuisine.toLowerCase())
     )
     if (hasCuisineMatch) {
@@ -87,33 +91,36 @@ function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): n
     }
   }
 
-  // Spice level matching based on cooking skill (beginner = low spice)
-  if (preferences.cookingSkillLevel === 'beginner' && meal.spice_level > 2) {
-    score -= 5 // Penalty for too spicy for beginners
-  }
-
-  // Allergy and ingredient avoidance (highest priority - negative scoring)
-  const avoidList = [
-    ...(preferences.allergies || []),
-    ...(preferences.avoidIngredients || []),
-    ...(preferences.foodsToAvoid || [])
-  ].map(item => item.toLowerCase())
-
-  if (avoidList.length > 0) {
-    // Check allergens present
-    const hasAllergen = meal.allergens_present.some(allergen =>
-      avoidList.some(avoid => allergen.toLowerCase().includes(avoid))
+  // Spice level matching - strict filtering for low tolerance
+  const userSpiceTolerance = preferences.spiceTolerance ? parseInt(preferences.spiceTolerance) : 3
+  
+  // If user selected mild only (1), exclude anything spicy
+  if (userSpiceTolerance === 1) {
+    // Check for spicy keywords in title or description
+    const spicyKeywords = ['buffalo', 'spicy', 'hot', 'chili', 'jalapeño', 'sriracha', 'harissa', 'gochujang', 'szechuan', 'sichuan', 'nashville hot', 'diablo', 'fire', 'habanero', 'ghost pepper', 'cayenne']
+    const titleLower = meal.title.toLowerCase()
+    const descLower = (meal.description || '').toLowerCase()
+    
+    const hasSpicyKeyword = spicyKeywords.some(keyword => 
+      titleLower.includes(keyword) || descLower.includes(keyword)
     )
     
-    // Check ingredient tags
-    const hasAvoidedIngredient = meal.ingredient_tags.some(ingredient =>
-      avoidList.some(avoid => ingredient.toLowerCase().includes(avoid))
-    )
-    
-    if (hasAllergen || hasAvoidedIngredient) {
-      score -= 50 // Heavy penalty for avoided ingredients/allergens
+    if (hasSpicyKeyword || meal.spice_level > 1) {
+      return -100 // Effectively exclude from results
     }
+  } else if (userSpiceTolerance <= 2 && meal.spice_level > 2) {
+    score -= 10 // Penalty for too spicy
+  } else if (userSpiceTolerance <= 3 && meal.spice_level > 3) {
+    score -= 5 // Small penalty for very spicy
   }
+  
+  // Extra penalty for beginners with spicy food
+  if (preferences.cookingSkillLevel === 'beginner' && meal.spice_level > 2) {
+    score -= 5 // Additional penalty for too spicy for beginners
+  }
+
+  // Note: Allergen/avoidance filtering is now done BEFORE scoring
+  // This function should only be called on pre-filtered safe meals
 
   // Cost preference (basic scoring - lower cost per serving is better for families)
   if (preferences.peoplePerMeal > 2) {
@@ -133,8 +140,20 @@ function diversifyMeals(meals: (SupabaseMeal & { score: number })[]): SupabaseMe
   const cuisineCount: Record<string, number> = {}
   const proteinCount: Record<string, number> = {}
 
-  // Sort meals by score first
-  const sortedMeals = [...meals].sort((a, b) => b.score - a.score)
+  // Sort meals by score, but add randomization for variety
+  const sortedMeals = [...meals].sort((a, b) => {
+    // Group meals into score tiers for randomization
+    const aTier = Math.floor(a.score / 10) // Group scores into 10-point bands
+    const bTier = Math.floor(b.score / 10)
+    
+    // If meals are in the same score tier, randomize their order
+    if (aTier === bTier) {
+      return Math.random() - 0.5 // Random ordering within same tier
+    }
+    
+    // Otherwise, sort by score (higher first)
+    return b.score - a.score
+  })
 
   for (const meal of sortedMeals) {
     // Use the first cuisine if multiple exist
@@ -155,11 +174,13 @@ function diversifyMeals(meals: (SupabaseMeal & { score: number })[]): SupabaseMe
       (proteinCount[protein.toLowerCase()] || 0) < 2
     )
 
-    // Allow meal if:
-    // - We don't have too many of this cuisine (max 3 per cuisine)
-    // - Or it introduces new protein variety
-    // - Or it's a top scoring meal and we need to fill quota
-    if (cuisineFrequency < 3 || hasNewProtein || diversifiedMeals.length < 15) {
+    // Enhanced diversity logic
+    const isDiverseEnough = 
+      cuisineFrequency < 2 || // Prefer max 2 of same cuisine initially
+      (hasNewProtein && cuisineFrequency < 3) || // Allow 3rd if it's new protein
+      diversifiedMeals.length < 10 // Always fill first 10 slots for variety
+      
+    if (isDiverseEnough) {
       diversifiedMeals.push(meal)
       
       // Update counters
@@ -180,6 +201,8 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     const preferences: UserPreferences = body.preferences
+    const courseMealCounts = body.courseMealCounts || {}
+    const includeBackups = body.includeBackups || false
     const limit = body.limit || 25
 
     if (!preferences) {
@@ -196,14 +219,33 @@ export async function POST(request: NextRequest) {
       .from('meals')
       .select('*')
 
-    // Filter by cook time if specified
-    if (preferences.maxCookTime || preferences.maxCookingTime) {
-      const maxTime = preferences.maxCookTime || preferences.maxCookingTime || 60
-      query = query.lte('time_total_min', maxTime * 1.2) // Allow 20% buffer
+    // Filter by cooking difficulty based on user's skill level
+    if (preferences.cookingSkillLevel) {
+      const allowedDifficulties = {
+        'beginner': ['easy'],
+        'intermediate': ['easy', 'medium'], 
+        'advanced': ['easy', 'medium', 'challenging']
+      }
+      const userAllowed = allowedDifficulties[preferences.cookingSkillLevel]
+      
+      // Only filter if cooking_difficulty column exists (gradual migration)
+      if (userAllowed) {
+        query = query.in('cooking_difficulty', userAllowed)
+      }
     }
 
+    // Filter by course types based on mealTypes selection
+    if (preferences.mealTypes && preferences.mealTypes.length > 0) {
+      const requestedCourses = preferences.mealTypes.map((mt: any) => mt.type)
+      // Use overlap operator to find meals that have any of the requested courses
+      query = query.overlaps('courses', requestedCourses)
+    }
+
+    // Skip servings filter for now - all meals can be scaled
+    // TODO: Re-implement servings filter with proper Supabase syntax
+
     // Execute query with a higher limit for filtering
-    const { data: meals, error } = await query.limit(100)
+    const { data: meals, error } = await query.limit(200)
 
     if (error) {
       console.error('Supabase query error:', error)
@@ -222,26 +264,135 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // Score and filter meals based on preferences
-    const scoredMeals = meals
+    // HARD FILTER: Remove meals with allergens/avoided ingredients BEFORE scoring
+    const avoidList = [
+      ...(preferences.allergies || []),
+      ...(preferences.avoidIngredients || []),
+      ...(preferences.foodsToAvoid || [])
+    ].map(item => item.toLowerCase())
+
+    const saferMeals = avoidList.length > 0 
+      ? meals.filter(meal => {
+          // Check allergens present
+          const hasAllergen = meal.allergens_present?.some(allergen =>
+            avoidList.some(avoid => allergen.toLowerCase().includes(avoid))
+          )
+          
+          // Check ingredient tags  
+          const hasAvoidedIngredient = meal.ingredient_tags?.some(ingredient =>
+            avoidList.some(avoid => ingredient.toLowerCase().includes(avoid))
+          )
+          
+          // EXCLUDE meals with any allergens or avoided ingredients
+          return !hasAllergen && !hasAvoidedIngredient
+        })
+      : meals
+
+    console.log(`🔍 Allergen filtering: ${meals.length} → ${saferMeals.length} meals (removed ${meals.length - saferMeals.length} with allergens/avoided ingredients)`)
+    
+    // Score and filter meals
+    const scoredMeals = saferMeals
       .map(meal => ({
         ...(meal as SupabaseMeal),
         score: calculateMealScore(meal as SupabaseMeal, preferences)
       }))
       .filter(meal => meal.score > 0) // Only include meals with positive scores
+    
+    
+    // Log score distribution for debugging
+    const scoreRanges = { '0-10': 0, '11-20': 0, '21-30': 0, '31-40': 0, '41+': 0 }
+    scoredMeals.forEach(meal => {
+      if (meal.score <= 10) scoreRanges['0-10']++
+      else if (meal.score <= 20) scoreRanges['11-20']++
+      else if (meal.score <= 30) scoreRanges['21-30']++
+      else if (meal.score <= 40) scoreRanges['31-40']++
+      else scoreRanges['41+']++
+    })
 
     // Apply diversity algorithm
     const diversifiedMeals = diversifyMeals(scoredMeals)
 
-    // Sort by score and limit results  
-    const finalMeals = diversifiedMeals.slice(0, limit)
+    // If course-specific counts are provided, organize meals by course
+    if (Object.keys(courseMealCounts).length > 0) {
+      const mealsByType: Record<string, any[]> = {
+        breakfast: [],
+        lunch: [],
+        dinner: []
+      }
+      
+      const backupMealsByType: Record<string, any[]> = {
+        breakfast: [],
+        lunch: [],
+        dinner: []
+      }
 
-    return NextResponse.json({
-      success: true,
-      meals: finalMeals,
-      total_count: finalMeals.length,
-      message: finalMeals.length > 0 ? 'Meals recommended successfully' : 'No suitable meals found'
-    })
+      // Distribute meals to courses based on their course tags and user needs
+      for (const meal of diversifiedMeals) {
+        const courses = meal.courses || []
+        
+        // Try to assign meal to courses that need it, checking all possible courses
+        let assigned = false
+        
+        // Check each course this meal can serve
+        for (const courseType of ['breakfast', 'lunch', 'dinner']) {
+          if (courses.includes(courseType)) {
+            const neededForCourse = courseMealCounts[courseType] || 0
+            
+            // Add to primary meals if we need more for this course
+            if (mealsByType[courseType].length < neededForCourse) {
+              mealsByType[courseType].push(meal)
+              assigned = true
+              break
+            }
+          }
+        }
+        
+        // Add to backups for ALL applicable courses (not just first match)
+        if (includeBackups) {
+          for (const courseType of ['breakfast', 'lunch', 'dinner']) {
+            if (courses.includes(courseType) && backupMealsByType[courseType].length < 50) {
+              // Only add if not already in primary meals for this course
+              if (!mealsByType[courseType].some(m => m.id === meal.id)) {
+                backupMealsByType[courseType].push(meal)
+              }
+            }
+          }
+        }
+      }
+
+      // Debug: Log meal counts by type
+      console.log(`  Breakfast: ${mealsByType.breakfast.length} (needed: ${courseMealCounts.breakfast || 0})`)
+      console.log(`  Lunch: ${mealsByType.lunch.length} (needed: ${courseMealCounts.lunch || 0})`)
+      console.log(`  Dinner: ${mealsByType.dinner.length} (needed: ${courseMealCounts.dinner || 0})`)
+      
+
+      // Collect all selected meals for compatibility
+      const finalMeals = [
+        ...mealsByType.breakfast,
+        ...mealsByType.lunch,
+        ...mealsByType.dinner
+      ]
+
+
+      return NextResponse.json({
+        success: true,
+        meals: finalMeals,
+        mealsByType,
+        backupMealsByType: includeBackups ? backupMealsByType : {},
+        total_count: finalMeals.length,
+        message: finalMeals.length > 0 ? 'Meals recommended successfully' : 'No suitable meals found'
+      })
+    } else {
+      // Legacy behavior - return all meals without course organization
+      const finalMeals = diversifiedMeals.slice(0, limit)
+
+      return NextResponse.json({
+        success: true,
+        meals: finalMeals,
+        total_count: finalMeals.length,
+        message: finalMeals.length > 0 ? 'Meals recommended successfully' : 'No suitable meals found'
+      })
+    }
 
   } catch (error) {
     console.error('Meal recommendation error:', error)

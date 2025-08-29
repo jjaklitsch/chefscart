@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useState, useRef, useCallback, useEffect } from 'react'
-import { ShoppingCart, ArrowRight, ArrowLeft, Check, Upload, X, Camera, Plus, Menu, CheckCircle, Store } from 'lucide-react'
-import { UserPreferences, InstacartRetailer, RetailersResponse } from '../types'
+import { ShoppingCart, ArrowRight, ArrowLeft, Check, Upload, X, Camera, Plus, Menu, CheckCircle } from 'lucide-react'
+import { UserPreferences } from '../types'
 import Header from './Header'
 
 interface GuidedOnboardingProps {
@@ -17,6 +17,7 @@ interface OnboardingStep {
   question: string
   required?: boolean
 }
+
 
 const onboardingSteps: OnboardingStep[] = [
   {
@@ -35,7 +36,7 @@ const onboardingSteps: OnboardingStep[] = [
     id: 'cuisinePreferences',
     title: 'Favorite cuisines',
     question: 'What cuisines do you enjoy most?',
-    required: false
+    required: true
   },
   {
     id: 'foodsToAvoid',
@@ -47,7 +48,7 @@ const onboardingSteps: OnboardingStep[] = [
     id: 'favoriteFoods',
     title: 'Favorite foods',
     question: 'What are some of your favorite foods?',
-    required: false
+    required: true
   },
   {
     id: 'organicPreference',
@@ -60,18 +61,6 @@ const onboardingSteps: OnboardingStep[] = [
     title: 'Spice tolerance',
     question: 'How spicy do you like your food?',
     required: false
-  },
-  {
-    id: 'cookingTimePreference',
-    title: 'Cooking time preference',
-    question: 'How long do you want to spend cooking on average?',
-    required: false
-  },
-  {
-    id: 'retailerSelection',
-    title: 'Preferred store',
-    question: 'Select your preferred grocery store for delivery',
-    required: true
   },
   {
     id: 'fridgePantryPhotos',
@@ -146,13 +135,6 @@ const spiceToleranceOptions = [
   { id: '5', label: '5 - Very Spicy', value: '5', icon: '🌶️', description: 'Maximum heat, very spicy' }
 ]
 
-// Cooking time preference options
-const cookingTimePreferenceOptions = [
-  { id: 'under_15', label: '≤15 minutes', value: '≤15', icon: '⚡', description: 'Quick and simple meals' },
-  { id: 'under_30', label: '≤30 minutes', value: '≤30', icon: '⏰', description: 'Moderate cooking time' },
-  { id: 'under_45', label: '≤45 minutes', value: '≤45', icon: '⏲️', description: 'More elaborate meals' },
-  { id: 'no_preference', label: 'No preference', value: 'no_preference', icon: '🍳', description: 'Any cooking time is fine' }
-]
 
 // Removed: health goal, cooking skill, and budget options (no longer used)
 
@@ -214,7 +196,7 @@ const clearStoredPreferences = () => {
 const convertPreferencesToAnswers = (preferences: UserPreferences): Record<string, any> => {
   return {
     // Plan selector
-    servingsPerMeal: preferences.peoplePerMeal || 3,
+    peoplePerMeal: preferences.peoplePerMeal || 2,
     breakfastMeals: preferences.breakfastsPerWeek || 0,
     lunchMeals: preferences.lunchesPerWeek || 0,
     dinnerMeals: preferences.dinnersPerWeek || 0,
@@ -226,7 +208,8 @@ const convertPreferencesToAnswers = (preferences: UserPreferences): Record<strin
     cookingSkill: preferences.cookingSkillLevel || 'intermediate',
     budgetSensitivity: preferences.budgetSensitivity || 'no_limit',
     customBudgetAmount: preferences.customBudgetAmount || '',
-    organicPreference: preferences.organicPreference || 'no_preference',
+    organicPreference: preferences.organicPreference || 'yes',
+    spiceTolerance: preferences.spiceTolerance || '3',
     favoriteFoods: preferences.favoriteFoods || [],
     cuisinePreferences: preferences.cuisinePreferences || preferences.preferredCuisines || [],
     additionalConsiderations: preferences.additionalConsiderations || '',
@@ -234,10 +217,7 @@ const convertPreferencesToAnswers = (preferences: UserPreferences): Record<strin
     // Photo upload related
     identifiedIngredients: preferences.identifiedIngredients || [],
     manuallyAddedIngredients: preferences.manuallyAddedIngredients || [],
-    skipPhotoUpload: preferences.skipPhotoUpload || false,
-    
-    // Retailer selection
-    preferredRetailer: preferences.preferredRetailer || null
+    skipPhotoUpload: preferences.skipPhotoUpload || false
   }
 }
 
@@ -246,13 +226,13 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   const [isInitialized, setIsInitialized] = useState(false)
   const [answers, setAnswers] = useState<Record<string, any>>({
     // Default values for Plan Selector
-    servingsPerMeal: 3,
+    peoplePerMeal: 2,
     breakfastMeals: 0,
     lunchMeals: 5,
     dinnerMeals: 5,
     // Default values for new steps
     spiceTolerance: '3', // Default to medium spice level
-    cookingTimePreference: '≤30' // Default to 30 minutes
+    organicPreference: 'yes', // Default to preferring organic
   })
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [isDragging, setIsDragging] = useState(false)
@@ -268,43 +248,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   const [editingValue, setEditingValue] = useState('')
   const [showPasteModal, setShowPasteModal] = useState(false)
   const [pasteText, setPasteText] = useState('')
-  const [retailers, setRetailers] = useState<InstacartRetailer[]>([])
-  const [loadingRetailers, setLoadingRetailers] = useState(false)
-  const [retailersError, setRetailersError] = useState<string | null>(null)
 
-  // Fetch retailers when component mounts
-  useEffect(() => {
-    const fetchRetailers = async () => {
-      const zipCode = localStorage.getItem('chefscart_zipcode')
-      if (!zipCode) return
-      
-      setLoadingRetailers(true)
-      setRetailersError(null)
-      
-      try {
-        const response = await fetch('/api/retailers', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ zipCode })
-        })
-        
-        const data: RetailersResponse = await response.json()
-        
-        if (data.success && data.retailers.length > 0) {
-          setRetailers(data.retailers)
-        } else {
-          setRetailersError('No stores available in your area')
-        }
-      } catch (error) {
-        console.error('Error fetching retailers:', error)
-        setRetailersError('Unable to load stores. Please try again.')
-      } finally {
-        setLoadingRetailers(false)
-      }
-    }
-    
-    fetchRetailers()
-  }, [])
 
   // Load preferences from localStorage or initialPreferences on component mount
   useEffect(() => {
@@ -383,7 +327,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   
   // Calculate totals for footer
   const totalMeals = (answers.breakfastMeals || 0) + (answers.lunchMeals || 0) + (answers.dinnerMeals || 0)
-  const totalServings = totalMeals * (answers.servingsPerMeal || 3)
+  const totalServings = totalMeals * (answers.peoplePerMeal || 2)
 
   // Handle pill selection for multi-select options
   const handlePillToggle = (field: string, value: any, options: any[]) => {
@@ -402,38 +346,24 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     }
     
     // Toggle selection for multiple choice
-    let isSelected
-    if (Array.isArray(value) && value.length > 1) {
-      const optionId = options?.find(opt => JSON.stringify(opt.value) === JSON.stringify(value))?.id
-      isSelected = currentAnswers.includes(optionId)
-    } else if (Array.isArray(value) && value.length === 1) {
-      isSelected = currentAnswers.includes(value[0])
-    } else {
-      isSelected = currentAnswers.some((item: any) => 
-        Array.isArray(item) ? JSON.stringify(item) === JSON.stringify(value) : item === value
-      )
-    }
+    // Always store the option ID for consistency
+    const option = options?.find(opt => JSON.stringify(opt.value) === JSON.stringify(value))
+    const optionId = option?.id
+    
+    const isSelected = optionId ? currentAnswers.includes(optionId) : currentAnswers.includes(value)
     
     let newAnswers
     if (isSelected) {
-      if (Array.isArray(value) && value.length > 1) {
-        const optionId = options?.find(opt => JSON.stringify(opt.value) === JSON.stringify(value))?.id
+      // Remove the selection
+      if (optionId) {
         newAnswers = currentAnswers.filter((item: any) => item !== optionId)
-      } else if (Array.isArray(value) && value.length === 1) {
-        newAnswers = currentAnswers.filter((item: any) => item !== value[0])
       } else {
-        newAnswers = currentAnswers.filter((item: any) => 
-          Array.isArray(item) ? JSON.stringify(item) !== JSON.stringify(value) : item !== value
-        )
+        newAnswers = currentAnswers.filter((item: any) => item !== value)
       }
     } else {
-      if (Array.isArray(value) && value.length > 1) {
-        const optionId = options?.find(opt => JSON.stringify(opt.value) === JSON.stringify(value))?.id
+      // Add the selection
+      if (optionId) {
         newAnswers = [...currentAnswers, optionId]
-      } else if (Array.isArray(value) && value.length === 1) {
-        newAnswers = [...currentAnswers, value[0]]
-      } else if (Array.isArray(value)) {
-        newAnswers = [...currentAnswers, ...value]
       } else {
         newAnswers = [...currentAnswers, value]
       }
@@ -454,16 +384,8 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     
     if (!Array.isArray(answer)) return false
     
-    // Store and check by option ID for multi-value options
-    if (Array.isArray(option.value) && option.value.length > 1) {
-      return answer.includes(option.id)
-    }
-    // For single-value arrays, check the actual value
-    if (Array.isArray(option.value) && option.value.length === 1) {
-      return answer.includes(option.value[0])
-    }
-    // For non-array values, check directly
-    return answer.includes(option.value)
+    // Always check by option ID for consistency
+    return answer.includes(option.id)
   }
 
   const canContinue = () => {
@@ -474,14 +396,23 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       return (answers.breakfastMeals || 0) > 0 || (answers.lunchMeals || 0) > 0 || (answers.dinnerMeals || 0) > 0
     }
     
-    // Retailer Selection - must select a retailer
-    if (currentStepData?.id === 'retailerSelection') {
-      return answers.preferredRetailer != null
+    // Cuisine Preferences - at least one cuisine must be selected
+    if (currentStepData?.id === 'cuisinePreferences') {
+      return answers.cuisinePreferences && answers.cuisinePreferences.length > 0
     }
     
-    // Removed validation for: healthGoal, cookingSkill, budgetSensitivity
+    // Favorite Foods - at least one favorite food must be selected
+    if (currentStepData?.id === 'favoriteFoods') {
+      return answers.favoriteFoods && answers.favoriteFoods.length > 0
+    }
     
-    // All other steps are optional (dietaryStyle, foodsToAvoid, organicPreference, favoriteFoods, cuisinePreferences, additionalConsiderations, fridgePantryPhotos)
+    // Organic Preference - must make a selection
+    if (currentStepData?.id === 'organicPreference') {
+      return answers.organicPreference != null
+    }
+    
+    
+    // Default for any other required steps
     return true
   }
 
@@ -490,8 +421,8 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       // Convert answers to UserPreferences format
       const preferences: UserPreferences = {
         // Calculate household size from servings per meal (simplified approach)
-        adults: Math.ceil((answers.servingsPerMeal || 3) * 0.7), // Estimate adults as ~70% of servings
-        kids: Math.floor((answers.servingsPerMeal || 3) * 0.3 / 0.5), // Estimate kids (count as 0.5 servings each)
+        adults: Math.ceil((answers.peoplePerMeal || 2) * 0.7), // Estimate adults as ~70% of servings
+        kids: Math.floor((answers.peoplePerMeal || 2) * 0.3 / 0.5), // Estimate kids (count as 0.5 servings each)
         
         // Meals per week - use selected frequencies
         breakfastsPerWeek: answers.breakfastMeals || 0,
@@ -553,7 +484,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         cookingSkillLevel: 'intermediate', // Default since cooking skill step removed
         budgetSensitivity: 'no_limit', // Default since budget step removed
         customBudgetAmount: '',
-        organicPreference: answers.organicPreference || 'no_preference',
+        organicPreference: answers.organicPreference || 'yes',
         
         // Process cuisine preferences - expand multi-value options
         cuisinePreferences: (() => {
@@ -581,7 +512,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         
         // New preference fields
         spiceTolerance: answers.spiceTolerance || '3',
-        cookingTimePreference: answers.cookingTimePreference || '≤30',
         
         // Photo and ingredient identification
         fridgePantryPhotos: answers.fridgePantryPhotos || [],
@@ -638,33 +568,31 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           return processed
         })(),
         mealsPerWeek: (answers.breakfastMeals || 0) + (answers.lunchMeals || 5) + (answers.dinnerMeals || 5),
-        peoplePerMeal: answers.servingsPerMeal || 3,
+        peoplePerMeal: answers.peoplePerMeal || 2,
         mealTypes: [
           ...((answers.breakfastMeals || 0) > 0 ? [{
             type: 'breakfast' as const,
             days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, answers.breakfastMeals || 0),
-            adults: Math.ceil((answers.servingsPerMeal || 3) * 0.7),
-            kids: Math.floor((answers.servingsPerMeal || 3) * 0.3 / 0.5)
+            adults: Math.ceil((answers.peoplePerMeal || 2) * 0.7),
+            kids: Math.floor((answers.peoplePerMeal || 2) * 0.3 / 0.5)
           }] : []),
           ...((answers.lunchMeals || 5) > 0 ? [{
             type: 'lunch' as const,
             days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, answers.lunchMeals || 5),
-            adults: Math.ceil((answers.servingsPerMeal || 3) * 0.7),
-            kids: Math.floor((answers.servingsPerMeal || 3) * 0.3 / 0.5)
+            adults: Math.ceil((answers.peoplePerMeal || 2) * 0.7),
+            kids: Math.floor((answers.peoplePerMeal || 2) * 0.3 / 0.5)
           }] : []),
           ...((answers.dinnerMeals || 5) > 0 ? [{
             type: 'dinner' as const,
             days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].slice(0, answers.dinnerMeals || 5),
-            adults: Math.ceil((answers.servingsPerMeal || 3) * 0.7),
-            kids: Math.floor((answers.servingsPerMeal || 3) * 0.3 / 0.5)
+            adults: Math.ceil((answers.peoplePerMeal || 2) * 0.7),
+            kids: Math.floor((answers.peoplePerMeal || 2) * 0.3 / 0.5)
           }] : [])
         ],
         
         // Photo and ingredient identification (legacy compatibility)
         pantryItems: [...identifiedIngredients, ...(answers.manuallyAddedIngredients || [])],
         
-        // Preferred retailer from selection
-        preferredRetailer: answers.preferredRetailer || undefined
       }
       
       // Clear stored preferences since we're completing the flow
@@ -702,12 +630,15 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     if (stepData.id === 'planSelector') {
       return (answers.breakfastMeals || 0) > 0 || (answers.lunchMeals || 0) > 0 || (answers.dinnerMeals || 0) > 0
     }
-    if (stepData.id === 'retailerSelection') {
-      return answers.preferredRetailer != null
-    }
     // Removed validation for: healthGoal, cookingTime, cookingSkill, budgetSensitivity
     if (stepData.id === 'organicPreference') {
       return answers.organicPreference && answers.organicPreference.trim() !== ''
+    }
+    if (stepData.id === 'favoriteFoods') {
+      return answers.favoriteFoods && answers.favoriteFoods.length > 0
+    }
+    if (stepData.id === 'cuisinePreferences') {
+      return answers.cuisinePreferences && answers.cuisinePreferences.length > 0
     }
     
     return true // Default to true for unknown steps
@@ -753,11 +684,9 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     // Set new timer for debounced analysis (3 seconds after last upload)
     const timer = setTimeout(() => {
       if (photos.length > 0) {
-        console.log(`🔍 Starting debounced ingredient analysis for ${photos.length} photos`)
         setIsWaitingForAnalysis(false)
         setIsAnalyzingPhotos(true)
         identifyIngredientsFromPhotos(photos).then(ingredients => {
-          console.log(`✅ Ingredient analysis complete: ${ingredients.length} items identified`)
           setIdentifiedIngredients(ingredients)
           setIsAnalyzingPhotos(false)
         }).catch(error => {
@@ -778,7 +707,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   // Real ingredient identification function using GPT-4 Vision
   const identifyIngredientsFromPhotos = useCallback(async (photos: File[]): Promise<Array<{ name: string; quantity: number; unit: string }>> => {
     try {
-      console.log(`📤 Sending ${photos.length} photos to API for analysis`)
       photos.forEach((photo, index) => {
         console.log(`  Photo ${index + 1}: ${photo.name} (${photo.type || 'no-type'}, ${(photo.size / 1024 / 1024).toFixed(1)}MB)`)
       })
@@ -788,7 +716,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         formData.append('photos', photo)
       })
 
-      console.log('🌐 Making API request to /api/identify-pantry-items')
       const response = await fetch('/api/identify-pantry-items', {
         method: 'POST',
         body: formData
@@ -800,9 +727,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         throw new Error(`Failed to analyze photos: ${response.status} - ${errorText}`)
       }
 
-      console.log('📥 Received API response, parsing JSON...')
       const data = await response.json()
-      console.log('🔍 API response data:', data)
       
       if (data.fallback) {
         console.warn('AI analysis fallback:', data.message)
@@ -837,12 +762,10 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
 
   // File upload handlers
   const handleFileSelect = useCallback((files: FileList | null) => {
-    console.log('📁 handleFileSelect called with:', files ? files.length : 0, 'files')
     if (!files) return
     
     const validFiles = Array.from(files).filter(file => {
       // Detailed logging for debugging
-      console.log(`🔍 Processing file: ${file.name}`)
       console.log(`  - Size: ${file.size} bytes (${(file.size / 1024 / 1024).toFixed(2)}MB)`)
       console.log(`  - Type: "${file.type}" (${file.type ? 'has type' : 'NO TYPE SET'})`)
       console.log(`  - Last modified: ${new Date(file.lastModified).toISOString()}`)
@@ -854,7 +777,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                                  fileName.endsWith('.png') || fileName.endsWith('.webp') ||
                                  fileName.endsWith('.gif') || fileName.endsWith('.bmp')
       
-      console.log(`  - File extension check: HEIC=${isHeicFile}, StandardImage=${isStandardImageFile}`)
       
       // Check MIME type (may be empty/incorrect for HEIC on some browsers)
       const hasImageMimeType = file.type.startsWith('image/') ||
@@ -862,7 +784,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                               file.type === 'image/heif' ||
                               file.type === '' // Some browsers don't set MIME type for HEIC
       
-      console.log(`  - MIME type check: hasImageMimeType=${hasImageMimeType}`)
       
       const isValidType = isHeicFile || isStandardImageFile || hasImageMimeType
       const isValidSize = file.size <= 10 * 1024 * 1024 // 10MB limit
@@ -870,18 +791,15 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       console.log(`  - Validation: type=${isValidType}, size=${isValidSize} (limit: 10MB)`)
       
       if (isHeicFile) {
-        console.log(`📱 HEIC/HEIF file detected: ${file.name}`)
         console.log(`  - Browser MIME type: "${file.type}" (may be empty on some browsers)`)
         console.log(`  - File size: ${(file.size / 1024 / 1024).toFixed(2)}MB`)
       }
       
       const isValid = isValidType && isValidSize
-      console.log(`✅ File ${file.name}: ${isValid ? 'VALID' : 'REJECTED'}`)
       
       return isValid
     })
     
-    console.log(`✅ ${validFiles.length} valid files out of ${files.length} total`)
     
     // Show helpful message if some files were rejected
     if (validFiles.length < files.length) {
@@ -1206,25 +1124,25 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                 Don't worry, you'll be able to add snacks, drinks, and other groceries after choosing your meals.
               </p>
               
-              {/* Servings per meal stepper */}
+              {/* People per meal stepper */}
               <div className="mb-8">
-                <h3 className="text-lg font-medium text-neutral-800 mb-4">Servings per meal</h3>
+                <h3 className="text-lg font-medium text-neutral-800 mb-4">People per meal</h3>
                 <div className="flex items-center justify-center gap-6 p-6 border-2 border-neutral-200 rounded-lg">
                   <button
-                    onClick={() => setAnswers(prev => ({ ...prev, servingsPerMeal: Math.max(1, (prev.servingsPerMeal || 3) - 1) }))}
+                    onClick={() => setAnswers(prev => ({ ...prev, peoplePerMeal: Math.max(1, (prev.peoplePerMeal || 2) - 1) }))}
                     className="w-12 h-12 rounded-full border-2 border-neutral-300 flex items-center justify-center text-xl font-bold hover:bg-neutral-50 transition-colors"
-                    disabled={(answers.servingsPerMeal || 3) <= 1}
+                    disabled={(answers.peoplePerMeal || 2) <= 1}
                   >
                     −
                   </button>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-brand-600 mb-1">{answers.servingsPerMeal || 3}</div>
-                    <div className="text-sm text-neutral-600">servings</div>
+                    <div className="text-4xl font-bold text-brand-600 mb-1">{answers.peoplePerMeal || 2}</div>
+                    <div className="text-sm text-neutral-600">{(answers.peoplePerMeal || 2) === 1 ? 'person' : 'people'}</div>
                   </div>
                   <button
-                    onClick={() => setAnswers(prev => ({ ...prev, servingsPerMeal: Math.min(8, (prev.servingsPerMeal || 3) + 1) }))}
+                    onClick={() => setAnswers(prev => ({ ...prev, peoplePerMeal: Math.min(8, (prev.peoplePerMeal || 2) + 1) }))}
                     className="w-12 h-12 rounded-full border-2 border-neutral-300 flex items-center justify-center text-xl font-bold hover:bg-neutral-50 transition-colors"
-                    disabled={(answers.servingsPerMeal || 3) >= 8}
+                    disabled={(answers.peoplePerMeal || 2) >= 8}
                   >
                     +
                   </button>
@@ -1332,129 +1250,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
             </div>
           )}
 
-          {/* Step 8: Cooking Time Preference */}
-          {currentStepData?.id === 'cookingTimePreference' && (
-            <div className="space-y-4">
-              <p className="text-sm text-neutral-600 mb-4">Lower times will mean simpler (yet still delicious) meals. Choose what works best for your schedule.</p>
-              <div className="space-y-3">
-                {cookingTimePreferenceOptions.map((option) => (
-                  <button
-                    key={option.id}
-                    onClick={() => setAnswers(prev => ({ ...prev, cookingTimePreference: option.value }))}
-                    className={`w-full p-4 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
-                      answers.cookingTimePreference === option.value
-                        ? 'border-brand-500 bg-brand-50 text-brand-700'
-                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
-                    }`}
-                  >
-                    <span className="text-xl">{option.icon}</span>
-                    <div className="flex-1">
-                      <div className="font-medium">{option.label}</div>
-                      <div className="text-sm text-neutral-500">{option.description}</div>
-                    </div>
-                    {answers.cookingTimePreference === option.value && (
-                      <Check className="w-4 h-4 text-brand-600" />
-                    )}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
 
-          {/* Step 9: Retailer Selection */}
-          {currentStepData?.id === 'retailerSelection' && (
-            <div className="space-y-4">
-              {loadingRetailers && (
-                <div className="text-center py-8">
-                  <div className="loading-spinner mx-auto mb-4 w-8 h-8"></div>
-                  <p className="text-neutral-600">Loading nearby stores...</p>
-                </div>
-              )}
-              
-              {retailersError && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
-                  <p className="text-red-700 mb-3">{retailersError}</p>
-                  <button
-                    onClick={() => {
-                      const fetchRetailers = async () => {
-                        const zipCode = localStorage.getItem('chefscart_zipcode')
-                        if (!zipCode) return
-                        
-                        setLoadingRetailers(true)
-                        setRetailersError(null)
-                        
-                        try {
-                          const response = await fetch('/api/retailers', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ zipCode })
-                          })
-                          
-                          const data: RetailersResponse = await response.json()
-                          
-                          if (data.success && data.retailers.length > 0) {
-                            setRetailers(data.retailers)
-                          } else {
-                            setRetailersError('No stores available in your area')
-                          }
-                        } catch (error) {
-                          console.error('Error fetching retailers:', error)
-                          setRetailersError('Unable to load stores. Please try again.')
-                        } finally {
-                          setLoadingRetailers(false)
-                        }
-                      }
-                      fetchRetailers()
-                    }}
-                    className="text-red-600 hover:text-red-700 font-medium underline"
-                  >
-                    Try again
-                  </button>
-                </div>
-              )}
-              
-              {!loadingRetailers && !retailersError && retailers.length > 0 && (
-                <div className="space-y-3">
-                  <p className="text-sm text-neutral-600 mb-4">
-                    Choose your preferred store for grocery delivery. We prioritize grocery stores to give you the best selection.
-                  </p>
-                  {retailers.map((retailer) => (
-                    <button
-                      key={retailer.retailer_key}
-                      onClick={() => setAnswers(prev => ({ ...prev, preferredRetailer: retailer }))}
-                      className={`w-full p-4 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-4 ${
-                        answers.preferredRetailer?.retailer_key === retailer.retailer_key
-                          ? 'border-brand-500 bg-brand-50 text-brand-700'
-                          : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
-                      }`}
-                    >
-                      <div className="w-12 h-12 bg-white rounded-lg border border-neutral-200 flex items-center justify-center">
-                        {retailer.retailer_logo_url ? (
-                          <img
-                            src={retailer.retailer_logo_url}
-                            alt={`${retailer.name} logo`}
-                            className="w-8 h-8 object-contain"
-                            onError={(e) => {
-                              // Fallback to store icon if logo fails to load
-                              e.currentTarget.style.display = 'none'
-                              e.currentTarget.nextElementSibling?.classList.remove('hidden')
-                            }}
-                          />
-                        ) : null}
-                        <Store className="w-6 h-6 text-neutral-400 hidden" />
-                      </div>
-                      <div className="flex-1">
-                        <span className="font-medium block">{retailer.name}</span>
-                      </div>
-                      {answers.preferredRetailer?.retailer_key === retailer.retailer_key && (
-                        <Check className="w-5 h-5 text-brand-600 ml-auto" />
-                      )}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
 
           {/* Step 3: Dietary Style */}
           {currentStepData?.id === 'dietaryStyle' && (
@@ -1611,22 +1407,29 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                 className="w-full p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
                 placeholder="Type any food item and hit Enter to add..."
               />
-              {/* Show custom added foods as removable chips */}
-              {answers.favoriteFoods?.filter((food: string) => !favoriteFoodsOptions.some(opt => opt.value.includes(food))).length > 0 && (
+              {/* Show selected foods as removable chips */}
+              {answers.favoriteFoods && answers.favoriteFoods.length > 0 && (
                 <div className="flex flex-wrap gap-2">
-                  {answers.favoriteFoods.filter((food: string) => !favoriteFoodsOptions.some(opt => opt.value.includes(food))).map((food: string, index: number) => (
-                    <button
-                      key={index}
-                      onClick={() => {
-                        const updatedFoods = answers.favoriteFoods?.filter((f: string) => f !== food) || []
-                        setAnswers(prev => ({ ...prev, favoriteFoods: updatedFoods }))
-                      }}
-                      className="inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 border-brand-500 bg-brand-50 text-brand-700 text-sm transition-all duration-200"
-                    >
-                      <span className="font-medium">{food}</span>
-                      <Check className="w-4 h-4 text-brand-600" />
-                    </button>
-                  ))}
+                  {answers.favoriteFoods.map((food: string, index: number) => {
+                    // Check if this is a predefined option ID
+                    const predefinedOption = favoriteFoodsOptions.find(opt => opt.id === food)
+                    const displayName = predefinedOption ? predefinedOption.label : food
+                    const isCustomFood = !predefinedOption
+                    
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          const updatedFoods = answers.favoriteFoods?.filter((f: string) => f !== food) || []
+                          setAnswers(prev => ({ ...prev, favoriteFoods: updatedFoods }))
+                        }}
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 border-brand-500 bg-brand-50 text-brand-700 text-sm transition-all duration-200"
+                      >
+                        <span className="font-medium">{displayName}</span>
+                        <Check className="w-4 h-4 text-brand-600" />
+                      </button>
+                    )
+                  })}
                 </div>
               )}
             </div>

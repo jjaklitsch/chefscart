@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { ChefHat, RefreshCw } from 'lucide-react'
+import { ShoppingCart, RefreshCw } from 'lucide-react'
 
 export default function GlobalError({
   error,
@@ -21,7 +21,7 @@ export default function GlobalError({
           <div className="max-w-md w-full text-center">
             <div className="flex items-center justify-center mb-6">
               <div className="w-16 h-16 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full flex items-center justify-center shadow-brand">
-                <ChefHat className="w-8 h-8 text-white" />
+                <ShoppingCart className="w-8 h-8 text-white" />
               </div>
             </div>
             

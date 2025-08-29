@@ -26,7 +26,6 @@ function OnboardingPageContent() {
         if (userData) {
           const parsedData = JSON.parse(userData)
           if (parsedData.preferences) {
-            console.log('Loading existing preferences for user:', currentUser)
             setPreferences(parsedData.preferences)
           }
         }
@@ -42,6 +41,15 @@ function OnboardingPageContent() {
     setError(null)
 
     try {
+      // Calculate meals needed by course based on user selection
+      const courseMealCounts = {
+        breakfast: userPreferences.breakfastsPerWeek || 0,
+        lunch: userPreferences.lunchesPerWeek || 0,
+        dinner: userPreferences.dinnersPerWeek || 0
+      }
+      
+      const totalMealsNeeded = courseMealCounts.breakfast + courseMealCounts.lunch + courseMealCounts.dinner
+      
       // Call the meal recommendation API to get personalized meals from Supabase
       const response = await fetch('/api/recommend-meals', {
         method: 'POST',
@@ -50,7 +58,9 @@ function OnboardingPageContent() {
         },
         body: JSON.stringify({
           preferences: userPreferences,
-          limit: 10 // Get top 10 meals for the user to choose from
+          courseMealCounts: courseMealCounts, // Pass course-specific counts
+          limit: Math.max(totalMealsNeeded * 2, 15), // Get 2x meals for variety + backups
+          includeBackups: true // Flag to generate backup meals
         })
       })
 
@@ -65,42 +75,78 @@ function OnboardingPageContent() {
         throw new Error('No suitable meals found for your preferences')
       }
 
-      // Transform Supabase meals to our Recipe format
-      const recipes = data.meals.map((meal: any) => ({
-        id: meal.id,
-        title: meal.title,
-        description: meal.description,
-        cuisine: meal.cuisines[0] || 'international',
-        imageUrl: meal.image_url || '/images/placeholder-meal.webp',
-        ingredients: (meal.ingredients_json?.ingredients || []).map((ing: any) => ({
-          name: ing.display_name,
-          amount: ing.quantity,
-          unit: ing.unit
-        })),
-        difficulty: 'easy', // Default since Supabase doesn't have difficulty levels
-        cookTime: meal.time_total_min,
-        prepTime: 15, // Default prep time
-        servings: meal.servings_default,
-        estimatedCost: meal.cost_per_serving === '$' ? 8 : meal.cost_per_serving === '$$' ? 15 : 25,
-        tags: meal.diets_supported || [],
-        nutrition: {
-          calories: 0, // Nutrition info not in current schema
-          protein: 0,
-          carbs: 0,
-          fat: 0,
-          fiber: 0,
-          sugar: 0
-        },
-        instructions: (meal.instructions_json?.steps || []).map((step: any) => step.text)
-      }))
+      // Transform Supabase meals to our Recipe format and organize by course
+      const transformMeal = (meal: any, mealType: string) => {
+        const defaultServings = meal.servings_default || 4
+        const userServings = userPreferences.peoplePerMeal || 4
+        const scalingFactor = userServings / defaultServings
 
-      // Create meal plan with selected recipes
+        return {
+          id: meal.id,
+          title: meal.title,
+          description: meal.description,
+          mealType: mealType, // Explicitly set the meal type
+          cuisine: meal.cuisines[0] || 'international',
+          imageUrl: meal.image_url,
+          ingredients: (meal.ingredients_json?.ingredients || []).map((ing: any) => ({
+            name: ing.shoppable_name || ing.display_name, // Use shoppable name for shopping list clarity
+            amount: Math.round((ing.quantity * scalingFactor) * 100) / 100, // Scale and round to 2 decimals
+            unit: ing.unit
+          })),
+          // IMPORTANT: Preserve the full ingredients_json for CartBuilder to use shoppable names
+          ingredients_json: meal.ingredients_json ? {
+            servings: meal.ingredients_json.servings,
+            ingredients: meal.ingredients_json.ingredients.map((ing: any) => ({
+              ...ing,
+              quantity: Math.round((ing.quantity * scalingFactor) * 100) / 100 // Scale quantities for cart
+            }))
+          } : undefined,
+          difficulty: meal.cooking_difficulty === 'challenging' ? 'hard' : meal.cooking_difficulty as 'easy' | 'medium' | 'hard',
+          cookTime: meal.cook_time || 15,
+          prepTime: meal.prep_time || 10,
+          servings: userServings, // Use user's desired servings
+          estimatedCost: (meal.cost_per_serving === '$' ? 8 : meal.cost_per_serving === '$$' ? 15 : 25) * scalingFactor,
+          tags: meal.diets_supported || [],
+          nutrition: {
+            calories: 0, // Nutrition info not in current schema
+            protein: 0,
+            carbs: 0,
+            fat: 0,
+            fiber: 0,
+            sugar: 0
+          },
+          instructions: (meal.instructions_json?.steps || []).map((step: any) => step.text)
+        }
+      }
+
+      // Organize meals by course from API response
+      const mealsByCourse = data.mealsByType || {}
+      const backupMealsByType = data.backupMealsByType || {}
+      
+      // Build selected recipes respecting user's meal counts per course
+      const selectedRecipes: any[] = []
+      const backupRecipes: any[] = []
+      
+      // Add meals by course up to the user's requested count
+      for (const [courseType, meals] of Object.entries(mealsByCourse) as [string, any[]][]) {
+        const requestedCount = courseMealCounts[courseType as keyof typeof courseMealCounts] || 0
+        
+        // Take only the requested number of meals for each course
+        const selectedMealsForCourse = meals.slice(0, requestedCount).map(meal => transformMeal(meal, courseType))
+        selectedRecipes.push(...selectedMealsForCourse)
+        
+        // Add backup meals for this course
+        const backupMealsForCourse = (backupMealsByType[courseType] || []).map((meal: any) => transformMeal(meal, courseType))
+        backupRecipes.push(...backupMealsForCourse)
+      }
+
+      // Create meal plan with properly organized recipes
       const mealPlan: MealPlan = {
         id: `mealplan_${Date.now()}`,
         userId: `temp_${Date.now()}`,
-        recipes: recipes,
-        backupRecipes: [],
-        subtotalEstimate: recipes.reduce((sum: number, r: any) => sum + (r.estimatedCost || 15), 0),
+        recipes: selectedRecipes,
+        backupRecipes: backupRecipes, // Include backup meals organized by course
+        subtotalEstimate: selectedRecipes.reduce((sum: number, r: any) => sum + (r.estimatedCost || 15), 0),
         ingredientMatchPct: 95,
         status: 'draft',
         createdAt: new Date(),
@@ -136,7 +182,6 @@ function OnboardingPageContent() {
     setError(null)
 
     try {
-      console.log('Saving user data locally...')
       
       // Get zipCode from localStorage
       const zipCode = localStorage.getItem('chefscart_zipcode') || ''
@@ -168,7 +213,28 @@ function OnboardingPageContent() {
       }
       localStorage.setItem(`chefscart_mealplan_${mealPlanId}`, JSON.stringify(mealPlanData))
       
-      console.log('User data saved successfully. Creating Instacart cart...')
+
+      // Save user data to Supabase asynchronously (don't wait for it)
+      fetch('/api/save-user-data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          preferences,
+          zipCode,
+          mealPlan,
+          consolidatedCart
+        })
+      }).then(response => {
+        if (response.ok) {
+        } else {
+          console.error('Failed to save user data to Supabase')
+        }
+      }).catch(error => {
+        console.error('Error saving user data to Supabase:', error)
+      })
       
       // Call the production cart creation API
       const response = await fetch('/api/create-cart', {
@@ -177,10 +243,14 @@ function OnboardingPageContent() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          planId: mealPlan.id,
+          planId: mealPlanId, // Use the generated meal plan ID
           userId: userId,
           email,
-          mealPlanId: mealPlanId
+          userPreferences: preferences,
+          mealPlanData: {
+            mealPlan,
+            consolidatedCart
+          }
         })
       })
 
@@ -190,7 +260,6 @@ function OnboardingPageContent() {
       }
 
       const data = await response.json()
-      console.log('Cart created:', data)
       
       // Update meal plan status locally (will migrate to Supabase later)
       const updatedMealPlanData = { ...mealPlanData, status: 'cart_created', updatedAt: new Date().toISOString() }
@@ -281,6 +350,7 @@ function OnboardingPageContent() {
       <CartBuilder
         recipes={mealPlan.recipes}
         pantryItems={preferences?.pantryItems || []}
+        preferences={preferences}
         onProceedToCheckout={handleCartBuilderComplete}
         onBack={() => setStep('mealplan')}
       />

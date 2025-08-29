@@ -64,7 +64,6 @@ export interface UserPreferences {
   
   // New preference fields
   spiceTolerance?: string // 1-5 scale as string
-  cookingTimePreference?: string // time_pref_bucket: ≤15, ≤30, ≤45, no_preference
 }
 
 export interface MealType {
@@ -93,6 +92,7 @@ export interface Recipe {
   imageLoading?: boolean
   imageError?: boolean
   selected?: boolean
+  ingredients_canonical?: CanonicalIngredientsData
 }
 
 export interface Ingredient {
@@ -332,4 +332,61 @@ export interface MealRecommendationResponse {
   message?: string
   error?: string
   details?: string
+}
+
+// Canonical Ingredients System Types
+export interface CanonicalIngredient {
+  id: number
+  spoonacular_id?: number
+  canonical_name: string
+  category?: string
+  common_units?: string[]
+  shopping_units?: string[]
+  default_shopping_unit?: string
+  typical_package_size?: string
+  is_perishable?: boolean
+  storage_type?: string
+  created_at?: string
+  updated_at?: string
+}
+
+export interface IngredientAlias {
+  id: number
+  canonical_ingredient_id: number
+  alias_name: string
+  alias_type: string
+  confidence_score: number
+  created_at?: string
+}
+
+export interface CanonicalIngredientMatch {
+  ingredient: CanonicalIngredient
+  confidence: number
+  matchType: 'exact' | 'fuzzy' | 'alias' | 'ai_classification'
+  source?: string
+}
+
+export interface EnhancedIngredient {
+  canonical_id: number | null
+  canonical_name: string | null
+  display_name: string
+  quantity: number
+  unit: string
+  category: string
+  preparation?: string | null
+  shopping_equivalent: {
+    quantity: number
+    unit: string
+    size_guide?: string | null
+  }
+  match_confidence: number
+  match_type: string
+}
+
+export interface CanonicalIngredientsData {
+  servings: number
+  ingredients: EnhancedIngredient[]
+  generation_date: string
+  total_ingredient_count: number
+  matched_ingredient_count: number
 }

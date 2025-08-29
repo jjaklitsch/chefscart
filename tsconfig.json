@@ -21,9 +21,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@chefscart/ui": ["./packages/ui/src"],
-      "@chefscart/core-ai": ["./packages/core-ai/src"],
-      "@chefscart/core-flows": ["./packages/core-flows/src"]
+      "@chefscart/ui": ["./packages/ui/src"]
     }
   },
   "include": [],
@@ -38,12 +36,6 @@
     },
     {
       "path": "./packages/ui"
-    },
-    {
-      "path": "./packages/core-ai"
-    },
-    {
-      "path": "./packages/core-flows"
     }
   ]
 }

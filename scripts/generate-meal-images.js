@@ -15,7 +15,23 @@ const dotenv = require('dotenv');
 const path = require('path');
 const fs = require('fs').promises;
 const https = require('https');
-const { withBackoff } = require('./retry');
+
+// Simple retry utility (inline since retry.js doesn't exist)
+const withBackoff = async (fn, options = {}) => {
+  const { tries = 3, base = 1000, shouldRetry = () => true } = options;
+  
+  for (let attempt = 0; attempt < tries; attempt++) {
+    try {
+      return await fn();
+    } catch (error) {
+      if (attempt === tries - 1 || !shouldRetry(error)) {
+        throw error;
+      }
+      const delay = base * Math.pow(2, attempt);
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+};
 
 // Load environment variables
 dotenv.config({ path: path.join(process.cwd(), '.env.local') });
@@ -34,24 +50,33 @@ const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 /**
- * Generate a detailed DALL-E prompt from meal data
+ * Generate editorial photography prompt for meal images
  */
 function generateImagePrompt(meal) {
-  const { title, description, ingredients_json, cuisines } = meal;
-  
-  // Get key visible ingredients (not oils, seasonings, etc)
-  const keyIngredients = ingredients_json.ingredients
-    .filter(ing => {
-      const name = ing.display_name.toLowerCase();
-      return !name.includes('oil') && !name.includes('salt') && !name.includes('pepper') 
-             && !name.includes('butter') && !name.includes('spray');
-    })
-    .slice(0, 10)
-    .map(ing => ing.display_name.split('(')[0].trim())
-    .join(', ');
-  
-  // Build clean, direct prompt
-  const prompt = `Square 1024x1024 photorealistic image of a plated, HomeChef/Blue-Apron style Meal: ${title}. Description: ${description}. 90° overhead, single generous serving on a simple matte white **rimless** round plate or bowl, perfectly centered and fully visible with a uniform 12–15% white margin around the plate or bowl. PURE WHITE seamless background (#FFFFFF) with only a faint soft contact shadow. Professional **studio food photograph** (not illustration, not CGI, not painting). Finished, fully cooked if applicable, dish only; minimal cuisine-appropriate garnish. NO: napkins, utensils, hands, boards, bottles, side ramekins, multiple plates, wood/stone/table textures, gradients, colored/dark/patterned rims, decorative edges, text/logos. Output must be square.`;
+  const { title, description } = meal;
+
+  // Build professional editorial photography prompt
+  const prompt = `PHOTOREALISTIC editorial food photograph of "${title}".
+DESCRIPTION: ${description} — plate exactly what the description implies; no extra props.
+
+FORMAT: SQUARE 1024x1024 image
+COMPOSITION: 90° overhead shot, plate PERFECTLY CENTERED in frame; full plate rim visible; 
+12–15% white margin from plate edge to image border on ALL SIDES; dish fills plate generously
+
+CAMERA: full-frame DSLR look, 50mm, f/5.6, ISO 200, 1/125s; RAW/minimal retouch
+
+LIGHT: north-window daylight from left with soft diffusion; white bounce on right;
+seamless white studio sweep background (RGB 248–255) with faint soft contact shadow under plate ONLY
+
+PLATE: simple matte white ceramic, subtle glaze micro-scratches; generous restaurant portion centered on plate
+TEXTURE: natural browning/char where appropriate; tiny oil droplets and slight sauce pooling;
+torn herbs or irregular garnish scatter (not symmetrical); crumbs allowed; no plastic-smooth surfaces
+
+FOCUS/COLOR: entire dish in focus; neutral/true color, 5200–5600K daylight
+
+CRITICAL BANS: placemats, table surfaces, wood or faux-wood surfaces, visible table grain, 
+cutting boards, linens, utensils, extra props; illustration/CGI/3D render; harsh rim-lighting; cut-out look;
+anything other than pure white seamless background`;
 
   return prompt;
 }

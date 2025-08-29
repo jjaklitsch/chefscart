@@ -8,8 +8,7 @@
     "start": "cd apps/web && npm start",
     "lint": "cd apps/web && npm run lint",
     "test": "cd apps/web && npm test",
-    "setup": "cd apps/web && npm install",
-    "generate-meals": "node scripts/generate-meal-data.js"
+    "setup": "cd apps/web && npm install"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
@@ -31,7 +30,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.56.0",
     "dotenv": "^17.2.1",
-    "openai": "^5.15.0",
-    "pg": "^8.16.3"
+    "openai": "^5.16.0",
+    "pg": "^8.16.3",
+    "playwright": "^1.55.0"
   }
 }

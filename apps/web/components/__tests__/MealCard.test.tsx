@@ -54,9 +54,9 @@ describe('MealCard', () => {
     // Check that recipe information is displayed
     expect(screen.getByText('Delicious Test Pasta')).toBeInTheDocument()
     expect(screen.getByText('A mouth-watering pasta dish perfect for testing our meal card component.')).toBeInTheDocument()
-    expect(screen.getByText('35min')).toBeInTheDocument() // prepTime + cookTime
+    expect(screen.getByText('10m prep + 25m cook')).toBeInTheDocument() // separate prep and cook time
     expect(screen.getByText('4 servings')).toBeInTheDocument()
-    expect(screen.getByText('$9')).toBeInTheDocument() // rounded estimatedCost
+    expect(screen.getByText('9')).toBeInTheDocument() // rounded estimatedCost (without $ symbol)
     expect(screen.getByText('easy')).toBeInTheDocument()
     expect(screen.getByText('Italian')).toBeInTheDocument()
   })
@@ -203,6 +203,6 @@ describe('MealCard', () => {
 
     // Should still render basic information
     expect(screen.getByText('Delicious Test Pasta')).toBeInTheDocument()
-    expect(screen.getByText('35min')).toBeInTheDocument()
+    expect(screen.getByText('10m prep + 25m cook')).toBeInTheDocument() // separate prep and cook time
   })
 })

@@ -115,9 +115,7 @@ Be precise with decimal pricing and nutrition values. Account for the actual qua
 
     let costEstimates: IngredientCostResponse[] = []
     try {
-      console.log('Raw AI response for cost estimation:', content)
       const parsed = JSON.parse(content)
-      console.log('Parsed AI response:', parsed)
       
       // Handle multiple possible response formats
       if (Array.isArray(parsed)) {
@@ -136,10 +134,8 @@ Be precise with decimal pricing and nutrition values. Account for the actual qua
         }
       }
       
-      console.log('Extracted cost estimates:', costEstimates)
     } catch (parseError) {
       console.error('Failed to parse cost estimates:', parseError)
-      console.log('Raw AI response:', content)
       
       // Fallback to heuristic pricing if AI fails
       costEstimates = ingredients.map((ing: IngredientCostRequest) => ({
@@ -149,7 +145,6 @@ Be precise with decimal pricing and nutrition values. Account for the actual qua
       }))
     }
 
-    console.log(`✅ Estimated costs for ${costEstimates.length} ingredients`)
 
     return NextResponse.json({
       success: true,

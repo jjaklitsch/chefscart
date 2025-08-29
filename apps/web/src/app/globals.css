@@ -335,6 +335,17 @@ body {
   .bg-success-gradient {
     @apply bg-gradient-to-r from-success-500 to-brand-500;
   }
+  
+  /* Text Selection Fix */
+  ::selection {
+    background-color: rgb(76, 175, 115); /* brand-500 with good contrast */
+    color: white;
+  }
+  
+  ::-moz-selection {
+    background-color: rgb(76, 175, 115); /* brand-500 with good contrast */
+    color: white;
+  }
 }
 
 @layer utilities {

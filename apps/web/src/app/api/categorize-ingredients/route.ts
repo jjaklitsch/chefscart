@@ -95,7 +95,6 @@ Return a JSON array with exact format:
 
     let categorizations: IngredientCategorization[] = []
     try {
-      console.log('Raw AI response for categorization:', content)
       const parsed = JSON.parse(content)
       
       // Handle multiple possible response formats
@@ -113,10 +112,8 @@ Return a JSON array with exact format:
         }
       }
       
-      console.log('Extracted categorizations:', categorizations)
     } catch (parseError) {
       console.error('Failed to parse categorizations:', parseError)
-      console.log('Raw AI response:', content)
       
       // Fallback to basic categorization
       categorizations = ingredients.map((ing: any) => ({
@@ -135,7 +132,6 @@ Return a JSON array with exact format:
         reasoning: cat.reasoning || 'AI categorization'
       }))
 
-    console.log(`✅ Categorized ${validCategorizations.length} ingredients`)
 
     return NextResponse.json({
       success: true,
