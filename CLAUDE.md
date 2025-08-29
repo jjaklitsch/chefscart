@@ -23,36 +23,29 @@ npm run test:ui       # Run tests with UI
 npm run test:coverage # Run tests with coverage report
 ```
 
-## Staging & Production Environments
+## Deployment & Testing Environments
 
 ### Environment Setup
 - **Production**: `chefscart.ai` (main branch)
-- **Staging**: `chefscart.vercel.app` (staging branch)
+- **Preview Deployments**: Vercel automatic previews for all branches/PRs
 
-### Staging Workflow
+### Development Workflow
 ```bash
-# Switch to staging branch
-git checkout staging
+# Make changes on feature branch or directly on main
+git checkout -b feature-branch  # or work directly on main
 
-# Merge changes from main
-git merge main
+# Commit and push changes
+git add .
+git commit -m "Your changes"
+git push origin feature-branch  # or main
 
-# Push to staging (auto-deploys to chefscart.vercel.app)
-git push origin staging
-
-# View staging site
-open https://chefscart.vercel.app
+# Vercel automatically creates preview deployment
+# View preview URL in Vercel dashboard or GitHub PR comments
 ```
 
 ### Production Deployment
 ```bash
-# Switch to main branch
-git checkout main
-
-# Merge tested changes from staging
-git merge staging
-
-# Push to production (auto-deploys to chefscart.ai)
+# Push to main branch (auto-deploys to chefscart.ai)
 git push origin main
 
 # View production site
@@ -62,16 +55,17 @@ open https://chefscart.ai
 ### Vercel Configuration
 1. **In Vercel Dashboard**:
    - Production Branch: `main` → deploys to `chefscart.ai`
-   - Preview Deployments: All other branches
-   - Staging URL: `chefscart.vercel.app` (automatically available)
+   - Preview Deployments: Automatic for all other branches and PRs
+   - Preview URLs: `chefscart-[branch-name].vercel.app` format
 
-2. **Environment Variables**:
-   - Set same variables for both staging and production
+2. **Testing Strategy**:
+   - Use Vercel's automatic preview deployments for testing
+   - Each branch/PR gets its own preview URL
+   - No need for separate staging branch - use previews instead
+
+3. **Environment Variables**:
+   - Set same variables for both production and preview environments
    - Use Vercel's environment settings to manage different values if needed
-
-3. **Domain Management**:
-   - `chefscart.ai` → Production (main branch)
-   - `chefscart.vercel.app` → Staging (staging branch or latest preview)
 
 ## Architecture Overview
 
