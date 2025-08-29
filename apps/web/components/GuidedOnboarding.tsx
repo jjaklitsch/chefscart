@@ -567,7 +567,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           
           return processed
         })(),
-        mealsPerWeek: (answers.breakfastMeals || 0) + (answers.lunchMeals || 5) + (answers.dinnerMeals || 5),
+        mealsPerWeek: (answers.breakfastMeals || 0) + (answers.lunchMeals || 0) + (answers.dinnerMeals || 0),
         peoplePerMeal: answers.peoplePerMeal || 2,
         mealTypes: [], // Legacy field - using new breakfastsPerWeek, lunchesPerWeek, dinnersPerWeek instead
         
