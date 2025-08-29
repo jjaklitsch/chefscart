@@ -72,11 +72,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         switch(event) {
           case 'SIGNED_IN':
             console.log('User signed in:', session?.user?.email)
-            // Ensure cookies are properly set after sign in
-            if (session) {
-              // Refresh the session to ensure it's properly stored
-              await supabase.auth.refreshSession()
-            }
             break
           case 'SIGNED_OUT':
             console.log('User signed out')
