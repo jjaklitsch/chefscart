@@ -9,6 +9,7 @@ import Header from '../../components/Header'
 import MealShowcase from '../../components/MealShowcase'
 import Footer from '../../components/Footer'
 import analytics from '../../lib/analytics'
+import { useAuth } from '../../contexts/AuthContext'
 
 export default function Home() {
   const [zipCode, setZipCode] = useState('')
@@ -17,6 +18,15 @@ export default function Home() {
   const [validationState, setValidationState] = useState<'idle' | 'valid' | 'invalid' | 'no-coverage'>('idle')
   const [openFaqItems, setOpenFaqItems] = useState<Set<number>>(new Set())
   const router = useRouter()
+  const { user, loading } = useAuth()
+
+  // Redirect logged-in users to dashboard
+  useEffect(() => {
+    if (!loading && user) {
+      console.log('User logged in, redirecting to dashboard')
+      router.push('/dashboard')
+    }
+  }, [user, loading, router])
 
   // Track page view with experiment context
   useEffect(() => {
@@ -110,6 +120,23 @@ export default function Home() {
       answer: "We store only the preferences needed to generate your plan (diet, servings, ZIP) and your email if you create an account. Payment details stay with Stripe, and order details stay with Instacart. You can request data deletion anytime via support@chefscart.ai."
     }
   ]
+
+  // Show loading state while checking auth
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-health-gradient flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-600 mx-auto mb-4"></div>
+          <h2 className="text-xl font-semibold text-neutral-800">Loading...</h2>
+        </div>
+      </div>
+    )
+  }
+
+  // Show nothing briefly if user is authenticated (will redirect)
+  if (user) {
+    return null
+  }
 
   return (
     <div className="min-h-screen bg-health-gradient">

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '../../../contexts/AuthContext'
-import { ArrowLeft, Clock, Users, ShoppingCart } from 'lucide-react'
+import { ArrowLeft, Clock, Users, ShoppingCart, Edit2 } from 'lucide-react'
 import Link from 'next/link'
 import { UserPreferences, MealPlan } from '../../../types'
 
@@ -288,8 +288,15 @@ export default function QuickPlanPage() {
 
           {/* Saved Preferences Summary */}
           <div className="bg-gray-50 rounded-lg p-4 mb-6">
-            <div className="mb-2">
+            <div className="flex justify-between items-center mb-2">
               <h3 className="font-semibold text-gray-900">Your Saved Preferences</h3>
+              <Link
+                href="/preferences"
+                className="inline-flex items-center text-sm text-brand-green hover:text-brand-dark-green transition-colors"
+              >
+                <Edit2 className="w-4 h-4 mr-1" />
+                Edit Preferences
+              </Link>
             </div>
             <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
               <div>
