@@ -1,15 +1,12 @@
 {
-  "crons": [
-    {
-      "path": "/api/cron/instacart-sync",
-      "schedule": "0 0 1 * *"
-    }
-  ],
   "functions": {
-    "apps/web/src/app/api/cron/instacart-sync/route.ts": {
-      "maxDuration": 300
+    "src/app/api/notify-waitlist/route.ts": {
+      "maxDuration": 60
     },
-    "apps/web/src/app/api/notify-waitlist/route.ts": {
+    "src/app/api/recommend-meals/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/create-cart/route.ts": {
       "maxDuration": 60
     }
   }
