@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   title: "ChefsCart - AI-Powered Meal Planning & Grocery Shopping",
   description: "Create personalized meal plans and shop for ingredients with one click. Get custom recipes based on your dietary preferences and cooking skills.",
   icons: {
-    icon: '/icon.svg',
-    shortcut: '/icon.svg',
-    apple: '/icon.svg',
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 };
 

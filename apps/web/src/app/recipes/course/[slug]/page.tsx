@@ -84,7 +84,7 @@ export default function CoursePage() {
       if (error) throw error
 
       // Generate slugs and format data
-      const formattedRecipes = data?.map(recipe => ({
+      const formattedRecipes = (data || []).map((recipe: any) => ({
         ...recipe,
         slug: recipe.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
       }))

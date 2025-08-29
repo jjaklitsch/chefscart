@@ -59,9 +59,13 @@ export default function DietPage() {
 
       // Find the diet name that matches our slug
       const allDiets = new Set<string>()
-      allMeals.forEach(meal => {
-        meal.diets_supported.forEach((diet: string) => allDiets.add(diet))
-      })
+      if (allMeals) {
+        allMeals.forEach((meal: any) => {
+          if (meal.diets_supported && Array.isArray(meal.diets_supported)) {
+            meal.diets_supported.forEach((diet: string) => allDiets.add(diet))
+          }
+        })
+      }
 
       const matchingDiet = Array.from(allDiets).find(diet => 
         diet.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug
@@ -84,7 +88,7 @@ export default function DietPage() {
       if (error) throw error
 
       // Generate slugs and format data
-      const formattedRecipes = data.map(recipe => ({
+      const formattedRecipes = (data || []).map((recipe: any) => ({
         ...recipe,
         slug: recipe.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
       }))

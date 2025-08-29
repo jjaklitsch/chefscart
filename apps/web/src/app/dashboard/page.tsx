@@ -27,7 +27,9 @@ export default function DashboardPage() {
   const [showWelcomeModal, setShowWelcomeModal] = useState(false)
 
   useEffect(() => {
+    console.log('Dashboard auth state:', { loading, hasUser: !!user, userEmail: user?.email })
     if (!loading && !user) {
+      console.log('No user found, redirecting to login')
       router.push('/login')
     }
   }, [user, loading, router])
@@ -80,14 +82,6 @@ export default function DashboardPage() {
     }
   }
 
-  const handleSignOut = async () => {
-    try {
-      await signOut()
-      router.push('/')
-    } catch (error) {
-      console.error('Sign out error:', error)
-    }
-  }
 
   const deleteMealPlan = async (planId: string) => {
     try {

@@ -31,28 +31,62 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const supabase = createAuthClient()
 
   useEffect(() => {
-    // Get initial session
+    // Get initial session with better error handling
     const getSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
-      setSession(session)
-      setUser(session?.user ?? null)
-      setLoading(false)
+      try {
+        const { data: { session }, error } = await supabase.auth.getSession()
+        
+        if (error) {
+          console.error('Error getting session:', error)
+          // Still set loading to false even if there's an error
+          setLoading(false)
+          return
+        }
+        
+        if (session) {
+          setSession(session)
+          setUser(session.user)
+          console.log('Initial session found for:', session.user.email)
+        } else {
+          console.log('No initial session found')
+        }
+      } catch (error) {
+        console.error('Unexpected error getting session:', error)
+      } finally {
+        setLoading(false)
+      }
     }
 
     getSession()
 
-    // Listen for auth changes
+    // Listen for auth changes with better error handling
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event: string, session: Session | null) => {
+        console.log('Auth state change:', event, session?.user?.email || 'no user')
+        
         setSession(session)
         setUser(session?.user ?? null)
         setLoading(false)
         
         // Handle auth events
-        if (event === 'SIGNED_IN') {
-          console.log('User signed in:', session?.user?.email)
-        } else if (event === 'SIGNED_OUT') {
-          console.log('User signed out')
+        switch(event) {
+          case 'SIGNED_IN':
+            console.log('User signed in:', session?.user?.email)
+            // Ensure cookies are properly set after sign in
+            if (session) {
+              // Refresh the session to ensure it's properly stored
+              await supabase.auth.refreshSession()
+            }
+            break
+          case 'SIGNED_OUT':
+            console.log('User signed out')
+            break
+          case 'TOKEN_REFRESHED':
+            console.log('Token refreshed for:', session?.user?.email)
+            break
+          case 'USER_UPDATED':
+            console.log('User updated:', session?.user?.email)
+            break
         }
       }
     )

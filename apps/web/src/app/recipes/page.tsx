@@ -129,7 +129,7 @@ export default function RecipesPage() {
       }
 
       // Generate slugs and format data
-      const formattedRecipes = data.map(recipe => ({
+      const formattedRecipes = (data || []).map((recipe: any) => ({
         ...recipe,
         slug: recipe.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
       }))
@@ -148,9 +148,9 @@ export default function RecipesPage() {
       const allDifficulties = new Set<string>()
       
       formattedRecipes.forEach(recipe => {
-        recipe.cuisines?.forEach(cuisine => allCuisines.add(cuisine))
-        recipe.diets_supported?.forEach(diet => allDiets.add(diet))
-        recipe.courses?.forEach(course => allCourses.add(course))
+        recipe.cuisines?.forEach((cuisine: string) => allCuisines.add(cuisine))
+        recipe.diets_supported?.forEach((diet: string) => allDiets.add(diet))
+        recipe.courses?.forEach((course: string) => allCourses.add(course))
         if (recipe.cooking_difficulty) allDifficulties.add(recipe.cooking_difficulty)
       })
       
