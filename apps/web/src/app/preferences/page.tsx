@@ -354,18 +354,31 @@ export default function PreferencesPage() {
                 <Flame className="w-5 h-5 text-gray-700" />
                 <h2 className="text-lg font-semibold text-gray-900">Spice Tolerance</h2>
               </div>
-              <div className="flex gap-2">
-                {['1', '3', '5'].map(level => (
+              <div className="space-y-2">
+                {[
+                  { id: '1', label: '1 - Mild', icon: '😊', description: 'No heat, very mild flavors' },
+                  { id: '2', label: '2 - Low', icon: '🙂', description: 'Just a hint of warmth' },
+                  { id: '3', label: '3 - Medium', icon: '😋', description: 'Moderate spice, noticeable heat' },
+                  { id: '4', label: '4 - Hot', icon: '🔥', description: 'Spicy with significant heat' },
+                  { id: '5', label: '5 - Very Spicy', icon: '🌶️', description: 'Maximum heat, very spicy' }
+                ].map(option => (
                   <button
-                    key={level}
-                    onClick={() => setPreferences({ ...preferences, spiceTolerance: level })}
-                    className={`px-6 py-3 rounded-lg border-2 font-medium transition-colors ${
-                      preferences.spiceTolerance === level
-                        ? 'bg-orange-600 border-orange-600 text-white'
-                        : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
+                    key={option.id}
+                    onClick={() => setPreferences({ ...preferences, spiceTolerance: option.id })}
+                    className={`w-full p-3 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
+                      preferences.spiceTolerance === option.id
+                        ? 'border-orange-500 bg-orange-50 text-orange-700'
+                        : 'border-gray-200 hover:border-orange-300 hover:bg-orange-25'
                     }`}
                   >
-                    {level === '1' ? '🌶️ Mild' : level === '3' ? '🌶️🌶️ Medium' : '🌶️🌶️🌶️ Hot'}
+                    <span className="text-xl">{option.icon}</span>
+                    <div className="flex-1">
+                      <div className="font-medium">{option.label}</div>
+                      <div className="text-sm text-gray-500">{option.description}</div>
+                    </div>
+                    {preferences.spiceTolerance === option.id && (
+                      <Check className="w-4 h-4 text-orange-600" />
+                    )}
                   </button>
                 ))}
               </div>
@@ -404,24 +417,35 @@ export default function PreferencesPage() {
                 <Leaf className="w-5 h-5 text-gray-700" />
                 <h2 className="text-lg font-semibold text-gray-900">Organic Preference</h2>
               </div>
-              <div className="flex gap-2">
-                {[
-                  { value: 'no_preference', label: 'No Preference' },
-                  { value: 'preferred', label: 'Preferred' },
-                  { value: 'only_if_within_10_percent', label: 'If within 10% price' }
-                ].map(option => (
-                  <button
-                    key={option.value}
-                    onClick={() => setPreferences({ ...preferences, organicPreference: option.value as "preferred" | "only_if_within_10_percent" | "no_preference" })}
-                    className={`px-4 py-3 rounded-lg border-2 font-medium transition-colors ${
-                      preferences.organicPreference === option.value
-                        ? 'bg-green-600 border-green-600 text-white'
-                        : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
-                    }`}
-                  >
-                    {option.label}
-                  </button>
-                ))}
+              <div className="space-y-3">
+                <button
+                  onClick={() => setPreferences({ ...preferences, organicPreference: 'yes' })}
+                  className={`w-full p-3 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
+                    preferences.organicPreference === 'yes'
+                      ? 'border-green-500 bg-green-50 text-green-700'
+                      : 'border-gray-200 hover:border-green-300 hover:bg-green-25'
+                  }`}
+                >
+                  <span className="text-xl">🌱</span>
+                  <span className="font-medium">Yes, prefer organic when available</span>
+                  {preferences.organicPreference === 'yes' && (
+                    <Check className="w-4 h-4 text-green-600 ml-auto" />
+                  )}
+                </button>
+                <button
+                  onClick={() => setPreferences({ ...preferences, organicPreference: 'no' })}
+                  className={`w-full p-3 rounded-lg border-2 text-left transition-all duration-200 flex items-center gap-3 ${
+                    preferences.organicPreference === 'no'
+                      ? 'border-green-500 bg-green-50 text-green-700'
+                      : 'border-gray-200 hover:border-green-300 hover:bg-green-25'
+                  }`}
+                >
+                  <span className="text-xl">💰</span>
+                  <span className="font-medium">No, go with the lowest cost option</span>
+                  {preferences.organicPreference === 'no' && (
+                    <Check className="w-4 h-4 text-green-600 ml-auto" />
+                  )}
+                </button>
               </div>
             </div>
           </div>

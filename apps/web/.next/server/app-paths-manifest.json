@@ -1,4 +1,7 @@
 {
+  "/preferences/page": "app/preferences/page.js",
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/page": "app/page.js"
+  "/quick-plan/page": "app/quick-plan/page.js"
 }
