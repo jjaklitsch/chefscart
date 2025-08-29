@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Search, Filter, ChefHat, Clock, Users, Star, Utensils, Globe, Leaf, Sparkles } from 'lucide-react'
 import Link from 'next/link'
@@ -57,7 +57,7 @@ interface FilterState {
   allergens: string[]
 }
 
-export default function RecipesPage() {
+function RecipesPageContent() {
   const searchParams = useSearchParams()
   const [recipes, setRecipes] = useState<Recipe[]>([])
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([])
@@ -636,5 +636,28 @@ export default function RecipesPage() {
       
       <Footer />
     </div>
+  )
+}
+
+function RecipesPageFallback() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-sage-50">
+      <Header />
+      <div className="container mx-auto px-4 py-12">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-600 mx-auto mb-4"></div>
+          <h2 className="text-xl font-semibold text-neutral-800">Loading recipes...</h2>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  )
+}
+
+export default function RecipesPage() {
+  return (
+    <Suspense fallback={<RecipesPageFallback />}>
+      <RecipesPageContent />
+    </Suspense>
   )
 }
