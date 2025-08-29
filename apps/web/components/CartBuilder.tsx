@@ -365,7 +365,7 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
   // Check if ingredient supports organic options and apply organic preference
   const applyOrganicPreference = (shoppableName: string, ingredient: ShoppableIngredient): string => {
     // Only apply organic if user has organic preference set
-    if (!preferences?.organicPreference || preferences.organicPreference === 'no_preference') {
+    if (!preferences?.organicPreference || preferences.organicPreference === 'no') {
       return shoppableName
     }
 
@@ -402,7 +402,7 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
     )
 
     // If ingredient supports organic and user wants organic, add "Organic" prefix
-    if (supportsOrganic && (preferences.organicPreference === 'preferred' || preferences.organicPreference === 'only_if_within_10_percent')) {
+    if (supportsOrganic && preferences.organicPreference === 'yes') {
       // Avoid double "Organic" prefix
       if (!shoppableName.toLowerCase().startsWith('organic')) {
         return `Organic ${shoppableName}`

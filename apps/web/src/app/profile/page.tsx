@@ -279,9 +279,7 @@ export default function ProfilePage() {
               <div className="bg-gray-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-900 mb-2">Organic Preference</h3>
                 <p className="text-gray-600 text-sm">
-                  {preferences.organicPreference === 'preferred' ? 'Yes, prefer organic when available' :
-                   preferences.organicPreference === 'only_if_within_10_percent' ? 'Only if within 10% of regular price' :
-                   'No preference'}
+                  {preferences.organicPreference === 'yes' ? 'Yes, prefer organic when available' : 'No preference'}
                 </p>
               </div>
             </div>

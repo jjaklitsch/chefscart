@@ -424,7 +424,7 @@ export async function GET(request: NextRequest) {
       mealsPerWeek: 7,
       peoplePerMeal: parseInt(searchParams.get('peoplePerMeal') || '2'),
       mealTypes: [],
-      organicPreference: 'no_preference'
+      organicPreference: 'no'
     }
 
     const limitParam = searchParams.get('limit')
