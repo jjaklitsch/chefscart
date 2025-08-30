@@ -1,0 +1,1359 @@
+{
+  "config": {
+    "configFile": "/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/playwright.config.ts",
+    "rootDir": "/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/tests/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/jonathanjaklitsch/chefscart/chefscart/apps/web/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "chefscart-comprehensive.test.ts",
+      "file": "chefscart-comprehensive.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "ChefsCart E2E Comprehensive Testing",
+          "file": "chefscart-comprehensive.test.ts",
+          "line": 82,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should generate final screenshot and summary",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0aede6bbbc92da9707d8-be043cc321b7b77f2fd4",
+              "file": "chefscart-comprehensive.test.ts",
+              "line": 818,
+              "column": 7
+            },
+            {
+              "title": "should generate final screenshot and summary",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0aede6bbbc92da9707d8-c50e9abc72e9f3d43241",
+              "file": "chefscart-comprehensive.test.ts",
+              "line": 818,
+              "column": 7
+            },
+            {
+              "title": "should generate final screenshot and summary",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0aede6bbbc92da9707d8-64ac7f13ae5b75848058",
+              "file": "chefscart-comprehensive.test.ts",
+              "line": 818,
+              "column": 7
+            }
+          ],
+          "suites": [
+            {
+              "title": "1. Landing Page Verification",
+              "file": "chefscart-comprehensive.test.ts",
+              "line": 128,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should load landing page without errors",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-bc19063c4dcb77e59e8b",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 129,
+                  "column": 9
+                },
+                {
+                  "title": "should have functional navigation elements",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-0f43599731bfbf0874f4",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 153,
+                  "column": 9
+                },
+                {
+                  "title": "should have working FAQ accordion functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-2ccc879f9d6a191cc465",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 194,
+                  "column": 9
+                },
+                {
+                  "title": "should display pricing information correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-b1e21481b10e636f5cad",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 238,
+                  "column": 9
+                },
+                {
+                  "title": "should have functional footer links",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-4e963e9ff660fbc44d90",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 271,
+                  "column": 9
+                },
+                {
+                  "title": "should load landing page without errors",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-1bf553f8433e29e901de",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 129,
+                  "column": 9
+                },
+                {
+                  "title": "should have functional navigation elements",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-57bcf7450172440a0bda",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 153,
+                  "column": 9
+                },
+                {
+                  "title": "should have working FAQ accordion functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-82402f5460c7937d8477",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 194,
+                  "column": 9
+                },
+                {
+                  "title": "should display pricing information correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-a7013a3efc4a159bc849",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 238,
+                  "column": 9
+                },
+                {
+                  "title": "should have functional footer links",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-33fa4731d570156d331e",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 271,
+                  "column": 9
+                },
+                {
+                  "title": "should load landing page without errors",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-594c294e5ff2bcbcf8bd",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 129,
+                  "column": 9
+                },
+                {
+                  "title": "should have functional navigation elements",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-82181473108f04b8d698",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 153,
+                  "column": 9
+                },
+                {
+                  "title": "should have working FAQ accordion functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-76bb15e1b79a080c61d9",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 194,
+                  "column": 9
+                },
+                {
+                  "title": "should display pricing information correctly",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-e961aaf42eb6a3c762aa",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 238,
+                  "column": 9
+                },
+                {
+                  "title": "should have functional footer links",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-a4886987854e5f2e22dd",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 271,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "2. Authentication Testing",
+              "file": "chefscart-comprehensive.test.ts",
+              "line": 302,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should find and test login functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-746742589f28e6d06e11",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 303,
+                  "column": 9
+                },
+                {
+                  "title": "should test magic link authentication flow",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-be989614c4ba1db64521",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 353,
+                  "column": 9
+                },
+                {
+                  "title": "should find and test login functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-ec16751e7da5d67fc2e4",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 303,
+                  "column": 9
+                },
+                {
+                  "title": "should test magic link authentication flow",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-db6c6d398e3ed4a47bfd",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 353,
+                  "column": 9
+                },
+                {
+                  "title": "should find and test login functionality",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-a41a27c7eea5e0a400e5",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 303,
+                  "column": 9
+                },
+                {
+                  "title": "should test magic link authentication flow",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-41baebad228a6c4586c8",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 353,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "3. Core User Flow Testing",
+              "file": "chefscart-comprehensive.test.ts",
+              "line": 382,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should test ZIP code validation with valid codes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-63c3177b1c4dfd4b38c3",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 383,
+                  "column": 9
+                },
+                {
+                  "title": "should test ZIP code validation with invalid codes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-da05626180023fbb71f3",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 438,
+                  "column": 9
+                },
+                {
+                  "title": "should test onboarding process if accessible",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-edadce57c113359a79c6",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 470,
+                  "column": 9
+                },
+                {
+                  "title": "should test meal recommendation display",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-b2dfd19c9dddee6522f1",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 511,
+                  "column": 9
+                },
+                {
+                  "title": "should test ZIP code validation with valid codes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-6106431a0b5e28dc6e76",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 383,
+                  "column": 9
+                },
+                {
+                  "title": "should test ZIP code validation with invalid codes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-5ccd797c1346dcd61d37",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 438,
+                  "column": 9
+                },
+                {
+                  "title": "should test onboarding process if accessible",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-221417c0e337c7bdcb9f",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 470,
+                  "column": 9
+                },
+                {
+                  "title": "should test meal recommendation display",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-b52cee2c3f5f1d86425c",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 511,
+                  "column": 9
+                },
+                {
+                  "title": "should test ZIP code validation with valid codes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-0888624af0658fd8642c",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 383,
+                  "column": 9
+                },
+                {
+                  "title": "should test ZIP code validation with invalid codes",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-9f7c75ba5c48e565712c",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 438,
+                  "column": 9
+                },
+                {
+                  "title": "should test onboarding process if accessible",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-f923fe7a8b5338ee51e9",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 470,
+                  "column": 9
+                },
+                {
+                  "title": "should test meal recommendation display",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-a5a592f8982b80bc37e6",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 511,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "4. Technical QA",
+              "file": "chefscart-comprehensive.test.ts",
+              "line": 571,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should check for JavaScript console errors",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-0622fcb08cd88ef97d62",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 572,
+                  "column": 9
+                },
+                {
+                  "title": "should test API endpoints",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-ad621d99b7917bab3c59",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 599,
+                  "column": 9
+                },
+                {
+                  "title": "should test responsive design",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-28cdc52ab0d32889c361",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 646,
+                  "column": 9
+                },
+                {
+                  "title": "should test keyboard navigation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-bd5ae82979817754e0c0",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 657,
+                  "column": 9
+                },
+                {
+                  "title": "should check for broken images",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-367849775a8d2e244380",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 682,
+                  "column": 9
+                },
+                {
+                  "title": "should check for JavaScript console errors",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-9c9ae944fb99fa9200a0",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 572,
+                  "column": 9
+                },
+                {
+                  "title": "should test API endpoints",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-21a65bd564cfa8017a34",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 599,
+                  "column": 9
+                },
+                {
+                  "title": "should test responsive design",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-834c21cce8d69c5907db",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 646,
+                  "column": 9
+                },
+                {
+                  "title": "should test keyboard navigation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-c56979a237487dc33282",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 657,
+                  "column": 9
+                },
+                {
+                  "title": "should check for broken images",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-d60f19705a000a6932b5",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 682,
+                  "column": 9
+                },
+                {
+                  "title": "should check for JavaScript console errors",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-20c988986886ad6e8969",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 572,
+                  "column": 9
+                },
+                {
+                  "title": "should test API endpoints",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-c6403e1e3d4427532793",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 599,
+                  "column": 9
+                },
+                {
+                  "title": "should test responsive design",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-f316b160597530bdc979",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 646,
+                  "column": 9
+                },
+                {
+                  "title": "should test keyboard navigation",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-05b82fa479d920faf364",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 657,
+                  "column": 9
+                },
+                {
+                  "title": "should check for broken images",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-bef46064c0c9a9614d47",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 682,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "5. Performance Testing",
+              "file": "chefscart-comprehensive.test.ts",
+              "line": 723,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should measure page load performance",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-37554b98cc5f4b3eb802",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 724,
+                  "column": 9
+                },
+                {
+                  "title": "should test image loading performance",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-7ac371d17a53291c3a70",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 756,
+                  "column": 9
+                },
+                {
+                  "title": "should check for memory leaks",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-f7da276040ed97987664",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 783,
+                  "column": 9
+                },
+                {
+                  "title": "should measure page load performance",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-f7818fc37b9b3afae41a",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 724,
+                  "column": 9
+                },
+                {
+                  "title": "should test image loading performance",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-93c2de5b9d3745227deb",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 756,
+                  "column": 9
+                },
+                {
+                  "title": "should check for memory leaks",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "firefox",
+                      "projectName": "firefox",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-25ea5b6453636db8bab4",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 783,
+                  "column": 9
+                },
+                {
+                  "title": "should measure page load performance",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-fc810806d65175fece19",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 724,
+                  "column": 9
+                },
+                {
+                  "title": "should test image loading performance",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-10b1c33eb8783f90d74a",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 756,
+                  "column": 9
+                },
+                {
+                  "title": "should check for memory leaks",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "Mobile Chrome",
+                      "projectName": "Mobile Chrome",
+                      "results": [],
+                      "status": "skipped"
+                    }
+                  ],
+                  "id": "0aede6bbbc92da9707d8-6f87db733a58334f5616",
+                  "file": "chefscart-comprehensive.test.ts",
+                  "line": 783,
+                  "column": 9
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-30T15:25:35.763Z",
+    "duration": 21.413999999999987,
+    "expected": 0,
+    "skipped": 60,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

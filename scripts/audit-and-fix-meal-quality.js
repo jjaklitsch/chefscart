@@ -489,6 +489,7 @@ async function main() {
       
       if (!auditResult) {
         console.log(`⚠️  Skipping ${meal.title} - audit failed`);
+        report.failed_fixes = report.failed_fixes || [];
         report.failed_fixes.push(meal.title);
         continue;
       }
@@ -541,6 +542,7 @@ async function main() {
       
       if (!fixedMeal) {
         console.log(`   ⚠️  Failed to generate fix`);
+        report.failed_fixes = report.failed_fixes || [];
         report.failed_fixes.push(meal.title);
         continue;
       }
@@ -557,6 +559,7 @@ async function main() {
         });
       } else {
         console.log(`   ❌ Failed to save fix`);
+        report.failed_fixes = report.failed_fixes || [];
         report.failed_fixes.push(meal.title);
       }
 

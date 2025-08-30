@@ -1,0 +1,102 @@
+{
+  "standardization_analysis": {
+    "methodology": "The analysis involved reviewing ingredient variants across multiple meals, identifying common usage patterns, and applying principles of clarity and consistency while preserving meaningful distinctions.",
+    "key_principles": [
+      "Use the most common and clear form of ingredient names for shopping.",
+      "Maintain meaningful distinctions between different types of ingredients."
+    ],
+    "challenging_cases": [
+      "Ahi Tuna vs Fresh Tuna: 'Ahi' is too specific for general shopping, while 'fresh' is implied for fish.",
+      "Kosher Salt vs Sea Salt: Both are types of salt, but they serve different culinary purposes."
+    ]
+  },
+  "shoppable_name_standardizations": [
+    {
+      "variants_found": [
+        "Black Pepper",
+        "black pepper (freshly ground)",
+        "freshly ground black pepper",
+        "black pepper (cracked)"
+      ],
+      "recommended_standard": "Black Pepper",
+      "reasoning": "Most common form, 'freshly ground' is implied for quality, and 'cracked' is a specific preparation.",
+      "meals_affected": 10,
+      "preserve_distinctions": false
+    },
+    {
+      "variants_found": [
+        "Olive Oil",
+        "Extra Virgin Olive Oil",
+        "Olive Oil (for frying)"
+      ],
+      "recommended_standard": "Olive Oil",
+      "reasoning": "Most common form, 'extra virgin' is a quality distinction but not necessary for shopping.",
+      "meals_affected": 15,
+      "preserve_distinctions": true
+    },
+    {
+      "variants_found": [
+        "Garlic",
+        "Garlic Cloves",
+        "Garlic (minced)"
+      ],
+      "recommended_standard": "Garlic Cloves",
+      "reasoning": "Standardizing to 'Garlic Cloves' maintains clarity while differentiating from garlic powder or paste.",
+      "meals_affected": 8,
+      "preserve_distinctions": true
+    }
+  ],
+  "quantity_validations": [
+    {
+      "ingredient": "Chicken Breast",
+      "current_quantities": [
+        "1 each",
+        "0.75 lb",
+        "8 oz"
+      ],
+      "recommended_standard": {
+        "quantity": 1,
+        "unit": "lb",
+        "per_servings": 2
+      },
+      "reasoning": "0.5 lb per person is standard for chicken breast; 'each' is inconsistent sizing.",
+      "meals_affected": 12
+    },
+    {
+      "ingredient": "Quinoa",
+      "current_quantities": [
+        "1 cup",
+        "120 g",
+        "2 cup"
+      ],
+      "recommended_standard": {
+        "quantity": 1,
+        "unit": "cup",
+        "per_servings": 2
+      },
+      "reasoning": "1 cup is a standard serving size for grains, ensuring consistency.",
+      "meals_affected": 10
+    },
+    {
+      "ingredient": "Garlic Cloves",
+      "current_quantities": [
+        "1 clove",
+        "2 cloves",
+        "4 clove"
+      ],
+      "recommended_standard": {
+        "quantity": 2,
+        "unit": "clove",
+        "per_servings": 4
+      },
+      "reasoning": "2 cloves per person is a reasonable average for flavoring.",
+      "meals_affected": 5
+    }
+  ],
+  "overall_impact": {
+    "total_ingredients_reviewed": 50,
+    "standardizations_recommended": 15,
+    "quantity_fixes_recommended": 8,
+    "estimated_improvement": "high"
+  }
+}
