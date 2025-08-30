@@ -3,6 +3,7 @@
 import React from 'react'
 import { Clock, Users, DollarSign, ChefHat, Check, ShoppingCart } from 'lucide-react'
 import { MealCardProps } from '../types'
+import FavoriteHeart from './ui/FavoriteHeart'
 
 const MealCard: React.FC<MealCardProps> = ({
   recipe,
@@ -57,15 +58,26 @@ const MealCard: React.FC<MealCardProps> = ({
       aria-pressed={isSelected}
       aria-label={`${isSelected ? 'Deselect' : 'Select'} ${recipe.title} recipe`}
     >
-      {/* Selection Indicator */}
-      <div className={`
-        absolute top-4 right-4 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 z-10
-        ${isSelected 
-          ? 'bg-brand-500 border-brand-500 text-white' 
-          : 'bg-white border-neutral-300 hover:border-sage-400'
-        }
-      `}>
-        {isSelected && <Check className="w-4 h-4" />}
+      {/* Top Right Controls */}
+      <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+        {/* Favorite Heart */}
+        <FavoriteHeart 
+          mealId={recipe.id}
+          isFavorited={recipe.isFavorited || false}
+          size="sm"
+          className="bg-white/80 backdrop-blur-sm hover:bg-white/90"
+        />
+        
+        {/* Selection Indicator */}
+        <div className={`
+          w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200
+          ${isSelected 
+            ? 'bg-brand-500 border-brand-500 text-white' 
+            : 'bg-white border-neutral-300 hover:border-sage-400'
+          }
+        `}>
+          {isSelected && <Check className="w-4 h-4" />}
+        </div>
       </div>
 
       {/* Recipe Image Placeholder */}

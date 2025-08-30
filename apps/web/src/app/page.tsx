@@ -7,6 +7,8 @@ import ZipCodeInput from '../../components/ZipCodeInput'
 import HeadlineABTest from '../../components/HeadlineABTest'
 import Header from '../../components/Header'
 import MealShowcase from '../../components/MealShowcase'
+import HomePricingSection from '../../components/HomePricingSection'
+import PricingCTA from '../../components/PricingCTA'
 import Footer from '../../components/Footer'
 import analytics from '../../lib/analytics'
 import { useAuth } from '../../contexts/AuthContext'
@@ -108,8 +110,8 @@ export default function Home() {
       answer: "Anywhere Instacart delivers in the United States and Canada. During signup we check your ZIP/postal code; if no local store is supported you can join our wait‑list and we'll notify you as soon as coverage expands."
     },
     {
-      question: "How much does ChefsCart itself cost?",
-      answer: "ChefsCart is free during beta—you only pay Instacart's grocery total and delivery/service fees (or Instacart+ if you subscribe). A small concierge fee and optional premium tier will come later; beta users will receive founder discounts."
+      question: "How much does ChefsCart cost?",
+      answer: "ChefsCart starts at $4.99/month (billed annually) or $5.99/month (billed monthly). Both plans include a free trial period with no commitment. You only pay for groceries through Instacart—we never mark up food prices."
     },
     {
       question: "Can I change my meal plan after checkout?",
@@ -172,6 +174,39 @@ export default function Home() {
           </div>
           
           {/* Note: Validation message is handled by ZipCodeInput since showFullWidthMessage={false} */}
+        </div>
+
+        {/* Pricing Preview Banner */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 border border-green-200 shadow-lg">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-3">
+                <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
+                  🎉 Limited Time Offer
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Start at $4.99/month with 14-day free trial
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Try all features risk-free. Cancel anytime during your trial with no charges.
+              </p>
+              <div className="flex items-center justify-center space-x-8 text-sm text-gray-700">
+                <div className="flex items-center">
+                  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                  <span>500+ curated recipes</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                  <span>Smart Instacart integration</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                  <span>Custom dietary preferences</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* How It Works Section */}
@@ -377,6 +412,16 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <HomePricingSection />
+
+        {/* Final CTA Section */}
+        <section className="mb-16 mt-16">
+          <div className="max-w-4xl mx-auto">
+            <PricingCTA location="home_bottom" showFullFeatures={true} />
           </div>
         </section>
 

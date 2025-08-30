@@ -48,36 +48,14 @@ export default function ProgressTracker({
     if (!value) return 'pending'
     
     switch (key) {
-      case 'mealTypes':
-        if (Array.isArray(value) && value.length > 0) {
-          // Handle both MealType objects and simple strings (selectedMealTypes)
-          if (typeof value[0] === 'string') {
-            // This is selectedMealTypes array
-            return 'completed'
-          } else {
-            // This is mealTypes array with MealType objects
-            const hasValidConfig = value.every((meal: MealType) => 
-              meal.days && meal.days.length > 0 && meal.adults && meal.adults > 0
-            )
-            return hasValidConfig ? 'completed' : 'warning'
-          }
-        }
-        return 'pending'
-      
-      case 'diets':
-      case 'allergies':
       case 'preferredCuisines':
         return Array.isArray(value) ? 'completed' : 'pending'
       
       case 'organicPreference':
         return value && value !== 'no_preference' ? 'completed' : 'warning'
       
-      case 'maxCookTime':
       case 'mealsPerWeek':
         return typeof value === 'number' && value > 0 ? 'completed' : 'pending'
-      
-      case 'cookingSkillLevel':
-        return ['beginner', 'intermediate', 'advanced'].includes(value) ? 'completed' : 'pending'
       
       default:
         return value ? 'completed' : 'pending'
@@ -88,25 +66,6 @@ export default function ProgressTracker({
     if (!value) return 'Not set'
     
     switch (key) {
-      case 'mealTypes':
-        if (Array.isArray(value) && value.length > 0) {
-          // Handle both MealType objects and simple strings (selectedMealTypes)
-          if (typeof value[0] === 'string') {
-            // This is selectedMealTypes array
-            return value.join(', ')
-          } else {
-            // This is mealTypes array with MealType objects
-            return value.map((meal: MealType) => meal.type).join(', ')
-          }
-        }
-        return 'Not set'
-      
-      case 'diets':
-        return Array.isArray(value) && value.length > 0 ? value.join(', ') : 'None'
-      
-      case 'allergies':
-        return Array.isArray(value) && value.length > 0 ? value.join(', ') : 'None'
-      
       case 'preferredCuisines':
         return Array.isArray(value) && value.length > 0 ? value.join(', ') : 'No preference'
       
@@ -118,19 +77,8 @@ export default function ProgressTracker({
         }
         return organicLabels[value as keyof typeof organicLabels] || 'Not set'
       
-      case 'maxCookTime':
-        return typeof value === 'number' ? `${value} minutes` : 'Not set'
-      
       case 'mealsPerWeek':
         return typeof value === 'number' ? `${value} meals per week` : 'Not set'
-      
-      case 'cookingSkillLevel':
-        const skillLabels = {
-          'beginner': 'Beginner',
-          'intermediate': 'Intermediate', 
-          'advanced': 'Advanced'
-        }
-        return skillLabels[value as keyof typeof skillLabels] || 'Not set'
       
       default:
         return String(value)
@@ -146,46 +94,11 @@ export default function ProgressTracker({
       value: getValueDisplay('mealsPerWeek', preferences.mealsPerWeek)
     },
     {
-      key: 'mealTypes',
-      label: 'Meal Types',
-      description: 'What meals to plan',
-      status: getItemStatus('mealTypes', preferences.mealTypes || (preferences as any).selectedMealTypes),
-      value: getValueDisplay('mealTypes', preferences.mealTypes || (preferences as any).selectedMealTypes)
-    },
-    {
-      key: 'diets',
-      label: 'Dietary Restrictions',
-      description: 'Special diets to follow',
-      status: getItemStatus('diets', preferences.diets),
-      value: getValueDisplay('diets', preferences.diets)
-    },
-    {
-      key: 'allergies',
-      label: 'Allergies',
-      description: 'Foods to avoid',
-      status: getItemStatus('allergies', preferences.allergies),
-      value: getValueDisplay('allergies', preferences.allergies)
-    },
-    {
       key: 'organicPreference',
       label: 'Organic Preference',
       description: 'Organic ingredient preference',
       status: getItemStatus('organicPreference', preferences.organicPreference),
       value: getValueDisplay('organicPreference', preferences.organicPreference)
-    },
-    {
-      key: 'maxCookTime',
-      label: 'Cooking Time',
-      description: 'Maximum time to cook',
-      status: getItemStatus('maxCookTime', preferences.maxCookTime),
-      value: getValueDisplay('maxCookTime', preferences.maxCookTime)
-    },
-    {
-      key: 'cookingSkillLevel',
-      label: 'Skill Level',
-      description: 'Your cooking experience',
-      status: getItemStatus('cookingSkillLevel', preferences.cookingSkillLevel),
-      value: getValueDisplay('cookingSkillLevel', preferences.cookingSkillLevel)
     },
     {
       key: 'preferredCuisines',

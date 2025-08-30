@@ -202,17 +202,12 @@ const convertPreferencesToAnswers = (preferences: UserPreferences): Record<strin
     dinnerMeals: preferences.dinnersPerWeek || 0,
     
     // Other preferences - fix field mappings
-    dietaryStyle: preferences.dietaryStyle || preferences.diets || [],
-    foodsToAvoid: preferences.foodsToAvoid || preferences.avoidIngredients || [],
-    healthGoal: preferences.healthGoal || 'maintain',
-    cookingSkill: preferences.cookingSkillLevel || 'intermediate',
-    budgetSensitivity: preferences.budgetSensitivity || 'no_limit',
-    customBudgetAmount: preferences.customBudgetAmount || '',
+    dietaryStyle: preferences.dietaryStyle || [],
+    foodsToAvoid: preferences.foodsToAvoid || [],
     organicPreference: preferences.organicPreference || 'yes',
     spiceTolerance: preferences.spiceTolerance || '3',
     favoriteFoods: preferences.favoriteFoods || [],
-    cuisinePreferences: preferences.cuisinePreferences || preferences.preferredCuisines || [],
-    additionalConsiderations: preferences.additionalConsiderations || '',
+    cuisinePreferences: preferences.preferredCuisines || [],
     
     // Photo upload related
     identifiedIngredients: preferences.identifiedIngredients || [],
@@ -420,10 +415,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     if (isLastStep) {
       // Convert answers to UserPreferences format
       const preferences: UserPreferences = {
-        // Calculate household size from servings per meal (simplified approach)
-        adults: Math.ceil((answers.peoplePerMeal || 2) * 0.7), // Estimate adults as ~70% of servings
-        kids: Math.floor((answers.peoplePerMeal || 2) * 0.3 / 0.5), // Estimate kids (count as 0.5 servings each)
-        
         // Meals per week - use selected frequencies
         breakfastsPerWeek: answers.breakfastMeals || 0,
         lunchesPerWeek: answers.lunchMeals || 0,
@@ -456,11 +447,27 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           return processed
         })(),
         
-        foodsToAvoid: answers.foodsToAvoid ? 
-          (typeof answers.foodsToAvoid === 'string' ? 
-            answers.foodsToAvoid.split(',').map((s: string) => s.trim()).filter(s => s.length > 0) : 
-            []) : 
-          [],
+        foodsToAvoid: (() => {
+          const avoidAnswers = answers.foodsToAvoid || []
+          const processed = avoidAnswers.reduce((acc: string[], item: string) => {
+            if (item === 'other') return acc
+            
+            // Find the option and expand if it's multi-value
+            const option = foodsToAvoidOptions.find(opt => opt.id === item)
+            if (option && Array.isArray(option.value)) {
+              return [...acc, ...option.value]
+            }
+            return [...acc, item]
+          }, [])
+          
+          // Add other foods to avoid if specified
+          if (answers.foodsToAvoidOther) {
+            const customAvoids = answers.foodsToAvoidOther.split(',').map((s: string) => s.trim()).filter((s: string) => s.length > 0)
+            processed.push(...customAvoids)
+          }
+          
+          return processed
+        })(),
         
         // Process favorite foods - expand multi-value options
         favoriteFoods: (() => {
@@ -496,21 +503,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         
         // New preference fields
         spiceTolerance: answers.spiceTolerance || '3',
-        preferredCuisines: (() => {
-          const cuisineAnswers = answers.cuisinePreferences || []
-          const processed = cuisineAnswers.reduce((acc: string[], item: string) => {
-            if (item === 'other') return acc
-            
-            // Find the option and expand if it's multi-value
-            const option = cuisinePreferenceOptions.find(opt => opt.id === item)
-            if (option && Array.isArray(option.value)) {
-              return [...acc, ...option.value]
-            }
-            return [...acc, item]
-          }, [])
-          
-          return processed
-        })(),
         mealsPerWeek: (answers.breakfastMeals || 0) + (answers.lunchMeals || 0) + (answers.dinnerMeals || 0),
         peoplePerMeal: answers.peoplePerMeal || 2,
         
@@ -595,9 +587,12 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   // Function to trigger analysis with debouncing
   const triggerPhotoAnalysis = useCallback((photos: File[]) => {
     // Clear existing timer
-    if (analysisTimer) {
-      clearTimeout(analysisTimer)
-    }
+    setAnalysisTimer(prevTimer => {
+      if (prevTimer) {
+        clearTimeout(prevTimer)
+      }
+      return null
+    })
     
     // Set waiting state
     setIsWaitingForAnalysis(photos.length > 0)
@@ -623,7 +618,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     }, 3000) // 3 second delay
     
     setAnalysisTimer(timer)
-  }, [analysisTimer])
+  }, [])
 
   // Real ingredient identification function using GPT-4 Vision
   const identifyIngredientsFromPhotos = useCallback(async (photos: File[]): Promise<Array<{ name: string; quantity: number; unit: string }>> => {
@@ -787,20 +782,17 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
       return { ...prev, fridgePantryPhotos: newPhotos }
     })
     
-    // Re-identify ingredients
+    // Use debounced analysis to avoid race conditions
     if (updatedPhotos.length > 0) {
-      setIsAnalyzingPhotos(true)
-      identifyIngredientsFromPhotos(updatedPhotos).then(ingredients => {
-        setIdentifiedIngredients(ingredients)
-        setIsAnalyzingPhotos(false)
-      }).catch(error => {
-        console.error('Error analyzing photos:', error)
-        setIsAnalyzingPhotos(false)
-      })
+      console.log(`📷 Removed photo ${index + 1}, ${updatedPhotos.length} remaining. Re-analyzing...`)
+      triggerPhotoAnalysis(updatedPhotos)
     } else {
+      // Clear ingredients if no photos left
       setIdentifiedIngredients([])
+      setIsAnalyzingPhotos(false)
+      setIsWaitingForAnalysis(false)
     }
-  }, [identifyIngredientsFromPhotos])
+  }, [triggerPhotoAnalysis])
 
   const addManualIngredient = useCallback(() => {
     const ingredient = manualIngredientInput.trim()

@@ -156,7 +156,7 @@ export default function PreferencesPage() {
     }
   }
 
-  const toggleArrayPreference = (category: 'cuisinePreferences' | 'dietaryStyle' | 'foodsToAvoid' | 'favoriteFoods', value: string | string[]) => {
+  const toggleArrayPreference = (category: 'preferredCuisines' | 'dietaryStyle' | 'foodsToAvoid' | 'favoriteFoods', value: string | string[]) => {
     if (!preferences) return
     
     const current = preferences[category] || []
@@ -180,7 +180,7 @@ export default function PreferencesPage() {
     })
   }
 
-  const isOptionSelected = (category: 'cuisinePreferences' | 'dietaryStyle' | 'foodsToAvoid' | 'favoriteFoods', value: string | string[]) => {
+  const isOptionSelected = (category: 'preferredCuisines' | 'dietaryStyle' | 'foodsToAvoid' | 'favoriteFoods', value: string | string[]) => {
     if (!preferences) return false
     const current = preferences[category] || []
     const valueArray = Array.isArray(value) ? value : [value]
@@ -262,9 +262,9 @@ export default function PreferencesPage() {
                 {cuisineOptions.map(option => (
                   <button
                     key={option.id}
-                    onClick={() => toggleArrayPreference('cuisinePreferences', option.value)}
+                    onClick={() => toggleArrayPreference('preferredCuisines', option.value)}
                     className={`px-4 py-2 rounded-lg border-2 font-medium transition-colors flex items-center gap-2 ${
-                      isOptionSelected('cuisinePreferences', option.value)
+                      isOptionSelected('preferredCuisines', option.value)
                         ? 'bg-green-600 border-green-600 text-white'
                         : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
                     }`}

@@ -96,7 +96,7 @@ describe('/api/recommend-meals', () => {
         mealsPerWeek: 5,
         peoplePerMeal: 2,
         mealTypes: [],
-        organicPreference: 'no_preference'
+        organicPreference: 'no'
       }
 
       const request = {
@@ -122,7 +122,7 @@ describe('/api/recommend-meals', () => {
         mealsPerWeek: 5,
         peoplePerMeal: 2,
         mealTypes: [],
-        organicPreference: 'no_preference'
+        organicPreference: 'no'
       }
 
       const request = {

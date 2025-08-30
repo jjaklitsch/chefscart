@@ -8,6 +8,7 @@ import { createClient } from '../../../../lib/supabase'
 import RecipeIngredients from '../../../../components/RecipeIngredients'
 import RecipeInstructions from '../../../../components/RecipeInstructions'
 import RelatedRecipes from '../../../../components/RelatedRecipes'
+import InstacartInstructionsModal from '../../../../components/InstacartInstructionsModal'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
 
@@ -56,6 +57,8 @@ export default function RecipePage() {
   const [servings, setServings] = useState(2)
   const [creatingCart, setCreatingCart] = useState(false)
   const [showShareModal, setShowShareModal] = useState(false)
+  const [showInstructions, setShowInstructions] = useState(false)
+  const [cartUrl, setCartUrl] = useState<string | null>(null)
 
   useEffect(() => {
     if (slug) {
@@ -143,8 +146,9 @@ export default function RecipePage() {
       const result = await response.json()
       
       if (result.success && result.cartUrl) {
-        // Open Instacart in new tab
-        window.open(result.cartUrl, '_blank')
+        // Show instructions before redirecting to Instacart
+        setCartUrl(result.cartUrl)
+        setShowInstructions(true)
       } else {
         throw new Error(result.error || 'Failed to create cart')
       }
@@ -660,6 +664,18 @@ export default function RecipePage() {
           </div>
         </div>
       )}
+
+      {/* Instacart Instructions Modal */}
+      <InstacartInstructionsModal
+        isOpen={showInstructions}
+        onClose={() => setShowInstructions(false)}
+        onContinue={() => {
+          if (cartUrl) {
+            window.open(cartUrl, '_blank')
+          }
+          setShowInstructions(false)
+        }}
+      />
     </div>
   )
 }

@@ -1,0 +1,421 @@
+{
+  "totalMeals": 100,
+  "incompleteMeals": [],
+  "missingIngredientIssues": [
+    {
+      "title": "Đậu Hũ Sốt Cà (Tofu Tomato Sauce)",
+      "missing": [
+        "rice"
+      ]
+    },
+    {
+      "title": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+      "missing": [
+        "lettuce/greens for salad"
+      ]
+    },
+    {
+      "title": "Tomato–Cucumber–Olive Greek Salad",
+      "missing": [
+        "lettuce/greens for salad"
+      ]
+    },
+    {
+      "title": "Whole30 Taco Lettuce Wraps",
+      "missing": [
+        "tortillas/wraps"
+      ]
+    },
+    {
+      "title": "Doenjang Jjigae (Soybean Stew)",
+      "missing": [
+        "rice"
+      ]
+    },
+    {
+      "title": "Keto Tuna Melt Stuffed Avocados",
+      "missing": [
+        "lettuce/greens for salad"
+      ]
+    },
+    {
+      "title": "Bánh Mì Thịt Nướng (Grilled Pork Sandwich)",
+      "missing": [
+        "bread/buns"
+      ]
+    },
+    {
+      "title": "Curry Channa & Aloo",
+      "missing": [
+        "rice",
+        "bread/buns"
+      ]
+    },
+    {
+      "title": "Cá Kho Tộ (Caramelized Fish)",
+      "missing": [
+        "rice"
+      ]
+    },
+    {
+      "title": "Vegan Mushroom Bourguignon",
+      "missing": [
+        "bread/buns"
+      ]
+    },
+    {
+      "title": "Herbed Orzo with Halloumi",
+      "missing": [
+        "pasta noodles"
+      ]
+    },
+    {
+      "title": "Stewed Red Snapper in Tomato Gravy",
+      "missing": [
+        "rice",
+        "bread/buns"
+      ]
+    },
+    {
+      "title": "Goan Fish Curry",
+      "missing": [
+        "rice"
+      ]
+    },
+    {
+      "title": "Chicken Tikka Masala",
+      "missing": [
+        "rice"
+      ]
+    },
+    {
+      "title": "Low-Carb Chicken Fajita Bowl (No Rice)",
+      "missing": [
+        "rice"
+      ]
+    }
+  ],
+  "quantityIssues": [
+    {
+      "title": "Đậu Hũ Sốt Cà (Tofu Tomato Sauce)",
+      "issues": [
+        {
+          "ingredient": "onion (finely chopped)",
+          "issue": "Invalid unit: \"medium\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Pork Chops with Calvados Apples",
+      "issues": [
+        {
+          "ingredient": "bone-in pork chops",
+          "issue": "Protein measured as \"each\" instead of weight",
+          "suggestion": "Should be ~2 lb"
+        }
+      ]
+    },
+    {
+      "title": "Keto Buffalo Chicken Cauliflower Bake",
+      "issues": [
+        {
+          "ingredient": "boneless skinless chicken breasts, cooked and shredded",
+          "issue": "Protein measured as \"each\" instead of weight",
+          "suggestion": "Should be ~2 lb"
+        }
+      ]
+    },
+    {
+      "title": "Tomato–Cucumber–Olive Greek Salad",
+      "issues": [
+        {
+          "ingredient": "optional: crushed red pepper flakes",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Buffalo Cauliflower Wrap",
+      "issues": [
+        {
+          "ingredient": "romaine lettuce leaves",
+          "issue": "Invalid unit: \"leaves\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Keto Tuna Melt Stuffed Avocados",
+      "issues": [
+        {
+          "ingredient": "kosher salt",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Bánh Mì Thịt Nướng (Grilled Pork Sandwich)",
+      "issues": [
+        {
+          "ingredient": "baguette",
+          "issue": "Invalid unit: \"loaf\"",
+          "suggestion": "Use standard Instacart units"
+        },
+        {
+          "ingredient": "lemongrass (minced)",
+          "issue": "Invalid unit: \"stalk\"",
+          "suggestion": "Use standard Instacart units"
+        },
+        {
+          "ingredient": "scallions (sliced)",
+          "issue": "Invalid unit: \"stalk\"",
+          "suggestion": "Use standard Instacart units"
+        },
+        {
+          "ingredient": "carrot (julienned)",
+          "issue": "Invalid unit: \"medium\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Vegan Teriyaki Tofu & Broccoli",
+      "issues": [
+        {
+          "ingredient": "salt",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Heirloom Tomato & Burrata on Sourdough",
+      "issues": [
+        {
+          "ingredient": "red pepper flakes",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Low-Carb Orange-Ginger Beef & Broccoli",
+      "issues": [
+        {
+          "ingredient": "freshly ground black pepper",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Hủ Tiếu Nam Vang (Phnom Penh Noodles)",
+      "issues": [
+        {
+          "ingredient": "ground white pepper",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Low-Carb Harissa Shrimp & Cauli Couscous",
+      "issues": [
+        {
+          "ingredient": "raw large shrimp (peeled, deveined, tails optional)",
+          "issue": "Protein measured as \"each\" instead of weight",
+          "suggestion": "Should be ~2 lb"
+        }
+      ]
+    },
+    {
+      "title": "Pineapple Fried Rice",
+      "issues": [
+        {
+          "ingredient": "cooked shrimp or diced chicken (optional protein)",
+          "issue": "Protein quantity too small",
+          "suggestion": "Should be ~32 oz or 2 lb"
+        }
+      ]
+    },
+    {
+      "title": "Char Siu Noodle Bowl",
+      "issues": [
+        {
+          "ingredient": "cucumber (thinly sliced)",
+          "issue": "Invalid unit: \"medium\"",
+          "suggestion": "Use standard Instacart units"
+        },
+        {
+          "ingredient": "scallions (sliced)",
+          "issue": "Invalid unit: \"stalk\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Low-Carb Pesto Chicken & Zucchini",
+      "issues": [
+        {
+          "ingredient": "crushed red pepper",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Salmon Teriyaki Bowl",
+      "issues": [
+        {
+          "ingredient": "salmon fillets, skin-on",
+          "issue": "Protein quantity too small",
+          "suggestion": "Should be ~16 oz or 1 lb"
+        }
+      ]
+    },
+    {
+      "title": "Yakisoba (Stir-Fried Noodles)",
+      "issues": [
+        {
+          "ingredient": "salt",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Tamago Kake Gohan (Egg Rice)",
+      "issues": [
+        {
+          "ingredient": "salt",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        },
+        {
+          "ingredient": "freshly ground black pepper",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Chicken Nanban",
+      "issues": [
+        {
+          "ingredient": "egg",
+          "issue": "Invalid unit: \"large\"",
+          "suggestion": "Use standard Instacart units"
+        },
+        {
+          "ingredient": "hard-boiled egg (chopped)",
+          "issue": "Invalid unit: \"large\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Spring Onion Oil Noodles",
+      "issues": [
+        {
+          "ingredient": "salt",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Greek Chicken Souvlaki & Tzatziki",
+      "issues": [
+        {
+          "ingredient": "crushed red pepper or paprika (optional garnish)",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Cassoulet (Quick Skillet)",
+      "issues": [
+        {
+          "ingredient": "sausages (halved lengthwise)",
+          "issue": "Invalid unit: \"link\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Herbed Brown Rice Salmon & Greens",
+      "issues": [
+        {
+          "ingredient": "skin-on salmon fillets",
+          "issue": "Protein measured as \"each\" instead of weight",
+          "suggestion": "Should be ~2 lb"
+        }
+      ]
+    },
+    {
+      "title": "Low-Carb Chicken Fajita Bowl (No Rice)",
+      "issues": [
+        {
+          "ingredient": "crushed red pepper",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Tonkatsu with Cabbage",
+      "issues": [
+        {
+          "ingredient": "pork loin chops, boneless, trimmed to 1/2-inch thickness",
+          "issue": "Protein measured as \"each\" instead of weight",
+          "suggestion": "Should be ~2 lb"
+        }
+      ]
+    },
+    {
+      "title": "Keto Sausage Peppers & Mushrooms",
+      "issues": [
+        {
+          "ingredient": "Red pepper flakes",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Kimchi Fried Rice with Egg",
+      "issues": [
+        {
+          "ingredient": "salt and black pepper",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Masala Dosa with Sambar",
+      "issues": [
+        {
+          "ingredient": "asafoetida (hing)",
+          "issue": "Invalid unit: \"pinch\"",
+          "suggestion": "Use standard Instacart units"
+        }
+      ]
+    },
+    {
+      "title": "Keto Chimichurri Chicken & Cauli Mash",
+      "issues": [
+        {
+          "ingredient": "boneless skinless chicken breasts",
+          "issue": "Protein measured as \"each\" instead of weight",
+          "suggestion": "Should be ~2 lb"
+        }
+      ]
+    }
+  ],
+  "totalIssues": 39
+}

@@ -300,7 +300,7 @@ export default function QuickPlanPage() {
             </div>
             <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
               <div>
-                <span className="font-medium">Cuisines:</span> {savedPreferences.cuisinePreferences?.join(', ') || 'All'}
+                <span className="font-medium">Cuisines:</span> {savedPreferences.preferredCuisines?.join(', ') || 'All'}
               </div>
               <div>
                 <span className="font-medium">Diet:</span> {savedPreferences.dietaryStyle?.join(', ') || 'No restrictions'}

@@ -78,7 +78,7 @@ describe('MealCardGrid', () => {
     render(
       <MealCardGrid
         recipes={mockRecipes}
-        selectedRecipes={[mockRecipes[0]]}
+        selectedRecipes={[mockRecipes[0]!]}
         onSelectionChange={onSelectionChange}
         minSelections={2}
         maxSelections={5}
@@ -118,16 +118,16 @@ describe('MealCardGrid', () => {
     )
 
     // Click on first recipe card
-    const firstCard = screen.getAllByRole('button')[1] // Skip the status card button
+    const firstCard = screen.getAllByRole('button')[1]! // Skip the status card button
     fireEvent.click(firstCard)
 
-    expect(onSelectionChange).toHaveBeenCalledWith([mockRecipes[0]])
+    expect(onSelectionChange).toHaveBeenCalledWith([mockRecipes[0]!])
 
     // Rerender with the selected recipe
     rerender(
       <MealCardGrid
         recipes={mockRecipes}
-        selectedRecipes={[mockRecipes[0]]}
+        selectedRecipes={[mockRecipes[0]!]}
         onSelectionChange={onSelectionChange}
       />
     )

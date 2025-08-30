@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '../../../contexts/AuthContext'
-import { ShoppingCart, Plus, User, Clock, ChefHat, ExternalLink, RotateCcw, Eye, Trash2, CheckCircle, X } from 'lucide-react'
+import { ShoppingCart, Plus, User, Clock, ChefHat, ExternalLink, RotateCcw, Eye, Trash2, CheckCircle, X, Heart } from 'lucide-react'
 import Link from 'next/link'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
@@ -94,6 +94,33 @@ export default function DashboardPage() {
     }
   }
 
+  const handleReorder = async (planId: string) => {
+    try {
+      const response = await fetch(`/api/meal-plans/${planId}/reorder`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        // Reload meal plans to show the new one
+        await loadRecentMealPlans()
+        
+        // Navigate to the new meal plan or show success message
+        router.push(`/cart-builder/${data.mealPlan.id}`)
+      } else {
+        const errorData = await response.json()
+        console.error('Error reordering meal plan:', errorData.error)
+        // TODO: Show user-friendly error message
+      }
+    } catch (error) {
+      console.error('Network error reordering meal plan:', error)
+      // TODO: Show user-friendly error message
+    }
+  }
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       month: 'short',
@@ -135,7 +162,7 @@ export default function DashboardPage() {
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <Link
             href="/quick-plan"
             className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow group"
@@ -147,6 +174,21 @@ export default function DashboardPage() {
               <div>
                 <h3 className="font-semibold text-gray-900">Quick Meal Plan</h3>
                 <p className="text-sm text-gray-600">Use your saved preferences</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/favorites"
+            className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow group"
+          >
+            <div className="flex items-center gap-4">
+              <div className="bg-gray-100 rounded-lg p-3 group-hover:bg-red-500 transition-colors">
+                <Heart className="w-6 h-6 text-red-500 group-hover:text-white transition-colors" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900">Favorite Meals</h3>
+                <p className="text-sm text-gray-600">Your loved recipes</p>
               </div>
             </div>
           </Link>
@@ -269,7 +311,10 @@ export default function DashboardPage() {
                                 Open Cart
                                 <ExternalLink className="w-3 h-3" />
                               </a>
-                              <button className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors">
+                              <button 
+                                onClick={() => handleReorder(plan.id)}
+                                className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors"
+                              >
                                 <RotateCcw className="w-4 h-4" />
                                 Reorder
                               </button>

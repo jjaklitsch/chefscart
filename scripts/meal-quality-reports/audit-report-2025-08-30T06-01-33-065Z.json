@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-08-30T06:01:32.531Z",
+  "mode": "dry_run",
+  "total_meals": 2,
+  "issues_found": 0,
+  "incomplete_meals": [],
+  "missing_ingredients": [],
+  "quantity_issues": [],
+  "fixed_meals": [],
+  "failed_fixes": [
+    "Đậu Hũ Sốt Cà (Tofu Tomato Sauce)",
+    "Penne all'Arrabbiata"
+  ],
+  "statistics": {
+    "incomplete_meal_count": 0,
+    "meals_with_missing_ingredients": 0,
+    "meals_with_quantity_issues": 0,
+    "total_missing_ingredients": 0,
+    "total_quantity_fixes": 0
+  }
+}

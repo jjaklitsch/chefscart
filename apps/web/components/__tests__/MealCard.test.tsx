@@ -185,8 +185,8 @@ describe('MealCard', () => {
     const minimalRecipe: Recipe = {
       ...mockRecipe,
       nutrition: undefined as any,
-      ingredients: [],
-      imageUrl: undefined
+      ingredients: []
+      // imageUrl omitted (optional property)
     }
 
     const onSelect = vi.fn()

@@ -75,29 +75,13 @@ export async function GET(request: NextRequest) {
   }
   
   // Handle auth parameters if no session exists
-  if (code || token || tokenHash) {
+  if (code || tokenHash) {
     try {
       const supabase = createServerAuthClient()
       
       let data, error
       
-      if (token && type === 'magiclink') {
-        // PKCE Magic link flow - the token is the PKCE verifier
-        
-        // For PKCE magic links, Supabase handles the verification automatically
-        // We just need to get the session that should be set after following the link
-        const { data: { session }, error: sessionError } = await supabase.auth.getSession()
-        
-        if (!sessionError && session) {
-          // Session exists, auth successful
-          data = { session, user: session.user }
-          error = null
-        } else {
-          // No session means the link verification failed
-          error = sessionError || new Error('Magic link verification failed')
-          data = null
-        }
-      } else if (code) {
+      if (code) {
         // OAuth flow - exchange code for session
         ;({ data, error } = await supabase.auth.exchangeCodeForSession(code))
       } else if (tokenHash) {
@@ -154,6 +138,13 @@ export async function GET(request: NextRequest) {
     }
   }
 
+  // For PKCE magic links (token param), Supabase should have already verified and set session
+  // If we reach here with a token param but no session, the verification failed
+  if (token && type === 'magiclink') {
+    console.log('PKCE magic link verification failed - no session found after Supabase verification')
+    return NextResponse.redirect(`${requestUrl.origin}/login?error=auth_failed&message=${encodeURIComponent('Magic link verification failed')}`)
+  }
+  
   // If no code or authentication failed, redirect to login
   console.log('No auth parameters found. Expected code, token, or token_hash. Got:', {
     allParams: Object.fromEntries(requestUrl.searchParams),

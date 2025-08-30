@@ -55,6 +55,12 @@ export default function Header() {
                   Grocery List
                 </Link>
                 <Link 
+                  href="/pricing" 
+                  className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
+                >
+                  Pricing
+                </Link>
+                <Link 
                   href="/#faq" 
                   className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
                 >

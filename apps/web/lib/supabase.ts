@@ -46,6 +46,12 @@ export interface UserProfile {
   completedOnboarding?: boolean
   createdAt: string
   updatedAt: string
+  stripeCustomerId?: string
+  subscriptionId?: string
+  subscriptionStatus?: 'none' | 'trialing' | 'active' | 'past_due' | 'canceled' | 'unpaid'
+  subscriptionPlan?: string
+  trialEnd?: string
+  currentPeriodEnd?: string
 }
 
 // Database interfaces

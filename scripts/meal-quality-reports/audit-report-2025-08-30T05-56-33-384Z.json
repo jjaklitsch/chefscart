@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-08-30T05:56:27.998Z",
+  "mode": "dry_run",
+  "total_meals": 3,
+  "issues_found": 0,
+  "incomplete_meals": [],
+  "missing_ingredients": [],
+  "quantity_issues": [],
+  "fixed_meals": [],
+  "failed_fixes": [
+    "Đậu Hũ Sốt Cà (Tofu Tomato Sauce)",
+    "Penne all'Arrabbiata",
+    "BBQ Ribs with Baked Beans"
+  ],
+  "statistics": {
+    "incomplete_meal_count": 0,
+    "meals_with_missing_ingredients": 0,
+    "meals_with_quantity_issues": 0,
+    "total_missing_ingredients": 0,
+    "total_quantity_fixes": 0
+  }
+}

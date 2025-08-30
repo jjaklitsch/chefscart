@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseClient } from '../../../../lib/supabase'
+import { createServerAuthClient } from '../../../../lib/supabase-server'
 import { UserPreferences } from '../../../../types/index'
 
 // Updated Meal interface to match Supabase schema
@@ -47,6 +48,39 @@ function normalizeDietaryTag(tag: string): string {
   return tag.toLowerCase().replace(/[^a-z0-9]/g, '')
 }
 
+// Helper function to add favorite status to meals for authenticated users
+async function addFavoriteStatusToMeals(meals: any[], userId?: string) {
+  if (!userId || meals.length === 0) {
+    return meals.map(meal => ({ ...meal, isFavorited: false }))
+  }
+
+  try {
+    const supabase = createServerAuthClient()
+    const mealIds = meals.map(meal => parseInt(meal.id))
+    
+    const { data: favorites, error } = await supabase
+      .from('user_favorite_meals')
+      .select('meal_id')
+      .eq('user_id', userId)
+      .in('meal_id', mealIds)
+
+    if (error) {
+      console.warn('Error checking favorites:', error)
+      return meals.map(meal => ({ ...meal, isFavorited: false }))
+    }
+
+    const favoritedMealIds = new Set(favorites?.map(f => f.meal_id.toString()) || [])
+    
+    return meals.map(meal => ({
+      ...meal,
+      isFavorited: favoritedMealIds.has(meal.id.toString())
+    }))
+  } catch (error) {
+    console.warn('Error adding favorite status:', error)
+    return meals.map(meal => ({ ...meal, isFavorited: false }))
+  }
+}
+
 // Helper function to calculate meal score based on user preferences
 function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): number {
   let score = 0
@@ -55,8 +89,8 @@ function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): n
   score += 10
 
   // Dietary restrictions matching (high priority)
-  if (preferences.diets && preferences.diets.length > 0) {
-    const userDiets = preferences.diets.map(normalizeDietaryTag)
+  if (preferences.dietaryStyle && preferences.dietaryStyle.length > 0) {
+    const userDiets = preferences.dietaryStyle.map(normalizeDietaryTag)
     const mealTags = (meal.diets_supported || []).map(normalizeDietaryTag)
     
     const dietMatches = userDiets.filter(diet => mealTags.includes(diet)).length
@@ -68,17 +102,6 @@ function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): n
     }
   }
 
-  // Cook time preference (medium priority)
-  if (preferences.maxCookTime || preferences.maxCookingTime) {
-    const maxTime = preferences.maxCookTime || preferences.maxCookingTime || 60
-    if (meal.time_total_min <= maxTime) {
-      score += 15
-    } else {
-      // Penalty for exceeding preferred cook time
-      const overtime = meal.time_total_min - maxTime
-      score -= Math.min(overtime / 5, 10) // Max penalty of 10 points
-    }
-  }
 
   // Cuisine preferences (medium priority)
   if (preferences.preferredCuisines && preferences.preferredCuisines.length > 0) {
@@ -106,18 +129,14 @@ function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): n
     )
     
     if (hasSpicyKeyword || meal.spice_level > 1) {
-      return -100 // Effectively exclude from results
+      return 0 // Return 0 instead of negative to be filtered out later
     }
   } else if (userSpiceTolerance <= 2 && meal.spice_level > 2) {
-    score -= 10 // Penalty for too spicy
+    score = Math.max(0, score - 10) // Ensure we don't go negative
   } else if (userSpiceTolerance <= 3 && meal.spice_level > 3) {
-    score -= 5 // Small penalty for very spicy
+    score = Math.max(0, score - 5) // Ensure we don't go negative
   }
   
-  // Extra penalty for beginners with spicy food
-  if (preferences.cookingSkillLevel === 'beginner' && meal.spice_level > 2) {
-    score -= 5 // Additional penalty for too spicy for beginners
-  }
 
   // Note: Allergen/avoidance filtering is now done BEFORE scoring
   // This function should only be called on pre-filtered safe meals
@@ -127,11 +146,11 @@ function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): n
     if (meal.cost_per_serving === '$') {
       score += 5 // Bonus for budget-friendly meals for larger groups
     } else if (meal.cost_per_serving === '$$$') {
-      score -= 3 // Small penalty for expensive meals for larger groups
+      score = Math.max(0, score - 3) // Ensure we don't go negative
     }
   }
 
-  return Math.max(0, score) // Ensure non-negative score
+  return Math.max(0, score) // Final safeguard for non-negative score
 }
 
 // Helper function to ensure meal variety in recommendations
@@ -212,34 +231,49 @@ export async function POST(request: NextRequest) {
       }, { status: 400 })
     }
 
+    // Check authentication and subscription status
+    const authSupabase = createServerAuthClient()
+    const { data: { session }, error: sessionError } = await authSupabase.auth.getSession()
+
+    if (sessionError || !session) {
+      return NextResponse.json({
+        success: false,
+        error: 'Authentication required'
+      }, { status: 401 })
+    }
+
+    // Check subscription status
     const supabase = getSupabaseClient()
+    const { data: profile, error: profileError } = await supabase
+      .from('user_profiles')
+      .select('subscription_status, trial_end, current_period_end')
+      .eq('id', session.user.id)
+      .single() as { data: any, error: any }
+
+    if (profileError) {
+      console.error('Error fetching user profile:', profileError)
+      return NextResponse.json({
+        success: false,
+        error: 'Failed to verify subscription status'
+      }, { status: 500 })
+    }
+
+    // Check if user has active subscription or trial
+    const hasActiveSubscription = profile.subscription_status === 'active' || profile.subscription_status === 'trialing'
+    
+    if (!hasActiveSubscription) {
+      return NextResponse.json({
+        success: false,
+        error: 'Active subscription required',
+        needsSubscription: true
+      }, { status: 402 }) // Payment Required
+    }
 
     // Build query with filters
     let query = supabase
       .from('meals')
       .select('*')
 
-    // Filter by cooking difficulty based on user's skill level
-    if (preferences.cookingSkillLevel) {
-      const allowedDifficulties = {
-        'beginner': ['easy'],
-        'intermediate': ['easy', 'medium'], 
-        'advanced': ['easy', 'medium', 'challenging']
-      }
-      const userAllowed = allowedDifficulties[preferences.cookingSkillLevel]
-      
-      // Only filter if cooking_difficulty column exists (gradual migration)
-      if (userAllowed) {
-        query = query.in('cooking_difficulty', userAllowed)
-      }
-    }
-
-    // Filter by course types based on mealTypes selection
-    if (preferences.mealTypes && preferences.mealTypes.length > 0) {
-      const requestedCourses = preferences.mealTypes.map((mt: any) => mt.type)
-      // Use overlap operator to find meals that have any of the requested courses
-      query = query.overlaps('courses', requestedCourses)
-    }
 
     // Skip servings filter for now - all meals can be scaled
     // TODO: Re-implement servings filter with proper Supabase syntax
@@ -265,11 +299,7 @@ export async function POST(request: NextRequest) {
     }
 
     // HARD FILTER: Remove meals with allergens/avoided ingredients BEFORE scoring
-    const avoidList = [
-      ...(preferences.allergies || []),
-      ...(preferences.avoidIngredients || []),
-      ...(preferences.foodsToAvoid || [])
-    ].map(item => item.toLowerCase())
+    const avoidList = (preferences.foodsToAvoid || []).map(item => item.toLowerCase())
 
     const saferMeals = avoidList.length > 0 
       ? meals.filter(meal => {
@@ -373,24 +403,56 @@ export async function POST(request: NextRequest) {
         ...(mealsByType.dinner || [])
       ]
 
+      // Get authenticated user for favorite status
+      let userId: string | undefined
+      try {
+        const authSupabase = createServerAuthClient()
+        const { data: { session } } = await authSupabase.auth.getSession()
+        userId = session?.user?.id
+      } catch (error) {
+        console.log('No authenticated user found for favorites')
+      }
+
+      // Add favorite status to meals
+      const mealsWithFavorites = await addFavoriteStatusToMeals(finalMeals, userId)
+      
+      // Also add to organized meal types
+      const mealsByTypeWithFavorites = {
+        breakfast: mealsByType.breakfast ? await addFavoriteStatusToMeals(mealsByType.breakfast, userId) : [],
+        lunch: mealsByType.lunch ? await addFavoriteStatusToMeals(mealsByType.lunch, userId) : [],
+        dinner: mealsByType.dinner ? await addFavoriteStatusToMeals(mealsByType.dinner, userId) : []
+      }
 
       return NextResponse.json({
         success: true,
-        meals: finalMeals,
-        mealsByType,
+        meals: mealsWithFavorites,
+        mealsByType: mealsByTypeWithFavorites,
         backupMealsByType: includeBackups ? backupMealsByType : {},
-        total_count: finalMeals.length,
-        message: finalMeals.length > 0 ? 'Meals recommended successfully' : 'No suitable meals found'
+        total_count: mealsWithFavorites.length,
+        message: mealsWithFavorites.length > 0 ? 'Meals recommended successfully' : 'No suitable meals found'
       })
     } else {
       // Legacy behavior - return all meals without course organization
       const finalMeals = diversifiedMeals.slice(0, limit)
 
+      // Get authenticated user for favorite status
+      let userId: string | undefined
+      try {
+        const authSupabase = createServerAuthClient()
+        const { data: { session } } = await authSupabase.auth.getSession()
+        userId = session?.user?.id
+      } catch (error) {
+        console.log('No authenticated user found for favorites')
+      }
+
+      // Add favorite status to meals
+      const mealsWithFavorites = await addFavoriteStatusToMeals(finalMeals, userId)
+
       return NextResponse.json({
         success: true,
-        meals: finalMeals,
-        total_count: finalMeals.length,
-        message: finalMeals.length > 0 ? 'Meals recommended successfully' : 'No suitable meals found'
+        meals: mealsWithFavorites,
+        total_count: mealsWithFavorites.length,
+        message: mealsWithFavorites.length > 0 ? 'Meals recommended successfully' : 'No suitable meals found'
       })
     }
 
@@ -411,19 +473,13 @@ export async function GET(request: NextRequest) {
     
     // Parse query parameters into preferences
     const preferences: UserPreferences = {
-      diets: searchParams.get('diets')?.split(',').filter(d => d.trim()) || [],
-      allergies: searchParams.get('allergies')?.split(',').filter(a => a.trim()) || [],
-      maxCookTime: (() => {
-        const cookTimeParam = searchParams.get('maxCookTime')
-        return cookTimeParam ? parseInt(cookTimeParam) : 60
-      })(),
+      dietaryStyle: searchParams.get('diets')?.split(',').filter(d => d.trim()) || [],
+      foodsToAvoid: searchParams.get('allergies')?.split(',').filter(a => a.trim()) || [],
       preferredCuisines: searchParams.get('cuisines')?.split(',').filter(c => c.trim()) || [],
-      cookingSkillLevel: searchParams.get('skillLevel') as 'beginner' | 'intermediate' | 'advanced' || undefined,
-      healthGoal: searchParams.get('healthGoal') as any || undefined,
+      spiceTolerance: searchParams.get('spiceTolerance') || '3',
       // Default values for required fields
       mealsPerWeek: 7,
       peoplePerMeal: parseInt(searchParams.get('peoplePerMeal') || '2'),
-      mealTypes: [],
       organicPreference: 'no'
     }
 

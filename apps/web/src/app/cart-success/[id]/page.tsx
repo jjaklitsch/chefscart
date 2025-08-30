@@ -5,6 +5,7 @@ import { useRouter, useParams } from 'next/navigation'
 import { CheckCircle, ExternalLink, RefreshCw, Home } from 'lucide-react'
 import Link from 'next/link'
 import { useAuth } from '../../../../contexts/AuthContext'
+import InstacartInstructionsModal from '../../../../components/InstacartInstructionsModal'
 
 export default function CartSuccessPage() {
   const { user } = useAuth()
@@ -15,6 +16,7 @@ export default function CartSuccessPage() {
   const [mealPlanData, setMealPlanData] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [autoRedirectTimer, setAutoRedirectTimer] = useState(3)
+  const [showInstructions, setShowInstructions] = useState(false)
 
   useEffect(() => {
     loadMealPlanData()
@@ -23,8 +25,8 @@ export default function CartSuccessPage() {
   // Auto-open cart and redirect for signed-in users
   useEffect(() => {
     if (user && mealPlanData?.cartUrl && !loading) {
-      // Automatically open cart in new tab
-      window.open(mealPlanData.cartUrl, '_blank')
+      // Show instructions before opening cart
+      setShowInstructions(true)
       
       // Start countdown to redirect to dashboard
       const timer = setInterval(() => {
@@ -59,7 +61,7 @@ export default function CartSuccessPage() {
 
   const openInstacartCart = () => {
     if (mealPlanData?.cartUrl) {
-      window.open(mealPlanData.cartUrl, '_blank')
+      setShowInstructions(true)
     }
   }
 
@@ -192,6 +194,18 @@ export default function CartSuccessPage() {
           )}
         </div>
       </div>
+
+      {/* Instacart Instructions Modal */}
+      <InstacartInstructionsModal
+        isOpen={showInstructions}
+        onClose={() => setShowInstructions(false)}
+        onContinue={() => {
+          if (mealPlanData?.cartUrl) {
+            window.open(mealPlanData.cartUrl, '_blank')
+          }
+          setShowInstructions(false)
+        }}
+      />
     </div>
   )
 }

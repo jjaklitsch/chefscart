@@ -6,6 +6,7 @@ import GuidedOnboarding from '../../../components/GuidedOnboarding'
 import MealPlanPreview from '../../../components/MealPlanPreview'
 import CartBuilder from '../../../components/CartBuilder'
 import CartPreparation from '../../../components/CartPreparation'
+import InstacartInstructionsModal from '../../../components/InstacartInstructionsModal'
 import { UserPreferences, MealPlan } from '../../../types'
 
 function OnboardingPageContent() {
@@ -15,6 +16,8 @@ function OnboardingPageContent() {
   const [consolidatedCart, setConsolidatedCart] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [showInstructions, setShowInstructions] = useState(false)
+  const [cartUrl, setCartUrl] = useState<string | null>(null)
   const router = useRouter()
 
   // Load existing preferences from localStorage when component mounts
@@ -265,9 +268,10 @@ function OnboardingPageContent() {
       const updatedMealPlanData = { ...mealPlanData, status: 'cart_created', updatedAt: new Date().toISOString() }
       localStorage.setItem(`chefscart_mealplan_${mealPlanId}`, JSON.stringify(updatedMealPlanData))
       
-      // Redirect to Instacart cart
+      // Show instructions before redirecting to Instacart
       if (data.cartUrl) {
-        window.open(data.cartUrl, '_blank')
+        setCartUrl(data.cartUrl)
+        setShowInstructions(true)
       }
       
       setStep('cart')
@@ -389,7 +393,28 @@ function OnboardingPageContent() {
     )
   }
 
-  return null
+  const handleInstructionsContinue = () => {
+    if (cartUrl) {
+      window.open(cartUrl, '_blank')
+    }
+    setShowInstructions(false)
+  }
+
+  const handleInstructionsClose = () => {
+    setShowInstructions(false)
+    setStep('cartprep') // Go back to cart prep step
+  }
+
+  return (
+    <>
+      <InstacartInstructionsModal
+        isOpen={showInstructions}
+        onClose={handleInstructionsClose}
+        onContinue={handleInstructionsContinue}
+      />
+      {null}
+    </>
+  )
 }
 
 export default function OnboardingPage() {

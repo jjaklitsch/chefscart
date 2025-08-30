@@ -1,0 +1,722 @@
+{
+  "timestamp": "2025-08-30T06:04:37.584Z",
+  "mode": "dry_run",
+  "total_meals": 10,
+  "issues_found": 10,
+  "incomplete_meals": [
+    {
+      "meal": "Đậu Hũ Sốt Cà (Tofu Tomato Sauce)",
+      "issues": [
+        "Lacks a significant amount of vegetables and a clear carbohydrate source (rice or noodles) to complete the meal."
+      ]
+    },
+    {
+      "meal": "Penne all'Arrabbiata",
+      "issues": [
+        "Lacks a clear protein source, which is essential for a complete meal."
+      ]
+    },
+    {
+      "meal": "BBQ Ribs with Baked Beans",
+      "issues": [
+        "Lack of fresh vegetables or fiber sources, which are essential for a balanced meal."
+      ]
+    },
+    {
+      "meal": "Mediterranean Tuna Olive Chopped Salad",
+      "issues": [
+        "Lacks complex carbohydrates which are important for a complete meal."
+      ]
+    },
+    {
+      "meal": "Caprese Burrata Greens",
+      "issues": [
+        "Lacks complex carbohydrates, which are typically expected in a complete meal."
+      ]
+    },
+    {
+      "meal": "Miso-Ginger Glazed Cod & Greens",
+      "issues": [
+        "Lacks a significant carbohydrate source, which is essential for a balanced meal."
+      ]
+    },
+    {
+      "meal": "Pork Chops with Calvados Apples",
+      "issues": [
+        "Lack of a carbohydrate source, which is essential for a balanced meal."
+      ]
+    },
+    {
+      "meal": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+      "issues": [
+        "Insufficient protein content for a complete meal"
+      ]
+    }
+  ],
+  "missing_ingredients": [
+    {
+      "meal": "Đậu Hũ Sốt Cà (Tofu Tomato Sauce)",
+      "missing": [
+        {
+          "name": "rice or noodles",
+          "reason": "A carbohydrate source is essential for a complete meal, providing energy and balancing the dish.",
+          "source": "implied in the description and instructions as a serving suggestion.",
+          "importance": "essential"
+        },
+        {
+          "name": "additional vegetables (e.g., bell peppers, carrots)",
+          "reason": "To enhance the nutritional profile and provide fiber, color, and additional vitamins.",
+          "source": "not mentioned but expected in a balanced meal.",
+          "importance": "recommended"
+        }
+      ]
+    },
+    {
+      "meal": "Penne all'Arrabbiata",
+      "missing": [
+        {
+          "name": "protein source (e.g., chicken, beans, or lentils)",
+          "reason": "A protein source is essential for a balanced meal, providing necessary amino acids and satiety.",
+          "source": "not mentioned in title/description/instructions",
+          "importance": "essential"
+        }
+      ]
+    },
+    {
+      "meal": "BBQ Ribs with Baked Beans",
+      "missing": [
+        {
+          "name": "fresh vegetables (e.g., coleslaw or a green salad)",
+          "reason": "Fresh vegetables provide essential vitamins, minerals, and fiber, which are lacking in this meal.",
+          "source": "not mentioned in title/description/instructions",
+          "importance": "essential"
+        }
+      ]
+    },
+    {
+      "meal": "Mediterranean Tuna Olive Chopped Salad",
+      "missing": [
+        {
+          "name": "whole grain or starchy component (e.g., quinoa, couscous, or bread)",
+          "reason": "To provide complex carbohydrates that are essential for energy and satiety.",
+          "source": "not mentioned in title/description/instructions but expected in a complete meal.",
+          "importance": "essential"
+        }
+      ]
+    },
+    {
+      "meal": "Caprese Burrata Greens",
+      "missing": [
+        {
+          "name": "crusty bread or grains",
+          "reason": "To provide a source of complex carbohydrates, which are essential for a complete meal.",
+          "source": "implied in the description as a suggested accompaniment but not included in the main ingredients.",
+          "importance": "essential"
+        }
+      ]
+    },
+    {
+      "meal": "Miso-Ginger Glazed Cod & Greens",
+      "missing": [
+        {
+          "name": "cooked rice or noodles",
+          "reason": "A carbohydrate source is typically expected in a Japanese meal to complement the protein and vegetables.",
+          "source": "cultural expectation in Japanese cuisine.",
+          "importance": "essential"
+        }
+      ]
+    },
+    {
+      "meal": "Pork Chops with Calvados Apples",
+      "missing": [
+        {
+          "name": "starch or grain (e.g., rice, potatoes, or bread)",
+          "reason": "A carbohydrate source is necessary to provide energy and balance the meal. It is a standard expectation for a complete meal.",
+          "source": "Culinary standards and meal composition principles.",
+          "importance": "essential"
+        }
+      ]
+    },
+    {
+      "meal": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+      "missing": [
+        {
+          "name": "protein source (e.g., grilled chicken, chickpeas)",
+          "reason": "A protein source is essential for a balanced meal, especially in Mediterranean cuisine where proteins are typically included.",
+          "source": "not mentioned in title/description/instructions",
+          "importance": "essential"
+        }
+      ]
+    }
+  ],
+  "quantity_issues": [
+    {
+      "meal": "Đậu Hũ Sốt Cà (Tofu Tomato Sauce)",
+      "fixes": [
+        {
+          "ingredient": "sugar",
+          "current_quantity": 1,
+          "current_unit": "tsp",
+          "fixed_quantity": 1,
+          "fixed_unit": "tbsp",
+          "reasoning": "Increasing sugar to 1 tablespoon will better balance the acidity of the tomato sauce, enhancing the overall flavor profile."
+        }
+      ]
+    },
+    {
+      "meal": "Penne all'Arrabbiata",
+      "fixes": [
+        {
+          "ingredient": "penne rigate",
+          "current_quantity": 400,
+          "current_unit": "g",
+          "fixed_quantity": 224,
+          "fixed_unit": "g",
+          "reasoning": "The recommended serving size for dry pasta is about 2 oz (56 g) per person, totaling 224 g for 4 servings, which is more appropriate for a balanced meal."
+        }
+      ]
+    },
+    {
+      "meal": "BBQ Ribs with Baked Beans",
+      "fixes": [
+        {
+          "ingredient": "salt",
+          "current_quantity": 1,
+          "current_unit": "tsp",
+          "fixed_quantity": 1,
+          "fixed_unit": "tsp",
+          "reasoning": "While the quantity is acceptable, the term 'pinch' should be avoided for clarity. A teaspoon is a standard measurement that ensures consistent seasoning."
+        }
+      ]
+    },
+    {
+      "meal": "Mediterranean Tuna Olive Chopped Salad",
+      "fixes": [
+        {
+          "ingredient": "salt",
+          "current_quantity": 0.75,
+          "current_unit": "tsp",
+          "fixed_quantity": 1,
+          "fixed_unit": "tsp",
+          "reasoning": "Adjusting the salt to a full teaspoon provides a more standard measurement for seasoning, ensuring adequate flavor without being overly salty."
+        }
+      ]
+    },
+    {
+      "meal": "Caprese Burrata Greens",
+      "fixes": [
+        {
+          "ingredient": "mixed salad greens",
+          "current_quantity": 5,
+          "current_unit": "oz",
+          "fixed_quantity": 8,
+          "fixed_unit": "oz",
+          "reasoning": "Increasing the quantity of mixed greens to 8 oz would ensure that each serving contains a sufficient amount of vegetables, aligning with the recommended 2 oz per person for a salad."
+        },
+        {
+          "ingredient": "shallot, finely minced",
+          "current_quantity": 0.5,
+          "current_unit": "count",
+          "fixed_quantity": 1,
+          "fixed_unit": "count",
+          "reasoning": "Specifying 1 shallot instead of 0.5 provides clarity and ensures that there is enough flavor in the dressing."
+        },
+        {
+          "ingredient": "salt",
+          "current_quantity": 0.5,
+          "current_unit": "tsp",
+          "fixed_quantity": 1,
+          "fixed_unit": "tsp",
+          "reasoning": "Standardizing the salt measurement to 1 tsp instead of a 'pinch' ensures proper seasoning and consistency in flavor."
+        }
+      ]
+    },
+    {
+      "meal": "Miso-Ginger Glazed Cod & Greens",
+      "fixes": [
+        {
+          "ingredient": "baby bok choy",
+          "current_quantity": 8,
+          "current_unit": "each",
+          "fixed_quantity": 4,
+          "fixed_unit": "cups",
+          "reasoning": "While the current quantity of baby bok choy is sufficient, converting it to cups provides a clearer measurement for serving size. Each quartered bok choy can yield about 1/2 cup when cooked, thus 4 cups would be more appropriate for 4 servings."
+        },
+        {
+          "ingredient": "baby spinach leaves",
+          "current_quantity": 4,
+          "current_unit": "cup",
+          "fixed_quantity": 2,
+          "fixed_unit": "cups",
+          "reasoning": "The current quantity of baby spinach is optional and could be reduced to 2 cups for better balance with the other greens. This ensures that the meal remains focused on the primary ingredients while still providing adequate volume."
+        }
+      ]
+    },
+    {
+      "meal": "Pork Chops with Calvados Apples",
+      "fixes": [
+        {
+          "ingredient": "bone-in pork chops",
+          "current_quantity": 4,
+          "current_unit": "each",
+          "fixed_quantity": 4,
+          "fixed_unit": "each",
+          "reasoning": "The quantity of pork chops is appropriate for 4 servings, adhering to the standard serving size of 6-8 oz per person."
+        },
+        {
+          "ingredient": "olive oil",
+          "current_quantity": 2,
+          "current_unit": "tbsp",
+          "fixed_quantity": 2,
+          "fixed_unit": "tbsp",
+          "reasoning": "The quantity of olive oil is appropriate for sautéing the pork and vegetables."
+        }
+      ]
+    },
+    {
+      "meal": "Low-Carb Teriyaki Chicken & Cauli Rice",
+      "fixes": [
+        {
+          "ingredient": "salt",
+          "current_quantity": 2,
+          "current_unit": "g",
+          "fixed_quantity": 1,
+          "fixed_unit": "tsp",
+          "reasoning": "The quantity of salt should be expressed in teaspoons for clarity and standardization, as 2g is approximately 1/2 tsp, which is a more common measurement in cooking."
+        }
+      ]
+    },
+    {
+      "meal": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+      "fixes": [
+        {
+          "ingredient": "feta cheese, crumbled",
+          "current_quantity": 150,
+          "current_unit": "g",
+          "fixed_quantity": 300,
+          "fixed_unit": "g",
+          "reasoning": "To meet the recommended protein intake of 6-8 oz per person, the feta cheese quantity should be increased to approximately 300g for 4 servings, ensuring each person receives a more adequate protein portion."
+        }
+      ]
+    },
+    {
+      "meal": "Bún Bò Huế (Spicy Beef Noodle Soup)",
+      "fixes": [
+        {
+          "ingredient": "salt",
+          "current_quantity": 1,
+          "current_unit": "tsp",
+          "fixed_quantity": 1,
+          "fixed_unit": "tsp",
+          "reasoning": "The quantity of salt is appropriate, but it should be noted that a more precise measurement could be beneficial. Instead of 'pinch', a teaspoon is a standard measurement that provides clarity."
+        }
+      ]
+    }
+  ],
+  "fixed_meals": [
+    {
+      "meal": "Đậu Hũ Sốt Cà (Tofu Tomato Sauce)",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The meal features tofu as the primary protein source, providing adequate protein content. The tomato sauce contributes carbohydrates and some vitamins, while the onion and garlic add flavor and additional nutrients. However, the meal lacks a significant amount of vegetables, which are essential for fiber and micronutrients. The inclusion of rice or noodles as a base is necessary to complete the carbohydrate component of the meal. Overall, while the meal is balanced in terms of protein and carbohydrates, it could benefit from more vegetables and a clear carbohydrate source.",
+          "ingredient_validation_process": "I cross-referenced the ingredients listed in the title, description, and instructions with the actual ingredients. The title mentions 'Tofu Tomato Sauce,' which aligns with the primary ingredient. The description highlights 'tofu simmered in tomato sauce,' confirming the use of tomato sauce. The instructions detail the cooking process, including garlic and onion, which are present in the ingredients list. However, there is an implicit expectation for rice or noodles as a serving base that is not explicitly listed.",
+          "quantity_analysis_approach": "The quantities of ingredients were evaluated against professional cooking standards. For tofu, 400g is appropriate for 4 servings, as it provides about 100g of protein per serving. The tomato sauce at 1 cup is sufficient for flavor and moisture. The oil quantity is adequate for frying. The garlic and onion quantities are also appropriate for flavoring. However, the amount of sugar (1 tsp) seems low given the volume of tomato sauce; typically, a tablespoon might be more suitable to balance acidity. The optional basil garnish is not counted in the main meal components."
+        },
+        "is_complete_meal": false,
+        "completeness_issues": [
+          "Lacks a significant amount of vegetables and a clear carbohydrate source (rice or noodles) to complete the meal."
+        ],
+        "missing_ingredients": [
+          {
+            "name": "rice or noodles",
+            "reason": "A carbohydrate source is essential for a complete meal, providing energy and balancing the dish.",
+            "source": "implied in the description and instructions as a serving suggestion.",
+            "importance": "essential"
+          },
+          {
+            "name": "additional vegetables (e.g., bell peppers, carrots)",
+            "reason": "To enhance the nutritional profile and provide fiber, color, and additional vitamins.",
+            "source": "not mentioned but expected in a balanced meal.",
+            "importance": "recommended"
+          }
+        ],
+        "quantity_fixes": [
+          {
+            "ingredient": "sugar",
+            "current_quantity": 1,
+            "current_unit": "tsp",
+            "fixed_quantity": 1,
+            "fixed_unit": "tbsp",
+            "reasoning": "Increasing sugar to 1 tablespoon will better balance the acidity of the tomato sauce, enhancing the overall flavor profile."
+          }
+        ],
+        "overall_quality_score": 6,
+        "critical_issues": [
+          "Lack of a carbohydrate source and insufficient vegetable content, which are critical for meal completeness."
+        ],
+        "confidence_level": "high"
+      },
+      "fixed": "would_update"
+    },
+    {
+      "meal": "Penne all'Arrabbiata",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The meal provides a balance of carbohydrates from the penne pasta, healthy fats from the extra-virgin olive oil, and fiber and vitamins from the garlic, onion, and parsley. However, it lacks a clear protein source, which is essential for a complete meal. While the cheese can add some protein, it is optional and not included in the main ingredient list, making the meal less nutritionally complete. Overall, it meets the carbohydrate and fat requirements but falls short on protein.",
+          "ingredient_validation_process": "I cross-referenced the ingredients listed in the title, description, and cooking instructions with the actual ingredients. The title mentions 'Penne all'Arrabbiata' which aligns with the main ingredient of penne rigate. The description highlights the tomato-garlic sauce, which is reflected in the ingredients. The cooking instructions detail the preparation steps that correspond with the ingredients provided. However, the absence of a clear protein source was noted, as it was not mentioned in any of the sections.",
+          "quantity_analysis_approach": "The quantities of ingredients were evaluated against professional cooking standards. For pasta, the recommended serving is about 2 oz (56 g) dry per person, which totals 224 g for 4 servings, while the recipe calls for 400 g, which is excessive. The olive oil is within a reasonable range for flavoring. The garlic and onion quantities are appropriate for flavoring, but the optional cheese should be included in the main ingredient list for completeness."
+        },
+        "is_complete_meal": false,
+        "completeness_issues": [
+          "Lacks a clear protein source, which is essential for a complete meal."
+        ],
+        "missing_ingredients": [
+          {
+            "name": "protein source (e.g., chicken, beans, or lentils)",
+            "reason": "A protein source is essential for a balanced meal, providing necessary amino acids and satiety.",
+            "source": "not mentioned in title/description/instructions",
+            "importance": "essential"
+          }
+        ],
+        "quantity_fixes": [
+          {
+            "ingredient": "penne rigate",
+            "current_quantity": 400,
+            "current_unit": "g",
+            "fixed_quantity": 224,
+            "fixed_unit": "g",
+            "reasoning": "The recommended serving size for dry pasta is about 2 oz (56 g) per person, totaling 224 g for 4 servings, which is more appropriate for a balanced meal."
+          }
+        ],
+        "overall_quality_score": 6,
+        "critical_issues": [
+          "Absence of a protein source significantly affects meal completeness."
+        ],
+        "confidence_level": "high"
+      },
+      "fixed": "would_update"
+    },
+    {
+      "meal": "BBQ Ribs with Baked Beans",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The meal consists of BBQ ribs and baked beans, providing a solid protein source from the pork ribs and some carbohydrates from the baked beans. However, there is a lack of fresh vegetables or fiber-rich sources, which are essential for a balanced meal. While the dish is rich in flavor and comfort, it does not meet the nutritional balance principles fully, as it lacks adequate vegetables and healthy fats.",
+          "ingredient_validation_process": "I cross-referenced the ingredients listed in the title, description, and cooking instructions with the actual ingredients provided. The title mentions 'BBQ Ribs with Baked Beans,' which aligns with the main ingredients. The description emphasizes the flavors and components, all of which are present in the ingredient list. The cooking instructions detail the preparation of the ribs and beans, confirming the inclusion of all necessary ingredients. However, there are implicit ingredients like ketchup for the beans that are not explicitly listed.",
+          "quantity_analysis_approach": "For the protein source, 3 lbs of pork ribs for 4 servings is adequate, providing approximately 12 oz per person, which is above the recommended 6-8 oz. The baked beans are listed as 2 cups total, which is about 1/2 cup per person, meeting the carbohydrate requirement. However, there are no vegetables included, which should ideally be 1/2 to 1 cup per person. The units used are compliant with Instacart standards, but the use of 'pinch' for salt is non-standard and should be quantified more precisely."
+        },
+        "is_complete_meal": false,
+        "completeness_issues": [
+          "Lack of fresh vegetables or fiber sources, which are essential for a balanced meal."
+        ],
+        "missing_ingredients": [
+          {
+            "name": "fresh vegetables (e.g., coleslaw or a green salad)",
+            "reason": "Fresh vegetables provide essential vitamins, minerals, and fiber, which are lacking in this meal.",
+            "source": "not mentioned in title/description/instructions",
+            "importance": "essential"
+          }
+        ],
+        "quantity_fixes": [
+          {
+            "ingredient": "salt",
+            "current_quantity": 1,
+            "current_unit": "tsp",
+            "fixed_quantity": 1,
+            "fixed_unit": "tsp",
+            "reasoning": "While the quantity is acceptable, the term 'pinch' should be avoided for clarity. A teaspoon is a standard measurement that ensures consistent seasoning."
+          }
+        ],
+        "overall_quality_score": 6,
+        "critical_issues": [
+          "Absence of vegetables affects the meal's nutritional completeness."
+        ],
+        "confidence_level": "medium"
+      },
+      "fixed": "would_update"
+    },
+    {
+      "meal": "Mediterranean Tuna Olive Chopped Salad",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The Mediterranean Tuna Olive Chopped Salad provides a balanced meal with adequate nutrition. It includes a clear protein source from the canned tuna, which is a good source of lean protein. The salad is rich in vegetables, including mixed baby romaine, cherry tomatoes, cucumber, and red onion, providing fiber, vitamins, and minerals. Healthy fats are incorporated through the olive oil and olives, which are essential for nutrient absorption and overall health. However, there are no complex carbohydrates present, which could be a consideration for a more complete meal. Overall, it is a light meal suitable for lunch or a light dinner, but may not be filling enough for everyone without additional carbs.",
+          "ingredient_validation_process": "I cross-referenced the ingredients listed in the title, description, and cooking instructions with the actual ingredients list. All ingredients mentioned in the title and description are present in the ingredient list. The instructions detail the preparation of each ingredient, confirming their inclusion. There are no significant gaps in the ingredient list, as all components necessary for the salad are accounted for.",
+          "quantity_analysis_approach": "The quantities of ingredients were evaluated against professional cooking standards. The canned tuna (14 oz) provides adequate protein for 4 servings, aligning with the recommended 6-8 oz per person. The vegetables are sufficient, with 6 oz of romaine and 1.5 cups of cherry tomatoes, which meets the vegetable intake recommendation. The olive oil (4 tbsp) and feta (0.5 cup) provide healthy fats, but the absence of grains or starchy components may leave some diners unsatisfied. The units used are compliant with Instacart standards, although 'pinch' for salt is non-standard and should be quantified more precisely."
+        },
+        "is_complete_meal": false,
+        "completeness_issues": [
+          "Lacks complex carbohydrates which are important for a complete meal."
+        ],
+        "missing_ingredients": [
+          {
+            "name": "whole grain or starchy component (e.g., quinoa, couscous, or bread)",
+            "reason": "To provide complex carbohydrates that are essential for energy and satiety.",
+            "source": "not mentioned in title/description/instructions but expected in a complete meal.",
+            "importance": "essential"
+          }
+        ],
+        "quantity_fixes": [
+          {
+            "ingredient": "salt",
+            "current_quantity": 0.75,
+            "current_unit": "tsp",
+            "fixed_quantity": 1,
+            "fixed_unit": "tsp",
+            "reasoning": "Adjusting the salt to a full teaspoon provides a more standard measurement for seasoning, ensuring adequate flavor without being overly salty."
+          }
+        ],
+        "overall_quality_score": 7,
+        "critical_issues": [
+          "Lack of complex carbohydrates may affect meal satisfaction."
+        ],
+        "confidence_level": "high"
+      },
+      "fixed": "would_update"
+    },
+    {
+      "meal": "Caprese Burrata Greens",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The Caprese Burrata Greens salad is primarily composed of fresh vegetables (mixed greens, cherry tomatoes, basil), a protein source (burrata cheese), healthy fats (extra virgin olive oil), and a dressing that adds flavor and acidity. However, it lacks complex carbohydrates, which are typically expected in a complete meal. While it can serve as a light lunch or side dish, it may not be filling enough for a main course without additional components such as bread or grains. Therefore, while it is nutritionally balanced in terms of vegetables, protein, and fats, it does not provide a complete meal experience due to the absence of carbohydrates.",
+          "ingredient_validation_process": "I cross-referenced the ingredients listed in the title, description, and cooking instructions with the actual ingredients provided. All ingredients mentioned in the title and description (mixed greens, cherry tomatoes, basil, burrata, and vinaigrette components) are present in the ingredient list. The cooking instructions also align with the ingredients, as they detail the preparation of the salad and dressing. However, the instructions mention optional garlic, which is not included in the ingredient list, indicating a potential oversight.",
+          "quantity_analysis_approach": "The quantities of ingredients were evaluated against professional cooking standards. The burrata (8 oz) is appropriate for a salad serving 4, providing a sufficient protein source. The mixed greens (5 oz) are slightly below the recommended 2-4 oz per person, which could be adjusted. The cherry tomatoes (1 cup) are adequate, and the olive oil (3 tbsp) is a reasonable amount for dressing. However, the shallot (0.5 count) is vague and should be specified in ounces or a whole number. The use of 'pinch' for salt is non-standard and should be quantified. Overall, while most quantities are reasonable, some adjustments are necessary for clarity and adherence to standards."
+        },
+        "is_complete_meal": false,
+        "completeness_issues": [
+          "Lacks complex carbohydrates, which are typically expected in a complete meal."
+        ],
+        "missing_ingredients": [
+          {
+            "name": "crusty bread or grains",
+            "reason": "To provide a source of complex carbohydrates, which are essential for a complete meal.",
+            "source": "implied in the description as a suggested accompaniment but not included in the main ingredients.",
+            "importance": "essential"
+          }
+        ],
+        "quantity_fixes": [
+          {
+            "ingredient": "mixed salad greens",
+            "current_quantity": 5,
+            "current_unit": "oz",
+            "fixed_quantity": 8,
+            "fixed_unit": "oz",
+            "reasoning": "Increasing the quantity of mixed greens to 8 oz would ensure that each serving contains a sufficient amount of vegetables, aligning with the recommended 2 oz per person for a salad."
+          },
+          {
+            "ingredient": "shallot, finely minced",
+            "current_quantity": 0.5,
+            "current_unit": "count",
+            "fixed_quantity": 1,
+            "fixed_unit": "count",
+            "reasoning": "Specifying 1 shallot instead of 0.5 provides clarity and ensures that there is enough flavor in the dressing."
+          },
+          {
+            "ingredient": "salt",
+            "current_quantity": 0.5,
+            "current_unit": "tsp",
+            "fixed_quantity": 1,
+            "fixed_unit": "tsp",
+            "reasoning": "Standardizing the salt measurement to 1 tsp instead of a 'pinch' ensures proper seasoning and consistency in flavor."
+          }
+        ],
+        "overall_quality_score": 7,
+        "critical_issues": [
+          "Lack of complex carbohydrates makes it less suitable as a complete meal."
+        ],
+        "confidence_level": "medium"
+      },
+      "fixed": "would_update"
+    },
+    {
+      "meal": "Miso-Ginger Glazed Cod & Greens",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The meal features cod fillets as the primary protein source, which is rich in omega-3 fatty acids and high-quality protein. The inclusion of baby bok choy and spinach provides fresh produce and fiber, contributing to the vegetable component. However, there are no significant carbohydrate sources like grains or starchy vegetables, which are typically expected in a complete meal. The fats are represented by sesame oil and the neutral oil used for sautéing, which are healthy options. Overall, while the meal is rich in protein, vegetables, and healthy fats, it lacks a substantial carbohydrate component, which is essential for a balanced meal.",
+          "ingredient_validation_process": "I cross-referenced the ingredients listed in the title, description, and cooking instructions with the actual ingredients provided. The title mentions cod and greens, which are present. The description highlights miso-ginger glaze and various seasonings, all of which are included in the ingredients list. The instructions detail the preparation of the glaze and cooking methods, which align with the ingredients. However, there is an implicit expectation for a carbohydrate source, such as rice or noodles, which is not explicitly mentioned but is culturally relevant in Japanese cuisine.",
+          "quantity_analysis_approach": "The quantities of ingredients were evaluated against professional cooking standards. The cod fillets are provided at 6-7 oz each, which is appropriate for a protein serving. The vegetables, particularly the bok choy and spinach, are adequate but could be increased to ensure a full serving of vegetables per person. The oils and condiments are in appropriate quantities for flavoring. However, the absence of a carbohydrate source means that the overall meal lacks a complete balance. The units used are compliant with Instacart standards, with no non-standard units present."
+        },
+        "is_complete_meal": false,
+        "completeness_issues": [
+          "Lacks a significant carbohydrate source, which is essential for a balanced meal."
+        ],
+        "missing_ingredients": [
+          {
+            "name": "cooked rice or noodles",
+            "reason": "A carbohydrate source is typically expected in a Japanese meal to complement the protein and vegetables.",
+            "source": "cultural expectation in Japanese cuisine.",
+            "importance": "essential"
+          }
+        ],
+        "quantity_fixes": [
+          {
+            "ingredient": "baby bok choy",
+            "current_quantity": 8,
+            "current_unit": "each",
+            "fixed_quantity": 4,
+            "fixed_unit": "cups",
+            "reasoning": "While the current quantity of baby bok choy is sufficient, converting it to cups provides a clearer measurement for serving size. Each quartered bok choy can yield about 1/2 cup when cooked, thus 4 cups would be more appropriate for 4 servings."
+          },
+          {
+            "ingredient": "baby spinach leaves",
+            "current_quantity": 4,
+            "current_unit": "cup",
+            "fixed_quantity": 2,
+            "fixed_unit": "cups",
+            "reasoning": "The current quantity of baby spinach is optional and could be reduced to 2 cups for better balance with the other greens. This ensures that the meal remains focused on the primary ingredients while still providing adequate volume."
+          }
+        ],
+        "overall_quality_score": 7,
+        "critical_issues": [
+          "Lack of carbohydrate source affects meal completeness and cultural authenticity."
+        ],
+        "confidence_level": "high"
+      },
+      "fixed": "would_update"
+    },
+    {
+      "meal": "Pork Chops with Calvados Apples",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The meal consists of bone-in pork chops, which provide a robust protein source. The dish includes caramelized apples, shallots, and garlic, which contribute to the vegetable and fiber content. However, there are no complex carbohydrates present, such as grains or starchy vegetables, which are typically expected in a complete meal. The fats are provided by olive oil and butter, which are healthy fats. Overall, while the dish is rich in protein and flavor, it lacks a carbohydrate component, which is essential for a balanced meal.",
+          "ingredient_validation_process": "I systematically extracted ingredients from the title, description, and cooking instructions. The title mentions 'Pork Chops' and 'Calvados Apples', which are both present in the ingredients list. The description highlights the use of pork, apples, and a pan sauce, all of which are accounted for. The cooking instructions detail the preparation of the pork and the sauce, confirming the presence of shallots, garlic, and other ingredients. There are no significant gaps in the ingredients list based on the title and description, but the absence of a carbohydrate source is notable.",
+          "quantity_analysis_approach": "For protein, the recipe includes 4 bone-in pork chops, which typically weigh around 6-8 oz each, meeting the standard serving size. The use of 3 tablespoons of flour for dredging is appropriate for the amount of meat. The vegetables, particularly the apples, are included in sufficient quantity (2 apples for 4 servings), but there is no starchy component. The liquid measurements for Calvados and chicken stock are appropriate for deglazing and creating the sauce. All units used are compliant with Instacart standards."
+        },
+        "is_complete_meal": false,
+        "completeness_issues": [
+          "Lack of a carbohydrate source, which is essential for a balanced meal."
+        ],
+        "missing_ingredients": [
+          {
+            "name": "starch or grain (e.g., rice, potatoes, or bread)",
+            "reason": "A carbohydrate source is necessary to provide energy and balance the meal. It is a standard expectation for a complete meal.",
+            "source": "Culinary standards and meal composition principles.",
+            "importance": "essential"
+          }
+        ],
+        "quantity_fixes": [
+          {
+            "ingredient": "bone-in pork chops",
+            "current_quantity": 4,
+            "current_unit": "each",
+            "fixed_quantity": 4,
+            "fixed_unit": "each",
+            "reasoning": "The quantity of pork chops is appropriate for 4 servings, adhering to the standard serving size of 6-8 oz per person."
+          },
+          {
+            "ingredient": "olive oil",
+            "current_quantity": 2,
+            "current_unit": "tbsp",
+            "fixed_quantity": 2,
+            "fixed_unit": "tbsp",
+            "reasoning": "The quantity of olive oil is appropriate for sautéing the pork and vegetables."
+          }
+        ],
+        "overall_quality_score": 7,
+        "critical_issues": [
+          "Absence of a carbohydrate component affects meal balance."
+        ],
+        "confidence_level": "medium"
+      },
+      "fixed": "would_update"
+    },
+    {
+      "meal": "Low-Carb Teriyaki Chicken & Cauli Rice",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The meal features boneless skinless chicken thighs as the primary protein source, which is adequate for a high-protein meal. The inclusion of cauliflower rice provides a low-carb alternative to traditional grains, fulfilling the carbohydrate component with a vegetable base. Fresh ginger, garlic, and green onions add flavor and nutritional benefits, while the use of healthy fats from avocado oil and sesame oil enhances the meal's fat content. Overall, the meal is balanced in terms of protein, carbohydrates (from vegetables), and healthy fats, meeting the expectations for a complete meal.",
+          "ingredient_validation_process": "I systematically extracted food items from the title, description, and cooking instructions. The title mentions 'Low-Carb Teriyaki Chicken & Cauli Rice,' which aligns with the ingredients listed. The description emphasizes the use of chicken, cauliflower rice, and teriyaki sauce components, all of which are present in the ingredient list. The cooking instructions detail the preparation of the sauce and cooking methods, confirming the presence of all necessary ingredients. No significant gaps were identified in the ingredient list.",
+          "quantity_analysis_approach": "The quantities of ingredients were evaluated against professional cooking standards. For proteins, the recommended serving size is 6-8 oz per person; with 600g (approximately 21 oz) of chicken thighs, this is sufficient for 4 servings. The cauliflower rice at 600g provides about 1.5 cups per person, which is adequate. The liquid quantities for the sauce and cooking oils are appropriate for the dish's requirements. All units used are compliant with Instacart standards, except for the 'pinch' for salt, which is a non-standard unit."
+        },
+        "is_complete_meal": true,
+        "completeness_issues": [],
+        "missing_ingredients": [],
+        "quantity_fixes": [
+          {
+            "ingredient": "salt",
+            "current_quantity": 2,
+            "current_unit": "g",
+            "fixed_quantity": 1,
+            "fixed_unit": "tsp",
+            "reasoning": "The quantity of salt should be expressed in teaspoons for clarity and standardization, as 2g is approximately 1/2 tsp, which is a more common measurement in cooking."
+          }
+        ],
+        "overall_quality_score": 9,
+        "critical_issues": [],
+        "confidence_level": "high"
+      },
+      "fixed": "would_update"
+    },
+    {
+      "meal": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The Watermelon–Feta–Mint Salad is primarily a fresh salad that combines fruits, vegetables, and dairy. It provides a refreshing taste profile suitable for warm weather. However, it lacks a significant protein source, which is essential for a complete meal. The feta cheese offers some protein, but at 150g for 4 servings, it may not be sufficient to meet the recommended protein intake per person. The salad includes carbohydrates from watermelon and optional cucumber, which are primarily simple sugars rather than complex carbohydrates. The inclusion of healthy fats from olive oil is present, contributing to the overall flavor and nutritional profile. While the salad is vibrant and includes fresh produce, it may not be filling enough as a standalone meal without additional protein or grains.",
+          "ingredient_validation_process": "The ingredients listed in the meal data were cross-referenced with the title, description, and cooking instructions. All primary ingredients mentioned in the title and description (watermelon, feta, mint) are present in the ingredients list. The instructions detail the preparation of these ingredients, confirming their necessity. Optional ingredients like cucumber and red onion are also included, which aligns with the description of the salad being customizable. However, there is no mention of a grain or a more substantial protein source, which could be expected in a Mediterranean-style meal.",
+          "quantity_analysis_approach": "The quantities of ingredients were evaluated against professional cooking standards. For proteins, the recommended serving size is 6-8 oz per person, which translates to approximately 1.5-2 oz of feta per person in this case. This is below the recommended amount for a complete meal. The watermelon quantity (800g) is appropriate, providing roughly 200g per serving, which is sufficient for a fruit component. The optional cucumber and red onion quantities are also reasonable but may not be necessary for every serving. The liquid measurements for lime juice and olive oil are appropriate for the dressing, and the use of teaspoons and milliliters aligns with Instacart's unit compliance."
+        },
+        "is_complete_meal": false,
+        "completeness_issues": [
+          "Insufficient protein content for a complete meal"
+        ],
+        "missing_ingredients": [
+          {
+            "name": "protein source (e.g., grilled chicken, chickpeas)",
+            "reason": "A protein source is essential for a balanced meal, especially in Mediterranean cuisine where proteins are typically included.",
+            "source": "not mentioned in title/description/instructions",
+            "importance": "essential"
+          }
+        ],
+        "quantity_fixes": [
+          {
+            "ingredient": "feta cheese, crumbled",
+            "current_quantity": 150,
+            "current_unit": "g",
+            "fixed_quantity": 300,
+            "fixed_unit": "g",
+            "reasoning": "To meet the recommended protein intake of 6-8 oz per person, the feta cheese quantity should be increased to approximately 300g for 4 servings, ensuring each person receives a more adequate protein portion."
+          }
+        ],
+        "overall_quality_score": 6,
+        "critical_issues": [
+          "Lack of sufficient protein source to make it a complete meal"
+        ],
+        "confidence_level": "medium"
+      },
+      "fixed": "would_update"
+    },
+    {
+      "meal": "Bún Bò Huế (Spicy Beef Noodle Soup)",
+      "audit": {
+        "reasoning_process": {
+          "meal_completeness_analysis": "The meal Bún Bò Huế is designed to be a complete dish, featuring a balance of protein, carbohydrates, vegetables, and fats. The primary protein sources are beef shank and brisket, providing ample protein content. The thick rice vermicelli noodles serve as the carbohydrate component, while the fresh herbs, shallots, garlic, ginger, and lime wedges contribute essential vitamins, minerals, and fiber. The inclusion of shrimp paste and chile oil adds healthy fats and flavor complexity. Overall, this meal meets the nutritional balance principles expected in a Vietnamese dish, which typically includes a protein, carbohydrate, and a variety of fresh vegetables and herbs.",
+          "ingredient_validation_process": "I systematically extracted ingredients from the title, description, and cooking instructions. The title mentions 'Bún Bò Huế' and implies the use of beef and noodles. The description highlights the broth's ingredients and the use of fresh herbs. The cooking instructions detail the preparation of various ingredients, including aromatics and garnishes. I compared these with the actual ingredients list and found that all essential components are present, including beef, pork bones, aromatics, and noodles. However, I noted that some optional ingredients like green onions and cilantro are marked as optional, which may lead to a less authentic experience if omitted.",
+          "quantity_analysis_approach": "I evaluated the quantities of each ingredient against professional cooking standards. For proteins, the recommended serving size is 6-8 oz per person, which aligns with the total amount of beef (3.5 lbs for 6 servings). The rice vermicelli is set at 1 lb, which is appropriate for the serving size. Vegetables like shallots and garlic are included in sufficient quantities, but I noted that the green onions and cilantro are optional, which could affect the overall flavor and presentation. I also checked the units against Instacart standards and found that most units are compliant, but 'pinch' for salt is non-standard and should be quantified more precisely."
+        },
+        "is_complete_meal": true,
+        "completeness_issues": [],
+        "missing_ingredients": [],
+        "quantity_fixes": [
+          {
+            "ingredient": "salt",
+            "current_quantity": 1,
+            "current_unit": "tsp",
+            "fixed_quantity": 1,
+            "fixed_unit": "tsp",
+            "reasoning": "The quantity of salt is appropriate, but it should be noted that a more precise measurement could be beneficial. Instead of 'pinch', a teaspoon is a standard measurement that provides clarity."
+          }
+        ],
+        "overall_quality_score": 9,
+        "critical_issues": [],
+        "confidence_level": "high"
+      },
+      "fixed": "would_update"
+    }
+  ],
+  "failed_fixes": [],
+  "statistics": {
+    "incomplete_meal_count": 8,
+    "meals_with_missing_ingredients": 8,
+    "meals_with_quantity_issues": 10,
+    "total_missing_ingredients": 9,
+    "total_quantity_fixes": 14
+  }
+}
