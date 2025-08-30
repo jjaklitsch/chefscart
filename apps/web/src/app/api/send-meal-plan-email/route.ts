@@ -70,6 +70,7 @@ export async function POST(request: NextRequest) {
       cartUrl,
       meals: mealPlan.recipes.map((recipe: any) => ({
         id: recipe.id,
+        slug: recipe.slug,
         title: recipe.title,
         description: recipe.description,
         cuisine: recipe.cuisine,

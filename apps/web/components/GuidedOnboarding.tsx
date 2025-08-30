@@ -428,8 +428,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         breakfastsPerWeek: answers.breakfastMeals || 0,
         lunchesPerWeek: answers.lunchMeals || 0,
         dinnersPerWeek: answers.dinnerMeals || 0,
-        snacksPerWeek: 0, // Remove snacks as requested
-        dessertsPerWeek: 0, // Remove desserts as requested
         
         // Dietary preferences - process dietary style properly
         dietaryStyle: (() => {
@@ -477,17 +475,10 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
             return [...acc, item]
           }, [])
         })(),
-        
-        // Cooking preferences (defaults for removed steps)
-        healthGoal: 'maintain', // Default since health goal step removed
-        maxCookingTime: 30, // Default since cooking time step removed  
-        cookingSkillLevel: 'intermediate', // Default since cooking skill step removed
-        budgetSensitivity: 'no_limit', // Default since budget step removed
-        customBudgetAmount: '',
         organicPreference: answers.organicPreference || 'yes',
         
         // Process cuisine preferences - expand multi-value options
-        cuisinePreferences: (() => {
+        preferredCuisines: (() => {
           const cuisineAnswers = answers.cuisinePreferences || []
           const processed = cuisineAnswers.reduce((acc: string[], item: string) => {
             if (item === 'other') return acc
@@ -503,55 +494,8 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           return processed
         })(),
         
-        // Meal participation settings
-        mealParticipation: answers.mealParticipation || 'yes',
-        
-        // Additional considerations (removed step)
-        additionalConsiderations: '',
-        dietaryStyleOther: answers.dietaryStyleOther || '',
-        
         // New preference fields
         spiceTolerance: answers.spiceTolerance || '3',
-        
-        // Photo and ingredient identification
-        fridgePantryPhotos: answers.fridgePantryPhotos || [],
-        identifiedIngredients: identifiedIngredients,
-        manuallyAddedIngredients: answers.manuallyAddedIngredients || [],
-        skipPhotoUpload: answers.skipPhotoUpload || false,
-        
-        // Legacy fields for compatibility
-        selectedMealTypes: [],
-        diets: (() => {
-          const dietaryAnswers = answers.dietaryStyle || []
-          if (Array.isArray(dietaryAnswers) && dietaryAnswers.length === 0) {
-            return [] // "None" was selected
-          }
-          
-          // Process pill selections - expand multi-value options
-          const processed = dietaryAnswers.reduce((acc: string[], item: string) => {
-            if (item === 'other') return acc
-            
-            // Find the option and expand if it's multi-value
-            const option = dietaryStyleOptions.find(opt => opt.id === item)
-            if (option && Array.isArray(option.value)) {
-              return [...acc, ...option.value]
-            }
-            return [...acc, item]
-          }, [])
-          
-          // Add other dietary style if specified
-          if (answers.dietaryStyleOther) {
-            processed.push(answers.dietaryStyleOther)
-          }
-          
-          return processed
-        })(),
-        allergies: answers.foodsToAvoid ? 
-          (typeof answers.foodsToAvoid === 'string' ? 
-            answers.foodsToAvoid.split(',').map((s: string) => s.trim()).filter(s => s.length > 0) : 
-            []) : 
-          [],
-        maxCookTime: 30, // Default since cooking time step removed
         preferredCuisines: (() => {
           const cuisineAnswers = answers.cuisinePreferences || []
           const processed = cuisineAnswers.reduce((acc: string[], item: string) => {
@@ -569,10 +513,6 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         })(),
         mealsPerWeek: (answers.breakfastMeals || 0) + (answers.lunchMeals || 0) + (answers.dinnerMeals || 0),
         peoplePerMeal: answers.peoplePerMeal || 2,
-        mealTypes: [], // Legacy field - using new breakfastsPerWeek, lunchesPerWeek, dinnersPerWeek instead
-        
-        // Photo and ingredient identification (legacy compatibility)
-        pantryItems: [...identifiedIngredients, ...(answers.manuallyAddedIngredients || [])],
         
       }
       
@@ -1300,7 +1240,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
                   value={answers.foodsToAvoidOther || ''}
                   onChange={(e) => setAnswers(prev => ({ ...prev, foodsToAvoidOther: e.target.value }))}
                   className="w-full p-3 border-2 border-neutral-200 rounded-lg focus:border-brand-500 focus:ring-0"
-                  placeholder="e.g. spicy food, mushrooms, onions"
+                  placeholder="e.g. mushrooms, onions, cilantro"
                 />
               </div>
             </div>

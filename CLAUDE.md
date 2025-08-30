@@ -29,18 +29,24 @@ npm run test:coverage # Run tests with coverage report
 - **Production**: `chefscart.ai` (main branch)
 - **Preview Deployments**: Vercel automatic previews for all branches/PRs
 
-### Development Workflow
+### Development Workflow (ALWAYS USE PREVIEW FIRST)
 ```bash
-# Make changes on feature branch or directly on main
-git checkout -b feature-branch  # or work directly on main
+# Create feature branch for ANY changes (never push directly to main)
+git checkout -b feature/your-feature-name
 
-# Commit and push changes
+# Make changes, commit, and push feature branch
 git add .
 git commit -m "Your changes"
-git push origin feature-branch  # or main
+git push origin feature/your-feature-name
 
 # Vercel automatically creates preview deployment
-# View preview URL in Vercel dashboard or GitHub PR comments
+# View preview URL in Vercel dashboard: https://chefscart-feature-your-feature-name.vercel.app
+
+# IMPORTANT: Test preview thoroughly before merging to main
+# Only after preview testing, merge to main via PR or direct merge
+git checkout main
+git merge feature/your-feature-name
+git push origin main
 ```
 
 ### Production Deployment
@@ -59,9 +65,10 @@ open https://chefscart.ai
    - Preview URLs: `chefscart-[branch-name].vercel.app` format
 
 2. **Testing Strategy**:
-   - Use Vercel's automatic preview deployments for testing
-   - Each branch/PR gets its own preview URL
-   - No need for separate staging branch - use previews instead
+   - **ALWAYS** use Vercel preview deployments before production
+   - Each branch/PR gets its own preview URL: `chefscart-[branch-name].vercel.app`
+   - **NEVER** push directly to main without preview testing first
+   - Preview URLs available immediately after pushing feature branch
 
 3. **Environment Variables**:
    - Set same variables for both production and preview environments
