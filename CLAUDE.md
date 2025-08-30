@@ -2,6 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## IMPORTANT: Always Check Build Before Committing
+Before committing any changes to the repository, ALWAYS run `npm run build` to ensure there are no TypeScript or compilation errors. Only commit and push changes if the build succeeds.
+
 ## Key Commands
 
 ### Development

@@ -57,6 +57,7 @@ export async function POST(request: NextRequest) {
     // @ts-ignore - Supabase types not fully generated for social tables
     const { data, error } = await supabase
       .from('user_follows')
+      // @ts-ignore - Type compatibility issue with social tables
       .insert({
         follower_id: session.user.id,
         following_id: following_id
@@ -188,6 +189,7 @@ export async function GET(request: NextRequest) {
 
       return NextResponse.json({
         success: true,
+        // @ts-ignore - Property access on Supabase join result
         users: data?.map(item => item.follower) || [],
         total_count: count || 0,
         has_more: (offset + limit) < (count || 0)
@@ -222,6 +224,7 @@ export async function GET(request: NextRequest) {
 
       return NextResponse.json({
         success: true,
+        // @ts-ignore - Property access on Supabase join result
         users: data?.map(item => item.following) || [],
         total_count: count || 0,
         has_more: (offset + limit) < (count || 0)
