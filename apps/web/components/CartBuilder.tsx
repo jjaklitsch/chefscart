@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from 'react'
-import { ShoppingCart, Plus, Minus, X, ChevronRight, ArrowLeft, AlertCircle } from 'lucide-react'
+import { ShoppingCart, Plus, Minus, X, ChevronRight, ArrowLeft, AlertCircle, ChevronDown } from 'lucide-react'
 import { Recipe, UserPreferences } from '../types'
 
 interface CartBuilderProps {
@@ -351,6 +351,7 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
   const [excludedItems, setExcludedItems] = useState<Set<string>>(new Set())
   const [showUpsellModal, setShowUpsellModal] = useState(false)
   const [upsellBulkItems, setUpsellBulkItems] = useState('')
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set())
 
   // Filter out unwanted items like water and ice cubes
   const shouldFilterItem = (name: string): boolean => {
@@ -680,6 +681,18 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
     setConsolidatedIngredients(prev => prev.filter(ing => ing.shoppableName !== ingredientName))
   }
 
+  const toggleExpandedItem = (ingredientName: string) => {
+    setExpandedItems(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(ingredientName)) {
+        newSet.delete(ingredientName)
+      } else {
+        newSet.add(ingredientName)
+      }
+      return newSet
+    })
+  }
+
   const getFinalCart = () => {
     return consolidatedIngredients.filter(ing => 
       !ing.isStrikethrough && ing.shoppingQuantity > 0
@@ -807,18 +820,18 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
         </div>
 
         {/* Header */}
-        <div className="mb-6 md:mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Build Your Shopping Cart</h1>
-          <p className="text-gray-600 text-sm md:text-base">Review and customize your grocery list before checkout</p>
+        <div className="mb-4 sm:mb-6 lg:mb-8">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">Build Your Shopping Cart</h1>
+          <p className="text-gray-600 text-sm sm:text-base mt-1">Review and customize your grocery list before checkout</p>
         </div>
 
         {/* Summary Stats - Mobile Optimized */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100 text-center">
-            <div className="flex items-center justify-center">
-              <ShoppingCart className="h-6 w-6 sm:h-8 sm:w-8 text-orange-600 mr-3 sm:mr-4" />
-              <div>
-                <p className="text-sm text-gray-500 uppercase font-medium">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <ShoppingCart className="h-6 w-6 sm:h-8 sm:w-8 text-orange-600" />
+              <div className="text-center sm:text-left">
+                <p className="text-xs sm:text-sm text-gray-500 uppercase font-medium">
                   {isLoading ? 'Processing ingredients...' : 'Total Items Ready for Instacart'}
                 </p>
                 <p className="text-2xl sm:text-3xl font-bold text-gray-900">
@@ -835,13 +848,13 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
         </div>
 
         {/* Usage Instructions */}
-        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <div className="flex items-start">
-            <AlertCircle className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
-            <div>
+        <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <div className="flex items-start gap-2 sm:gap-3">
+            <AlertCircle className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="min-w-0">
               <p className="text-sm text-blue-800 font-medium">Customize your shopping cart</p>
-              <p className="text-xs text-blue-600 mt-1">
-                Already have this item at home? Hit the "×" to remove it from your cart. Items you already have are marked as "In Pantry".
+              <p className="text-xs sm:text-sm text-blue-600 mt-1">
+                Already have this item at home? Tap the "×" to remove it from your cart. Items you already have are marked as "In Pantry".
               </p>
             </div>
           </div>
@@ -1000,11 +1013,11 @@ salt
             </div>
           </div>
         ) : (
-          <div className="space-y-6 mb-8">
+          <div className="space-y-4 sm:space-y-6 mb-8">
             {Object.entries(groupedIngredients).map(([category, ingredients]) => (
               <div key={category} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <div className="px-4 py-3 bg-gray-50 border-b border-gray-200">
-                  <h3 className="font-semibold text-gray-900">{category}</h3>
+                <div className="px-4 py-3 sm:px-6 sm:py-4 bg-gray-50 border-b border-gray-200">
+                  <h3 className="font-semibold text-gray-900 text-sm sm:text-base">{category}</h3>
                   {category === 'Custom Items' && (
                     <p className="text-xs text-gray-500 mt-1">
                       Items you added to your list
@@ -1012,73 +1025,109 @@ salt
                   )}
                 </div>
                 <div className="divide-y divide-gray-200">
-                  {ingredients.map(ingredient => (
-                    <div 
-                      key={ingredient.shoppableName} 
-                      className={`p-4 ${ingredient.isStrikethrough ? 'opacity-50' : ''}`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <p className={`font-medium text-gray-900 ${ingredient.isStrikethrough ? 'line-through' : ''}`}>
-                              {ingredient.shoppableName}
-                            </p>
-                            <span className="text-sm text-gray-600">
-                              ({Math.round(ingredient.amount * 100) / 100} {ingredient.unit})
-                            </span>
-                            {ingredient.mealBreakdown.length > 1 && (
-                              <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">
-                                {ingredient.mealBreakdown.length} meals
-                              </span>
-                            )}
-                            {ingredient.isPantryItem && (
-                              <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                                In Pantry
-                              </span>
-                            )}
-                            {ingredient.userAdded && (
-                              <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
-                                Custom
-                              </span>
-                            )}
-                          </div>
-                          {!ingredient.userAdded && ingredient.mealBreakdown.length > 0 && (
-                            <div className="text-xs text-gray-700 mt-1">
-                              <p className={ingredient.isStrikethrough ? 'line-through' : ''}>
-                                Used in: {ingredient.mealBreakdown.map((breakdown) => 
-                                  `${breakdown.mealTitle} (${Math.round(breakdown.scaledQuantity * 100) / 100} ${ingredient.unit})`
-                                ).join(', ')}
-                              </p>
+                  {ingredients.map(ingredient => {
+                    const isMultiMeal = !ingredient.userAdded && ingredient.mealBreakdown.length > 1
+                    const isExpanded = expandedItems.has(ingredient.shoppableName)
+                    
+                    return (
+                      <div 
+                        key={ingredient.shoppableName} 
+                        className={`${ingredient.isStrikethrough ? 'opacity-50' : ''}`}
+                      >
+                        {/* Main ingredient row */}
+                        <div 
+                          className={`p-4 sm:p-6 ${isMultiMeal ? 'cursor-pointer hover:bg-gray-50' : ''}`}
+                          onClick={() => isMultiMeal && toggleExpandedItem(ingredient.shoppableName)}
+                        >
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="flex-1 min-w-0">
+                              {/* Item name and quantity */}
+                              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+                                <div className="flex items-center gap-2">
+                                  <h4 className={`font-medium text-gray-900 text-base sm:text-lg ${ingredient.isStrikethrough ? 'line-through' : ''}`}>
+                                    {ingredient.shoppableName}
+                                  </h4>
+                                  {/* Show chevron for multi-meal items */}
+                                  {isMultiMeal && (
+                                    <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
+                                  )}
+                                </div>
+                                <span className="text-sm text-gray-600 mt-1 sm:mt-0">
+                                  {Math.round(ingredient.amount * 100) / 100} {ingredient.unit}
+                                </span>
+                              </div>
+                              
+                              {/* Only show status badges (not meal count) */}
+                              {(ingredient.isPantryItem || ingredient.userAdded) && (
+                                <div className="flex flex-wrap gap-2 mt-2">
+                                  {ingredient.isPantryItem && (
+                                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                                      In Pantry
+                                    </span>
+                                  )}
+                                  {ingredient.userAdded && (
+                                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                                      Custom
+                                    </span>
+                                  )}
+                                </div>
+                              )}
                             </div>
-                          )}
+                            
+                            {/* Action buttons */}
+                            <div className="flex items-start gap-2 flex-shrink-0">
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation() // Prevent row expansion
+                                  toggleStrikethrough(ingredient.shoppableName)
+                                }}
+                                className={`p-2 rounded-full transition-colors touch-manipulation ${
+                                  ingredient.isStrikethrough 
+                                    ? 'bg-gray-100 text-gray-500 hover:bg-gray-200' 
+                                    : 'text-red-600 hover:bg-red-50'
+                                }`}
+                                title={ingredient.isStrikethrough ? 'Add back to cart' : 'Remove from cart'}
+                              >
+                                <X className="h-4 w-4" />
+                              </button>
+                              
+                              {ingredient.userAdded && (
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation() // Prevent row expansion
+                                    removeItem(ingredient.shoppableName)
+                                  }}
+                                  className="p-2 text-red-600 hover:bg-red-50 rounded-full transition-colors touch-manipulation"
+                                  title="Delete item permanently"
+                                >
+                                  <X className="h-4 w-4" strokeWidth={3} />
+                                </button>
+                              )}
+                            </div>
+                          </div>
                         </div>
-                        
-                        <div className="flex items-center gap-2">
-                          <button
-                            onClick={() => toggleStrikethrough(ingredient.shoppableName)}
-                            className={`p-2 rounded-full transition-colors ${
-                              ingredient.isStrikethrough 
-                                ? 'bg-gray-100 text-gray-500 hover:bg-gray-200' 
-                                : 'text-red-600 hover:bg-red-50'
-                            }`}
-                            title={ingredient.isStrikethrough ? 'Add back to cart' : 'Remove from cart'}
-                          >
-                            <X className="h-4 w-4" />
-                          </button>
-                          
-                          {ingredient.userAdded && (
-                            <button
-                              onClick={() => removeItem(ingredient.shoppableName)}
-                              className="p-2 text-red-600 hover:bg-red-50 rounded-full transition-colors"
-                              title="Delete item permanently"
-                            >
-                              <X className="h-4 w-4" strokeWidth={3} />
-                            </button>
-                          )}
-                        </div>
+
+                        {/* Expanded meal breakdown */}
+                        {isMultiMeal && isExpanded && (
+                          <div className="px-4 sm:px-6 pb-4 bg-gray-50">
+                            <div className="text-sm text-gray-700">
+                              <p className="font-medium text-gray-900 mb-2">Used in:</p>
+                              <div className="space-y-2">
+                                {ingredient.mealBreakdown.map((breakdown, index) => (
+                                  <div key={index} className="flex justify-between">
+                                    <span>{breakdown.mealTitle}</span>
+                                    <span className="text-gray-500">
+                                      {Math.round(breakdown.scaledQuantity * 100) / 100} {ingredient.unit}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             ))}
@@ -1097,22 +1146,23 @@ salt
       </div>
 
       {/* Fixed Bottom Footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg p-3 md:p-4">
-        <div className="max-w-4xl mx-auto flex justify-center">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg p-3 sm:p-4 safe-area-padding-bottom">
+        <div className="max-w-4xl mx-auto">
           <button
             onClick={handleContinueClick}
             disabled={isLoading}
-            className="flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg"
+            className="w-full flex items-center justify-center px-6 py-3 sm:py-4 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl text-base sm:text-lg touch-manipulation"
           >
             {isLoading ? (
               <>
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                Processing...
+                <span>Processing...</span>
               </>
             ) : (
               <>
-                <ChevronRight className="h-5 w-5 md:h-6 md:w-6 mr-2" />
-                Continue to Instacart ({totalItems} items)
+                <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 mr-2" />
+                <span className="hidden sm:inline">Continue to Instacart ({totalItems} items)</span>
+                <span className="sm:hidden">Continue ({totalItems} items)</span>
               </>
             )}
           </button>

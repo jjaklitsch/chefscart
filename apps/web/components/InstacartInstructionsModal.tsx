@@ -8,14 +8,18 @@ interface InstacartInstructionsModalProps {
   onClose: () => void
   onContinue: () => void
   isLoading?: boolean
+  cartUrl?: string
 }
 
 export default function InstacartInstructionsModal({ 
   isOpen, 
   onClose, 
   onContinue, 
-  isLoading = false 
+  isLoading = false,
+  cartUrl 
 }: InstacartInstructionsModalProps) {
+  const [autoOpenEnabled, setAutoOpenEnabled] = useState(true)
+
   if (!isOpen) return null
 
   return (
@@ -48,6 +52,21 @@ export default function InstacartInstructionsModal({
             <p className="text-gray-700 text-lg">
               Your shopping cart is ready! Here's what to expect when you continue to Instacart:
             </p>
+          </div>
+
+          {/* Cart Status */}
+          <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
+            <div className="flex items-start gap-3">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse mt-1"></div>
+              <div>
+                <p className="text-green-800 font-medium mb-2">
+                  ✅ Your cart has been created successfully!
+                </p>
+                <p className="text-green-700 text-sm">
+                  We've sent the cart link and cooking instructions to your email. Click "Continue to Instacart" below to start shopping.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Instructions */}

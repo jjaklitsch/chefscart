@@ -22,13 +22,20 @@ export default function CartSuccessPage() {
     loadMealPlanData()
   }, [id])
 
-  // Auto-open cart and redirect for signed-in users
+  // Auto-show instructions modal for all users when cart is ready
   useEffect(() => {
-    if (user && mealPlanData?.cartUrl && !loading) {
-      // Show instructions before opening cart
-      setShowInstructions(true)
-      
-      // Start countdown to redirect to dashboard
+    if (mealPlanData?.cartUrl && !loading) {
+      // Show instructions modal immediately
+      setTimeout(() => {
+        setShowInstructions(true)
+      }, 500) // Small delay to ensure page is fully loaded
+    }
+  }, [mealPlanData, loading])
+
+  // Auto-redirect for signed-in users (but only after they interact with modal)
+  useEffect(() => {
+    if (user && !showInstructions && mealPlanData?.cartUrl) {
+      // Start countdown to redirect to dashboard only after modal is closed
       const timer = setInterval(() => {
         setAutoRedirectTimer(prev => {
           if (prev <= 1) {
@@ -43,7 +50,7 @@ export default function CartSuccessPage() {
       return () => clearInterval(timer)
     }
     return undefined
-  }, [user, mealPlanData, loading, router])
+  }, [user, showInstructions, mealPlanData, router])
 
   const loadMealPlanData = () => {
     try {
@@ -198,6 +205,7 @@ export default function CartSuccessPage() {
       {/* Instacart Instructions Modal */}
       <InstacartInstructionsModal
         isOpen={showInstructions}
+        cartUrl={mealPlanData?.cartUrl}
         onClose={() => setShowInstructions(false)}
         onContinue={() => {
           if (mealPlanData?.cartUrl) {

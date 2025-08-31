@@ -888,7 +888,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   return (
     <div className="min-h-screen bg-health-gradient">
       <Header />
-      <div className="flex items-start justify-center p-4">
+      <div className="flex items-start justify-center p-4 sm:p-6 lg:p-4">
       {/* Checklist Sidebar */}
       {showChecklist && (
         <div 
@@ -999,21 +999,22 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-soft max-w-2xl w-full p-8">
+      <div className="bg-white rounded-2xl shadow-soft max-w-2xl w-full p-4 sm:p-6 lg:p-8">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between mb-6 sm:mb-8">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => setShowChecklist(true)}
-              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors touch-manipulation"
             >
               <Menu className="h-5 w-5" />
             </button>
-            <div className="w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full flex items-center justify-center">
+            {/* Show icon only on desktop */}
+            <div className="hidden lg:flex w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full items-center justify-center">
               <ShoppingCart className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-display font-bold text-neutral-800">
+              <h1 className="text-xl lg:text-2xl font-display font-bold text-neutral-800">
 {currentStepData?.title}
               </h1>
               <p className="text-sm text-neutral-600">
@@ -1025,8 +1026,8 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
 
 
         {/* Question */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-neutral-800 mb-6">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-lg sm:text-xl font-semibold text-neutral-800 mb-4 sm:mb-6">
             {currentStepData?.question}
           </h2>
 
@@ -1038,23 +1039,23 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
               </p>
               
               {/* People per meal stepper */}
-              <div className="mb-8">
-                <h3 className="text-lg font-medium text-neutral-800 mb-4">People per meal</h3>
-                <div className="flex items-center justify-center gap-6 p-6 border-2 border-neutral-200 rounded-lg">
+              <div className="mb-6 sm:mb-8">
+                <h3 className="text-base sm:text-lg font-medium text-neutral-800 mb-4">People per meal</h3>
+                <div className="flex items-center justify-center gap-4 sm:gap-6 p-4 sm:p-6 border-2 border-neutral-200 rounded-lg">
                   <button
                     onClick={() => setAnswers(prev => ({ ...prev, peoplePerMeal: Math.max(1, (prev.peoplePerMeal || 2) - 1) }))}
-                    className="w-12 h-12 rounded-full border-2 border-neutral-300 flex items-center justify-center text-xl font-bold hover:bg-neutral-50 transition-colors"
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-neutral-300 flex items-center justify-center text-xl font-bold hover:bg-neutral-50 active:bg-neutral-100 transition-colors touch-manipulation"
                     disabled={(answers.peoplePerMeal || 2) <= 1}
                   >
                     −
                   </button>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-brand-600 mb-1">{answers.peoplePerMeal || 2}</div>
+                  <div className="text-center min-w-[80px]">
+                    <div className="text-3xl sm:text-4xl font-bold text-brand-600 mb-1">{answers.peoplePerMeal || 2}</div>
                     <div className="text-sm text-neutral-600">{(answers.peoplePerMeal || 2) === 1 ? 'person' : 'people'}</div>
                   </div>
                   <button
                     onClick={() => setAnswers(prev => ({ ...prev, peoplePerMeal: Math.min(8, (prev.peoplePerMeal || 2) + 1) }))}
-                    className="w-12 h-12 rounded-full border-2 border-neutral-300 flex items-center justify-center text-xl font-bold hover:bg-neutral-50 transition-colors"
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-neutral-300 flex items-center justify-center text-xl font-bold hover:bg-neutral-50 active:bg-neutral-100 transition-colors touch-manipulation"
                     disabled={(answers.peoplePerMeal || 2) >= 8}
                   >
                     +
@@ -1066,67 +1067,139 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
               <div className="space-y-6">
                 <h3 className="text-lg font-medium text-neutral-800 mb-4">Meals this week</h3>
                 
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 border-2 border-neutral-200 rounded-lg">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">🥞</span>
-                      <span className="font-medium">Breakfast</span>
+                <div className="space-y-6">
+                  {/* Breakfast */}
+                  <div className="p-4 border-2 border-neutral-200 rounded-lg">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">🥞</span>
+                        <span className="font-medium">Breakfast</span>
+                      </div>
+                      <span className="w-8 text-center font-medium text-lg text-brand-600">{answers.breakfastMeals || 0}</span>
                     </div>
-                    <div className="flex items-center gap-4 flex-1 max-w-xs">
+                    <div className="relative px-2">
                       <input
                         type="range"
                         min="0"
                         max="7"
                         value={answers.breakfastMeals || 0}
                         onChange={(e) => setAnswers(prev => ({ ...prev, breakfastMeals: parseInt(e.target.value) || 0 }))}
-                        className="flex-1 h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer"
+                        className="w-full h-3 bg-neutral-200 rounded-lg appearance-none cursor-pointer touch-pan-x
+                          [&::-webkit-slider-thumb]:appearance-none 
+                          [&::-webkit-slider-thumb]:w-6 
+                          [&::-webkit-slider-thumb]:h-6 
+                          [&::-webkit-slider-thumb]:bg-brand-600 
+                          [&::-webkit-slider-thumb]:rounded-full 
+                          [&::-webkit-slider-thumb]:cursor-pointer
+                          [&::-webkit-slider-thumb]:shadow-lg
+                          [&::-webkit-slider-thumb]:border-2
+                          [&::-webkit-slider-thumb]:border-white
+                          [&::-moz-range-thumb]:w-6
+                          [&::-moz-range-thumb]:h-6
+                          [&::-moz-range-thumb]:bg-brand-600
+                          [&::-moz-range-thumb]:rounded-full
+                          [&::-moz-range-thumb]:cursor-pointer
+                          [&::-moz-range-thumb]:border-2
+                          [&::-moz-range-thumb]:border-white
+                          [&::-moz-range-thumb]:border-none"
                         style={{
                           background: `linear-gradient(to right, #10B981 0%, #10B981 ${((answers.breakfastMeals || 0) / 7) * 100}%, #E5E7EB ${((answers.breakfastMeals || 0) / 7) * 100}%, #E5E7EB 100%)`
                         }}
                       />
-                      <span className="w-8 text-center font-medium text-lg">{answers.breakfastMeals || 0}</span>
+                      <div className="flex justify-between text-xs text-neutral-500 mt-1">
+                        <span>0</span>
+                        <span>7</span>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between p-4 border-2 border-neutral-200 rounded-lg">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">🥗</span>
-                      <span className="font-medium">Lunch</span>
+                  {/* Lunch */}
+                  <div className="p-4 border-2 border-neutral-200 rounded-lg">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">🥗</span>
+                        <span className="font-medium">Lunch</span>
+                      </div>
+                      <span className="w-8 text-center font-medium text-lg text-brand-600">{answers.lunchMeals || 5}</span>
                     </div>
-                    <div className="flex items-center gap-4 flex-1 max-w-xs">
+                    <div className="relative px-2">
                       <input
                         type="range"
                         min="0"
                         max="7"
                         value={answers.lunchMeals || 5}
                         onChange={(e) => setAnswers(prev => ({ ...prev, lunchMeals: parseInt(e.target.value) || 0 }))}
-                        className="flex-1 h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer"
+                        className="w-full h-3 bg-neutral-200 rounded-lg appearance-none cursor-pointer touch-pan-x
+                          [&::-webkit-slider-thumb]:appearance-none 
+                          [&::-webkit-slider-thumb]:w-6 
+                          [&::-webkit-slider-thumb]:h-6 
+                          [&::-webkit-slider-thumb]:bg-brand-600 
+                          [&::-webkit-slider-thumb]:rounded-full 
+                          [&::-webkit-slider-thumb]:cursor-pointer
+                          [&::-webkit-slider-thumb]:shadow-lg
+                          [&::-webkit-slider-thumb]:border-2
+                          [&::-webkit-slider-thumb]:border-white
+                          [&::-moz-range-thumb]:w-6
+                          [&::-moz-range-thumb]:h-6
+                          [&::-moz-range-thumb]:bg-brand-600
+                          [&::-moz-range-thumb]:rounded-full
+                          [&::-moz-range-thumb]:cursor-pointer
+                          [&::-moz-range-thumb]:border-2
+                          [&::-moz-range-thumb]:border-white
+                          [&::-moz-range-thumb]:border-none"
                         style={{
                           background: `linear-gradient(to right, #10B981 0%, #10B981 ${((answers.lunchMeals || 5) / 7) * 100}%, #E5E7EB ${((answers.lunchMeals || 5) / 7) * 100}%, #E5E7EB 100%)`
                         }}
                       />
-                      <span className="w-8 text-center font-medium text-lg">{answers.lunchMeals || 5}</span>
+                      <div className="flex justify-between text-xs text-neutral-500 mt-1">
+                        <span>0</span>
+                        <span>7</span>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between p-4 border-2 border-neutral-200 rounded-lg">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">🍽️</span>
-                      <span className="font-medium">Dinner</span>
+                  {/* Dinner */}
+                  <div className="p-4 border-2 border-neutral-200 rounded-lg">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">🍽️</span>
+                        <span className="font-medium">Dinner</span>
+                      </div>
+                      <span className="w-8 text-center font-medium text-lg text-brand-600">{answers.dinnerMeals || 5}</span>
                     </div>
-                    <div className="flex items-center gap-4 flex-1 max-w-xs">
+                    <div className="relative px-2">
                       <input
                         type="range"
                         min="0"
                         max="7"
                         value={answers.dinnerMeals || 5}
                         onChange={(e) => setAnswers(prev => ({ ...prev, dinnerMeals: parseInt(e.target.value) || 0 }))}
-                        className="flex-1 h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer"
+                        className="w-full h-3 bg-neutral-200 rounded-lg appearance-none cursor-pointer touch-pan-x
+                          [&::-webkit-slider-thumb]:appearance-none 
+                          [&::-webkit-slider-thumb]:w-6 
+                          [&::-webkit-slider-thumb]:h-6 
+                          [&::-webkit-slider-thumb]:bg-brand-600 
+                          [&::-webkit-slider-thumb]:rounded-full 
+                          [&::-webkit-slider-thumb]:cursor-pointer
+                          [&::-webkit-slider-thumb]:shadow-lg
+                          [&::-webkit-slider-thumb]:border-2
+                          [&::-webkit-slider-thumb]:border-white
+                          [&::-moz-range-thumb]:w-6
+                          [&::-moz-range-thumb]:h-6
+                          [&::-moz-range-thumb]:bg-brand-600
+                          [&::-moz-range-thumb]:rounded-full
+                          [&::-moz-range-thumb]:cursor-pointer
+                          [&::-moz-range-thumb]:border-2
+                          [&::-moz-range-thumb]:border-white
+                          [&::-moz-range-thumb]:border-none"
                         style={{
                           background: `linear-gradient(to right, #10B981 0%, #10B981 ${((answers.dinnerMeals || 5) / 7) * 100}%, #E5E7EB ${((answers.dinnerMeals || 5) / 7) * 100}%, #E5E7EB 100%)`
                         }}
                       />
-                      <span className="w-8 text-center font-medium text-lg">{answers.dinnerMeals || 5}</span>
+                      <div className="flex justify-between text-xs text-neutral-500 mt-1">
+                        <span>0</span>
+                        <span>7</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1168,18 +1241,18 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           {/* Step 3: Dietary Style */}
           {currentStepData?.id === 'dietaryStyle' && (
             <div className="space-y-4">
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {dietaryStyleOptions.map((option) => (
                   <button
                     key={option.id}
                     onClick={() => handlePillToggle('dietaryStyle', option.value, dietaryStyleOptions)}
-                    className={`inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 text-sm transition-all duration-200 ${
+                    className={`inline-flex items-center gap-2 px-3 py-2.5 sm:px-4 sm:py-3 rounded-full border-2 text-sm sm:text-base transition-all duration-200 touch-manipulation ${
                       isPillSelected('dietaryStyle', option, dietaryStyleOptions)
                         ? 'border-brand-500 bg-brand-50 text-brand-700'
-                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
+                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25 active:bg-brand-50'
                     }`}
                   >
-                    <span>{option.icon}</span>
+                    <span className="text-base">{option.icon}</span>
                     <span className="font-medium">{option.label}</span>
                     {isPillSelected('dietaryStyle', option, dietaryStyleOptions) && (
                       <Check className="w-4 h-4 text-brand-600" />
@@ -1204,18 +1277,18 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           {/* Step 4: Foods to Avoid */}
           {currentStepData?.id === 'foodsToAvoid' && (
             <div className="space-y-4">
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {foodsToAvoidOptions.map((option) => (
                   <button
                     key={option.id}
                     onClick={() => handlePillToggle('foodsToAvoid', option.value, foodsToAvoidOptions)}
-                    className={`inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 text-sm transition-all duration-200 ${
+                    className={`inline-flex items-center gap-2 px-3 py-2.5 sm:px-4 sm:py-3 rounded-full border-2 text-sm sm:text-base transition-all duration-200 touch-manipulation ${
                       isPillSelected('foodsToAvoid', option, foodsToAvoidOptions)
                         ? 'border-brand-500 bg-brand-50 text-brand-700'
-                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
+                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25 active:bg-brand-50'
                     }`}
                   >
-                    <span>{option.icon}</span>
+                    <span className="text-base">{option.icon}</span>
                     <span className="font-medium">{option.label}</span>
                     {isPillSelected('foodsToAvoid', option, foodsToAvoidOptions) && (
                       <Check className="w-4 h-4 text-brand-600" />
@@ -1282,18 +1355,18 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           {/* Step 9: Favorite Foods */}
           {currentStepData?.id === 'favoriteFoods' && (
             <div className="space-y-4">
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {favoriteFoodsOptions.map((option) => (
                   <button
                     key={option.id}
                     onClick={() => handlePillToggle('favoriteFoods', option.value, favoriteFoodsOptions)}
-                    className={`inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 text-sm transition-all duration-200 ${
+                    className={`inline-flex items-center gap-2 px-3 py-2.5 sm:px-4 sm:py-3 rounded-full border-2 text-sm sm:text-base transition-all duration-200 touch-manipulation ${
                       isPillSelected('favoriteFoods', option, favoriteFoodsOptions)
                         ? 'border-brand-500 bg-brand-50 text-brand-700'
-                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
+                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25 active:bg-brand-50'
                     }`}
                   >
-                    <span>{option.icon}</span>
+                    <span className="text-base">{option.icon}</span>
                     <span className="font-medium">{option.label}</span>
                     {isPillSelected('favoriteFoods', option, favoriteFoodsOptions) && (
                       <Check className="w-4 h-4 text-brand-600" />
@@ -1351,18 +1424,18 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           {/* Step 10: Cuisine Preferences */}
           {currentStepData?.id === 'cuisinePreferences' && (
             <div className="space-y-4">
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {cuisinePreferenceOptions.map((option) => (
                   <button
                     key={option.id}
                     onClick={() => handlePillToggle('cuisinePreferences', option.value, cuisinePreferenceOptions)}
-                    className={`inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 text-sm transition-all duration-200 ${
+                    className={`inline-flex items-center gap-2 px-3 py-2.5 sm:px-4 sm:py-3 rounded-full border-2 text-sm sm:text-base transition-all duration-200 touch-manipulation ${
                       isPillSelected('cuisinePreferences', option, cuisinePreferenceOptions)
                         ? 'border-brand-500 bg-brand-50 text-brand-700'
-                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25'
+                        : 'border-neutral-200 hover:border-brand-300 hover:bg-brand-25 active:bg-brand-50'
                     }`}
                   >
-                    <span>{option.icon}</span>
+                    <span className="text-base">{option.icon}</span>
                     <span className="font-medium">{option.label}</span>
                     {isPillSelected('cuisinePreferences', option, cuisinePreferenceOptions) && (
                       <Check className="w-4 h-4 text-brand-600" />
@@ -1778,14 +1851,16 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center pt-4 sm:pt-6">
           <button
             onClick={handlePrevious}
-            className="flex items-center gap-2 px-3 py-2 text-neutral-600 hover:text-neutral-800 hover:bg-gray-100 rounded-lg transition-colors text-left"
+            className="flex items-center gap-2 px-3 py-2.5 sm:px-4 sm:py-3 text-neutral-600 hover:text-neutral-800 hover:bg-gray-100 active:bg-gray-200 rounded-lg transition-colors text-left touch-manipulation"
           >
             <ArrowLeft className="w-4 h-4" />
-            {currentStep === 0 ? 'Back to homepage' : 
-             (currentStepData?.id === 'fridgePantryPhotos' && showIngredientConfirmation) ? 'Back to photos' : 'Previous'}
+            <span className="text-sm sm:text-base">
+              {currentStep === 0 ? 'Back to homepage' : 
+               (currentStepData?.id === 'fridgePantryPhotos' && showIngredientConfirmation) ? 'Back to photos' : 'Previous'}
+            </span>
           </button>
 
           {/* Hide default next button for photo upload step when in confirmation or when photos uploaded */}
@@ -1793,13 +1868,13 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
             <button
               onClick={handleNext}
               disabled={!canContinue()}
-              className={`flex items-center gap-2 px-8 py-3 rounded-lg font-medium transition-all ${
+              className={`flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg font-medium transition-all touch-manipulation text-sm sm:text-base ${
                 canContinue()
-                  ? 'bg-brand-600 text-white hover:bg-brand-700'
+                  ? 'bg-brand-600 text-white hover:bg-brand-700 active:bg-brand-800'
                   : 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
               }`}
             >
-              {isLastStep ? 'Create My Meal Plan' : 'Next'}
+              <span>{isLastStep ? 'Create My Meal Plan' : 'Next'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           )}
@@ -1808,9 +1883,9 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
           {currentStepData?.id === 'fridgePantryPhotos' && showIngredientConfirmation && (
             <button
               onClick={handleNext}
-              className="flex items-center gap-2 px-8 py-3 rounded-lg font-medium bg-brand-600 text-white hover:bg-brand-700 transition-all"
+              className="flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg font-medium bg-brand-600 text-white hover:bg-brand-700 active:bg-brand-800 transition-all touch-manipulation text-sm sm:text-base"
             >
-              {isLastStep ? 'Create My Meal Plan' : 'Continue'}
+              <span>{isLastStep ? 'Create My Meal Plan' : 'Continue'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           )}

@@ -268,13 +268,22 @@ function OnboardingPageContent() {
       const updatedMealPlanData = { ...mealPlanData, status: 'cart_created', updatedAt: new Date().toISOString() }
       localStorage.setItem(`chefscart_mealplan_${mealPlanId}`, JSON.stringify(updatedMealPlanData))
       
-      // Show instructions before redirecting to Instacart
+      // Store data and redirect to cart-success page for better UX
       if (data.cartUrl) {
-        setCartUrl(data.cartUrl)
-        setShowInstructions(true)
+        const successPlanId = mealPlanId
+        const successData = {
+          mealPlan,
+          cartUrl: data.cartUrl,
+          email,
+          consolidatedCart
+        }
+        localStorage.setItem(`chefscart_mealplan_${successPlanId}`, JSON.stringify(successData))
+        
+        // Redirect to cart-success page which has proper modal and flow
+        router.push(`/cart-success/${successPlanId}`)
+      } else {
+        setStep('cart')
       }
-      
-      setStep('cart')
 
     } catch (err) {
       console.error('Error in cart preparation:', err)

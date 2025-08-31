@@ -1,13 +1,15 @@
 "use client"
 
-import { ShoppingCart, User, LogOut } from 'lucide-react'
+import { ShoppingCart, User, LogOut, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { useAuth } from '../contexts/AuthContext'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export default function Header() {
   const { user, loading, signOut } = useAuth()
   const router = useRouter()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const handleLogout = async () => {
     try {
@@ -16,6 +18,11 @@ export default function Header() {
     } catch (error) {
       console.error('Error signing out:', error)
     }
+    setIsMobileMenuOpen(false)
+  }
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
   }
 
   return (
@@ -34,6 +41,7 @@ export default function Header() {
 
           {/* Navigation Links */}
           <div className="flex items-center space-x-6">
+            {/* Desktop Navigation */}
             {!user ? (
               <>
                 <Link 
@@ -68,7 +76,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/login"
-                  className="bg-green-600 hover:bg-green-700 text-white text-sm px-4 py-2 rounded-lg font-medium transition-colors"
+                  className="bg-green-600 hover:bg-green-700 text-white text-sm px-4 py-2 rounded-lg font-medium transition-colors hidden sm:inline-block"
                 >
                   Login
                 </Link>
@@ -88,23 +96,139 @@ export default function Header() {
                   Recipes
                 </Link>
                 <Link
-                  href="/profile"
-                  className="flex items-center gap-2 text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200"
+                  href={user ? `/user/${user.id}` : '/profile'}
+                  className="flex items-center gap-2 text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:flex"
                 >
                   <User className="w-4 h-4" />
-                  <span className="hidden sm:block">Profile</span>
+                  <span>My Profile</span>
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-2 text-neutral-600 hover:text-red-600 font-medium transition-colors duration-200"
+                  className="flex items-center gap-2 text-neutral-600 hover:text-red-600 font-medium transition-colors duration-200 hidden sm:flex"
                 >
                   <LogOut className="w-4 h-4" />
-                  <span className="hidden sm:block">Logout</span>
+                  <span>Logout</span>
                 </button>
               </>
             )}
+            
+            {/* Mobile hamburger menu button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="sm:hidden p-2 rounded-lg hover:bg-neutral-100 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6 text-neutral-700" />
+              ) : (
+                <Menu className="h-6 w-6 text-neutral-700" />
+              )}
+            </button>
           </div>
         </nav>
+        
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <div 
+              className="fixed inset-0 bg-black/50 z-40 sm:hidden"
+              onClick={closeMobileMenu}
+            />
+            
+            {/* Mobile Menu Panel */}
+            <div className="absolute top-full left-0 right-0 bg-white border-b border-neutral-200 shadow-lg z-50 sm:hidden">
+              <nav className="px-4 py-6 space-y-4">
+                {!user ? (
+                  <>
+                    <Link 
+                      href="/"
+                      onClick={closeMobileMenu}
+                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
+                    >
+                      Home
+                    </Link>
+                    <Link 
+                      href="/recipes"
+                      onClick={closeMobileMenu}
+                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
+                    >
+                      Recipes
+                    </Link>
+                    <Link 
+                      href="/grocery-list"
+                      onClick={closeMobileMenu}
+                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
+                    >
+                      Grocery List
+                    </Link>
+                    <Link 
+                      href="/pricing"
+                      onClick={closeMobileMenu}
+                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
+                    >
+                      Pricing
+                    </Link>
+                    <Link 
+                      href="/#faq"
+                      onClick={closeMobileMenu}
+                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
+                    >
+                      FAQ
+                    </Link>
+                    <Link
+                      href="/login"
+                      onClick={closeMobileMenu}
+                      className="block mt-4 w-full text-center bg-green-600 hover:bg-green-700 text-white text-sm py-3 px-4 rounded-lg font-medium transition-colors"
+                    >
+                      Login
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/quick-plan"
+                      onClick={closeMobileMenu}
+                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100"
+                    >
+                      Meal Planner
+                    </Link>
+                    <Link
+                      href="/recipes"
+                      onClick={closeMobileMenu}
+                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100"
+                    >
+                      Recipes
+                    </Link>
+                    <Link
+                      href={user ? `/user/${user.id}` : '/profile'}
+                      onClick={closeMobileMenu}
+                      className="flex items-center gap-3 py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100"
+                    >
+                      <User className="w-5 h-5" />
+                      My Profile
+                    </Link>
+                    <Link
+                      href="/profile"
+                      onClick={closeMobileMenu}
+                      className="flex items-center gap-3 py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100"
+                    >
+                      <User className="w-5 h-5" />
+                      Settings
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center gap-3 py-3 text-neutral-700 hover:text-red-600 font-medium transition-colors w-full text-left"
+                    >
+                      <LogOut className="w-5 h-5" />
+                      Logout
+                    </button>
+                  </>
+                )}
+              </nav>
+            </div>
+          </>
+        )}
       </div>
     </header>
   )

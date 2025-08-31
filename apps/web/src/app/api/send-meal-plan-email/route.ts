@@ -64,13 +64,38 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Helper function to generate slug from title
+    const generateSlug = (title: string): string => {
+      return title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+    }
+
+    // Helper function to generate username from email
+    const generateUsername = (email: string): string => {
+      const baseUsername = email.split('@')[0].toLowerCase().replace(/[^a-z0-9]/g, '')
+      const randomSuffix = Math.floor(Math.random() * 9999).toString().padStart(4, '0')
+      return `${baseUsername}${randomSuffix}`
+    }
+
+    // Helper function to extract display name from email
+    const generateDisplayName = (email: string): string => {
+      const username = email.split('@')[0]
+      // Capitalize first letter and replace dots/underscores with spaces
+      return username
+        .split(/[._-]/)
+        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ')
+    }
+
     // Prepare email data
     const emailData: MealPlanEmailData = {
       userEmail: email,
       cartUrl,
       meals: mealPlan.recipes.map((recipe: any) => ({
         id: recipe.id,
-        slug: recipe.slug,
+        slug: recipe.slug || generateSlug(recipe.title || 'recipe'),
         title: recipe.title,
         description: recipe.description,
         cuisine: recipe.cuisine,
@@ -111,15 +136,28 @@ export async function POST(request: NextRequest) {
     // Save meal plan to database if we have a user
     if (user) {
       try {
-        // First, ensure user profile exists
+        // First, ensure user profile exists with social fields
         const { error: profileError } = await supabase
           .from('user_profiles')
           .upsert({
             id: user.id,
             email: email,
+            username: generateUsername(email),
+            display_name: generateDisplayName(email),
+            bio: null,
+            avatar_url: null,
+            cover_image_url: null,
+            location: userPreferences?.zipCode ? `ZIP ${userPreferences.zipCode}` : null,
+            website_url: null,
             zip_code: userPreferences?.zipCode,
             preferences: userPreferences,
             completed_onboarding: true,
+            is_public: true,
+            is_verified: false,
+            follower_count: 0,
+            following_count: 0,
+            recipe_count: 0,
+            total_likes_received: 0,
             updated_at: new Date().toISOString()
           }, {
             onConflict: 'id'
