@@ -249,6 +249,7 @@ function OnboardingPageContent() {
           planId: mealPlanId, // Use the generated meal plan ID
           userId: userId,
           email,
+          zipCode,
           userPreferences: preferences,
           mealPlanData: {
             mealPlan,

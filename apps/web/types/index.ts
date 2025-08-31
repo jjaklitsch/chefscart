@@ -38,6 +38,9 @@ export interface UserPreferences {
   manuallyAddedIngredients?: string[]
   skipPhotoUpload?: boolean
   
+  // Location data
+  zipCode?: string
+  
   // Legacy/compatibility fields (can be removed later)
   pantryItems?: string[]
   maxCookingTime?: number // Only used in API, not collected

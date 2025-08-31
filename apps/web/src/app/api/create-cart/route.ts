@@ -55,7 +55,7 @@ class RetryHandler {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { planId, userId, mealPlanData, email, userPreferences } = body
+    const { planId, userId, mealPlanData, email, userPreferences, zipCode } = body
 
     if (!planId) {
       return NextResponse.json({
@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
               cartUrl: instacartUrl,
               mealPlan: mealPlanData.mealPlan,
               consolidatedCart,
-              userPreferences
+              userPreferences: { ...userPreferences, zipCode }
             })
           })
 
@@ -218,7 +218,7 @@ export async function POST(request: NextRequest) {
               cartUrl,
               mealPlan: mealPlanData.mealPlan,
               consolidatedCart,
-              userPreferences
+              userPreferences: { ...userPreferences, zipCode }
             })
           })
 
@@ -263,7 +263,7 @@ export async function POST(request: NextRequest) {
               cartUrl: fallbackUrl,
               mealPlan: mealPlanData.mealPlan,
               consolidatedCart,
-              userPreferences
+              userPreferences: { ...userPreferences, zipCode }
             })
           })
 
