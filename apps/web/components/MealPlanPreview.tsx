@@ -833,18 +833,12 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                           </ExpandableSection>
                         </div>
 
-                        <div className="mt-4 flex gap-2">
+                        <div className="mt-4">
                           <button
                             onClick={() => handleReplaceRecipe(recipe)}
-                            className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm"
+                            className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm"
                           >
                             Replace Meal
-                          </button>
-                          <button
-                            onClick={() => setModalRecipe(recipe)}
-                            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors text-sm"
-                          >
-                            View Details
                           </button>
                         </div>
                       </div>

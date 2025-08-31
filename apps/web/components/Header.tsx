@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useAuth } from '../contexts/AuthContext'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { isPaymentSystemEnabled } from '../lib/feature-flags'
 
 export default function Header() {
   const { user, loading, signOut } = useAuth()
@@ -62,12 +63,14 @@ export default function Header() {
                 >
                   Grocery List
                 </Link>
-                <Link 
-                  href="/pricing" 
-                  className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
-                >
-                  Pricing
-                </Link>
+                {isPaymentSystemEnabled() && (
+                  <Link 
+                    href="/pricing" 
+                    className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
+                  >
+                    Pricing
+                  </Link>
+                )}
                 <Link 
                   href="/#faq" 
                   className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
@@ -162,13 +165,15 @@ export default function Header() {
                     >
                       Grocery List
                     </Link>
-                    <Link 
-                      href="/pricing"
-                      onClick={closeMobileMenu}
-                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
-                    >
-                      Pricing
-                    </Link>
+                    {isPaymentSystemEnabled() && (
+                      <Link 
+                        href="/pricing"
+                        onClick={closeMobileMenu}
+                        className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
+                      >
+                        Pricing
+                      </Link>
+                    )}
                     <Link 
                       href="/#faq"
                       onClick={closeMobileMenu}

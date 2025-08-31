@@ -12,6 +12,7 @@ import PricingCTA from '../../components/PricingCTA'
 import Footer from '../../components/Footer'
 import analytics from '../../lib/analytics'
 import { useAuth } from '../../contexts/AuthContext'
+import { isPaymentSystemEnabled } from '../../lib/feature-flags'
 
 export default function Home() {
   const [zipCode, setZipCode] = useState('')
@@ -176,38 +177,6 @@ export default function Home() {
           {/* Note: Validation message is handled by ZipCodeInput since showFullWidthMessage={false} */}
         </div>
 
-        {/* Pricing Preview Banner */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 border border-green-200 shadow-lg">
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-3">
-                <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
-                  🎉 Limited Time Offer
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Start at $4.99/month with 14-day free trial
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Try all features risk-free. Cancel anytime during your trial with no charges.
-              </p>
-              <div className="flex items-center justify-center space-x-8 text-sm text-gray-700">
-                <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  <span>500+ curated recipes</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  <span>Smart Instacart integration</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  <span>Custom dietary preferences</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* How It Works Section */}
         <section className="mb-16 -mx-4 px-4 py-16 bg-white/50 backdrop-blur-sm border-y border-white/30">
@@ -415,15 +384,19 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Pricing Section */}
-        <HomePricingSection />
-
-        {/* Final CTA Section */}
-        <section className="mb-16 mt-16">
-          <div className="max-w-4xl mx-auto">
-            <PricingCTA location="home_bottom" showFullFeatures={true} />
-          </div>
-        </section>
+        {/* Pricing Section - only show if payment system is enabled */}
+        {isPaymentSystemEnabled() && (
+          <>
+            <HomePricingSection />
+            
+            {/* Final CTA Section */}
+            <section className="mb-16 mt-16">
+              <div className="max-w-4xl mx-auto">
+                <PricingCTA location="home_bottom" showFullFeatures={true} />
+              </div>
+            </section>
+          </>
+        )}
 
         {/* FAQ Section */}
         <section id="faq" className="mb-16 mt-24 -mx-4 px-4 py-16 bg-white/40 backdrop-blur-sm border-y border-white/20">

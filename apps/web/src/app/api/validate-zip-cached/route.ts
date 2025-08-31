@@ -33,9 +33,9 @@ export async function POST(request: NextRequest) {
       console.error('Cache lookup error:', cacheError)
     }
 
-    // Check if we have fresh cache data (less than 30 days old)
+    // Check if we have fresh cache data (less than 90 days old)
     const isCacheValid = cachedData && 
-      new Date(cachedData.last_updated) > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
+      new Date(cachedData.last_updated) > new Date(Date.now() - 90 * 24 * 60 * 60 * 1000)
 
     if (isCacheValid) {
       
@@ -106,7 +106,6 @@ export async function POST(request: NextRequest) {
             zip_code: zipCode,
             is_valid: true,
             has_instacart_coverage: hasInstacartCoverage,
-            retailer_count: retailerCount,
             last_updated: new Date().toISOString(),
             last_api_check: new Date().toISOString(),
             api_response_status: instacartResponse.status

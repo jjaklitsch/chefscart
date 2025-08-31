@@ -349,8 +349,6 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
   const [bulkItems, setBulkItems] = useState('')
   const [addMode, setAddMode] = useState<'single' | 'bulk'>('single')
   const [excludedItems, setExcludedItems] = useState<Set<string>>(new Set())
-  const [showUpsellModal, setShowUpsellModal] = useState(false)
-  const [upsellBulkItems, setUpsellBulkItems] = useState('')
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set())
 
   // Filter out unwanted items like water and ice cubes
@@ -709,75 +707,11 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
     )
   }
 
-  // Common grocery items for upsell (filtered by what's not already in cart)
-  const getCommonGroceryItems = () => {
-    const allItems = ['Milk', 'Eggs', 'Bread', 'Butter', 'Cheese', 'Yogurt', 'Bananas', 
-                     'Apples', 'Onions', 'Garlic', 'Potatoes', 'Carrots', 'Tomatoes',
-                     'Lettuce', 'Bell Peppers', 'Avocados', 'Lemons', 'Limes', 'Oranges',
-                     'Coffee', 'Tea', 'Sugar', 'Salt', 'Black Pepper', 'Olive Oil',
-                     'Rice', 'Pasta', 'Flour', 'Oats', 'Cereal', 'Crackers', 'Snacks']
-    
-    const existingItems = consolidatedIngredients.map(ing => ing.shoppableName.toLowerCase())
-    return allItems.filter(item => !existingItems.includes(item.toLowerCase()))
-  }
 
   const handleContinueClick = () => {
-    setShowUpsellModal(true)
-  }
-
-  const handleUpsellComplete = () => {
-    setShowUpsellModal(false)
     onProceedToCheckout(getFinalCart())
   }
 
-  const addQuickItem = (itemName: string) => {
-    const newIngredient: ConsolidatedIngredient = {
-      name: itemName,
-      shoppableName: itemName,
-      amount: 1,
-      unit: '',
-      category: normalizeCategory('Other'),
-      fromRecipes: ['User Added'],
-      mealBreakdown: [],
-      shoppingQuantity: 1,
-      shoppingUnit: '',
-      userAdded: true
-    }
-    setConsolidatedIngredients([...consolidatedIngredients, newIngredient])
-  }
-
-  const handleUpsellBulkAdd = () => {
-    if (!upsellBulkItems.trim()) return
-
-    const lines = upsellBulkItems.trim().split('\n').filter(line => line.trim())
-    const newIngredients: ConsolidatedIngredient[] = []
-
-    lines.forEach(line => {
-      const trimmedLine = line.trim()
-      if (!trimmedLine) return
-
-      const parsed = parseGroceryItem(trimmedLine)
-      if (!parsed.name) return
-
-      newIngredients.push({
-        name: parsed.name,
-        shoppableName: parsed.name,
-        amount: parsed.amount,
-        unit: parsed.unit || getRecommendedUnit(parsed.name),
-        category: normalizeCategory('Other'),
-        fromRecipes: ['User Added'],
-        mealBreakdown: [],
-        shoppingQuantity: parsed.amount,
-        shoppingUnit: parsed.unit || getRecommendedUnit(parsed.name),
-        userAdded: true
-      })
-    })
-
-    if (newIngredients.length > 0) {
-      setConsolidatedIngredients([...consolidatedIngredients, ...newIngredients])
-      setUpsellBulkItems('')
-    }
-  }
 
   // Group ingredients with custom items at top, then by category
   const groupedIngredients = (() => {
@@ -828,21 +762,21 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
         {/* Summary Stats - Mobile Optimized */}
         <div className="mb-4 sm:mb-6">
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100 text-center">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-              <ShoppingCart className="h-6 w-6 sm:h-8 sm:w-8 text-orange-600" />
-              <div className="text-center sm:text-left">
-                <p className="text-xs sm:text-sm text-gray-500 uppercase font-medium">
-                  {isLoading ? 'Processing ingredients...' : 'Total Items Ready for Instacart'}
-                </p>
+            <div className="flex flex-col items-center justify-center gap-3">
+              <p className="text-xs sm:text-sm text-gray-500 uppercase font-medium">
+                {isLoading ? 'Processing ingredients...' : 'Total Items Ready for Instacart'}
+              </p>
+              <div className="flex items-center justify-center gap-3">
+                <ShoppingCart className="h-6 w-6 sm:h-8 sm:w-8 text-orange-600" />
                 <p className="text-2xl sm:text-3xl font-bold text-gray-900">
                   {isLoading ? '...' : totalItems}
                 </p>
-                {!isLoading && (
-                  <p className="text-xs text-gray-400 mt-1">
-                    From {recipes.length} meals • {consolidatedIngredients.filter(ing => ing.mealBreakdown.length > 1).length} shared ingredients
-                  </p>
-                )}
               </div>
+              {!isLoading && (
+                <p className="text-xs text-gray-400 mt-1">
+                  From {recipes.length} meals • {consolidatedIngredients.filter(ing => ing.mealBreakdown.length > 1).length} shared ingredients
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -854,7 +788,7 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
             <div className="min-w-0">
               <p className="text-sm text-blue-800 font-medium">Customize your shopping cart</p>
               <p className="text-xs sm:text-sm text-blue-600 mt-1">
-                Already have this item at home? Tap the "×" to remove it from your cart. Items you already have are marked as "In Pantry".
+                Already have this item at home? Tap the "×" to remove it from your cart.
               </p>
             </div>
           </div>
@@ -1026,7 +960,7 @@ salt
                 </div>
                 <div className="divide-y divide-gray-200">
                   {ingredients.map(ingredient => {
-                    const isMultiMeal = !ingredient.userAdded && ingredient.mealBreakdown.length > 1
+                    const isMultiMeal = !ingredient.userAdded && ingredient.mealBreakdown.length > 0
                     const isExpanded = expandedItems.has(ingredient.shoppableName)
                     
                     return (
@@ -1043,18 +977,18 @@ salt
                             <div className="flex-1 min-w-0">
                               {/* Item name and quantity */}
                               <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+                                <h4 className={`font-medium text-gray-900 text-base sm:text-lg ${ingredient.isStrikethrough ? 'line-through' : ''}`}>
+                                  {ingredient.shoppableName}
+                                </h4>
                                 <div className="flex items-center gap-2">
-                                  <h4 className={`font-medium text-gray-900 text-base sm:text-lg ${ingredient.isStrikethrough ? 'line-through' : ''}`}>
-                                    {ingredient.shoppableName}
-                                  </h4>
+                                  <span className="text-sm text-gray-600 mt-1 sm:mt-0">
+                                    {Math.round(ingredient.amount * 100) / 100} {ingredient.unit}
+                                  </span>
                                   {/* Show chevron for multi-meal items */}
                                   {isMultiMeal && (
                                     <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
                                   )}
                                 </div>
-                                <span className="text-sm text-gray-600 mt-1 sm:mt-0">
-                                  {Math.round(ingredient.amount * 100) / 100} {ingredient.unit}
-                                </span>
                               </div>
                               
                               {/* Only show status badges (not meal count) */}
@@ -1169,72 +1103,6 @@ salt
         </div>
       </div>
 
-      {/* Upsell Modal */}
-      {showUpsellModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Add Common Grocery Items</h3>
-              <p className="text-gray-600 mb-6">Don&apos;t forget these common items you might need!</p>
-              
-              {/* Quick Add Pills */}
-              <div className="mb-6">
-                <h4 className="font-medium text-gray-900 mb-3">Quick Add</h4>
-                <div className="flex flex-wrap gap-2">
-                  {getCommonGroceryItems().slice(0, 15).map(item => (
-                    <button
-                      key={item}
-                      onClick={() => addQuickItem(item)}
-                      className="px-3 py-1 bg-gray-100 hover:bg-orange-100 hover:text-orange-700 rounded-full text-sm transition-colors"
-                    >
-                      + {item}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Manual Add */}
-              <div className="mb-6">
-                <h4 className="font-medium text-gray-900 mb-3">Or add your own</h4>
-                <textarea
-                  value={upsellBulkItems}
-                  onChange={(e) => setUpsellBulkItems(e.target.value)}
-                  className="w-full h-24 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
-                  placeholder="Add items one per line with quantity:
-6 bananas
-2 lbs ground beef
-toilet paper
-olive oil"
-                />
-                {upsellBulkItems.trim() && (
-                  <button
-                    onClick={handleUpsellBulkAdd}
-                    className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                  >
-                    Add Items
-                  </button>
-                )}
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex gap-3">
-                <button
-                  onClick={handleUpsellComplete}
-                  className="flex-1 px-4 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-colors"
-                >
-                  Continue to Instacart
-                </button>
-                <button
-                  onClick={() => setShowUpsellModal(false)}
-                  className="px-4 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  Keep Shopping
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

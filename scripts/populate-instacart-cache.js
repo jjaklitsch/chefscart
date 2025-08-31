@@ -148,7 +148,6 @@ async function saveToCache(zipCode, apiResult) {
         zip_code: zipCode,
         is_valid: success,
         has_instacart_coverage: success && !noCoverage,
-        retailer_count: success && !noCoverage ? 1 : 0,
         last_updated: new Date().toISOString(),
         last_api_check: new Date().toISOString(),
         api_response_status: status
@@ -226,7 +225,7 @@ async function main() {
   
   let processed = 0
   let errors = 0
-  let totalRetailers = 0
+  let successfulZips = 0
   let apiCalls = 0
   const startTime = Date.now()
   
@@ -249,8 +248,8 @@ async function main() {
       
       if (saved) {
         processed++
-        if (result.success && result.retailers) {
-          totalRetailers += result.retailers.length
+        if (result.success && !result.noCoverage) {
+          successfulZips++
         }
       } else {
         errors++
@@ -260,7 +259,6 @@ async function main() {
       if (processed % 10 === 0) {
         await updateSyncJob(jobId, {
           zip_codes_processed: processed,
-          retailers_found: totalRetailers,
           errors_encountered: errors,
           api_calls_made: apiCalls
         })
@@ -274,7 +272,6 @@ async function main() {
     status: 'completed',
     completed_at: new Date().toISOString(),
     zip_codes_processed: processed,
-    retailers_found: totalRetailers,
     errors_encountered: errors,
     api_calls_made: apiCalls
   })
@@ -282,7 +279,7 @@ async function main() {
   console.log(`\\n✅ Batch job completed!`)
   console.log(`📈 Stats:`)
   console.log(`   • ZIP codes processed: ${processed}/${zipCodes.length}`)
-  console.log(`   • Retailers found: ${totalRetailers}`)
+  console.log(`   • ZIP codes with coverage: ${successfulZips}`)
   console.log(`   • API calls made: ${apiCalls}`)
   console.log(`   • Errors: ${errors}`)
   console.log(`   • Duration: ${duration.toFixed(1)}s`)
@@ -305,4 +302,4 @@ if (require.main === module) {
   main().catch(console.error)
 }
 
-module.exports = { main, generateZipCodes, fetchRetailersForZip, getRetailerPriority }
+module.exports = { main, generateZipCodes, fetchRetailersForZip }

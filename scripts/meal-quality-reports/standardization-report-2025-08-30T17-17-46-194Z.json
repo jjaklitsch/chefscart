@@ -1,0 +1,5762 @@
+{
+  "timestamp": "2025-08-31T03:42:48.918Z",
+  "mode": "dry_run",
+  "ingredient_analysis": {
+    "total_meals": 532,
+    "total_ingredients": 8770,
+    "unique_ingredients": 1157,
+    "patterns": [
+      {
+        "base_ingredient": "black pepper",
+        "usage_count": 428,
+        "shoppable_variants": [
+          "Black Pepper"
+        ],
+        "display_variants": [
+          "black pepper (freshly ground)",
+          "freshly ground black pepper",
+          "black pepper, freshly ground",
+          "black pepper",
+          "black pepper (cracked)"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 tsp",
+            198
+          ],
+          [
+            "1 tsp",
+            153
+          ],
+          [
+            "0.25 tsp",
+            52
+          ],
+          [
+            "0.75 tsp",
+            10
+          ],
+          [
+            "0.125 tsp",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            417
+          ],
+          [
+            "pinch",
+            7
+          ],
+          [
+            "tbsp",
+            2
+          ],
+          [
+            "g",
+            2
+          ]
+        ],
+        "categories": [
+          "Spices & Seasonings",
+          "Spices and Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Lasagna Roll-Ups with Spinach and Ricotta",
+            "servings": 6,
+            "quantity": 0.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Fish Tacos with Cabbage Slaw",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "salt",
+        "usage_count": 304,
+        "shoppable_variants": [
+          "Salt"
+        ],
+        "display_variants": [
+          "salt",
+          "salt (for roti dough)",
+          "kosher salt",
+          "pinch of salt",
+          "salt (for pastry and seasoning)"
+        ],
+        "quantity_patterns": [
+          [
+            "1.5 tsp",
+            51
+          ],
+          [
+            "1 tsp",
+            152
+          ],
+          [
+            "0.5 tsp",
+            52
+          ],
+          [
+            "1 tbsp",
+            13
+          ],
+          [
+            "1 pinch",
+            6
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            278
+          ],
+          [
+            "tbsp",
+            13
+          ],
+          [
+            "pinch",
+            6
+          ],
+          [
+            "g",
+            6
+          ],
+          [
+            "teaspoon",
+            1
+          ]
+        ],
+        "categories": [
+          "Spices & Seasonings",
+          "Spices and Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Lasagna Roll-Ups with Spinach and Ricotta",
+            "servings": 6,
+            "quantity": 1.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Curry Goat with Roti and Vegetables",
+            "servings": 6,
+            "quantity": 1,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "garlic cloves",
+        "usage_count": 235,
+        "shoppable_variants": [
+          "Garlic Cloves"
+        ],
+        "display_variants": [
+          "garlic cloves (minced)",
+          "garlic cloves, minced",
+          "garlic, thinly sliced",
+          "garlic cloves, thinly sliced",
+          "garlic cloves (peeled)"
+        ],
+        "quantity_patterns": [
+          [
+            "4 clove",
+            85
+          ],
+          [
+            "3 clove",
+            83
+          ],
+          [
+            "6 clove",
+            16
+          ],
+          [
+            "2 clove",
+            47
+          ],
+          [
+            "2 cloves",
+            2
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "clove",
+            233
+          ],
+          [
+            "cloves",
+            2
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Vegetables"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Lasagna Roll-Ups with Spinach and Ricotta",
+            "servings": 6,
+            "quantity": 4,
+            "unit": "clove"
+          },
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 3,
+            "unit": "clove"
+          },
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 3,
+            "unit": "clove"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "olive oil",
+        "usage_count": 197,
+        "shoppable_variants": [
+          "Olive Oil"
+        ],
+        "display_variants": [
+          "olive oil",
+          "olive oil (or neutral oil)",
+          "olive oil (for searing)",
+          "olive oil (for dressing)",
+          "olive oil (for frying or roasting)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tbsp",
+            51
+          ],
+          [
+            "2 tbsp",
+            89
+          ],
+          [
+            "3 tbsp",
+            28
+          ],
+          [
+            "4 tbsp",
+            10
+          ],
+          [
+            "0.25 cup",
+            8
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            179
+          ],
+          [
+            "cup",
+            10
+          ],
+          [
+            "ml",
+            5
+          ],
+          [
+            "tsp",
+            3
+          ]
+        ],
+        "categories": [
+          "Oils & Vinegars",
+          "Oil, Vinegar, Salad Dressing",
+          "Oils",
+          "Pantry Staples"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Avocado Feta & Chili Flake Toast",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Fish Tacos with Cabbage Slaw",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "garlic",
+        "usage_count": 184,
+        "shoppable_variants": [
+          "Garlic"
+        ],
+        "display_variants": [
+          "garlic, minced (optional)",
+          "garlic, minced",
+          "garlic cloves, minced",
+          "garlic (minced)",
+          "garlic"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 clove",
+            4
+          ],
+          [
+            "1 clove",
+            43
+          ],
+          [
+            "3 clove",
+            53
+          ],
+          [
+            "4 clove",
+            25
+          ],
+          [
+            "2 clove",
+            52
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "clove",
+            181
+          ],
+          [
+            "cloves",
+            3
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "clove"
+          },
+          {
+            "meal": "Fish Tacos with Cabbage Slaw",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "clove"
+          },
+          {
+            "meal": "Red Curry Tofu with Jasmine Rice",
+            "servings": 4,
+            "quantity": 3,
+            "unit": "clove"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "extra-virgin olive oil",
+        "usage_count": 154,
+        "shoppable_variants": [
+          "Extra-virgin Olive Oil",
+          "Extra-Virgin Olive Oil"
+        ],
+        "display_variants": [
+          "extra-virgin olive oil",
+          "extra-virgin olive oil (for dressing)",
+          "extra-virgin olive oil (for roasting)",
+          "extra-virgin olive oil (for toast or pan if preferred)",
+          "extra-virgin olive oil (for pesto)"
+        ],
+        "quantity_patterns": [
+          [
+            "2 tbsp",
+            42
+          ],
+          [
+            "1 tbsp",
+            21
+          ],
+          [
+            "120 ml",
+            1
+          ],
+          [
+            "4 tbsp",
+            20
+          ],
+          [
+            "3 tbsp",
+            50
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            138
+          ],
+          [
+            "ml",
+            10
+          ],
+          [
+            "tsp",
+            4
+          ],
+          [
+            "cup",
+            2
+          ]
+        ],
+        "categories": [
+          "Oils & Vinegars",
+          "Oil, Vinegar, Salad Dressing"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Lasagna Roll-Ups with Spinach and Ricotta",
+            "servings": 6,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Low-Carb Garlic Shrimp & Green Beans with Quinoa",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "vegetable oil",
+        "usage_count": 142,
+        "shoppable_variants": [
+          "Vegetable Oil"
+        ],
+        "display_variants": [
+          "vegetable oil",
+          "vegetable oil (for frying)",
+          "vegetable oil (for sauce)",
+          "vegetable oil (for cooking roti)",
+          "vegetable oil (neutral, for frying)"
+        ],
+        "quantity_patterns": [
+          [
+            "2 tbsp",
+            56
+          ],
+          [
+            "1 cup",
+            6
+          ],
+          [
+            "3 tbsp",
+            20
+          ],
+          [
+            "2 cup",
+            2
+          ],
+          [
+            "1 tbsp",
+            34
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            114
+          ],
+          [
+            "cup",
+            16
+          ],
+          [
+            "ml",
+            12
+          ]
+        ],
+        "categories": [
+          "Oils & Vinegars",
+          "Oil, Vinegar, Salad Dressing"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Cumin Lamb Stir-Fry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Escovitch Fish with Pickled Veg and Coconut Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          },
+          {
+            "meal": "Escovitch Fish with Pickled Veg and Coconut Rice",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "water",
+        "usage_count": 132,
+        "shoppable_variants": [
+          "Water"
+        ],
+        "display_variants": [
+          "water (to loosen glaze if needed)",
+          "water",
+          "water (or fish stock) to thin sauce if needed",
+          "water (for roti dough)",
+          "water (for cooking quinoa)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tbsp",
+            2
+          ],
+          [
+            "1 cup",
+            9
+          ],
+          [
+            "60 ml",
+            10
+          ],
+          [
+            "3 tbsp",
+            8
+          ],
+          [
+            "2 cups",
+            6
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            34
+          ],
+          [
+            "cup",
+            40
+          ],
+          [
+            "ml",
+            49
+          ],
+          [
+            "cups",
+            7
+          ],
+          [
+            "liter",
+            2
+          ]
+        ],
+        "categories": [
+          "Baking & Pantry Staples",
+          "Liquid",
+          "Beverages",
+          "Pantry Staples",
+          "Canned Goods",
+          "Pantry"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          },
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 60,
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "kosher salt",
+        "usage_count": 122,
+        "shoppable_variants": [
+          "Kosher Salt"
+        ],
+        "display_variants": [
+          "kosher salt",
+          "kosher salt (for chickpeas)",
+          "kosher salt (divided)",
+          "kosher salt (for polenta)",
+          "salt"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tsp",
+            40
+          ],
+          [
+            "1.5 tsp",
+            38
+          ],
+          [
+            "3 tsp",
+            1
+          ],
+          [
+            "0.5 tsp",
+            12
+          ],
+          [
+            "2 tsp",
+            13
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            114
+          ],
+          [
+            "g",
+            4
+          ],
+          [
+            "pinch",
+            1
+          ],
+          [
+            "tbsp",
+            3
+          ]
+        ],
+        "categories": [
+          "Spices & Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Fish Tacos with Cabbage Slaw",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Low-Carb Miso-Glazed Mackerel & Greens with Cauliflower Rice",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Whole30 Pork Chops with Apple Slaw and Roasted Sweet Potatoes",
+            "servings": 4,
+            "quantity": 1.5,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "yellow onion",
+        "usage_count": 120,
+        "shoppable_variants": [
+          "Yellow Onion"
+        ],
+        "display_variants": [
+          "yellow onion (finely chopped)",
+          "yellow onion, thinly sliced",
+          "small yellow onion, finely diced",
+          "yellow onion, medium, diced",
+          "small yellow onion (finely diced)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 medium",
+            3
+          ],
+          [
+            "1 each",
+            91
+          ],
+          [
+            "0.5 cup",
+            5
+          ],
+          [
+            "2 each",
+            3
+          ],
+          [
+            "1 count",
+            8
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "medium",
+            3
+          ],
+          [
+            "each",
+            101
+          ],
+          [
+            "cup",
+            5
+          ],
+          [
+            "count",
+            8
+          ],
+          [
+            "g",
+            3
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Lasagna Roll-Ups with Spinach and Ricotta",
+            "servings": 6,
+            "quantity": 1,
+            "unit": "medium"
+          },
+          {
+            "meal": "Red Curry Tofu with Jasmine Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Paleo Egg Roll in a Bowl with Cauliflower Rice",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "cup"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "lemon juice",
+        "usage_count": 119,
+        "shoppable_variants": [
+          "Lemon Juice"
+        ],
+        "display_variants": [
+          "lemon juice (fresh)",
+          "lemon juice (freshly squeezed)",
+          "fresh lemon juice",
+          "lemon juice",
+          "lemon juice (for marinade)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tbsp",
+            47
+          ],
+          [
+            "0.25 cup",
+            1
+          ],
+          [
+            "30 ml",
+            2
+          ],
+          [
+            "2 tbsp",
+            38
+          ],
+          [
+            "3 tbsp",
+            13
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            101
+          ],
+          [
+            "cup",
+            1
+          ],
+          [
+            "ml",
+            6
+          ],
+          [
+            "tsp",
+            10
+          ],
+          [
+            "each",
+            1
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce",
+          "Oils & Vinegars",
+          "Baking & Pantry Staples"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Whole30 Pork Chops with Apple Slaw and Roasted Sweet Potatoes",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Complete Chicken Piccata with Spinach and Pasta",
+            "servings": 4,
+            "quantity": 0.25,
+            "unit": "cup"
+          },
+          {
+            "meal": "Maple-Mustard Brussels Caesar with Crunchy Croutons",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "red pepper flakes",
+        "usage_count": 102,
+        "shoppable_variants": [
+          "Red Pepper Flakes"
+        ],
+        "display_variants": [
+          "red pepper flakes",
+          "red pepper flakes (optional)",
+          "red pepper flakes (optional for extra heat)",
+          "red pepper flakes (pul biber or crushed)",
+          "red pepper flakes (optional for heat)"
+        ],
+        "quantity_patterns": [
+          [
+            "0.25 tsp",
+            49
+          ],
+          [
+            "1 tsp",
+            36
+          ],
+          [
+            "0.125 tsp",
+            1
+          ],
+          [
+            "1 pinch",
+            8
+          ],
+          [
+            "0.5 tsp",
+            7
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            94
+          ],
+          [
+            "pinch",
+            8
+          ]
+        ],
+        "categories": [
+          "Spices & Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Lasagna Roll-Ups with Spinach and Ricotta",
+            "servings": 6,
+            "quantity": 0.25,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Paleo Egg Roll in a Bowl with Cauliflower Rice",
+            "servings": 4,
+            "quantity": 0.25,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Low-Carb Garlic Shrimp & Green Beans with Quinoa",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "unsalted butter",
+        "usage_count": 99,
+        "shoppable_variants": [
+          "Unsalted Butter"
+        ],
+        "display_variants": [
+          "unsalted butter",
+          "unsalted butter (for tin)",
+          "unsalted butter (cubed, cold) for pastry",
+          "cold unsalted butter",
+          "unsalted butter, cut into small pats"
+        ],
+        "quantity_patterns": [
+          [
+            "2 tbsp",
+            33
+          ],
+          [
+            "1 tbsp",
+            29
+          ],
+          [
+            "115 g",
+            1
+          ],
+          [
+            "30 g",
+            3
+          ],
+          [
+            "3 tbsp",
+            7
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            76
+          ],
+          [
+            "g",
+            22
+          ],
+          [
+            "cup",
+            1
+          ]
+        ],
+        "categories": [
+          "Dairy & Eggs",
+          "Milk, Eggs, Other Dairy",
+          "Dairy"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Low-Carb Garlic Shrimp & Green Beans with Quinoa",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Spinach–Feta Frittata Cups",
+            "servings": 6,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Osso Buco (Small-Batch)",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "fresh ginger",
+        "usage_count": 96,
+        "shoppable_variants": [
+          "Fresh Ginger"
+        ],
+        "display_variants": [
+          "fresh ginger, grated (optional)",
+          "fresh ginger (grated)",
+          "fresh ginger, grated",
+          "fresh ginger, minced",
+          "ginger, fresh, finely grated"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 tsp",
+            1
+          ],
+          [
+            "1 tbsp",
+            54
+          ],
+          [
+            "1 tsp",
+            17
+          ],
+          [
+            "150 g",
+            1
+          ],
+          [
+            "35 g",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            18
+          ],
+          [
+            "tbsp",
+            62
+          ],
+          [
+            "g",
+            15
+          ],
+          [
+            "oz",
+            1
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Spices and Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "scallions",
+        "usage_count": 95,
+        "shoppable_variants": [
+          "Scallions"
+        ],
+        "display_variants": [
+          "scallions (green parts), thinly sliced for garnish",
+          "scallions, sliced",
+          "scallions (green onions), julienned",
+          "scallions, thinly sliced",
+          "scallions (green onions), trimmed and sliced 1\""
+        ],
+        "quantity_patterns": [
+          [
+            "2 each",
+            26
+          ],
+          [
+            "4 count",
+            6
+          ],
+          [
+            "3 each",
+            18
+          ],
+          [
+            "3 count",
+            3
+          ],
+          [
+            "4 each",
+            22
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "each",
+            69
+          ],
+          [
+            "count",
+            14
+          ],
+          [
+            "g",
+            5
+          ],
+          [
+            "stalk",
+            4
+          ],
+          [
+            "cup",
+            1
+          ],
+          [
+            "stalks",
+            1
+          ],
+          [
+            "bunch",
+            1
+          ]
+        ],
+        "categories": [
+          "Fresh Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "each"
+          },
+          {
+            "meal": "Cumin Lamb Stir-Fry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 4,
+            "unit": "count"
+          },
+          {
+            "meal": "Escovitch Fish with Pickled Veg and Coconut Rice",
+            "servings": 4,
+            "quantity": 3,
+            "unit": "each"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "fresh parsley",
+        "usage_count": 92,
+        "shoppable_variants": [
+          "Fresh Parsley"
+        ],
+        "display_variants": [
+          "fresh parsley, chopped (for garnish)",
+          "fresh parsley, chopped",
+          "fresh parsley, finely chopped",
+          "fresh parsley (packed)",
+          "fresh parsley (for garnish)"
+        ],
+        "quantity_patterns": [
+          [
+            "2 tbsp",
+            45
+          ],
+          [
+            "60 g",
+            2
+          ],
+          [
+            "10 g",
+            4
+          ],
+          [
+            "1 cup",
+            9
+          ],
+          [
+            "1 tbsp",
+            11
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            57
+          ],
+          [
+            "g",
+            13
+          ],
+          [
+            "cup",
+            21
+          ],
+          [
+            "bunch",
+            1
+          ]
+        ],
+        "categories": [
+          "Fresh Herbs",
+          "Produce",
+          "Herbs"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Whole30 Pork Chops with Apple Slaw and Roasted Sweet Potatoes",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Low-Carb Garlic Shrimp & Green Beans with Quinoa",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Spinach–Feta Frittata Cups",
+            "servings": 6,
+            "quantity": 2,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "smoked paprika",
+        "usage_count": 87,
+        "shoppable_variants": [
+          "Smoked Paprika"
+        ],
+        "display_variants": [
+          "smoked paprika",
+          "smoked paprika (optional)",
+          "smoked paprika (optional garnish)",
+          "smoked paprika (optional, for extra smokiness)",
+          "smoked paprika (for heat mix)"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 tsp",
+            13
+          ],
+          [
+            "1 tsp",
+            58
+          ],
+          [
+            "2 tsp",
+            5
+          ],
+          [
+            "1 tbsp",
+            8
+          ],
+          [
+            "0.25 tsp",
+            2
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            79
+          ],
+          [
+            "tbsp",
+            8
+          ]
+        ],
+        "categories": [
+          "Spices & Seasonings",
+          "Spices and Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Fish Tacos with Cabbage Slaw",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Whole30 Pork Chops with Apple Slaw and Roasted Sweet Potatoes",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Blackened Fish Tacos (American-Style)",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "soy sauce",
+        "usage_count": 82,
+        "shoppable_variants": [
+          "Soy Sauce"
+        ],
+        "display_variants": [
+          "soy sauce (or tamari)",
+          "soy sauce",
+          "soy sauce or tamari",
+          "soy sauce (regular or gluten-free tamari if needed)",
+          "soy sauce for broth (optional)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tsp",
+            5
+          ],
+          [
+            "2 tbsp",
+            22
+          ],
+          [
+            "1 tbsp",
+            18
+          ],
+          [
+            "4 tbsp",
+            5
+          ],
+          [
+            "0.25 cup",
+            6
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            7
+          ],
+          [
+            "tbsp",
+            58
+          ],
+          [
+            "cup",
+            8
+          ],
+          [
+            "ml",
+            9
+          ]
+        ],
+        "categories": [
+          "Condiments & Sauces",
+          "Spices & Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Cumin Lamb Stir-Fry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "ground cumin",
+        "usage_count": 82,
+        "shoppable_variants": [
+          "Ground Cumin"
+        ],
+        "display_variants": [
+          "ground cumin",
+          "ground cumin (for marinade)",
+          "cumin, ground"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 tsp",
+            13
+          ],
+          [
+            "1 tsp",
+            54
+          ],
+          [
+            "2 tsp",
+            8
+          ],
+          [
+            "1 tbsp",
+            4
+          ],
+          [
+            "4 g",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            77
+          ],
+          [
+            "tbsp",
+            4
+          ],
+          [
+            "g",
+            1
+          ]
+        ],
+        "categories": [
+          "Spices & Seasonings",
+          "Spices and Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Fish Tacos with Cabbage Slaw",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Blackened Fish Tacos (American-Style)",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "quinoa",
+        "usage_count": 78,
+        "shoppable_variants": [
+          "Quinoa"
+        ],
+        "display_variants": [
+          "quinoa, dry",
+          "quinoa (dry)",
+          "quinoa (uncooked, rinsed)",
+          "quinoa",
+          "uncooked quinoa, rinsed"
+        ],
+        "quantity_patterns": [
+          [
+            "1 cup",
+            63
+          ],
+          [
+            "120 g",
+            1
+          ],
+          [
+            "150 g",
+            4
+          ],
+          [
+            "200 g",
+            6
+          ],
+          [
+            "2 cup",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "cup",
+            66
+          ],
+          [
+            "g",
+            11
+          ],
+          [
+            "oz",
+            1
+          ]
+        ],
+        "categories": [
+          "Grains",
+          "Grains & Rice",
+          "Rice & Grains"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Low-Carb Garlic Shrimp & Green Beans with Quinoa",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          },
+          {
+            "meal": "Autumn Apple & Goat Cheese Harvest with Quinoa",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          },
+          {
+            "meal": "Vegan Falafel Bowl with Hummus and Fresh Herbs",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "cilantro",
+        "usage_count": 73,
+        "shoppable_variants": [
+          "Cilantro"
+        ],
+        "display_variants": [
+          "cilantro (chopped)",
+          "fresh cilantro, chopped",
+          "fresh cilantro (chopped)",
+          "cilantro leaves (chopped)",
+          "chopped fresh cilantro"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 cup",
+            13
+          ],
+          [
+            "0.25 cup",
+            20
+          ],
+          [
+            "1 cup",
+            8
+          ],
+          [
+            "0.25 bunch",
+            8
+          ],
+          [
+            "1 bunch",
+            5
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "cup",
+            41
+          ],
+          [
+            "bunch",
+            18
+          ],
+          [
+            "g",
+            7
+          ],
+          [
+            "tbsp",
+            7
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Fresh Herbs",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "cup"
+          },
+          {
+            "meal": "Fish Tacos with Cabbage Slaw",
+            "servings": 4,
+            "quantity": 0.25,
+            "unit": "cup"
+          },
+          {
+            "meal": "Birria Quesadilla Dip with Bell Peppers and Lime",
+            "servings": 6,
+            "quantity": 1,
+            "unit": "cup"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "red onion",
+        "usage_count": 68,
+        "shoppable_variants": [
+          "Red Onion"
+        ],
+        "display_variants": [
+          "red onion, thinly sliced",
+          "red onion, thinly sliced into half-moons",
+          "small red onion, thinly sliced",
+          "red onion (thinly sliced)",
+          "red onion"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 each",
+            23
+          ],
+          [
+            "1 each",
+            20
+          ],
+          [
+            "0.25 count",
+            1
+          ],
+          [
+            "60 g",
+            4
+          ],
+          [
+            "0.25 each",
+            5
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "each",
+            48
+          ],
+          [
+            "count",
+            4
+          ],
+          [
+            "g",
+            7
+          ],
+          [
+            "cup",
+            6
+          ],
+          [
+            "tbsp",
+            2
+          ],
+          [
+            "oz",
+            1
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Fish Tacos with Cabbage Slaw",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "each"
+          },
+          {
+            "meal": "Escovitch Fish with Pickled Veg and Coconut Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Grilled Sardines with Tomato–Cucumber Salad and Pita",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "red bell pepper",
+        "usage_count": 65,
+        "shoppable_variants": [
+          "Red Bell Pepper"
+        ],
+        "display_variants": [
+          "red bell pepper, thinly sliced",
+          "red bell pepper, sliced into strips",
+          "red bell pepper, seeded and cut into 1-inch pieces",
+          "thinly sliced red bell pepper",
+          "red bell pepper, cut into 1-inch pieces"
+        ],
+        "quantity_patterns": [
+          [
+            "1 each",
+            53
+          ],
+          [
+            "150 g",
+            2
+          ],
+          [
+            "1 count",
+            4
+          ],
+          [
+            "0.5 cup",
+            2
+          ],
+          [
+            "2 each",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "each",
+            55
+          ],
+          [
+            "g",
+            4
+          ],
+          [
+            "count",
+            4
+          ],
+          [
+            "cup",
+            2
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Escovitch Fish with Pickled Veg and Coconut Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Red Curry Tofu with Jasmine Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "granulated sugar",
+        "usage_count": 62,
+        "shoppable_variants": [
+          "Granulated Sugar"
+        ],
+        "display_variants": [
+          "granulated sugar",
+          "granulated sugar (optional)",
+          "granulated sugar or palm sugar",
+          "granulated sugar (for bara dough)",
+          "granulated sugar or honey"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tbsp",
+            13
+          ],
+          [
+            "1 tsp",
+            25
+          ],
+          [
+            "150 g",
+            1
+          ],
+          [
+            "0.5 tsp",
+            7
+          ],
+          [
+            "5 g",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            22
+          ],
+          [
+            "tsp",
+            32
+          ],
+          [
+            "g",
+            8
+          ]
+        ],
+        "categories": [
+          "Pantry Staples",
+          "Spices & Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Complete Samgyeopsal (Pork Belly) Wraps with Pickled Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Buttermilk Fried Chicken Sandwich with Spicy Slaw",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "lime juice",
+        "usage_count": 61,
+        "shoppable_variants": [
+          "Lime Juice"
+        ],
+        "display_variants": [
+          "fresh lime juice",
+          "lime juice",
+          "lime juice (fresh)",
+          "lime juice (about 1 lime)",
+          "lime juice (about 2 limes)"
+        ],
+        "quantity_patterns": [
+          [
+            "45 ml",
+            1
+          ],
+          [
+            "3 tbsp",
+            10
+          ],
+          [
+            "1 each",
+            2
+          ],
+          [
+            "2 tbsp",
+            27
+          ],
+          [
+            "1 tbsp",
+            12
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "ml",
+            5
+          ],
+          [
+            "tbsp",
+            51
+          ],
+          [
+            "each",
+            2
+          ],
+          [
+            "cup",
+            3
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Condiments & Sauces",
+          "Produce",
+          "Condiments",
+          "Oils & Vinegars"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 45,
+            "unit": "ml"
+          },
+          {
+            "meal": "Fish Tacos with Cabbage Slaw",
+            "servings": 4,
+            "quantity": 3,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Red Curry Tofu with Jasmine Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "lemon zest",
+        "usage_count": 59,
+        "shoppable_variants": [
+          "Lemon Zest"
+        ],
+        "display_variants": [
+          "lemon zest",
+          "lemon zest (for gremolata)",
+          "lemon zest (optional garnish)",
+          "lemon zest (optional)",
+          "fresh lemon zest"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tsp",
+            44
+          ],
+          [
+            "0.5 tsp",
+            5
+          ],
+          [
+            "2 tbsp",
+            1
+          ],
+          [
+            "1 each",
+            5
+          ],
+          [
+            "1 tbsp",
+            4
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            49
+          ],
+          [
+            "tbsp",
+            5
+          ],
+          [
+            "each",
+            5
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Low-Carb Garlic Shrimp & Green Beans with Quinoa",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Greek Yogurt Parfait with Pistachio & Honey",
+            "servings": 2,
+            "quantity": 0.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Lemon–Blueberry Olive Oil Muffins with Greek Yogurt and Oats",
+            "servings": 12,
+            "quantity": 2,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "sea salt",
+        "usage_count": 58,
+        "shoppable_variants": [
+          "Sea Salt"
+        ],
+        "display_variants": [
+          "sea salt",
+          "fine sea salt",
+          "fine sea salt or kosher salt",
+          "sea salt (fine)",
+          "fine sea salt (for pasta water)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tsp",
+            30
+          ],
+          [
+            "0.5 tsp",
+            4
+          ],
+          [
+            "0.25 tsp",
+            1
+          ],
+          [
+            "1 pinch",
+            3
+          ],
+          [
+            "1.25 tsp",
+            4
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            53
+          ],
+          [
+            "pinch",
+            3
+          ],
+          [
+            "tbsp",
+            1
+          ],
+          [
+            "g",
+            1
+          ]
+        ],
+        "categories": [
+          "Spices & Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Paleo Egg Roll in a Bowl with Cauliflower Rice",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Tahini–Banana Overnight Oats",
+            "servings": 2,
+            "quantity": 0.25,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "lemon",
+        "usage_count": 55,
+        "shoppable_variants": [
+          "Lemon"
+        ],
+        "display_variants": [
+          "lemon juice",
+          "lemon, cut into wedges",
+          "lemon (juice and zest)",
+          "fresh lemon juice",
+          "lemon zest (from 1 lemon)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tbsp",
+            5
+          ],
+          [
+            "1 each",
+            37
+          ],
+          [
+            "2 each",
+            3
+          ],
+          [
+            "2 tbsp",
+            2
+          ],
+          [
+            "1 count",
+            2
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            7
+          ],
+          [
+            "each",
+            44
+          ],
+          [
+            "count",
+            2
+          ],
+          [
+            "piece",
+            2
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce",
+          "Fruits"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Avocado Feta & Chili Flake Toast",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Low-Carb Miso-Glazed Mackerel & Greens with Cauliflower Rice",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Vegan Falafel Bowl with Hummus and Fresh Herbs",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "each"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "carrot",
+        "usage_count": 54,
+        "shoppable_variants": [
+          "Carrot"
+        ],
+        "display_variants": [
+          "carrot, julienned",
+          "carrot, peeled and julienned or shredded",
+          "carrot, shredded",
+          "carrot, julienned or thinly sliced",
+          "carrot (julienned or shredded)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 each",
+            18
+          ],
+          [
+            "1 cup",
+            13
+          ],
+          [
+            "2 each",
+            3
+          ],
+          [
+            "120 g",
+            3
+          ],
+          [
+            "1 medium",
+            3
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "each",
+            21
+          ],
+          [
+            "cup",
+            16
+          ],
+          [
+            "g",
+            12
+          ],
+          [
+            "medium",
+            3
+          ],
+          [
+            "count",
+            2
+          ]
+        ],
+        "categories": [
+          "Fresh Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Samgyeopsal (Pork Belly) Wraps with Pickled Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Whole30 Pork Chops with Apple Slaw and Roasted Sweet Potatoes",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          },
+          {
+            "meal": "Paleo Egg Roll in a Bowl with Cauliflower Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "large eggs",
+        "usage_count": 54,
+        "shoppable_variants": [
+          "Large Eggs"
+        ],
+        "display_variants": [
+          "large eggs",
+          "large eggs (omit for vegan; use scrambled in pan)",
+          "large eggs, lightly beaten",
+          "eggs (large)",
+          "eggs"
+        ],
+        "quantity_patterns": [
+          [
+            "2 each",
+            20
+          ],
+          [
+            "8 each",
+            6
+          ],
+          [
+            "4 each",
+            18
+          ],
+          [
+            "3 each",
+            5
+          ],
+          [
+            "1 dozen",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "each",
+            53
+          ],
+          [
+            "dozen",
+            1
+          ]
+        ],
+        "categories": [
+          "Dairy & Eggs"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Lemon–Blueberry Olive Oil Muffins with Greek Yogurt and Oats",
+            "servings": 12,
+            "quantity": 2,
+            "unit": "each"
+          },
+          {
+            "meal": "Spinach–Feta Frittata Cups",
+            "servings": 6,
+            "quantity": 8,
+            "unit": "each"
+          },
+          {
+            "meal": "Enhanced Pad Thai Tofu",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "each"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "sesame oil",
+        "usage_count": 53,
+        "shoppable_variants": [
+          "Sesame Oil"
+        ],
+        "display_variants": [
+          "sesame oil",
+          "toasted sesame oil",
+          "sesame oil (for dressing)",
+          "sesame oil (optional)",
+          "sesame oil (toasted) - optional for finishing"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 tsp",
+            6
+          ],
+          [
+            "1 tsp",
+            32
+          ],
+          [
+            "1 tbsp",
+            5
+          ],
+          [
+            "2 tbsp",
+            2
+          ],
+          [
+            "3 tbsp",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            40
+          ],
+          [
+            "tbsp",
+            9
+          ],
+          [
+            "ml",
+            4
+          ]
+        ],
+        "categories": [
+          "Oils & Vinegars"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Low-Carb Miso-Glazed Mackerel & Greens with Cauliflower Rice",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Paleo Egg Roll in a Bowl with Cauliflower Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "shallot",
+        "usage_count": 53,
+        "shoppable_variants": [
+          "Shallot"
+        ],
+        "display_variants": [
+          "shallot, finely chopped",
+          "shallot, very thinly sliced",
+          "shallot",
+          "minced shallot",
+          "shallot, finely minced"
+        ],
+        "quantity_patterns": [
+          [
+            "1 each",
+            46
+          ],
+          [
+            "0.5 each",
+            2
+          ],
+          [
+            "1 count",
+            2
+          ],
+          [
+            "0.5 count",
+            1
+          ],
+          [
+            "0.25 count",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "each",
+            48
+          ],
+          [
+            "count",
+            5
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Gourmet"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Whole30 Pork Chops with Apple Slaw and Roasted Sweet Potatoes",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Sun-Dried Tomato & Goat Cheese Omelet with Toast",
+            "servings": 1,
+            "quantity": 0.5,
+            "unit": "each"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "cherry tomatoes",
+        "usage_count": 51,
+        "shoppable_variants": [
+          "Cherry Tomatoes"
+        ],
+        "display_variants": [
+          "cherry tomatoes (halved)",
+          "cherry tomatoes",
+          "cherry tomatoes, halved",
+          "cherry tomatoes, whole",
+          "cherry tomatoes, halved (or diced canned tomatoes drained)"
+        ],
+        "quantity_patterns": [
+          [
+            "200 g",
+            12
+          ],
+          [
+            "8 count",
+            1
+          ],
+          [
+            "1 cup",
+            13
+          ],
+          [
+            "1.5 cup",
+            5
+          ],
+          [
+            "250 g",
+            6
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "g",
+            26
+          ],
+          [
+            "count",
+            1
+          ],
+          [
+            "cup",
+            21
+          ],
+          [
+            "oz",
+            1
+          ],
+          [
+            "each",
+            2
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Vegan Falafel Bowl with Hummus and Fresh Herbs",
+            "servings": 4,
+            "quantity": 200,
+            "unit": "g"
+          },
+          {
+            "meal": "Citrus Shrimp & Avocado Bowl",
+            "servings": 2,
+            "quantity": 8,
+            "unit": "count"
+          },
+          {
+            "meal": "Lemon–Herb Quinoa Breakfast Bowl",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "cup"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "rice vinegar",
+        "usage_count": 48,
+        "shoppable_variants": [
+          "Rice Vinegar"
+        ],
+        "display_variants": [
+          "rice vinegar",
+          "rice vinegar (unseasoned)",
+          "rice vinegar (optional, for vegetables)",
+          "rice vinegar (for pickles)",
+          "rice vinegar (for pickling)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tsp",
+            8
+          ],
+          [
+            "1 tbsp",
+            23
+          ],
+          [
+            "2 tbsp",
+            6
+          ],
+          [
+            "4 tbsp",
+            1
+          ],
+          [
+            "0.25 cup",
+            2
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            8
+          ],
+          [
+            "tbsp",
+            31
+          ],
+          [
+            "cup",
+            4
+          ],
+          [
+            "ml",
+            5
+          ]
+        ],
+        "categories": [
+          "Condiments & Sauces",
+          "Oil, Vinegar, Salad Dressing"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Samgyeopsal (Pork Belly) Wraps with Pickled Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Low-Carb Miso-Glazed Mackerel & Greens with Cauliflower Rice",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Paleo Egg Roll in a Bowl with Cauliflower Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "parmesan cheese",
+        "usage_count": 46,
+        "shoppable_variants": [
+          "Parmesan Cheese"
+        ],
+        "display_variants": [
+          "grated Parmesan cheese",
+          "parmesan cheese (grated)",
+          "grated parmesan cheese",
+          "extra Parmesan for serving",
+          "parmesan cheese, finely grated"
+        ],
+        "quantity_patterns": [
+          [
+            "60 g",
+            6
+          ],
+          [
+            "0.5 cup",
+            4
+          ],
+          [
+            "1 cup",
+            4
+          ],
+          [
+            "3 tbsp",
+            2
+          ],
+          [
+            "20 g",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "g",
+            18
+          ],
+          [
+            "cup",
+            10
+          ],
+          [
+            "tbsp",
+            13
+          ],
+          [
+            "oz",
+            5
+          ]
+        ],
+        "categories": [
+          "Dairy & Eggs",
+          "Cheese"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Maple-Mustard Brussels Caesar with Crunchy Croutons",
+            "servings": 4,
+            "quantity": 60,
+            "unit": "g"
+          },
+          {
+            "meal": "Mediterranean Lemon-Herb Chicken & Farro",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "cup"
+          },
+          {
+            "meal": "Crispy Chickpea Caesar Salad with Garlic Croutons",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "cup"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "fresh lemon juice",
+        "usage_count": 46,
+        "shoppable_variants": [
+          "Fresh Lemon Juice"
+        ],
+        "display_variants": [
+          "lemon juice",
+          "fresh lemon juice",
+          "lemon juice (fresh)",
+          "fresh lemon juice (about 2 lemons)",
+          "lemon juice, fresh"
+        ],
+        "quantity_patterns": [
+          [
+            "2 tbsp",
+            15
+          ],
+          [
+            "3 tbsp",
+            8
+          ],
+          [
+            "1 tbsp",
+            14
+          ],
+          [
+            "30 ml",
+            2
+          ],
+          [
+            "60 ml",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            38
+          ],
+          [
+            "ml",
+            5
+          ],
+          [
+            "tsp",
+            3
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Grilled Sardines with Tomato–Cucumber Salad and Pita",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Turmeric-Ginger Chickpea Power Bowl",
+            "servings": 4,
+            "quantity": 3,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Spicy Tahini Chicken & Kale with Quinoa",
+            "servings": 4,
+            "quantity": 3,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "parsley",
+        "usage_count": 44,
+        "shoppable_variants": [
+          "Parsley"
+        ],
+        "display_variants": [
+          "fresh parsley (chopped)",
+          "fresh parsley, chopped",
+          "fresh parsley",
+          "fresh parsley, finely chopped",
+          "fresh parsley or cilantro, chopped (for garnish)"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 cup",
+            6
+          ],
+          [
+            "0.25 cup",
+            12
+          ],
+          [
+            "2 tbsp",
+            12
+          ],
+          [
+            "1 cup",
+            4
+          ],
+          [
+            "15 g",
+            3
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "cup",
+            22
+          ],
+          [
+            "tbsp",
+            15
+          ],
+          [
+            "g",
+            5
+          ],
+          [
+            "bunch",
+            2
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Fresh Herbs",
+          "Herbs",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Chicken Piccata with Spinach and Pasta",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "cup"
+          },
+          {
+            "meal": "Chicken Shawarma Grain Bowl",
+            "servings": 4,
+            "quantity": 0.25,
+            "unit": "cup"
+          },
+          {
+            "meal": "Clam & White Bean Stew with Rice",
+            "servings": 4,
+            "quantity": 0.25,
+            "unit": "cup"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "jasmine rice",
+        "usage_count": 43,
+        "shoppable_variants": [
+          "Jasmine Rice"
+        ],
+        "display_variants": [
+          "jasmine rice (uncooked)",
+          "jasmine rice",
+          "jasmine rice, uncooked",
+          "jasmine rice, cooked",
+          "cooked jasmine rice, for serving"
+        ],
+        "quantity_patterns": [
+          [
+            "1 cup",
+            9
+          ],
+          [
+            "2 cup",
+            13
+          ],
+          [
+            "240 g",
+            4
+          ],
+          [
+            "2 cups",
+            2
+          ],
+          [
+            "4 cup",
+            5
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "cup",
+            35
+          ],
+          [
+            "g",
+            6
+          ],
+          [
+            "cups",
+            2
+          ]
+        ],
+        "categories": [
+          "Grains",
+          "Grains & Rice",
+          "Rice & Grains",
+          "Pasta and Rice"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          },
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "cup"
+          },
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 240,
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "vegetable broth",
+        "usage_count": 43,
+        "shoppable_variants": [
+          "Vegetable Broth"
+        ],
+        "display_variants": [
+          "water or vegetable broth",
+          "water or low-sodium vegetable broth",
+          "vegetable broth or water",
+          "vegetable broth, low-sodium",
+          "vegetable broth (low-sodium)"
+        ],
+        "quantity_patterns": [
+          [
+            "120 ml",
+            1
+          ],
+          [
+            "2 cup",
+            9
+          ],
+          [
+            "720 ml",
+            2
+          ],
+          [
+            "1 cup",
+            4
+          ],
+          [
+            "800 ml",
+            2
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "ml",
+            15
+          ],
+          [
+            "cup",
+            26
+          ],
+          [
+            "l",
+            1
+          ],
+          [
+            "cups",
+            1
+          ]
+        ],
+        "categories": [
+          "Canned Goods",
+          "Broths & Stocks"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Red Curry Tofu with Jasmine Rice",
+            "servings": 4,
+            "quantity": 120,
+            "unit": "ml"
+          },
+          {
+            "meal": "Lemon–Herb Quinoa Breakfast Bowl",
+            "servings": 2,
+            "quantity": 2,
+            "unit": "cup"
+          },
+          {
+            "meal": "Grilled Halloumi & Farro Salad",
+            "servings": 4,
+            "quantity": 720,
+            "unit": "ml"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "dried oregano",
+        "usage_count": 43,
+        "shoppable_variants": [
+          "Dried Oregano"
+        ],
+        "display_variants": [
+          "dried oregano",
+          "dried oregano (preferably Mexican)",
+          "dried oregano or Italian seasoning",
+          "dried oregano (preferably Mexican oregano)",
+          "dried oregano (garnish)"
+        ],
+        "quantity_patterns": [
+          [
+            "0.5 tsp",
+            5
+          ],
+          [
+            "1 tsp",
+            33
+          ],
+          [
+            "1 tbsp",
+            2
+          ],
+          [
+            "2 tsp",
+            2
+          ],
+          [
+            "1 pinch",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            40
+          ],
+          [
+            "tbsp",
+            2
+          ],
+          [
+            "pinch",
+            1
+          ]
+        ],
+        "categories": [
+          "Spices & Seasonings"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Blackened Fish Tacos (American-Style)",
+            "servings": 4,
+            "quantity": 0.5,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Mediterranean Tuna Olive Chopped Salad with Quinoa",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Complete Mole Poblano Chicken with Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "fresh cilantro",
+        "usage_count": 42,
+        "shoppable_variants": [
+          "Fresh Cilantro"
+        ],
+        "display_variants": [
+          "fresh cilantro, chopped",
+          "fresh cilantro (packed)",
+          "fresh cilantro (roughly chopped)",
+          "fresh cilantro, chopped (for garnish)",
+          "fresh cilantro leaves and tender stems, chopped"
+        ],
+        "quantity_patterns": [
+          [
+            "15 g",
+            3
+          ],
+          [
+            "30 g",
+            2
+          ],
+          [
+            "0.25 cup",
+            12
+          ],
+          [
+            "2 tbsp",
+            14
+          ],
+          [
+            "1 tbsp",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "g",
+            7
+          ],
+          [
+            "cup",
+            20
+          ],
+          [
+            "tbsp",
+            15
+          ]
+        ],
+        "categories": [
+          "Fresh Herbs"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 15,
+            "unit": "g"
+          },
+          {
+            "meal": "Vegan Falafel Bowl with Hummus and Fresh Herbs",
+            "servings": 4,
+            "quantity": 30,
+            "unit": "g"
+          },
+          {
+            "meal": "Miso-Maple Sesame Crunch Salad with Quinoa",
+            "servings": 4,
+            "quantity": 0.25,
+            "unit": "cup"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "all-purpose flour",
+        "usage_count": 42,
+        "shoppable_variants": [
+          "All-purpose Flour",
+          "All-Purpose Flour"
+        ],
+        "display_variants": [
+          "all-purpose flour (for dusting)",
+          "all-purpose flour (for dredging)",
+          "all-purpose flour",
+          "all-purpose flour (or chickpea flour for gluten-free)",
+          "all-purpose flour (for thickening)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 cup",
+            5
+          ],
+          [
+            "2 cup",
+            3
+          ],
+          [
+            "300 g",
+            1
+          ],
+          [
+            "3 tbsp",
+            6
+          ],
+          [
+            "2 tbsp",
+            4
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "cup",
+            15
+          ],
+          [
+            "g",
+            13
+          ],
+          [
+            "tbsp",
+            11
+          ],
+          [
+            "cups",
+            1
+          ],
+          [
+            "oz",
+            2
+          ]
+        ],
+        "categories": [
+          "Baking & Pantry Staples",
+          "Baking"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Escovitch Fish with Pickled Veg and Coconut Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          },
+          {
+            "meal": "Buttermilk Fried Chicken Sandwich with Spicy Slaw",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "cup"
+          },
+          {
+            "meal": "Lemon–Blueberry Olive Oil Muffins with Greek Yogurt and Oats",
+            "servings": 12,
+            "quantity": 300,
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "cucumber",
+        "usage_count": 42,
+        "shoppable_variants": [
+          "Cucumber"
+        ],
+        "display_variants": [
+          "cucumber, julienned",
+          "cucumber (diced)",
+          "cucumber, thinly sliced and pickled",
+          "cucumber (thinly sliced)",
+          "cucumber"
+        ],
+        "quantity_patterns": [
+          [
+            "1 each",
+            24
+          ],
+          [
+            "1 medium",
+            5
+          ],
+          [
+            "150 g",
+            1
+          ],
+          [
+            "1 count",
+            2
+          ],
+          [
+            "0.5 each",
+            4
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "each",
+            28
+          ],
+          [
+            "medium",
+            5
+          ],
+          [
+            "g",
+            3
+          ],
+          [
+            "count",
+            2
+          ],
+          [
+            "cup",
+            4
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Samgyeopsal (Pork Belly) Wraps with Pickled Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Vegan Falafel Bowl with Hummus and Fresh Herbs",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "each"
+          },
+          {
+            "meal": "Chicken Shawarma Grain Bowl",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "medium"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "toasted sesame seeds",
+        "usage_count": 41,
+        "shoppable_variants": [
+          "Toasted Sesame Seeds"
+        ],
+        "display_variants": [
+          "toasted sesame seeds",
+          "toasted sesame seeds (white or mixed)",
+          "toasted sesame seeds (for garnish)",
+          "toasted sesame seeds (white or mixed), for garnish",
+          "toasted sesame seeds (garnish)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tsp",
+            11
+          ],
+          [
+            "1 tbsp",
+            13
+          ],
+          [
+            "2 tbsp",
+            10
+          ],
+          [
+            "10 g",
+            1
+          ],
+          [
+            "0.25 tsp",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tsp",
+            13
+          ],
+          [
+            "tbsp",
+            24
+          ],
+          [
+            "g",
+            4
+          ]
+        ],
+        "categories": [
+          "Nuts & Seeds",
+          "Gourmet"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Complete Samgyeopsal (Pork Belly) Wraps with Pickled Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Miso-Maple Sesame Crunch Salad with Quinoa",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "fish sauce",
+        "usage_count": 40,
+        "shoppable_variants": [
+          "Fish Sauce"
+        ],
+        "display_variants": [
+          "fish sauce (or coconut aminos for stricter paleo/whole30)",
+          "fish sauce (omit for strict vegan; use extra soy or tamari)",
+          "fish sauce",
+          "fish sauce (nam pla/nuoc mam)",
+          "fish sauce (nuoc mam)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tbsp",
+            5
+          ],
+          [
+            "2 tbsp",
+            10
+          ],
+          [
+            "60 ml",
+            1
+          ],
+          [
+            "1.5 tbsp",
+            4
+          ],
+          [
+            "3 tbsp",
+            15
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            35
+          ],
+          [
+            "ml",
+            1
+          ],
+          [
+            "tsp",
+            3
+          ],
+          [
+            "cup",
+            1
+          ]
+        ],
+        "categories": [
+          "Condiments & Sauces",
+          "Seafood"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Enhanced Pad Thai Tofu",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Green Curry Chicken",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "neutral oil",
+        "usage_count": 39,
+        "shoppable_variants": [
+          "Neutral Oil"
+        ],
+        "display_variants": [
+          "neutral oil (vegetable or canola) for brushing",
+          "neutral oil (for dressing, if needed)",
+          "neutral oil for frying (canola or avocado)",
+          "neutral oil for deep-frying or pan-frying tofu (optional)",
+          "neutral oil (vegetable or canola)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tbsp",
+            18
+          ],
+          [
+            "2 tbsp",
+            9
+          ],
+          [
+            "3 tbsp",
+            4
+          ],
+          [
+            "80 ml",
+            2
+          ],
+          [
+            "800 ml",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            31
+          ],
+          [
+            "ml",
+            6
+          ],
+          [
+            "tsp",
+            2
+          ]
+        ],
+        "categories": [
+          "Oils & Vinegars"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Miso-Maple Sesame Crunch Salad with Quinoa",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Vegan Sesame Soba & Veg",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "carrots",
+        "usage_count": 38,
+        "shoppable_variants": [
+          "Carrots"
+        ],
+        "display_variants": [
+          "carrots, julienned or thin matchsticks",
+          "carrots (shredded)",
+          "carrots (shredded for slaw)",
+          "carrots, peeled and sliced 1/2-inch",
+          "carrots, julienned or thinly sliced"
+        ],
+        "quantity_patterns": [
+          [
+            "1 cup",
+            6
+          ],
+          [
+            "2 each",
+            12
+          ],
+          [
+            "150 g",
+            3
+          ],
+          [
+            "3 each",
+            3
+          ],
+          [
+            "2 cups",
+            1
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "cup",
+            12
+          ],
+          [
+            "each",
+            17
+          ],
+          [
+            "g",
+            4
+          ],
+          [
+            "cups",
+            1
+          ],
+          [
+            "oz",
+            1
+          ],
+          [
+            "medium",
+            3
+          ]
+        ],
+        "categories": [
+          "Fresh Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Escovitch Fish with Pickled Veg and Coconut Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          },
+          {
+            "meal": "Blackened Fish Tacos (American-Style)",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          },
+          {
+            "meal": "Buttermilk Fried Chicken Sandwich with Spicy Slaw",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "cup"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "tomato paste",
+        "usage_count": 37,
+        "shoppable_variants": [
+          "Tomato Paste"
+        ],
+        "display_variants": [
+          "tomato paste",
+          "tomato paste (for BBQ sauce)",
+          "tomato paste (no sugar)"
+        ],
+        "quantity_patterns": [
+          [
+            "2 tbsp",
+            25
+          ],
+          [
+            "1 tbsp",
+            10
+          ],
+          [
+            "3 tbsp",
+            2
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            37
+          ]
+        ],
+        "categories": [
+          "Canned Goods",
+          "Canned and Jarred"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Lasagna Roll-Ups with Spinach and Ricotta",
+            "servings": 6,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Vegan Mushroom Bourguignon",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Osso Buco (Small-Batch)",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "sugar",
+        "usage_count": 37,
+        "shoppable_variants": [
+          "Sugar"
+        ],
+        "display_variants": [
+          "granulated sugar",
+          "sugar (to balance acidity)",
+          "sugar or honey",
+          "sugar",
+          "sugar (for pickle/seasoning)"
+        ],
+        "quantity_patterns": [
+          [
+            "1 tbsp",
+            5
+          ],
+          [
+            "1 tsp",
+            21
+          ],
+          [
+            "2 tbsp",
+            5
+          ],
+          [
+            "2 tsp",
+            2
+          ],
+          [
+            "0.5 tsp",
+            3
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "tbsp",
+            10
+          ],
+          [
+            "tsp",
+            26
+          ],
+          [
+            "cup",
+            1
+          ]
+        ],
+        "categories": [
+          "Baking & Pantry Staples"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tbsp"
+          },
+          {
+            "meal": "Escovitch Fish with Pickled Veg and Coconut Rice",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "tsp"
+          },
+          {
+            "meal": "Beef Bulgogi with Lettuce Wraps and Steamed Rice",
+            "servings": 4,
+            "quantity": 2,
+            "unit": "tbsp"
+          }
+        ]
+      },
+      {
+        "base_ingredient": "lime",
+        "usage_count": 37,
+        "shoppable_variants": [
+          "Lime"
+        ],
+        "display_variants": [
+          "lime",
+          "lime (juiced)",
+          "fresh lime juice",
+          "lime wedges",
+          "lime juice"
+        ],
+        "quantity_patterns": [
+          [
+            "1 count",
+            6
+          ],
+          [
+            "1 piece",
+            1
+          ],
+          [
+            "2 count",
+            1
+          ],
+          [
+            "2 tbsp",
+            3
+          ],
+          [
+            "2 each",
+            10
+          ]
+        ],
+        "unit_patterns": [
+          [
+            "count",
+            7
+          ],
+          [
+            "piece",
+            1
+          ],
+          [
+            "tbsp",
+            4
+          ],
+          [
+            "each",
+            23
+          ],
+          [
+            "large",
+            1
+          ],
+          [
+            "tsp",
+            1
+          ]
+        ],
+        "categories": [
+          "Fresh Produce",
+          "Produce"
+        ],
+        "sample_contexts": [
+          {
+            "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+            "servings": 4,
+            "quantity": 1,
+            "unit": "count"
+          },
+          {
+            "meal": "Birria Quesadilla Dip with Bell Peppers and Lime",
+            "servings": 6,
+            "quantity": 1,
+            "unit": "piece"
+          },
+          {
+            "meal": "Citrus Shrimp & Avocado Bowl",
+            "servings": 2,
+            "quantity": 1,
+            "unit": "count"
+          }
+        ]
+      }
+    ]
+  },
+  "standardization_rules": {
+    "standardization_analysis": {
+      "methodology": "The analysis involved reviewing ingredient variants across multiple meals, identifying common usage patterns, and applying principles of clarity and consistency while preserving meaningful distinctions.",
+      "key_principles": [
+        "Use the most common and clear form of ingredient names for shopping.",
+        "Maintain meaningful distinctions between different types of ingredients."
+      ],
+      "challenging_cases": [
+        "Ahi Tuna vs Fresh Tuna: 'Ahi' is too specific for general shopping, while 'fresh' is implied for fish.",
+        "Kosher Salt vs Sea Salt: Both are types of salt, but they serve different culinary purposes."
+      ]
+    },
+    "shoppable_name_standardizations": [
+      {
+        "variants_found": [
+          "Black Pepper",
+          "black pepper (freshly ground)",
+          "freshly ground black pepper",
+          "black pepper (cracked)"
+        ],
+        "recommended_standard": "Black Pepper",
+        "reasoning": "Most common form, 'freshly ground' is implied for quality, and 'cracked' is a specific preparation.",
+        "meals_affected": 10,
+        "preserve_distinctions": false
+      },
+      {
+        "variants_found": [
+          "Olive Oil",
+          "Extra Virgin Olive Oil",
+          "Olive Oil (for frying)"
+        ],
+        "recommended_standard": "Olive Oil",
+        "reasoning": "Most common form, 'extra virgin' is a quality distinction but not necessary for shopping.",
+        "meals_affected": 15,
+        "preserve_distinctions": true
+      },
+      {
+        "variants_found": [
+          "Garlic",
+          "Garlic Cloves",
+          "Garlic (minced)"
+        ],
+        "recommended_standard": "Garlic Cloves",
+        "reasoning": "Standardizing to 'Garlic Cloves' maintains clarity while differentiating from garlic powder or paste.",
+        "meals_affected": 8,
+        "preserve_distinctions": true
+      }
+    ],
+    "quantity_validations": [
+      {
+        "ingredient": "Chicken Breast",
+        "current_quantities": [
+          "1 each",
+          "0.75 lb",
+          "8 oz"
+        ],
+        "recommended_standard": {
+          "quantity": 1,
+          "unit": "lb",
+          "per_servings": 2
+        },
+        "reasoning": "0.5 lb per person is standard for chicken breast; 'each' is inconsistent sizing.",
+        "meals_affected": 12
+      },
+      {
+        "ingredient": "Quinoa",
+        "current_quantities": [
+          "1 cup",
+          "120 g",
+          "2 cup"
+        ],
+        "recommended_standard": {
+          "quantity": 1,
+          "unit": "cup",
+          "per_servings": 2
+        },
+        "reasoning": "1 cup is a standard serving size for grains, ensuring consistency.",
+        "meals_affected": 10
+      },
+      {
+        "ingredient": "Garlic Cloves",
+        "current_quantities": [
+          "1 clove",
+          "2 cloves",
+          "4 clove"
+        ],
+        "recommended_standard": {
+          "quantity": 2,
+          "unit": "clove",
+          "per_servings": 4
+        },
+        "reasoning": "2 cloves per person is a reasonable average for flavoring.",
+        "meals_affected": 5
+      }
+    ],
+    "overall_impact": {
+      "total_ingredients_reviewed": 50,
+      "standardizations_recommended": 15,
+      "quantity_fixes_recommended": 8,
+      "estimated_improvement": "high"
+    }
+  },
+  "results": {
+    "processed": 457,
+    "updated": 448,
+    "errors": 75,
+    "changes_made": [
+      {
+        "meal": "Complete Miso-Glazed Eggplant with Tofu and Rice",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Avocado Feta & Chili Flake Toast",
+        "ingredient_count": 6
+      },
+      {
+        "meal": "Lasagna Roll-Ups with Spinach and Ricotta",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Coconut Rice with Grilled Prawns and Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Paleo Coconut-Lime Fish Curry with Jasmine Rice",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Fish Tacos with Cabbage Slaw",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Cumin Lamb Stir-Fry with Jasmine Rice",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Escovitch Fish with Pickled Veg and Coconut Rice",
+        "ingredient_count": 24
+      },
+      {
+        "meal": "Curry Goat with Roti and Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Complete Samgyeopsal (Pork Belly) Wraps with Pickled Vegetables",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Black Pepper Beef with Steamed Rice",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Birria Quesadilla Dip with Bell Peppers and Lime",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Red Curry Tofu with Jasmine Rice",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Low-Carb Miso-Glazed Mackerel & Greens with Cauliflower Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Whole30 Pork Chops with Apple Slaw and Roasted Sweet Potatoes",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Blackened Fish Tacos (American-Style)",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Paleo Egg Roll in a Bowl with Cauliflower Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Complete Chicken Piccata with Spinach and Pasta",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Buttermilk Fried Chicken Sandwich with Spicy Slaw",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Maple-Mustard Brussels Caesar with Crunchy Croutons",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Low-Carb Garlic Shrimp & Green Beans with Quinoa",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Lemon–Blueberry Olive Oil Muffins with Greek Yogurt and Oats",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Autumn Apple & Goat Cheese Harvest with Quinoa",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Beef Bulgogi with Lettuce Wraps and Steamed Rice",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Spinach–Feta Frittata Cups",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Grilled Sardines with Tomato–Cucumber Salad and Pita",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Vegan Falafel Bowl with Hummus and Fresh Herbs",
+        "ingredient_count": 25
+      },
+      {
+        "meal": "Chicken Shawarma Grain Bowl",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Tahini–Banana Overnight Oats",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Croque Monsieur with Mixed Greens and Roasted Vegetables",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Enhanced Pad Thai Tofu",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Vegetarian Pad See Ew",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Green Curry Chicken",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Miso-Maple Sesame Crunch Salad with Quinoa",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Gỏi Cuốn Plate (Fresh Spring Rolls)",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Clam & White Bean Stew with Rice",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Vegan Sesame Soba & Veg",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Citrus Shrimp & Avocado Bowl",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Enhanced Carne Asada Burrito",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Tandoori Chicken Legs",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Osso Buco (Small-Batch)",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Lemon–Herb Quinoa Breakfast Bowl",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Keto Tuscan Creamy Chicken with Spinach and Zucchini",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Turmeric-Ginger Chickpea Power Bowl",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Quiche Lorraine Slices",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Grilled Eggplant with Tahini and Quinoa",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Low-Carb Harissa Shrimp & Cauli Couscous with Quinoa",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Grilled Halloumi & Farro Salad",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Vegan Ratatouille with Polenta and Chickpeas",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Sun-Dried Tomato & Goat Cheese Omelet with Toast",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Smoked Salmon & Dill Scramble with Spinach and Toast",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Almond-Crunch Asian Chopped Salad with Quinoa",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Mediterranean Lemon-Herb Chicken & Farro",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Crispy Chickpea Caesar Salad with Garlic Croutons",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Paleo Roasted Salmon & Asparagus with Quinoa",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Keto BBQ Pulled Pork Lettuce Wraps with Crunchy Slaw",
+        "ingredient_count": 23
+      },
+      {
+        "meal": "Roasted Veggie & Quinoa Bowl",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Đậu Hũ Sốt Cà (Tofu Tomato Sauce) with Rice",
+        "ingredient_count": 10
+      },
+      {
+        "meal": "Apple Walnut Gorgonzola Balsamic Salad with Quinoa",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Oxtail Stew with Butter Beans",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Fennel–Orange Yogurt Bowl with Quinoa",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Herbed Yogurt Veggie Wrap with Whole Grain Tortilla",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Pesto Polenta with Poached Eggs and Sautéed Greens",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Tarragon Chicken with Cream and Herb Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Vegan Mapo Tofu (Mushroom Stock)",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Curry Channa & Aloo with Rice",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Herbed Avocado Caesar with Quinoa (Vegetarian)",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Gỏi Gà (Complete Chicken Cabbage Salad with Rice)",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Spicy Tahini Chicken & Kale with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Asparagus & Parmigiano Soft Scramble with Toast",
+        "ingredient_count": 9
+      },
+      {
+        "meal": "Rajma Masala with Steamed Basmati Rice",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Green Goddess Chicken Cobb with Quinoa",
+        "ingredient_count": 24
+      },
+      {
+        "meal": "Complete Enchiladas Verdes with Mexican Rice",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Whole30 Stuffed Bell Peppers with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Carne en su Jugo with Rice",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Paleo Shrimp Zoodle Scampi",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Lemon-Herb Salmon Niçoise Bowl with Mixed Greens",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Keto Lemon-Herb Chicken Thighs with Roasted Vegetables",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Enhanced Curry Cauliflower Mango Bowl",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Phở Bò (Beef Noodle Soup)",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Mediterranean Tuna Olive Chopped Salad with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Egg Curry with Coconut and Steamed Rice",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Kale Caesar with Sourdough Crumbs",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Whole30 Chicken Fajita Bowls with Sweet Potato",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Tomato & Egg Stir-Fry with Steamed Rice",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Heirloom Tomato & Burrata on Sourdough with Grilled Chicken",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "French Onion Soup Gratinée with Chicken and Extra Cheese",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Bibim Guksu with Tofu (Spicy Noodles)",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Complete Chicken Tikka Masala with Basmati Rice",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Buttermilk Biscuits & Sausage Gravy with Sautéed Greens",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Paleo BBQ Pulled Chicken Bowl",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Peach Burrata Arugula Salad with Quinoa",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Enhanced Mandu Dumpling Soup",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Vegan Tofu Pad Thai",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Keema Matar (Lamb & Peas) with Rice",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Crispy Garlic Pork",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Masala Dosa with Sambar and Coconut Chutney",
+        "ingredient_count": 34
+      },
+      {
+        "meal": "Lentil–Tomato Stew with Greens and Quinoa",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Pad Kee Mao (Drunken Noodles)",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Nghêu Hấp Sả (Clams with Lemongrass)",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Enhanced Vegetarian Bibimbap",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Falafel Mezze Bowl",
+        "ingredient_count": 24
+      },
+      {
+        "meal": "Complete Mole Poblano Chicken with Rice",
+        "ingredient_count": 24
+      },
+      {
+        "meal": "Lemon–Herb Salmon with Farro",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Whole30 Complete Taco Lettuce Wraps with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Madras Shrimp Curry with Bell Peppers and Spinach",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Spicy Cashew Kale Crunch with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Tom Kha Gai (Coconut Soup) with Jasmine Rice",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Paleo Turkey Sweet Potato Hash",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Creamy Mushroom Stroganoff with Spinach",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Grilled Salmon with Corn Succotash",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Collard Greens with Smoked Turkey",
+        "ingredient_count": 8
+      },
+      {
+        "meal": "Enhanced Trini Doubles (Channa & Bara) with Tamarind Chutney",
+        "ingredient_count": 25
+      },
+      {
+        "meal": "Grilled Chicken Caesar Salad with Quinoa",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Tuna Niçoise Bowl",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Gnocchi al Pesto with Seasonal Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Turkish Köfte with Bulgur",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Paleo Chicken & Veggie Sheet Pan",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Enhanced Panang Curry with Pork and Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Bún Thịt Nướng (Vermicelli Bowl) - Enhanced",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Bún Riêu (Crab & Tomato Noodles) - Enhanced",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Dakgalbi (Spicy Chicken)",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Low-Carb Chili (No Beans)",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Savory Oatmeal with Parmesan, Fried Egg & Sautéed Greens",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Gochujang Glazed Salmon with Steamed Rice and Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Enhanced Hyderabadi Chicken Biryani",
+        "ingredient_count": 24
+      },
+      {
+        "meal": "Keto Garlic-Butter Salmon & Asparagus with Quinoa",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Baked Mackerel with Tomatoes",
+        "ingredient_count": 7
+      },
+      {
+        "meal": "Citrus & Olive Quinoa with Shrimp",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Nopales & Egg Scramble with Tortillas",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Jjampong (Spicy Seafood Noodle Soup)",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Olive Tapenade & Egg Toast with Fresh Vegetables",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Enhanced Margherita Skillet Pizza with Vegetables",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Kimchi Jjigae (Kimchi Stew) with Steamed Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Vegan Thai Green Curry Veg",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Mushroom–Barley Risotto",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Zaatar Roasted Veg & Egg Tray Bake",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Paleo Lemon-Garlic Chicken, Broccoli & Quinoa",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Olive Oil Granola with Yogurt & Berries",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Low-Carb Chicken Fajita Bowl with Quinoa",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Potato Dauphinoise & Sautéed Greens with Chicken",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Bacon Cheeseburger Bowl with Quinoa",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Vegan Stuffed Peppers with Rice",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Keto Shrimp Scampi Zucchini Noodles",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Caprese Breakfast Sandwich",
+        "ingredient_count": 10
+      },
+      {
+        "meal": "Whole30 Garlic-Ginger Salmon with Quinoa",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Paleo Steak & Roasted Brussels with Sweet Potatoes",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Enhanced Vegetarian Pho with Mushrooms",
+        "ingredient_count": 25
+      },
+      {
+        "meal": "Chiles Rellenos with Tomato Salsa and Cilantro Lime Rice",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Cơm Tấm Sườn (Broken Rice Pork Chop)",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Roasted Eggplant Tahini & Chickpea Bowl with Quinoa",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Enhanced Chorizo (Turkey) & Potato Frittata with Vegetables",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Complete Boeuf Bourguignon with Garlic Mashed Potatoes",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Vegan Cauliflower Tikka Masala",
+        "ingredient_count": 23
+      },
+      {
+        "meal": "Thịt Kho Trứng (Complete Pork & Egg Caramelized with Vegetables)",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Risotto ai Funghi",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Vegetarian Bánh Mì (Tofu)",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Yakisoba (Stir-Fried Noodles)",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Bánh Canh Cua (Crab Udon Soup) - Enhanced",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Complete Dan Dan Noodles with Fresh Vegetables",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Pulled Pork Mac & Cheese with Fresh Vegetables",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Hot & Sour Soup with Jasmine Rice",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Tomato–Cucumber–Olive Greek Salad with Pita",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Complete Labneh Cucumber & Mint Pita with Chickpeas",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Pav Bhaji Skillet with Paneer",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Jerk Shrimp Tacos with Pineapple",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Complete Greek Village Horiatiki Chop with Pita",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Chicken Provençal with Olives",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Buffalo Cauli Crunch Salad with Quinoa",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Whole30 Baked Cod with Tomato, Olives & Quinoa",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Egg White Scramble with Spinach, Pesto & Whole Grain Toast",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Enhanced Teriyaki Tofu Supergrain Bowl",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Cá Nướng Mỡ Hành với Cơm (Grilled Fish with Scallion Oil and Rice)",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Enhanced Cajun Shrimp & Grits",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Prosciutto & Peach Breakfast Tartine with Arugula",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Chimichurri Steak & Supergreens Bowl with Avocado",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Whole-Wheat Pesto Pasta with Chicken and Veg",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Coconut Rundown Fish",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Breakfast Farro Bowl with Soft-Boiled Egg",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Enhanced Chicken Tinga Tacos with Avocado and Fresh Salsa",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Callaloo & Saltfish Fritters with Avocado Lime Sauce",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Khao Soi (Curry Noodles) with Enhanced Noodles",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Complete Butter Chicken (Murgh Makhani) with Basmati Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Chana Masala with Basmati Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Kadai Chicken with Steamed Basmati Rice",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Southwest Chicken Grain Bowl",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Mushroom & Pea Risotto with Grilled Chicken",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Moo Ping (Grilled Pork Skewers) with Fresh Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Chicken Fried Rice (Yangzhou-Style)",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Olive Oil Poached Tuna with White Beans",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Chickpea & Roasted Veg Grain Bowl",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Salmon Teriyaki Bowl",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Sweet Potato Avocado & Egg Bowl",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Complete Blackened Chicken Caesar Salad with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Enhanced Breakfast Orzo with Spinach & Feta",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Chickpea–Spinach Curry with Basmati",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Complete Keto Turkey Taco Salad with Cauliflower Rice",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Niçoise Salad Bowl",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "BBQ Ribs with Baked Beans and Roasted Vegetables",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Low-Carb Baked Cod with Ratatouille and Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Pork Chops with Calvados Apples and Sautéed Greens",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Whole30 Salmon with Roasted Asparagus and Quinoa",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Miến Gà (Complete Chicken Glass Noodle Soup)",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Aloo Gobi with Chickpeas",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Complete Galbi (Short Ribs) with Vegetables",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Low-Carb Thai Basil Turkey",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Complete Brown Stew Chicken with Vegetables",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Cochinita Pibil with Tortillas and Pickled Red Onion",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Low-Carb Turkey Zoodle Bolognese with Extra Tomato Sauce",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Avocado Ranch Chicken Grain Bowl",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Bajan Fish Cakes & Slaw",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Bánh Mì Thịt Nướng (Grilled Pork Sandwich with Fresh Vegetables)",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Cacio e Pepe with Grilled Chicken and Arugula",
+        "ingredient_count": 7
+      },
+      {
+        "meal": "Vegan Roasted Cauliflower Steak with Chickpeas and Quinoa",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Hủ Tiếu Nam Vang (Phnom Penh Noodles)",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Keto Caprese Chicken (No Balsamic)",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Beef Chow Fun",
+        "ingredient_count": 9
+      },
+      {
+        "meal": "Strawberry Pistachio Goat Cheese Salad",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Roasted Squash, Farro & Feta Bowl",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Miso Roasted Eggplant & Brown Rice with Tofu",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Baked Eggs in Tomato–Olive Sauce",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Breakfast Gnocchi with Spinach, Eggs, and Extra Veggies",
+        "ingredient_count": 10
+      },
+      {
+        "meal": "Hummus Lamb & Pine Nut Plate",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Complete Mapo Tofu with Steamed Rice",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Sweet Potato & Kale Bowl",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Hot Honey Fried Chicken Thighs with Southern Sides",
+        "ingredient_count": 23
+      },
+      {
+        "meal": "Mediterranean Tuna & White Bean Salad with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Elote & Black Bean Salad with Quinoa",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Salsa Verde Chicken Chilaquiles",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Tonkatsu with Cabbage",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Complete Massaman Beef Curry",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Whole30 Shrimp & Cauliflower \"Grits\"",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Seafood Risotto",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Pesto Shrimp Supergreens Bowl",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Ricotta & Fig Toast with Honey and Greens",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Enhanced Chicken Katsu Curry with Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Roasted Pepper & Mozzarella Breakfast Wrap with Spinach",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Lemon-Dill Salmon with Quinoa",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Black Bean & Roasted Pepper Tacos",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Army Stew (Budae Jjigae)",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Mediterranean Veggie Paella with Chickpeas",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Pad Krapow (Basil Chicken)",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Tostadas de Atún con Aguacate",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Enhanced Spinach & Ricotta Lasagna with Extra Vegetables",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Breakfast Couscous with Dates & Pistachios",
+        "ingredient_count": 10
+      },
+      {
+        "meal": "Complete Bouillabaisse with Crusty Bread",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Tuna Niçoise Salad (Olive Oil Dressing)",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Bossam (Boiled Pork Wraps with Steamed Rice)",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Whole30 Herb-Roasted Chicken Thighs with Quinoa and Roasted Vegetables",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Coq au Vin with Seasonal Vegetables and Mashed Potatoes",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Greek Lemon Chicken & Potatoes",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Low-Carb Chicken Marsala (Light)",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Breakfast Panzanella with Soft Eggs",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Smoked Mackerel & Egg Breakfast Bowl",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Stewed Red Snapper in Tomato Gravy with Rice",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Cobb Salad Wrap",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Chickpea Spinach & Lemon Orzo",
+        "ingredient_count": 10
+      },
+      {
+        "meal": "Vegan Gumbo (Okra, Mushrooms & Black Beans)",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Fried Plantain & Black Bean Bowl",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Nam Tok Beef Salad with Jasmine Rice",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Jerk Chicken with Rice & Peas",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Buffalo Cauliflower and Chickpea Wrap",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Tomato–White Bean Soup with Kale",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Sole Meunière with Garlic Mashed Potatoes and Sautéed Green Beans",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Miso-Ginger Glazed Cod & Greens with Rice",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Wonton Soup with Greens",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Turkey Chili with Beans",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Crispy Skin Salmon & Greens",
+        "ingredient_count": 7
+      },
+      {
+        "meal": "Eggplant with Garlic Sauce and Tofu",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Caprese Burrata Greens with Crusty Bread",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Cajun Blackened Salmon with Quinoa and Asparagus",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Caribbean Pumpkin Soup with Chickpeas",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Whole30 Moroccan Chicken with Cauliflower Rice",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Whole30 Beef & Sweet Potato Hash",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Cheese Enchiladas Verde with Black Beans and Rice",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Keto Creamy Dill Cod & Greens with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Paleo Salmon with Roasted Root Veg",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Mushroom & Pecorino Soft Scramble with Toast",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Greek Chicken Souvlaki with Tzatziki and Greek Salad",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Paleo Chicken Thighs with Chimichurri and Roasted Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Vegan Miso Glazed Eggplant Bowl with Quinoa and Tofu",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Jajangmyeon (Black Bean Noodles)",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Pasta e Ceci",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Minestrone (Hearty)",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Farro Kale & Roasted Mushrooms",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Fried Green Tomato BLT with Side Salad",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Pla Rad Prik (Crispy Fish) with Steamed Jasmine Rice",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Spinach & Feta Borek with Quinoa",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Green Chili Steak & Quinoa Bowl",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Whole30 Coconut-Lime Chicken with Cauliflower Rice",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Paleo Spaghetti Squash Bolognese",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Herbed Orzo with Halloumi",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Huaraches with Chorizo and Fresh Vegetables",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Stuffed Peppers with Rice & Herbs",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Low-Carb Greek Turkey Meatballs with Tomato Sauce",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Goan Fish Curry",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Tofu & Broccoli Stir-Fry",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Keto Greek Salad with Grilled Halloumi",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Keto Chimichurri Chicken & Cauli Mash with Quinoa",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Complete Kung Pao Chicken with Rice",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Turmeric Roasted Veg & Brown Rice Bowl",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Lamb Souvlaki with Tzatziki and Mixed Salad",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Paleo Zucchini Noodle Pad Thai",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Steamed Fish with Ginger-Scallion",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Low-Carb Caponata Chicken Skillet",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Duck à l'Orange (Mini)",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Low-Carb Sesame Tofu Stir-Fry with Cauliflower Rice",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Low-Carb Orange-Ginger Beef & Broccoli with Cauliflower Rice",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Low-Carb Teriyaki Chicken & Cauli Rice",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Maple-Glazed Pork Chops with Apples and Roasted Potatoes",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Herbed Brown Rice Salmon & Greens",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Low-Carb Pork Tenderloin & Brussels",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Mediterranean Mezze Grain Bowl",
+        "ingredient_count": 23
+      },
+      {
+        "meal": "Moroccan Chicken Tagine with Couscous",
+        "ingredient_count": 23
+      },
+      {
+        "meal": "Seared Branzino with Herbed Couscous",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Keto Buffalo Chicken Cauliflower Bake with Quinoa",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Niku Udon with Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Honey-Garlic Chicken Thighs with Rice and Vegetables",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "New England Clam Chowder (Sourdough Bowl)",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Low-Carb Pesto Chicken & Zucchini with Quinoa",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Keto Tuna Melt Stuffed Avocados with a Side of Garlic Cauliflower Rice",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Pad See Ew",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Paleo Herb-Crusted Pork Chops",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Paleo Garlic-Ginger Chicken Thighs",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Warm Wild Rice Harvest with Chicken",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Whole30 Lemon-Garlic Chicken & Broccoli with Quinoa",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Sopa de Tortilla - Complete and Balanced",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Panzanella with Anchovy Dressing",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Pork Chile Verde",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Pesto Chicken Quinoa Bowl",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Poulet Rôti & Pan Jus Veg",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Complete Pimento Cheeseburger with Fresh Veggies",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Spinach & Feta Frittata with Whole Grain Toast",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Ratatouille with Herbed Polenta and Chickpeas",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Pozole Rojo (Small-Batch)",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Roasted Beet, Citrus, Pistachio & Chicken Salad",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Roasted Sweet Pepper Egg Skillet with Crusty Bread",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Rum-Glazed Pork Tenderloin with Roasted Vegetables and Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Greek Orzo with Roasted Veg",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Roasted Tomato & Halloumi on Toast",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Soy-Braised Chicken with Mushrooms and Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Bún Chả (Grilled Pork & Noodles) - Complete Meal",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Saltimbocca alla Romana with Seasonal Vegetables and Quinoa",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Bún Bò Huế (Spicy Beef Noodle Soup)",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Kimchi Fried Rice with Egg",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Korean Corn Cheese Skillet with Chicken",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Complete Margherita Pizza (Skillet) with Seasonal Vegetables",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Enhanced Seafood Paella (Mediterranean Mix)",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Sardine & Lemon Spaghetti with Spinach and Cherry Tomatoes",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Whole30 Spaghetti Squash Meat Sauce",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Seared Branzino with Couscous and Seasonal Vegetables",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Low-Carb Lemon-Chicken Piccata",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Cauliflower Tikka with Chickpeas and Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Complete Veggie Fried Rice with Tofu",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Grilled Swordfish with Salsa Verde and Quinoa",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Sesame Ginger Salmon with Mixed Greens and Rice",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Sichuan Dry-Fried Green Beans with Tofu and Rice",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Shrimp & Grits",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Gà Nướng Sả Ớt (Lemongrass Chicken)",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Shrimp Scampi Linguine",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Red Beans & Rice",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Italian Ricotta-Lemon Pancakes with Fresh Berries",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Spaghetti Carbonara",
+        "ingredient_count": 9
+      },
+      {
+        "meal": "Spring Onion Oil Noodles with Tofu",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Ssam Chicken Bowl",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "BBQ Ranch Chicken Chop with Roasted Vegetables and Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Tofu Katsu Curry with Vegetable Medley",
+        "ingredient_count": 24
+      },
+      {
+        "meal": "Thai Fried Rice with Chicken",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Steak Frites with Shallot Butter",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Tomato Soup & Grilled Cheese with Lentils",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Complete Tom Yum Goong with Jasmine Rice",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Tomato–White Bean Skillet",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Tuscan White Bean Stew",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Enhanced Turkey Club on Sourdough with Avocado",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Vegan Lentil Bolognese",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Vegan Chana Saag",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Vegan Teriyaki Tofu & Broccoli with Jasmine Rice",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Mediterranean Baked Halibut with Couscous",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Vegetable Korma with Chickpeas",
+        "ingredient_count": 28
+      },
+      {
+        "meal": "Keto Chicken Alfredo with Zoodles and Whole Grain Pasta",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Gumbo (Small Pot)",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Complete Shrimp Diabla Tacos with Slaw and Avocado",
+        "ingredient_count": 22
+      },
+      {
+        "meal": "Hush Puppies & Slaw Plate",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "BBQ Pulled Pork Sliders",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Cassoulet (Quick Skillet)",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Complete Chicken Nanban with Fresh Vegetables",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Cá Kho Tộ (Caramelized Fish) with Steamed Rice",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Chickpea Flour Socca with Eggs & Greens",
+        "ingredient_count": 10
+      },
+      {
+        "meal": "Mac and Cheese with Panko Crust and Seasonal Vegetables",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Shrimp Lo Mein",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Mediterranean Veggie Omelet with Feta and Whole Grain Toast",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Ricotta Gnocchi with Tomato Basil and Spinach",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Paleo Beef & Mushroom Lettuce Wraps",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Bò Kho (Complete Vietnamese Beef Stew)",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Moules Marinières with Fries",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Caprese Stuffed Portobellos with Quinoa",
+        "ingredient_count": 10
+      },
+      {
+        "meal": "Shakshuka with Herbed Tahini and Crusty Bread",
+        "ingredient_count": 23
+      },
+      {
+        "meal": "Roasted Carrot & Chickpea Salad with Quinoa",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Sesame Cold Noodles with Tofu",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Steak Salad with Blue Cheese and Quinoa",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Enhanced Tomato–Basil Breakfast Bruschetta with Avocado",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Seared Scallops with Pea Purée and Quinoa",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Polenta Cakes with Ricotta, Jam & Fresh Salad",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Enhanced Tteokbokki (Spicy Rice Cakes) with Vegetables",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Sesame-Crusted Ahi Tuna Salad with Quinoa",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Enhanced Smoked Trout Cucumber & Rye Tartine",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Puttanesca with Olives & Capers",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Shrimp Saganaki",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Prosciutto Arugula & Egg Flatbread with Lemon Vinaigrette",
+        "ingredient_count": 12
+      },
+      {
+        "meal": "Som Tam with Grilled Chicken and Jasmine Rice",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Smoky Paprika Shrimp Skewers with Quinoa and Grilled Vegetables",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Keto Sausage Peppers & Mushrooms with Cauliflower Rice",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Trini Chicken Pelau",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Vegan Sweet Potato & Black Bean Chili with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Low-Carb Greek Salmon & Cucumber Salad with Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Herbed White Bean Breakfast Toast",
+        "ingredient_count": 14
+      },
+      {
+        "meal": "Twice-Cooked Pork with Steamed Rice",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Whole30 Turkey Zucchini Meatballs",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Thai Coconut Curry Shrimp",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Savory Yogurt Bowl with Olive Oil, Nuts & Quinoa",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Doenjang Jjigae (Soybean Stew)",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Country-Fried Steak with Collard Greens and Pepper Gravy",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "BBQ Chicken and Veggie Flatbread",
+        "ingredient_count": 11
+      },
+      {
+        "meal": "Halloumi & Quinoa Greek Bowl with Feta",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Gyudon (Beef & Onion Rice Bowl)",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Chipotle-Lime Chicken Elote Bowl",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Frijoles Charros with Rice",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Garlic Butter Shrimp Zoodles with Quinoa",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Paleo Baked Cod with Salsa Verde and Quinoa",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Complete Paleo Sesame-Lime Tuna Steak with Quinoa and Mixed Greens",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Paneer Tikka Skewers with Spiced Rice",
+        "ingredient_count": 21
+      },
+      {
+        "meal": "Vegan Chickpea & Spinach Curry",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Keto Egg Roll in a Bowl with Cauliflower Rice",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Complete Shakshuka with Feta, Herbs & Crusty Bread",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Complete Weeknight Moussaka",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Keto Pesto Meatballs with Zoodles and Quinoa",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Soy-Garlic Chicken Wings with Steamed Rice and Vegetables",
+        "ingredient_count": 17
+      },
+      {
+        "meal": "Roasted Cauliflower, Olives & Capers with Chickpeas",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Nashville Hot Chicken Sandwich with Fresh Vegetables",
+        "ingredient_count": 26
+      },
+      {
+        "meal": "Low-Carb Eggplant Lasagna Stacks",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Whole30 Chicken & Veg Sheet Pan",
+        "ingredient_count": 18
+      },
+      {
+        "meal": "Smoky Tempeh Southwest Bowl",
+        "ingredient_count": 20
+      },
+      {
+        "meal": "Vegan Pesto Pasta (Basil & Walnut)",
+        "ingredient_count": 13
+      },
+      {
+        "meal": "Whole30 Tuna Salad Lettuce Boats",
+        "ingredient_count": 15
+      },
+      {
+        "meal": "Vegan Paella with Artichokes and Chickpeas",
+        "ingredient_count": 19
+      },
+      {
+        "meal": "Complete Catfish Po'boy with Side Salad",
+        "ingredient_count": 16
+      },
+      {
+        "meal": "Keto Egg–Spinach Breakfast Skillet",
+        "ingredient_count": 12
+      }
+    ]
+  }
+}

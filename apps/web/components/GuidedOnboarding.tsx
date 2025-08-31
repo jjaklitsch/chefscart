@@ -61,13 +61,13 @@ const onboardingSteps: OnboardingStep[] = [
     title: 'Spice tolerance',
     question: 'How spicy do you like your food?',
     required: false
-  },
-  {
-    id: 'fridgePantryPhotos',
-    title: 'Pantry upload',
-    question: 'Upload photos of your fridge and pantry to help us use what you already have',
-    required: false
   }
+  // {
+  //   id: 'fridgePantryPhotos',
+  //   title: 'Pantry upload',
+  //   question: 'Upload photos of your fridge and pantry to help us use what you already have',
+  //   required: false
+  // }
 ]
 
 // Dietary style options
@@ -268,7 +268,16 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
   // Mark completed steps when in edit mode (initialPreferences provided)
   useEffect(() => {
     if (isInitialized && initialPreferences) {
-      // We're in edit mode - mark all valid steps as completed
+      // We're in edit mode - mark ALL steps as completed since user has finished onboarding
+      const newCompletedSteps = new Set<number>()
+      
+      for (let i = 0; i < onboardingSteps.length; i++) {
+        newCompletedSteps.add(i)
+      }
+      
+      setCompletedSteps(newCompletedSteps)
+    } else if (isInitialized) {
+      // Not in edit mode, use stored preferences to mark completed steps
       const newCompletedSteps = new Set<number>()
       
       for (let i = 0; i < onboardingSteps.length; i++) {
@@ -288,9 +297,10 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     }
   }, [answers, isInitialized])
 
-  // Auto-mark steps as completed when they become valid
+  // Auto-mark steps as completed when they become valid (only in initial onboarding, not edit mode)
   useEffect(() => {
-    if (isInitialized) {
+    const isEditMode = Boolean(initialPreferences)
+    if (isInitialized && !isEditMode) {
       const newCompletedSteps = new Set(completedSteps)
       let hasChanges = false
       
@@ -306,7 +316,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         setCompletedSteps(newCompletedSteps)
       }
     }
-  }, [answers, currentStep, isInitialized, completedSteps])
+  }, [answers, currentStep, isInitialized, completedSteps, initialPreferences])
 
   // Cleanup timer on unmount
   useEffect(() => {
@@ -561,12 +571,9 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     const isEditMode = Boolean(initialPreferences)
     
     if (isEditMode) {
-      // In edit mode: allow navigation to any completed step
-      const canGoToStep = completedSteps.has(stepIndex) || stepIndex === currentStep
-      if (canGoToStep) {
-        setCurrentStep(stepIndex)
-        setShowChecklist(false)
-      }
+      // In edit mode: allow navigation to any step
+      setCurrentStep(stepIndex)
+      setShowChecklist(false)
     } else {
       // Initial onboarding: sequential navigation only
       // Can only navigate to:
@@ -944,7 +951,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
               const isEditMode = Boolean(initialPreferences)
               
               const canNavigate = isEditMode 
-                ? (isCompleted || index === currentStep) // Edit mode: navigate to completed steps + current
+                ? true // Edit mode: allow navigation to any step
                 : (isCompleted || index === currentStep || (index === currentStep + 1 && isStepComplete(currentStep))) // Initial: sequential
               
               return (

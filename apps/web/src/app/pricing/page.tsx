@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '../../../contexts/AuthContext'
 import { PRICING_PLANS } from '../../../lib/pricing'
+import { isPaymentSystemEnabled } from '../../../lib/feature-flags'
 import { CheckCircle, Zap, Clock, ArrowLeft, Sparkles, Crown } from 'lucide-react'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
@@ -13,6 +14,18 @@ export default function PricingPage() {
   const [billingPeriod, setBillingPeriod] = useState<'annual' | 'monthly'>('annual') // Default to annual
   const { user, session } = useAuth()
   const router = useRouter()
+
+  // Redirect to home if payment system is disabled
+  useEffect(() => {
+    if (!isPaymentSystemEnabled()) {
+      router.replace('/')
+    }
+  }, [router])
+
+  // Don't render anything if payment system is disabled
+  if (!isPaymentSystemEnabled()) {
+    return null
+  }
 
   const currentPlan = billingPeriod === 'annual' ? PRICING_PLANS.ANNUAL : PRICING_PLANS.MONTHLY
 

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseClient } from '../../../../lib/supabase'
 import { createServerAuthClient } from '../../../../lib/supabase-server'
 import { UserPreferences } from '../../../../types/index'
+import { hasFeatureAccess, hasAnonymousAccess } from '../../../../lib/feature-flags'
 
 // Updated Meal interface to match Supabase schema
 interface SupabaseMeal {
@@ -231,43 +232,46 @@ export async function POST(request: NextRequest) {
       }, { status: 400 })
     }
 
-    // Check authentication and subscription status
+    // Check authentication and subscription status with feature flag support
     const authSupabase = createServerAuthClient()
     const { data: { session }, error: sessionError } = await authSupabase.auth.getSession()
 
-    if (sessionError || !session) {
-      return NextResponse.json({
-        success: false,
-        error: 'Authentication required'
-      }, { status: 401 })
+    let userId: string | null = null
+    let isAuthenticated = false
+    let hasActiveSubscription = false
+
+    if (!sessionError && session) {
+      userId = session.user.id
+      isAuthenticated = true
+      
+      // Check subscription status for authenticated users (only if payments are enabled)
+      const supabase = getSupabaseClient()
+      const { data: profile, error: profileError } = await supabase
+        .from('user_profiles')
+        .select('subscription_status, trial_end, current_period_end')
+        .eq('id', session.user.id)
+        .single() as { data: any, error: any }
+
+      if (!profileError && profile) {
+        hasActiveSubscription = profile.subscription_status === 'active' || profile.subscription_status === 'trialing'
+      }
     }
 
-    // Check subscription status
-    const supabase = getSupabaseClient()
-    const { data: profile, error: profileError } = await supabase
-      .from('user_profiles')
-      .select('subscription_status, trial_end, current_period_end')
-      .eq('id', session.user.id)
-      .single() as { data: any, error: any }
+    // Check feature access using feature flags
+    const hasAccess = isAuthenticated 
+      ? hasFeatureAccess(isAuthenticated, hasActiveSubscription)
+      : hasAnonymousAccess()
 
-    if (profileError) {
-      console.error('Error fetching user profile:', profileError)
-      return NextResponse.json({
-        success: false,
-        error: 'Failed to verify subscription status'
-      }, { status: 500 })
-    }
-
-    // Check if user has active subscription or trial
-    const hasActiveSubscription = profile.subscription_status === 'active' || profile.subscription_status === 'trialing'
-    
-    if (!hasActiveSubscription) {
+    if (!hasAccess) {
       return NextResponse.json({
         success: false,
         error: 'Active subscription required',
         needsSubscription: true
       }, { status: 402 }) // Payment Required
     }
+
+    // Initialize Supabase client for meal queries
+    const supabase = getSupabaseClient()
 
     // Build query with filters
     let query = supabase
