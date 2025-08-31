@@ -39,6 +39,7 @@ export default function CartSuccessPage() {
 
       return () => clearInterval(timer)
     }
+    return undefined
   }, [mealPlanData, loading])
 
   const loadMealPlanData = () => {

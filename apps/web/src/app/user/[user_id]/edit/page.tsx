@@ -167,9 +167,9 @@ export default function EditProfilePage() {
         ...profile,
         username: formData.username.toLowerCase(),
         display_name: formData.display_name.trim(),
-        bio: formData.bio.trim() || null,
-        location: formData.location.trim() || null,
-        website_url: formData.website_url.trim() || null,
+        bio: formData.bio.trim() || '',
+        location: formData.location.trim() || '',
+        website_url: formData.website_url.trim() || '',
         is_public: formData.is_public
       })
 

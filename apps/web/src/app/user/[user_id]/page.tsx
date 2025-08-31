@@ -210,7 +210,7 @@ export default function UserProfilePage() {
         <div className="mb-8">
           <UserProfileCard
             profile={profile}
-            isCurrentUser={isOwner}
+            isCurrentUser={!!isOwner}
             isFollowing={isFollowing}
             onFollow={handleFollow}
             onUnfollow={handleFollow}

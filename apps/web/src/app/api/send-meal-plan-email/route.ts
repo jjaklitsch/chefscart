@@ -74,14 +74,16 @@ export async function POST(request: NextRequest) {
 
     // Helper function to generate username from email
     const generateUsername = (email: string): string => {
-      const baseUsername = email.split('@')[0].toLowerCase().replace(/[^a-z0-9]/g, '')
+      const emailParts = email.split('@')
+      const baseUsername = (emailParts[0] || 'user').toLowerCase().replace(/[^a-z0-9]/g, '')
       const randomSuffix = Math.floor(Math.random() * 9999).toString().padStart(4, '0')
       return `${baseUsername}${randomSuffix}`
     }
 
     // Helper function to extract display name from email
     const generateDisplayName = (email: string): string => {
-      const username = email.split('@')[0]
+      const emailParts = email.split('@')
+      const username = emailParts[0] || 'User'
       // Capitalize first letter and replace dots/underscores with spaces
       return username
         .split(/[._-]/)
