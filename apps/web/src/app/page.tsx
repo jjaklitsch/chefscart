@@ -71,8 +71,8 @@ export default function Home() {
 
   const faqData = [
     {
-      question: "What is ChefsCart AI?",
-      answer: "ChefsCart is an AI‑powered meal‑planning assistant that builds a fully shoppable Instacart cart in minutes. Tell us how many meals and servings you need, set any dietary goals, and we do the rest—recipes, portions, grocery selection, and a one‑tap checkout link."
+      question: "What is ChefsCart?",
+      answer: "ChefsCart is a meal‑planning tool that builds a fully shoppable Instacart cart in minutes. Tell us how many meals and servings you need, set any dietary preferences, and we do the rest—personalized recipes, scaled portions, smart grocery selection, and a one‑click checkout link."
     },
     {
       question: "How does the Instacart partnership work?",
@@ -92,15 +92,15 @@ export default function Home() {
     },
     {
       question: "Can ChefsCart handle special diets or allergies?",
-      answer: "Absolutely. During onboarding you can choose styles like Vegan, Keto, Gluten‑Free, Low‑Carb, or add custom avoid‑lists (e.g., \"no peanuts, low‑sodium\"). The AI filters recipes and grocery picks to match."
+      answer: "Absolutely. During onboarding you can choose dietary styles like Vegan, Keto, Gluten‑Free, Paleo, Mediterranean, and more. You can also specify foods to avoid (e.g., nuts, shellfish, dairy) and we'll filter recipes to match your needs."
     },
     {
       question: "What's the difference between meals and servings?",
       answer: "**Meals per week** = how many breakfasts, lunches, and dinners you want planned.\n**Servings** = how many plates each recipe should make (kids can be counted as ½‑serving).\nChefsCart uses those two numbers to size every ingredient before it reaches your cart—no math required on your end."
     },
     {
-      question: "Can I get groceries without recipes?",
-      answer: "Yes. After you confirm a plan you'll see an \"Add staples\" option where ChefsCart can auto‑add pantry items (milk, fruit, coffee, etc.) or you can type in extra items manually. They'll land in the same Instacart cart."
+      question: "Can I customize my shopping cart?",
+      answer: "Yes. After selecting your meals, you'll review a consolidated shopping list where you can adjust quantities, remove items you already have, and see exactly what will be added to your Instacart cart. You can also modify items directly in Instacart before checkout."
     },
     {
       question: "How is ChefsCart different from meal‑kit boxes like Blue Apron or Home Chef?",
@@ -115,12 +115,32 @@ export default function Home() {
       answer: "ChefsCart starts at $4.99/month (billed annually) or $5.99/month (billed monthly). Both plans include a free trial period with no commitment. You only pay for groceries through Instacart—we never mark up food prices."
     },
     {
-      question: "Can I change my meal plan after checkout?",
-      answer: "If you want to tweak recipes before you build the cart, just hit \"Edit plan\" in ChefsCart. After the cart is created you can add or remove items directly inside Instacart before placing the order."
+      question: "Can I change my meal plan after creating the cart?",
+      answer: "Before creating the cart, you can swap meals, adjust servings, and customize your shopping list in ChefsCart. After the cart is created, you can still add, remove, or modify items directly in Instacart before placing your order."
     },
     {
       question: "How do you protect my data?",
-      answer: "We store only the preferences needed to generate your plan (diet, servings, ZIP) and your email if you create an account. Payment details stay with Stripe, and order details stay with Instacart. You can request data deletion anytime via support@chefscart.ai."
+      answer: "We store only the preferences needed to generate your plan (diet, servings, ZIP) and your email if provided. We don't store payment information—all transactions are handled by Instacart. Your data is protected with industry-standard encryption. You can request data deletion anytime via support@chefscart.ai."
+    },
+    {
+      question: "Can I choose a different store on Instacart?",
+      answer: "Yes! When you land on Instacart, you can select from any available stores in your area at the top of the page. Popular options include Whole Foods, Kroger, Safeway, ALDI, and more. Prices and availability may vary by store. Pro tip: Some stores offer faster delivery or better prices for certain items."
+    },
+    {
+      question: "What if an ingredient is out of stock?",
+      answer: "Instacart handles substitutions automatically. You can set your substitution preferences (replace with similar item, specific replacement, or refund) for each item in your cart. The Instacart shopper will follow your preferences and may text you during shopping if they need clarification on replacements."
+    },
+    {
+      question: "How accurate are the grocery quantities?",
+      answer: "ChefsCart automatically scales all ingredients based on your serving size. For example, if a recipe serves 4 and you need 6 servings, we'll multiply all ingredients by 1.5x. The quantities are optimized for standard package sizes when possible (e.g., buying 2 lbs of chicken instead of 1.73 lbs)."
+    },
+    {
+      question: "Can I save my favorite meals?",
+      answer: "Yes! You can mark any meal as a favorite by clicking the heart icon. Your favorites are saved and you can easily access them when creating future meal plans. This helps ChefsCart learn your preferences and suggest similar recipes you might enjoy."
+    },
+    {
+      question: "What's the best way to use ChefsCart?",
+      answer: "**Weekly planning**: Set aside 5 minutes each weekend to plan your week's meals. **Start small**: Begin with 3-4 dinners if you're new to meal planning. **Use the swap feature**: Don't like a suggested meal? Swap it for another with one click. **Check your pantry**: Mark items you already have to avoid buying duplicates. **Schedule delivery**: Pick a delivery time when you'll be home to ensure freshness."
     }
   ]
 
@@ -187,14 +207,14 @@ export default function Home() {
                 <span className="text-2xl font-bold text-white">1</span>
               </div>
               <h3 className="text-xl font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Tell Us Your Preferences</h3>
-              <p className="text-neutral-600 leading-relaxed">Share your dietary needs, cooking skills, and meal preferences through our friendly chat wizard.</p>
+              <p className="text-neutral-600 leading-relaxed">Set your dietary needs, servings, and weekly meal count through our guided step-by-step process.</p>
             </div>
             <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group">
               <div className="bg-gradient-to-br from-brand-600 to-brand-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-800 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
                 <span className="text-2xl font-bold text-white">2</span>
               </div>
               <h3 className="text-xl font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Get Personalized Recipes</h3>
-              <p className="text-neutral-600 leading-relaxed">Our AI creates a custom meal plan with recipes tailored to your tastes and schedule.</p>
+              <p className="text-neutral-600 leading-relaxed">Receive a custom meal plan with recipes matched to your dietary needs and preferences from our curated collection.</p>
             </div>
             <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group">
               <div className="bg-gradient-to-br from-brand-700 to-brand-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-900 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
@@ -227,8 +247,8 @@ export default function Home() {
                 <DollarSign className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-display font-semibold mb-2 text-lg text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Smart Budgeting</h3>
-                <p className="text-neutral-600 leading-relaxed">Get cost estimates and optimize for your budget preferences</p>
+                <h3 className="font-display font-semibold mb-2 text-lg text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Smart Shopping</h3>
+                <p className="text-neutral-600 leading-relaxed">Ingredients consolidated and scaled to avoid waste and save money</p>
               </div>
             </div>
             <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft">
@@ -237,7 +257,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="font-display font-semibold mb-2 text-lg text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Personalized</h3>
-                <p className="text-neutral-600 leading-relaxed">Recipes adapted to your dietary needs and cooking skill level</p>
+                <p className="text-neutral-600 leading-relaxed">500+ recipes filtered to match your dietary needs and preferences</p>
               </div>
             </div>
             <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft">
