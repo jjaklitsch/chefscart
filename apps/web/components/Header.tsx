@@ -6,6 +6,7 @@ import { useAuth } from '../contexts/AuthContext'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { isPaymentSystemEnabled } from '../lib/feature-flags'
+import CartIcon from './CartIcon'
 
 export default function Header() {
   const { user, loading, signOut } = useAuth()
@@ -83,6 +84,7 @@ export default function Header() {
                 >
                   FAQ
                 </Link>
+                <CartIcon />
                 <Link
                   href="/login"
                   className="bg-green-600 hover:bg-green-700 text-white text-sm px-4 py-2 rounded-lg font-medium transition-colors hidden sm:inline-block"
@@ -110,6 +112,7 @@ export default function Header() {
                 >
                   Shop
                 </Link>
+                <CartIcon />
                 <Link
                   href={user ? `/user/${user.id}` : '/profile'}
                   className="flex items-center gap-2 text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:flex"
@@ -247,6 +250,9 @@ export default function Header() {
                       <User className="w-5 h-5" />
                       Settings
                     </Link>
+                    <div className="py-3 border-b border-neutral-100">
+                      <CartIcon />
+                    </div>
                     <button
                       onClick={handleLogout}
                       className="flex items-center gap-3 py-3 text-neutral-700 hover:text-red-600 font-medium transition-colors w-full text-left"

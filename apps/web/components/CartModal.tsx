@@ -19,6 +19,7 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
   const handleCheckout = async () => {
     if (items.length === 0) return
 
+    console.log('Starting checkout with items:', items)
     setIsCheckingOut(true)
     try {
       // Convert cart items to Amazon format
@@ -27,8 +28,11 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
         quantity: item.quantity
       }))
 
+      console.log('Amazon products for checkout:', amazonProducts)
+      
       // Generate Amazon cart URL with all products
       const amazonUrl = generateAmazonCartUrl(amazonProducts)
+      console.log('Generated Amazon URL:', amazonUrl)
       
       // Open Amazon in new tab
       window.open(amazonUrl, '_blank')
@@ -50,8 +54,8 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden flex flex-col">
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-start justify-center pt-16 pb-4 px-4 overflow-y-auto" onClick={(e) => e.target === e.currentTarget && onClose()}>
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[calc(100vh-8rem)] overflow-hidden flex flex-col my-auto" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-neutral-200">
           <div className="flex items-center gap-3">

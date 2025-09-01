@@ -5,6 +5,7 @@ import { ChefHat, ExternalLink, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 import { CookingEquipment as EquipmentType, AmazonProduct } from '../types'
 import { getSupabaseClient } from '../lib/supabase'
+import { useCart } from '../contexts/CartContext'
 
 interface CookingEquipmentProps {
   recipeId: string
@@ -26,6 +27,8 @@ export default function CookingEquipment({
   const [loading, setLoading] = useState(true)
   const [loadingProducts, setLoadingProducts] = useState<{ [key: string]: boolean }>({})
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
+  const [addedItems, setAddedItems] = useState<Set<string>>(new Set())
+  const { addItem, itemCount } = useCart()
 
   useEffect(() => {
     loadRecommendedEquipment()
@@ -143,6 +146,31 @@ export default function CookingEquipment({
 
   const formatPrice = (price: string) => {
     return price.replace(/[^\d.,]/g, '').trim() || price
+  }
+
+  const handleAddToCart = (product: AmazonProduct, equipmentName: string) => {
+    const cartItem = {
+      asin: product.product_id,
+      title: product.product_title,
+      price: product.offer.price,
+      image: product.product_photos[0] || '',
+      brand: product.brand || '',
+      source: 'equipment' as const,
+      sourceId: equipmentName
+    }
+    addItem(cartItem)
+    
+    // Add visual feedback
+    setAddedItems(prev => new Set(prev).add(product.product_id))
+    
+    // Remove feedback after 2 seconds
+    setTimeout(() => {
+      setAddedItems(prev => {
+        const newSet = new Set(prev)
+        newSet.delete(product.product_id)
+        return newSet
+      })
+    }, 2000)
   }
 
   // Equipment categories for filtering
@@ -312,15 +340,17 @@ export default function CookingEquipment({
                       ${formatPrice(products[item.id].offer.price)}
                     </div>
                     <div className="mt-auto">
-                      <a
-                        href={generateAmazonCartUrl(products[item.id])}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
+                      <button
+                        onClick={() => handleAddToCart(products[item.id], item.display_name)}
+                        className={`w-full py-2 px-3 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 ${
+                          addedItems.has(products[item.id].product_id)
+                            ? 'bg-green-700 text-white scale-105' 
+                            : 'bg-green-600 hover:bg-green-700 text-white hover:scale-105'
+                        }`}
                       >
                         <ShoppingCart className="h-4 w-4" />
-                        Add to Cart
-                      </a>
+                        {addedItems.has(products[item.id].product_id) ? 'Added!' : 'Add to Cart'}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -339,13 +369,18 @@ export default function CookingEquipment({
           </div>
         )}
 
-        {/* Footer with link to shop */}
+        {/* Footer with shop link */}
         <div className="text-center mt-6">
+          {itemCount > 0 && (
+            <div className="text-sm text-neutral-600 mb-4">
+              ✅ {itemCount} item{itemCount !== 1 ? 's' : ''} added to cart - Check top right to review & checkout
+            </div>
+          )}
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-brand-50 hover:bg-brand-100 text-brand-700 rounded-lg font-medium transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 rounded-lg font-medium transition-colors"
           >
-            Shop All Kitchen Equipment
+            Shop All Equipment
             <ChefHat className="w-4 h-4" />
           </Link>
         </div>
