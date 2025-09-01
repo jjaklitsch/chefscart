@@ -54,7 +54,7 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-start justify-center pt-16 pb-4 px-4 overflow-y-auto" onClick={(e) => e.target === e.currentTarget && onClose()}>
+    <div className="fixed inset-0 bg-black/50 z-[9999] flex items-start justify-center pt-16 pb-4 px-4 overflow-y-auto" onClick={(e) => e.target === e.currentTarget && onClose()}>
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[calc(100vh-8rem)] overflow-hidden flex flex-col my-auto" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-neutral-200">
@@ -125,9 +125,6 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                     <div className="flex items-center justify-between">
                       <div className="font-bold text-brand-600">
                         {formatPrice(item.price)}
-                      </div>
-                      <div className="text-xs text-neutral-500 capitalize">
-                        {item.source}
                       </div>
                     </div>
                   </div>
