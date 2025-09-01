@@ -34,7 +34,7 @@ export default function Footer() {
     try {
       const supabase = getSupabaseClient()
       const { data, error } = await supabase
-        .from('meal2')
+        .from('meals')
         .select('cuisines, courses, diets_supported')
         .limit(100) // Load a sample to get popular categories
 

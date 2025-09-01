@@ -236,7 +236,7 @@ export class ShoppingCartService {
     // Fetch meal ingredients
     const mealIds = mealSelections.map(sel => sel.mealId);
     const { data: meals, error } = await this.supabase
-      .from('meal2')
+      .from('meals')
       .select('id, title, ingredients_json')
       .in('id', mealIds)
       .not('ingredients_json', 'is', null);

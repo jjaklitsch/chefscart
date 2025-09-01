@@ -222,9 +222,24 @@ function transformAmazonItem(item: AmazonAPIItem): AmazonProduct {
     ].filter(Boolean) as string[],
     product_page_url: item.DetailPageURL,
     offer: {
-      price: listing?.Price?.DisplayAmount || 
-             summary?.LowestPrice?.DisplayAmount || 
-             'Price not available',
+      price: (() => {
+        const rawPrice = listing?.Price?.DisplayAmount || summary?.LowestPrice?.DisplayAmount || 'Price not available'
+        
+        // Basic validation at API level
+        if (rawPrice === 'Price not available') return rawPrice
+        
+        // Log suspicious prices for debugging
+        const numericMatch = rawPrice.match(/[\d,]+\.?\d{0,2}/)
+        if (numericMatch) {
+          const numericValue = parseFloat(numericMatch[0].replace(/,/g, ''))
+          if (numericValue > 1000) {
+            console.warn(`Amazon API returned suspicious price: ${rawPrice} for item ${item.ASIN}`)
+            return 'Price not available'
+          }
+        }
+        
+        return rawPrice
+      })(),
       ...(listing?.Price?.Currency && { currency_code: listing.Price.Currency }),
       store_name: item.ItemInfo?.ByLineInfo?.Manufacturer?.DisplayValue ||
                   item.ItemInfo?.ByLineInfo?.Brand?.DisplayValue ||

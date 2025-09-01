@@ -275,7 +275,7 @@ export async function POST(request: NextRequest) {
 
     // Build query with filters
     let query = supabase
-      .from('meal2')
+      .from('meals')
       .select('*')
 
 

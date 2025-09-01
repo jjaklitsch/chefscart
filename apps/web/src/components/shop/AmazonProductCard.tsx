@@ -21,9 +21,44 @@ export default function AmazonProductCard({ product, compact = false, dataLastUp
   }
 
   const formatPrice = (price: string) => {
-    if (!price || price === 'Price not available') return price
-    if (price.match(/^\$\d+(\.\d{2})?/)) return price
-    return price || 'Price not available'
+    if (!price || price === 'Price not available') return 'Price not available'
+    
+    // Log original price for debugging
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Formatting price:', price)
+    }
+    
+    // Handle various price formats from Amazon
+    let cleanedPrice = price
+    
+    // Remove common prefixes/suffixes
+    cleanedPrice = cleanedPrice.replace(/^(Price:|List:|Sale:)/i, '').trim()
+    
+    // Extract numeric value - handle formats like "$29.99", "29.99", "29,99", etc.
+    const priceMatch = cleanedPrice.match(/[\d,]+\.?\d{0,2}/)
+    if (!priceMatch) {
+      console.warn('Could not extract price from:', price)
+      return 'Price not available'
+    }
+    
+    // Remove commas and parse
+    const numericPrice = priceMatch[0].replace(/,/g, '')
+    const priceValue = parseFloat(numericPrice)
+    
+    // Check for invalid or unrealistic prices
+    if (isNaN(priceValue) || priceValue <= 0) {
+      console.warn('Invalid price value:', price, 'parsed as:', priceValue)
+      return 'Price not available'
+    }
+    
+    // Flag potentially incorrect prices (over $500 for kitchen items is suspicious)
+    if (priceValue > 500) {
+      console.warn('Suspicious high price detected:', price, 'parsed as:', priceValue)
+      return 'Price not available'
+    }
+    
+    // Format as currency
+    return `$${priceValue.toFixed(2)}`
   }
 
   const renderStars = (rating?: number) => {
@@ -145,14 +180,14 @@ export default function AmazonProductCard({ product, compact = false, dataLastUp
           </div>
         )}
 
-        <div className="flex items-center justify-between">
+        <div className="space-y-3">
           <div className={`font-bold text-green-600 ${compact ? 'text-lg' : 'text-xl'}`}>
             {formatPrice(product.offer.price)}
           </div>
-          <div className="bg-green-600 hover:bg-green-700 text-white rounded-lg px-3 py-1.5 flex items-center gap-1 transition-colors">
-            <ShoppingCart className="h-3 w-3" />
-            <span className="text-xs font-medium">Add to Cart</span>
-          </div>
+          <button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-lg px-3 py-2 flex items-center justify-center gap-1 transition-colors">
+            <ShoppingCart className="h-4 w-4" />
+            <span className="text-sm font-medium">Add to Cart</span>
+          </button>
         </div>
       </div>
     </div>

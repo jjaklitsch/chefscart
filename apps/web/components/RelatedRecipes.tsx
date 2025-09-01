@@ -45,7 +45,7 @@ const RelatedRecipes: React.FC<RelatedRecipesProps> = ({
       
       // First try to find recipes with same cuisine
       let { data: cuisineRecipesData } = await supabase
-        .from('meal2')
+        .from('meals')
         .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, image_url')
         .contains('cuisines', [cuisine])
         .neq('id', currentRecipe.id)
@@ -56,7 +56,7 @@ const RelatedRecipes: React.FC<RelatedRecipesProps> = ({
       // If not enough cuisine matches, also get same course recipes
       if ((cuisineRecipes?.length || 0) < 4 && course) {
         const { data: courseRecipes } = await supabase
-          .from('meal2')
+          .from('meals')
           .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, image_url')
           .contains('courses', [course])
           .neq('id', currentRecipe.id)
@@ -69,7 +69,7 @@ const RelatedRecipes: React.FC<RelatedRecipesProps> = ({
       // If still not enough, get random popular recipes
       if ((cuisineRecipes?.length || 0) < 3) {
         const { data: randomRecipes } = await supabase
-          .from('meal2')
+          .from('meals')
           .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, image_url')
           .neq('id', currentRecipe.id)
           .order('title')

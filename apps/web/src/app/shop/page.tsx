@@ -39,12 +39,31 @@ export default function ShopPage() {
           .limit(48)
       ]);
       
-      // Set categories without equipment count for now
+      // Calculate equipment count for each category
       if (categoriesResult.data) {
-        setCategories(categoriesResult.data.map((category: any) => ({
-          ...category,
-          equipment_count: 0
-        })));
+        const categoriesWithCount = await Promise.all(
+          categoriesResult.data.map(async (category: any) => {
+            try {
+              const { count } = await supabase
+                .from('equipment_categories')
+                .select('equipment_id', { count: 'exact' })
+                .eq('category_id', category.id);
+              
+              return {
+                ...category,
+                equipment_count: count || 0
+              };
+            } catch (error) {
+              console.error(`Error counting equipment for ${category.name}:`, error);
+              return {
+                ...category,
+                equipment_count: 0
+              };
+            }
+          })
+        );
+        
+        setCategories(categoriesWithCount);
       }
       
       // Set equipment with optimized image loading

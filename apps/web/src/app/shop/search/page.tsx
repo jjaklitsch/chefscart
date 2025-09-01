@@ -2,7 +2,7 @@
 
 import { Suspense, useState, useEffect, useCallback, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { Search, ShoppingCart } from 'lucide-react'
+import { Search, ShoppingCart, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { AmazonProduct, AmazonSearchResponse } from '../../../../types'
 import Header from '../../../../components/Header'
@@ -131,6 +131,14 @@ function ShopSearchContent() {
       <div className="bg-white border-b border-neutral-200">
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-4xl mx-auto">
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-medium mb-6 transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Shop
+            </Link>
+            
             <h1 className="text-3xl font-display font-bold text-neutral-800 mb-6">
               ChefsCart Product Search
             </h1>

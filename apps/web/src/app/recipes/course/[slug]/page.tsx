@@ -52,7 +52,7 @@ export default function CoursePage() {
       
       // First, get all courses to find the exact match
       const { data: allMeals, error: mealsError } = await supabase
-        .from('meal2')
+        .from('meals')
         .select('courses') as { data: any[] | null, error: any }
 
       if (mealsError) throw mealsError
@@ -76,7 +76,7 @@ export default function CoursePage() {
 
       // Get recipes for this course
       const { data, error } = await supabase
-        .from('meal2')
+        .from('meals')
         .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url')
         .contains('courses', [matchingCourse])
         .order('title') as { data: any[] | null, error: any }

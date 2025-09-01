@@ -27,7 +27,7 @@ export default function CuisinesPage() {
     const fetchCuisines = async () => {
       try {
         const { data: meals, error } = await supabase
-          .from('meal2')
+          .from('meals')
           .select('cuisines')
           .not('cuisines', 'is', null)
 

@@ -55,7 +55,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     
     // Get all recipes for individual recipe pages
     const { data: recipes } = await supabase
-      .from('meal2')
+      .from('meals')
       .select('title, updated_at')
       .order('title')
 
@@ -68,7 +68,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Get all unique cuisines for cuisine category pages
     const { data: cuisinesData } = await supabase
-      .from('meal2')
+      .from('meals')
       .select('cuisines')
 
     const allCuisines = new Set<string>()
@@ -89,7 +89,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Get all unique diets for diet category pages
     const { data: dietsData } = await supabase
-      .from('meal2')
+      .from('meals')
       .select('diets_supported')
 
     const allDiets = new Set<string>()
@@ -110,7 +110,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Get all unique courses for course category pages
     const { data: coursesData } = await supabase
-      .from('meal2')
+      .from('meals')
       .select('courses')
 
     const allCourses = new Set<string>()
@@ -131,7 +131,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Get all unique difficulty levels for difficulty category pages
     const { data: difficultyData } = await supabase
-      .from('meal2')
+      .from('meals')
       .select('cooking_difficulty')
 
     const allDifficulties = new Set<string>()

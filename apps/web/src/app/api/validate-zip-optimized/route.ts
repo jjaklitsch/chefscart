@@ -3,6 +3,13 @@ import { createClient } from '@supabase/supabase-js'
 
 export const dynamic = 'force-dynamic'
 
+// Type for cached data
+interface CachedZipData {
+  is_valid: boolean
+  has_instacart_coverage: boolean
+  last_updated: string
+}
+
 // Create Supabase client with connection pooling optimizations
 const supabase = createClient(
   process.env.SUPABASE_URL!,
@@ -36,17 +43,14 @@ export async function POST(request: NextRequest) {
       .from('zip_code_cache')
       .select('is_valid, has_instacart_coverage, last_updated')
       .eq('zip_code', zipCode)
-      .maybeSingle() // Use maybeSingle instead of single to avoid errors
+      .maybeSingle() as { data: CachedZipData | null; error: any }
 
     if (cacheError) {
       console.error('Cache lookup error:', cacheError)
     }
 
-    // Check if we have fresh cache data (less than 90 days old)
-    const isCacheValid = cachedData && 
-      new Date(cachedData.last_updated) > new Date(Date.now() - 90 * 24 * 60 * 60 * 1000)
-
-    if (isCacheValid) {
+    // Use cached data if available (no expiry check - only fallback to API if cache missing)
+    if (cachedData) {
       
       return NextResponse.json({
         isValid: cachedData.is_valid,
@@ -95,8 +99,9 @@ export async function POST(request: NextRequest) {
       let hasInstacartCoverage = false
 
       if (instacartResponse.ok) {
-        // We don't need to parse JSON, just check if API returns 200 (has coverage)
-        hasInstacartCoverage = true
+        // Parse JSON to check if there are actual retailers
+        const data = await instacartResponse.json()
+        hasInstacartCoverage = data && data.retailers && Array.isArray(data.retailers) && data.retailers.length > 0
       } else if (instacartResponse.status === 404) {
         hasInstacartCoverage = false // No coverage
       } else {
@@ -130,12 +135,13 @@ export async function POST(request: NextRequest) {
       console.error('API error:', apiError)
       
       // If we have stale cache data, use it as fallback
-      if (cachedData) {
+      if (cachedData && typeof cachedData === 'object' && 'is_valid' in cachedData) {
+        const validCachedData = cachedData as CachedZipData
         
         return NextResponse.json({
-          isValid: cachedData.is_valid,
-          hasInstacartCoverage: cachedData.has_instacart_coverage,
-          message: cachedData.has_instacart_coverage 
+          isValid: validCachedData.is_valid,
+          hasInstacartCoverage: validCachedData.has_instacart_coverage,
+          message: validCachedData.has_instacart_coverage 
             ? `Great! ChefsCart is available in your area.`
             : "ChefsCart isn't available in your area yet.",
           source: 'stale_cache',

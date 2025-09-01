@@ -78,7 +78,7 @@ export default function RecipePage() {
       
       // Get all meals and find by slug matching
       const { data: allMeals, error } = await supabase
-        .from('meal2')
+        .from('meals')
         .select('*') as { data: any[] | null, error: any }
       
       if (error) {
@@ -319,7 +319,7 @@ export default function RecipePage() {
                     </div>
                     <div className="text-center p-3 bg-neutral-50 rounded-lg">
                       <ChefHat className="w-5 h-5 mx-auto mb-1 text-neutral-600" />
-                      <p className="text-sm font-medium text-neutral-800">{recipe.cuisines?.[0] || 'International'}</p>
+                      <p className="text-sm font-medium text-neutral-800">{toTitleCase(recipe.cuisines?.[0] || 'International')}</p>
                       <p className="text-xs text-neutral-500">Cuisine</p>
                     </div>
                     {recipe.cooking_difficulty && (
@@ -331,7 +331,7 @@ export default function RecipePage() {
                         }`}>
                           {recipe.cooking_difficulty.charAt(0).toUpperCase()}
                         </div>
-                        <p className="text-sm font-medium text-neutral-800">{recipe.cooking_difficulty}</p>
+                        <p className="text-sm font-medium text-neutral-800">{toTitleCase(recipe.cooking_difficulty)}</p>
                         <p className="text-xs text-neutral-500">Difficulty</p>
                       </div>
                     )}

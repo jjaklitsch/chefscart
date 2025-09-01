@@ -74,7 +74,7 @@ const RecipeCarousel: React.FC<RecipeCarouselProps> = ({
       const supabase = createClient()
       
       let query = supabase
-        .from('meal2')
+        .from('meals')
         .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url, primary_ingredient, ingredients_json')
         .limit(12)
 

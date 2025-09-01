@@ -484,7 +484,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         )
       )
 
-      // Image now comes directly from meal2 database
+      // Image now comes directly from meals database
       
       showToast(`Replaced "${recipeToReplace.title}" with "${newRecipe.title}"`)
     }
@@ -518,9 +518,9 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
     return allOptions.slice(0, 7)
   }
 
-  // Removed generateSingleImageInBackground - now using meal2 image_url directly
+  // Removed generateSingleImageInBackground - now using meals image_url directly
 
-  // Removed on-the-fly image generation - now using meal2 image_url directly
+  // Removed on-the-fly image generation - now using meals image_url directly
 
   // Calculate totals (people only now)
   const totalServings = selectedRecipes.reduce((sum, recipe) => sum + (recipe.servings || 0), 0)
