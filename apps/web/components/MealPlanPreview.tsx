@@ -9,6 +9,7 @@ interface MealPlanPreviewProps {
   onApprove: () => void
   onBack: () => void
   preferences?: any // Add preferences prop
+  isLoading?: boolean // Add loading state prop
 }
 
 // Helper function to get emoji for ingredient
@@ -416,21 +417,17 @@ function RecipeModal({ recipe, isOpen, onClose }: { recipe: Recipe; isOpen: bool
   )
 }
 
-export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferences }: MealPlanPreviewProps) {
+export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferences, isLoading = false }: MealPlanPreviewProps) {
   const [selectedRecipes, setSelectedRecipes] = useState<Recipe[]>(mealPlan.recipes)
   const [backupRecipes] = useState<Recipe[]>(mealPlan.backupRecipes || [])
   const [expandedIngredients, setExpandedIngredients] = useState<Record<string, boolean>>({})
   const [expandedInstructions, setExpandedInstructions] = useState<Record<string, boolean>>({})
-  const [imageUrls, setImageUrls] = useState<Record<string, string>>({})
-  const [imageLoading, setImageLoading] = useState<Record<string, boolean>>({})
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
   const [modalRecipe, setModalRecipe] = useState<Recipe | null>(null)
   const [replacementModalOpen, setReplacementModalOpen] = useState(false)
   const [recipeToReplace, setRecipeToReplace] = useState<Recipe | null>(null)
   const [toastMessage, setToastMessage] = useState<string | null>(null)
   const [replacedRecipes, setReplacedRecipes] = useState<Recipe[]>([]) // Track meals that were replaced
   const [numberOfPeople, setNumberOfPeople] = useState(preferences?.peoplePerMeal || 2)
-  const generatedImages = useRef<Set<string>>(new Set())
 
   // Sync selectedRecipes with mealPlan prop changes (for image updates from parent)
   useEffect(() => {
@@ -487,8 +484,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         )
       )
 
-      // Generate image for new recipe in background
-      generateSingleImageInBackground(newRecipe)
+      // Image now comes directly from meal2 database
       
       showToast(`Replaced "${recipeToReplace.title}" with "${newRecipe.title}"`)
     }
@@ -518,163 +514,13 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
     // Combine backup meals with replaced meals (backups first, replaced at end)
     const allOptions = [...availableBackups, ...relevantReplacedMeals]
     
-    // Return all available options (no artificial limit)
-    return allOptions
+    // Limit to 7 meals maximum to keep the UI manageable
+    return allOptions.slice(0, 7)
   }
 
-  const generateSingleImageInBackground = async (recipe: any) => {
-    try {
-      // Race against timeout for single image generation
-      const response = await Promise.race([
-        fetch('/api/generate-dish-image', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            dishName: recipe.title,
-            description: recipe.description,
-            cuisine: recipe.cuisine,
-            thumbnail: true // Flag for optimized thumbnail prompts
-          })
-        }),
-        new Promise<never>((_, reject) => 
-          setTimeout(() => reject(new Error('Replacement image timeout')), 45000) // 45s timeout for DALLE
-        )
-      ])
+  // Removed generateSingleImageInBackground - now using meal2 image_url directly
 
-      if (response.ok) {
-        const data = await response.json()
-        setSelectedRecipes(prev => 
-          prev.map(r => 
-            r.id === recipe.id 
-              ? { ...r, imageUrl: data.imageUrl, imageLoading: false }
-              : r
-          )
-        )
-      } else {
-        console.warn(`❌ Failed to generate replacement image for ${recipe.title}`)
-        setSelectedRecipes(prev => 
-          prev.map(r => 
-            r.id === recipe.id 
-              ? { ...r, imageLoading: false, imageError: true }
-              : r
-          )
-        )
-      }
-    } catch (error) {
-      console.warn(`❌ Replacement image timeout for ${recipe.title}:`, error instanceof Error ? error.message : error)
-      setSelectedRecipes(prev => 
-        prev.map(r => 
-          r.id === recipe.id 
-            ? { ...r, imageLoading: false, imageError: true }
-            : r
-        )
-      )
-    }
-  }
-
-  // Generate images for recipes that don't have them yet (only on initial load)
-  useEffect(() => {
-    const abortController = new AbortController()
-    const startTime = Date.now()
-    
-    const generateImages = async () => {
-      // Only generate images for recipes that truly don't have them and aren't already being generated
-      const recipesNeedingImages = selectedRecipes.filter(recipe => 
-        !recipe.imageUrl && 
-        !recipe.imageLoading && 
-        !recipe.imageError && 
-        !imageUrls[recipe.id] && 
-        !imageLoading[recipe.id] && 
-        !imageErrors[recipe.id] &&
-        !generatedImages.current.has(recipe.id)
-      )
-
-      if (recipesNeedingImages.length === 0) {
-        return
-      }
-
-
-      for (const recipe of recipesNeedingImages) {
-        if (abortController.signal.aborted) break
-        
-        // Mark as generated to prevent regeneration
-        generatedImages.current.add(recipe.id)
-        setImageLoading(prev => ({ ...prev, [recipe.id]: true }))
-
-        try {
-          const response = await fetch('/api/generate-dish-image', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              dishName: recipe.title,
-              description: recipe.description,
-              cuisine: recipe.cuisine,
-              thumbnail: true
-            }),
-            signal: abortController.signal
-          })
-
-          if (!response.ok) {
-            throw new Error('Failed to generate image')
-          }
-
-          const data = await response.json()
-          
-          if (!abortController.signal.aborted) {
-            setImageUrls(prev => ({ ...prev, [recipe.id]: data.imageUrl }))
-            // Update the recipe's imageLoading state
-            setSelectedRecipes(prev => 
-              prev.map(r => 
-                r.id === recipe.id 
-                  ? { ...r, imageUrl: data.imageUrl, imageLoading: false }
-                  : r
-              )
-            )
-          }
-        } catch (error) {
-          if (!abortController.signal.aborted) {
-            const errorMessage = error instanceof Error ? error.message : 'Unknown error'
-            console.error(`❌ Failed to generate image for ${recipe.title}: ${errorMessage}`)
-            setImageErrors(prev => ({ ...prev, [recipe.id]: true }))
-            // Update the recipe's imageLoading state on error
-            setSelectedRecipes(prev => 
-              prev.map(r => 
-                r.id === recipe.id 
-                  ? { ...r, imageLoading: false, imageError: true }
-                  : r
-              )
-            )
-          }
-        } finally {
-          if (!abortController.signal.aborted) {
-            setImageLoading(prev => ({ ...prev, [recipe.id]: false }))
-          }
-        }
-      }
-    }
-
-    generateImages().then(() => {
-      // Log final results
-      const totalRecipes = selectedRecipes.length
-      const successfulImages = selectedRecipes.filter(r => r.imageUrl || imageUrls[r.id]).length
-      const failedImages = Object.keys(imageErrors).length + selectedRecipes.filter(r => r.imageError).length
-      
-      if (selectedRecipes.length > 0) {
-        console.log(`🎨 MealPlanPreview image generation complete: ${successfulImages}/${totalRecipes} successful in ${Date.now() - startTime}ms`)
-        if (failedImages > 0) {
-          console.warn(`⚠️  ${failedImages} images failed to generate`)
-        }
-      }
-    })
-    
-    return () => {
-      abortController.abort()
-    }
-  }, [selectedRecipes.length]) // Only trigger when number of recipes changes, not on recipe updates
+  // Removed on-the-fly image generation - now using meal2 image_url directly
 
   // Calculate totals (people only now)
   const totalServings = selectedRecipes.reduce((sum, recipe) => sum + (recipe.servings || 0), 0)
@@ -754,23 +600,12 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                     <div className="md:hidden">
                       {/* Recipe Image */}
                       <div className="w-full h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center overflow-hidden">
-                        {recipe.imageLoading || imageLoading[recipe.id] ? (
-                          <div className="flex flex-col items-center text-center p-4">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-600 mb-2"></div>
-                            <p className="text-xs text-gray-600">Generating image...</p>
-                          </div>
-                        ) : recipe.imageUrl || imageUrls[recipe.id] ? (
+                        {recipe.imageUrl ? (
                           <img 
-                            src={recipe.imageUrl || imageUrls[recipe.id]} 
+                            src={recipe.imageUrl} 
                             alt={recipe.title}
                             className="w-full h-full object-cover"
-                            onError={() => setImageErrors(prev => ({ ...prev, [recipe.id]: true }))}
                           />
-                        ) : recipe.imageError || imageErrors[recipe.id] ? (
-                          <div className="flex flex-col items-center text-center p-4">
-                            <div className="text-4xl opacity-60 mb-1">🍽️</div>
-                            <p className="text-xs text-gray-500">Image unavailable</p>
-                          </div>
                         ) : (
                           <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-lg p-4 shadow-lg">
                             <ShoppingCart className="w-8 h-8 text-white" />
@@ -848,23 +683,12 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                     <div className="hidden md:flex">
                       {/* Recipe Image */}
                       <div className="w-48 h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                        {recipe.imageLoading || imageLoading[recipe.id] ? (
-                          <div className="flex flex-col items-center text-center p-4">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-600 mb-2"></div>
-                            <p className="text-xs text-gray-600">Generating image...</p>
-                          </div>
-                        ) : recipe.imageUrl || imageUrls[recipe.id] ? (
+                        {recipe.imageUrl ? (
                           <img 
-                            src={recipe.imageUrl || imageUrls[recipe.id]} 
+                            src={recipe.imageUrl} 
                             alt={recipe.title}
                             className="w-full h-full object-cover"
-                            onError={() => setImageErrors(prev => ({ ...prev, [recipe.id]: true }))}
                           />
-                        ) : recipe.imageError || imageErrors[recipe.id] ? (
-                          <div className="flex flex-col items-center text-center p-4">
-                            <div className="text-4xl opacity-60 mb-1">🍽️</div>
-                            <p className="text-xs text-gray-500">Image unavailable</p>
-                          </div>
                         ) : (
                           <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-lg p-4 shadow-lg">
                             <ShoppingCart className="w-8 h-8 text-white" />
@@ -1022,10 +846,24 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         <div className="max-w-4xl mx-auto flex justify-center">
           <button
             onClick={onApprove}
-            className="flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg"
+            disabled={isLoading}
+            className={`flex items-center justify-center px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg text-base md:text-lg ${
+              isLoading 
+                ? 'bg-gray-400 cursor-not-allowed' 
+                : 'bg-orange-600 text-white hover:bg-orange-700 hover:shadow-xl'
+            }`}
           >
-            <ShoppingCart className="h-5 w-5 md:h-6 md:w-6 mr-2 md:mr-3" />
-            Build My Instacart Cart
+            {isLoading ? (
+              <>
+                <div className="animate-spin rounded-full h-5 w-5 md:h-6 md:w-6 border-b-2 border-white mr-2 md:mr-3"></div>
+                Creating Your Cart...
+              </>
+            ) : (
+              <>
+                <ShoppingCart className="h-5 w-5 md:h-6 md:w-6 mr-2 md:mr-3" />
+                Build My Instacart Cart
+              </>
+            )}
           </button>
         </div>
       </div>

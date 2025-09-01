@@ -5,6 +5,8 @@ import { useParams, notFound } from 'next/navigation'
 import { ArrowLeft, Clock, Users, ChefHat, ShoppingCart, Share2, Heart, Star } from 'lucide-react'
 import Link from 'next/link'
 import { createClient } from '../../../../lib/supabase'
+import { inferEquipmentFromRecipe } from '../../../../utils/equipmentInference'
+import { toTitleCase } from '../../../../utils/textUtils'
 import RecipeIngredients from '../../../../components/RecipeIngredients'
 import RecipeInstructions from '../../../../components/RecipeInstructions'
 import CookingEquipment from '../../../../components/CookingEquipment'
@@ -12,6 +14,7 @@ import RelatedRecipes from '../../../../components/RelatedRecipes'
 import InstacartInstructionsModal from '../../../../components/InstacartInstructionsModal'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import BackToTop from '../../../components/shop/BackToTop'
 
 interface Recipe {
   id: string
@@ -26,6 +29,7 @@ interface Recipe {
   courses: string[]
   allergens_present: string[]
   primary_ingredient: string
+  cooking_equipment?: string[]
   ingredients_json: {
     servings: number
     ingredients: Array<{
@@ -59,6 +63,7 @@ export default function RecipePage() {
   const [creatingCart, setCreatingCart] = useState(false)
   const [showShareModal, setShowShareModal] = useState(false)
   const [showInstructions, setShowInstructions] = useState(false)
+  const [showImageModal, setShowImageModal] = useState(false)
   const [cartUrl, setCartUrl] = useState<string | null>(null)
 
   useEffect(() => {
@@ -112,11 +117,19 @@ export default function RecipePage() {
 
     setCreatingCart(true)
     try {
+      // Get ingredients list using the same logic as the component
+      let ingredientsList = [];
+      if (recipe.ingredients_json?.ingredients && Array.isArray(recipe.ingredients_json.ingredients)) {
+        ingredientsList = recipe.ingredients_json.ingredients;
+      } else if (Array.isArray(recipe.ingredients_json)) {
+        ingredientsList = recipe.ingredients_json;
+      }
+
       // Create a single-recipe "meal plan" for cart creation
       const singleRecipePlan = {
         recipes: [{
           ...recipe,
-          ingredients: recipe.ingredients_json?.ingredients || [],
+          ingredients: ingredientsList,
           servings: servings
         }]
       }
@@ -131,15 +144,15 @@ export default function RecipePage() {
           planId: `recipe_${recipe.id}_${Date.now()}`,
           mealPlanData: {
             mealPlan: singleRecipePlan,
-            consolidatedCart: recipe.ingredients_json?.ingredients?.map((ingredient: any) => ({
-              name: ingredient.display_name || ingredient.name,
+            consolidatedCart: ingredientsList.map((ingredient: any) => ({
+              name: ingredient.display_name || ingredient.name || ingredient.shoppable_name,
               shoppableName: ingredient.shoppable_name || ingredient.display_name || ingredient.name,
               amount: (ingredient.quantity || ingredient.amount || 1) * (servings / (recipe.servings_default || 2)),
               unit: ingredient.unit || 'each',
               category: ingredient.category || 'Other',
               shoppingQuantity: (ingredient.quantity || ingredient.amount || 1) * (servings / (recipe.servings_default || 2)),
               shoppingUnit: ingredient.unit || 'each'
-            })) || []
+            }))
           }
         })
       })
@@ -250,11 +263,22 @@ export default function RecipePage() {
             {/* Recipe Image */}
             <div className="relative h-64 md:h-80 bg-gradient-to-br from-sage-100 to-cream-100">
               {recipe.image_url ? (
-                <img 
-                  src={recipe.image_url} 
-                  alt={recipe.title}
-                  className="w-full h-full object-cover"
-                />
+                <div 
+                  className="w-full h-full cursor-pointer group relative"
+                  onClick={() => setShowImageModal(true)}
+                >
+                  <img 
+                    src={recipe.image_url} 
+                    alt={recipe.title}
+                    className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 flex items-center justify-center">
+                    <div className="bg-white bg-opacity-0 group-hover:bg-opacity-90 text-neutral-800 px-3 py-1 rounded-lg font-medium text-sm opacity-0 group-hover:opacity-100 transition-all duration-200">
+                      Click to enlarge
+                    </div>
+                  </div>
+                </div>
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="bg-gradient-to-br from-brand-600 to-brand-700 rounded-lg p-6 shadow-lg">
@@ -321,7 +345,7 @@ export default function RecipePage() {
                           key={idx}
                           className="px-3 py-1 bg-sage-100 text-sage-800 text-sm rounded-full font-medium"
                         >
-                          {diet}
+                          {toTitleCase(diet)}
                         </span>
                       ))}
                     </div>
@@ -367,7 +391,7 @@ export default function RecipePage() {
                       ) : (
                         <>
                           <ShoppingCart className="w-4 h-4" />
-                          Shop Ingredients
+                          Shop Now
                         </>
                       )}
                     </button>
@@ -386,12 +410,25 @@ export default function RecipePage() {
             {/* Ingredients */}
             <div>
               <RecipeIngredients 
-                ingredients={recipe.ingredients_json?.ingredients?.map(ing => ({
-                  name: ing.display_name || '',
-                  quantity: ing.quantity || 0,
-                  unit: ing.unit || '',
-                  ...(ing.category && { category: ing.category })
-                })) || []}
+                ingredients={(() => {
+                  // Handle different ingredient data structures
+                  let ingredientsList = [];
+                  
+                  if (recipe.ingredients_json?.ingredients && Array.isArray(recipe.ingredients_json.ingredients)) {
+                    // New structure: ingredients are nested in ingredients_json.ingredients
+                    ingredientsList = recipe.ingredients_json.ingredients;
+                  } else if (Array.isArray(recipe.ingredients_json)) {
+                    // Old structure: ingredients_json is directly an array
+                    ingredientsList = recipe.ingredients_json;
+                  }
+                  
+                  return ingredientsList.map(ing => ({
+                    name: ing.display_name || ing.name || ing.shoppable_name || '',
+                    quantity: ing.quantity || ing.amount || 0,
+                    unit: ing.unit || '',
+                    ...(ing.category && { category: ing.category })
+                  }));
+                })()}
                 originalServings={recipe.servings_default}
                 adjustedServings={servings}
               />
@@ -400,7 +437,15 @@ export default function RecipePage() {
             {/* Instructions */}
             <div>
               <RecipeInstructions 
-                instructions={recipe.instructions_json?.steps || []}
+                instructions={(() => {
+                  // Handle different instruction data structures
+                  const steps = recipe.instructions_json?.steps || [];
+                  return steps.map(step => ({
+                    text: step.instruction || step.text || '',
+                    step_no: step.step || step.step_no,
+                    time_min: step.time_minutes || step.time_min
+                  }));
+                })()}
                 title={recipe.title}
               />
             </div>
@@ -412,6 +457,7 @@ export default function RecipePage() {
                 recipeCourses={recipe.courses}
                 recipeCuisines={recipe.cuisines}
                 cookingDifficulty={recipe.cooking_difficulty || 'medium'}
+                equipmentNeeded={recipe.cooking_equipment}
               />
             </div>
           </div>
@@ -446,7 +492,7 @@ export default function RecipePage() {
                             href={`/recipes?cuisine=${encodeURIComponent(cuisine)}`}
                             className="px-3 py-1 bg-sage-100 text-sage-800 text-sm rounded-full font-medium hover:bg-sage-200 transition-colors cursor-pointer"
                           >
-                            {cuisine.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}
+                            {toTitleCase(cuisine)}
                           </Link>
                         ))}
                       </div>
@@ -464,7 +510,7 @@ export default function RecipePage() {
                             href={`/recipes?course=${encodeURIComponent(course)}`}
                             className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium hover:bg-blue-200 transition-colors cursor-pointer"
                           >
-                            {course.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}
+                            {toTitleCase(course)}
                           </Link>
                         ))}
                       </div>
@@ -482,7 +528,7 @@ export default function RecipePage() {
                             href={`/recipes?diet=${encodeURIComponent(diet)}`}
                             className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full font-medium hover:bg-green-200 transition-colors cursor-pointer"
                           >
-                            {diet.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}
+                            {toTitleCase(diet)}
                           </Link>
                         ))}
                       </div>
@@ -496,7 +542,7 @@ export default function RecipePage() {
                       href={`/recipes?ingredient=${encodeURIComponent(recipe.primary_ingredient)}`}
                       className="inline-block px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full font-medium hover:bg-orange-200 transition-colors cursor-pointer"
                     >
-                      {recipe.primary_ingredient.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}
+                      {toTitleCase(recipe.primary_ingredient)}
                     </Link>
                   </div>
 
@@ -511,7 +557,7 @@ export default function RecipePage() {
                             href={`/recipes?ingredient=${encodeURIComponent(ingredient.shoppable_name || ingredient.display_name)}`}
                             className="px-2 py-1 bg-neutral-100 text-neutral-700 text-xs rounded-full font-medium hover:bg-neutral-200 transition-colors cursor-pointer"
                           >
-                            {(ingredient.shoppable_name || ingredient.display_name).split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}
+                            {toTitleCase(ingredient.shoppable_name || ingredient.display_name)}
                           </Link>
                         ))}
                       </div>
@@ -523,7 +569,7 @@ export default function RecipePage() {
                     <div>
                       <h4 className="text-sm font-semibold text-neutral-700 mb-2">Cooking Difficulty</h4>
                       <span className={`inline-block px-3 py-1 text-sm rounded-full font-medium ${getDifficultyColor(recipe.cooking_difficulty)}`}>
-                        {recipe.cooking_difficulty}
+                        {toTitleCase(recipe.cooking_difficulty)}
                       </span>
                     </div>
                   )}
@@ -532,20 +578,13 @@ export default function RecipePage() {
                   <div>
                     <h4 className="text-sm font-semibold text-neutral-700 mb-2">Cooking Equipment</h4>
                     <div className="flex flex-wrap gap-2">
-                      {/* Essential equipment based on recipe type */}
-                      {['Knife', 'Cutting Board', 'Mixing Bowl'].concat(
-                        recipe.courses?.some(course => course.toLowerCase().includes('bak')) ? ['Baking Sheet', 'Measuring Cups'] : [],
-                        recipe.courses?.some(course => course.toLowerCase().includes('stir fry')) ? ['Wok', 'Spatula'] : [],
-                        recipe.cooking_difficulty?.toLowerCase() === 'challenging' ? ['Chef\'s Knife', 'Kitchen Thermometer'] : [],
-                        recipe.cuisines?.some(cuisine => cuisine.toLowerCase().includes('italian')) ? ['Grater'] : [],
-                        recipe.cuisines?.some(cuisine => cuisine.toLowerCase().includes('asian')) ? ['Rice Cooker'] : []
-                      ).slice(0, 6).map((equipment, idx) => (
+                      {inferEquipmentFromRecipe(recipe).map((equipmentItem, idx) => (
                         <Link
                           key={idx}
-                          href={`/shop/search?q=${encodeURIComponent(equipment)}`}
+                          href={`/shop/search?q=${encodeURIComponent(equipmentItem)}`}
                           className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full font-medium hover:bg-purple-200 transition-colors cursor-pointer"
                         >
-                          {equipment}
+                          {equipmentItem}
                         </Link>
                       ))}
                       <Link
@@ -721,6 +760,48 @@ export default function RecipePage() {
           setShowInstructions(false)
         }}
       />
+
+      {/* Image Modal */}
+      {showImageModal && recipe?.image_url && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-4xl max-h-full">
+            {/* Close button */}
+            <button
+              onClick={() => setShowImageModal(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors text-2xl font-bold z-10"
+            >
+              ✕ Close
+            </button>
+            
+            {/* Image */}
+            <div className="relative">
+              <img 
+                src={recipe.image_url} 
+                alt={recipe.title}
+                className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+            
+            {/* Recipe title overlay */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 rounded-b-lg">
+              <h3 className="text-white text-xl font-bold">{recipe.title}</h3>
+              {recipe.description && (
+                <p className="text-gray-200 text-sm mt-1">{recipe.description}</p>
+              )}
+            </div>
+          </div>
+          
+          {/* Click outside to close */}
+          <div 
+            className="absolute inset-0 -z-10" 
+            onClick={() => setShowImageModal(false)}
+          />
+        </div>
+      )}
+
+      {/* Back to Top Button */}
+      <BackToTop />
     </div>
   )
 }

@@ -10,6 +10,7 @@ import RecipeFilters from '../../../components/RecipeFilters'
 import RecipeCarousel from '../../../components/RecipeCarousel'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
+import BackToTop from '../../components/shop/BackToTop'
 
 // Helper function to convert text to title case
 const toTitleCase = (str: string): string => {
@@ -691,6 +692,9 @@ function RecipesPageContent() {
       </div>
       
       <Footer />
+      
+      {/* Back to Top Button */}
+      <BackToTop />
     </div>
   )
 }

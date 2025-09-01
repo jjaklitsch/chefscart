@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
         productsSample: products || [],
         productsError: prodError,
         totalCategories: categories?.length || 0,
-        featuredCategories: categories?.filter(c => c.is_featured)?.length || 0
+        featuredCategories: categories?.filter((c: any) => c.is_featured)?.length || 0
       }
     });
 

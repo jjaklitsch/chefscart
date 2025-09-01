@@ -220,6 +220,14 @@ export default function Footer() {
                   Terms of Service
                 </Link>
               </li>
+              <li>
+                <Link 
+                  href="/affiliate-disclaimer" 
+                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                >
+                  Affiliate Disclaimer
+                </Link>
+              </li>
             </ul>
           </div>
 

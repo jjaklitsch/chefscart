@@ -298,15 +298,15 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
     }
   }, [answers, isInitialized])
 
-  // Auto-mark steps as completed when they become valid (only in initial onboarding, not edit mode)
+  // Auto-mark steps as completed when they become valid (only in edit mode, not initial onboarding)
   useEffect(() => {
     const isEditMode = Boolean(initialPreferences)
-    if (isInitialized && !isEditMode) {
+    if (isInitialized && isEditMode) {
       const newCompletedSteps = new Set(completedSteps)
       let hasChanges = false
       
-      // Check all previous steps and current step
-      for (let i = 0; i <= currentStep; i++) {
+      // In edit mode, check all steps that are valid and mark them completed
+      for (let i = 0; i < onboardingSteps.length; i++) {
         if (!completedSteps.has(i) && isStepComplete(i)) {
           newCompletedSteps.add(i)
           hasChanges = true
@@ -317,6 +317,7 @@ export default function GuidedOnboarding({ onComplete, onBack, initialPreference
         setCompletedSteps(newCompletedSteps)
       }
     }
+    // For initial onboarding, only mark steps as completed when user explicitly progresses
   }, [answers, currentStep, isInitialized, completedSteps, initialPreferences])
 
   // Cleanup timer on unmount

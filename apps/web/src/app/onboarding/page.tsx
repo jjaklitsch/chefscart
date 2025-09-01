@@ -2,15 +2,17 @@
 
 import { useState, Suspense, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { CheckCircle } from 'lucide-react'
 import GuidedOnboarding from '../../../components/GuidedOnboarding'
 import MealPlanPreview from '../../../components/MealPlanPreview'
 import CartBuilder from '../../../components/CartBuilder'
 import CartPreparation from '../../../components/CartPreparation'
 import InstacartInstructionsModal from '../../../components/InstacartInstructionsModal'
 import { UserPreferences, MealPlan } from '../../../types'
+import { toTitleCase } from '../../../utils/textUtils'
 
 function OnboardingPageContent() {
-  const [step, setStep] = useState<'preferences' | 'mealplan' | 'cartbuilder' | 'cartprep' | 'cart'>('preferences')
+  const [step, setStep] = useState<'preferences' | 'mealplan' | 'cartbuilder' | 'cartprep' | 'cart' | 'success'>('preferences')
   const [preferences, setPreferences] = useState<UserPreferences | null>(null)
   const [mealPlan, setMealPlan] = useState<MealPlan | null>(null)
   const [consolidatedCart, setConsolidatedCart] = useState<any[]>([])
@@ -91,19 +93,16 @@ function OnboardingPageContent() {
           mealType: mealType, // Explicitly set the meal type
           cuisine: meal.cuisines[0] || 'international',
           imageUrl: meal.image_url,
-          ingredients: (meal.ingredients_json?.ingredients || []).map((ing: any) => ({
-            name: ing.shoppable_name || ing.display_name, // Use shoppable name for shopping list clarity
+          ingredients: (meal.ingredients_json || []).map((ing: any) => ({
+            name: toTitleCase(ing.name || ing.display_name || ing.shoppable_name), // Use title case for ingredients
             amount: Math.round((ing.quantity * scalingFactor) * 100) / 100, // Scale and round to 2 decimals
             unit: ing.unit
           })),
-          // IMPORTANT: Preserve the full ingredients_json for CartBuilder to use shoppable names
-          ingredients_json: meal.ingredients_json ? {
-            servings: meal.ingredients_json.servings,
-            ingredients: meal.ingredients_json.ingredients.map((ing: any) => ({
-              ...ing,
-              quantity: Math.round((ing.quantity * scalingFactor) * 100) / 100 // Scale quantities for cart
-            }))
-          } : undefined,
+          // IMPORTANT: Preserve the full ingredients_json for CartBuilder to use correct names
+          ingredients_json: meal.ingredients_json ? (meal.ingredients_json || []).map((ing: any) => ({
+            ...ing,
+            quantity: Math.round((ing.quantity * scalingFactor) * 100) / 100 // Scale quantities for cart
+          })) : undefined,
           difficulty: meal.cooking_difficulty === 'challenging' ? 'hard' : meal.cooking_difficulty as 'easy' | 'medium' | 'hard',
           cookTime: meal.cook_time || 15,
           prepTime: meal.prep_time || 10,
@@ -118,7 +117,7 @@ function OnboardingPageContent() {
             fiber: 0,
             sugar: 0
           },
-          instructions: (meal.instructions_json?.steps || []).map((step: any) => step.text)
+          instructions: (meal.instructions_json?.steps || []).map((step: any) => step.instruction || step.text)
         }
       }
 
@@ -269,19 +268,28 @@ function OnboardingPageContent() {
       const updatedMealPlanData = { ...mealPlanData, status: 'cart_created', updatedAt: new Date().toISOString() }
       localStorage.setItem(`chefscart_mealplan_${mealPlanId}`, JSON.stringify(updatedMealPlanData))
       
-      // Store data and redirect to cart-success page for better UX
+      // Direct redirect to Instacart for better UX
       if (data.cartUrl) {
-        const successPlanId = mealPlanId
+        // Store cart URL in state for the success page
+        setCartUrl(data.cartUrl)
+        
+        // Store success data locally for potential future use
         const successData = {
           mealPlan,
           cartUrl: data.cartUrl,
           email,
-          consolidatedCart
+          consolidatedCart,
+          createdAt: new Date().toISOString()
         }
-        localStorage.setItem(`chefscart_mealplan_${successPlanId}`, JSON.stringify(successData))
+        localStorage.setItem(`chefscart_success_${mealPlanId}`, JSON.stringify(successData))
         
-        // Redirect to cart-success page which has proper modal and flow
-        router.push(`/cart-success/${successPlanId}`)
+        // Show brief success message then open Instacart
+        setStep('success')
+        
+        // Open Instacart after short delay to show success state
+        setTimeout(() => {
+          window.open(data.cartUrl, '_blank')
+        }, 2000)
       } else {
         setStep('cart')
       }
@@ -355,6 +363,7 @@ function OnboardingPageContent() {
           setMealPlan(null)
         }}
         preferences={preferences}
+        isLoading={isLoading}
       />
     )
   }
@@ -381,6 +390,75 @@ function OnboardingPageContent() {
         onContinue={handleCartPreparation}
         onBack={() => setStep('cartbuilder')}
       />
+    )
+  }
+
+  if (step === 'success') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center">
+        <div className="text-center max-w-lg mx-auto px-4">
+          {/* Success Animation */}
+          <div className="relative mx-auto mb-8">
+            <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto animate-pulse">
+              <CheckCircle className="w-12 h-12 text-green-600" />
+            </div>
+          </div>
+
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            🎉 Cart Created Successfully!
+          </h1>
+          
+          <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+            <div className="space-y-3 text-gray-600">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>✅ {mealPlan?.recipes?.length || 0} personalized recipes selected</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>✅ Smart shopping list created on Instacart</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>✅ Instacart opened in new tab</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>✅ Confirmation email sent</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Backup Instacart Button */}
+          {cartUrl && (
+            <div className="mb-6">
+              <button
+                onClick={() => window.open(cartUrl, '_blank')}
+                className="w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3"
+              >
+                🛒 Open My Instacart Cart
+              </button>
+              <p className="text-gray-500 text-sm mt-2">
+                Click here if Instacart didn't open automatically
+              </p>
+            </div>
+          )}
+
+          <div className="text-gray-600 text-sm space-y-2">
+            <p>
+              📧 <strong>Check your email</strong> for detailed meal plans and cooking instructions!
+            </p>
+            <p>
+              <button
+                onClick={() => router.push('/')}
+                className="text-orange-600 hover:text-orange-700 underline font-medium"
+              >
+                ← Return to Homepage
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
     )
   }
 

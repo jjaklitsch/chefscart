@@ -6,6 +6,7 @@ import { useAuth } from '../../../contexts/AuthContext'
 import { ArrowLeft, Clock, Users, ShoppingCart, Edit2 } from 'lucide-react'
 import Link from 'next/link'
 import { UserPreferences, MealPlan } from '../../../types'
+import { toTitleCase } from '../../../utils/textUtils'
 
 interface QuickPlanOptions {
   breakfastsPerWeek: number
@@ -133,18 +134,15 @@ export default function QuickPlanPage() {
           mealType: mealType,
           cuisine: meal.cuisines[0] || 'international',
           imageUrl: meal.image_url,
-          ingredients: (meal.ingredients_json?.ingredients || []).map((ing: any) => ({
-            name: ing.shoppable_name || ing.display_name,
+          ingredients: (meal.ingredients_json || []).map((ing: any) => ({
+            name: toTitleCase(ing.name || ing.display_name || ing.shoppable_name),
             amount: Math.round((ing.quantity * scalingFactor) * 100) / 100,
             unit: ing.unit
           })),
-          ingredients_json: meal.ingredients_json ? {
-            servings: meal.ingredients_json.servings,
-            ingredients: meal.ingredients_json.ingredients.map((ing: any) => ({
-              ...ing,
-              quantity: Math.round((ing.quantity * scalingFactor) * 100) / 100
-            }))
-          } : undefined,
+          ingredients_json: meal.ingredients_json ? (meal.ingredients_json || []).map((ing: any) => ({
+            ...ing,
+            quantity: Math.round((ing.quantity * scalingFactor) * 100) / 100
+          })) : undefined,
           difficulty: meal.cooking_difficulty === 'challenging' ? 'hard' : meal.cooking_difficulty as 'easy' | 'medium' | 'hard',
           cookTime: meal.cook_time || 15,
           prepTime: meal.prep_time || 10,
@@ -159,7 +157,7 @@ export default function QuickPlanPage() {
             fiber: 0,
             sugar: 0
           },
-          instructions: (meal.instructions_json?.steps || []).map((step: any) => step.text)
+          instructions: (meal.instructions_json?.steps || []).map((step: any) => step.instruction || step.text)
         }
       }
 

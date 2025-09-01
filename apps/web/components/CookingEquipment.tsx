@@ -12,7 +12,7 @@ interface CookingEquipmentProps {
   recipeCourses: string[]
   recipeCuisines: string[]
   cookingDifficulty: string
-  equipmentNeeded?: string[] // Direct from meal record when available
+  equipmentNeeded?: string[] // Direct from meal record cooking_equipment field when available
 }
 
 export default function CookingEquipment({ 
@@ -40,6 +40,7 @@ export default function CookingEquipment({
       let recommendedEquipment: EquipmentType[] = []
 
       if (equipmentNeeded && equipmentNeeded.length > 0) {
+        console.log('Using specific equipment from recipe data:', equipmentNeeded)
         // Use equipment directly specified in meal record
         const { data: equipmentData, error } = await supabase
           .from('cooking_equipment')
@@ -49,8 +50,12 @@ export default function CookingEquipment({
         
         if (!error && equipmentData) {
           recommendedEquipment = equipmentData
+          console.log('Found equipment in database:', equipmentData.map(e => e.display_name))
+        } else {
+          console.log('Error finding equipment in database:', error)
         }
       } else {
+        console.log('No cooking_equipment data, using inference logic')
         // Infer equipment based on recipe characteristics
         recommendedEquipment = await inferEquipmentFromRecipe()
       }
@@ -261,6 +266,11 @@ export default function CookingEquipment({
               ? equipment.length 
               : equipment.filter(item => getEquipmentCategory(item.display_name) === category.id).length
             
+            // Don't show categories with 0 items (except "all")
+            if (categoryCount === 0 && category.id !== 'all') {
+              return null
+            }
+            
             return (
               <button
                 key={category.id}
@@ -274,7 +284,7 @@ export default function CookingEquipment({
                 {category.label} ({categoryCount})
               </button>
             )
-          })}
+          }).filter(Boolean)}
         </div>
       </div>
       
@@ -378,10 +388,10 @@ export default function CookingEquipment({
           )}
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 rounded-lg font-medium transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 hover:bg-green-100 text-green-700 rounded-lg font-medium transition-colors"
           >
             Shop All Equipment
-            <ChefHat className="w-4 h-4" />
+            <span>→</span>
           </Link>
         </div>
       </div>

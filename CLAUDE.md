@@ -351,16 +351,39 @@ cd scripts && npm run generate-images
   - White rimless plate/bowl centered with 12-15% margin
   - Generous restaurant-style portions
 
-### API Dependencies
+### API Dependencies & Pricing
 - **Google AI Studio API**: Requires `GEMINI_API_KEY` environment variable
 - **Supabase Storage**: Uses `meal-images` bucket for public hosting
 - **Cost**: ~$0.04 per image (Imagen 4 Standard pricing)
+
+### Quota Limits & Pricing Tiers
+
+**Current Tier 1 Limits** (Paid):
+- **Daily Quota**: 70 images/day for Imagen 4 Standard
+- **Rate Limit**: 10 requests/minute maximum
+- **Cost**: $0.04 per image ($2.80/day at full quota)
+
+**Upgrade Options**:
+- **Tier 2**: 1,000 images/day ($40/day max) - requires $250+ spending + 30 days
+- **Tier 3**: 15,000 images/day ($600/day max) - enterprise level
+- **Vertex AI Alternative**: Same $0.04 pricing with more flexible quotas
+
+**Cost Optimization**:
+- **Batch Mode**: 50% cost reduction ($0.02/image) for async processing
+- **Quota Reset**: Daily limits reset every 24 hours
+- **Free Testing**: Google AI Studio offers limited free testing
+
+**Production Recommendations**:
+- For 533 meals: ~$21.32 total cost (8 days at Tier 1 quota)
+- Consider Tier 2 upgrade for faster processing: ~$21.32 in 1 day
+- Use rate-limited script to respect quota boundaries
 
 ### Quality Controls
 - Automatic negative prompting prevents common issues (props, utensils, text overlays)
 - Local backups ensure no image loss during upload failures
 - Structured prompts ensure consistent professional food photography style
-- Rate limiting (1 second delay) prevents API quota exceeded errors
+- Rate limiting (7 seconds delay) prevents API quota exceeded errors
+- Resumable processing for large datasets with quota management
 
 ## MCP (Model Context Protocol) Setup
 

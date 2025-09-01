@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { X, ShoppingCart, Plus, Minus, Trash2, ExternalLink } from 'lucide-react'
 import { useCart } from '../contexts/CartContext'
 import { generateAmazonCartUrl } from '../lib/amazon-api'
@@ -13,8 +14,25 @@ interface CartModalProps {
 export default function CartModal({ isOpen, onClose }: CartModalProps) {
   const { items, itemCount, updateQuantity, removeItem, clearCart, getCartTotal } = useCart()
   const [isCheckingOut, setIsCheckingOut] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
-  if (!isOpen) return null
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
+
+  if (!isOpen || !mounted) return null
 
   const handleCheckout = async () => {
     if (items.length === 0) return
@@ -53,9 +71,15 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
     return `$${numericPrice.toFixed(2)}`
   }
 
-  return (
-    <div className="fixed inset-0 bg-black/50 z-[9999] flex items-start justify-center pt-16 pb-4 px-4 overflow-y-auto" onClick={(e) => e.target === e.currentTarget && onClose()}>
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[calc(100vh-8rem)] overflow-hidden flex flex-col my-auto" onClick={(e) => e.stopPropagation()}>
+  return createPortal(
+    <div 
+      className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-75 flex items-start justify-center pt-16 pb-4 px-4 overflow-y-auto z-50" 
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
+      <div 
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[calc(100vh-8rem)] overflow-hidden flex flex-col my-auto relative" 
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-neutral-200">
           <div className="flex items-center gap-3">
@@ -215,6 +239,7 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

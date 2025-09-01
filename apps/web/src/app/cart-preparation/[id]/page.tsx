@@ -94,8 +94,27 @@ export default function CartPreparationPage() {
       }
       localStorage.setItem(`chefscart_mealplan_${id}`, JSON.stringify(finalMealPlanData))
       
-      // Redirect to success page
-      router.push(`/cart-success/${id}`)
+      // Direct redirect to Instacart for better UX
+      if (data.cartUrl) {
+        // Show brief success then open Instacart
+        setTimeout(() => {
+          window.open(data.cartUrl, '_blank')
+        }, 1000)
+        
+        // Create a success page showing cart URL and backup button
+        const successData = {
+          cartUrl: data.cartUrl,
+          mealPlan: mealPlanData.mealPlan,
+          email,
+          success: true
+        }
+        localStorage.setItem(`chefscart_cart_success_${id}`, JSON.stringify(successData))
+        
+        // Redirect to a simple success URL that shows the backup button
+        router.push(`/dashboard?success=true&cartUrl=${encodeURIComponent(data.cartUrl)}`)
+      } else {
+        router.push('/dashboard?error=no-cart')
+      }
 
     } catch (err) {
       console.error('Error in cart preparation:', err)

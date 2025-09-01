@@ -79,7 +79,7 @@ export async function GET(request: NextRequest) {
         ) || [];
         
         if (matchingProducts.length > 0) {
-          selectedImage = matchingProducts[0].primary_image_url;
+          selectedImage = matchingProducts[0]?.primary_image_url;
           usedImages.add(selectedImage);
           break;
         }
@@ -89,7 +89,7 @@ export async function GET(request: NextRequest) {
       if (!selectedImage) {
         const unusedProducts = allProducts?.filter(p => !usedImages.has(p.primary_image_url)) || [];
         if (unusedProducts.length > 0) {
-          selectedImage = unusedProducts[0].primary_image_url;
+          selectedImage = unusedProducts[0]?.primary_image_url;
           usedImages.add(selectedImage);
         }
       }

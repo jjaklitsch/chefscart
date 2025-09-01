@@ -41,7 +41,7 @@ export default function ShopPage() {
       
       // Set categories without equipment count for now
       if (categoriesResult.data) {
-        setCategories(categoriesResult.data.map(category => ({
+        setCategories(categoriesResult.data.map((category: any) => ({
           ...category,
           equipment_count: 0
         })));
@@ -50,7 +50,7 @@ export default function ShopPage() {
       // Set equipment with optimized image loading
       if (equipmentResult.data) {
         const equipmentWithImages = await Promise.all(
-          equipmentResult.data.map(async (equipment) => {
+          equipmentResult.data.map(async (equipment: any) => {
             try {
               // Try equipment_id match first
               let { data: productImage } = await supabase
@@ -61,7 +61,7 @@ export default function ShopPage() {
                 .limit(1);
 
               // If no match, try name-based search (simplified)
-              if (!productImage?.[0]?.primary_image_url) {
+              if (!(productImage as any)?.[0]?.primary_image_url) {
                 const searchTerm = equipment.display_name.toLowerCase();
                 const { data: nameMatch } = await supabase
                   .from('amazon_products')
@@ -73,9 +73,17 @@ export default function ShopPage() {
                 productImage = nameMatch;
               }
 
+              // Fallback for specific items that commonly have missing images
+              let finalImageUrl = (productImage as any)?.[0]?.primary_image_url || null;
+              
+              // Special fallback for Microplane Grater
+              if (!finalImageUrl && equipment.display_name.toLowerCase().includes('microplane')) {
+                finalImageUrl = "https://m.media-amazon.com/images/I/313UAorevsL._SL500_.jpg";
+              }
+
               return {
                 ...equipment,
-                product_image: productImage?.[0]?.primary_image_url || null
+                product_image: finalImageUrl
               };
             } catch (error) {
               console.error(`Error loading image for ${equipment.display_name}:`, error);
@@ -242,9 +250,9 @@ export default function ShopPage() {
                 >
                   <div className="bg-gradient-to-br from-neutral-50 to-sage-50 rounded-2xl shadow-subtle hover:shadow-lg transition-all duration-300 overflow-hidden transform hover:-translate-y-1 h-full flex flex-col">
                     <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center overflow-hidden relative">
-                      {equipment.product_image ? (
+                      {(equipment as any).product_image ? (
                         <img 
-                          src={equipment.product_image} 
+                          src={(equipment as any).product_image} 
                           alt={equipment.display_name}
                           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 bg-white"
                         />
