@@ -91,7 +91,7 @@ open https://chefscart.ai
 - **Testing**: Vitest + React Testing Library
 
 ### Core User Flow
-1. ZIP validation → Check Instacart coverage with prioritized grocery retailers
+1. ZIP validation → Check Instacart coverage via cached lookup
 2. 9-step guided onboarding → Collect preferences (cuisines, diets, spice tolerance, allergens, etc.)
 3. Supabase meal matching → Filter 532+ meals by preferences using intelligent scoring
 4. Instacart integration → Build shopping cart with scaled ingredients  
@@ -173,7 +173,7 @@ The application uses Supabase Auth with magic links (passwordless email authenti
 
 ### Working with the Guided Onboarding
 The guided onboarding (`GuidedOnboarding.tsx`) uses a step-based flow:
-- 9 steps: plan selector, dietary style, cuisines, foods to avoid, favorites, organic preference, spice tolerance, retailer selection, pantry photos
+- 9 steps: plan selector, dietary style, cuisines, foods to avoid, favorites, organic preference, spice tolerance, delivery preferences, pantry photos
 - State managed in `answers` object, converted to `UserPreferences` on completion
 - Steps defined in `onboardingSteps` array
 - Special handling for meal plan configuration (breakfasts/lunches/dinners per week)
@@ -219,6 +219,7 @@ CREATE INDEX IF NOT EXISTS idx_name ON meals (column_name);
 **Migration Scripts**:
 - `scripts/generate-meal-data.js` - Generate new meals with OpenAI + Supabase
 - `scripts/run-migration-rest.js` - Migrate existing data after schema changes
+- `scripts/simple-zip-coverage.cjs` - Populate ZIP code Instacart coverage cache
 - `npm run generate-meals` - Run meal generation (from apps/web directory)
 
 ### Cooking Difficulty Assessment
@@ -236,6 +237,54 @@ The `cooking_difficulty` field is determined by AI analysis during meal generati
 - **Challenging**: Complex techniques, high skill needed (risotto, soufflé, emulsification)
 
 Current distribution: 125 easy (23%), 307 medium (58%), 100 challenging (19%)
+
+## ZIP Code Cache System
+
+The application maintains a comprehensive cache of US ZIP codes to quickly validate Instacart delivery coverage without making real-time API calls during user onboarding.
+
+### Database Schema
+The `zip_code_cache` table stores simplified coverage data:
+```sql
+CREATE TABLE zip_code_cache (
+    zip_code VARCHAR(5) PRIMARY KEY,
+    is_valid BOOLEAN NOT NULL DEFAULT false,
+    has_instacart_coverage BOOLEAN NOT NULL DEFAULT false,
+    last_updated TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+    last_api_check TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+    api_response_status INTEGER,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+```
+
+### Cache Population
+**Script**: `scripts/simple-zip-coverage.cjs`
+- Efficiently checks ~41,000+ real US ZIP codes for Instacart coverage
+- Only stores coverage status (boolean), not retailer details
+- Processes at 10-20 requests/second with proper rate limiting
+- Handles all major US ZIP code ranges (00501-99999)
+
+**Usage**:
+```bash
+cd scripts && node simple-zip-coverage.cjs --conservative  # 10 req/sec
+cd scripts && node simple-zip-coverage.cjs                 # 20 req/sec (default)
+```
+
+### Coverage Statistics
+- **Total Coverage**: ~41,000+ US ZIP codes
+- **Geographic Scope**: All 50 states, DC, Puerto Rico, military bases
+- **Expected Coverage Rate**: 60-80% nationally (higher in metro areas)
+- **Update Frequency**: Run periodically as Instacart expands service areas
+
+### Integration Points
+- **User Onboarding**: `/api/validate-zip` endpoint checks cache first
+- **Fallback**: Real-time Instacart API call if ZIP not cached
+- **Frontend**: `ZipCodeInput.tsx` component validates against cache
+
+### Key Benefits
+- **Fast Response**: Sub-100ms ZIP validation (vs 1-2s API calls)
+- **Reduced API Costs**: Avoids repeated calls for same ZIP codes
+- **Offline Capability**: Works even if Instacart API is temporarily unavailable
+- **Accurate Coverage**: Distinguishes between valid ZIP codes with/without coverage
 
 ## AI Usage Strategy
 

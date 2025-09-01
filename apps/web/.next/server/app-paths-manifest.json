@@ -1,6 +1,9 @@
 {
-  "/pricing/page": "app/pricing/page.js",
-  "/onboarding/page": "app/onboarding/page.js",
+  "/shop/search/page": "app/shop/search/page.js",
+  "/grocery-list/page": "app/grocery-list/page.js",
+  "/test-meal2/page": "app/test-meal2/page.js",
   "/page": "app/page.js",
-  "/cart-success/[id]/page": "app/cart-success/[id]/page.js"
+  "/recipes/page": "app/recipes/page.js",
+  "/api/amazon/search/route": "app/api/amazon/search/route.js",
+  "/recipes/[slug]/page": "app/recipes/[slug]/page.js"
 }

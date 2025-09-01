@@ -31,10 +31,10 @@ export async function POST(request: NextRequest) {
     }
 
 
-    // Optimized cache query - select only needed fields and use single query
+    // Optimized cache query - select only coverage data (simplified schema)
     const { data: cachedData, error: cacheError } = await supabase
       .from('zip_code_cache')
-      .select('is_valid, has_instacart_coverage, last_updated, city, state')
+      .select('is_valid, has_instacart_coverage, last_updated')
       .eq('zip_code', zipCode)
       .maybeSingle() // Use maybeSingle instead of single to avoid errors
 
@@ -51,8 +51,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         isValid: cachedData.is_valid,
         hasInstacartCoverage: cachedData.has_instacart_coverage,
-        city: cachedData.city,
-        state: cachedData.state,
         message: cachedData.has_instacart_coverage 
           ? "Great! ChefsCart is available in your area."
           : "ChefsCart isn't available in your area yet.",
@@ -95,12 +93,10 @@ export async function POST(request: NextRequest) {
       clearTimeout(timeoutId)
 
       let hasInstacartCoverage = false
-      let retailerCount = 0
 
       if (instacartResponse.ok) {
-        const data = await instacartResponse.json()
-        hasInstacartCoverage = data.retailers && data.retailers.length > 0
-        retailerCount = data.retailers?.length || 0
+        // We don't need to parse JSON, just check if API returns 200 (has coverage)
+        hasInstacartCoverage = true
       } else if (instacartResponse.status === 404) {
         hasInstacartCoverage = false // No coverage
       } else {
@@ -127,8 +123,7 @@ export async function POST(request: NextRequest) {
         message: hasInstacartCoverage 
           ? "Great! ChefsCart is available in your area."
           : "ChefsCart isn't available in your area yet.",
-        source: 'api',
-        retailerCount
+        source: 'api'
       })
 
     } catch (apiError) {
@@ -140,8 +135,6 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({
           isValid: cachedData.is_valid,
           hasInstacartCoverage: cachedData.has_instacart_coverage,
-          city: cachedData.city,
-          state: cachedData.state,
           message: cachedData.has_instacart_coverage 
             ? `Great! ChefsCart is available in your area.`
             : "ChefsCart isn't available in your area yet.",

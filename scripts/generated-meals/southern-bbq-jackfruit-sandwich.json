@@ -1,0 +1,429 @@
+{
+  "slug": "southern-bbq-jackfruit-sandwich",
+  "title": "Southern BBQ Jackfruit Sandwich",
+  "description": "Smoky, saucy pulled-style jackfruit piled on toasted buns and topped with a tangy, creamy coleslaw — a plant-forward vegan take on a Southern BBQ classic.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "southern"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "Jackfruit",
+  "spice_level": 3,
+  "prep_time": 20,
+  "cook_time": 35,
+  "cooking_difficulty": "medium",
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 2,
+  "servings_max": 6,
+  "cost_per_serving": "$",
+  "allergens_present": [
+    "gluten",
+    "soy"
+  ],
+  "search_keywords": [
+    "jackfruit sandwich",
+    "vegan pulled pork",
+    "BBQ jackfruit",
+    "southern BBQ vegan",
+    "plant-based sandwich"
+  ],
+  "cooking_equipment": [
+    "mixing bowl",
+    "cutting board",
+    "can opener",
+    "tongs",
+    "spatula",
+    "fork",
+    "colander",
+    "stove"
+  ],
+  "ingredients_json": [
+    {
+      "name": "Young Jackfruit (Canned, In Water)",
+      "quantity": 40,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Upton's",
+        "Native Forest",
+        "Trader Joe's"
+      ]
+    },
+    {
+      "name": "Extra-Virgin Olive Oil",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE",
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Colavita",
+        "California Olive Ranch",
+        "Bertolli"
+      ]
+    },
+    {
+      "name": "Yellow Onion",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE",
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Dole",
+        "Taylor Farms",
+        "Local"
+      ]
+    },
+    {
+      "name": "Garlic",
+      "quantity": 3,
+      "unit": "head",
+      "category": "Produce",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE",
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Christopher Ranch",
+        "Organic Valley",
+        "Local"
+      ]
+    },
+    {
+      "name": "Smoked Paprika",
+      "quantity": 2,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Spice Islands"
+      ]
+    },
+    {
+      "name": "Cumin",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Frontier Co-op"
+      ]
+    },
+    {
+      "name": "Brown Sugar",
+      "quantity": 2,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Domino",
+        "C&H"
+      ]
+    },
+    {
+      "name": "Tomato Paste",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Condiments & Sauces",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Mutti",
+        "Hunt's",
+        "Muir Glen"
+      ]
+    },
+    {
+      "name": "Soy Sauce",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Condiments & Sauces",
+      "health_filters": [
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Kikkoman",
+        "La Choy"
+      ]
+    },
+    {
+      "name": "Vegetable Broth",
+      "quantity": 1,
+      "unit": "can",
+      "category": "Canned Goods",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Pacific Foods",
+        "Swanson",
+        "Imagine"
+      ]
+    },
+    {
+      "name": "Vegan BBQ Sauce",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Stubbs",
+        "Sweet Baby Ray's",
+        "Annie's"
+      ]
+    },
+    {
+      "name": "Vegan Mayonnaise",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Hellmann's Vegan",
+        "Just Mayo",
+        "Follow Your Heart"
+      ]
+    },
+    {
+      "name": "Green Cabbage (Shredded)",
+      "quantity": 3,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE",
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Local",
+        "Taylor Farms",
+        "Dole"
+      ]
+    },
+    {
+      "name": "Carrots (Shredded)",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE",
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Bolthouse Farms",
+        "Dole",
+        "Fresh Express"
+      ]
+    },
+    {
+      "name": "Apple Cider Vinegar",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Condiments & Sauces",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Bragg",
+        "Heinz"
+      ]
+    },
+    {
+      "name": "Lemons",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE",
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Sunkist",
+        "Dole",
+        "Local"
+      ]
+    },
+    {
+      "name": "Kosher Salt",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Morton",
+        "Diamond Crystal"
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 0.5,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Red Pepper Flakes",
+      "quantity": 0.25,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Spice Islands"
+      ]
+    },
+    {
+      "name": "Hamburger Buns",
+      "quantity": 4,
+      "unit": "pound",
+      "category": "Meat & Poultry",
+      "health_filters": [
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Martin's",
+        "Arnold",
+        "King's Hawaiian"
+      ]
+    },
+    {
+      "name": "Parsley (Chopped, For Garnish)",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE",
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Organic Girl",
+        "Local"
+      ]
+    }
+  ],
+  "instructions_json": {
+    "prep_time": 20,
+    "cook_time": 35,
+    "total_time": 55,
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Prep the jackfruit: drain cans of jackfruit in a colander and rinse under cold water. Using a chef's knife or clean hands, cut away any hard core pieces and discard seeds if present. Transfer jackfruit to a cutting board and use two forks to shred into pulled-'meat' strands.",
+        "time_minutes": 8
+      },
+      {
+        "step": 2,
+        "instruction": "Heat a large skillet over medium heat and add extra-virgin olive oil. Add the diced yellow onion and cook, stirring occasionally, until softened and translucent, about 5 minutes. Add minced garlic and cook 30–45 seconds until fragrant.",
+        "time_minutes": 6
+      },
+      {
+        "step": 3,
+        "instruction": "Add shredded jackfruit to the skillet with smoked paprika, cumin, brown sugar, tomato paste and soy sauce. Stir to coat the jackfruit in spices. Pour in vegetable broth to deglaze and reduce sticking. Bring to a simmer.",
+        "time_minutes": 4
+      },
+      {
+        "step": 4,
+        "instruction": "Reduce heat to medium-low and simmer the jackfruit mixture, uncovered, stirring occasionally, until the liquid reduces and the jackfruit is tender and flavorful, about 20–22 minutes. Use the back of your spatula or forks to break up larger pieces and create a pulled texture.",
+        "time_minutes": 22
+      },
+      {
+        "step": 5,
+        "instruction": "Stir in the vegan BBQ sauce and let cook 2–3 minutes more so the sauce clings to the jackfruit. Taste and adjust seasoning with kosher salt, black pepper and red pepper flakes as desired.",
+        "time_minutes": 3
+      },
+      {
+        "step": 6,
+        "instruction": "While the jackfruit simmers, make the quick coleslaw: in a mixing bowl combine shredded cabbage, shredded carrots, vegan mayonnaise, apple cider vinegar, juice from half a lemon, a pinch of kosher salt and black pepper. Toss until evenly coated. Refrigerate until ready to assemble.",
+        "time_minutes": 8
+      },
+      {
+        "step": 7,
+        "instruction": "Toast the hamburger buns in a dry skillet or under a broiler until lightly golden, about 1–2 minutes per side.",
+        "time_minutes": 3
+      },
+      {
+        "step": 8,
+        "instruction": "Assemble sandwiches: pile 1/4 of the BBQ jackfruit on the bottom bun, top with a generous scoop of coleslaw, sprinkle with chopped parsley, and finish with the top bun. Serve immediately.",
+        "time_minutes": 1
+      }
+    ]
+  },
+  "ingredient_tags": [
+    "young jackfruit canned in water",
+    "extra-virgin olive oil",
+    "yellow onion",
+    "garlic",
+    "smoked paprika",
+    "cumin",
+    "brown sugar",
+    "tomato paste",
+    "soy sauce",
+    "vegetable broth",
+    "vegan bbq sauce",
+    "vegan mayonnaise",
+    "green cabbage shredded",
+    "carrots shredded",
+    "apple cider vinegar",
+    "lemons",
+    "kosher salt",
+    "black pepper",
+    "red pepper flakes",
+    "hamburger buns",
+    "parsley chopped for garnish"
+  ]
+}

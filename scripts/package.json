@@ -9,8 +9,7 @@
     "test-meal": "node test-single-meal-generation.js",
     "analyze-ingredients": "node extract-ingredients-analysis.js",
     "generate-images": "node generate-meal2-images.js",
-    "generate-all-images": "node generate-all-meal-images.js",
-    "generate-remaining-images": "node generate-remaining-images.js"
+    "generate-all-images": "node generate-all-meal-images.js"
   },
   "dependencies": {
     "@google/genai": "^1.16.0",

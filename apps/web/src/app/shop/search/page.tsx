@@ -2,11 +2,14 @@
 
 import { Suspense, useState, useEffect, useCallback, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { Search, ExternalLink, ShoppingCart, Star, Filter } from 'lucide-react'
+import { Search, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 import { AmazonProduct, AmazonSearchResponse } from '../../../../types'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AmazonProductCard from '../../../components/shop/AmazonProductCard'
+import BackToTop from '../../../components/shop/BackToTop'
+import AmazonDisclaimer from '../../../components/shop/AmazonDisclaimer'
 
 function ShopSearchContent() {
   const searchParams = useSearchParams()
@@ -120,48 +123,6 @@ function ShopSearchContent() {
     }
   }
 
-  const generateAmazonCartUrl = (product: AmazonProduct) => {
-    const asin = product.product_id
-    const affiliateId = 'chefscart-20'
-    return `https://www.amazon.com/dp/${asin}?tag=${affiliateId}&linkCode=osi&th=1&psc=1`
-  }
-
-  const formatPrice = (price: string) => {
-    // Clean up price formatting from Amazon but preserve currency symbol
-    if (!price || price === 'Price not available') return price
-    // If price already looks good (starts with $ and has reasonable format), return as-is
-    if (price.match(/^\$\d+(\.\d{2})?/)) return price
-    // Otherwise try to extract just the price part while keeping the $ if present
-    return price || 'Price not available'
-  }
-
-  const renderStars = (rating?: number) => {
-    if (!rating) return null
-    
-    const stars = []
-    const fullStars = Math.floor(rating)
-    const hasHalfStar = rating % 1 >= 0.5
-
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)
-    }
-    
-    if (hasHalfStar) {
-      stars.push(<Star key="half" className="w-4 h-4 fill-yellow-400/50 text-yellow-400" />)
-    }
-
-    const emptyStars = 5 - Math.ceil(rating)
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(<Star key={`empty-${i}`} className="w-4 h-4 text-neutral-300" />)
-    }
-
-    return (
-      <div className="flex items-center gap-1">
-        {stars}
-        <span className="text-sm text-neutral-600 ml-1">({rating.toFixed(1)})</span>
-      </div>
-    )
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-sage-50">
@@ -217,79 +178,11 @@ function ShopSearchContent() {
           {products.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.map((product, index) => (
-                <div
+                <AmazonProductCard
                   key={`${product.product_id}-${index}`}
-                  className="bg-white rounded-2xl shadow-subtle hover:shadow-lg transition-all duration-300 overflow-hidden group"
-                >
-                  {/* Product Image */}
-                  <div className="aspect-square bg-neutral-100 overflow-hidden">
-                    {product.product_photos[0] ? (
-                      <img
-                        src={product.product_photos[0]}
-                        alt={product.product_title}
-                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement
-                          target.style.display = 'none'
-                        }}
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <ShoppingCart className="h-16 w-16 text-neutral-300" />
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Product Details */}
-                  <div className="p-6">
-                    <h3 className="font-semibold text-neutral-800 mb-2 line-clamp-2 group-hover:text-green-700 transition-colors">
-                      {product.product_title}
-                    </h3>
-
-                    {product.brand && (
-                      <p className="text-sm text-neutral-500 mb-2">by {product.brand}</p>
-                    )}
-
-                    {product.rating && (
-                      <div className="mb-3">
-                        {renderStars(product.rating)}
-                        {product.review_count && (
-                          <span className="text-xs text-neutral-500 ml-2">
-                            ({product.review_count.toLocaleString()} reviews)
-                          </span>
-                        )}
-                      </div>
-                    )}
-
-                    <div className="mb-6">
-                      <div className="text-2xl font-bold text-green-600">
-                        {formatPrice(product.offer.price)}
-                      </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="space-y-3">
-                      <a
-                        href={generateAmazonCartUrl(product)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-                      >
-                        <ShoppingCart className="h-4 w-4" />
-                        Buy on Amazon
-                      </a>
-                      <a
-                        href={product.product_page_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-neutral-100 hover:bg-neutral-200 text-neutral-700 py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 text-sm"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        View on Amazon
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                  product={product}
+                  dataLastUpdated={new Date()}
+                />
               ))}
             </div>
           )}
@@ -337,7 +230,9 @@ function ShopSearchContent() {
         </div>
       </div>
 
+      <AmazonDisclaimer />
       <Footer />
+      <BackToTop />
     </div>
   )
 }

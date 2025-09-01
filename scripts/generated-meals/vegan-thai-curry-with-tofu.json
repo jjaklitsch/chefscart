@@ -1,0 +1,403 @@
+{
+  "slug": "vegan-thai-curry-with-tofu",
+  "title": "Vegan Thai Curry with Tofu",
+  "description": "Creamy, plant-based Thai red curry made with pan-fried firm tofu, coconut milk, vibrant vegetables, and a fragrant red curry base. Ready in about 45 minutes and served over jasmine rice.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [
+    "vegan",
+    "plant-forward"
+  ],
+  "primary_ingredient": "Tofu",
+  "spice_level": 5,
+  "prep_time": 20,
+  "cook_time": 25,
+  "cooking_difficulty": "medium",
+  "time_total_min": 45,
+  "servings_default": 4,
+  "servings_min": 2,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "vegan thai curry",
+    "tofu curry",
+    "red curry",
+    "coconut curry",
+    "plant-based thai",
+    "vegan dinner"
+  ],
+  "cooking_equipment": [
+    "wok",
+    "cutting board",
+    "mixing bowl",
+    "wooden spoon",
+    "spatula",
+    "tongs",
+    "can opener",
+    "rice cooker"
+  ],
+  "ingredients_json": [
+    {
+      "name": "Tofu (Firm)",
+      "quantity": 14,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Nasoya",
+        "House Foods",
+        "Mori-Nu"
+      ]
+    },
+    {
+      "name": "Coconut Milk",
+      "quantity": 13.5,
+      "unit": "can",
+      "category": "Canned Goods",
+      "health_filters": [
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Thai Kitchen",
+        "Aroy-D",
+        "Chaokoh"
+      ]
+    },
+    {
+      "name": "Vegetable Oil",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Mazola",
+        "Crisco",
+        "Wesson"
+      ]
+    },
+    {
+      "name": "Sesame Oil",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Kadoya",
+        "La Tourangelle",
+        "Spectrum"
+      ]
+    },
+    {
+      "name": "Yellow Onion",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Duda Farm Fresh Foods",
+        "Nature's Pride"
+      ]
+    },
+    {
+      "name": "Garlic",
+      "quantity": 3,
+      "unit": "head",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Christopher Ranch",
+        "Spice World"
+      ]
+    },
+    {
+      "name": "Ginger (Fresh, Minced)",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "The Ginger People",
+        "Fresh"
+      ]
+    },
+    {
+      "name": "Red Bell Peppers",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "NatureSweet",
+        "Del Monte"
+      ]
+    },
+    {
+      "name": "Carrots",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Bolthouse Farms",
+        "Dole"
+      ]
+    },
+    {
+      "name": "Red Curry Paste (Vegan)",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Mae Ploy",
+        "Thai Kitchen",
+        "Aroy-D"
+      ]
+    },
+    {
+      "name": "Soy Sauce",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Condiments & Sauces",
+      "health_filters": [
+        "VEGAN",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Kikkoman",
+        "San-J",
+        "La Choy"
+      ]
+    },
+    {
+      "name": "Brown Sugar",
+      "quantity": 1,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "health_filters": [
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Domino",
+        "C&H"
+      ]
+    },
+    {
+      "name": "Vegetable Broth",
+      "quantity": 1,
+      "unit": "can",
+      "category": "Canned Goods",
+      "health_filters": [
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Pacific Foods",
+        "Imagine"
+      ]
+    },
+    {
+      "name": "Limes",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Product of Mexico",
+        "Limelight"
+      ]
+    },
+    {
+      "name": "Jasmine Rice",
+      "quantity": 1.5,
+      "unit": "pound",
+      "category": "Rice & Grains",
+      "health_filters": [
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Lundberg",
+        "Royal"
+      ]
+    },
+    {
+      "name": "Cilantro",
+      "quantity": 0.25,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Earthbound Farm",
+        "Fresh Express"
+      ]
+    },
+    {
+      "name": "Red Pepper Flakes",
+      "quantity": 0.25,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Kosher Salt",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "Morton",
+        "Diamond Crystal"
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 0.25,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE",
+        "VEGAN"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic"
+      ]
+    }
+  ],
+  "instructions_json": {
+    "prep_time": 20,
+    "cook_time": 25,
+    "total_time": 45,
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Press the tofu to remove excess water: wrap the 14 oz block in a clean towel or paper towels and set a heavy skillet or cans on top for 10–15 minutes. While pressing, rinse and prep produce.",
+        "time_minutes": 15
+      },
+      {
+        "step": 2,
+        "instruction": "Cook jasmine rice according to package directions (about 1.5 cups rice with 2.25 cups water) in a rice cooker or saucepan; keep warm.",
+        "time_minutes": 5
+      },
+      {
+        "step": 3,
+        "instruction": "Cut pressed tofu into 1-inch cubes. In a mixing bowl, toss tofu lightly with 1/4 teaspoon kosher salt and 1/8 teaspoon black pepper.",
+        "time_minutes": 3
+      },
+      {
+        "step": 4,
+        "instruction": "Heat a large skillet or wok over medium-high heat and add 2 tablespoons vegetable oil. When hot, add tofu in a single layer and pan-fry, turning every 2–3 minutes, until golden brown and crisp on most sides (about 8–10 minutes). Transfer tofu to a plate lined with paper towels.",
+        "time_minutes": 10
+      },
+      {
+        "step": 5,
+        "instruction": "Reduce heat to medium. In the same wok or a saucepan, add 1 tablespoon vegetable oil if needed. Add the chopped yellow onion and sauté until translucent, about 3–4 minutes. Add minced garlic (3 each) and minced ginger (1 tablespoon) and cook 30–45 seconds until fragrant.",
+        "time_minutes": 4
+      },
+      {
+        "step": 6,
+        "instruction": "Stir in 2 tablespoons red curry paste and cook 1 minute to bloom the spices. Add the 13.5 fl oz coconut milk, 1 cup vegetable broth, 2 tablespoons soy sauce, and 1 tablespoon brown sugar. Whisk to combine and bring to a gentle simmer.",
+        "time_minutes": 3
+      },
+      {
+        "step": 7,
+        "instruction": "Add sliced red bell pepper and carrots to the simmering curry. Simmer uncovered 6–8 minutes until vegetables are tender-crisp. Taste and adjust seasoning with kosher salt, black pepper, and 1 tablespoon fresh lime juice (from the lime). If you like more heat, add 1/4 teaspoon red pepper flakes.",
+        "time_minutes": 8
+      },
+      {
+        "step": 8,
+        "instruction": "Return the pan-fried tofu to the curry and gently stir to coat. Simmer 2–3 minutes to heat through and let flavors meld. Stir in 1 teaspoon sesame oil at the end for aroma.",
+        "time_minutes": 3
+      },
+      {
+        "step": 9,
+        "instruction": "Serve the curry over warm jasmine rice. Garnish with chopped cilantro and an extra lime wedge. Enjoy immediately.",
+        "time_minutes": 1
+      }
+    ]
+  },
+  "ingredient_tags": [
+    "tofu firm",
+    "coconut milk",
+    "vegetable oil",
+    "sesame oil",
+    "yellow onion",
+    "garlic",
+    "ginger fresh minced",
+    "red bell pepper",
+    "carrots",
+    "red curry paste vegan",
+    "soy sauce",
+    "brown sugar",
+    "vegetable broth",
+    "limes",
+    "jasmine rice",
+    "cilantro",
+    "red pepper flakes",
+    "kosher salt",
+    "black pepper"
+  ]
+}

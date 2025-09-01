@@ -2,12 +2,15 @@
 
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import { ArrowLeft, ShoppingCart, ExternalLink, Star } from 'lucide-react'
+import { ArrowLeft, ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import { ShopCategory, CookingEquipment, AmazonProduct } from '../../../../../types'
 import { getSupabaseClient } from '../../../../../lib/supabase'
 import Header from '../../../../../components/Header'
 import Footer from '../../../../../components/Footer'
+import AmazonProductCard from '../../../../components/shop/AmazonProductCard'
+import BackToTop from '../../../../components/shop/BackToTop'
+import AmazonDisclaimer from '../../../../components/shop/AmazonDisclaimer'
 
 export default function CategoryPage() {
   const params = useParams()
@@ -18,6 +21,21 @@ export default function CategoryPage() {
   const [products, setProducts] = useState<{ [key: string]: AmazonProduct[] }>({})
   const [loading, setLoading] = useState(true)
   const [loadingProducts, setLoadingProducts] = useState<{ [key: string]: boolean }>({})
+  const [scrollPositions, setScrollPositions] = useState<{ [key: string]: number }>({})
+
+  const scrollProducts = (equipmentId: string, direction: 'left' | 'right') => {
+    const container = document.getElementById(`products-${equipmentId}`)
+    if (!container) return
+
+    const scrollAmount = 300
+    const currentScroll = scrollPositions[equipmentId] || 0
+    const newPosition = direction === 'left' 
+      ? Math.max(0, currentScroll - scrollAmount)
+      : currentScroll + scrollAmount
+
+    container.scrollTo({ left: newPosition, behavior: 'smooth' })
+    setScrollPositions(prev => ({ ...prev, [equipmentId]: newPosition }))
+  }
 
   useEffect(() => {
     if (slug) {
@@ -83,13 +101,13 @@ export default function CategoryPage() {
       // Use the first Amazon search term for the equipment
       const searchTerm = equipmentItem.amazon_search_terms[0] || equipmentItem.display_name
       
-      const response = await fetch(`/api/amazon/search?q=${encodeURIComponent(searchTerm)}&count=3&category=All`)
+      const response = await fetch(`/api/amazon/search?q=${encodeURIComponent(searchTerm)}&count=10&category=All`)
       const data = await response.json()
 
       if (data.success && data.data?.products) {
         setProducts(prev => ({
           ...prev,
-          [equipmentId]: data.data.products.slice(0, 3)
+          [equipmentId]: data.data.products.slice(0, 10)
         }))
       }
     } catch (error) {
@@ -99,43 +117,6 @@ export default function CategoryPage() {
     }
   }
 
-  const generateAmazonCartUrl = (product: AmazonProduct) => {
-    const asin = product.product_id
-    const affiliateId = 'chefscart-20'
-    return `https://www.amazon.com/dp/${asin}?tag=${affiliateId}&linkCode=osi&th=1&psc=1`
-  }
-
-  const formatPrice = (price: string) => {
-    return price.replace(/[^\d.,]/g, '').trim() || price
-  }
-
-  const renderStars = (rating?: number) => {
-    if (!rating) return null
-    
-    const stars = []
-    const fullStars = Math.floor(rating)
-    const hasHalfStar = rating % 1 >= 0.5
-
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)
-    }
-    
-    if (hasHalfStar) {
-      stars.push(<Star key="half" className="w-3 h-3 fill-yellow-400/50 text-yellow-400" />)
-    }
-
-    const emptyStars = 5 - Math.ceil(rating)
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(<Star key={`empty-${i}`} className="w-3 h-3 text-neutral-300" />)
-    }
-
-    return (
-      <div className="flex items-center gap-1">
-        {stars}
-        <span className="text-xs text-neutral-600 ml-1">({rating.toFixed(1)})</span>
-      </div>
-    )
-  }
 
   const renderProductsForEquipment = (equipmentItem: CookingEquipment) => {
     const equipmentId = equipmentItem.id
@@ -158,79 +139,44 @@ export default function CategoryPage() {
       )
     }
 
+    const hasMultipleProducts = equipmentProducts.length > 3
+
     return (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {equipmentProducts.slice(0, 3).map((product, index) => (
-          <div
-            key={`${product.product_id}-${index}`}
-            className="border border-neutral-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
-          >
-            {/* Product Image */}
-            <div className="aspect-square bg-neutral-50 overflow-hidden">
-              {product.product_photos[0] ? (
-                <img
-                  src={product.product_photos[0]}
-                  alt={product.product_title}
-                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement
-                    target.style.display = 'none'
-                  }}
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <ShoppingCart className="h-12 w-12 text-neutral-300" />
-                </div>
-              )}
+      <div className="relative">
+        {hasMultipleProducts && (
+          <>
+            <button
+              onClick={() => scrollProducts(equipmentId, 'left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-neutral-50 shadow-lg rounded-full p-2 transition-all"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="h-5 w-5 text-neutral-600" />
+            </button>
+            <button
+              onClick={() => scrollProducts(equipmentId, 'right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-neutral-50 shadow-lg rounded-full p-2 transition-all"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="h-5 w-5 text-neutral-600" />
+            </button>
+          </>
+        )}
+        
+        <div
+          id={`products-${equipmentId}`}
+          className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {equipmentProducts.map((product, index) => (
+            <div key={`${product.product_id}-${index}`} className="flex-shrink-0 w-80">
+              <AmazonProductCard
+                product={product}
+                compact={true}
+                dataLastUpdated={new Date()}
+              />
             </div>
-
-            {/* Product Details */}
-            <div className="p-4">
-              <h4 className="font-medium text-neutral-800 mb-2 line-clamp-2 text-sm">
-                {product.product_title}
-              </h4>
-
-              {product.rating && (
-                <div className="mb-2">
-                  {renderStars(product.rating)}
-                </div>
-              )}
-
-              <div className="flex items-center justify-between mb-3">
-                <div className="font-bold text-green-600">
-                  {formatPrice(product.offer.price)}
-                </div>
-                {product.brand && (
-                  <div className="text-xs text-neutral-500">
-                    {product.brand}
-                  </div>
-                )}
-              </div>
-
-              {/* Action Buttons */}
-              <div className="space-y-2">
-                <a
-                  href={generateAmazonCartUrl(product)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded text-xs font-medium transition-colors flex items-center justify-center gap-1"
-                >
-                  <ShoppingCart className="h-3 w-3" />
-                  Add to Cart
-                </a>
-                <a
-                  href={product.product_page_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-neutral-100 hover:bg-neutral-200 text-neutral-700 py-2 px-3 rounded text-xs font-medium transition-colors flex items-center justify-center gap-1"
-                >
-                  <ExternalLink className="h-3 w-3" />
-                  View Details
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     )
   }
@@ -313,19 +259,14 @@ export default function CategoryPage() {
                         <h2 className="text-2xl font-display font-semibold text-neutral-800 mb-2">
                           {equipmentItem.display_name}
                         </h2>
-                        <p className="text-neutral-600 mb-2">
+                        <p className="text-neutral-600 mb-4">
                           {equipmentItem.description || `Essential ${equipmentItem.display_name.toLowerCase()} for your kitchen.`}
                         </p>
-                        {equipmentItem.average_price_range && (
-                          <div className="flex items-center gap-4">
-                            <span className="text-sm font-medium text-green-600">
-                              Typical Price: {equipmentItem.average_price_range}
+                        {equipmentItem.is_essential && (
+                          <div>
+                            <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full">
+                              Essential Kitchen Tool
                             </span>
-                            {equipmentItem.is_essential && (
-                              <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full">
-                                Essential
-                              </span>
-                            )}
                           </div>
                         )}
                       </div>
@@ -349,7 +290,9 @@ export default function CategoryPage() {
         </div>
       </div>
 
+      <AmazonDisclaimer />
       <Footer />
+      <BackToTop />
     </div>
   )
 }

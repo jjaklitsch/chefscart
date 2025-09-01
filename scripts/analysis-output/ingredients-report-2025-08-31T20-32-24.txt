@@ -1,0 +1,111 @@
+
+CHEFSCART INGREDIENTS ANALYSIS REPORT
+=====================================
+
+SUMMARY STATISTICS:
+- Total unique ingredients: 1279
+- Most common ingredient: Black Pepper (428 occurrences)
+- Least common ingredients: 696 ingredients appear only once
+
+TOP 10 MOST COMMON INGREDIENTS:
+1. Black Pepper (428 times)
+2. Salt (304 times)
+3. Garlic Cloves (235 times)
+4. Olive Oil (197 times)
+5. Garlic (184 times)
+6. Extra-virgin Olive Oil (151 times)
+7. Vegetable Oil (142 times)
+8. Water (132 times)
+9. Kosher Salt (122 times)
+10. Yellow Onion (120 times)
+
+CATEGORY BREAKDOWN:
+- Produce: 213 ingredients
+- Spices & Seasonings: 101 ingredients
+- Fresh Produce: 98 ingredients
+- Pantry Staples: 91 ingredients
+- Meat & Poultry: 84 ingredients
+- Dairy & Eggs: 76 ingredients
+- Canned Goods: 70 ingredients
+- Rice & Grains: 65 ingredients
+- Seafood: 64 ingredients
+- Fresh Herbs: 48 ingredients
+- Condiments: 45 ingredients
+- Nuts & Seeds: 42 ingredients
+- Condiments & Sauces: 34 ingredients
+- Pasta: 31 ingredients
+- Baking & Pantry Staples: 26 ingredients
+- Gourmet: 24 ingredients
+- Oils & Vinegars: 23 ingredients
+- Spices and Seasonings: 22 ingredients
+- Meat: 19 ingredients
+- Sauces: 17 ingredients
+- Grains: 16 ingredients
+- Milk, Eggs, Other Dairy: 11 ingredients
+- Frozen: 10 ingredients
+- Oil, Vinegar, Salad Dressing: 8 ingredients
+- Cheese: 6 ingredients
+- Pasta and Rice: 5 ingredients
+- Canned and Jarred: 5 ingredients
+- International: 4 ingredients
+- Grains & Rice: 4 ingredients
+- Bakery: 3 ingredients
+- Pasta & Noodles: 3 ingredients
+- Nuts: 2 ingredients
+- Bread & Bakery: 2 ingredients
+- Vegetables: 2 ingredients
+- Baking: 2 ingredients
+- Bakery/Bread: 1 ingredients
+- Beverages: 1 ingredients
+- Frozen Foods: 1 ingredients
+
+UNIT BREAKDOWN:
+- g: 261 ingredients
+- cup: 230 ingredients
+- each: 227 ingredients
+- tbsp: 187 ingredients
+- tsp: 119 ingredients
+- lb: 72 ingredients
+- oz: 67 ingredients
+- ml: 36 ingredients
+- count: 23 ingredients
+- cups: 11 ingredients
+- clove: 6 ingredients
+- pinch: 6 ingredients
+- piece: 5 ingredients
+- pieces: 4 ingredients
+- slices: 4 ingredients
+
+SCALE TYPE BREAKDOWN:
+- linear: 1022 ingredients
+- fixed: 133 ingredients
+- unknown: 111 ingredients
+- sqrt: 13 ingredients
+
+POTENTIAL DATA QUALITY ISSUES:
+- Ingredients with 'unknown' category: 0
+- Ingredients with 'unknown' unit: 1
+- Ingredients with 'unknown' scale_type: 111
+
+RARE INGREDIENTS (appearing only once):
+- Penne Rigate
+- Pork Ribs
+- Baked Beans
+- Molasses
+- Bone-In Pork Chops
+- Calvados (Apple Brandy)
+- Low-Sodium Chicken Stock
+- Brown Erythritol
+- Seedless Watermelon
+- Beef Shank
+- Shrimp Paste
+- Chile Oil
+- Whole Snapper
+- Thai Red Chilies
+- Fried Garlic Crisps
+- Whole-grain Bread Slices
+- Vegan Parmesan Or Feta
+- Dried Anchovies Or Kombu
+- Fresh Chili
+- Fine Cornmeal
+... and 676 more

@@ -1,0 +1,332 @@
+{
+  "slug": "fish-tacos-with-cabbage-slaw",
+  "title": "Fish Tacos with Cabbage Slaw",
+  "description": "Crisp pan-fried cod tucked into warm flour tortillas with a bright lime-cilantro cabbage slaw and a tangy lime crema. Ready in about 35 minutes — bright, fresh, and weeknight-friendly.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "mexican"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "plant-forward",
+    "mediterranean"
+  ],
+  "primary_ingredient": "Cod",
+  "spice_level": 3,
+  "prep_time": 20,
+  "cook_time": 15,
+  "cooking_difficulty": "medium",
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 2,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "seafood",
+    "wheat"
+  ],
+  "search_keywords": [
+    "fish tacos",
+    "cod tacos",
+    "cabbage slaw",
+    "lime crema",
+    "easy tacos",
+    "weeknight seafood"
+  ],
+  "cooking_equipment": [
+    "Cutting Board",
+    "Mixing Bowl",
+    "Tongs",
+    "Whisk",
+    "Spatula"
+  ],
+  "ingredients_json": [
+    {
+      "name": "Cod",
+      "quantity": 1.5,
+      "unit": "each",
+      "category": "Gourmet",
+      "organic_supported": true,
+      "brand_filters": [
+        "Gorton's",
+        "Trident",
+        "SeaBest"
+      ]
+    },
+    {
+      "name": "All-Purpose Flour",
+      "quantity": 0.75,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "King Arthur",
+        "Gold Medal",
+        "Bob's Red Mill"
+      ]
+    },
+    {
+      "name": "Cornstarch",
+      "quantity": 2,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "Argo",
+        "Bob's Red Mill",
+        "Clabber Girl"
+      ]
+    },
+    {
+      "name": "Smoked Paprika",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic",
+        "Spice Islands"
+      ]
+    },
+    {
+      "name": "Cumin",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic",
+        "Spice Islands"
+      ]
+    },
+    {
+      "name": "Kosher Salt",
+      "quantity": 1.5,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Diamond Crystal",
+        "Morton",
+        "Jacobsen"
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Tellicherry",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Garlic",
+      "quantity": 2,
+      "unit": "head",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Christopher Ranch",
+        "Spice World",
+        "Local"
+      ]
+    },
+    {
+      "name": "Red Pepper Flakes",
+      "quantity": 0.25,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Spice Islands",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Vegetable Oil",
+      "quantity": 0.5,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "LouAna",
+        "Wesson",
+        "Crisco"
+      ]
+    },
+    {
+      "name": "Flour Tortillas",
+      "quantity": 8,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "Mission",
+        "La Banderita",
+        "Guerrero"
+      ]
+    },
+    {
+      "name": "Cabbage",
+      "quantity": 3,
+      "unit": "head",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Local",
+        "Dole",
+        "Fresh Express"
+      ]
+    },
+    {
+      "name": "Red Onion",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Vidalia",
+        "Local",
+        "Green Giant"
+      ]
+    },
+    {
+      "name": "Extra-Virgin Olive Oil",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Colavita",
+        "California Olive Ranch",
+        "Bertolli"
+      ]
+    },
+    {
+      "name": "Limes",
+      "quantity": 3,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Cuties",
+        "Local",
+        "Sunkist"
+      ]
+    },
+    {
+      "name": "Cilantro",
+      "quantity": 1,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Fresh Express",
+        "Local",
+        "Organic Girl"
+      ]
+    },
+    {
+      "name": "Sour Cream",
+      "quantity": 0.5,
+      "unit": "pint",
+      "category": "Dairy & Eggs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Daisy",
+        "Breakstone",
+        "Tillamook"
+      ]
+    },
+    {
+      "name": "Avocados",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Hass Avocados",
+        "Calavo",
+        "Local"
+      ]
+    }
+  ],
+  "instructions_json": {
+    "prep_time": 20,
+    "cook_time": 15,
+    "total_time": 35,
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Pat the cod dry with paper towels and cut into 8 equal pieces (about 2 oz each). Season both sides with 1 teaspoon kosher salt, 1/2 teaspoon black pepper, 1/2 teaspoon smoked paprika, and 1/2 teaspoon cumin.",
+        "time_minutes": 6
+      },
+      {
+        "step": 2,
+        "instruction": "In a shallow bowl, whisk together All-Purpose Flour, Cornstarch, remaining smoked paprika (1/2 teaspoon), remaining cumin (1/2 teaspoon), 1/2 teaspoon kosher salt, and 1/2 teaspoon black pepper.",
+        "time_minutes": 2
+      },
+      {
+        "step": 3,
+        "instruction": "In a separate mixing bowl, combine shredded cabbage, thinly sliced red onion, chopped cilantro (reserve a few leaves for garnish), 2 tablespoons Extra-Virgin Olive Oil, juice of 1 lime, 1/4 teaspoon kosher salt, and a pinch of red pepper flakes. Toss to coat and set in fridge to marinate while you cook the fish.",
+        "time_minutes": 6
+      },
+      {
+        "step": 4,
+        "instruction": "Make lime crema: whisk together Sour Cream, juice of 1 lime, 1 clove minced Garlic, a pinch of salt, and 1–2 tablespoons water to reach drizzling consistency. Adjust salt and lime to taste.",
+        "time_minutes": 3
+      },
+      {
+        "step": 5,
+        "instruction": "Heat a large skillet over medium-high heat and add Vegetable Oil to reach about 1/8-inch depth. Dredge each piece of cod in the flour mixture, shaking off excess.",
+        "time_minutes": 2
+      },
+      {
+        "step": 6,
+        "instruction": "When the oil shimmers, add the cod pieces in a single layer (work in batches if needed). Fry until golden brown and cooked through, about 3–4 minutes per side depending on thickness. Transfer to a paper towel-lined plate and lightly season with a pinch of salt.",
+        "time_minutes": 8
+      },
+      {
+        "step": 7,
+        "instruction": "Warm the Flour Tortillas in a clean dry skillet over medium heat for about 20–30 seconds per side or wrap in foil and heat in a 350°F oven for 8 minutes.",
+        "time_minutes": 3
+      },
+      {
+        "step": 8,
+        "instruction": "Assemble tacos: place a warm tortilla on a plate, add a few pieces of fried cod, top with cabbage slaw, a drizzle of lime crema, avocado slices, and chopped cilantro. Serve with lime wedges and additional red pepper flakes if you like more heat.",
+        "time_minutes": 1
+      }
+    ]
+  },
+  "ingredient_tags": [
+    "cod",
+    "all-purpose flour",
+    "cornstarch",
+    "smoked paprika",
+    "cumin",
+    "kosher salt",
+    "black pepper",
+    "garlic",
+    "red pepper flakes",
+    "vegetable oil",
+    "flour tortillas",
+    "cabbage",
+    "red onion",
+    "extra-virgin olive oil",
+    "limes",
+    "cilantro",
+    "sour cream",
+    "avocado"
+  ]
+}

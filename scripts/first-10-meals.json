@@ -1,0 +1,64 @@
+{
+  "meals": [
+    {
+      "id": "000e8d55-9dde-40d3-91ab-afd3e4e5c6dc",
+      "title": "Đậu Hũ Sốt Cà (Tofu Tomato Sauce) with Rice",
+      "originalSlug": "u-h-st-c-tofu-tomato-sauce",
+      "description": "Silky tofu simmered in a bright, savory tomato sauce with aromatics and a hint of sweetness, served over fluffy jasmine rice. Quick pan-cooked method yields tender cubes of tofu glazed in a tangy, slightly spiced sauce—perfect for a balanced meal."
+    },
+    {
+      "id": "0030be5b-004c-4f64-b904-8ebabd2b3169",
+      "title": "Penne all'Arrabbiata with Chickpeas",
+      "originalSlug": "penne-allarrabbiata-with-chickpeas",
+      "description": "A classic Roman pasta with a bright, spicy tomato-garlic sauce that clings to al dente penne, enhanced with protein-rich chickpeas for a complete meal. Quick to make, highlighting olive oil, crushed red pepper, and fresh parsley for a bold, simple weeknight dinner."
+    },
+    {
+      "id": "00892ccc-db5f-45f7-a21b-bd7c6c903d1d",
+      "title": "BBQ Ribs with Baked Beans and Roasted Vegetables",
+      "originalSlug": "bbq-ribs-with-baked-beans-and-vegetables",
+      "description": "Tender slow-baked pork ribs glazed in a tangy, smoky barbecue sauce served alongside classic baked beans simmered with bacon and brown sugar, and a medley of roasted seasonal vegetables. This hearty meal is rich in protein, fiber, and essential vitamins, making it a balanced comfort food option."
+    },
+    {
+      "id": "010c22ef-d81c-474c-8ef3-99dd9f7cc69e",
+      "title": "Mediterranean Tuna Olive Chopped Salad with Quinoa",
+      "originalSlug": "mediterranean-tuna-olive-chopped-salad-with-quinoa",
+      "description": "A bright, crunchy chopped salad layered with flaked tuna, briny olives, crisp vegetables, and a zesty lemon-herb vinaigrette, complemented by fluffy quinoa for added texture and nutrition. Ready in under 20 minutes, it delivers savory Mediterranean flavors with a satisfying mix of textures—perfect for lunch or a light dinner."
+    },
+    {
+      "id": "015bfe16-0a73-4262-8d46-20f1715f919c",
+      "title": "Caprese Burrata Greens with Crusty Bread",
+      "originalSlug": "caprese-burrata-greens-with-bread",
+      "description": "A bright, no-cook salad combining peppery mixed greens with sweet cherry tomatoes, fresh basil, creamy burrata, and a tangy balsamic-lemon vinaigrette, served with crusty bread for a complete meal. Quick to assemble, it highlights fresh summer flavors and luxurious burrata for a light lunch or elegant side."
+    },
+    {
+      "id": "01684ba0-90f5-4bda-b37e-1eb7b1b59a5b",
+      "title": "Miso-Ginger Glazed Cod & Greens with Rice",
+      "originalSlug": "miso-ginger-glazed-cod-greens-rice",
+      "description": "Tender cod fillets brushed with a savory-sweet miso-ginger glaze, broiled until caramelized and served over a bed of sautéed leafy greens and fluffy jasmine rice. Bright ginger and rice vinegar balance the glaze while sesame oil and soy add depth for an effortless, restaurant-quality weeknight dinner."
+    },
+    {
+      "id": "02071784-7d66-45a1-a7bc-3489c53d3cbb",
+      "title": "Pork Chops with Calvados Apples and Sautéed Greens",
+      "originalSlug": "pork-chops-with-calvados-apples-and-greens",
+      "description": "Pan-seared pork chops finished with a silky pan sauce of browned butter, Calvados apple brandy, and caramelized apples, served alongside sautéed seasonal greens. This dish balances savory pork with bright apple-accented sweetness and a hint of mustard and thyme, creating a classic French-inspired meal that's both nutritious and satisfying."
+    },
+    {
+      "id": "024f7db6-2a7a-472d-b115-872c581b5088",
+      "title": "Low-Carb Teriyaki Chicken & Cauli Rice",
+      "originalSlug": "low-carb-teriyaki-chicken-cauli-rice",
+      "description": "Juicy pan-seared chicken glazed in a tangy-sweet low-carb teriyaki sauce served over fragrant cauliflower rice. Bright ginger, garlic, and toasted sesame lift the dish while keeping net carbs minimal for a satisfying weeknight dinner."
+    },
+    {
+      "id": "026addbe-3f49-49b2-9139-e49b62381a68",
+      "title": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+      "originalSlug": "watermelonfetamint-salad-lime-vinaigrette",
+      "description": "A bright, refreshing salad that pairs sweet, juicy watermelon with salty feta and cooling mint, finished with a zesty lime vinaigrette. Quick to assemble, this no-cook salad is perfect for warm-weather lunches, barbecues, or a crisp side dish."
+    },
+    {
+      "id": "026e27e9-bc76-40b9-b248-2270373751f5",
+      "title": "Bún Bò Huế (Spicy Beef Noodle Soup)",
+      "originalSlug": "bn-b-hu-spicy-beef-noodle-soup",
+      "description": "A fragrant, spicy Vietnamese beef noodle soup from Huế featuring rich beef-and-pork bone broth infused with lemongrass, shrimp paste, and chile oil. Served with thick rice vermicelli, tender brisket, and fresh herbs for a balanced savory, hot, and tangy bowl."
+    }
+  ]
+}

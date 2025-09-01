@@ -1,0 +1,332 @@
+{
+  "slug": "kosher-mediterranean-chicken-with-lemon-rice",
+  "title": "Kosher Mediterranean Chicken with Lemon Rice",
+  "description": "Pan-seared kosher chicken thighs simmered with bright lemon, garlic and Mediterranean herbs, served over fragrant jasmine lemon rice. A one-pan, family-friendly dinner that stays kosher and full of fresh flavor.",
+  "courses": [
+    "dinner"
+  ],
+  "cuisines": [
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "kosher",
+    "mediterranean"
+  ],
+  "primary_ingredient": "Chicken Thighs",
+  "spice_level": 3,
+  "prep_time": 20,
+  "cook_time": 35,
+  "cooking_difficulty": "medium",
+  "time_total_min": 55,
+  "servings_default": 4,
+  "servings_min": 2,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [],
+  "search_keywords": [
+    "kosher",
+    "Mediterranean chicken",
+    "lemon rice",
+    "chicken thighs",
+    "one-pot rice",
+    "garlic lemon chicken"
+  ],
+  "cooking_equipment": [
+    "mixing bowl",
+    "knife",
+    "cutting board",
+    "zester",
+    "tongs",
+    "wooden spoon",
+    "colander"
+  ],
+  "ingredients_json": [
+    {
+      "name": "Chicken Thigh",
+      "quantity": 2.5,
+      "unit": "pound",
+      "category": "Meat & Poultry",
+      "health_filters": [
+        "ORGANIC",
+        "KOSHER",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Perdue",
+        "Tyson",
+        "Bell & Evans",
+        "Pilgrim's"
+      ]
+    },
+    {
+      "name": "Kosher Salt",
+      "quantity": 2.5,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "KOSHER",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Diamond Crystal",
+        "Morton"
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Garlic",
+      "quantity": 4,
+      "unit": "head",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Christopher Ranch",
+        "Spice World",
+        "365"
+      ]
+    },
+    {
+      "name": "Extra-Virgin Olive Oil",
+      "quantity": 3,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "California Olive Ranch",
+        "Colavita",
+        "Bertolli"
+      ]
+    },
+    {
+      "name": "Lemons",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Sunkist",
+        "Dole"
+      ]
+    },
+    {
+      "name": "Parsley",
+      "quantity": 0.25,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Dole",
+        "365"
+      ]
+    },
+    {
+      "name": "Yellow Onion",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "365",
+        "Dole"
+      ]
+    },
+    {
+      "name": "Red Pepper Flakes",
+      "quantity": 0.5,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Frontier Co-op"
+      ]
+    },
+    {
+      "name": "Cumin",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Smoked Paprika",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "La Chinata"
+      ]
+    },
+    {
+      "name": "Oregano",
+      "quantity": 1,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Thyme",
+      "quantity": 1,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Vegetable Oil",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Wesson",
+        "Crisco"
+      ]
+    },
+    {
+      "name": "Jasmine Rice",
+      "quantity": 1.5,
+      "unit": "pound",
+      "category": "Rice & Grains",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Mahatma",
+        "Lundberg",
+        "Nishiki"
+      ]
+    },
+    {
+      "name": "Chicken Broth",
+      "quantity": 3,
+      "unit": "pound",
+      "category": "Meat & Poultry",
+      "health_filters": [
+        "KOSHER",
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Swanson",
+        "College Inn",
+        "Pacific Foods"
+      ]
+    }
+  ],
+  "instructions_json": {
+    "prep_time": 20,
+    "cook_time": 35,
+    "total_time": 55,
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Prep the aromatics and herbs: zest 1 lemon and reserve the zest; juice both lemons (about 3/4 cup). Peel and mince the garlic. Finely chop parsley and dice the yellow onion.",
+        "time_minutes": 8
+      },
+      {
+        "step": 2,
+        "instruction": "Season and marinate the chicken: pat chicken thighs dry and rub with 1 teaspoon kosher salt, 1/2 teaspoon black pepper, 1/2 teaspoon smoked paprika and 1/2 teaspoon cumin. In a mixing bowl whisk together 2 tablespoons extra-virgin olive oil, lemon zest, 2 tablespoons lemon juice, half the minced garlic, 1/4 teaspoon red pepper flakes, 1/2 teaspoon oregano and 1/2 teaspoon thyme. Add chicken and coat; let marinate while you prepare rice (10–12 minutes).",
+        "time_minutes": 10
+      },
+      {
+        "step": 3,
+        "instruction": "Toast the rice: heat a medium saucepan over medium heat. Add 1 tablespoon vegetable oil and 1 tablespoon extra-virgin olive oil. Add diced yellow onion and the remaining garlic and sauté until softened, about 3 minutes.",
+        "time_minutes": 3
+      },
+      {
+        "step": 4,
+        "instruction": "Add jasmine rice to the pan with the onion and garlic; stir and toast the rice for 1–2 minutes until fragrant. Pour in 3 cups chicken broth and the remaining 1 tablespoon lemon juice, plus 1 teaspoon kosher salt and 1/2 teaspoon black pepper. Bring to a gentle simmer, then reduce heat to low and cover.",
+        "time_minutes": 4
+      },
+      {
+        "step": 5,
+        "instruction": "Sear the chicken: while the broth is coming to a simmer, heat a large skillet over medium-high heat. Add the marinated chicken thighs, skin-side (or presentation-side) down, and sear until golden brown, about 4–5 minutes. Flip and sear the other side 3–4 minutes. (If your skillet is small, sear in batches.)",
+        "time_minutes": 10
+      },
+      {
+        "step": 6,
+        "instruction": "Combine chicken and rice: nestle the seared chicken thighs on top of the simmering rice in the saucepan (if your skillet is ovenproof you can transfer rice to the skillet). Reduce heat to low, cover tightly, and simmer gently 18–20 minutes, until rice is tender and chicken reaches 165°F (74°C) internal temperature.",
+        "time_minutes": 20
+      },
+      {
+        "step": 7,
+        "instruction": "Rest and finish: remove from heat and let rest, covered, 5 minutes. Fluff the rice with a fork, spoon pan juices over the chicken, then sprinkle chopped parsley and the reserved lemon zest over everything. Adjust seasoning with additional kosher salt or black pepper to taste.",
+        "time_minutes": 5
+      },
+      {
+        "step": 8,
+        "instruction": "Serve: transfer chicken and lemon rice to a platter or individual plates. Garnish with lemon wedges if desired and serve hot.",
+        "time_minutes": 0
+      }
+    ]
+  },
+  "ingredient_tags": [
+    "chicken thighs",
+    "kosher salt",
+    "black pepper",
+    "garlic",
+    "extra-virgin olive oil",
+    "lemons",
+    "parsley",
+    "yellow onion",
+    "red pepper flakes",
+    "cumin",
+    "smoked paprika",
+    "oregano",
+    "thyme",
+    "vegetable oil",
+    "jasmine rice",
+    "chicken broth"
+  ]
+}

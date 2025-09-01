@@ -1,0 +1,310 @@
+{
+  "slug": "blackened-fish-tacos-american-style",
+  "title": "Blackened Fish Tacos (American-Style)",
+  "description": "Crispy, spicy blackened cod tucked into warm corn tortillas with a bright cabbage slaw and creamy avocado-lime crema. Quick weeknight meal with bold flavors and fresh toppings.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "american"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "mediterranean"
+  ],
+  "primary_ingredient": "Cod",
+  "spice_level": 3,
+  "prep_time": 15,
+  "cook_time": 12,
+  "cooking_difficulty": "medium",
+  "time_total_min": 27,
+  "servings_default": 4,
+  "servings_min": 2,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood"
+  ],
+  "search_keywords": [
+    "blackened fish tacos",
+    "cod tacos",
+    "spicy fish tacos",
+    "avocado crema",
+    "fish tacos recipe"
+  ],
+  "cooking_equipment": [
+    "Mixing Bowl",
+    "Whisk",
+    "Tongs",
+    "Spatula",
+    "Knife",
+    "Cutting Board"
+  ],
+  "ingredients_json": [
+    {
+      "name": "Cod",
+      "quantity": 1.5,
+      "unit": "each",
+      "category": "Gourmet",
+      "organic_supported": true,
+      "brand_filters": [
+        "Gorton's",
+        "Trident Seafoods",
+        "Whole Catch"
+      ]
+    },
+    {
+      "name": "Smoked Paprika",
+      "quantity": 2,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic",
+        "Badia"
+      ]
+    },
+    {
+      "name": "Cumin",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic",
+        "Badia"
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Tellicherry",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Kosher Salt",
+      "quantity": 1.5,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Morton",
+        "Diamond Crystal",
+        "Himalayan Chef"
+      ]
+    },
+    {
+      "name": "Red Pepper Flakes",
+      "quantity": 0.5,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic",
+        "Badia"
+      ]
+    },
+    {
+      "name": "Vegetable Oil",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Wesson",
+        "Mazola",
+        "Crisco"
+      ]
+    },
+    {
+      "name": "Extra-Virgin Olive Oil",
+      "quantity": 3,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": true,
+      "brand_filters": [
+        "Colavita",
+        "California Olive Ranch",
+        "Kirkland Signature"
+      ]
+    },
+    {
+      "name": "Corn Tortillas",
+      "quantity": 8,
+      "unit": "package",
+      "category": "Bakery & Bread",
+      "organic_supported": false,
+      "brand_filters": [
+        "Mission",
+        "La Banderita",
+        "Guerrero"
+      ]
+    },
+    {
+      "name": "Avocados",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Calavo",
+        "Hass",
+        "Del Rey"
+      ]
+    },
+    {
+      "name": "Limes",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Limelight",
+        "Dole",
+        "Fresh Del Monte"
+      ]
+    },
+    {
+      "name": "Garlic",
+      "quantity": 2,
+      "unit": "head",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Christopher Ranch",
+        "Spice World",
+        "Local"
+      ]
+    },
+    {
+      "name": "Cilantro",
+      "quantity": 0.5,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Fresh Express",
+        "Taylor Farms",
+        "OrganicGirl"
+      ]
+    },
+    {
+      "name": "Green Cabbage",
+      "quantity": 2,
+      "unit": "head",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Dole",
+        "Taylor Farms",
+        "Fresh Express"
+      ]
+    },
+    {
+      "name": "Red Onion",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Dole",
+        "Taylor Farms",
+        "Melissa's"
+      ]
+    },
+    {
+      "name": "Parsley",
+      "quantity": 0.25,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Taylor Farms",
+        "Fresh Express",
+        "OrganicGirl"
+      ]
+    },
+    {
+      "name": "Water",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "Filtered",
+        "Tap"
+      ]
+    }
+  ],
+  "instructions_json": {
+    "prep_time": 15,
+    "cook_time": 12,
+    "total_time": 27,
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Pat the cod dry with paper towels and cut into 6–8 portions (about 3–4 oz each). In a small bowl combine smoked paprika, cumin, black pepper, salt and red pepper flakes to make the blackening spice blend.",
+        "time_minutes": 5
+      },
+      {
+        "step": 2,
+        "instruction": "Toss the cod pieces with 1 tablespoon vegetable oil, then coat all sides with the blackening spice blend. Let rest while you prepare slaw and crema.",
+        "time_minutes": 2
+      },
+      {
+        "step": 3,
+        "instruction": "Make the cabbage slaw: thinly slice red onion and shred cabbage. In a mixing bowl toss cabbage and onion with 1 tablespoon extra-virgin olive oil, juice of 1 lime, 1 tablespoon chopped cilantro, a pinch of salt and freshly ground black pepper.",
+        "time_minutes": 6
+      },
+      {
+        "step": 4,
+        "instruction": "Make the avocado-lime crema: in a small bowl mash avocados with juice of 1 lime, 1 clove minced garlic, 2 tablespoons extra-virgin olive oil, 2 tablespoons water and a pinch of salt until smooth. Stir in chopped cilantro and set aside.",
+        "time_minutes": 4
+      },
+      {
+        "step": 5,
+        "instruction": "Heat a large skillet over medium-high heat until hot. Add remaining 2 tablespoons extra-virgin olive oil (or vegetable oil if preferred). Place seasoned cod in the skillet and sear 3–4 minutes per side, until blackened and cooked through (internal temp 145°F) and easily flakes with a fork.",
+        "time_minutes": 8
+      },
+      {
+        "step": 6,
+        "instruction": "While the fish cooks, warm corn tortillas in a dry skillet or wrapped in a damp towel in the microwave for 20–30 seconds until pliable.",
+        "time_minutes": 2
+      },
+      {
+        "step": 7,
+        "instruction": "Assemble tacos: place a few tablespoons of slaw on each warm tortilla, top with a piece of blackened cod, drizzle with avocado-lime crema, garnish with chopped parsley or cilantro and a squeeze of lime. Serve immediately.",
+        "time_minutes": 4
+      }
+    ]
+  },
+  "ingredient_tags": [
+    "cod",
+    "smoked paprika",
+    "cumin",
+    "black pepper",
+    "salt",
+    "red pepper flakes",
+    "vegetable oil",
+    "extra-virgin olive oil",
+    "corn tortillas",
+    "avocado",
+    "limes",
+    "garlic",
+    "cilantro",
+    "green cabbage",
+    "red onion",
+    "parsley",
+    "water"
+  ]
+}

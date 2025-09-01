@@ -1,0 +1,351 @@
+{
+  "slug": "coconut-rice-with-grilled-prawns-and-vegetables",
+  "title": "Coconut Rice with Grilled Prawns and Vegetables",
+  "description": "Fragrant coconut jasmine rice served with lime-garlic marinated prawns and charred vegetables — a vibrant, weeknight-friendly Thai-inspired pescatarian meal.",
+  "courses": [
+    "dinner",
+    "lunch"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [
+    "pescatarian"
+  ],
+  "primary_ingredient": "Jasmine Rice",
+  "spice_level": 3,
+  "prep_time": 20,
+  "cook_time": 30,
+  "cooking_difficulty": "medium",
+  "time_total_min": 50,
+  "servings_default": 4,
+  "servings_min": 2,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "shellfish",
+    "soy",
+    "sesame"
+  ],
+  "search_keywords": [
+    "coconut rice",
+    "grilled prawns",
+    "thai",
+    "seafood",
+    "coconut jasmine rice",
+    "charred vegetables",
+    "weeknight dinner"
+  ],
+  "cooking_equipment": [
+    "Grill pan",
+    "Mixing bowl",
+    "Tongs",
+    "Knife",
+    "Cutting board",
+    "Whisk",
+    "Spatula"
+  ],
+  "ingredients_json": [
+    {
+      "name": "Jasmine Rice",
+      "quantity": 2,
+      "unit": "pound",
+      "category": "Rice & Grains",
+      "organic_supported": false,
+      "brand_filters": [
+        "Lundberg",
+        "Mahatma",
+        "Royal"
+      ]
+    },
+    {
+      "name": "Coconut Milk",
+      "quantity": 13.5,
+      "unit": "can",
+      "category": "Canned Goods",
+      "organic_supported": false,
+      "brand_filters": [
+        "Thai Kitchen",
+        "Chaokoh",
+        "Native Forest"
+      ]
+    },
+    {
+      "name": "Water",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "Tap",
+        "Fiji",
+        "Evian"
+      ]
+    },
+    {
+      "name": "Prawns",
+      "quantity": 1.5,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "SeaPak",
+        "Gorton's",
+        "NOAA"
+      ]
+    },
+    {
+      "name": "Extra-Virgin Olive Oil",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "California Olive Ranch",
+        "Colavita",
+        "Bertolli"
+      ]
+    },
+    {
+      "name": "Vegetable Oil",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Crisco",
+        "Wesson",
+        "Mazola"
+      ]
+    },
+    {
+      "name": "Garlic",
+      "quantity": 4,
+      "unit": "head",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Christopher Ranch",
+        "Spice World",
+        "Local"
+      ]
+    },
+    {
+      "name": "Kosher Salt",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Diamond Crystal",
+        "Morton",
+        "Himalania"
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 0.5,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic",
+        "Badia"
+      ]
+    },
+    {
+      "name": "Limes",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Great Value",
+        "Sunkist",
+        "Local"
+      ]
+    },
+    {
+      "name": "Soy Sauce",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Condiments & Sauces",
+      "organic_supported": false,
+      "brand_filters": [
+        "Kikkoman",
+        "La Choy",
+        "Pearl River Bridge"
+      ]
+    },
+    {
+      "name": "Sesame Oil",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Kadoya",
+        "Roland",
+        "Spectrum"
+      ]
+    },
+    {
+      "name": "Red Pepper Flakes",
+      "quantity": 0.5,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Spice Islands",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Red Bell Peppers",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": true,
+      "brand_filters": [
+        "Green Giant",
+        "Local",
+        "Driscoll's"
+      ]
+    },
+    {
+      "name": "Carrots",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Bolthouse Farms",
+        "Grimmway",
+        "Local"
+      ]
+    },
+    {
+      "name": "Red Onion",
+      "quantity": 0.5,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Local",
+        "Maui Gold",
+        "D'Arrigo"
+      ]
+    },
+    {
+      "name": "Scallions",
+      "quantity": 3,
+      "unit": "package",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Green Giant",
+        "Fresh Express",
+        "Local"
+      ]
+    },
+    {
+      "name": "Cilantro",
+      "quantity": 0.25,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Organic Girl",
+        "Fresh Express",
+        "Local"
+      ]
+    },
+    {
+      "name": "Sesame Seeds",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Nuts & Seeds",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Roland",
+        "365 by Whole Foods"
+      ]
+    }
+  ],
+  "instructions_json": {
+    "prep_time": 20,
+    "cook_time": 30,
+    "total_time": 50,
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Rinse the jasmine rice under cold water until the water runs clear; drain well.",
+        "time_minutes": 5
+      },
+      {
+        "step": 2,
+        "instruction": "In a medium saucepan, heat 1 tablespoon extra-virgin olive oil over medium heat. Add half of the minced garlic (about 2 cloves) and the diced red onion; sauté 2–3 minutes until softened and fragrant.",
+        "time_minutes": 4
+      },
+      {
+        "step": 3,
+        "instruction": "Add the rinsed rice to the saucepan and stir to coat in the oil and aromatics for 1 minute. Pour in the coconut milk and 1 cup water, add 1/2 teaspoon kosher salt, bring to a simmer, cover, reduce heat to low and cook until liquid is absorbed (about 18 minutes).",
+        "time_minutes": 18
+      },
+      {
+        "step": 4,
+        "instruction": "While the rice cooks, prepare the prawns and vegetables: Pat prawns dry. In a mixing bowl whisk together juice of 1 lime, 2 tablespoons soy sauce, 1 tablespoon sesame oil, remaining minced garlic, 1/2 teaspoon black pepper and 1/2 teaspoon red pepper flakes. Add prawns and toss to coat; set to marinate 10 minutes.",
+        "time_minutes": 10
+      },
+      {
+        "step": 5,
+        "instruction": "Slice the red bell pepper, carrots into batons, and halve the scallions lengthwise. Toss the vegetables with 1 tablespoon extra-virgin olive oil and a pinch of kosher salt.",
+        "time_minutes": 6
+      },
+      {
+        "step": 6,
+        "instruction": "Preheat a grill pan or skillet over medium-high heat and brush with a little vegetable oil. Grill the vegetables until charred and tender, about 6–8 minutes, turning occasionally. Transfer to a platter and keep warm.",
+        "time_minutes": 8
+      },
+      {
+        "step": 7,
+        "instruction": "Using the hot grill pan, grill prawns in a single layer 2–3 minutes per side until opaque and just cooked through. Remove from pan and squeeze remaining lime half over prawns.",
+        "time_minutes": 6
+      },
+      {
+        "step": 8,
+        "instruction": "When rice is done, remove lid and let rest 5 minutes, then fluff with a fork. Stir in chopped cilantro, 1 teaspoon sesame seeds, and adjust salt to taste. If rice seems dry, drizzle 1 teaspoon extra-virgin olive oil and fluff again.",
+        "time_minutes": 5
+      },
+      {
+        "step": 9,
+        "instruction": "Serve coconut rice on a platter or individual plates topped with grilled vegetables and prawns. Garnish with sliced scallions, extra cilantro, and a sprinkle of sesame seeds. Offer lime wedges at the table.",
+        "time_minutes": 2
+      }
+    ]
+  },
+  "ingredient_tags": [
+    "jasmine rice",
+    "coconut milk",
+    "water",
+    "prawns",
+    "extra-virgin olive oil",
+    "vegetable oil",
+    "garlic",
+    "kosher salt",
+    "black pepper",
+    "limes",
+    "soy sauce",
+    "sesame oil",
+    "red pepper flakes",
+    "red bell pepper",
+    "carrots",
+    "red onion",
+    "scallions",
+    "cilantro",
+    "sesame seeds"
+  ]
+}

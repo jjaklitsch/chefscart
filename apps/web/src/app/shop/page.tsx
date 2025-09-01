@@ -7,13 +7,15 @@ import { ShopCategory, CookingEquipment, AmazonProduct } from '../../../types'
 import { getSupabaseClient } from '../../../lib/supabase'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
+import BackToTop from '../../components/shop/BackToTop'
+import AmazonDisclaimer from '../../components/shop/AmazonDisclaimer'
 
 export default function ShopPage() {
   const [categories, setCategories] = useState<ShopCategory[]>([])
   const [featuredEquipment, setFeaturedEquipment] = useState<CookingEquipment[]>([])
   const [popularProducts, setPopularProducts] = useState<AmazonProduct[]>([])
   const [searchQuery, setSearchQuery] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     loadShopData()
@@ -23,38 +25,71 @@ export default function ShopPage() {
     try {
       const supabase = getSupabaseClient()
       
-      // Load featured categories
-      const { data: categoriesData, error: categoriesError } = await supabase
-        .from('shop_categories')
-        .select('*')
-        .eq('is_featured', true)
-        .order('sort_order')
+      // Load categories and equipment in parallel without complex nested queries
+      const [categoriesResult, equipmentResult] = await Promise.all([
+        supabase
+          .from('shop_categories')
+          .select('*')
+          .eq('is_featured', true)
+          .order('sort_order'),
+        supabase
+          .from('cooking_equipment')
+          .select('*')
+          .order('popularity_score', { ascending: false })
+          .limit(48)
+      ]);
       
-      if (categoriesError) {
-        console.error('Error loading categories:', categoriesError)
-      } else {
-        setCategories(categoriesData || [])
+      // Set categories without equipment count for now
+      if (categoriesResult.data) {
+        setCategories(categoriesResult.data.map(category => ({
+          ...category,
+          equipment_count: 0
+        })));
       }
-
-      // Load popular/essential equipment
-      const { data: equipmentData, error: equipmentError } = await supabase
-        .from('cooking_equipment')
-        .select(`
-          *,
-          equipment_categories!inner(
-            category:shop_categories(*)
-          )
-        `)
-        .eq('is_essential', true)
-        .order('popularity_score', { ascending: false })
-        .limit(6)
       
-      if (equipmentError) {
-        console.error('Error loading equipment:', equipmentError)
-      } else {
-        setFeaturedEquipment(equipmentData || [])
-      }
+      // Set equipment with optimized image loading
+      if (equipmentResult.data) {
+        const equipmentWithImages = await Promise.all(
+          equipmentResult.data.map(async (equipment) => {
+            try {
+              // Try equipment_id match first
+              let { data: productImage } = await supabase
+                .from('amazon_products')
+                .select('primary_image_url')
+                .eq('equipment_id', equipment.id)
+                .not('primary_image_url', 'is', null)
+                .limit(1);
 
+              // If no match, try name-based search (simplified)
+              if (!productImage?.[0]?.primary_image_url) {
+                const searchTerm = equipment.display_name.toLowerCase();
+                const { data: nameMatch } = await supabase
+                  .from('amazon_products')
+                  .select('primary_image_url')
+                  .or(`product_title.ilike.%${searchTerm}%,search_term.ilike.%${searchTerm}%`)
+                  .not('primary_image_url', 'is', null)
+                  .limit(1);
+                
+                productImage = nameMatch;
+              }
+
+              return {
+                ...equipment,
+                product_image: productImage?.[0]?.primary_image_url || null
+              };
+            } catch (error) {
+              console.error(`Error loading image for ${equipment.display_name}:`, error);
+              return {
+                ...equipment,
+                product_image: null
+              };
+            }
+          })
+        );
+        
+        setFeaturedEquipment(equipmentWithImages);
+      }
+      
     } catch (error) {
       console.error('Error loading shop data:', error)
     } finally {
@@ -95,7 +130,7 @@ export default function ShopPage() {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-display font-bold mb-6">
-              ChefsCart Kitchen Shop
+              ChefsCart Shop
             </h1>
             <p className="text-xl text-green-100 mb-8 leading-relaxed">
               Discover essential cooking equipment and tools to elevate your culinary adventures. 
@@ -142,26 +177,34 @@ export default function ShopPage() {
               <Link
                 key={category.id}
                 href={`/shop/category/${category.slug}`}
-                className="group"
+                className="group h-full"
               >
-                <div className="bg-white rounded-2xl shadow-subtle hover:shadow-lg transition-all duration-300 overflow-hidden transform hover:-translate-y-1">
-                  <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                    <div className="text-green-600 transform group-hover:scale-110 transition-transform duration-300">
-                      {category.name.includes('Knives') && <ChefHat className="h-12 w-12" />}
-                      {category.name.includes('Cookware') && <Utensils className="h-12 w-12" />}
-                      {category.name.includes('Baking') && <Star className="h-12 w-12" />}
-                      {category.name.includes('Appliances') && <Zap className="h-12 w-12" />}
-                      {!category.name.includes('Knives') && !category.name.includes('Cookware') && !category.name.includes('Baking') && !category.name.includes('Appliances') && <Utensils className="h-12 w-12" />}
-                    </div>
+                <div className="bg-white rounded-2xl shadow-subtle hover:shadow-lg transition-all duration-300 overflow-hidden transform hover:-translate-y-1 h-full flex flex-col">
+                  <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center overflow-hidden relative">
+                    {category.image_url ? (
+                      <img 
+                        src={category.image_url} 
+                        alt={category.name}
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 bg-white"
+                      />
+                    ) : (
+                      <div className="text-green-600 transform group-hover:scale-110 transition-transform duration-300">
+                        {category.name.includes('Knives') && <ChefHat className="h-12 w-12" />}
+                        {category.name.includes('Cookware') && <Utensils className="h-12 w-12" />}
+                        {category.name.includes('Baking') && <Star className="h-12 w-12" />}
+                        {category.name.includes('Appliances') && <Zap className="h-12 w-12" />}
+                        {!category.name.includes('Knives') && !category.name.includes('Cookware') && !category.name.includes('Baking') && !category.name.includes('Appliances') && <Utensils className="h-12 w-12" />}
+                      </div>
+                    )}
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex-1 flex flex-col">
                     <h3 className="text-xl font-display font-semibold text-neutral-800 mb-2 group-hover:text-green-700 transition-colors">
                       {category.name}
                     </h3>
-                    <p className="text-neutral-600 mb-4 line-clamp-2">
+                    <p className="text-neutral-600 mb-4 line-clamp-2 flex-1">
                       {category.description}
                     </p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mt-auto">
                       <span className="text-sm text-neutral-500">
                         {category.equipment_count || 0} products
                       </span>
@@ -183,39 +226,42 @@ export default function ShopPage() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-display font-bold text-neutral-800 mb-4">
-                Essential Kitchen Equipment
+                Kitchen Equipment & Tools
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                The must-have tools that every home cook needs to create delicious meals
+                From essential basics to specialty tools - everything you need to equip your kitchen for any culinary adventure
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
               {featuredEquipment.map((equipment) => (
                 <Link
                   key={equipment.id}
                   href={`/shop/search?q=${encodeURIComponent(equipment.display_name)}`}
-                  className="group"
+                  className="group h-full"
                 >
-                  <div className="bg-gradient-to-br from-neutral-50 to-sage-50 rounded-2xl shadow-subtle hover:shadow-lg transition-all duration-300 overflow-hidden transform hover:-translate-y-1">
-                    <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                      <div className="text-green-600 transform group-hover:scale-110 transition-transform duration-300">
-                        <Utensils className="h-16 w-16" />
-                      </div>
+                  <div className="bg-gradient-to-br from-neutral-50 to-sage-50 rounded-2xl shadow-subtle hover:shadow-lg transition-all duration-300 overflow-hidden transform hover:-translate-y-1 h-full flex flex-col">
+                    <div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center overflow-hidden relative">
+                      {equipment.product_image ? (
+                        <img 
+                          src={equipment.product_image} 
+                          alt={equipment.display_name}
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 bg-white"
+                        />
+                      ) : (
+                        <div className="text-green-600 transform group-hover:scale-110 transition-transform duration-300">
+                          <Utensils className="h-16 w-16" />
+                        </div>
+                      )}
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex-1 flex flex-col">
                       <h3 className="text-xl font-display font-semibold text-neutral-800 mb-2 group-hover:text-green-700 transition-colors">
                         {equipment.display_name}
                       </h3>
-                      <p className="text-neutral-600 mb-4 line-clamp-3">
+                      <p className="text-neutral-600 mb-4 line-clamp-3 flex-1">
                         {equipment.description || `Essential ${equipment.display_name.toLowerCase()} for your kitchen.`}
                       </p>
-                      <div className="flex items-center justify-between">
-                        {equipment.average_price_range && (
-                          <span className="text-sm font-medium text-green-600">
-                            {equipment.average_price_range}
-                          </span>
-                        )}
+                      <div className="flex items-center justify-center mt-auto">
                         <span className="text-green-600 font-medium group-hover:text-green-700">
                           Shop now →
                         </span>
@@ -275,7 +321,9 @@ export default function ShopPage() {
         </div>
       </section>
 
+      <AmazonDisclaimer />
       <Footer />
+      <BackToTop />
     </div>
   )
 }

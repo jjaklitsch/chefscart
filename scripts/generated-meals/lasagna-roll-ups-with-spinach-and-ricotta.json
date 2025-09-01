@@ -1,0 +1,332 @@
+{
+  "slug": "lasagna-roll-ups-with-spinach-and-ricotta",
+  "title": "Lasagna Roll-Ups with Spinach and Ricotta",
+  "description": "Individual lasagna noodle roll-ups filled with a creamy ricotta and spinach mixture, topped with a simple tomato sauce and melted Parmesan. A great make-ahead, portioned twist on classic lasagna.",
+  "courses": [
+    "dinner"
+  ],
+  "cuisines": [
+    "italian"
+  ],
+  "diets_supported": [
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "Ricotta Cheese",
+  "spice_level": 2,
+  "prep_time": 25,
+  "cook_time": 40,
+  "cooking_difficulty": "medium",
+  "time_total_min": 65,
+  "servings_default": 6,
+  "servings_min": 4,
+  "servings_max": 8,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "dairy",
+    "egg",
+    "gluten",
+    "wheat"
+  ],
+  "search_keywords": [
+    "lasagna roll-ups",
+    "ricotta rollups",
+    "spinach lasagna",
+    "baked pasta roll-ups",
+    "vegetarian lasagna"
+  ],
+  "cooking_equipment": [
+    "Colander",
+    "Mixing Bowl",
+    "Whisk",
+    "Wooden Spoon",
+    "Knife",
+    "Cutting Board",
+    "Spatula",
+    "Aluminum Foil",
+    "Oven",
+    "Stove"
+  ],
+  "ingredients_json": [
+    {
+      "name": "Lasagna Noodles",
+      "quantity": 12,
+      "unit": "pound",
+      "category": "Pasta",
+      "organic_supported": false,
+      "brand_filters": [
+        "Barilla",
+        "De Cecco",
+        "Ronzoni"
+      ]
+    },
+    {
+      "name": "Ricotta Cheese",
+      "quantity": 2,
+      "unit": "ounce",
+      "category": "Dairy & Eggs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Galbani",
+        "BelGioioso",
+        "Organic Valley"
+      ]
+    },
+    {
+      "name": "Spinach",
+      "quantity": 10,
+      "unit": "package",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Fresh Express",
+        "Organic Girl",
+        "Earthbound Farm"
+      ]
+    },
+    {
+      "name": "Parmesan Cheese",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Dairy & Eggs",
+      "organic_supported": true,
+      "brand_filters": [
+        "BelGioioso",
+        "Parmigiano Reggiano",
+        "Kraft"
+      ]
+    },
+    {
+      "name": "Large Eggs",
+      "quantity": 1,
+      "unit": "large",
+      "category": "Dairy & Eggs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Eggland's Best",
+        "Vital Farms"
+      ]
+    },
+    {
+      "name": "Garlic",
+      "quantity": 2,
+      "unit": "head",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Christopher Ranch",
+        "Mina"
+      ]
+    },
+    {
+      "name": "Yellow Onion",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "D'Arrigo",
+        "Taylor Farms"
+      ]
+    },
+    {
+      "name": "Extra-Virgin Olive Oil",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Colavita",
+        "California Olive Ranch",
+        "Bertolli"
+      ]
+    },
+    {
+      "name": "Kosher Salt",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Diamond Crystal",
+        "Morton"
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 0.5,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Red Pepper Flakes",
+      "quantity": 0.25,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "Spice Islands"
+      ]
+    },
+    {
+      "name": "Canned Tomatoes",
+      "quantity": 24,
+      "unit": "each",
+      "category": "Canned Goods",
+      "organic_supported": false,
+      "brand_filters": [
+        "Muir Glen",
+        "Hunt's",
+        "Cento"
+      ]
+    },
+    {
+      "name": "Tomato Paste",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Condiments & Sauces",
+      "organic_supported": false,
+      "brand_filters": [
+        "Mutti",
+        "Hunt's",
+        "DeLallo"
+      ]
+    },
+    {
+      "name": "Basil",
+      "quantity": 0.25,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Organic Girl",
+        "Fresh Origins"
+      ]
+    },
+    {
+      "name": "Parsley",
+      "quantity": 2,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Fresh Express",
+        "Dole"
+      ]
+    },
+    {
+      "name": "Butter",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Dairy & Eggs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Land O Lakes",
+        "Kerrygold"
+      ]
+    },
+    {
+      "name": "Water",
+      "quantity": 8,
+      "unit": "fl oz",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "Tap",
+        "Bottled"
+      ]
+    }
+  ],
+  "instructions_json": {
+    "prep_time": 25,
+    "cook_time": 40,
+    "total_time": 65,
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Preheat the oven to 375°F (190°C). Lightly grease a 9x13-inch baking dish with a little butter or olive oil.",
+        "time_minutes": 5
+      },
+      {
+        "step": 2,
+        "instruction": "Bring a large pot of water to a boil, add 1 teaspoon kosher salt. Cook lasagna noodles according to package directions until very al dente (they will finish cooking in the oven), usually 8–9 minutes. Stir occasionally to prevent sticking.",
+        "time_minutes": 10
+      },
+      {
+        "step": 3,
+        "instruction": "Drain noodles in a colander and lay them flat on a lightly oiled sheet pan or a clean surface to prevent them from sticking while you prepare the filling.",
+        "time_minutes": 3
+      },
+      {
+        "step": 4,
+        "instruction": "In a large skillet over medium heat, warm the extra-virgin olive oil and butter. Add the chopped yellow onion and sauté until translucent, about 4 minutes. Add minced garlic and cook 30–45 seconds until fragrant.",
+        "time_minutes": 5
+      },
+      {
+        "step": 5,
+        "instruction": "Add the fresh spinach to the skillet in batches and cook, stirring, until wilted. Remove from heat and let cool slightly. If excess liquid accumulates, transfer spinach to a sieve and press to remove moisture.",
+        "time_minutes": 4
+      },
+      {
+        "step": 6,
+        "instruction": "In a mixing bowl combine ricotta cheese, 3/4 cup grated Parmesan, the beaten large egg, chopped parsley, chopped basil (reserve a little basil for garnish), black pepper, red pepper flakes, and the cooked, drained spinach. Taste and add up to 1/2 teaspoon kosher salt if needed.",
+        "time_minutes": 5
+      },
+      {
+        "step": 7,
+        "instruction": "Make the tomato sauce: in the same skillet over medium heat, add the canned tomatoes and tomato paste. Break tomatoes up with a spoon and simmer 6–8 minutes until slightly thickened. Season with 1/2 teaspoon salt and a pinch of black pepper. Remove from heat.",
+        "time_minutes": 8
+      },
+      {
+        "step": 8,
+        "instruction": "Spread 1 cup of the tomato sauce evenly across the bottom of the prepared baking dish.",
+        "time_minutes": 2
+      },
+      {
+        "step": 9,
+        "instruction": "Place a lasagna noodle on a work surface. Spoon about 2 to 3 tablespoons of the ricotta-spinach mixture along one edge of the noodle and gently roll the noodle into a tight cylinder. Place seam-side down in the baking dish. Repeat with remaining noodles and filling, arranging roll-ups in a single layer.",
+        "time_minutes": 10
+      },
+      {
+        "step": 10,
+        "instruction": "Pour the remaining tomato sauce evenly over the roll-ups. Sprinkle the remaining 1/4 cup Parmesan over the top. Cover the dish tightly with aluminum foil.",
+        "time_minutes": 2
+      },
+      {
+        "step": 11,
+        "instruction": "Bake covered for 20 minutes, then remove foil and bake an additional 10–12 minutes until sauce is bubbling and tops are lightly golden. If you want browned tops, broil 1–2 minutes watching closely.",
+        "time_minutes": 22
+      },
+      {
+        "step": 12,
+        "instruction": "Let the roll-ups rest 5 minutes out of the oven. Garnish with reserved basil and additional chopped parsley if desired. Serve warm.",
+        "time_minutes": 4
+      }
+    ]
+  },
+  "ingredient_tags": [
+    "lasagna noodles",
+    "ricotta cheese",
+    "spinach",
+    "parmesan cheese",
+    "large eggs",
+    "garlic",
+    "yellow onion",
+    "extra-virgin olive oil",
+    "kosher salt",
+    "black pepper",
+    "red pepper flakes",
+    "canned tomatoes",
+    "tomato paste",
+    "basil",
+    "parsley",
+    "butter",
+    "water"
+  ]
+}

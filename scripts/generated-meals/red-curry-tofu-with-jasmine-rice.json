@@ -1,0 +1,390 @@
+{
+  "slug": "red-curry-tofu-with-jasmine-rice",
+  "title": "Red Curry Tofu with Jasmine Rice",
+  "description": "A vibrant Thai-inspired red curry made with crispy pan-fried tofu, vegetables, and creamy coconut milk, served over fragrant jasmine rice. Vegan, plant-forward, and perfect for weeknight dinners.",
+  "courses": [
+    "lunch",
+    "dinner"
+  ],
+  "cuisines": [
+    "thai"
+  ],
+  "diets_supported": [
+    "vegan",
+    "vegetarian",
+    "plant-forward"
+  ],
+  "primary_ingredient": "Tofu",
+  "spice_level": 5,
+  "prep_time": 20,
+  "cook_time": 20,
+  "cooking_difficulty": "medium",
+  "time_total_min": 40,
+  "servings_default": 4,
+  "servings_min": 2,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "soy",
+    "sesame",
+    "wheat"
+  ],
+  "search_keywords": [
+    "red curry tofu",
+    "jasmine rice",
+    "vegan curry",
+    "thai curry tofu",
+    "coconut curry",
+    "weeknight dinner"
+  ],
+  "cooking_equipment": [
+    "Cutting Board",
+    "Mixing Bowl",
+    "Rice Cooker",
+    "Spatula",
+    "Wooden Spoon",
+    "Paper Towels",
+    "Colander"
+  ],
+  "ingredients_json": [
+    {
+      "name": "Tofu",
+      "quantity": 14,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "Nasoya",
+        "House Foods",
+        "Mori-Nu"
+      ]
+    },
+    {
+      "name": "Coconut Milk",
+      "quantity": 13.5,
+      "unit": "can",
+      "category": "Canned Goods",
+      "organic_supported": false,
+      "brand_filters": [
+        "Thai Kitchen",
+        "Aroy-D",
+        "Chaokoh"
+      ]
+    },
+    {
+      "name": "Red Curry Paste",
+      "quantity": 3,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Mae Ploy",
+        "Thai Kitchen",
+        "Maesri"
+      ]
+    },
+    {
+      "name": "Jasmine Rice",
+      "quantity": 2,
+      "unit": "pound",
+      "category": "Rice & Grains",
+      "organic_supported": false,
+      "brand_filters": [
+        "Royal",
+        "Lundberg",
+        "Three Ladies"
+      ]
+    },
+    {
+      "name": "Vegetable Oil",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Wesson",
+        "Crisco",
+        "365 by Whole Foods Market"
+      ]
+    },
+    {
+      "name": "Sesame Oil",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Kadoya",
+        "Lee Kum Kee",
+        "Spectrum"
+      ]
+    },
+    {
+      "name": "Garlic",
+      "quantity": 3,
+      "unit": "head",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Christopher Ranch",
+        "365 by Whole Foods Market",
+        "Spice World"
+      ]
+    },
+    {
+      "name": "Ginger",
+      "quantity": 1,
+      "unit": "per lb",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Fresh",
+        "Rooted",
+        "365 by Whole Foods Market"
+      ]
+    },
+    {
+      "name": "Yellow Onion",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Dole",
+        "Green Giant",
+        "Earthbound Farm"
+      ]
+    },
+    {
+      "name": "Red Bell Peppers",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": true,
+      "brand_filters": [
+        "Green Giant",
+        "Taylor Farms",
+        "Driscoll's"
+      ]
+    },
+    {
+      "name": "Carrots",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Bolthouse Farms",
+        "Dole",
+        " Grimmway"
+      ]
+    },
+    {
+      "name": "Limes",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Limoneira",
+        "Dole",
+        "Sunkist"
+      ]
+    },
+    {
+      "name": "Soy Sauce",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Condiments & Sauces",
+      "organic_supported": false,
+      "brand_filters": [
+        "Kikkoman",
+        "Lee Kum Kee",
+        "San-J"
+      ]
+    },
+    {
+      "name": "Brown Sugar",
+      "quantity": 1,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "Domino",
+        "C&H",
+        "Wholesome"
+      ]
+    },
+    {
+      "name": "Cornstarch",
+      "quantity": 1,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "Argo",
+        "Bob's Red Mill",
+        "King Arthur"
+      ]
+    },
+    {
+      "name": "Water",
+      "quantity": 0.5,
+      "unit": "fl oz",
+      "category": "Baking & Pantry Staples",
+      "organic_supported": false,
+      "brand_filters": [
+        "Filtered",
+        "Tap"
+      ]
+    },
+    {
+      "name": "Vegetable Broth",
+      "quantity": 0.5,
+      "unit": "can",
+      "category": "Canned Goods",
+      "organic_supported": false,
+      "brand_filters": [
+        "Pacific Foods",
+        "Swanson",
+        "Imagine"
+      ]
+    },
+    {
+      "name": "Cilantro",
+      "quantity": 0.25,
+      "unit": "bunch",
+      "category": "Fresh Herbs",
+      "organic_supported": true,
+      "brand_filters": [
+        "Fresh Express",
+        "Dole",
+        "Earthbound Farm"
+      ]
+    },
+    {
+      "name": "Scallions",
+      "quantity": 2,
+      "unit": "package",
+      "category": "Produce",
+      "organic_supported": true,
+      "brand_filters": [
+        "Dole",
+        "Taylor Farms",
+        "Green Giant"
+      ]
+    },
+    {
+      "name": "Kosher Salt",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "Morton",
+        "Diamond Crystal",
+        "365 by Whole Foods Market"
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 0.5,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "365 by Whole Foods Market",
+        "Measure"
+      ]
+    },
+    {
+      "name": "Sesame Seeds",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Nuts & Seeds",
+      "organic_supported": false,
+      "brand_filters": [
+        "McCormick",
+        "365 by Whole Foods Market",
+        "Anthony's"
+      ]
+    }
+  ],
+  "instructions_json": {
+    "prep_time": 20,
+    "cook_time": 20,
+    "total_time": 40,
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Press the tofu: wrap the tofu block in paper towels and place a weight or tofu press on top for 10–15 minutes to remove excess moisture. Meanwhile rinse the jasmine rice.",
+        "time_minutes": 15
+      },
+      {
+        "step": 2,
+        "instruction": "Cook the jasmine rice: in a saucepan or rice cooker combine 2 cups jasmine rice with 2 1/4 cups water (or follow package ratio). Bring to a simmer, cover and cook 12–15 minutes (or according to rice cooker). Let rest covered for 5 minutes, then fluff with a fork.",
+        "time_minutes": 20
+      },
+      {
+        "step": 3,
+        "instruction": "Prep vegetables and tofu: while rice cooks, peel and mince garlic, finely grate or mince ginger, thinly slice yellow onion, julienne red bell pepper and slice carrots. Cube the pressed tofu into 1-inch pieces. Slice scallions and chop cilantro; set aside.",
+        "time_minutes": 10
+      },
+      {
+        "step": 4,
+        "instruction": "Crisp the tofu: heat 1 tablespoon vegetable oil in a large skillet over medium-high heat. Add tofu cubes in a single layer and pan-fry until golden on all sides, 6–8 minutes. Transfer to a plate and set aside.",
+        "time_minutes": 8
+      },
+      {
+        "step": 5,
+        "instruction": "Sauté aromatics: add remaining 1 tablespoon vegetable oil to the skillet. Reduce heat to medium, add yellow onion and carrots and cook 3–4 minutes until beginning to soften. Add garlic and ginger and cook 30–45 seconds until fragrant.",
+        "time_minutes": 5
+      },
+      {
+        "step": 6,
+        "instruction": "Build the curry: stir in the red curry paste and cook 1 minute to bloom the spices. Pour in the coconut milk, vegetable broth (or water), soy sauce, brown sugar, sesame oil and lime juice from 1 lime. Stir to combine and bring to a gentle simmer.",
+        "time_minutes": 4
+      },
+      {
+        "step": 7,
+        "instruction": "Add vegetables and tofu: add red bell pepper and the pan-fried tofu to the simmering curry. Cook 4–6 minutes until vegetables are tender-crisp and flavors meld.",
+        "time_minutes": 6
+      },
+      {
+        "step": 8,
+        "instruction": "Thicken the sauce: whisk cornstarch with 1 tablespoon water to make a slurry. Stir slurry into the simmering curry and cook 1–2 minutes until sauce thickens. Taste and season with salt and black pepper, and more lime juice if needed.",
+        "time_minutes": 2
+      },
+      {
+        "step": 9,
+        "instruction": "Finish and serve: divide jasmine rice among bowls, ladle red curry tofu over the rice, and garnish with cilantro, sliced scallions, sesame seeds and the remaining lime wedges.",
+        "time_minutes": 2
+      }
+    ]
+  },
+  "ingredient_tags": [
+    "tofu",
+    "coconut milk",
+    "red curry paste",
+    "jasmine rice",
+    "vegetable oil",
+    "sesame oil",
+    "garlic",
+    "ginger",
+    "yellow onion",
+    "red bell pepper",
+    "carrots",
+    "limes",
+    "soy sauce",
+    "brown sugar",
+    "cornstarch",
+    "water",
+    "vegetable broth",
+    "cilantro",
+    "scallions",
+    "salt",
+    "black pepper",
+    "sesame seeds"
+  ]
+}

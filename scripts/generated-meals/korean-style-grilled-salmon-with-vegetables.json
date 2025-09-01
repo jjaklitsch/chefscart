@@ -1,0 +1,353 @@
+{
+  "slug": "korean-style-grilled-salmon-with-vegetables",
+  "title": "Korean-Style Grilled Salmon with Vegetables",
+  "description": "Tender salmon fillets marinated in a savory-sesame Korean-style glaze, grilled and served with charred bell pepper, carrots, and broccoli. Finished with scallions and sesame seeds — serve with jasmine rice if desired.",
+  "courses": [
+    "dinner"
+  ],
+  "cuisines": [
+    "korean",
+    "mediterranean"
+  ],
+  "diets_supported": [
+    "pescatarian",
+    "low-carb",
+    "paleo",
+    "mediterranean"
+  ],
+  "primary_ingredient": "Salmon Fillets",
+  "spice_level": 3,
+  "prep_time": 20,
+  "cook_time": 15,
+  "cooking_difficulty": "medium",
+  "time_total_min": 35,
+  "servings_default": 4,
+  "servings_min": 2,
+  "servings_max": 6,
+  "cost_per_serving": "$$",
+  "allergens_present": [
+    "seafood",
+    "soy",
+    "sesame",
+    "wheat",
+    "grain"
+  ],
+  "search_keywords": [
+    "grilled salmon",
+    "Korean salmon",
+    "sesame soy salmon",
+    "grilled vegetables",
+    "marinated salmon"
+  ],
+  "cooking_equipment": [
+    "grill",
+    "whisk",
+    "knife",
+    "tongs"
+  ],
+  "ingredients_json": [
+    {
+      "name": "Salmon Fillets",
+      "quantity": 4,
+      "unit": "pound",
+      "category": "Seafood",
+      "health_filters": [
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Trident Seafoods",
+        "Atlantic Sapphire",
+        "Whole Foods 365"
+      ]
+    },
+    {
+      "name": "Soy Sauce",
+      "quantity": 3,
+      "unit": "fl oz",
+      "category": "Condiments & Sauces",
+      "health_filters": [],
+      "brand_filters": [
+        "Kikkoman",
+        "Lee Kum Kee",
+        "San-J"
+      ]
+    },
+    {
+      "name": "Sesame Oil",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [],
+      "brand_filters": [
+        "Kadoya",
+        "La Tourangelle",
+        "Spectrum"
+      ]
+    },
+    {
+      "name": "Brown Sugar",
+      "quantity": 1,
+      "unit": "package",
+      "category": "Baking & Pantry Staples",
+      "health_filters": [],
+      "brand_filters": [
+        "Domino",
+        "C&H",
+        "Wholesome"
+      ]
+    },
+    {
+      "name": "Garlic",
+      "quantity": 3,
+      "unit": "head",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Christopher Ranch",
+        "Spice World"
+      ]
+    },
+    {
+      "name": "Ginger",
+      "quantity": 1,
+      "unit": "per lb",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Ginger People",
+        "The Ginger Company"
+      ]
+    },
+    {
+      "name": "Rice Vinegar",
+      "quantity": 1,
+      "unit": "fl oz",
+      "category": "Condiments & Sauces",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Marukan",
+        "Nakano"
+      ]
+    },
+    {
+      "name": "Lemons",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Sunkist",
+        "Trader Joe's"
+      ]
+    },
+    {
+      "name": "Scallions",
+      "quantity": 3,
+      "unit": "package",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Organic Girl",
+        "Fresh Express"
+      ]
+    },
+    {
+      "name": "Extra-Virgin Olive Oil",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [],
+      "brand_filters": [
+        "Colavita",
+        "California Olive Ranch",
+        "Bertolli"
+      ]
+    },
+    {
+      "name": "Kosher Salt",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [],
+      "brand_filters": [
+        "Morton",
+        "Diamond Crystal"
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [],
+      "brand_filters": [
+        "McCormick",
+        "Simply Organic"
+      ]
+    },
+    {
+      "name": "Red Pepper Flakes",
+      "quantity": 0.5,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [],
+      "brand_filters": [
+        "McCormick",
+        "Spice Islands"
+      ]
+    },
+    {
+      "name": "Red Bell Peppers",
+      "quantity": 1,
+      "unit": "each",
+      "category": "Spices, Seasonings, & Oils",
+      "health_filters": [
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Del Monte",
+        "Green Giant"
+      ]
+    },
+    {
+      "name": "Carrots",
+      "quantity": 2,
+      "unit": "each",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Bolthouse Farms",
+        "Dole"
+      ]
+    },
+    {
+      "name": "Broccoli",
+      "quantity": 1,
+      "unit": "package",
+      "category": "Produce",
+      "health_filters": [
+        "ORGANIC"
+      ],
+      "brand_filters": [
+        "Green Giant",
+        "Taylor Farms"
+      ]
+    },
+    {
+      "name": "Water",
+      "quantity": 2,
+      "unit": "fl oz",
+      "category": "Baking & Pantry Staples",
+      "health_filters": [],
+      "brand_filters": [
+        "Nestle Pure Life",
+        "Evian"
+      ]
+    },
+    {
+      "name": "Sesame Seeds",
+      "quantity": 1,
+      "unit": "ounce",
+      "category": "Nuts & Seeds",
+      "health_filters": [],
+      "brand_filters": [
+        "McCormick",
+        "Anthony's"
+      ]
+    },
+    {
+      "name": "Jasmine Rice (Optional)",
+      "quantity": 1.5,
+      "unit": "each",
+      "category": "Gourmet",
+      "health_filters": [
+        "GLUTEN_FREE"
+      ],
+      "brand_filters": [
+        "Royal",
+        "Lundberg",
+        "Mahatma"
+      ]
+    }
+  ],
+  "instructions_json": {
+    "prep_time": 20,
+    "cook_time": 15,
+    "total_time": 35,
+    "steps": [
+      {
+        "step": 1,
+        "instruction": "Make the marinade: in a mixing bowl whisk together soy sauce, sesame oil, brown sugar, minced garlic, minced ginger, rice vinegar, juice of the lemon, 1 tablespoon chopped scallions, 2 tablespoons water, and red pepper flakes until sugar dissolves.",
+        "time_minutes": 6
+      },
+      {
+        "step": 2,
+        "instruction": "Place salmon fillets in a shallow dish or zip-top bag and pour half of the marinade over them, reserving the remaining marinade for basting and finishing. Turn to coat, cover and refrigerate 10–15 minutes (do not marinate more than 30 minutes to avoid 'cooking' the fish).",
+        "time_minutes": 5
+      },
+      {
+        "step": 3,
+        "instruction": "While salmon marinates, prep the vegetables: cut the red bell pepper into 1-inch strips, slice carrots thin on the diagonal, and cut broccoli into florets. Toss vegetables in a bowl with extra-virgin olive oil, 1/2 teaspoon kosher salt and 1/2 teaspoon black pepper.",
+        "time_minutes": 6
+      },
+      {
+        "step": 4,
+        "instruction": "Preheat grill or grill pan to medium-high (about 400°F). If using a charcoal or gas grill, oil the grates lightly or use a grill basket for smaller pieces.",
+        "time_minutes": 3
+      },
+      {
+        "step": 5,
+        "instruction": "Grill vegetables: place peppers, carrots and broccoli in a grill basket or directly on the grill. Cook 8–10 minutes, turning occasionally, until charred at edges and tender-crisp. Remove and keep warm.",
+        "time_minutes": 10
+      },
+      {
+        "step": 6,
+        "instruction": "Grill salmon: oil the grill grates or grill pan. Place salmon skin-side down and grill 4–6 minutes per side (depending on thickness). During grilling, baste with reserved marinade once or twice. Use an instant-read thermometer — remove at 125–130°F for medium (or 145°F if you prefer well done).",
+        "time_minutes": 10
+      },
+      {
+        "step": 7,
+        "instruction": "Rest the salmon for 3 minutes. Meanwhile, warm cooked jasmine rice if using.",
+        "time_minutes": 3
+      },
+      {
+        "step": 8,
+        "instruction": "To serve: plate salmon with grilled vegetables (and rice if using), spoon any pan juices over the fish, sprinkle with toasted sesame seeds and remaining chopped scallions, and serve with lemon wedges.",
+        "time_minutes": 2
+      }
+    ]
+  },
+  "ingredient_tags": [
+    "salmon fillets",
+    "soy sauce",
+    "sesame oil",
+    "brown sugar",
+    "garlic",
+    "ginger",
+    "rice vinegar",
+    "lemons",
+    "scallions",
+    "extra-virgin olive oil",
+    "kosher salt",
+    "black pepper",
+    "red pepper flakes",
+    "red bell pepper",
+    "carrots",
+    "broccoli",
+    "water",
+    "sesame seeds",
+    "jasmine rice optional"
+  ]
+}
