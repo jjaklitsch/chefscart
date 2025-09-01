@@ -52,7 +52,7 @@ export default function DietPage() {
       
       // First, get all diets to find the exact match
       const { data: allMeals, error: mealsError } = await supabase
-        .from('meals')
+        .from('meal2')
         .select('diets_supported')
 
       if (mealsError) throw mealsError
@@ -80,7 +80,7 @@ export default function DietPage() {
 
       // Get recipes for this diet
       const { data, error } = await supabase
-        .from('meals')
+        .from('meal2')
         .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url')
         .contains('diets_supported', [matchingDiet])
         .order('title')

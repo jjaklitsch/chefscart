@@ -68,7 +68,7 @@ export default function DifficultyPage() {
 
       // Get recipes for this difficulty
       const { data, error } = await supabase
-        .from('meals')
+        .from('meal2')
         .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url')
         .eq('cooking_difficulty', difficulty)
         .order('title')

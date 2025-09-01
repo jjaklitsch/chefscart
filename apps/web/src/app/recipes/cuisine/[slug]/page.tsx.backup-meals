@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useParams, notFound } from 'next/navigation'
-import { ArrowLeft, ChefHat, Utensils } from 'lucide-react'
+import { ArrowLeft, ChefHat, Globe } from 'lucide-react'
 import Link from 'next/link'
 import { createClient } from '../../../../../lib/supabase'
 import RecipeCard from '../../../../../components/RecipeCard'
@@ -32,53 +32,53 @@ interface Recipe {
   slug?: string
 }
 
-export default function CoursePage() {
+export default function CuisinePage() {
   const params = useParams()
   const slug = params.slug as string
   
   const [recipes, setRecipes] = useState<Recipe[]>([])
   const [loading, setLoading] = useState(true)
-  const [courseName, setCourseName] = useState('')
+  const [cuisineName, setCuisineName] = useState('')
 
   useEffect(() => {
     if (slug) {
-      loadCourseRecipes()
+      loadCuisineRecipes()
     }
   }, [slug])
 
-  const loadCourseRecipes = async () => {
+  const loadCuisineRecipes = async () => {
     try {
       const supabase = createClient()
       
-      // First, get all courses to find the exact match
+      // First, get all cuisines to find the exact match
       const { data: allMeals, error: mealsError } = await supabase
-        .from('meal2')
-        .select('courses') as { data: any[] | null, error: any }
+        .from('meals')
+        .select('cuisines') as { data: any[] | null, error: any }
 
       if (mealsError) throw mealsError
 
-      // Find the course name that matches our slug
-      const allCourses = new Set<string>()
+      // Find the cuisine name that matches our slug
+      const allCuisines = new Set<string>()
       allMeals?.forEach(meal => {
-        meal.courses.forEach((course: string) => allCourses.add(course))
+        meal.cuisines.forEach((cuisine: string) => allCuisines.add(cuisine))
       })
 
-      const matchingCourse = Array.from(allCourses).find(course => 
-        course.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug
+      const matchingCuisine = Array.from(allCuisines).find(cuisine => 
+        cuisine.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug
       )
 
-      if (!matchingCourse) {
+      if (!matchingCuisine) {
         notFound()
         return
       }
 
-      setCourseName(matchingCourse)
+      setCuisineName(matchingCuisine)
 
-      // Get recipes for this course
+      // Get recipes for this cuisine
       const { data, error } = await supabase
-        .from('meal2')
+        .from('meals')
         .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url')
-        .contains('courses', [matchingCourse])
+        .contains('cuisines', [matchingCuisine])
         .order('title') as { data: any[] | null, error: any }
 
       if (error) throw error
@@ -91,7 +91,7 @@ export default function CoursePage() {
 
       setRecipes(formattedRecipes || [])
     } catch (error) {
-      console.error('Error loading course recipes:', error)
+      console.error('Error loading cuisine recipes:', error)
       notFound()
     } finally {
       setLoading(false)
@@ -129,18 +129,18 @@ export default function CoursePage() {
       </div>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white">
+      <div className="bg-gradient-to-br from-orange-500 to-red-500 text-white">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <Utensils className="w-5 h-5 mr-2" />
-              <span className="text-sm font-medium">Meal Type</span>
+              <Globe className="w-5 h-5 mr-2" />
+              <span className="text-sm font-medium">Cuisine</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              {toTitleCase(courseName)} Recipes
+              {toTitleCase(cuisineName)} Recipes
             </h1>
-            <p className="text-xl md:text-2xl text-purple-100 mb-8 leading-relaxed">
-              Perfect {courseName.toLowerCase()} recipes to make every meal special and delicious.
+            <p className="text-xl md:text-2xl text-orange-100 mb-8 leading-relaxed">
+              Discover authentic {cuisineName.toLowerCase()} dishes and bring these incredible flavors to your kitchen.
             </p>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 inline-block">
               <span className="text-lg font-semibold">{recipes.length} recipe{recipes.length !== 1 ? 's' : ''} available</span>
@@ -168,7 +168,7 @@ export default function CoursePage() {
             </div>
             <h3 className="text-xl font-semibold text-neutral-800 mb-2">No recipes found</h3>
             <p className="text-neutral-600 mb-6 max-w-md mx-auto">
-              We couldn't find any recipes for this meal type. Please try browsing other categories.
+              We couldn't find any recipes for this cuisine. Please try browsing other categories.
             </p>
             <Link
               href="/recipes"

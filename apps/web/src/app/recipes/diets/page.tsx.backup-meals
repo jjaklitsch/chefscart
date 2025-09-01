@@ -27,7 +27,7 @@ export default function DietsPage() {
     const fetchDiets = async () => {
       try {
         const { data: meals, error } = await supabase
-          .from('meal2')
+          .from('meals')
           .select('diets_supported')
           .not('diets_supported', 'is', null)
 

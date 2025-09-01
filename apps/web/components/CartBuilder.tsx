@@ -469,7 +469,7 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
         recipe.ingredients?.map(ing => ({
           display_name: ing.name,
           shoppable_name: ing.name, // Fallback only - real data has proper shoppable_name
-          quantity: ing.amount,
+          quantity: ing.amount || 1,
           unit: ing.unit,
           category: ing.category || 'other',
           scale_type: 'linear' as const,

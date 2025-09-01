@@ -19,7 +19,6 @@ interface MealIngredient {
 
 interface MealIngredients {
   ingredients: MealIngredient[];
-  servings?: number;
 }
 
 interface AggregatedIngredient {
@@ -236,7 +235,7 @@ export class ShoppingCartService {
     // Fetch meal ingredients
     const mealIds = mealSelections.map(sel => sel.mealId);
     const { data: meals, error } = await this.supabase
-      .from('meal2')
+      .from('meals')
       .select('id, title, ingredients_json')
       .in('id', mealIds)
       .not('ingredients_json', 'is', null);
@@ -265,7 +264,7 @@ export class ShoppingCartService {
     for (const meal of meals as any[]) {
       const mealIngredients = meal.ingredients_json as MealIngredients;
       const targetServings = servingLookup[meal.id];
-      const originalServings = mealIngredients.servings || 4;
+      const originalServings = mealIngredients.servings;
 
       if (!mealIngredients?.ingredients) {
         console.warn(`⚠️ No ingredients found for meal: ${meal.title}`);
@@ -281,8 +280,8 @@ export class ShoppingCartService {
           existing.total_quantity += scaledQuantity;
           existing.source_meals.push(meal.title);
           // Merge health and brand filters
-          existing.health_filters = Array.from(new Set([...existing.health_filters, ...ingredient.health_filters]));
-          existing.brand_filters = Array.from(new Set([...existing.brand_filters, ...ingredient.brand_filters]));
+          existing.health_filters = [...new Set([...existing.health_filters, ...ingredient.health_filters])];
+          existing.brand_filters = [...new Set([...existing.brand_filters, ...ingredient.brand_filters])];
         } else {
           aggregatedMap.set(aggregationKey, {
             name: ingredient.name,
@@ -324,9 +323,9 @@ export class ShoppingCartService {
       'Produce', 'Fresh Herbs',
       'Meat & Poultry', 'Seafood', 'Dairy & Eggs',
       'Canned Goods', 'Frozen',
-      'Rice & Grains', 'Pasta', 'Baking & Pantry Staples',
-      'Spices, Seasonings, & Oils', 'Condiments & Sauces',
-      'Nuts & Seeds', 'Bakery & Bread', 'International', 'Gourmet'
+      'Rice & Grains', 'Pasta', 'Pantry Staples',
+      'Oils & Vinegars', 'Sauces', 'Condiments',
+      'Spices & Seasonings', 'Nuts & Seeds'
     ];
 
     shoppingList.sort((a, b) => {
@@ -352,14 +351,13 @@ export class ShoppingCartService {
       'Frozen': 'Frozen',
       'Canned Goods': 'Pantry',
       'Rice & Grains': 'Pantry',
-      'Pasta': 'Pantry',
-      'Baking & Pantry Staples': 'Pantry',
-      'Spices, Seasonings, & Oils': 'Pantry',
-      'Condiments & Sauces': 'Pantry',
-      'Nuts & Seeds': 'Pantry',
-      'Bakery & Bread': 'Pantry',
-      'International': 'Pantry',
-      'Gourmet': 'Pantry'
+      'Pasta': 'Pantry', 
+      'Pantry Staples': 'Pantry',
+      'Oils & Vinegars': 'Pantry',
+      'Sauces': 'Pantry',
+      'Condiments': 'Pantry',
+      'Spices & Seasonings': 'Pantry',
+      'Nuts & Seeds': 'Pantry'
     };
 
     return shoppingList.reduce((grouped, item) => {

@@ -73,7 +73,7 @@ export default function RecipePage() {
       
       // Get all meals and find by slug matching
       const { data: allMeals, error } = await supabase
-        .from('meal2')
+        .from('meals')
         .select('*') as { data: any[] | null, error: any }
       
       if (error) {
@@ -386,12 +386,7 @@ export default function RecipePage() {
             {/* Ingredients */}
             <div>
               <RecipeIngredients 
-                ingredients={recipe.ingredients_json?.ingredients?.map(ing => ({
-                  name: ing.display_name || '',
-                  quantity: ing.quantity || 0,
-                  unit: ing.unit || '',
-                  ...(ing.category && { category: ing.category })
-                })) || []}
+                ingredients={recipe.ingredients_json?.ingredients || []}
                 originalServings={recipe.servings_default}
                 adjustedServings={servings}
               />
@@ -412,6 +407,7 @@ export default function RecipePage() {
                 recipeCourses={recipe.courses}
                 recipeCuisines={recipe.cuisines}
                 cookingDifficulty={recipe.cooking_difficulty || 'medium'}
+                equipmentNeeded={undefined} // Will be populated when data is available in meals table
               />
             </div>
           </div>

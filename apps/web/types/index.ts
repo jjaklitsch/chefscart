@@ -81,9 +81,13 @@ export interface Recipe {
 
 export interface Ingredient {
   name: string
-  amount: number
+  quantity: number
   unit: string
   category?: string
+  health_filters?: string[]
+  brand_filters?: string[]
+  // Legacy support
+  amount?: number
 }
 
 export interface NutritionInfo {
@@ -668,4 +672,109 @@ export interface SocialFeedResponse {
   has_more: boolean
   next_cursor?: string
   error?: string
+}
+
+// Shop & Amazon Affiliate Types
+export interface ShopCategory {
+  id: string
+  name: string
+  slug: string
+  description?: string
+  image_url?: string
+  sort_order: number
+  is_featured: boolean
+  equipment_count?: number
+}
+
+export interface CookingEquipment {
+  id: string
+  name: string
+  display_name: string
+  slug: string
+  amazon_search_terms: string[]
+  description?: string
+  image_url?: string
+  popularity_score: number
+  is_essential: boolean
+  average_price_range?: string
+  affiliate_url?: string
+  categories?: ShopCategory[]
+}
+
+export interface AmazonProduct {
+  product_id: string
+  product_title: string
+  product_photos: string[]
+  product_page_url: string
+  offer: {
+    price: string
+    currency_code?: string
+    store_name?: string
+    availability?: string
+  }
+  rating?: number
+  review_count?: number
+  brand?: string
+  features?: string[]
+}
+
+export interface AmazonSearchParams {
+  keywords: string
+  page?: number
+  count?: number
+  category?: string
+  minPrice?: number
+  maxPrice?: number
+  brand?: string
+}
+
+export interface AmazonSearchResponse {
+  success: boolean
+  data?: {
+    products: AmazonProduct[]
+    pagination: {
+      currentPage: number
+      itemsPerPage: number
+      totalResults: number
+      hasNextPage: boolean
+    }
+    searchUrl?: string
+    query: {
+      keywords: string
+      category: string
+      filters: {
+        minPrice?: number
+        maxPrice?: number
+        brand?: string
+      }
+    }
+  }
+  error?: {
+    message: string
+    code: string
+  }
+}
+
+export interface ShopSearchState {
+  query: string
+  results: AmazonProduct[]
+  isLoading: boolean
+  hasMore: boolean
+  currentPage: number
+  totalResults: number
+  error?: string
+}
+
+export interface ShoppingCartItem {
+  asin: string
+  title: string
+  price: string
+  image?: string
+  quantity: number
+}
+
+export interface ShoppingCart {
+  items: ShoppingCartItem[]
+  totalPrice?: string
+  amazonCartUrl?: string
 }

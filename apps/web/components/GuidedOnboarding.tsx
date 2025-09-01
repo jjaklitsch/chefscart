@@ -74,6 +74,7 @@ const onboardingSteps: OnboardingStep[] = [
 const dietaryStyleOptions = [
   { id: 'none', label: 'None', value: [], icon: '✅' },
   { id: 'keto', label: 'Keto', value: ['keto'], icon: '🥑' },
+  { id: 'kosher', label: 'Kosher', value: ['kosher'], icon: '✡️' },
   { id: 'low_carb', label: 'Low-carb', value: ['low-carb'], icon: '🥒' },
   { id: 'mediterranean', label: 'Mediterranean', value: ['mediterranean'], icon: '🫒' },
   { id: 'paleo', label: 'Paleo', value: ['paleo'], icon: '🥩' },

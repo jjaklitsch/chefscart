@@ -49,13 +49,19 @@ export default function Header() {
                   href="/" 
                   className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
                 >
-                  Home
+                  Meal Planning
                 </Link>
                 <Link 
                   href="/recipes" 
                   className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
                 >
                   Recipes
+                </Link>
+                <Link 
+                  href="/shop" 
+                  className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
+                >
+                  Shop
                 </Link>
                 <Link 
                   href="/grocery-list" 
@@ -97,6 +103,12 @@ export default function Header() {
                   className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
                 >
                   Recipes
+                </Link>
+                <Link
+                  href="/shop"
+                  className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden sm:block"
+                >
+                  Shop
                 </Link>
                 <Link
                   href={user ? `/user/${user.id}` : '/profile'}
@@ -149,7 +161,7 @@ export default function Header() {
                       onClick={closeMobileMenu}
                       className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
                     >
-                      Home
+                      Meal Planning
                     </Link>
                     <Link 
                       href="/recipes"
@@ -157,6 +169,13 @@ export default function Header() {
                       className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
                     >
                       Recipes
+                    </Link>
+                    <Link 
+                      href="/shop"
+                      onClick={closeMobileMenu}
+                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100 last:border-b-0"
+                    >
+                      Shop
                     </Link>
                     <Link 
                       href="/grocery-list"
@@ -204,6 +223,13 @@ export default function Header() {
                       className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100"
                     >
                       Recipes
+                    </Link>
+                    <Link
+                      href="/shop"
+                      onClick={closeMobileMenu}
+                      className="block py-3 text-neutral-700 hover:text-green-700 font-medium transition-colors border-b border-neutral-100"
+                    >
+                      Shop
                     </Link>
                     <Link
                       href={user ? `/user/${user.id}` : '/profile'}

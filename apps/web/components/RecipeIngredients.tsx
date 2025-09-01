@@ -4,13 +4,15 @@ import React from 'react'
 import { ShoppingCart } from 'lucide-react'
 
 interface Ingredient {
-  display_name: string
-  quantity?: number
+  name: string
+  quantity: number
   unit?: string
   category?: string
+  health_filters?: string[]
+  brand_filters?: string[]
+  // Legacy support for old schema
+  display_name?: string
   shoppable_name?: string
-  // Legacy support
-  name?: string
   amount?: number
 }
 
@@ -80,7 +82,7 @@ const RecipeIngredients: React.FC<RecipeIngredientsProps> = ({
                 className="flex items-center py-2 text-sm"
               >
                 <span className="text-neutral-700 flex-1 pr-3">
-                  {ingredient.shoppable_name || ingredient.display_name || ingredient.name}
+                  {ingredient.name || ingredient.shoppable_name || ingredient.display_name}
                 </span>
                 <span className="font-medium text-neutral-900 whitespace-nowrap">
                   {formatAmount(ingredient)}
