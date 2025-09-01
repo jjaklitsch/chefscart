@@ -27,10 +27,7 @@ export default function CartSuccessPage() {
             clearInterval(timer)
             // Try to open Instacart in new tab (may be blocked by popup blocker)
             window.open(mealPlanData.cartUrl, '_blank')
-            // Always redirect current tab to homepage after brief delay
-            setTimeout(() => {
-              window.location.href = '/?success=true'
-            }, 1000)
+            // Note: No automatic redirect - let user stay on success page
             return 0
           }
           return prev - 1
@@ -124,7 +121,6 @@ export default function CartSuccessPage() {
                 <button
                   onClick={() => {
                     window.open(mealPlanData.cartUrl, '_blank')
-                    setTimeout(() => window.location.href = '/?success=true', 1000)
                     setInstacartRedirectTimer(0)
                   }}
                   className="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3"
