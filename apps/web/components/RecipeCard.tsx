@@ -42,7 +42,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, href, className = '' })
     <Link href={href} className={`block group h-full ${className}`}>
       <article className="bg-white rounded-2xl shadow-soft border border-neutral-200 overflow-hidden transition-all duration-300 hover:shadow-medium hover:scale-[1.02] transform h-full flex flex-col">
         {/* Recipe Image */}
-        <div className="relative h-48 bg-gradient-to-br from-sage-100 to-cream-100 overflow-hidden flex-shrink-0">
+        <div className="relative h-56 bg-gradient-to-br from-sage-100 to-cream-100 overflow-hidden flex-shrink-0">
           {recipe.image_url ? (
             <img 
               src={recipe.image_url} 
@@ -60,7 +60,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, href, className = '' })
         </div>
 
         {/* Content */}
-        <div className="p-6 flex flex-col flex-1">
+        <div className="p-6 pb-5 flex flex-col flex-1 min-h-[280px]">
           {/* Title and Description */}
           <div className="mb-4">
             <h3 className="text-lg font-display font-bold text-neutral-800 mb-2 line-clamp-2 min-h-[3.5rem] group-hover:text-brand-700 transition-colors">
@@ -72,8 +72,9 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, href, className = '' })
           </div>
 
           {/* Recipe Stats */}
-          <div className="flex items-center justify-between text-xs text-neutral-500 mb-4 flex-shrink-0">
-            <div className="flex items-center gap-1">
+          <div className="text-xs text-neutral-500 mb-4 flex-shrink-0">
+            {/* Timing */}
+            <div className="flex items-center gap-1 mb-2">
               <Clock className="w-3 h-3" />
               <span>
                 {prepTime && cookTime 
@@ -86,6 +87,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, href, className = '' })
                 }
               </span>
             </div>
+            {/* Cuisine */}
             <div className="flex items-center gap-1">
               <ChefHat className="w-3 h-3" />
               <span>{toTitleCase(primaryCuisine)}</span>

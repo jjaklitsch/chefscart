@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { createClient } from '../../../lib/supabase'
 import RecipeCard from '../../../components/RecipeCard'
 import RecipeFilters from '../../../components/RecipeFilters'
+import RecipeCarousel from '../../../components/RecipeCarousel'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 
@@ -482,6 +483,61 @@ function RecipesPageContent() {
                 ))}
               </div>
             </section>
+
+            {/* Recipe Category Carousels */}
+            <RecipeCarousel
+              title="Quick & Easy"
+              subtitle="Delicious meals ready in 30 minutes or less"
+              filterType="difficulty"
+              filterValue="easy"
+              viewAllLink="/recipes?difficulty=easy"
+              className="mb-16"
+            />
+
+            <RecipeCarousel
+              title="Italian Favorites"
+              subtitle="Classic Italian dishes to bring Italy to your table"
+              filterType="cuisine"
+              filterValue="italian"
+              viewAllLink="/recipes?cuisine=italian"
+              className="mb-16"
+            />
+
+            <RecipeCarousel
+              title="Vegetarian Delights"
+              subtitle="Plant-based recipes packed with flavor and nutrition"
+              filterType="diet"
+              filterValue="vegetarian"
+              viewAllLink="/recipes?diet=vegetarian"
+              className="mb-16"
+            />
+
+            <RecipeCarousel
+              title="Chicken Dishes"
+              subtitle="From comfort classics to global flavors"
+              filterType="ingredient"
+              filterValue="chicken"
+              viewAllLink="/recipes?search=chicken"
+              className="mb-16"
+            />
+
+            <RecipeCarousel
+              title="Perfect for Dinner"
+              subtitle="Satisfying evening meals for every occasion"
+              filterType="course"
+              filterValue="dinner"
+              viewAllLink="/recipes?course=dinner"
+              className="mb-16"
+            />
+
+            <RecipeCarousel
+              title="Asian Inspired"
+              subtitle="Bold flavors and exciting spices from across Asia"
+              filterType="cuisine"
+              filterValue="asian"
+              viewAllLink="/recipes?cuisine=asian"
+              className="mb-16"
+            />
 
             {/* Browse by Categories */}
             <section className="mb-16">

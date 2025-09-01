@@ -22,9 +22,10 @@ export default function CookingEquipment({
   equipmentNeeded 
 }: CookingEquipmentProps) {
   const [equipment, setEquipment] = useState<EquipmentType[]>([])
-  const [products, setProducts] = useState<{ [key: string]: AmazonProduct[] }>({})
+  const [products, setProducts] = useState<{ [key: string]: AmazonProduct }>({}) // Single product per equipment
   const [loading, setLoading] = useState(true)
   const [loadingProducts, setLoadingProducts] = useState<{ [key: string]: boolean }>({})
+  const [selectedCategory, setSelectedCategory] = useState<string>('all')
 
   useEffect(() => {
     loadRecommendedEquipment()
@@ -52,6 +53,12 @@ export default function CookingEquipment({
       }
 
       setEquipment(recommendedEquipment)
+      
+      // Debug: Log equipment and their categories
+      console.log('Loaded equipment:', recommendedEquipment.map(item => ({
+        name: item.display_name,
+        category: getEquipmentCategory(item.display_name)
+      })))
       
       // Load Amazon products for each equipment item
       recommendedEquipment.forEach((item) => {
@@ -111,13 +118,14 @@ export default function CookingEquipment({
       // Use the first Amazon search term for the equipment
       const searchTerm = equipmentItem.amazon_search_terms[0] || equipmentItem.display_name
       
-      const response = await fetch(`/api/amazon/search?q=${encodeURIComponent(searchTerm)}&count=3&category=All`)
+      const response = await fetch(`/api/amazon/search?q=${encodeURIComponent(searchTerm)}&count=10&category=All`)
       const data = await response.json()
 
-      if (data.success && data.data?.products) {
+      if (data.success && data.data?.products && data.data.products.length > 0) {
+        // Get the first (best) product only
         setProducts(prev => ({
           ...prev,
-          [equipmentId]: data.data.products.slice(0, 2) // Show fewer products in recipe context
+          [equipmentId]: data.data.products[0]
         }))
       }
     } catch (error) {
@@ -136,6 +144,42 @@ export default function CookingEquipment({
   const formatPrice = (price: string) => {
     return price.replace(/[^\d.,]/g, '').trim() || price
   }
+
+  // Equipment categories for filtering
+  const equipmentCategories = [
+    { id: 'all', label: 'All Equipment' },
+    { id: 'knives', label: 'Knives & Cutting' },
+    { id: 'cookware', label: 'Pots & Pans' },
+    { id: 'baking', label: 'Baking Tools' },
+    { id: 'prep', label: 'Prep Tools' },
+    { id: 'appliances', label: 'Small Appliances' }
+  ]
+
+  const getEquipmentCategory = (equipmentName: string): string => {
+    const name = equipmentName.toLowerCase()
+    // More comprehensive matching for knives & cutting
+    if (name.includes('knife') || name.includes('cutting') || name.includes('grater') || 
+        name.includes('chef') || name.includes('blade') || name.includes('peeler') ||
+        name.includes('slicer') || name.includes('chopper')) return 'knives'
+    // Cookware category
+    if (name.includes('pan') || name.includes('pot') || name.includes('wok') || 
+        name.includes('skillet') || name.includes('saucepan') || name.includes('frying') ||
+        name.includes('dutch oven') || name.includes('casserole')) return 'cookware'
+    // Baking tools
+    if (name.includes('baking') || name.includes('sheet') || name.includes('measuring') || 
+        name.includes('whisk') || name.includes('mixer') || name.includes('cake') ||
+        name.includes('cookie') || name.includes('muffin') || name.includes('loaf')) return 'baking'
+    // Small appliances
+    if (name.includes('processor') || name.includes('machine') || name.includes('cooker') || 
+        name.includes('blender') || name.includes('toaster') || name.includes('microwave') ||
+        name.includes('electric') || name.includes('stand mixer')) return 'appliances'
+    // Prep tools (default for bowls, utensils, etc)
+    return 'prep'
+  }
+
+  const filteredEquipment = selectedCategory === 'all' 
+    ? equipment 
+    : equipment.filter(item => getEquipmentCategory(item.display_name) === selectedCategory)
 
   if (loading) {
     return (
@@ -170,147 +214,140 @@ export default function CookingEquipment({
   return (
     <div className="bg-white rounded-2xl shadow-subtle border border-neutral-200 overflow-hidden">
       <div className="bg-gradient-to-r from-neutral-50 to-sage-50 px-6 py-4 border-b border-neutral-200">
-        <div className="flex items-center gap-3">
-          <div className="bg-green-600 rounded-lg p-2">
-            <ChefHat className="h-5 w-5 text-white" />
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <div className="bg-green-600 rounded-lg p-2">
+              <ChefHat className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-display font-bold text-neutral-800">Required Equipment</h3>
+              <p className="text-sm text-neutral-600">Essential tools for making this recipe</p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-lg font-display font-bold text-neutral-800">Required Equipment</h3>
-            <p className="text-sm text-neutral-600">Essential tools for making this recipe</p>
-          </div>
+        </div>
+        
+        {/* Category Filter Pills */}
+        <div className="flex flex-wrap gap-2">
+          {equipmentCategories.map((category) => {
+            const categoryCount = category.id === 'all' 
+              ? equipment.length 
+              : equipment.filter(item => getEquipmentCategory(item.display_name) === category.id).length
+            
+            return (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                  selectedCategory === category.id
+                    ? 'bg-green-600 text-white'
+                    : 'bg-white text-neutral-600 hover:bg-green-50 hover:text-green-600 border border-neutral-200'
+                }`}
+              >
+                {category.label} ({categoryCount})
+              </button>
+            )
+          })}
         </div>
       </div>
       
       <div className="p-6">
-        <div className="space-y-6">
-          {equipment.map((item) => (
-            <div key={item.id} className="border-b border-neutral-100 last:border-b-0 pb-6 last:pb-0">
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h4 className="text-lg font-semibold text-neutral-800 mb-1">
-                    {item.display_name}
-                  </h4>
-                  <p className="text-sm text-neutral-600 mb-2">
-                    {item.description || `Essential ${item.display_name.toLowerCase()} for this recipe.`}
-                  </p>
-                  <div className="flex items-center gap-4">
-                    {item.average_price_range && (
-                      <span className="text-sm font-medium text-green-600">
-                        {item.average_price_range}
-                      </span>
-                    )}
-                    {item.is_essential && (
-                      <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded-full">
-                        Essential
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <Link
-                  href={`/shop/search?q=${encodeURIComponent(item.display_name)}`}
-                  className="text-sm text-green-600 hover:text-green-700 font-medium flex items-center gap-1 whitespace-nowrap ml-4"
-                >
-                  Shop All
-                  <ExternalLink className="h-3 w-3" />
-                </Link>
+        {filteredEquipment.length === 0 ? (
+          <div className="text-center py-8 text-neutral-500">
+            <ChefHat className="h-12 w-12 text-neutral-300 mx-auto mb-3" />
+            <p className="text-sm">No equipment found for this category</p>
+            <button
+              onClick={() => setSelectedCategory('all')}
+              className="mt-2 text-green-600 hover:text-green-700 font-medium text-sm"
+            >
+              View All Equipment
+            </button>
+          </div>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredEquipment.map((item) => (
+            <div key={item.id} className="bg-white border border-neutral-200 rounded-xl p-4 hover:shadow-md transition-all h-full flex flex-col">
+              {/* Equipment header */}
+              <div className="mb-3">
+                <h4 className="font-semibold text-neutral-800 text-base">
+                  {item.display_name}
+                </h4>
               </div>
 
-              {/* Product Recommendations */}
+              {/* Single Product Display */}
               {loadingProducts[item.id] ? (
                 <div className="text-center py-4">
-                  <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-green-600 mx-auto mb-2"></div>
-                  <p className="text-xs text-neutral-600">Loading products...</p>
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-green-600 mx-auto mb-2"></div>
+                  <p className="text-xs text-neutral-600">Loading...</p>
                 </div>
-              ) : (products[item.id]?.length || 0) > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {products[item.id]?.slice(0, 2).map((product, index) => (
-                    <div
-                      key={`${product.product_id}-${index}`}
-                      className="flex gap-3 bg-neutral-50 rounded-lg p-3 hover:bg-neutral-100 transition-colors"
-                    >
-                      {/* Product Image */}
-                      <div className="w-16 h-16 bg-white rounded-lg overflow-hidden flex-shrink-0">
-                        {product.product_photos[0] ? (
-                          <img
-                            src={product.product_photos[0]}
-                            alt={product.product_title}
-                            className="w-full h-full object-contain"
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement
-                              target.style.display = 'none'
-                            }}
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center">
-                            <ShoppingCart className="h-6 w-6 text-neutral-300" />
-                          </div>
-                        )}
-                      </div>
+              ) : products[item.id] ? (
+                <div className="flex flex-col flex-1">
+                  {/* Product Image */}
+                  <div className="w-full h-32 bg-neutral-50 rounded-lg overflow-hidden flex items-center justify-center mb-3">
+                    {products[item.id].product_photos[0] ? (
+                      <img
+                        src={products[item.id].product_photos[0]}
+                        alt={products[item.id].product_title}
+                        className="w-full h-full object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.style.display = 'none'
+                        }}
+                      />
+                    ) : (
+                      <ShoppingCart className="h-8 w-8 text-neutral-300" />
+                    )}
+                  </div>
 
-                      {/* Product Details */}
-                      <div className="flex-1 min-w-0">
-                        <h5 className="font-medium text-neutral-800 text-sm line-clamp-2 mb-1">
-                          {product.product_title}
-                        </h5>
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="font-bold text-green-600 text-sm">
-                            {formatPrice(product.offer.price)}
-                          </div>
-                          {product.brand && (
-                            <div className="text-xs text-neutral-500 truncate ml-2">
-                              {product.brand}
-                            </div>
-                          )}
-                        </div>
-                        <div className="flex gap-2">
-                          <a
-                            href={generateAmazonCartUrl(product)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 bg-green-600 hover:bg-green-700 text-white py-1.5 px-2 rounded text-xs font-medium transition-colors flex items-center justify-center gap-1"
-                          >
-                            <ShoppingCart className="h-3 w-3" />
-                            Add to Cart
-                          </a>
-                          <a
-                            href={product.product_page_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 bg-neutral-200 hover:bg-neutral-300 text-neutral-700 py-1.5 px-2 rounded text-xs font-medium transition-colors flex items-center justify-center gap-1"
-                          >
-                            <ExternalLink className="h-3 w-3" />
-                            View
-                          </a>
-                        </div>
+                  {/* Product Details */}
+                  <div className="flex flex-col flex-1">
+                    <h5 className="font-medium text-neutral-800 text-sm line-clamp-2 leading-tight mb-2">
+                      {products[item.id].product_title}
+                    </h5>
+                    {products[item.id].brand && (
+                      <div className="text-xs text-neutral-500 mb-2">
+                        {products[item.id].brand}
                       </div>
+                    )}
+                    <div className="font-bold text-green-600 text-lg mb-3">
+                      ${formatPrice(products[item.id].offer.price)}
                     </div>
-                  ))}
+                    <div className="mt-auto">
+                      <a
+                        href={generateAmazonCartUrl(products[item.id])}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
+                      >
+                        <ShoppingCart className="h-4 w-4" />
+                        Add to Cart
+                      </a>
+                    </div>
+                  </div>
                 </div>
               ) : (
-                <div className="text-center py-2 text-neutral-500 text-sm">
+                <div className="text-center py-4 text-neutral-500 text-sm flex-1 flex items-center justify-center">
                   <Link
                     href={`/shop/search?q=${encodeURIComponent(item.display_name)}`}
                     className="text-green-600 hover:text-green-700 font-medium"
                   >
-                    Search for {item.display_name} on Amazon →
+                    Search for {item.display_name} →
                   </Link>
                 </div>
               )}
-            </div>
-          ))}
-        </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Footer with link to shop */}
-        <div className="mt-6 pt-6 border-t border-neutral-200">
-          <div className="text-center">
-            <Link
-              href="/shop"
-              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg font-medium transition-colors"
-            >
-              <ChefHat className="h-4 w-4" />
-              Shop All Kitchen Equipment
-            </Link>
-          </div>
+        <div className="text-center mt-6">
+          <Link
+            href="/shop"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-brand-50 hover:bg-brand-100 text-brand-700 rounded-lg font-medium transition-colors"
+          >
+            Shop All Kitchen Equipment
+            <ChefHat className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </div>
