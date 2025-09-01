@@ -66,9 +66,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (existingItemIndex >= 0) {
         // Item already exists, increase quantity
         const updatedItems = [...prevItems]
-        updatedItems[existingItemIndex] = {
-          ...updatedItems[existingItemIndex],
-          quantity: updatedItems[existingItemIndex].quantity + 1
+        const existingItem = updatedItems[existingItemIndex]
+        if (existingItem) {
+          updatedItems[existingItemIndex] = {
+            ...existingItem,
+            quantity: existingItem.quantity + 1
+          }
         }
         return updatedItems
       } else {

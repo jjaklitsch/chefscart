@@ -118,7 +118,7 @@ export default function RecipePage() {
     setCreatingCart(true)
     try {
       // Get ingredients list using the same logic as the component
-      let ingredientsList = [];
+      let ingredientsList: any[] = [];
       if (recipe.ingredients_json?.ingredients && Array.isArray(recipe.ingredients_json.ingredients)) {
         ingredientsList = recipe.ingredients_json.ingredients;
       } else if (Array.isArray(recipe.ingredients_json)) {
@@ -412,7 +412,7 @@ export default function RecipePage() {
               <RecipeIngredients 
                 ingredients={(() => {
                   // Handle different ingredient data structures
-                  let ingredientsList = [];
+                  let ingredientsList: any[] = [];
                   
                   if (recipe.ingredients_json?.ingredients && Array.isArray(recipe.ingredients_json.ingredients)) {
                     // New structure: ingredients are nested in ingredients_json.ingredients
@@ -440,7 +440,7 @@ export default function RecipePage() {
                 instructions={(() => {
                   // Handle different instruction data structures
                   const steps = recipe.instructions_json?.steps || [];
-                  return steps.map(step => ({
+                  return steps.map((step: any) => ({
                     text: step.instruction || step.text || '',
                     step_no: step.step || step.step_no,
                     time_min: step.time_minutes || step.time_min
@@ -457,7 +457,7 @@ export default function RecipePage() {
                 recipeCourses={recipe.courses}
                 recipeCuisines={recipe.cuisines}
                 cookingDifficulty={recipe.cooking_difficulty || 'medium'}
-                equipmentNeeded={recipe.cooking_equipment}
+                {...(recipe.cooking_equipment && { equipmentNeeded: recipe.cooking_equipment })}
               />
             </div>
           </div>

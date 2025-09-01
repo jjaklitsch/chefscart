@@ -46,7 +46,7 @@ export default function CookingEquipment({
           .from('cooking_equipment')
           .select('*')
           .in('name', equipmentNeeded)
-          .order('popularity_score', { ascending: false })
+          .order('popularity_score', { ascending: false }) as { data: EquipmentType[] | null, error: any }
         
         if (!error && equipmentData) {
           recommendedEquipment = equipmentData
@@ -321,10 +321,10 @@ export default function CookingEquipment({
                 <div className="flex flex-col flex-1">
                   {/* Product Image */}
                   <div className="w-full h-32 bg-neutral-50 rounded-lg overflow-hidden flex items-center justify-center mb-3">
-                    {products[item.id].product_photos[0] ? (
+                    {products[item.id]?.product_photos?.[0] ? (
                       <img
-                        src={products[item.id].product_photos[0]}
-                        alt={products[item.id].product_title}
+                        src={products[item.id]?.product_photos?.[0]}
+                        alt={products[item.id]?.product_title}
                         className="w-full h-full object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement
@@ -339,27 +339,30 @@ export default function CookingEquipment({
                   {/* Product Details */}
                   <div className="flex flex-col flex-1">
                     <h5 className="font-medium text-neutral-800 text-sm line-clamp-2 leading-tight mb-2">
-                      {products[item.id].product_title}
+                      {products[item.id]?.product_title}
                     </h5>
-                    {products[item.id].brand && (
+                    {products[item.id]?.brand && (
                       <div className="text-xs text-neutral-500 mb-2">
-                        {products[item.id].brand}
+                        {products[item.id]?.brand}
                       </div>
                     )}
                     <div className="font-bold text-green-600 text-lg mb-3">
-                      ${formatPrice(products[item.id].offer.price)}
+                      ${formatPrice(products[item.id]?.offer?.price || '')}
                     </div>
                     <div className="mt-auto">
                       <button
-                        onClick={() => handleAddToCart(products[item.id], item.display_name)}
+                        onClick={() => {
+                          const product = products[item.id];
+                          if (product) handleAddToCart(product, item.display_name);
+                        }}
                         className={`w-full py-2 px-3 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 ${
-                          addedItems.has(products[item.id].product_id)
+                          addedItems.has(products[item.id]?.product_id || '')
                             ? 'bg-green-700 text-white scale-105' 
                             : 'bg-green-600 hover:bg-green-700 text-white hover:scale-105'
                         }`}
                       >
                         <ShoppingCart className="h-4 w-4" />
-                        {addedItems.has(products[item.id].product_id) ? 'Added!' : 'Add to Cart'}
+                        {addedItems.has(products[item.id]?.product_id || '') ? 'Added!' : 'Add to Cart'}
                       </button>
                     </div>
                   </div>

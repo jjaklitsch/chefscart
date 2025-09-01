@@ -83,7 +83,7 @@ const RecipeIngredients: React.FC<RecipeIngredientsProps> = ({
                 className="flex items-center py-2 text-sm"
               >
                 <span className="text-neutral-700 flex-1 pr-3">
-                  {toTitleCase(ingredient.name || ingredient.shoppable_name || ingredient.display_name)}
+                  {toTitleCase(ingredient.name || ingredient.shoppable_name || ingredient.display_name || 'Unknown ingredient')}
                 </span>
                 <span className="font-medium text-neutral-900 whitespace-nowrap">
                   {formatAmount(ingredient)}
