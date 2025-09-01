@@ -16,6 +16,9 @@ npm run build              # Build production Next.js app
 
 # Meal Data Generation
 npm run generate-meals     # Generate new meals with OpenAI + Supabase (from apps/web)
+
+# Meal Image Generation (scripts directory)
+cd scripts && npm run generate-images  # Generate meal images with Imagen 4
 ```
 
 ### Testing
@@ -249,6 +252,66 @@ Current distribution: 125 easy (23%), 307 medium (58%), 100 challenging (19%)
 ### Future Optimization Opportunities:
 - **Ingredient categorization**: Consider static lookup tables vs AI
 - **Cost estimation**: Explore pricing APIs vs AI estimation
+
+## Meal Image Generation (Imagen 4)
+
+The application features a 2-step AI-powered image generation system for creating professional food photography using Google's Imagen 4 model.
+
+### System Architecture
+**Step 1: Prompt Generation** (Gemini 1.5 Flash)
+- Analyzes meal title, description, cuisines, and primary ingredient
+- Generates professional food photography prompts with specific constraints
+- Creates negative prompts to exclude unwanted elements (props, utensils, etc.)
+- Returns structured JSON with prompt, negative_prompt, and plate/bowl recommendation
+
+**Step 2: Image Generation** (Imagen 4)
+- Uses `imagen-4.0-generate-001` model for high-quality 2K images  
+- Combines main prompt with negative prompt constraints
+- Generates 1:1 aspect ratio images perfect for social media/e-commerce
+- Uploads images to Supabase Storage with public URLs
+- Maintains local backups for redundancy
+
+### Database Schema
+Images are tracked in the `meal2` table with these fields:
+```sql
+image_prompt          TEXT                     -- Generated photography prompt
+image_negative_prompt TEXT                     -- Elements to exclude  
+image_url            TEXT                     -- Public Supabase Storage URL
+image_generated_at   TIMESTAMP WITH TIME ZONE -- Generation timestamp
+image_generation_model VARCHAR(100)           -- Model used (imagen-4.0-generate-001)
+```
+
+### Usage Commands
+```bash
+# Generate images for meals (run from scripts directory)
+cd scripts && npm run generate-images
+
+# The script processes meals in meal2 table that don't have images yet
+# Default: processes 2 meals at a time to avoid rate limits
+# Images are saved to Supabase Storage bucket: meal-images/meals/
+```
+
+### Generated Image Properties
+- **Resolution**: 2K quality for print/web use
+- **Format**: PNG with transparency support
+- **Aspect Ratio**: 1:1 (square) for consistent social media display
+- **Style**: Professional food photography with:
+  - White seamless background
+  - Overhead 90° camera angle (or 15-25° for tall items)
+  - Soft diffused studio lighting
+  - White rimless plate/bowl centered with 12-15% margin
+  - Generous restaurant-style portions
+
+### API Dependencies
+- **Google AI Studio API**: Requires `GEMINI_API_KEY` environment variable
+- **Supabase Storage**: Uses `meal-images` bucket for public hosting
+- **Cost**: ~$0.04 per image (Imagen 4 Standard pricing)
+
+### Quality Controls
+- Automatic negative prompting prevents common issues (props, utensils, text overlays)
+- Local backups ensure no image loss during upload failures
+- Structured prompts ensure consistent professional food photography style
+- Rate limiting (1 second delay) prevents API quota exceeded errors
 
 ## MCP (Model Context Protocol) Setup
 
