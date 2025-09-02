@@ -90,17 +90,13 @@ function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): n
   score += 10
 
   // Dietary restrictions matching (high priority)
+  // Note: Hard dietary filtering is now done before scoring, so meals here already match dietary requirements
   if (preferences.dietaryStyle && preferences.dietaryStyle.length > 0) {
     const userDiets = preferences.dietaryStyle.map(normalizeDietaryTag)
     const mealTags = (meal.diets_supported || []).map(normalizeDietaryTag)
     
     const dietMatches = userDiets.filter(diet => mealTags.includes(diet)).length
     score += dietMatches * 20 // High weight for dietary matches
-    
-    // Penalty if meal doesn't match any dietary restrictions
-    if (dietMatches === 0 && userDiets.length > 0) {
-      score -= 15
-    }
   }
 
 
@@ -302,30 +298,82 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // HARD FILTER: Remove meals with allergens/avoided ingredients BEFORE scoring
+    // HARD FILTER: Remove meals with allergens/avoided ingredients AND dietary restrictions BEFORE scoring
     const avoidList = (preferences.foodsToAvoid || []).map(item => item.toLowerCase())
+    const userDiets = (preferences.dietaryStyle || []).map(d => d.toLowerCase())
 
-    const saferMeals = avoidList.length > 0 
-      ? meals.filter(meal => {
-          // Check allergens present
-          const hasAllergen = meal.allergens_present?.some(allergen =>
-            avoidList.some(avoid => allergen.toLowerCase().includes(avoid))
-          )
-          
-          // Check ingredient tags  
-          const hasAvoidedIngredient = meal.ingredient_tags?.some(ingredient =>
-            avoidList.some(avoid => ingredient.toLowerCase().includes(avoid))
-          )
-          
-          // EXCLUDE meals with any allergens or avoided ingredients
-          return !hasAllergen && !hasAvoidedIngredient
-        })
-      : meals
+    const filteredMeals = meals.filter(meal => {
+      // 1. Check allergens and avoided ingredients
+      if (avoidList.length > 0) {
+        const hasAllergen = meal.allergens_present?.some(allergen =>
+          avoidList.some(avoid => allergen.toLowerCase().includes(avoid))
+        )
+        
+        const hasAvoidedIngredient = meal.ingredient_tags?.some(ingredient =>
+          avoidList.some(avoid => ingredient.toLowerCase().includes(avoid))
+        )
+        
+        if (hasAllergen || hasAvoidedIngredient) {
+          return false
+        }
+      }
 
-    console.log(`🔍 Allergen filtering: ${meals.length} → ${saferMeals.length} meals (removed ${meals.length - saferMeals.length} with allergens/avoided ingredients)`)
+      // 2. HARD DIETARY RESTRICTION FILTERING
+      if (userDiets.length > 0) {
+        const mealDietTags = (meal.diets_supported || []).map(d => d.toLowerCase())
+        
+        // Check if meal supports at least one of the user's dietary restrictions
+        const supportsDiet = userDiets.some(userDiet => mealDietTags.includes(userDiet))
+        
+        // Additional checks for specific diets that need ingredient-level filtering
+        for (const diet of userDiets) {
+          if (diet === 'pescatarian') {
+            // Pescatarian: exclude meat but allow fish/seafood
+            const meatIngredients = meal.ingredient_tags?.some(ingredient => {
+              const ingredientLower = ingredient.toLowerCase()
+              return ['chicken', 'beef', 'pork', 'lamb', 'turkey', 'duck', 'bacon', 'ham', 'sausage', 'ground beef', 'steak'].some(meat =>
+                ingredientLower.includes(meat)
+              )
+            })
+            if (meatIngredients) return false
+          }
+          
+          if (diet === 'vegetarian') {
+            // Vegetarian: exclude all meat and fish
+            const animalProducts = meal.ingredient_tags?.some(ingredient => {
+              const ingredientLower = ingredient.toLowerCase()
+              return ['chicken', 'beef', 'pork', 'lamb', 'turkey', 'duck', 'bacon', 'ham', 'sausage', 'fish', 'salmon', 'tuna', 'shrimp', 'crab', 'lobster'].some(animal =>
+                ingredientLower.includes(animal)
+              )
+            })
+            if (animalProducts) return false
+          }
+          
+          if (diet === 'vegan') {
+            // Vegan: exclude all animal products
+            const animalProducts = meal.ingredient_tags?.some(ingredient => {
+              const ingredientLower = ingredient.toLowerCase()
+              return ['chicken', 'beef', 'pork', 'lamb', 'turkey', 'duck', 'bacon', 'ham', 'sausage', 'fish', 'salmon', 'tuna', 'shrimp', 'crab', 'lobster', 'egg', 'milk', 'butter', 'cheese', 'yogurt', 'cream', 'honey'].some(animal =>
+                ingredientLower.includes(animal)
+              )
+            })
+            if (animalProducts) return false
+          }
+        }
+        
+        // If meal doesn't support the diet and didn't pass ingredient checks, exclude it
+        if (!supportsDiet) {
+          return false
+        }
+      }
+
+      return true
+    })
+
+    console.log(`🔍 Dietary & allergen filtering: ${meals.length} → ${filteredMeals.length} meals (removed ${meals.length - filteredMeals.length} with dietary restrictions/allergens/avoided ingredients)`)
     
     // Score and filter meals
-    const scoredMeals = saferMeals
+    const scoredMeals = filteredMeals
       .map(meal => ({
         ...(meal as SupabaseMeal),
         score: calculateMealScore(meal as SupabaseMeal, preferences)

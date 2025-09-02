@@ -28,11 +28,28 @@ export default function CookingEquipment({
   const [loadingProducts, setLoadingProducts] = useState<{ [key: string]: boolean }>({})
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [addedItems, setAddedItems] = useState<Set<string>>(new Set())
+  const [enableShoppingCart, setEnableShoppingCart] = useState(false)
+  const [flagsLoaded, setFlagsLoaded] = useState(false)
   const { addItem, itemCount } = useCart()
 
   useEffect(() => {
     loadRecommendedEquipment()
+    loadFeatureFlags()
   }, [recipeId, recipeCourses, recipeCuisines, cookingDifficulty])
+
+  const loadFeatureFlags = async () => {
+    try {
+      const response = await fetch('/api/feature-flags')
+      const flags = await response.json()
+      console.log('Feature flags loaded in CookingEquipment:', flags)
+      setEnableShoppingCart(flags.enableShoppingCart)
+      setFlagsLoaded(true)
+    } catch (error) {
+      console.error('Error fetching feature flags:', error)
+      setEnableShoppingCart(false)
+      setFlagsLoaded(true)
+    }
+  }
 
   const loadRecommendedEquipment = async () => {
     try {
@@ -150,7 +167,39 @@ export default function CookingEquipment({
   }
 
   const formatPrice = (price: string) => {
-    return price.replace(/[^\d.,]/g, '').trim() || price
+    if (!price || price === 'Price not available') return 'Price not available'
+    
+    // Handle various price formats from Amazon
+    let cleanedPrice = price
+    
+    // Remove common prefixes/suffixes
+    cleanedPrice = cleanedPrice.replace(/^(Price:|List:|Sale:)/i, '').trim()
+    
+    // Extract numeric value - handle formats like "$29.99", "29.99", "29,99", etc.
+    const priceMatch = cleanedPrice.match(/[\d,]+\.?\d{0,2}/)
+    if (!priceMatch) {
+      console.warn('Could not extract price from:', price)
+      return 'Price not available'
+    }
+    
+    // Remove commas and parse
+    const numericPrice = priceMatch[0].replace(/,/g, '')
+    const priceValue = parseFloat(numericPrice)
+    
+    // Check for invalid or unrealistic prices
+    if (isNaN(priceValue) || priceValue <= 0) {
+      console.warn('Invalid price value:', price, 'parsed as:', priceValue)
+      return 'Price not available'
+    }
+    
+    // Flag potentially incorrect prices (over $500 for kitchen items is suspicious)
+    if (priceValue > 500) {
+      console.warn('Suspicious high price detected:', price, 'parsed as:', priceValue)
+      return 'Price not available'
+    }
+    
+    // Format as currency
+    return `$${priceValue.toFixed(2)}`
   }
 
   const handleAddToCart = (product: AmazonProduct, equipmentName: string) => {
@@ -347,22 +396,43 @@ export default function CookingEquipment({
                       </div>
                     )}
                     <div className="font-bold text-green-600 text-lg mb-3">
-                      ${formatPrice(products[item.id]?.offer?.price || '')}
+                      {formatPrice(products[item.id]?.offer?.price || '')}
                     </div>
                     <div className="mt-auto">
                       <button
                         onClick={() => {
                           const product = products[item.id];
-                          if (product) handleAddToCart(product, item.display_name);
+                          if (product) {
+                            if (enableShoppingCart) {
+                              handleAddToCart(product, item.display_name);
+                            } else {
+                              // Open Amazon link in new tab
+                              window.open(generateAmazonCartUrl(product), '_blank', 'noopener,noreferrer');
+                            }
+                          }
                         }}
                         className={`w-full py-2 px-3 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 ${
-                          addedItems.has(products[item.id]?.product_id || '')
+                          enableShoppingCart && addedItems.has(products[item.id]?.product_id || '')
                             ? 'bg-green-700 text-white scale-105' 
                             : 'bg-green-600 hover:bg-green-700 text-white hover:scale-105'
                         }`}
                       >
-                        <ShoppingCart className="h-4 w-4" />
-                        {addedItems.has(products[item.id]?.product_id || '') ? 'Added!' : 'Add to Cart'}
+                        {!flagsLoaded ? (
+                          <>
+                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                            <span>Loading...</span>
+                          </>
+                        ) : enableShoppingCart ? (
+                          <>
+                            <ShoppingCart className="h-4 w-4" />
+                            {addedItems.has(products[item.id]?.product_id || '') ? 'Added!' : 'Add to Cart'}
+                          </>
+                        ) : (
+                          <>
+                            <ExternalLink className="h-4 w-4" />
+                            <span>Buy on Amazon</span>
+                          </>
+                        )}
                       </button>
                     </div>
                   </div>

@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import CartBuilder from '../../../../components/CartBuilder'
+import Header from '../../../../components/Header'
+import Footer from '../../../../components/Footer'
 import { MealPlan, UserPreferences } from '../../../../types'
 
 export default function CartBuilderPage() {
@@ -78,47 +80,67 @@ export default function CartBuilderPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-health-gradient flex items-center justify-center">
-        <div className="text-center">
-          <div className="loading-spinner mx-auto mb-4 w-12 h-12"></div>
-          <h2 className="text-xl font-semibold text-gray-900">Loading cart builder...</h2>
+      <div className="min-h-screen bg-neutral-50">
+        <Header />
+        <div className="min-h-screen bg-health-gradient flex items-center justify-center">
+          <div className="text-center">
+            <div className="loading-spinner mx-auto mb-4 w-12 h-12"></div>
+            <h2 className="text-xl font-semibold text-gray-900">Loading cart builder...</h2>
+          </div>
         </div>
+        <Footer />
       </div>
     )
   }
 
   if (error || !mealPlan) {
     return (
-      <div className="min-h-screen bg-health-gradient flex items-center justify-center px-4">
-        <div className="max-w-md w-full text-center">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Error Loading Cart</h2>
-            <p className="text-gray-600 mb-6">
-              {error || 'Unable to load the meal plan for cart building.'}
-            </p>
-            <button
-              onClick={() => router.push('/dashboard')}
-              className="bg-brand-green hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Back to Dashboard
-            </button>
+      <div className="min-h-screen bg-neutral-50">
+        <Header />
+        <div className="min-h-screen bg-health-gradient flex items-center justify-center px-4">
+          <div className="max-w-md w-full text-center">
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Error Loading Cart</h2>
+              <p className="text-gray-600 mb-6">
+                {error || 'Unable to load the meal plan for cart building.'}
+              </p>
+              <button
+                onClick={() => router.push('/dashboard')}
+                className="bg-brand-green hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              >
+                Back to Dashboard
+              </button>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
 
   if (!preferences) {
-    return <div>Loading preferences...</div>
+    return (
+      <div className="min-h-screen bg-neutral-50">
+        <Header />
+        <div className="flex items-center justify-center py-12">
+          <div>Loading preferences...</div>
+        </div>
+        <Footer />
+      </div>
+    )
   }
 
   return (
-    <CartBuilder
-      recipes={mealPlan.recipes}
-      pantryItems={preferences.pantryItems || []}
-      preferences={preferences}
-      onProceedToCheckout={handleCartBuilderComplete}
-      onBack={handleBack}
-    />
+    <div className="min-h-screen bg-neutral-50">
+      <Header />
+      <CartBuilder
+        recipes={mealPlan.recipes}
+        pantryItems={preferences.pantryItems || []}
+        preferences={preferences}
+        onProceedToCheckout={handleCartBuilderComplete}
+        onBack={handleBack}
+      />
+      <Footer />
+    </div>
   )
 }

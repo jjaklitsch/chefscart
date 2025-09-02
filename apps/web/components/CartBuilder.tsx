@@ -343,7 +343,6 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
   const [consolidatedIngredients, setConsolidatedIngredients] = useState<ConsolidatedIngredient[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [showAddItem, setShowAddItem] = useState(false)
-  const [enableShoppingCart, setEnableShoppingCart] = useState(true) // Default to true while loading
   const [newItemName, setNewItemName] = useState('')
   const [newItemAmount, setNewItemAmount] = useState('')
   const [newItemUnit, setNewItemUnit] = useState('items')
@@ -352,21 +351,6 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
   const [excludedItems, setExcludedItems] = useState<Set<string>>(new Set())
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set())
 
-  // Fetch feature flags on component mount
-  useEffect(() => {
-    const fetchFeatureFlags = async () => {
-      try {
-        const response = await fetch('/api/feature-flags')
-        const flags = await response.json()
-        setEnableShoppingCart(flags.enableShoppingCart)
-      } catch (error) {
-        console.error('Error fetching feature flags:', error)
-        // Keep default value (true) on error
-      }
-    }
-    
-    fetchFeatureFlags()
-  }, [])
 
   // Filter out unwanted items like water and ice cubes
   const shouldFilterItem = (name: string): boolean => {
@@ -726,18 +710,6 @@ export default function CartBuilder({ recipes, pantryItems, preferences, onProce
 
 
   const handleContinueClick = () => {
-    if (!enableShoppingCart) {
-      // Generate Amazon affiliate URL with all ingredients
-      const allIngredients = getFinalCart()
-        .map(item => item.shoppableName || item.name)
-        .join(' ')
-      
-      const amazonUrl = `https://www.amazon.com/s?k=${encodeURIComponent(allIngredients)}&tag=${process.env.NEXT_PUBLIC_AMAZON_AFFILIATE_TAG || 'chefscart-20'}&linkCode=osi`
-      
-      // Open Amazon in new tab
-      window.open(amazonUrl, '_blank', 'noopener,noreferrer')
-      return
-    }
     
     onProceedToCheckout(getFinalCart())
   }
@@ -1125,17 +1097,10 @@ salt
             ) : (
               <>
                 <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 mr-2" />
-                {enableShoppingCart ? (
-                  <>
-                    <span className="hidden sm:inline">Continue to Instacart ({totalItems} items)</span>
-                    <span className="sm:hidden">Continue ({totalItems} items)</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="hidden sm:inline">Shop on Amazon ({totalItems} items)</span>
-                    <span className="sm:hidden">Shop on Amazon ({totalItems})</span>
-                  </>
-                )}
+                <>
+                  <span className="hidden sm:inline">Continue to Instacart ({totalItems} items)</span>
+                  <span className="sm:hidden">Continue ({totalItems} items)</span>
+                </>
               </>
             )}
           </button>

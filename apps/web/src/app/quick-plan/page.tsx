@@ -3,8 +3,10 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '../../../contexts/AuthContext'
-import { ArrowLeft, Clock, Users, ShoppingCart, Edit2 } from 'lucide-react'
+import { ArrowLeft, Clock, Users, ShoppingCart, Edit2, ChefHat, Sparkles, Timer, Utensils, CheckCircle, Globe } from 'lucide-react'
 import Link from 'next/link'
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
 import { UserPreferences, MealPlan } from '../../../types'
 import { toTitleCase } from '../../../utils/textUtils'
 
@@ -226,11 +228,15 @@ export default function QuickPlanPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-health-gradient flex items-center justify-center">
-        <div className="text-center">
-          <div className="loading-spinner mx-auto mb-4 w-12 h-12"></div>
-          <h2 className="text-xl font-semibold text-gray-900">Loading...</h2>
+      <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-sage-50">
+        <Header />
+        <div className="flex items-center justify-center min-h-[50vh]">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
+            <h2 className="text-xl font-semibold text-gray-900">Loading...</h2>
+          </div>
         </div>
+        <Footer />
       </div>
     )
   }
@@ -241,172 +247,303 @@ export default function QuickPlanPage() {
 
   if (!savedPreferences) {
     return (
-      <div className="min-h-screen bg-health-gradient flex items-center justify-center px-4">
-        <div className="max-w-md w-full text-center">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <ShoppingCart className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">No Preferences Found</h2>
-            <p className="text-gray-600 mb-6">
-              You need to complete the onboarding process first to set up your dietary preferences and cooking style.
-            </p>
-            <Link
-              href="/onboarding"
-              className="inline-flex items-center gap-2 bg-brand-green hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Complete Onboarding
-            </Link>
+      <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-sage-50">
+        <Header />
+        <div className="flex items-center justify-center px-4 min-h-[50vh]">
+          <div className="max-w-md w-full text-center">
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <ChefHat className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Complete Your Profile</h2>
+              <p className="text-gray-600 mb-6">
+                Set up your dietary preferences and cooking style to create personalized meal plans.
+              </p>
+              <Link
+                href="/onboarding"
+                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              >
+                <Sparkles className="w-4 h-4" />
+                Complete Setup
+              </Link>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-health-gradient">
-      <div className="max-w-2xl mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="flex items-center gap-4 mb-8">
-          <Link 
-            href="/dashboard"
-            className="inline-flex items-center text-gray-600 hover:text-gray-800 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Dashboard
-          </Link>
-        </div>
-
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <div className="text-center mb-6">
-            <div className="bg-green-600 rounded-full p-3 w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-              <Clock className="w-7 h-7 text-white" />
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-sage-50">
+      <Header />
+      
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-green-600 to-green-700 text-white">
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <div className="text-center">
+            <div className="bg-white/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+              <Sparkles className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Quick Meal Plan</h1>
-            <p className="text-gray-600">Create a new meal plan with your saved preferences</p>
-          </div>
-
-          {/* Saved Preferences Summary */}
-          <div className="bg-gray-50 rounded-lg p-4 mb-6">
-            <div className="flex justify-between items-center mb-2">
-              <h3 className="font-semibold text-gray-900">Your Saved Preferences</h3>
-              <Link
-                href="/preferences"
-                className="inline-flex items-center text-sm text-brand-green hover:text-brand-dark-green transition-colors"
-              >
-                <Edit2 className="w-4 h-4 mr-1" />
-                Edit Preferences
-              </Link>
-            </div>
-            <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
-              <div>
-                <span className="font-medium">Cuisines:</span> {savedPreferences.preferredCuisines?.join(', ') || 'All'}
+            <h1 className="text-4xl font-bold mb-4">Quick Meal Plan</h1>
+            <p className="text-green-100 text-lg mb-6">
+              Generate a personalized meal plan in seconds using your saved preferences
+            </p>
+            
+            {/* Benefits */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <Timer className="w-6 h-6 mx-auto mb-2" />
+                <div className="text-sm font-medium">Ready in 30s</div>
               </div>
-              <div>
-                <span className="font-medium">Diet:</span> {savedPreferences.dietaryStyle?.join(', ') || 'No restrictions'}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <ChefHat className="w-6 h-6 mx-auto mb-2" />
+                <div className="text-sm font-medium">AI-Personalized</div>
               </div>
-              <div>
-                <span className="font-medium">Spice Level:</span> {savedPreferences.spiceTolerance === '1' ? 'Mild' : savedPreferences.spiceTolerance === '3' ? 'Medium' : 'Hot'}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <ShoppingCart className="w-6 h-6 mx-auto mb-2" />
+                <div className="text-sm font-medium">Shopping Ready</div>
               </div>
-              <div>
-                <span className="font-medium">Avoided:</span> {savedPreferences.foodsToAvoid?.join(', ') || 'None'}
-              </div>
-            </div>
-          </div>
-
-          {/* Meal Plan Configuration */}
-          <div className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                <Users className="w-4 h-4 inline mr-1" />
-                People per meal
-              </label>
-              <select
-                value={planOptions.peoplePerMeal}
-                onChange={(e) => setPlanOptions({ ...planOptions, peoplePerMeal: parseInt(e.target.value) })}
-                className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent appearance-none bg-white"
-                style={{ backgroundImage: "url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"%3e%3cpolyline points=\"6 9 12 15 18 9\"%3e%3c/polyline%3e%3c/svg%3e')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.5rem center', backgroundSize: '1.5em' }}
-              >
-                {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
-                  <option key={num} value={num}>{num} {num === 1 ? 'person' : 'people'}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className="grid grid-cols-3 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Breakfasts/week</label>
-                <select
-                  value={planOptions.breakfastsPerWeek}
-                  onChange={(e) => setPlanOptions({ ...planOptions, breakfastsPerWeek: parseInt(e.target.value) })}
-                  className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent appearance-none bg-white"
-                  style={{ backgroundImage: "url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"%3e%3cpolyline points=\"6 9 12 15 18 9\"%3e%3c/polyline%3e%3c/svg%3e')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.5rem center', backgroundSize: '1.5em' }}
-                >
-                  {[0, 1, 2, 3, 4, 5, 6, 7].map(num => (
-                    <option key={num} value={num}>{num}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Lunches/week</label>
-                <select
-                  value={planOptions.lunchesPerWeek}
-                  onChange={(e) => setPlanOptions({ ...planOptions, lunchesPerWeek: parseInt(e.target.value) })}
-                  className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent appearance-none bg-white"
-                  style={{ backgroundImage: "url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"%3e%3cpolyline points=\"6 9 12 15 18 9\"%3e%3c/polyline%3e%3c/svg%3e')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.5rem center', backgroundSize: '1.5em' }}
-                >
-                  {[0, 1, 2, 3, 4, 5, 6, 7].map(num => (
-                    <option key={num} value={num}>{num}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Dinners/week</label>
-                <select
-                  value={planOptions.dinnersPerWeek}
-                  onChange={(e) => setPlanOptions({ ...planOptions, dinnersPerWeek: parseInt(e.target.value) })}
-                  className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent appearance-none bg-white"
-                  style={{ backgroundImage: "url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"%3e%3cpolyline points=\"6 9 12 15 18 9\"%3e%3c/polyline%3e%3c/svg%3e')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.5rem center', backgroundSize: '1.5em' }}
-                >
-                  {[0, 1, 2, 3, 4, 5, 6, 7].map(num => (
-                    <option key={num} value={num}>{num}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                <p className="text-red-700 text-sm">{error}</p>
-              </div>
-            )}
-
-            <div className="text-center">
-              <p className="text-sm text-gray-600 mb-4">
-                Total meals: {planOptions.breakfastsPerWeek + planOptions.lunchesPerWeek + planOptions.dinnersPerWeek}
-              </p>
-              
-              <button
-                onClick={generateMealPlan}
-                disabled={isGenerating || (planOptions.breakfastsPerWeek + planOptions.lunchesPerWeek + planOptions.dinnersPerWeek === 0)}
-                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
-                {isGenerating ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    Generating Plan...
-                  </>
-                ) : (
-                  <>
-                    <ShoppingCart className="w-5 h-5" />
-                    Generate Meal Plan
-                  </>
-                )}
-              </button>
             </div>
           </div>
         </div>
       </div>
+
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Configuration */}
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Customize Your Plan</h2>
+              
+              {/* People Count */}
+              <div className="mb-6">
+                <label className="flex items-center gap-2 text-lg font-semibold text-gray-800 mb-3">
+                  <Users className="w-5 h-5 text-green-600" />
+                  How many people are you cooking for?
+                </label>
+                <div className="grid grid-cols-4 gap-3">
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+                    <button
+                      key={num}
+                      onClick={() => setPlanOptions({ ...planOptions, peoplePerMeal: num })}
+                      className={`p-3 rounded-lg border-2 transition-all ${
+                        planOptions.peoplePerMeal === num
+                          ? 'border-green-600 bg-green-50 text-green-700'
+                          : 'border-gray-200 hover:border-green-300 text-gray-700'
+                      }`}
+                    >
+                      <div className="font-semibold">{num}</div>
+                      <div className="text-xs">{num === 1 ? 'person' : 'people'}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Meal Types */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+                  <Utensils className="w-5 h-5 text-green-600" />
+                  Meals per week
+                </h3>
+                
+                <div className="space-y-4">
+                  {/* Breakfast */}
+                  <div className="bg-orange-50 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                        <span className="font-semibold text-gray-800">Breakfasts</span>
+                      </div>
+                      <span className="text-sm text-gray-600">{planOptions.breakfastsPerWeek} meals</span>
+                    </div>
+                    <div className="grid grid-cols-8 gap-2">
+                      {[0, 1, 2, 3, 4, 5, 6, 7].map(num => (
+                        <button
+                          key={num}
+                          onClick={() => setPlanOptions({ ...planOptions, breakfastsPerWeek: num })}
+                          className={`p-2 rounded-lg text-sm font-medium transition-all ${
+                            planOptions.breakfastsPerWeek === num
+                              ? 'bg-orange-500 text-white'
+                              : 'bg-white border border-orange-200 text-orange-700 hover:bg-orange-100'
+                          }`}
+                        >
+                          {num}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Lunch */}
+                  <div className="bg-blue-50 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                        <span className="font-semibold text-gray-800">Lunches</span>
+                      </div>
+                      <span className="text-sm text-gray-600">{planOptions.lunchesPerWeek} meals</span>
+                    </div>
+                    <div className="grid grid-cols-8 gap-2">
+                      {[0, 1, 2, 3, 4, 5, 6, 7].map(num => (
+                        <button
+                          key={num}
+                          onClick={() => setPlanOptions({ ...planOptions, lunchesPerWeek: num })}
+                          className={`p-2 rounded-lg text-sm font-medium transition-all ${
+                            planOptions.lunchesPerWeek === num
+                              ? 'bg-blue-500 text-white'
+                              : 'bg-white border border-blue-200 text-blue-700 hover:bg-blue-100'
+                          }`}
+                        >
+                          {num}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Dinner */}
+                  <div className="bg-purple-50 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                        <span className="font-semibold text-gray-800">Dinners</span>
+                      </div>
+                      <span className="text-sm text-gray-600">{planOptions.dinnersPerWeek} meals</span>
+                    </div>
+                    <div className="grid grid-cols-8 gap-2">
+                      {[0, 1, 2, 3, 4, 5, 6, 7].map(num => (
+                        <button
+                          key={num}
+                          onClick={() => setPlanOptions({ ...planOptions, dinnersPerWeek: num })}
+                          className={`p-2 rounded-lg text-sm font-medium transition-all ${
+                            planOptions.dinnersPerWeek === num
+                              ? 'bg-purple-500 text-white'
+                              : 'bg-white border border-purple-200 text-purple-700 hover:bg-purple-100'
+                          }`}
+                        >
+                          {num}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {error && (
+                <div className="mt-6 bg-red-50 border border-red-200 rounded-lg p-4">
+                  <p className="text-red-700 text-sm">{error}</p>
+                </div>
+              )}
+
+              {/* Generate Button */}
+              <div className="mt-8 text-center">
+                <div className="mb-4">
+                  <span className="text-2xl font-bold text-gray-900">
+                    {planOptions.breakfastsPerWeek + planOptions.lunchesPerWeek + planOptions.dinnersPerWeek}
+                  </span>
+                  <span className="text-gray-600 ml-2">total meals this week</span>
+                </div>
+                
+                <button
+                  onClick={generateMealPlan}
+                  disabled={isGenerating || (planOptions.breakfastsPerWeek + planOptions.lunchesPerWeek + planOptions.dinnersPerWeek === 0)}
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:transform-none"
+                >
+                  {isGenerating ? (
+                    <>
+                      <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Generating Your Perfect Plan...
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="w-6 h-6" />
+                      Generate My Meal Plan
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <div className="space-y-6">
+            {/* Your Preferences */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-gray-900">Your Preferences</h3>
+                <Link
+                  href="/preferences"
+                  className="text-green-600 hover:text-green-700 text-sm font-medium transition-colors"
+                >
+                  Edit
+                </Link>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <Globe className="w-4 h-4 text-gray-500 mt-0.5" />
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">Cuisines</div>
+                    <div className="text-sm text-gray-600">
+                      {savedPreferences.preferredCuisines?.slice(0, 3).join(', ') || 'All cuisines'}
+                      {savedPreferences.preferredCuisines && savedPreferences.preferredCuisines.length > 3 && 
+                        ` +${savedPreferences.preferredCuisines.length - 3} more`}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <Utensils className="w-4 h-4 text-gray-500 mt-0.5" />
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">Diet</div>
+                    <div className="text-sm text-gray-600">
+                      {savedPreferences.dietaryStyle?.join(', ') || 'No restrictions'}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <ChefHat className="w-4 h-4 text-gray-500 mt-0.5" />
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">Spice Level</div>
+                    <div className="text-sm text-gray-600">
+                      {savedPreferences.spiceTolerance === '1' ? 'Mild' : 
+                       savedPreferences.spiceTolerance === '3' ? 'Medium' : 'Hot'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* What You'll Get */}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
+              <h3 className="text-lg font-bold text-green-800 mb-4">What You'll Get</h3>
+              
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-sm text-green-800">Personalized recipe selection</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-sm text-green-800">Scaled ingredients for your group</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-sm text-green-800">Complete shopping list</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-sm text-green-800">Step-by-step cooking instructions</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-sm text-green-800">Instacart cart integration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <Footer />
     </div>
   )
 }

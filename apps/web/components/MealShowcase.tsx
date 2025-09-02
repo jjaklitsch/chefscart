@@ -16,11 +16,11 @@ const mealImages = [
 export default function MealShowcase() {
   return (
     <section className="mb-16">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-display font-bold text-center text-neutral-800 mb-12">
+      <div className="max-w-6xl mx-auto mobile-container">
+        <h2 className="text-display font-display font-bold text-center text-neutral-800 mb-8 lg:mb-12">
           Delicious Meals Made Simple
         </h2>
-        <p className="text-center text-neutral-600 text-lg mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-neutral-600 text-mobile-lg mb-8 lg:mb-12 max-w-2xl mx-auto leading-relaxed">
           From quick everyday meals to special occasion dishes, discover recipes that fit your lifestyle and taste preferences.
         </p>
         
@@ -47,18 +47,18 @@ export default function MealShowcase() {
         
         {/* Bottom CTA Text */}
         <div className="text-center mt-12">
-          <p className="text-neutral-600 text-lg">
-            Ready to discover your next favorite meal?{' '}
-            <button 
-              onClick={() => {
-                // Scroll to top of page where ZIP input is located
-                window.scrollTo({ top: 0, behavior: 'smooth' })
-              }}
-              className="text-brand-600 font-semibold hover:text-brand-700 transition-colors duration-200 cursor-pointer underline decoration-brand-300 hover:decoration-brand-500"
-            >
-              Start planning now!
-            </button>
+          <p className="text-neutral-600 text-lg mb-4">
+            Ready to discover your next favorite meal?
           </p>
+          <button 
+            onClick={() => {
+              // Scroll to top of page where ZIP input is located
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+            className="inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-4 rounded-lg transition-colors duration-200 cursor-pointer touch-target text-mobile-base min-h-[56px] shadow-brand hover:shadow-brand-lg transform hover:-translate-y-0.5"
+          >
+            Start planning now!
+          </button>
         </div>
       </div>
     </section>

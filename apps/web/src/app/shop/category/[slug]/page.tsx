@@ -259,15 +259,10 @@ export default function CategoryPage() {
                         <h2 className="text-2xl font-display font-semibold text-neutral-800 mb-2">
                           {equipmentItem.display_name}
                         </h2>
-                        <p className="text-neutral-600 mb-4">
-                          {equipmentItem.description || `Essential ${equipmentItem.display_name.toLowerCase()} for your kitchen.`}
-                        </p>
-                        {equipmentItem.is_essential && (
-                          <div>
-                            <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full">
-                              Essential Kitchen Tool
-                            </span>
-                          </div>
+                        {equipmentItem.description && (
+                          <p className="text-neutral-600 mb-4">
+                            {equipmentItem.description}
+                          </p>
                         )}
                       </div>
                       <Link

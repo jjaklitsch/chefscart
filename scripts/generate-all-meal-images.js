@@ -40,8 +40,10 @@ async function generateImagePrompt(meal) {
 * Finished dish only; garnishes only if cuisine-appropriate
 * Include the key components named in the description (protein, main sides)
 
-**BAN list (negative prompt)**
-* Props/backgrounds (wood/stone/linen), utensils, hands, napkins, bottles, logos/text, multiple plates, side ramekins, patterned/colored rims, cutting boards, messy crumbs, busy shadows
+**CRITICAL BAN list (negative prompt)**
+* NO TEXT, NO NUMBERS, NO LABELS, NO WATERMARKS, NO METADATA
+* NO technical overlays, generation parameters, seed numbers, dimensions
+* Props/backgrounds (wood/stone/linen), utensils, hands, napkins, bottles, logos, multiple plates, side ramekins, patterned/colored rims, cutting boards, messy crumbs, busy shadows
 
 **Output JSON**
 Return ONLY a valid JSON object with this structure:
@@ -76,6 +78,14 @@ Return ONLY the JSON object.`;
     }
     
     const parsed = JSON.parse(jsonMatch[0]);
+    
+    // Enhance negative prompt to prevent text overlays
+    if (parsed.negative_prompt) {
+      parsed.negative_prompt = `text, numbers, labels, watermarks, metadata, technical overlays, seed numbers, dimensions, generation parameters, ${parsed.negative_prompt}`;
+    } else {
+      parsed.negative_prompt = "text, numbers, labels, watermarks, metadata, technical overlays, seed numbers, dimensions, generation parameters, props, backgrounds, utensils, hands, napkins, bottles, logos";
+    }
+    
     return parsed;
   } catch (error) {
     console.error(`Error generating prompt for meal ${meal.id}:`, error.message);
@@ -168,7 +178,7 @@ async function processRemainingMeals() {
   
   // Fetch meals without images
   const { data: meals, error } = await supabase
-    .from('meal2')
+    .from('meals')
     .select('id, title, description, cuisines, primary_ingredient')
     .is('image_url', null)
     .order('id');
@@ -205,7 +215,7 @@ async function processRemainingMeals() {
       // Step 3: Update database
       console.log(`    💾 Updating database...`);
       const { error: updateError } = await supabase
-        .from('meal2')
+        .from('meals')
         .update({
           image_prompt: promptData.prompt,
           image_negative_prompt: promptData.negative_prompt,
@@ -259,12 +269,12 @@ async function processRemainingMeals() {
   
   // Show total progress
   const { count: totalCompleted } = await supabase
-    .from('meal2')
+    .from('meals')
     .select('*', { count: 'exact', head: true })
     .not('image_url', 'is', null);
   
   const { count: totalRemaining } = await supabase
-    .from('meal2')
+    .from('meals')
     .select('*', { count: 'exact', head: true })
     .is('image_url', null);
   

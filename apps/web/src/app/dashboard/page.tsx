@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '../../../contexts/AuthContext'
-import { ShoppingCart, Plus, User, Clock, ChefHat, ExternalLink, RotateCcw, Eye, Trash2, CheckCircle, X, Heart } from 'lucide-react'
+import { ShoppingCart, Plus, User, Clock, ChefHat, ExternalLink, RotateCcw, Eye, Trash2, CheckCircle, X, Heart, Star, Users, Timer, Utensils, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
@@ -12,11 +12,33 @@ interface RecentMealPlan {
   id: string
   createdAt: string
   cartUrl?: string
-  recipes: Array<{
+  recipes?: Array<{
     title: string
     mealType: string
     imageUrl?: string
   }>
+  mealPlan?: {
+    recipes: Array<{
+      title: string
+      mealType: string
+      imageUrl?: string
+    }>
+  }
+}
+
+interface RecommendedRecipe {
+  id: string
+  title: string
+  description: string
+  prep_time?: number
+  cook_time?: number
+  totalTime: number
+  cuisines: string[]
+  cooking_difficulty: string
+  courses: string[]
+  image_url?: string
+  slug: string
+  primary_ingredient?: string
 }
 
 export default function DashboardPage() {
@@ -25,6 +47,8 @@ export default function DashboardPage() {
   const [recentMealPlans, setRecentMealPlans] = useState<RecentMealPlan[]>([])
   const [isLoadingPlans, setIsLoadingPlans] = useState(true)
   const [showWelcomeModal, setShowWelcomeModal] = useState(false)
+  const [recommendations, setRecommendations] = useState<RecommendedRecipe[]>([])
+  const [isLoadingRecommendations, setIsLoadingRecommendations] = useState(true)
 
   useEffect(() => {
     console.log('Dashboard auth state:', { loading, hasUser: !!user, userEmail: user?.email })
@@ -48,6 +72,7 @@ export default function DashboardPage() {
   useEffect(() => {
     if (user) {
       loadRecentMealPlans()
+      loadRecommendations()
     }
   }, [user])
 
@@ -55,12 +80,26 @@ export default function DashboardPage() {
     try {
       // For now, load from localStorage (will migrate to Supabase)
       const storedPlans = []
+      const currentUser = localStorage.getItem('chefscart_current_user')
+      
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i)
         if (key?.startsWith('chefscart_mealplan_')) {
           try {
             const planData = JSON.parse(localStorage.getItem(key) || '{}')
-            if (planData.email === user?.email) {
+            
+            // Check for meal plans that belong to this user:
+            // 1. Direct email match with authenticated user
+            // 2. Email matches the current user from localStorage (pre-auth)
+            const belongsToUser = planData.email === user?.email || 
+                                 planData.email === currentUser
+            
+            if (belongsToUser) {
+              // Update the email to match the authenticated user for consistency
+              if (planData.email !== user?.email && user?.email) {
+                planData.email = user.email
+                localStorage.setItem(key, JSON.stringify(planData))
+              }
               storedPlans.push(planData)
             }
           } catch (e) {
@@ -82,6 +121,21 @@ export default function DashboardPage() {
     }
   }
 
+  const loadRecommendations = async () => {
+    try {
+      const response = await fetch('/api/recommendations?limit=8')
+      if (response.ok) {
+        const data = await response.json()
+        setRecommendations(data.recommendations || [])
+      } else {
+        console.error('Failed to load recommendations')
+      }
+    } catch (error) {
+      console.error('Error loading recommendations:', error)
+    } finally {
+      setIsLoadingRecommendations(false)
+    }
+  }
 
   const deleteMealPlan = async (planId: string) => {
     try {
@@ -145,237 +199,331 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-health-gradient">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-sage-50">
       <Header />
 
-      {/* Welcome Section */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Welcome back, {user.email?.split('@')[0]}!</h1>
-              <p className="text-sm text-gray-600">Ready to plan your next delicious meals?</p>
+      {/* Visual Hero Section */}
+      <div className="bg-gradient-to-br from-green-600 to-green-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-2">
+              Welcome back, {user.email?.split('@')[0]}! 👋
+            </h1>
+            <p className="text-green-100 text-lg">
+              Discover your next favorite meal
+            </p>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            <Link
+              href="/quick-plan"
+              className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center transition-colors group"
+            >
+              <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 group-hover:bg-white/30 transition-colors">
+                <Plus className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-semibold text-white mb-1 text-sm">Create Plan</h3>
+              <p className="text-green-100 text-xs">Plan your week</p>
+            </Link>
+
+            <Link
+              href="/recipes"
+              className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center transition-colors group"
+            >
+              <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 group-hover:bg-white/30 transition-colors">
+                <BookOpen className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-semibold text-white mb-1 text-sm">Discover</h3>
+              <p className="text-green-100 text-xs">Browse recipes</p>
+            </Link>
+
+            <Link
+              href="/community/create-recipe"
+              className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center transition-colors group"
+            >
+              <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 group-hover:bg-white/30 transition-colors">
+                <ChefHat className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-semibold text-white mb-1 text-sm">Share Recipe</h3>
+              <p className="text-green-100 text-xs">Add your own</p>
+            </Link>
+
+            <Link
+              href="/community"
+              className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center transition-colors group"
+            >
+              <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 group-hover:bg-white/30 transition-colors">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-semibold text-white mb-1 text-sm">Community</h3>
+              <p className="text-green-100 text-xs">Browse & follow</p>
+            </Link>
+          </div>
+
+          {/* Recommended For You Section */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="bg-white/20 rounded-lg p-2">
+                  <Utensils className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold text-white">Recommended for You</h2>
+                  <p className="text-green-100 text-sm">Based on trending recipes</p>
+                </div>
+              </div>
+              <Link
+                href="/recipes"
+                className="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg font-medium transition-colors text-sm"
+              >
+                See All
+              </Link>
             </div>
+
+            {isLoadingRecommendations ? (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="bg-white/20 rounded-xl p-4 animate-pulse">
+                    <div className="bg-white/30 rounded-lg aspect-square mb-3"></div>
+                    <div className="bg-white/30 h-4 rounded mb-2"></div>
+                    <div className="bg-white/30 h-3 rounded w-2/3"></div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {recommendations.map((recipe) => (
+                  <Link
+                    key={recipe.id}
+                    href={`/recipes/${recipe.slug}`}
+                    className="group"
+                  >
+                    <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col">
+                      <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden flex-shrink-0">
+                        {recipe.image_url ? (
+                          <img
+                            src={recipe.image_url}
+                            alt={recipe.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <ChefHat className="w-8 h-8 text-gray-400" />
+                          </div>
+                        )}
+                        <div className="absolute top-2 right-2 bg-white/90 rounded-full p-1.5">
+                          <Heart className="w-4 h-4 text-gray-600" />
+                        </div>
+                      </div>
+                      <div className="p-3 flex flex-col flex-1">
+                        <h3 className="font-semibold text-gray-900 text-sm leading-tight mb-1 line-clamp-2 min-h-[2.5rem]">
+                          {recipe.title}
+                        </h3>
+                        <div className="flex items-center gap-2 text-xs text-gray-600 mt-auto">
+                          <div className="flex items-center gap-1">
+                            <Timer className="w-3 h-3" />
+                            <span>{recipe.totalTime}m</span>
+                          </div>
+                          <span>•</span>
+                          <span className="capitalize">{recipe.cooking_difficulty}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Link
-            href="/quick-plan"
-            className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow group"
-          >
-            <div className="flex items-center gap-4">
-              <div className="bg-green-600 rounded-lg p-3 transition-colors">
-                <Plus className="w-6 h-6 text-white transition-colors" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900">Quick Meal Plan</h3>
-                <p className="text-sm text-gray-600">Use your saved preferences</p>
+      <div className="max-w-7xl mx-auto px-4 py-8">
+
+        {/* Your Recent Meals - Visual History */}
+        {recentMealPlans.length > 0 && (
+          <div className="mb-8">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="bg-green-100 rounded-lg p-2">
+                  <Clock className="w-5 h-5 text-green-600" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Your Recent Meals</h2>
+                  <p className="text-gray-600">Quick access to cooking instructions and reordering</p>
+                </div>
               </div>
             </div>
-          </Link>
 
-          <Link
-            href="/favorites"
-            className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow group"
-          >
-            <div className="flex items-center gap-4">
-              <div className="bg-gray-100 rounded-lg p-3 group-hover:bg-red-500 transition-colors">
-                <Heart className="w-6 h-6 text-red-500 group-hover:text-white transition-colors" />
+            {isLoadingPlans ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[...Array(3)].map((_, i) => (
+                  <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden animate-pulse">
+                    <div className="aspect-video bg-gray-200"></div>
+                    <div className="p-4 space-y-3">
+                      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+                      <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div>
-                <h3 className="font-semibold text-gray-900">Favorite Meals</h3>
-                <p className="text-sm text-gray-600">Your loved recipes</p>
-              </div>
-            </div>
-          </Link>
-
-          <Link
-            href="/preferences"
-            className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow group"
-          >
-            <div className="flex items-center gap-4">
-              <div className="bg-gray-100 rounded-lg p-3 group-hover:bg-purple-500 transition-colors">
-                <User className="w-6 h-6 text-purple-500 group-hover:text-white transition-colors" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900">Profile Settings</h3>
-                <p className="text-sm text-gray-600">Manage preferences</p>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        {/* Recent Meal Plans */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-            <Clock className="w-5 h-5" />
-            Your Meal Plans
-          </h2>
-
-          {isLoadingPlans ? (
-            <div className="text-center py-8">
-              <div className="loading-spinner mx-auto mb-4 w-8 h-8"></div>
-              <p className="text-gray-600">Loading your meal plans...</p>
-            </div>
-          ) : recentMealPlans.length > 0 ? (
-            <div className="space-y-6">
-              {recentMealPlans.map((plan) => (
-                <div key={plan.id} className="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-                  {/* Header */}
-                  <div className="bg-white px-6 py-4 border-b border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="font-semibold text-gray-900 text-lg">
-                          Meal Plan - {formatDate(plan.createdAt)}
-                        </h3>
-                        <p className="text-sm text-gray-600 mt-1">
-                          {plan.recipes?.length || 0} delicious recipes ready to cook
-                        </p>
-                      </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {recentMealPlans.map((plan) => {
+                  console.log('Plan data:', plan) // Debug log
+                  return (
+                  <div key={plan.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    {/* Pinterest-Style Recipe Grid */}
+                    <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 relative overflow-hidden">
+                      {((plan.mealPlan?.recipes?.length ?? 0) > 0 || (plan.recipes?.length ?? 0) > 0) ? (
+                        <div className="w-full h-full grid grid-cols-3 gap-0.5">
+                          {(plan.mealPlan?.recipes || plan.recipes || []).slice(0, 3).map((recipe: any, index: number) => (
+                            <div key={index} className="bg-gray-200 relative overflow-hidden">
+                              {recipe.imageUrl ? (
+                                <img
+                                  src={recipe.imageUrl}
+                                  alt={recipe.title}
+                                  className="w-full h-full object-cover"
+                                />
+                              ) : (
+                                <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                                  <ChefHat className="w-4 h-4 text-gray-400" />
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                          {/* Fill remaining slots with placeholders if less than 3 recipes */}
+                          {(plan.mealPlan?.recipes || plan.recipes || []).length < 3 && [...Array(3 - (plan.mealPlan?.recipes || plan.recipes || []).length)].map((_, index) => (
+                            <div key={`placeholder-${index}`} className="bg-gray-200 flex items-center justify-center">
+                              <ChefHat className="w-4 h-4 text-gray-400" />
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <div className="text-center">
+                            <ChefHat className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                            <p className="text-green-700 font-medium text-sm">
+                              {plan.mealPlan?.recipes?.length || plan.recipes?.length || 0} Recipes
+                            </p>
+                          </div>
+                        </div>
+                      )}
                       
                       {/* Status Badge */}
-                      <div className="flex items-center gap-3">
+                      <div className="absolute top-3 left-3">
                         {plan.cartUrl ? (
-                          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            ✓ Cart Created
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-500 text-white">
+                            ✓ Completed
                           </span>
                         ) : (
-                          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-amber-500 text-white">
                             ⏱ In Progress
                           </span>
                         )}
                       </div>
                     </div>
-                  </div>
 
-                  {/* Recipe Grid */}
-                  {plan.recipes && (
-                    <div className="p-6">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                        {plan.recipes.slice(0, 5).map((recipe: any, index: number) => (
-                          <div key={index} className="bg-white rounded-lg border border-gray-200 overflow-hidden group hover:shadow-sm transition-shadow">
-                            {recipe.image ? (
-                              <div className="aspect-video bg-gray-100 relative">
-                                <img 
-                                  src={recipe.image} 
-                                  alt={recipe.title}
-                                  className="w-full h-full object-cover"
-                                />
+                    {/* Content */}
+                    <div className="p-5">
+                      <div className="mb-3">
+                        <h3 className="font-bold text-gray-900 text-lg mb-1">
+                          Meal Plan
+                        </h3>
+                        <p className="text-gray-600 text-sm">
+                          Created {formatDate(plan.createdAt)}
+                        </p>
+                      </div>
+
+                      {/* Recipe Preview */}
+                      {((plan.mealPlan?.recipes?.length ?? 0) > 0 || (plan.recipes?.length ?? 0) > 0) && (
+                        <div className="mb-4">
+                          <div className="text-xs text-gray-500 mb-2 uppercase tracking-wide">Featured Recipes</div>
+                          <div className="space-y-1">
+                            {(plan.mealPlan?.recipes || plan.recipes || []).slice(0, 3).map((recipe: any, index: number) => (
+                              <div key={index} className="text-sm text-gray-800 font-medium truncate">
+                                • {recipe.title}
                               </div>
-                            ) : (
-                              <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                                <ShoppingCart className="w-8 h-8 text-green-600" />
+                            ))}
+                            {(plan.mealPlan?.recipes || plan.recipes || []).length > 3 && (
+                              <div className="text-xs text-gray-500">
+                                +{(plan.mealPlan?.recipes || plan.recipes || []).length - 3} more recipes
                               </div>
                             )}
-                            <div className="p-3">
-                              <h4 className="font-medium text-gray-900 text-sm mb-1 line-clamp-2">
-                                {recipe.title}
-                              </h4>
-                              <p className="text-xs text-gray-600">
-                                {recipe.prep_time}m prep • {recipe.cook_time}m cook
-                              </p>
-                            </div>
                           </div>
-                        ))}
-                        
-                        {plan.recipes.length > 5 && (
-                          <div className="bg-white rounded-lg border border-gray-200 flex items-center justify-center p-4">
-                            <div className="text-center">
-                              <div className="text-2xl font-bold text-gray-400 mb-1">
-                                +{plan.recipes.length - 5}
-                              </div>
-                              <div className="text-xs text-gray-600">
-                                more recipes
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                      </div>
+                        </div>
+                      )}
 
                       {/* Action Buttons */}
-                      <div className="flex flex-wrap items-center justify-between gap-3">
-                        <div className="flex flex-wrap gap-3">
-                          {plan.cartUrl ? (
-                            <>
-                              <a
-                                href={plan.cartUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
-                              >
-                                <ShoppingCart className="w-4 h-4" />
-                                Open Cart
-                                <ExternalLink className="w-3 h-3" />
-                              </a>
-                              <button 
-                                onClick={() => handleReorder(plan.id)}
-                                className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors"
-                              >
-                                <RotateCcw className="w-4 h-4" />
-                                Reorder
-                              </button>
-                            </>
-                          ) : (
-                            <Link
-                              href={`/cart-builder/${plan.id}`}
-                              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                      <div className="flex flex-col gap-2">
+                        {plan.cartUrl ? (
+                          <div className="flex gap-2">
+                            <a
+                              href={plan.cartUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg font-medium transition-colors text-sm"
                             >
                               <ShoppingCart className="w-4 h-4" />
-                              Complete Cart
-                            </Link>
-                          )}
-                          
+                              Open Cart
+                            </a>
+                            <button 
+                              onClick={() => handleReorder(plan.id)}
+                              className="flex-1 inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg font-medium transition-colors text-sm"
+                            >
+                              <RotateCcw className="w-4 h-4" />
+                              Reorder
+                            </button>
+                          </div>
+                        ) : (
                           <Link
-                            href={`/meal-plan/${plan.id}`}
-                            className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors"
+                            href={`/cart-builder/${plan.id}`}
+                            className="w-full inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg font-medium transition-colors text-sm"
                           >
-                            <Eye className="w-4 h-4" />
-                            View Recipes
+                            <ShoppingCart className="w-4 h-4" />
+                            Complete Cart
                           </Link>
-                        </div>
-
-                        {/* Delete button for in-progress plans */}
-                        {!plan.cartUrl && (
-                          <button
-                            onClick={() => deleteMealPlan(plan.id)}
-                            className="inline-flex items-center gap-2 text-red-600 hover:bg-red-50 px-3 py-2 rounded-lg font-medium transition-colors"
-                            title="Delete meal plan"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
                         )}
+                        
+                        <Link
+                          href={`/meal-plan/${plan.id}`}
+                          className="w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-blue-100 text-blue-700 px-3 py-2 rounded-lg font-medium transition-colors text-sm"
+                        >
+                          <BookOpen className="w-4 h-4" />
+                          View Cooking Instructions
+                        </Link>
                       </div>
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <div className="mb-6">
-                <div className="w-24 h-24 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <ShoppingCart className="w-12 h-12 text-green-600" />
-                </div>
+                  </div>
+                  )
+                })}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Ready to start cooking?</h3>
-              <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                Create your first AI-powered meal plan tailored to your tastes, dietary needs, and schedule. 
-                Fresh recipes delivered with a complete shopping cart in minutes!
-              </p>
-              <Link
-                href="/quick-plan"
-                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-              >
-                <Plus className="w-5 h-5" />
-                Create Your First Meal Plan
-              </Link>
+            )}
+          </div>
+        )}
+
+        {/* Empty State for New Users */}
+        {!isLoadingPlans && recentMealPlans.length === 0 && (
+          <div className="text-center py-12">
+            <div className="mb-6">
+              <div className="w-24 h-24 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                <ChefHat className="w-12 h-12 text-green-600" />
+              </div>
             </div>
-          )}
-        </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Ready to start cooking?</h3>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">
+              Create your first AI-powered meal plan tailored to your tastes, dietary needs, and schedule. 
+              Get personalized recipes with complete shopping lists delivered instantly!
+            </p>
+            <Link
+              href="/quick-plan"
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold transition-colors text-lg"
+            >
+              <Plus className="w-5 h-5" />
+              Create Your First Meal Plan
+            </Link>
+          </div>
+        )}
       </div>
       
       <Footer />

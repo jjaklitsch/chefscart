@@ -8,6 +8,14 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'xs': '320px',    // Small mobile devices
+      'sm': '375px',    // iPhone standard
+      'md': '414px',    // Large mobile devices
+      'lg': '768px',    // Tablets
+      'xl': '1024px',   // Desktop
+      '2xl': '1280px',  // Large desktop
+    },
     extend: {
       colors: {
         // System colors

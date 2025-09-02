@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useParams, notFound } from 'next/navigation'
+import { useParams, useSearchParams, notFound } from 'next/navigation'
 import { ArrowLeft, Clock, Users, ChefHat, ShoppingCart, Share2, Heart, Star } from 'lucide-react'
 import Link from 'next/link'
 import { createClient } from '../../../../lib/supabase'
@@ -30,32 +30,53 @@ interface Recipe {
   allergens_present: string[]
   primary_ingredient: string
   cooking_equipment?: string[]
-  ingredients_json: {
-    servings: number
-    ingredients: Array<{
-      display_name: string
-      quantity?: number
-      unit?: string
-      category?: string
-      shoppable_name?: string
-    }>
-  }
-  instructions_json: {
-    time_total_min: number
+  ingredients?: Array<{
+    name: string
+    shopping_quantity: number
+    shopping_unit: string
+    cooking_quantity: number
+    cooking_unit: string
+    base_cooking_quantity: number
+    base_shopping_quantity: number
+    category: string
+    organic_supported: boolean
+    scales_with_servings: boolean
+    brand_filters: string[]
+    scaled_cooking_quantity: number
+    scaled_shopping_quantity: number
+  }>
+  instructions?: {
+    prep_time: number
+    cook_time: number
+    total_time: number
     steps: Array<{
-      text: string
-      step_no?: number
-      time_min?: number
+      step: number
+      instruction: string
+      time_minutes: number
+      dynamic_ingredients: string[]
+      processed_instruction: string
     }>
   }
+  serving_options?: {
+    min: number
+    max: number
+    default: number
+    current: number
+  }
+  scaling_factor?: number
+  scaled_servings?: number
   image_url?: string
   servings_default: number
+  servings_min: number
+  servings_max: number
   calories_per_serving?: number
 }
 
 export default function RecipePage() {
   const params = useParams()
+  const searchParams = useSearchParams()
   const slug = params.slug as string
+  const urlServings = searchParams.get('servings')
   
   const [recipe, setRecipe] = useState<Recipe | null>(null)
   const [loading, setLoading] = useState(true)
@@ -65,6 +86,8 @@ export default function RecipePage() {
   const [showInstructions, setShowInstructions] = useState(false)
   const [showImageModal, setShowImageModal] = useState(false)
   const [cartUrl, setCartUrl] = useState<string | null>(null)
+  const [isLiked, setIsLiked] = useState(false)
+  const [likeCount, setLikeCount] = useState(0)
 
   useEffect(() => {
     if (slug) {
@@ -72,38 +95,37 @@ export default function RecipePage() {
     }
   }, [slug])
 
+  useEffect(() => {
+    if (urlServings && recipe) {
+      const parsedServings = parseInt(urlServings)
+      if (parsedServings > 0 && parsedServings >= recipe.servings_min && parsedServings <= recipe.servings_max) {
+        setServings(parsedServings)
+      }
+    }
+  }, [urlServings, recipe])
+
   const loadRecipe = async () => {
     try {
-      const supabase = createClient()
+      // Use the new dynamic scaling API endpoint
+      const initialServings = urlServings ? parseInt(urlServings) : undefined
+      const apiUrl = initialServings 
+        ? `/api/recipe/${slug}?servings=${initialServings}`
+        : `/api/recipe/${slug}`
       
-      // Get all meals and find by slug matching
-      const { data: allMeals, error } = await supabase
-        .from('meals')
-        .select('*') as { data: any[] | null, error: any }
+      const response = await fetch(apiUrl)
       
-      if (error) {
-        throw error
+      if (!response.ok) {
+        if (response.status === 404) {
+          notFound()
+          return
+        }
+        throw new Error(`Failed to fetch recipe: ${response.status}`)
       }
-
-      if (!allMeals) {
-        notFound()
-        return
-      }
-
-      // Find meal by generating slug from title
-      const matchingMeal = allMeals.find(meal => {
-        const mealSlug = meal.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-        return mealSlug === slug
-      })
       
-      if (!matchingMeal) {
-        notFound()
-        return
-      }
-
+      const recipeData = await response.json()
       
-      setRecipe(matchingMeal)
-      setServings(matchingMeal.servings_default || 2)
+      setRecipe(recipeData)
+      setServings(recipeData.scaled_servings || recipeData.servings_default || 2)
     } catch (err) {
       console.error('Error loading recipe:', err)
       notFound()
@@ -112,18 +134,25 @@ export default function RecipePage() {
     }
   }
 
+  const updateServings = (newServings: number) => {
+    if (!recipe || newServings === servings) return
+    
+    // Update URL with new servings parameter
+    const newUrl = new URL(window.location.href)
+    newUrl.searchParams.set('servings', newServings.toString())
+    window.history.replaceState(null, '', newUrl.toString())
+    
+    // Just update state - RecipeIngredients will handle scaling
+    setServings(newServings)
+  }
+
   const handleCreateCart = async () => {
-    if (!recipe) return
+    if (!recipe || !recipe.ingredients) return
 
     setCreatingCart(true)
     try {
-      // Get ingredients list using the same logic as the component
-      let ingredientsList: any[] = [];
-      if (recipe.ingredients_json?.ingredients && Array.isArray(recipe.ingredients_json.ingredients)) {
-        ingredientsList = recipe.ingredients_json.ingredients;
-      } else if (Array.isArray(recipe.ingredients_json)) {
-        ingredientsList = recipe.ingredients_json;
-      }
+      // Use the scaled ingredients from the API response
+      const ingredientsList = recipe.ingredients
 
       // Create a single-recipe "meal plan" for cart creation
       const singleRecipePlan = {
@@ -145,13 +174,13 @@ export default function RecipePage() {
           mealPlanData: {
             mealPlan: singleRecipePlan,
             consolidatedCart: ingredientsList.map((ingredient: any) => ({
-              name: ingredient.display_name || ingredient.name || ingredient.shoppable_name,
-              shoppableName: ingredient.shoppable_name || ingredient.display_name || ingredient.name,
-              amount: (ingredient.quantity || ingredient.amount || 1) * (servings / (recipe.servings_default || 2)),
-              unit: ingredient.unit || 'each',
+              name: ingredient.name,
+              shoppableName: ingredient.name,
+              amount: ingredient.scaled_shopping_quantity,
+              unit: ingredient.shopping_unit,
               category: ingredient.category || 'Other',
-              shoppingQuantity: (ingredient.quantity || ingredient.amount || 1) * (servings / (recipe.servings_default || 2)),
-              shoppingUnit: ingredient.unit || 'each'
+              shoppingQuantity: ingredient.scaled_shopping_quantity,
+              shoppingUnit: ingredient.shopping_unit
             }))
           }
         })
@@ -171,6 +200,29 @@ export default function RecipePage() {
       alert('Sorry, there was an error creating your shopping cart. Please try again.')
     } finally {
       setCreatingCart(false)
+    }
+  }
+
+  const handleLike = async () => {
+    try {
+      // Toggle the like state immediately for better UX
+      const newLikedState = !isLiked
+      setIsLiked(newLikedState)
+      setLikeCount(prev => newLikedState ? prev + 1 : Math.max(0, prev - 1))
+      
+      // TODO: Call actual API endpoint when implemented
+      console.log(`${newLikedState ? 'Liked' : 'Unliked'} recipe:`, recipe?.id)
+      
+      // Here you would call something like:
+      // const response = await fetch(`/api/recipes/${recipe.id}/like`, {
+      //   method: newLikedState ? 'POST' : 'DELETE'
+      // })
+      
+    } catch (error) {
+      // Revert on error
+      setIsLiked(!isLiked)
+      setLikeCount(prev => isLiked ? prev + 1 : Math.max(0, prev - 1))
+      console.error('Error liking recipe:', error)
     }
   }
 
@@ -243,6 +295,19 @@ export default function RecipePage() {
             </Link>
             
             <div className="flex items-center gap-3">
+              <button
+                onClick={handleLike}
+                className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
+                  isLiked 
+                    ? 'text-red-600 bg-red-50 hover:bg-red-100' 
+                    : 'text-neutral-600 hover:text-red-600 hover:bg-red-50'
+                }`}
+              >
+                <Heart className={`w-4 h-4 ${isLiked ? 'fill-red-600' : ''}`} />
+                <span className="hidden sm:inline">
+                  {isLiked ? 'Liked' : 'Like'} {likeCount > 0 && `(${likeCount})`}
+                </span>
+              </button>
               <button
                 onClick={handleShare}
                 className="inline-flex items-center gap-2 px-3 py-2 text-neutral-600 hover:text-neutral-800 hover:bg-neutral-100 rounded-lg transition-colors"
@@ -361,7 +426,7 @@ export default function RecipePage() {
                       </label>
                       <div className="flex items-center justify-center gap-3">
                         <button
-                          onClick={() => setServings(Math.max(1, servings - 1))}
+                          onClick={() => updateServings(Math.max(recipe.servings_min || 1, servings - 1))}
                           className="w-8 h-8 rounded-full bg-white border border-neutral-300 flex items-center justify-center text-neutral-600 hover:bg-neutral-50 transition-colors"
                         >
                           -
@@ -370,7 +435,7 @@ export default function RecipePage() {
                           {servings}
                         </span>
                         <button
-                          onClick={() => setServings(servings + 1)}
+                          onClick={() => updateServings(Math.min(recipe.servings_max || 10, servings + 1))}
                           className="w-8 h-8 rounded-full bg-white border border-neutral-300 flex items-center justify-center text-neutral-600 hover:bg-neutral-50 transition-colors"
                         >
                           +
@@ -410,42 +475,26 @@ export default function RecipePage() {
             {/* Ingredients */}
             <div>
               <RecipeIngredients 
-                ingredients={(() => {
-                  // Handle different ingredient data structures
-                  let ingredientsList: any[] = [];
-                  
-                  if (recipe.ingredients_json?.ingredients && Array.isArray(recipe.ingredients_json.ingredients)) {
-                    // New structure: ingredients are nested in ingredients_json.ingredients
-                    ingredientsList = recipe.ingredients_json.ingredients;
-                  } else if (Array.isArray(recipe.ingredients_json)) {
-                    // Old structure: ingredients_json is directly an array
-                    ingredientsList = recipe.ingredients_json;
-                  }
-                  
-                  return ingredientsList.map(ing => ({
-                    name: ing.display_name || ing.name || ing.shoppable_name || '',
-                    quantity: ing.quantity || ing.amount || 0,
-                    unit: ing.unit || '',
-                    ...(ing.category && { category: ing.category })
-                  }));
-                })()}
+                ingredients={recipe.ingredients?.map(ing => ({
+                  name: ing.name,
+                  quantity: ing.base_cooking_quantity || ing.cooking_quantity,
+                  unit: ing.cooking_unit,
+                  category: ing.category,
+                  scales_with_servings: ing.scales_with_servings
+                })) || []}
                 originalServings={recipe.servings_default}
                 adjustedServings={servings}
+                preScaled={false}
               />
             </div>
 
             {/* Instructions */}
             <div>
               <RecipeInstructions 
-                instructions={(() => {
-                  // Handle different instruction data structures
-                  const steps = recipe.instructions_json?.steps || [];
-                  return steps.map((step: any) => ({
-                    text: step.instruction || step.text || '',
-                    step_no: step.step || step.step_no,
-                    time_min: step.time_minutes || step.time_min
-                  }));
-                })()}
+                instructions={recipe.instructions?.steps || []}
+                ingredients={recipe.ingredients || []}
+                originalServings={recipe.serving_options?.default || 4}
+                adjustedServings={servings}
                 title={recipe.title}
               />
             </div>
@@ -547,17 +596,17 @@ export default function RecipePage() {
                   </div>
 
                   {/* All Ingredients */}
-                  {recipe.ingredients_json?.ingredients && recipe.ingredients_json.ingredients.length > 0 && (
+                  {recipe.ingredients && recipe.ingredients.length > 0 && (
                     <div>
                       <h4 className="text-sm font-semibold text-neutral-700 mb-2">All Ingredients</h4>
                       <div className="flex flex-wrap gap-2">
-                        {recipe.ingredients_json.ingredients.map((ingredient, idx) => (
+                        {recipe.ingredients.map((ingredient, idx) => (
                           <Link
                             key={idx}
-                            href={`/recipes?ingredient=${encodeURIComponent(ingredient.shoppable_name || ingredient.display_name)}`}
+                            href={`/recipes?ingredient=${encodeURIComponent(ingredient.name)}`}
                             className="px-2 py-1 bg-neutral-100 text-neutral-700 text-xs rounded-full font-medium hover:bg-neutral-200 transition-colors cursor-pointer"
                           >
-                            {toTitleCase(ingredient.shoppable_name || ingredient.display_name)}
+                            {toTitleCase(ingredient.name)}
                           </Link>
                         ))}
                       </div>
@@ -641,7 +690,7 @@ export default function RecipePage() {
                 <span className="text-sm text-neutral-600">Servings:</span>
                 <div className="flex items-center gap-2">
                   <button
-                    onClick={() => setServings(Math.max(1, servings - 1))}
+                    onClick={() => updateServings(Math.max(recipe.servings_min || 1, servings - 1))}
                     className="w-7 h-7 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center text-neutral-600 hover:bg-neutral-200 transition-colors text-sm"
                   >
                     -
@@ -650,7 +699,7 @@ export default function RecipePage() {
                     {servings}
                   </span>
                   <button
-                    onClick={() => setServings(servings + 1)}
+                    onClick={() => updateServings(Math.min(recipe.servings_max || 10, servings + 1))}
                     className="w-7 h-7 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center text-neutral-600 hover:bg-neutral-200 transition-colors text-sm"
                   >
                     +

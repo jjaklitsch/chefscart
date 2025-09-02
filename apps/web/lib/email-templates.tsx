@@ -1,5 +1,59 @@
 import * as React from 'react'
 
+// Helper function to convert text to title case
+function toTitleCase(str: string): string {
+  if (!str) return str
+  return str.toLowerCase().split(' ').map(word => 
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ')
+}
+
+// Helper function to extract cooking equipment from meals
+function extractCookingEquipment(meals: Array<{ title: string; description: string }>): Array<{ name: string; category: string }> {
+  const equipmentMap = new Map<string, string>()
+  
+  // Common equipment keywords and their categories
+  const equipmentKeywords = {
+    'frying pan': 'cookware-pans',
+    'skillet': 'cookware-pans', 
+    'pan': 'cookware-pans',
+    'saucepan': 'cookware-pans',
+    'pot': 'cookware-pans',
+    'dutch oven': 'cookware-pans',
+    'wok': 'cookware-pans',
+    'baking sheet': 'baking',
+    'sheet pan': 'baking',
+    'baking dish': 'baking',
+    'casserole dish': 'baking',
+    'mixing bowl': 'tools-gadgets',
+    'whisk': 'tools-gadgets',
+    'spatula': 'tools-gadgets',
+    'tongs': 'tools-gadgets',
+    'knife': 'cutlery',
+    'cutting board': 'cutting-boards',
+    'blender': 'small-appliances',
+    'food processor': 'small-appliances',
+    'oven': 'cookware-pans',
+    'grill': 'grilling'
+  }
+
+  // Check each meal for equipment keywords
+  meals.forEach(meal => {
+    const text = `${meal.title} ${meal.description}`.toLowerCase()
+    
+    Object.entries(equipmentKeywords).forEach(([equipment, category]) => {
+      if (text.includes(equipment) && !equipmentMap.has(equipment)) {
+        equipmentMap.set(equipment, category)
+      }
+    })
+  })
+
+  // Convert to array and limit to 6 items
+  return Array.from(equipmentMap.entries())
+    .map(([name, category]) => ({ name: toTitleCase(name), category }))
+    .slice(0, 6)
+}
+
 export interface MealPlanEmailData {
   userEmail: string
   cartUrl: string
@@ -14,6 +68,7 @@ export interface MealPlanEmailData {
     prepTime: number
     servings: number
     slug?: string
+    cookingDifficulty?: string
     ingredients: Array<{
       name: string
       amount: number
@@ -41,7 +96,7 @@ export const MealPlanEmailTemplate = ({
     {/* Header */}
     <div style={{ backgroundColor: '#10b981', padding: '32px 24px', textAlign: 'center' }}>
       <h1 style={{ color: 'white', margin: '0', fontSize: '32px', fontWeight: 'bold' }}>
-        🛒 ChefsCart
+        ChefsCart
       </h1>
       <p style={{ color: 'rgba(255,255,255,0.9)', margin: '8px 0 0', fontSize: '18px' }}>
         Your Personalized Meal Plan is Ready!
@@ -193,7 +248,7 @@ export const getEmailHtml = (data: MealPlanEmailData): string => {
     <div style="max-width: 600px; margin: 0 auto; background-color: white;">
         <!-- Header -->
         <div style="background-color: #10b981; padding: 32px 24px; text-align: center;">
-            <h1 style="color: white; margin: 0; font-size: 32px; font-weight: bold;">🛒 ChefsCart</h1>
+            <h1 style="color: white; margin: 0; font-size: 32px; font-weight: bold;">ChefsCart</h1>
             <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0; font-size: 18px;">Your Personalized Meal Plan is Ready!</p>
         </div>
 
@@ -219,9 +274,9 @@ export const getEmailHtml = (data: MealPlanEmailData): string => {
                     ${data.meals.map((meal, index) => `
                         <div style="margin-bottom: ${index < data.meals.length - 1 ? '16px' : '0'}; padding-bottom: ${index < data.meals.length - 1 ? '16px' : '0'}; border-bottom: ${index < data.meals.length - 1 ? '1px solid #e5e7eb' : 'none'};">
                             <h3 style="color: #10b981; font-size: 18px; font-weight: bold; margin: 0 0 4px;">${meal.title}</h3>
-                            <p style="color: #6b7280; font-size: 14px; margin: 0 0 8px;">${meal.cuisine} • ${meal.mealType} • ${meal.prepTime}m prep + ${meal.cookTime}m cook • Serves ${meal.servings}</p>
+                            <p style="color: #6b7280; font-size: 14px; margin: 0 0 8px;">${meal.cuisine} • ${meal.mealType} • ${meal.prepTime}m prep + ${meal.cookTime}m cook • Serves ${meal.servings}${meal.cookingDifficulty ? ` • ${meal.cookingDifficulty}` : ''}</p>
                             <p style="color: #374151; font-size: 14px; margin: 0 0 8px; line-height: 1.5;">${meal.description}</p>
-                            <p style="color: #10b981; font-size: 14px; margin: 0; font-weight: 600;">📖 <a href="https://chefscart.ai/recipes/${meal.slug || meal.id}" style="color: #10b981; text-decoration: none;">Get cooking instructions →</a></p>
+                            <p style="color: #10b981; font-size: 14px; margin: 0; font-weight: 600;">📖 <a href="https://chefscart.ai/recipes/${meal.slug || meal.id}?servings=${meal.servings}" style="color: #10b981; text-decoration: none;">Get cooking instructions →</a></p>
                         </div>
                     `).join('')}
                 </div>
@@ -250,6 +305,18 @@ export const getEmailHtml = (data: MealPlanEmailData): string => {
                     <a href="${data.cartUrl}" style="display: inline-block; background-color: #10b981; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: 600;">
                         Shop your ingredients on Instacart
                     </a>
+                </div>
+            </div>
+
+            <!-- Cooking Equipment Section -->
+            <div style="margin: 32px 0;">
+                <h2 style="color: #1f2937; font-size: 24px; font-weight: bold; margin: 0 0 16px;">Cooking Equipment You May Need</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    ${extractCookingEquipment(data.meals).map(equipment => `
+                        <a href="https://chefscart.ai/shop/category/${equipment.category}" style="display: inline-block; background-color: #f3f4f6; color: #374151; padding: 8px 16px; text-decoration: none; border-radius: 20px; font-size: 14px; font-weight: 500; border: 1px solid #d1d5db; transition: all 0.2s;">
+                            ${equipment.name}
+                        </a>
+                    `).join('')}
                 </div>
             </div>
 

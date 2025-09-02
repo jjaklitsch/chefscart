@@ -333,6 +333,26 @@ CRITICAL: You MUST provide detailed reasoning for all your decisions in the reas
 === PREDEFINED OPTIONS (USE EXACTLY) ===
 - cuisines: ${VALID_CUISINES.join(', ')}
 - diets_supported: ${VALID_DIETS.join(', ')} (only include if meal STRICTLY follows diet)
+
+=== DIET DEFINITIONS (BE VERY STRICT) ===
+- vegan: No animal products whatsoever (no meat, poultry, fish, dairy, eggs, honey)
+- vegetarian: No meat, poultry, or fish, but allows dairy and eggs
+- pescatarian: No meat or poultry, but allows fish, seafood, dairy, and eggs
+- plant-forward: Emphasizes plants but may include small amounts of animal products as flavor enhancers
+- keto: Very low carb (typically <20g net carbs), high fat, moderate protein
+- low-carb: Reduced carbohydrates (typically <100g carbs per day)
+- paleo: No grains, legumes, dairy, refined sugar, or processed foods - only whole foods
+- whole30: No grains, legumes, dairy, sugar, alcohol, or additives for 30 days
+- mediterranean: Emphasizes olive oil, fish, vegetables, whole grains, legumes - traditional Mediterranean diet
+- kosher: Follows Jewish dietary laws (no pork, no shellfish, no mixing meat and dairy)
+
+CRITICAL DIET RULES:
+- If meal contains chicken, beef, pork, lamb, etc. → NOT vegan, vegetarian, or pescatarian
+- If meal contains fish/seafood → NOT vegan or vegetarian (could be pescatarian)
+- If meal contains dairy or eggs → NOT vegan (could be vegetarian or pescatarian)
+- If meal has >50g carbs → NOT keto, probably not low-carb
+- If meal has grains, legumes, or dairy → NOT paleo or whole30
+- Only include a diet if the meal follows ALL requirements strictly
 - allergens_present: ${VALID_ALLERGENS.join(', ')}
 - cooking_equipment: Select from: ${COOKING_EQUIPMENT.join(', ')}
 - ingredient categories: ${INGREDIENT_CATEGORIES.join(', ')}

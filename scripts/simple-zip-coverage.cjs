@@ -89,9 +89,11 @@ async function checkZipCoverage(zipCode, retryCount = 0) {
     
     clearTimeout(timeoutId)
     
-    // We only care about the status code
+    // Check if response has actual retailers, not just HTTP 200
     if (response.ok) {
-      return { success: true, hasCoverage: true, status: response.status }
+      const data = await response.json()
+      const hasCoverage = data && data.retailers && Array.isArray(data.retailers) && data.retailers.length > 0
+      return { success: true, hasCoverage, status: response.status }
     } else if (response.status === 404) {
       return { success: true, hasCoverage: false, status: response.status }
     } else if (response.status === 429) {

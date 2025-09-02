@@ -113,7 +113,7 @@ export default function Footer() {
               <Mail className="h-4 w-4" />
               <a 
                 href="mailto:support@chefscart.ai" 
-                className="text-brand-600 hover:text-brand-700 font-medium underline decoration-brand-300 hover:decoration-brand-500 transition-colors duration-200"
+                className="text-brand-600 hover:text-brand-700 font-medium underline decoration-brand-300 hover:decoration-brand-500 transition-colors duration-200 touch-target py-2 text-mobile-base"
               >
                 support@chefscart.ai
               </a>
@@ -123,11 +123,11 @@ export default function Footer() {
           {/* Recipes */}
           <div>
             <h3 className="font-display font-semibold text-neutral-800 mb-4">Recipes</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               <li>
                 <Link 
                   href="/recipes" 
-                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                 >
                   Browse All Recipes
                 </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
                 <li key={cuisine}>
                   <Link 
                     href={`/recipes?cuisine=${encodeURIComponent(cuisine)}`}
-                    className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                    className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                   >
                     {cuisine.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')} Recipes
                   </Link>
@@ -148,7 +148,7 @@ export default function Footer() {
                 <li key={course}>
                   <Link 
                     href={`/recipes?course=${encodeURIComponent(course)}`}
-                    className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                    className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                   >
                     {course.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')} Recipes
                   </Link>
@@ -159,7 +159,7 @@ export default function Footer() {
                 <li key={diet}>
                   <Link 
                     href={`/recipes?diet=${encodeURIComponent(diet)}`}
-                    className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                    className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                   >
                     {diet.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')} Recipes
                   </Link>
@@ -171,11 +171,11 @@ export default function Footer() {
           {/* Popular Categories */}
           <div>
             <h3 className="font-display font-semibold text-neutral-800 mb-4">Popular</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               <li>
                 <Link 
                   href="/recipes?difficulty=easy"
-                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                 >
                   Quick & Easy
                 </Link>
@@ -183,7 +183,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/shop" 
-                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                 >
                   Shop
                 </Link>
@@ -191,7 +191,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/quick-plan" 
-                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                 >
                   Meal Planner
                 </Link>
@@ -199,7 +199,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/#faq" 
-                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                 >
                   FAQ
                 </Link>
@@ -207,7 +207,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/privacy-policy" 
-                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                 >
                   Privacy Policy
                 </Link>
@@ -215,7 +215,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/terms-of-service" 
-                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                 >
                   Terms of Service
                 </Link>
@@ -223,7 +223,7 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/affiliate-disclaimer" 
-                  className="text-neutral-600 hover:text-brand-700 transition-colors duration-200"
+                  className="block text-neutral-600 hover:text-brand-700 transition-colors duration-200 py-2 touch-target text-mobile-base"
                 >
                   Affiliate Disclaimer
                 </Link>
@@ -241,21 +241,21 @@ export default function Footer() {
               <div className="flex space-x-3">
                 <a 
                   href="#" 
-                  className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center text-white hover:from-pink-600 hover:to-purple-700 transition-all duration-200 hover:scale-110 hover:shadow-lg"
+                  className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center text-white hover:from-pink-600 hover:to-purple-700 transition-all duration-200 hover:scale-110 hover:shadow-lg touch-target"
                   aria-label="Follow us on Instagram"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a 
                   href="#" 
-                  className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white hover:from-red-600 hover:to-red-700 transition-all duration-200 hover:scale-110 hover:shadow-lg"
+                  className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white hover:from-red-600 hover:to-red-700 transition-all duration-200 hover:scale-110 hover:shadow-lg touch-target"
                   aria-label="Follow us on YouTube"
                 >
                   <Youtube className="h-5 w-5" />
                 </a>
                 <a 
                   href="#" 
-                  className="w-10 h-10 bg-gradient-to-br from-gray-900 to-black rounded-lg flex items-center justify-center text-white hover:from-black hover:to-gray-800 transition-all duration-200 hover:scale-110 hover:shadow-lg"
+                  className="w-12 h-12 bg-gradient-to-br from-gray-900 to-black rounded-lg flex items-center justify-center text-white hover:from-black hover:to-gray-800 transition-all duration-200 hover:scale-110 hover:shadow-lg touch-target"
                   aria-label="Follow us on TikTok"
                 >
                   <TikTokIcon className="h-5 w-5" />

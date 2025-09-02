@@ -73,12 +73,13 @@ const RecipeCarousel: React.FC<RecipeCarouselProps> = ({
     try {
       const supabase = createClient()
       
+      // Get more recipes initially to ensure we have enough after filtering
       let query = supabase
         .from('meals')
         .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url, primary_ingredient, ingredients_json')
-        .limit(12)
+        .limit(50) // Increased limit to ensure we get enough valid recipes
 
-      // Apply filters based on type
+      // Apply basic database filters where possible
       switch (filterType) {
         case 'cuisine':
           query = query.contains('cuisines', [filterValue])
@@ -93,7 +94,7 @@ const RecipeCarousel: React.FC<RecipeCarouselProps> = ({
           query = query.eq('cooking_difficulty', filterValue)
           break
         case 'ingredient':
-          query = query.eq('primary_ingredient', filterValue)
+          // For ingredient search, we'll filter in JavaScript since primary_ingredient might not match exactly
           break
       }
 
@@ -104,17 +105,46 @@ const RecipeCarousel: React.FC<RecipeCarouselProps> = ({
         throw error
       }
 
+      if (!data || data.length === 0) {
+        console.warn(`No recipes found for ${filterType}: ${filterValue}`)
+        setRecipes([])
+        return
+      }
+
       // Format recipes with slugs
-      const formattedRecipes = (data || []).map((recipe: any) => ({
+      let formattedRecipes = (data || []).map((recipe: any) => ({
         ...recipe,
         slug: recipe.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
       }))
 
+      // Additional JavaScript filtering for ingredient searches
+      if (filterType === 'ingredient') {
+        formattedRecipes = formattedRecipes.filter(recipe => {
+          const titleMatch = recipe.title.toLowerCase().includes(filterValue.toLowerCase())
+          const primaryMatch = recipe.primary_ingredient?.toLowerCase().includes(filterValue.toLowerCase())
+          const ingredientsMatch = recipe.ingredients_json?.ingredients?.some((ingredient: any) => 
+            ingredient.display_name?.toLowerCase().includes(filterValue.toLowerCase()) ||
+            ingredient.shoppable_name?.toLowerCase().includes(filterValue.toLowerCase())
+          )
+          return titleMatch || primaryMatch || ingredientsMatch
+        })
+      }
+
+      // Filter out recipes without essential data
+      formattedRecipes = formattedRecipes.filter(recipe => 
+        recipe.title && recipe.description && (recipe.cuisines?.length > 0)
+      )
+
       // Randomize the order to show variety
       const shuffledRecipes = formattedRecipes.sort(() => Math.random() - 0.5)
-      setRecipes(shuffledRecipes)
+      
+      // Take only the first 12 for display
+      setRecipes(shuffledRecipes.slice(0, 12))
+      
+      console.log(`Loaded ${shuffledRecipes.slice(0, 12).length} recipes for ${filterType}: ${filterValue}`)
     } catch (error) {
       console.error('Error loading recipes for carousel:', error)
+      setRecipes([])
     } finally {
       setLoading(false)
     }

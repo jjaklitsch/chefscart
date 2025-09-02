@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import { CheckCircle, ExternalLink, Home } from 'lucide-react'
+import { CheckCircle, ExternalLink, Home, ShoppingCart, Store, AlertTriangle } from 'lucide-react'
 import Link from 'next/link'
+import Header from '../../../../components/Header'
+import Footer from '../../../../components/Footer'
 
 export default function CartSuccessPage() {
   const params = useParams()
@@ -66,7 +68,8 @@ export default function CartSuccessPage() {
 
   return (
     <div className="min-h-screen bg-health-gradient">
-      <div className="max-w-2xl mx-auto px-4 py-16">
+      <Header />
+      <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center">
           {/* Success Animation */}
           <div className="relative mx-auto mb-8">
@@ -160,9 +163,32 @@ export default function CartSuccessPage() {
             </div>
           </div>
 
+          {/* Instacart Shopping Tips */}
+          <div className="mt-12 bg-amber-50 border border-amber-200 rounded-lg p-6 text-left">
+            <h3 className="font-semibold text-amber-900 mb-4 flex items-center gap-2">
+              <ShoppingCart className="w-5 h-5" />
+              Tips for Shopping on Instacart
+            </h3>
+            
+            <div className="space-y-3 text-amber-800">
+              <div className="flex items-start gap-3">
+                <Store className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                <span><strong>Choose your preferred retailer:</strong> You can select from Whole Foods, Kroger, Safeway, ALDI, and other stores in your area based on your preferences for quality and pricing.</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                <span><strong>Look for alternatives:</strong> Some ingredients may be sold out. Check for similar items or try different retailers if your preferred items aren't available.</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                <span><strong>Review your cart:</strong> Double-check quantities and make any adjustments before checkout. You can add or remove items as needed.</span>
+              </div>
+            </div>
+          </div>
+
           {/* Email Notice - Only show if email was provided */}
           {mealPlanData?.email && (
-            <div className="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
               <p className="text-sm text-blue-800">
                 <strong>📧 Check your email!</strong> We've sent you a detailed meal plan with cooking instructions and your shopping list to {mealPlanData.email}.
               </p>
@@ -170,6 +196,7 @@ export default function CartSuccessPage() {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

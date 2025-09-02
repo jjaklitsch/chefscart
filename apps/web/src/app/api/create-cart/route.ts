@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { isShoppingCartEnabled, generateAmazonAffiliateUrl } from '../../../../lib/feature-flags'
 
 // Retry utility with exponential backoff
 class RetryHandler {
-  private maxAttempts = 3
-  private initialDelayMs = 1000
-  private backoffMultiplier = 2
-  private maxDelayMs = 30000
+  private maxAttempts = 2
+  private initialDelayMs = 500
+  private backoffMultiplier = 1.5
+  private maxDelayMs = 5000
 
   private isRetryableError(status: number): boolean {
     return [429, 500, 502, 503, 504].includes(status)
@@ -64,57 +63,6 @@ export async function POST(request: NextRequest) {
       }, { status: 400 })
     }
 
-    // Check if shopping cart feature is enabled
-    if (!isShoppingCartEnabled()) {
-      console.log('Shopping cart disabled - redirecting to Amazon affiliate links')
-      
-      // Get all ingredients for Amazon search
-      let consolidatedCart: any[] = []
-      if (mealPlanData && mealPlanData.consolidatedCart) {
-        consolidatedCart = mealPlanData.consolidatedCart
-      }
-      
-      // Generate Amazon affiliate URL with all ingredients
-      const allIngredients = consolidatedCart
-        .map(item => (item.shoppableName || item.name))
-        .join(' ')
-      
-      const amazonUrl = generateAmazonAffiliateUrl(allIngredients)
-      
-      // Send email with Amazon affiliate link if provided
-      if (email && mealPlanData?.mealPlan && consolidatedCart.length > 0) {
-        try {
-          const emailResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3001'}/api/send-meal-plan-email`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              email,
-              cartUrl: amazonUrl,
-              mealPlan: mealPlanData.mealPlan,
-              consolidatedCart,
-              userPreferences: { ...userPreferences, zipCode },
-              isAmazonAffiliate: true
-            })
-          })
-
-          if (!emailResponse.ok) {
-            console.error('Failed to send Amazon affiliate email:', await emailResponse.text())
-          }
-        } catch (emailError) {
-          console.error('Error sending Amazon affiliate email:', emailError)
-        }
-      }
-      
-      return NextResponse.json({
-        success: true,
-        cartUrl: amazonUrl,
-        cartId: `amazon_affiliate_${planId}_${Date.now()}`,
-        message: 'Redirecting to Amazon to shop for your ingredients',
-        isAmazonAffiliate: true
-      })
-    }
 
 
     // Get the meal plan data from the request

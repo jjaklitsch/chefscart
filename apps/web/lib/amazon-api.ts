@@ -223,10 +223,18 @@ function transformAmazonItem(item: AmazonAPIItem): AmazonProduct {
     product_page_url: item.DetailPageURL,
     offer: {
       price: (() => {
+        // Use listing price as primary source (Amazon API limitation for real-time pricing)
         const rawPrice = listing?.Price?.DisplayAmount || summary?.LowestPrice?.DisplayAmount || 'Price not available'
         
         // Basic validation at API level
         if (rawPrice === 'Price not available') return rawPrice
+        
+        // Log price selection for debugging
+        console.log(`Price extraction for ${item.ASIN}:`, {
+          lowestPrice: summary?.LowestPrice?.DisplayAmount,
+          listingPrice: listing?.Price?.DisplayAmount,
+          selectedPrice: rawPrice
+        });
         
         // Log suspicious prices for debugging
         const numericMatch = rawPrice.match(/[\d,]+\.?\d{0,2}/)

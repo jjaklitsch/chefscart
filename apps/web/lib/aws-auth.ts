@@ -162,11 +162,11 @@ export function createAmazonHeaders(
   country: AmazonCountry = 'us',
   operationPath: string = '/paapi5/searchitems'
 ): Record<string, string> {
-  const accessKey = process.env.AWS_ACCESS_KEY;
-  const secretKey = process.env.AWS_SECRET_KEY;
+  const accessKey = process.env.AMAZON_ACCESS_KEY_ID;
+  const secretKey = process.env.AMAZON_SECRET_ACCESS_KEY;
   
   if (!accessKey || !secretKey) {
-    throw new Error('AWS credentials not configured');
+    throw new Error('Amazon API credentials not configured');
   }
 
   const config = getAmazonConfig(country);

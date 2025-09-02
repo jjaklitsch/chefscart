@@ -12,6 +12,28 @@
   display: none; /* Chrome, Safari and Opera */
 }
 
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 :root {
   /* Background System Variables */
   --background: #ffffff;
@@ -119,42 +141,75 @@
   }
 }
 
-/* Typography System */
+/* Typography System - Mobile Optimized */
 body {
   font-family: var(--font-primary);
+  font-size: 16px; /* Minimum 16px to prevent iOS zoom */
   line-height: 1.6;
   color: var(--neutral-800);
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
 }
 
 .font-display {
   font-family: var(--font-display);
 }
 
-/* Enhanced Typography Classes */
+/* Enhanced Typography Classes with Mobile-First Design */
 .text-hero {
-  font-size: 3.75rem; /* 60px */
-  line-height: 1.1;
+  font-size: 2rem; /* 32px - mobile first */
+  line-height: 1.2;
   font-weight: 700;
   font-family: var(--font-display);
 }
 
 .text-display {
-  font-size: 3rem; /* 48px */
-  line-height: 1.2;
+  font-size: 1.75rem; /* 28px - mobile first */
+  line-height: 1.3;
   font-weight: 600;
   font-family: var(--font-display);
 }
 
-@media (max-width: 768px) {
+/* Mobile breakpoints - more granular for better mobile experience */
+@media (min-width: 375px) {
+  .text-hero {
+    font-size: 2.25rem; /* 36px */
+  }
+  
+  .text-display {
+    font-size: 2rem; /* 32px */
+  }
+}
+
+@media (min-width: 414px) {
   .text-hero {
     font-size: 2.5rem; /* 40px */
   }
   
   .text-display {
-    font-size: 2rem; /* 32px */
+    font-size: 2.25rem; /* 36px */
+  }
+}
+
+@media (min-width: 768px) {
+  .text-hero {
+    font-size: 3rem; /* 48px */
+  }
+  
+  .text-display {
+    font-size: 2.5rem; /* 40px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-hero {
+    font-size: 3.75rem; /* 60px */
+  }
+  
+  .text-display {
+    font-size: 3rem; /* 48px */
   }
 }
 
@@ -193,21 +248,27 @@ body {
 @layer components {
   /* Enhanced Button System - HomeChef Inspired */
   
-  /* Primary Button - Enhanced */
+  /* Primary Button - Enhanced for Mobile */
   .btn-primary-new {
     @apply bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 
-           text-white font-semibold px-6 py-3.5 min-h-[48px] rounded-lg 
+           text-white font-semibold px-6 py-4 min-h-[56px] rounded-lg 
            shadow-brand hover:shadow-brand-lg transform hover:-translate-y-0.5 
            transition-all duration-200 ease-out focus:ring-4 focus:ring-brand-200 
            focus:outline-none active:transform active:scale-95;
+    font-size: 16px; /* Prevent iOS zoom and improve readability */
+    line-height: 1.5;
+    min-width: 44px; /* Ensure minimum touch target */
   }
   
-  /* Secondary Button - Enhanced */
+  /* Secondary Button - Enhanced for Mobile */
   .btn-secondary-new {
     @apply bg-white border-2 border-brand-600 text-brand-600 hover:bg-sage-50 
-           hover:border-brand-700 hover:text-brand-700 font-semibold px-6 py-3.5 
-           min-h-[48px] rounded-lg shadow-soft hover:shadow-medium 
+           hover:border-brand-700 hover:text-brand-700 font-semibold px-6 py-4 
+           min-h-[56px] rounded-lg shadow-soft hover:shadow-medium 
            transition-all duration-200 ease-out focus:ring-4 focus:ring-brand-200;
+    font-size: 16px;
+    line-height: 1.5;
+    min-width: 44px;
   }
   
   /* Accent Button - Sage Green */
@@ -235,15 +296,17 @@ body {
     @apply btn-secondary-new;
   }
   
-  /* Enhanced Input System */
+  /* Enhanced Input System - Mobile Optimized */
   
   /* Primary Input - Enhanced */
   .input-primary-new {
-    @apply w-full px-4 py-3.5 min-h-[48px] border-2 border-neutral-200 
+    @apply w-full px-4 py-3.5 min-h-[56px] border-2 border-neutral-200 
            rounded-lg bg-white text-neutral-800 placeholder-neutral-400
            focus:border-brand-600 focus:ring-4 focus:ring-brand-100 
            transition-all duration-200 ease-out shadow-subtle
            hover:border-neutral-300 hover:shadow-soft;
+    font-size: 16px; /* Prevent iOS zoom */
+    line-height: 1.5;
   }
   
   /* Search Input - Enhanced */
@@ -539,5 +602,87 @@ body {
   }
   100% {
     transform: translateY(-2px);
+  }
+}
+
+/* Mobile-Specific Improvements */
+@layer utilities {
+  /* Mobile Typography Utilities */
+  .text-mobile-base {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .text-mobile-lg {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  /* Mobile Touch Targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Mobile Spacing */
+  .mobile-px {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mobile-py {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  /* Mobile Container */
+  .mobile-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  @media (min-width: 375px) {
+    .mobile-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  /* Prevent horizontal overflow on mobile */
+  .mobile-safe {
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Better button spacing for mobile */
+  .mobile-button-group {
+    gap: 0.75rem;
+  }
+  
+  .mobile-button-group > * {
+    min-height: 56px;
+  }
+  
+  /* Mobile form improvements */
+  .mobile-form-field {
+    margin-bottom: 1.5rem;
+  }
+  
+  .mobile-form-field label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  /* Mobile navigation improvements */
+  .mobile-nav-item {
+    padding: 1rem 1.5rem;
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
   }
 }

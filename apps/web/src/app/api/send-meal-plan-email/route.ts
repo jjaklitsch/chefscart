@@ -91,6 +91,14 @@ export async function POST(request: NextRequest) {
         .join(' ')
     }
 
+    // Helper function to convert text to title case
+    const toTitleCase = (str: string): string => {
+      if (!str) return str
+      return str.toLowerCase().split(' ').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+      ).join(' ')
+    }
+
     // Prepare email data
     const emailData: MealPlanEmailData = {
       userEmail: email,
@@ -100,12 +108,13 @@ export async function POST(request: NextRequest) {
         slug: recipe.slug || generateSlug(recipe.title || 'recipe'),
         title: recipe.title,
         description: recipe.description,
-        cuisine: recipe.cuisine,
-        mealType: recipe.mealType,
+        cuisine: toTitleCase(recipe.cuisine || ''),
+        mealType: toTitleCase(recipe.mealType || ''),
         cookTime: recipe.cookTime,
         prepTime: recipe.prepTime,
         servings: recipe.servings,
-        ingredients: recipe.ingredients
+        ingredients: recipe.ingredients,
+        cookingDifficulty: toTitleCase(recipe.cookingDifficulty || '')
       })),
       totalServings: mealPlan.recipes.reduce((total: number, recipe: any) => total + (recipe.servings || 0), 0),
       consolidatedCart: consolidatedCart.map((item: any) => ({
@@ -122,7 +131,7 @@ export async function POST(request: NextRequest) {
     const { data: emailResult, error: emailError } = await resend.emails.send({
       from: `ChefsCart <${process.env.RESEND_FROM_EMAIL || 'support@chefscart.ai'}>`,
       to: [email],
-      subject: `🍳 Your ChefsCart Meal Plan is Ready! (${mealPlan.recipes.length} recipes)`,
+      subject: `Your ChefsCart Meal Plan is Ready! (${mealPlan.recipes.length} recipes)`,
       html: getEmailHtml(emailData),
     })
 

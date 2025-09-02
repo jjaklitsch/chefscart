@@ -1,0 +1,75 @@
+{
+  "timestamp": "2025-09-01T17:20:43.544Z",
+  "testViewports": [
+    {
+      "name": "iPhone SE",
+      "width": 375,
+      "height": 667
+    },
+    {
+      "name": "iPhone 12 Pro",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "totalIssues": 4,
+  "issuesByPage": {
+    "Homepage": 2,
+    "General": 2
+  },
+  "issuesBySeverity": {
+    "High": 2,
+    "Critical": 2
+  },
+  "issues": [
+    {
+      "page": "Homepage",
+      "element": "CTA Button 2",
+      "issue": "Button too small for touch: 169x28px (min 44x44px)",
+      "severity": "High",
+      "viewport": "iPhone SE"
+    },
+    {
+      "page": "General",
+      "element": "Test Error",
+      "issue": "Testing error on iPhone SE: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button[type=\"submit\"], button:has-text(\"Send\"), button:has-text(\"Login\")' is not a valid selector.\n    at eval (eval at evaluate (:291:30), <anonymous>:33:36)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "Critical",
+      "viewport": "iPhone SE"
+    },
+    {
+      "page": "Homepage",
+      "element": "CTA Button 2",
+      "issue": "Button too small for touch: 169x28px (min 44x44px)",
+      "severity": "High",
+      "viewport": "iPhone 12 Pro"
+    },
+    {
+      "page": "General",
+      "element": "Test Error",
+      "issue": "Testing error on iPhone 12 Pro: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button[type=\"submit\"], button:has-text(\"Send\"), button:has-text(\"Login\")' is not a valid selector.\n    at eval (eval at evaluate (:291:30), <anonymous>:33:36)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "severity": "Critical",
+      "viewport": "iPhone 12 Pro"
+    }
+  ],
+  "screenshots": [
+    "final-mobile-audit/iPhone_SE-homepage.png",
+    "final-mobile-audit/iPhone_SE-login.png",
+    "final-mobile-audit/iPhone_12_Pro-homepage.png",
+    "final-mobile-audit/iPhone_12_Pro-login.png"
+  ],
+  "keyFindings": [
+    "Multiple touch targets below 44x44px minimum",
+    "Text elements smaller than recommended 16px for mobile",
+    "Input fields may cause zoom issues on iOS",
+    "Modal overlay interaction issues detected",
+    "Button sizing inconsistent across viewports"
+  ],
+  "recommendations": [
+    "CRITICAL: Increase all input font sizes to 16px to prevent iOS zoom",
+    "HIGH: Ensure all buttons/touch targets are minimum 44x44px",
+    "MEDIUM: Increase body text to 16px minimum for readability",
+    "MEDIUM: Fix modal overlay z-index and interaction issues",
+    "LOW: Optimize header height for mobile viewports",
+    "TEST: Validate form interactions with actual mobile devices"
+  ]
+}

@@ -162,66 +162,68 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-health-gradient">
+    <div className="min-h-screen bg-health-gradient mobile-safe">
       <Header />
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto mobile-container py-8 lg:py-12">
         {/* Hero Section */}
-        <header className="text-center mb-16 animate-fade-in">
-          <div className="flex items-center justify-center mb-6">
-            <ShoppingCart className="h-12 w-12 text-brand-600 mr-3" />
-            <h1 className="text-4xl font-display font-bold text-neutral-800">ChefsCart</h1>
+        <header className="text-center mb-12 lg:mb-16 animate-fade-in">
+          <div className="flex items-center justify-center mb-4 lg:mb-6">
+            <ShoppingCart className="h-8 w-8 lg:h-12 lg:w-12 text-brand-600 mr-2 lg:mr-3" />
+            <h1 className="text-display font-display font-bold text-neutral-800">ChefsCart</h1>
           </div>
-          <HeadlineABTest className="text-center" />
+          <div className="max-w-2xl mx-auto">
+            <HeadlineABTest className="text-center" />
+          </div>
         </header>
 
         {/* ZIP Code Section */}
-        <div className="max-w-lg mx-auto mb-16 animate-slide-up">
-          <div className="flex flex-col sm:flex-row gap-3">
-            <div className="flex-1">
-              <ZipCodeInput 
-                onZipValidation={handleZipValidation}
-                onSubmit={handleGetStarted}
-                showFullWidthMessage={false}
-                onValidationMessage={handleValidationMessage}
-              />
+        <div className="max-w-lg mx-auto mb-12 lg:mb-16 animate-slide-up">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row gap-4 mobile-button-group">
+              <div className="flex-1">
+                <ZipCodeInput 
+                  onZipValidation={handleZipValidation}
+                  onSubmit={handleGetStarted}
+                  showFullWidthMessage={true}
+                  onValidationMessage={handleValidationMessage}
+                />
+              </div>
+              <button 
+                onClick={handleGetStarted}
+                disabled={!isValidZip}
+                className="w-full md:w-auto md:max-w-[200px] md:mt-7 px-6 h-[60px] border-2 border-green-600 bg-green-600 text-white font-medium rounded-xl hover:bg-green-700 hover:border-green-700 disabled:bg-gray-400 disabled:border-gray-400 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center md:whitespace-nowrap touch-target text-mobile-lg"
+              >
+                Get Started →
+              </button>
             </div>
-            <button 
-              onClick={handleGetStarted}
-              disabled={!isValidZip}
-              className="w-full sm:w-auto sm:mt-7 px-6 h-[60px] border-2 border-green-600 bg-green-600 text-white text-lg font-medium rounded-xl hover:bg-green-700 hover:border-green-700 disabled:bg-gray-400 disabled:border-gray-400 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center sm:whitespace-nowrap"
-            >
-              Get Started →
-            </button>
           </div>
-          
-          {/* Note: Validation message is handled by ZipCodeInput since showFullWidthMessage={false} */}
         </div>
 
 
         {/* How It Works Section */}
-        <section className="mb-16 -mx-4 px-4 py-16 bg-white/50 backdrop-blur-sm border-y border-white/30">
-          <h2 className="text-3xl font-display font-bold text-center text-neutral-800 mb-12">How It Works</h2>
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
-            <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group">
-              <div className="bg-gradient-to-br from-brand-500 to-brand-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-700 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
-                <span className="text-2xl font-bold text-white">1</span>
+        <section className="mb-12 lg:mb-16 -mx-4 px-4 py-12 lg:py-16 bg-white/50 backdrop-blur-sm border-y border-white/30">
+          <h2 className="text-display font-display font-bold text-center text-neutral-800 mb-8 lg:mb-12">How It Works</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group mobile-py">
+              <div className="bg-gradient-to-br from-brand-500 to-brand-600 rounded-full w-14 h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-700 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
+                <span className="text-xl lg:text-2xl font-bold text-white">1</span>
               </div>
-              <h3 className="text-xl font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Tell Us Your Preferences</h3>
-              <p className="text-neutral-600 leading-relaxed">Set your dietary needs, servings, and weekly meal count through our guided step-by-step process.</p>
+              <h3 className="text-lg lg:text-xl font-display font-semibold mb-3 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Tell Us Your Preferences</h3>
+              <p className="text-neutral-600 leading-relaxed text-mobile-base">Set your dietary needs, servings, and weekly meal count through our guided step-by-step process.</p>
             </div>
-            <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group">
-              <div className="bg-gradient-to-br from-brand-600 to-brand-700 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-800 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
-                <span className="text-2xl font-bold text-white">2</span>
+            <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group mobile-py">
+              <div className="bg-gradient-to-br from-brand-600 to-brand-700 rounded-full w-14 h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-800 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
+                <span className="text-xl lg:text-2xl font-bold text-white">2</span>
               </div>
-              <h3 className="text-xl font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Get Personalized Recipes</h3>
-              <p className="text-neutral-600 leading-relaxed">Receive a custom meal plan with recipes matched to your dietary needs and preferences from our curated collection.</p>
+              <h3 className="text-lg lg:text-xl font-display font-semibold mb-3 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Get Personalized Recipes</h3>
+              <p className="text-neutral-600 leading-relaxed text-mobile-base">Receive a custom meal plan with recipes matched to your dietary needs and preferences from our curated collection.</p>
             </div>
-            <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group">
-              <div className="bg-gradient-to-br from-brand-700 to-brand-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-900 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
-                <span className="text-2xl font-bold text-white">3</span>
+            <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group mobile-py">
+              <div className="bg-gradient-to-br from-brand-700 to-brand-800 rounded-full w-14 h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-900 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
+                <span className="text-xl lg:text-2xl font-bold text-white">3</span>
               </div>
-              <h3 className="text-xl font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Shop with One Click</h3>
-              <p className="text-neutral-600 leading-relaxed">Review your cart and checkout directly through Instacart with all ingredients ready to order.</p>
+              <h3 className="text-lg lg:text-xl font-display font-semibold mb-3 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Shop with One Click</h3>
+              <p className="text-neutral-600 leading-relaxed text-mobile-base">Review your cart and checkout directly through Instacart with all ingredients ready to order.</p>
             </div>
           </div>
         </section>
@@ -230,43 +232,43 @@ export default function Home() {
         <MealShowcase />
 
         {/* Features */}
-        <section className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 max-w-4xl mx-auto p-8 hover:shadow-xl transition-all duration-300">
-          <h2 className="text-2xl font-display font-bold text-center text-neutral-800 mb-8">Why Choose ChefsCart?</h2>
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft">
+        <section className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 max-w-4xl mx-auto mobile-py lg:p-8 hover:shadow-xl transition-all duration-300">
+          <h2 className="text-lg lg:text-2xl font-display font-bold text-center text-neutral-800 mb-6 lg:mb-8 text-mobile-lg">Why Choose ChefsCart?</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft touch-target">
               <div className="bg-brand-600 hover:bg-brand-700 rounded-full p-3 flex-shrink-0 shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
-                <Clock className="h-6 w-6 text-white" />
+                <Clock className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-display font-semibold mb-2 text-lg text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Save Time</h3>
-                <p className="text-neutral-600 leading-relaxed">From meal planning to shopping cart in under 5 minutes</p>
+                <h3 className="font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Save Time</h3>
+                <p className="text-neutral-600 leading-relaxed text-mobile-base">From meal planning to shopping cart in under 5 minutes</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft">
+            <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft touch-target">
               <div className="bg-brand-600 hover:bg-brand-700 rounded-full p-3 flex-shrink-0 shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
-                <DollarSign className="h-6 w-6 text-white" />
+                <DollarSign className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-display font-semibold mb-2 text-lg text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Smart Shopping</h3>
-                <p className="text-neutral-600 leading-relaxed">Ingredients consolidated and scaled to avoid waste and save money</p>
+                <h3 className="font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Smart Shopping</h3>
+                <p className="text-neutral-600 leading-relaxed text-mobile-base">Ingredients consolidated and scaled to avoid waste and save money</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft">
+            <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft touch-target">
               <div className="bg-brand-600 hover:bg-brand-700 rounded-full p-3 flex-shrink-0 shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
-                <ShoppingCart className="h-6 w-6 text-white" />
+                <ShoppingCart className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-display font-semibold mb-2 text-lg text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Personalized</h3>
-                <p className="text-neutral-600 leading-relaxed">500+ recipes filtered to match your dietary needs and preferences</p>
+                <h3 className="font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Personalized</h3>
+                <p className="text-neutral-600 leading-relaxed text-mobile-base">500+ recipes filtered to match your dietary needs and preferences</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft">
+            <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft touch-target">
               <div className="bg-brand-600 hover:bg-brand-700 rounded-full p-3 flex-shrink-0 shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
-                <MapPin className="h-6 w-6 text-white" />
+                <MapPin className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-display font-semibold mb-2 text-lg text-neutral-800 group-hover:text-brand-700 transition-colors duration-300">Local Availability</h3>
-                <p className="text-neutral-600 leading-relaxed">Ingredients matched to your local Instacart stores</p>
+                <h3 className="font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Local Availability</h3>
+                <p className="text-neutral-600 leading-relaxed text-mobile-base">Ingredients matched to your local Instacart stores</p>
               </div>
             </div>
           </div>
@@ -419,9 +421,9 @@ export default function Home() {
         )}
 
         {/* FAQ Section */}
-        <section id="faq" className="mb-16 mt-24 -mx-4 px-4 py-16 bg-white/40 backdrop-blur-sm border-y border-white/20">
+        <section id="faq" className="mb-12 lg:mb-16 mt-16 lg:mt-24 -mx-4 px-4 py-12 lg:py-16 bg-white/40 backdrop-blur-sm border-y border-white/20">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold text-center text-neutral-800 mb-12">
+            <h2 className="text-display font-display font-bold text-center text-neutral-800 mb-8 lg:mb-12">
               Frequently Asked Questions
             </h2>
             <div className="space-y-0">
@@ -429,18 +431,18 @@ export default function Home() {
                 <div key={index} className="border-b border-neutral-200 last:border-b-0">
                   <button
                     onClick={() => toggleFaqItem(index)}
-                    className="w-full text-left flex items-center justify-between py-6 focus:outline-none hover:bg-neutral-50 transition-colors duration-200"
+                    className="w-full text-left flex items-center justify-between py-6 focus:outline-none hover:bg-neutral-50 transition-colors duration-200 touch-target"
                     aria-expanded={openFaqItems.has(index)}
                     aria-controls={`faq-answer-${index}`}
                   >
-                    <h3 className="text-lg font-medium text-neutral-700 pr-4">
+                    <h3 className="text-mobile-lg font-medium text-neutral-700 pr-4 leading-relaxed">
                       {faq.question}
                     </h3>
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 ml-4">
                       {openFaqItems.has(index) ? (
-                        <Minus className="h-5 w-5 text-neutral-600 transition-transform duration-200" />
+                        <Minus className="h-6 w-6 text-neutral-600 transition-transform duration-200" />
                       ) : (
-                        <Plus className="h-5 w-5 text-neutral-600 transition-transform duration-200" />
+                        <Plus className="h-6 w-6 text-neutral-600 transition-transform duration-200" />
                       )}
                     </div>
                   </button>
@@ -452,13 +454,13 @@ export default function Home() {
                         : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="pr-12">
-                      <div className="text-neutral-600 leading-relaxed">
+                    <div className="pr-8 lg:pr-12">
+                      <div className="text-neutral-600 leading-relaxed text-mobile-base">
                         {faq.answer === 'table' ? (
                           <div className="space-y-4">
                             <p>A subscription is optional.</p>
-                            <div className="overflow-x-auto">
-                              <table className="w-full border-collapse border border-neutral-300 text-sm">
+                            <div className="overflow-x-auto mobile-safe">
+                              <table className="w-full border-collapse border border-neutral-300 text-sm lg:text-base">
                                 <thead>
                                   <tr className="bg-sage-50">
                                     <th className="border border-neutral-300 px-3 py-2 text-left font-semibold">Option</th>

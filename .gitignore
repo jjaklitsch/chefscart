@@ -44,3 +44,10 @@ apps/web/monitor.log
 apps/web/dev-server.pid
 *.pid
 *.log
+
+# Large data files
+scripts/zcta_data.zip
+scripts/tl_2022_us_zcta520.*
+*.shp
+*.dbf
+*.shx

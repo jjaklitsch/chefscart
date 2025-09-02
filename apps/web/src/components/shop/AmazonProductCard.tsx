@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { ShoppingCart, Star, Info } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { ShoppingCart, Star, Info, ExternalLink } from 'lucide-react'
 import { AmazonProduct } from '../../../types'
 
 interface AmazonProductCardProps {
@@ -12,6 +12,28 @@ interface AmazonProductCardProps {
 
 export default function AmazonProductCard({ product, compact = false, dataLastUpdated }: AmazonProductCardProps) {
   const [showDataInfo, setShowDataInfo] = useState(false)
+  const [enableShoppingCart, setEnableShoppingCart] = useState(false) // Changed default to false
+  const [flagsLoaded, setFlagsLoaded] = useState(false)
+
+  // Fetch feature flags on component mount
+  useEffect(() => {
+    const fetchFeatureFlags = async () => {
+      try {
+        const response = await fetch('/api/feature-flags')
+        const flags = await response.json()
+        console.log('Feature flags loaded:', flags) // Debug log
+        setEnableShoppingCart(flags.enableShoppingCart)
+        setFlagsLoaded(true)
+      } catch (error) {
+        console.error('Error fetching feature flags:', error)
+        // Default to false on error (safer for affiliate mode)
+        setEnableShoppingCart(false)
+        setFlagsLoaded(true)
+      }
+    }
+    
+    fetchFeatureFlags()
+  }, [])
 
   const affiliateTag = process.env.NEXT_PUBLIC_AMAZON_AFFILIATE_TAG || 'chefscart-20'
   
@@ -185,8 +207,22 @@ export default function AmazonProductCard({ product, compact = false, dataLastUp
             {formatPrice(product.offer.price)}
           </div>
           <button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-lg px-3 py-2 flex items-center justify-center gap-1 transition-colors">
-            <ShoppingCart className="h-4 w-4" />
-            <span className="text-sm font-medium">Add to Cart</span>
+            {!flagsLoaded ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <span className="text-sm font-medium">Loading...</span>
+              </>
+            ) : enableShoppingCart ? (
+              <>
+                <ShoppingCart className="h-4 w-4" />
+                <span className="text-sm font-medium">Add to Cart</span>
+              </>
+            ) : (
+              <>
+                <ExternalLink className="h-4 w-4" />
+                <span className="text-sm font-medium">Buy on Amazon</span>
+              </>
+            )}
           </button>
         </div>
       </div>

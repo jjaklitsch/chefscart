@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ShoppingCart } from 'lucide-react'
 import { useCart } from '../contexts/CartContext'
 import CartModal from './CartModal'
@@ -8,6 +8,28 @@ import CartModal from './CartModal'
 export default function CartIcon() {
   const { itemCount } = useCart()
   const [showModal, setShowModal] = useState(false)
+  const [enableShoppingCart, setEnableShoppingCart] = useState(true)
+
+  // Fetch feature flags on component mount
+  useEffect(() => {
+    const fetchFeatureFlags = async () => {
+      try {
+        const response = await fetch('/api/feature-flags')
+        const flags = await response.json()
+        setEnableShoppingCart(flags.enableShoppingCart)
+      } catch (error) {
+        console.error('Error fetching feature flags:', error)
+        // Keep default value (true) on error
+      }
+    }
+    
+    fetchFeatureFlags()
+  }, [])
+
+  // Don't render cart icon if shopping cart feature is disabled
+  if (!enableShoppingCart) {
+    return null
+  }
 
   return (
     <>

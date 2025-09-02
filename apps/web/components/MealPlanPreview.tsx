@@ -104,7 +104,7 @@ function MealReplacementModal({
       <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         <div className="bg-white border-b border-gray-200 p-4 md:p-6 flex justify-between items-center z-10 flex-shrink-0">
           <h2 className="text-xl md:text-2xl font-bold text-gray-900">
-            Replace "{currentRecipe.title}"
+            Swap "{currentRecipe.title}"
           </h2>
           <button
             onClick={onClose}
@@ -284,7 +284,7 @@ function MealReplacementModal({
                 onClick={handleReplace}
                 className="flex-1 px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-colors"
               >
-                Replace Meal
+                Swap Meal
               </button>
             </div>
           </div>
@@ -428,7 +428,6 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
   const [toastMessage, setToastMessage] = useState<string | null>(null)
   const [replacedRecipes, setReplacedRecipes] = useState<Recipe[]>([]) // Track meals that were replaced
   const [numberOfPeople, setNumberOfPeople] = useState(preferences?.peoplePerMeal || 2)
-
   // Sync selectedRecipes with mealPlan prop changes (for image updates from parent)
   useEffect(() => {
     setSelectedRecipes(mealPlan.recipes)
@@ -673,7 +672,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                             onClick={() => handleReplaceRecipe(recipe)}
                             className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm"
                           >
-                            Replace Meal
+                            Swap Meal
                           </button>
                         </div>
                       </div>
@@ -717,7 +716,7 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                               onClick={() => handleReplaceRecipe(recipe)}
                               className="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                             >
-                              Replace Meal
+                              Swap Meal
                             </button>
                           </div>
                         </div>
