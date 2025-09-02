@@ -86,7 +86,7 @@ open https://chefscart.ai
 - **Frontend**: Next.js 14 (App Router) + TypeScript + Tailwind CSS  
 - **Database**: Supabase (PostgreSQL) with 532+ curated meals
 - **Deployment**: Vercel (seamless Next.js deployment with automatic builds)
-- **AI**: OpenAI GPT-5-mini for selective analysis and content generation
+- **AI**: OpenAI GPT-5-mini (`gpt-5-mini`) for selective analysis and content generation with reasoning capabilities
 - **External APIs**: Instacart IDP, Resend
 - **Testing**: Vitest + React Testing Library
 
@@ -195,6 +195,38 @@ The guided onboarding (`GuidedOnboarding.tsx`) uses a step-based flow:
 - Modify meal filtering: Edit meal recommendation logic in `/api/recommend-meals/route.ts`
 - Add new API endpoint: Create new route in `src/app/api/[endpoint]/route.ts`
 - Update user preferences: Modify `UserPreferences` interface in `types/index.ts`
+
+### Page Layout Pattern (CRITICAL)
+**ALWAYS include Header and Footer on all pages** to maintain consistent navigation:
+
+```tsx
+import Header from '../../../components/Header'  // Adjust path as needed
+import Footer from '../../../components/Footer'  // Adjust path as needed
+
+export default function YourPage() {
+  return (
+    <div className="min-h-screen bg-neutral-50">
+      <Header />
+      
+      {/* Your page content here */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* ... */}
+      </div>
+      
+      <Footer />
+    </div>
+  )
+}
+```
+
+**Common locations that need Header/Footer:**
+- Profile pages (`/profile/[username]/page.tsx`)
+- Recipe pages (`/recipes/[slug]/page.tsx`) 
+- Community pages (`/community/*`)
+- Settings pages (`/preferences`, `/account`)
+- Any new user-facing pages
+
+This pattern ensures users always have navigation access and consistent branding across the entire application.
 
 ### Database Migrations
 **Important**: Supabase restricts DDL operations through API for security. Use this process:

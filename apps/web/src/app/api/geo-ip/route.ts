@@ -13,7 +13,9 @@ export async function GET(request: NextRequest) {
         data: {
           zipCode: null,
           city: null,
-          state: null
+          state: null,
+          country: null,
+          isUS: true // Assume local development is US for testing
         },
         message: 'Local IP detected, no geolocation available'
       })
@@ -28,13 +30,15 @@ export async function GET(request: NextRequest) {
     
     const data = await response.json()
     
-    if (data.status === 'success' && data.country === 'United States') {
+    if (data.status === 'success') {
       return NextResponse.json({
         success: true,
         data: {
           zipCode: data.zip || null,
           city: data.city || null,
-          state: data.regionName || null
+          state: data.regionName || null,
+          country: data.country || null,
+          isUS: data.country === 'United States'
         }
       })
     } else {
@@ -43,9 +47,11 @@ export async function GET(request: NextRequest) {
         data: {
           zipCode: null,
           city: null,
-          state: null
+          state: null,
+          country: null,
+          isUS: false
         },
-        message: 'No US location found for IP'
+        message: data.message || 'Failed to get location data'
       })
     }
 
@@ -56,7 +62,9 @@ export async function GET(request: NextRequest) {
       data: {
         zipCode: null,
         city: null,
-        state: null
+        state: null,
+        country: null,
+        isUS: false
       },
       error: 'Failed to determine location from IP'
     }, { status: 500 })
