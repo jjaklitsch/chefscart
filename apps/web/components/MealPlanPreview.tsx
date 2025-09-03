@@ -327,6 +327,33 @@ function ExpandableSection({ title, children, defaultOpen = false }: { title: st
   )
 }
 
+// Image Modal component for expanded images
+function ImageModal({ imageUrl, title, isOpen, onClose }: { imageUrl: string; title: string; isOpen: boolean; onClose: () => void }) {
+  if (!isOpen) return null
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="relative max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors"
+        >
+          <X className="h-6 w-6" />
+        </button>
+        <img 
+          src={imageUrl} 
+          alt={title}
+          className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        />
+        <div className="absolute bottom-4 left-4 bg-black/50 text-white px-4 py-2 rounded-lg">
+          <p className="font-semibold">{title}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // Modal component for full recipe details
 function RecipeModal({ recipe, isOpen, onClose }: { recipe: Recipe; isOpen: boolean; onClose: () => void }) {
   if (!isOpen) return null
@@ -428,6 +455,8 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
   const [toastMessage, setToastMessage] = useState<string | null>(null)
   const [replacedRecipes, setReplacedRecipes] = useState<Recipe[]>([]) // Track meals that were replaced
   const [numberOfPeople, setNumberOfPeople] = useState(preferences?.peoplePerMeal || 2)
+  const [imageModalOpen, setImageModalOpen] = useState(false)
+  const [selectedImage, setSelectedImage] = useState({ url: '', title: '' })
   // Sync selectedRecipes with mealPlan prop changes (for image updates from parent)
   useEffect(() => {
     setSelectedRecipes(mealPlan.recipes)
@@ -436,6 +465,11 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
   const showToast = (message: string) => {
     setToastMessage(message)
     setTimeout(() => setToastMessage(null), 3000)
+  }
+
+  const openImageModal = (imageUrl: string, title: string) => {
+    setSelectedImage({ url: imageUrl, title })
+    setImageModalOpen(true)
   }
 
   // Group recipes by meal type
@@ -598,7 +632,10 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                     {/* Mobile Layout */}
                     <div className="md:hidden">
                       {/* Recipe Image */}
-                      <div className="w-full h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center overflow-hidden">
+                      <div 
+                        className="w-full h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => recipe.imageUrl && openImageModal(recipe.imageUrl, recipe.title)}
+                      >
                         {recipe.imageUrl ? (
                           <img 
                             src={recipe.imageUrl} 
@@ -681,7 +718,10 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
                     {/* Desktop Layout */}
                     <div className="hidden md:flex">
                       {/* Recipe Image */}
-                      <div className="w-48 h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                      <div 
+                        className="w-48 h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center flex-shrink-0 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => recipe.imageUrl && openImageModal(recipe.imageUrl, recipe.title)}
+                      >
                         {recipe.imageUrl ? (
                           <img 
                             src={recipe.imageUrl} 
@@ -885,6 +925,14 @@ export default function MealPlanPreview({ mealPlan, onApprove, onBack, preferenc
         backupMeals={recipeToReplace ? getBackupMealsForCourse(recipeToReplace) : []}
         onReplace={handleModalReplace}
         replacedRecipes={replacedRecipes}
+      />
+
+      {/* Image Modal */}
+      <ImageModal
+        imageUrl={selectedImage.url}
+        title={selectedImage.title}
+        isOpen={imageModalOpen}
+        onClose={() => setImageModalOpen(false)}
       />
 
       {/* Toast Notification */}

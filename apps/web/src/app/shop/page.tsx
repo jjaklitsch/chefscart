@@ -36,7 +36,6 @@ export default function ShopPage() {
           .from('cooking_equipment')
           .select('*')
           .order('popularity_score', { ascending: false })
-          .limit(48)
       ]);
       
       // Calculate equipment count for each category
@@ -285,9 +284,11 @@ export default function ShopPage() {
                       <h3 className="text-xl font-display font-semibold text-neutral-800 mb-2 group-hover:text-green-700 transition-colors">
                         {equipment.display_name}
                       </h3>
-                      <p className="text-neutral-600 mb-4 line-clamp-3 flex-1">
-                        {equipment.description || `Essential ${equipment.display_name.toLowerCase()} for your kitchen.`}
-                      </p>
+                      {equipment.description && (
+                        <p className="text-neutral-600 mb-4 line-clamp-3 flex-1">
+                          {equipment.description}
+                        </p>
+                      )}
                       <div className="flex items-center justify-center mt-auto">
                         <span className="text-green-600 font-medium group-hover:text-green-700">
                           Shop now →
@@ -303,7 +304,7 @@ export default function ShopPage() {
       )}
 
       {/* Why Shop with ChefsCart */}
-      <section className="py-16 bg-gradient-to-br from-green-50 to-sage-50">
+      <section className="py-16 bg-neutral-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-display font-bold text-neutral-800 mb-8">

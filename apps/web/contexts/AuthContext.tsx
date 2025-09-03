@@ -10,6 +10,9 @@ interface AuthContextType {
   loading: boolean
   signUp: (email: string, password: string, metadata?: any) => Promise<any>
   signIn: (email: string, password: string) => Promise<any>
+  signInWithOAuth: (provider: 'google' | 'apple') => Promise<void>
+  sendMagicLink: (email: string) => Promise<{ error?: string }>
+  resetPassword: (email: string) => Promise<{ error?: string }>
   signOut: () => Promise<void>
   updateProfile: (updates: any) => Promise<any>
 }
@@ -110,6 +113,33 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return { data, error }
   }
 
+  const signInWithOAuth = async (provider: 'google' | 'apple') => {
+    const { error } = await supabaseClient.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback?provider=${provider}`
+      }
+    })
+    if (error) throw error
+  }
+
+  const sendMagicLink = async (email: string) => {
+    const { error } = await supabaseClient.auth.signInWithOtp({
+      email,
+      options: {
+        emailRedirectTo: `${window.location.origin}/auth/callback`
+      }
+    })
+    return { error: error?.message }
+  }
+
+  const resetPassword = async (email: string) => {
+    const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/reset-password`
+    })
+    return { error: error?.message }
+  }
+
   const signOut = async () => {
     const { error } = await supabaseClient.auth.signOut()
     if (error) throw error
@@ -128,6 +158,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     loading,
     signUp,
     signIn,
+    signInWithOAuth,
+    sendMagicLink,
+    resetPassword,
     signOut,
     updateProfile
   }

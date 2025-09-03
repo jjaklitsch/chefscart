@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function AmazonDisclaimer() {
   return (
     <div className="bg-white">
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 pt-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-neutral-800 leading-relaxed">
             <strong>Affiliate Disclosure:</strong> ChefsCart is a participant in the Amazon Services LLC Associates Program, 

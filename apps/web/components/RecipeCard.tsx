@@ -3,6 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Clock, Users, ChefHat, ShoppingCart } from 'lucide-react'
+import AddToMealCart from './AddToMealCart'
 
 // Helper function to convert text to title case
 const toTitleCase = (str: string): string => {
@@ -24,6 +25,15 @@ interface Recipe {
   courses: string[]
   image_url?: string
   slug?: string
+  servings_default?: number
+  ingredients_json?: {
+    servings?: number
+    ingredients?: Array<{
+      display_name: string
+      quantity: number
+      unit: string
+    }>
+  }
 }
 
 interface RecipeCardProps {
@@ -116,10 +126,33 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, href, className = '' })
           </div>
 
           {/* CTA */}
-          <div className="pt-2 border-t border-neutral-100 flex-shrink-0 mt-auto text-center">
-            <span className="text-sm font-medium text-brand-600 group-hover:text-brand-700 transition-colors">
-              View Recipe
-            </span>
+          <div className="pt-3 border-t border-neutral-100 flex-shrink-0 mt-auto">
+            <div onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}>
+              <AddToMealCart 
+                meal={{
+                  id: recipe.id,
+                  title: recipe.title,
+                  description: recipe.description,
+                  ...(recipe.image_url && { imageUrl: recipe.image_url }),
+                  cuisine: recipe.cuisines?.[0] || 'international',
+                  difficulty: recipe.cooking_difficulty,
+                  prepTime: recipe.prep_time || 0,
+                  cookTime: recipe.cook_time || 0,
+                  servings: recipe.ingredients_json?.servings || recipe.servings_default || 2,
+                  ingredients: recipe.ingredients_json?.ingredients?.map((ing) => ({
+                    name: ing.display_name,
+                    amount: ing.quantity,
+                    unit: ing.unit
+                  })) || []
+                }}
+                size="md"
+              />
+            </div>
+            <div className="text-center mt-2">
+              <span className="text-xs text-neutral-500 group-hover:text-brand-600 transition-colors">
+                Click card to view recipe
+              </span>
+            </div>
           </div>
         </div>
       </article>

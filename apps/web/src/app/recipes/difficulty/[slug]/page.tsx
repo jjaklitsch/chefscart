@@ -30,6 +30,15 @@ interface Recipe {
   allergens_present: string[]
   image_url?: string
   slug?: string
+  servings_default?: number
+  ingredients_json?: {
+    servings?: number
+    ingredients?: Array<{
+      display_name: string
+      quantity: number
+      unit: string
+    }>
+  }
 }
 
 export default function DifficultyPage() {
@@ -69,7 +78,7 @@ export default function DifficultyPage() {
       // Get recipes for this difficulty
       const { data, error } = await supabase
         .from('meals')
-        .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url')
+        .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url, ingredients_json, servings_default')
         .eq('cooking_difficulty', difficulty)
         .order('title')
 

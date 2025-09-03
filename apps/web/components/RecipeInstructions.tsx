@@ -97,21 +97,8 @@ const RecipeInstructions: React.FC<RecipeInstructionsProps> = ({
 
   const highlightKeywords = (instruction: string) => {
     if (typeof instruction !== 'string') return instruction
-    const keywords = [
-      // Time keywords
-      /(\d+\s*(?:minutes?|mins?|hours?|hrs?))/gi,
-      // Temperature keywords  
-      /(\d+°[CF]|\d+\s*degrees?)/gi,
-      // Cooking actions
-      /(preheat|heat|boil|simmer|sauté|fry|bake|roast|grill|season|mix|stir|whisk|fold|add|combine|serve)/gi
-    ]
-
-    let highlighted = instruction
-    keywords.forEach((regex) => {
-      highlighted = highlighted.replace(regex, '<strong class="text-brand-700 font-semibold">$1</strong>')
-    })
-    
-    return highlighted
+    // Return instruction as-is without any highlighting
+    return instruction
   }
 
   // Process all instructions with dynamic scaling

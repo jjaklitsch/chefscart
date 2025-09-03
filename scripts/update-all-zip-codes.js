@@ -14,6 +14,7 @@
  */
 
 import { createClient } from '@supabase/supabase-js'
+import { readFileSync } from 'fs'
 import dotenv from 'dotenv'
 dotenv.config({ path: '../.env.local' })
 
@@ -77,8 +78,22 @@ function isValidUSZipRange(zip) {
   return validRanges.some(([start, end]) => num >= start && num <= end)
 }
 
-// Generate array of ZIP codes to check
-function generateZipCodes(start, end) {
+// Load official ZIP codes from file
+function loadOfficialZipCodes() {
+  try {
+    const fileContent = readFileSync('./official_us_zip_codes.txt', 'utf8')
+    const zips = fileContent.trim().split('\n').map(zip => zip.trim())
+    console.log(`📋 Loaded ${zips.length} official US ZIP codes from file`)
+    return zips
+  } catch (error) {
+    console.error('❌ Error loading official ZIP codes file:', error.message)
+    console.log('⚠️  Falling back to range-based generation')
+    return generateZipCodesFromRange('00501', '99999')
+  }
+}
+
+// Fallback: Generate array of ZIP codes to check (original method)
+function generateZipCodesFromRange(start, end) {
   const zips = []
   const startNum = parseInt(start, 10)
   const endNum = parseInt(end, 10)
@@ -248,10 +263,18 @@ async function main() {
   const startTime = Date.now()
   
   try {
-    // Generate list of ZIP codes to check
-    console.log(`🔍 Generating ZIP code list...`)
-    const zipCodes = generateZipCodes(startZip, endZip)
-    console.log(`📊 Found ${zipCodes.length} valid ZIP codes in range`)
+    // Load official ZIP codes from file
+    console.log(`🔍 Loading official ZIP codes...`)
+    const allZipCodes = loadOfficialZipCodes()
+    
+    // Filter by range if specified
+    let zipCodes = allZipCodes
+    if (startZip !== '00501' || endZip !== '99999') {
+      zipCodes = allZipCodes.filter(zip => zip >= startZip && zip <= endZip)
+      console.log(`📊 Filtered to ${zipCodes.length} ZIP codes in range ${startZip}-${endZip}`)
+    } else {
+      console.log(`📊 Using all ${zipCodes.length} official US ZIP codes`)
+    }
 
     // Check if we should resume from a specific point
     console.log(`🔍 Checking for existing cache entries...`)
@@ -326,4 +349,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   main()
 }
 
-export { checkInstacartCoverage, generateZipCodes, isValidUSZipRange }
+export { checkInstacartCoverage, loadOfficialZipCodes, generateZipCodesFromRange, isValidUSZipRange }

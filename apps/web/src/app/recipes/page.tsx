@@ -34,10 +34,13 @@ interface Recipe {
   image_url?: string
   slug?: string
   primary_ingredient?: string
+  servings_default?: number
   ingredients_json?: {
-    ingredients: Array<{
-      display_name?: string
-      shoppable_name?: string
+    servings?: number
+    ingredients?: Array<{
+      display_name: string
+      quantity: number
+      unit: string
     }>
   }
 }
@@ -116,7 +119,7 @@ function RecipesPageContent() {
       
       const { data, error } = await supabase
         .from('meals')
-        .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url, ingredients_json, primary_ingredient')
+        .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url, ingredients_json, primary_ingredient, servings_default')
         .order('title')
 
       if (error) {
@@ -214,8 +217,7 @@ function RecipesPageContent() {
         
         // Search in ingredients list
         const ingredientsMatch = recipe.ingredients_json?.ingredients?.some(ingredient => 
-          ingredient.display_name?.toLowerCase().includes(searchTerm) ||
-          ingredient.shoppable_name?.toLowerCase().includes(searchTerm)
+          ingredient.display_name.toLowerCase().includes(searchTerm)
         )
         
         return basicMatch || primaryIngredientMatch || ingredientsMatch

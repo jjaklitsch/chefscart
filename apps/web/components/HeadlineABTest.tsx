@@ -52,10 +52,10 @@ export default function HeadlineABTest({ className = "" }: HeadlineABTestProps) 
   return (
     <div className={className}>
       <p className="text-xl text-neutral-800 max-w-2xl mx-auto mb-4">
-        Your AI sous-chef that turns personal meal plans into a ready-to-checkout Instacart cart in ≤ 5 min.
+        Get your weekly recipes and shopping done in 5 minutes
       </p>
       <p className="text-lg text-neutral-600 max-w-xl mx-auto">
-        Stop spending hours planning meals and shopping. Get personalized recipes and a complete grocery cart in minutes.
+        Tell us your preferences, get personalized meal plans, and checkout with Instacart. You cook at home, we handle the planning.
       </p>
     </div>
   );

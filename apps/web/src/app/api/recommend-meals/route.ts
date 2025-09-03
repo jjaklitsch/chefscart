@@ -111,29 +111,27 @@ function calculateMealScore(meal: SupabaseMeal, preferences: UserPreferences): n
     }
   }
 
-  // Spice level matching - strict filtering for low tolerance
+  // Spice level matching - allow up to +1 higher than tolerance, equal or lower gets bonus
   const userSpiceTolerance = preferences.spiceTolerance ? parseInt(preferences.spiceTolerance) : 3
   
-  // If user selected mild only (1), exclude anything spicy
-  if (userSpiceTolerance === 1) {
-    // Check for spicy keywords in title or description
-    const spicyKeywords = ['buffalo', 'spicy', 'hot', 'chili', 'jalapeño', 'sriracha', 'harissa', 'gochujang', 'szechuan', 'sichuan', 'nashville hot', 'diablo', 'fire', 'habanero', 'ghost pepper', 'cayenne']
-    const titleLower = meal.title.toLowerCase()
-    const descLower = (meal.description || '').toLowerCase()
-    
-    const hasSpicyKeyword = spicyKeywords.some(keyword => 
-      titleLower.includes(keyword) || descLower.includes(keyword)
-    )
-    
-    if (hasSpicyKeyword || meal.spice_level > 1) {
-      return 0 // Return 0 instead of negative to be filtered out later
-    }
-  } else if (userSpiceTolerance <= 2 && meal.spice_level > 2) {
-    score = Math.max(0, score - 10) // Ensure we don't go negative
-  } else if (userSpiceTolerance <= 3 && meal.spice_level > 3) {
-    score = Math.max(0, score - 5) // Ensure we don't go negative
+  if (meal.spice_level > userSpiceTolerance + 1) {
+    return 0 // Hard filter: exclude meals more than +1 above user tolerance
+  } else if (meal.spice_level <= userSpiceTolerance) {
+    score += 5 // Bonus for meals at or below user tolerance
   }
+  // No penalty for meals exactly +1 above tolerance
   
+
+  // Favorite foods matching (uprank but not required)
+  if (preferences.favoriteFoods && preferences.favoriteFoods.length > 0) {
+    const favoriteMatches = preferences.favoriteFoods.filter(favorite => {
+      const favoriteLower = favorite.toLowerCase()
+      return meal.ingredient_tags?.some(tag => tag.toLowerCase().includes(favoriteLower)) ||
+             meal.title.toLowerCase().includes(favoriteLower) ||
+             (meal.description || '').toLowerCase().includes(favoriteLower)
+    })
+    score += favoriteMatches.length * 10 // 10 points per favorite food match
+  }
 
   // Note: Allergen/avoidance filtering is now done BEFORE scoring
   // This function should only be called on pre-filtered safe meals
@@ -298,9 +296,10 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // HARD FILTER: Remove meals with allergens/avoided ingredients AND dietary restrictions BEFORE scoring
+    // HARD FILTER: Remove meals with allergens/avoided ingredients, dietary restrictions, and spice issues BEFORE scoring
     const avoidList = (preferences.foodsToAvoid || []).map(item => item.toLowerCase())
     const userDiets = (preferences.dietaryStyle || []).map(d => d.toLowerCase())
+    const userSpiceTolerance = preferences.spiceTolerance ? parseInt(preferences.spiceTolerance) : 3
 
     const filteredMeals = meals.filter(meal => {
       // 1. Check allergens and avoided ingredients
@@ -318,7 +317,12 @@ export async function POST(request: NextRequest) {
         }
       }
 
-      // 2. HARD DIETARY RESTRICTION FILTERING
+      // 2. HARD SPICE TOLERANCE FILTERING - exclude meals more than +1 above user tolerance
+      if (meal.spice_level > userSpiceTolerance + 1) {
+        return false
+      }
+
+      // 3. HARD DIETARY RESTRICTION FILTERING
       if (userDiets.length > 0) {
         const mealDietTags = (meal.diets_supported || []).map(d => d.toLowerCase())
         

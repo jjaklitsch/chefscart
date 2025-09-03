@@ -1,17 +1,19 @@
 "use client"
 
-import { ShoppingCart, User, LogOut, Menu, X } from 'lucide-react'
+import { ShoppingCart, User, LogOut, Menu, X, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { useAuth } from '../contexts/AuthContext'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { isPaymentSystemEnabled } from '../lib/feature-flags'
 import CartIcon from './CartIcon'
+import RecipesMegaMenu from './RecipesMegaMenu'
 
 export default function Header() {
   const { user, loading, signOut } = useAuth()
   const router = useRouter()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isRecipesMegaMenuOpen, setIsRecipesMegaMenuOpen] = useState(false)
 
   const handleLogout = async () => {
     try {
@@ -33,16 +35,20 @@ export default function Header() {
     setIsMobileMenuOpen(false)
   }
 
+  const closeRecipesMegaMenu = () => {
+    setIsRecipesMegaMenuOpen(false)
+  }
+
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-200 shadow-subtle">
       <div className="container mx-auto mobile-container">
-        <nav className="flex items-center justify-between h-16 lg:h-18">
+        <nav className="flex items-center justify-between h-14 sm:h-16 lg:h-18">
           {/* Logo */}
           <Link href={user ? "/dashboard" : "/"} className="flex items-center space-x-2 lg:space-x-3 group touch-target">
-            <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-lg p-2 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-200">
-              <ShoppingCart className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
+            <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-lg p-1.5 sm:p-2 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-200">
+              <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
             </div>
-            <span className="text-lg lg:text-2xl font-display font-bold text-neutral-800 group-hover:text-green-700 transition-colors duration-200">
+            <span className="text-base sm:text-lg lg:text-2xl font-display font-bold text-neutral-800 group-hover:text-green-700 transition-colors duration-200">
               ChefsCart
             </span>
           </Link>
@@ -58,12 +64,16 @@ export default function Header() {
                 >
                   Meal Planning
                 </Link>
-                <Link 
-                  href="/recipes" 
-                  className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden lg:flex items-center text-mobile-base touch-target"
-                >
-                  Recipes
-                </Link>
+                <div className="relative hidden lg:block">
+                  <button
+                    onMouseEnter={() => setIsRecipesMegaMenuOpen(true)}
+                    onMouseLeave={() => setIsRecipesMegaMenuOpen(false)}
+                    className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 flex items-center text-mobile-base touch-target group"
+                  >
+                    Recipes
+                    <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-200 ${isRecipesMegaMenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
                 <Link 
                   href="/shop" 
                   className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden lg:flex items-center text-mobile-base touch-target"
@@ -85,7 +95,7 @@ export default function Header() {
                   </Link>
                 )}
                 <Link 
-                  href="/#faq" 
+                  href="/faq" 
                   className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden lg:flex items-center text-mobile-base touch-target"
                 >
                   FAQ
@@ -93,7 +103,7 @@ export default function Header() {
                 <CartIcon />
                 <Link
                   href="/login"
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2.5 rounded-lg font-medium transition-colors hidden lg:inline-block touch-target text-mobile-base"
+                  className="bg-green-600 hover:bg-green-700 text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg font-medium transition-colors hidden lg:inline-block touch-target text-mobile-base"
                 >
                   Login
                 </Link>
@@ -106,12 +116,16 @@ export default function Header() {
                 >
                   My Kitchen
                 </Link>
-                <Link
-                  href="/recipes"
-                  className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden lg:flex items-center text-mobile-base touch-target"
-                >
-                  Recipes
-                </Link>
+                <div className="relative hidden lg:block">
+                  <button
+                    onMouseEnter={() => setIsRecipesMegaMenuOpen(true)}
+                    onMouseLeave={() => setIsRecipesMegaMenuOpen(false)}
+                    className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 flex items-center text-mobile-base touch-target group"
+                  >
+                    Recipes
+                    <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-200 ${isRecipesMegaMenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
                 <Link
                   href="/community"
                   className="text-neutral-600 hover:text-green-700 font-medium transition-colors duration-200 hidden lg:flex items-center text-mobile-base touch-target"
@@ -175,13 +189,13 @@ export default function Header() {
             {/* Mobile hamburger menu button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-3 rounded-lg hover:bg-neutral-100 transition-colors touch-target"
+              className="lg:hidden p-2 sm:p-3 rounded-lg hover:bg-neutral-100 transition-colors touch-target"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-neutral-700" />
+                <X className="h-5 w-5 sm:h-6 sm:w-6 text-neutral-700" />
               ) : (
-                <Menu className="h-6 w-6 text-neutral-700" />
+                <Menu className="h-5 w-5 sm:h-6 sm:w-6 text-neutral-700" />
               )}
             </button>
           </div>
@@ -197,7 +211,7 @@ export default function Header() {
                 className="fixed inset-0 bg-black/50 -z-10"
                 onClick={closeMobileMenu}
               />
-              <nav className="mobile-container py-6 space-y-2">
+              <nav className="mobile-container py-4 sm:py-6 space-y-1 sm:space-y-2">
                 {!user ? (
                   <>
                     <Link 
@@ -238,17 +252,17 @@ export default function Header() {
                       </Link>
                     )}
                     <Link 
-                      href="/#faq"
+                      href="/faq"
                       onClick={closeMobileMenu}
                       className="mobile-nav-item text-neutral-700 hover:text-green-700 hover:bg-sage-50 font-medium transition-colors border-b border-neutral-100 last:border-b-0 rounded-lg"
                     >
                       FAQ
                     </Link>
-                    <div className="pt-4">
+                    <div className="pt-3 sm:pt-4">
                       <Link
                         href="/login"
                         onClick={closeMobileMenu}
-                        className="block w-full text-center bg-green-600 hover:bg-green-700 text-white py-4 px-4 rounded-lg font-medium transition-colors touch-target text-mobile-base"
+                        className="block w-full text-center bg-green-600 hover:bg-green-700 text-white py-3 sm:py-4 px-4 rounded-lg font-medium transition-colors touch-target text-mobile-base"
                       >
                         Login
                       </Link>
@@ -316,14 +330,14 @@ export default function Header() {
                       <User className="w-5 h-5" />
                       Settings & Preferences
                     </Link>
-                    <div className="py-4 border-b border-neutral-100 flex justify-center">
+                    <div className="py-3 sm:py-4 border-b border-neutral-100 flex justify-center">
                       <CartIcon />
                     </div>
                     <button
                       onClick={handleLogout}
-                      className="mobile-nav-item text-neutral-700 hover:text-red-600 hover:bg-red-50 font-medium transition-colors w-full text-left rounded-lg gap-3"
+                      className="mobile-nav-item text-neutral-700 hover:text-red-600 hover:bg-red-50 font-medium transition-colors w-full text-left rounded-lg gap-2 sm:gap-3"
                     >
-                      <LogOut className="w-5 h-5" />
+                      <LogOut className="w-4 h-4 sm:w-5 sm:h-5" />
                       Logout
                     </button>
                   </>
@@ -332,6 +346,18 @@ export default function Header() {
             </div>
           </>
         )}
+        
+        {/* Recipes Mega Menu */}
+        <div 
+          className="relative"
+          onMouseEnter={() => setIsRecipesMegaMenuOpen(true)}
+          onMouseLeave={() => setIsRecipesMegaMenuOpen(false)}
+        >
+          <RecipesMegaMenu 
+            isVisible={isRecipesMegaMenuOpen} 
+            onClose={closeRecipesMegaMenu}
+          />
+        </div>
       </div>
     </header>
   )

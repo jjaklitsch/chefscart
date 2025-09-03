@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { MapPin, Clock, DollarSign, Plus, Minus, ShoppingCart, ArrowRight, CheckCircle } from 'lucide-react'
 import ZipCodeInput from '../../components/ZipCodeInput'
 import HeadlineABTest from '../../components/HeadlineABTest'
@@ -79,68 +80,28 @@ export default function Home() {
       answer: "We partner with Instacart to turn every ingredient in your approved meal plan into a real Instacart shopping‑list page. When you click \"Checkout on Instacart\" you're sent to Instacart's app or website, where you pick a store, confirm items, and pay. Instacart then handles delivery logistics, replacements, and order support."
     },
     {
-      question: "Who handles support if something goes wrong with my order?",
-      answer: "All order and delivery issues (missing items, substitutions, refunds, etc.) are processed directly by Instacart through Account › Orders › Help inside their app. For questions about meal plans, billing, or the ChefsCart site, email support@chefscart.ai."
-    },
-    {
-      question: "Do I need an Instacart account?",
-      answer: "Yes. Instacart requires you to log in or create a free account before checkout so they can store your address, payment card, and delivery preferences. The sign‑up takes about 30 seconds the first time you use ChefsCart."
-    },
-    {
-      question: "Do I need an Instacart+ subscription, or can I just pay per order?",
-      answer: "table"
+      question: "How much does ChefsCart cost?",
+      answer: "ChefsCart is currently free during our beta period. You only pay for groceries through Instacart—we never mark up food prices or charge additional fees."
     },
     {
       question: "Can ChefsCart handle special diets or allergies?",
       answer: "Absolutely. During onboarding you can choose dietary styles like Vegan, Keto, Gluten‑Free, Paleo, Mediterranean, and more. You can also specify foods to avoid (e.g., nuts, shellfish, dairy) and we'll filter recipes to match your needs."
     },
     {
-      question: "What's the difference between meals and servings?",
-      answer: "**Meals per week** = how many breakfasts, lunches, and dinners you want planned.\n**Servings** = how many plates each recipe should make (kids can be counted as ½‑serving).\nChefsCart uses those two numbers to size every ingredient before it reaches your cart—no math required on your end."
-    },
-    {
-      question: "Can I customize my shopping cart?",
-      answer: "Yes. After selecting your meals, you'll review a consolidated shopping list where you can adjust quantities, remove items you already have, and see exactly what will be added to your Instacart cart. You can also modify items directly in Instacart before checkout."
-    },
-    {
-      question: "How is ChefsCart different from meal‑kit boxes like Blue Apron or Home Chef?",
-      answer: "list"
-    },
-    {
       question: "Where is ChefsCart available?",
       answer: "Anywhere Instacart delivers in the United States and Canada. During signup we check your ZIP/postal code; if no local store is supported you can join our wait‑list and we'll notify you as soon as coverage expands."
     },
     {
-      question: "How much does ChefsCart cost?",
-      answer: "ChefsCart starts at $4.99/month (billed annually) or $5.99/month (billed monthly). Both plans include a free trial period with no commitment. You only pay for groceries through Instacart—we never mark up food prices."
-    },
-    {
-      question: "Can I change my meal plan after creating the cart?",
-      answer: "Before creating the cart, you can swap meals, adjust servings, and customize your shopping list in ChefsCart. After the cart is created, you can still add, remove, or modify items directly in Instacart before placing your order."
-    },
-    {
-      question: "How do you protect my data?",
-      answer: "We store only the preferences needed to generate your plan (diet, servings, ZIP) and your email if provided. We don't store payment information—all transactions are handled by Instacart. Your data is protected with industry-standard encryption. You can request data deletion anytime via support@chefscart.ai."
-    },
-    {
-      question: "Can I choose a different store on Instacart?",
-      answer: "Yes! When you land on Instacart, you can select from any available stores in your area at the top of the page. Popular options include Whole Foods, Kroger, Safeway, ALDI, and more. Prices and availability may vary by store. Pro tip: Some stores offer faster delivery or better prices for certain items."
-    },
-    {
-      question: "What if an ingredient is out of stock?",
-      answer: "Instacart handles substitutions automatically. You can set your substitution preferences (replace with similar item, specific replacement, or refund) for each item in your cart. The Instacart shopper will follow your preferences and may text you during shopping if they need clarification on replacements."
+      question: "Do I need an Instacart account?",
+      answer: "Yes. Instacart requires you to log in or create a free account before checkout so they can store your address, payment card, and delivery preferences. The sign‑up takes about 30 seconds the first time you use ChefsCart."
     },
     {
       question: "How accurate are the grocery quantities?",
       answer: "ChefsCart automatically scales all ingredients based on your serving size. For example, if a recipe serves 4 and you need 6 servings, we'll multiply all ingredients by 1.5x. The quantities are optimized for standard package sizes when possible (e.g., buying 2 lbs of chicken instead of 1.73 lbs)."
     },
     {
-      question: "Can I save my favorite meals?",
-      answer: "Yes! You can mark any meal as a favorite by clicking the heart icon. Your favorites are saved and you can easily access them when creating future meal plans. This helps ChefsCart learn your preferences and suggest similar recipes you might enjoy."
-    },
-    {
-      question: "What's the best way to use ChefsCart?",
-      answer: "**Weekly planning**: Set aside 5 minutes each weekend to plan your week's meals. **Start small**: Begin with 3-4 dinners if you're new to meal planning. **Use the swap feature**: Don't like a suggested meal? Swap it for another with one click. **Check your pantry**: Mark items you already have to avoid buying duplicates. **Schedule delivery**: Pick a delivery time when you'll be home to ensure freshness."
+      question: "Can I customize my shopping cart?",
+      answer: "Yes. After selecting your meals, you'll review a consolidated shopping list where you can adjust quantities, remove items you already have, and see exactly what will be added to your Instacart cart. You can also modify items directly in Instacart before checkout."
     }
   ]
 
@@ -191,7 +152,7 @@ export default function Home() {
               <button 
                 onClick={handleGetStarted}
                 disabled={!isValidZip}
-                className="w-full md:w-auto md:max-w-[200px] md:mt-7 px-6 h-[60px] border-2 border-green-600 bg-green-600 text-white font-medium rounded-xl hover:bg-green-700 hover:border-green-700 disabled:bg-gray-400 disabled:border-gray-400 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center md:whitespace-nowrap touch-target text-mobile-lg"
+                className="w-full md:w-auto md:max-w-[220px] md:mt-7 px-6 h-[60px] border-2 border-green-600 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 hover:border-green-700 disabled:bg-gray-400 disabled:border-gray-400 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center md:whitespace-nowrap touch-target text-mobile-lg shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Get Started →
               </button>
@@ -201,29 +162,145 @@ export default function Home() {
 
 
         {/* How It Works Section */}
-        <section className="mb-12 lg:mb-16 -mx-4 px-4 py-12 lg:py-16 bg-white/50 backdrop-blur-sm border-y border-white/30">
-          <h2 className="text-display font-display font-bold text-center text-neutral-800 mb-8 lg:mb-12">How It Works</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group mobile-py">
-              <div className="bg-gradient-to-br from-brand-500 to-brand-600 rounded-full w-14 h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-700 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
-                <span className="text-xl lg:text-2xl font-bold text-white">1</span>
-              </div>
-              <h3 className="text-lg lg:text-xl font-display font-semibold mb-3 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Tell Us Your Preferences</h3>
-              <p className="text-neutral-600 leading-relaxed text-mobile-base">Set your dietary needs, servings, and weekly meal count through our guided step-by-step process.</p>
+        <section className="mb-16 lg:mb-24 py-20 lg:py-28 bg-gradient-to-br from-neutral-50 to-white relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl lg:text-5xl font-display font-bold text-neutral-900 mb-6">How It Works</h2>
+              <p className="text-xl text-neutral-600 max-w-2xl mx-auto">From preferences to groceries in three simple steps</p>
             </div>
-            <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group mobile-py">
-              <div className="bg-gradient-to-br from-brand-600 to-brand-700 rounded-full w-14 h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-800 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
-                <span className="text-xl lg:text-2xl font-bold text-white">2</span>
+          
+            {/* Timeline Style Layout */}
+            <div className="relative">
+              {/* Connecting Line (Desktop) */}
+              <div className="hidden lg:block absolute top-32 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
+                <div className="flex justify-between items-center px-32">
+                  <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"></div>
+                  <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-orange-500 rounded-full"></div>
+                </div>
               </div>
-              <h3 className="text-lg lg:text-xl font-display font-semibold mb-3 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Get Personalized Recipes</h3>
-              <p className="text-neutral-600 leading-relaxed text-mobile-base">Receive a custom meal plan with recipes matched to your dietary needs and preferences from our curated collection.</p>
-            </div>
-            <div className="card-unified text-center hover-lift transition-all duration-300 ease-out group mobile-py">
-              <div className="bg-gradient-to-br from-brand-700 to-brand-800 rounded-full w-14 h-14 lg:w-16 lg:h-16 flex items-center justify-center mx-auto mb-4 shadow-brand border-2 border-brand-900 group-hover:scale-110 group-hover:shadow-brand-lg transition-all duration-300">
-                <span className="text-xl lg:text-2xl font-bold text-white">3</span>
+
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-12 max-w-6xl mx-auto relative">
+                {/* Step 1 - Preferences */}
+                <div className="relative group">
+                  {/* Large Step Number */}
+                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="w-16 h-16 bg-green-600 hover:bg-green-700 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white transition-colors duration-300">
+                      <span className="text-2xl font-bold">1</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 pt-12 group-hover:-translate-y-2 min-h-[420px] flex flex-col">
+                    {/* Mock UI Preview */}
+                    <div className="mb-8 relative">
+                      <div className="bg-gradient-to-br from-brand-50 to-brand-100 rounded-xl p-6 border border-brand-200">
+                        {/* Simulated form elements */}
+                        <div className="space-y-4">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-4 h-4 bg-brand-500 rounded-full"></div>
+                            <div className="h-3 bg-neutral-200 rounded-full flex-1 max-w-32"></div>
+                          </div>
+                          <div className="flex items-center space-x-3">
+                            <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                            <div className="h-3 bg-neutral-200 rounded-full flex-1 max-w-28"></div>
+                          </div>
+                          <div className="flex items-center space-x-3">
+                            <div className="w-4 h-4 bg-orange-500 rounded-full"></div>
+                            <div className="h-3 bg-neutral-200 rounded-full flex-1 max-w-36"></div>
+                          </div>
+                        </div>
+                        <div className="text-xs text-brand-600 font-medium mt-4 text-center">Preference Setup</div>
+                      </div>
+                    </div>
+
+                    <div className="flex-1 flex flex-col justify-end">
+                      <h3 className="text-xl font-display font-bold mb-4 text-neutral-800 group-hover:text-green-600 transition-colors">Tell Us Your Preferences</h3>
+                      <p className="text-neutral-600 leading-relaxed">Quick 2-minute setup: dietary needs, family size, and weekly meal goals—we handle the rest.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 2 - Recipes */}
+                <div className="relative group">
+                  {/* Large Step Number */}
+                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="w-16 h-16 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white transition-colors duration-300">
+                      <span className="text-2xl font-bold">2</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 pt-12 group-hover:-translate-y-2 min-h-[420px] flex flex-col">
+                    {/* Mock Recipe Cards */}
+                    <div className="mb-8">
+                      <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
+                        <div className="grid grid-cols-2 gap-3">
+                          <div className="bg-white rounded-lg p-3 shadow-sm">
+                            <div className="w-full h-12 bg-gradient-to-br from-orange-200 to-orange-300 rounded mb-2"></div>
+                            <div className="h-2 bg-neutral-200 rounded mb-1"></div>
+                            <div className="h-2 bg-neutral-200 rounded w-3/4"></div>
+                          </div>
+                          <div className="bg-white rounded-lg p-3 shadow-sm">
+                            <div className="w-full h-12 bg-gradient-to-br from-blue-200 to-blue-300 rounded mb-2"></div>
+                            <div className="h-2 bg-neutral-200 rounded mb-1"></div>
+                            <div className="h-2 bg-neutral-200 rounded w-2/3"></div>
+                          </div>
+                        </div>
+                        <div className="text-xs text-green-600 font-medium mt-4 text-center">Personalized Matches</div>
+                      </div>
+                    </div>
+
+                    <div className="flex-1 flex flex-col justify-end">
+                      <h3 className="text-xl font-display font-bold mb-4 text-neutral-800 group-hover:text-emerald-600 transition-colors">Get Personalized Recipes</h3>
+                      <p className="text-neutral-600 leading-relaxed">AI matches you with perfect meals from our curated recipes—all tailored to your diet, taste, and cooking skill level.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 3 - Shopping */}
+                <div className="relative group">
+                  {/* Large Step Number */}
+                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="w-16 h-16 bg-orange-600 hover:bg-orange-700 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white transition-colors duration-300">
+                      <span className="text-2xl font-bold">3</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 pt-12 group-hover:-translate-y-2 min-h-[420px] flex flex-col">
+                    {/* Mock Shopping Cart */}
+                    <div className="mb-8">
+                      <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200">
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between p-2 bg-white rounded">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-8 h-8 bg-green-200 rounded"></div>
+                              <div>
+                                <div className="h-2 bg-neutral-300 rounded w-16 mb-1"></div>
+                                <div className="h-1.5 bg-neutral-200 rounded w-12"></div>
+                              </div>
+                            </div>
+                            <div className="text-xs font-bold text-green-600">$4.99</div>
+                          </div>
+                          <div className="flex items-center justify-between p-2 bg-white rounded">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-8 h-8 bg-orange-200 rounded"></div>
+                              <div>
+                                <div className="h-2 bg-neutral-300 rounded w-20 mb-1"></div>
+                                <div className="h-1.5 bg-neutral-200 rounded w-16"></div>
+                              </div>
+                            </div>
+                            <div className="text-xs font-bold text-green-600">$7.49</div>
+                          </div>
+                        </div>
+                        <div className="text-xs text-orange-600 font-medium mt-4 text-center">Ready to Checkout</div>
+                      </div>
+                    </div>
+
+                    <div className="flex-1 flex flex-col justify-end">
+                      <h3 className="text-xl font-display font-bold mb-4 text-neutral-800 group-hover:text-orange-600 transition-colors">Shop with One Click</h3>
+                      <p className="text-neutral-600 leading-relaxed">Pre-built cart with exact quantities—just click checkout and get groceries delivered within hours.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg lg:text-xl font-display font-semibold mb-3 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Shop with One Click</h3>
-              <p className="text-neutral-600 leading-relaxed text-mobile-base">Review your cart and checkout directly through Instacart with all ingredients ready to order.</p>
             </div>
           </div>
         </section>
@@ -240,8 +317,8 @@ export default function Home() {
                 <Clock className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Save Time</h3>
-                <p className="text-neutral-600 leading-relaxed text-mobile-base">From meal planning to shopping cart in under 5 minutes</p>
+                <h3 className="font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Save 2+ Hours Weekly</h3>
+                <p className="text-neutral-600 leading-relaxed text-mobile-base">Skip the meal planning struggle—get from "what's for dinner?" to ready-to-order cart in 5 minutes</p>
               </div>
             </div>
             <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft touch-target">
@@ -249,8 +326,8 @@ export default function Home() {
                 <DollarSign className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Smart Shopping</h3>
-                <p className="text-neutral-600 leading-relaxed text-mobile-base">Ingredients consolidated and scaled to avoid waste and save money</p>
+                <h3 className="font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Stop Food Waste</h3>
+                <p className="text-neutral-600 leading-relaxed text-mobile-base">Perfect portions, exact quantities—never buy too much or run out of ingredients again</p>
               </div>
             </div>
             <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft touch-target">
@@ -259,7 +336,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="font-display font-semibold mb-2 text-neutral-800 group-hover:text-brand-700 transition-colors duration-300 text-mobile-lg">Personalized</h3>
-                <p className="text-neutral-600 leading-relaxed text-mobile-base">500+ recipes filtered to match your dietary needs and preferences</p>
+                <p className="text-neutral-600 leading-relaxed text-mobile-base">Curated recipes filtered to match your dietary needs and preferences</p>
               </div>
             </div>
             <div className="flex items-start space-x-4 group hover:bg-sage-100 p-4 rounded-xl transition-all duration-300 ease-out hover:shadow-soft touch-target">
@@ -286,7 +363,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-gray-700 mb-4 italic flex-grow">
-                  "ChefsCart turned my chaotic meal planning into a 5-minute task. The AI actually understands my dietary restrictions and creates meals my whole family loves."
+                  "I used to spend 2 hours every Sunday planning meals and making shopping lists. Now it takes me 5 minutes, and the recipes are actually better than what I picked myself!"
                 </p>
                 <div className="flex items-center mt-auto">
                   <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
@@ -306,7 +383,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-gray-700 mb-4 italic flex-grow">
-                  "As a busy professional, I was ordering takeout 5 nights a week. ChefsCart helps me cook healthy meals at home without the planning stress."
+                  "I was spending $200/week on takeout because meal planning felt impossible. ChefsCart cut my food budget in half and I'm eating way better meals."
                 </p>
                 <div className="flex items-center mt-auto">
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
@@ -509,19 +586,29 @@ export default function Home() {
               ))}
             </div>
             
-            {/* Still have questions footer */}
-            <div className="text-center mt-8 p-6 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-xl shadow-sm">
-              <p className="text-neutral-700 font-medium mb-2">Still have questions?</p>
-              <p className="text-neutral-600">
-                Email us at{' '}
-                <a 
-                  href="mailto:support@chefscart.ai" 
-                  className="text-brand-600 hover:text-brand-700 font-medium underline decoration-brand-300 hover:decoration-brand-500 transition-colors duration-200"
-                >
-                  support@chefscart.ai
-                </a>
-                —we're happy to help!
-              </p>
+            {/* View All FAQs and Still have questions footer */}
+            <div className="text-center mt-8 space-y-6">
+              <Link 
+                href="/faq"
+                className="inline-flex items-center px-6 py-3 bg-white hover:bg-neutral-50 border-2 border-brand-600 text-brand-600 hover:text-brand-700 font-semibold rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
+              >
+                View All 22 FAQs
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              
+              <div className="p-6 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-xl shadow-sm">
+                <p className="text-neutral-700 font-medium mb-2">Still have questions?</p>
+                <p className="text-neutral-600">
+                  Email us at{' '}
+                  <a 
+                    href="mailto:support@chefscart.ai" 
+                    className="text-brand-600 hover:text-brand-700 font-medium underline decoration-brand-300 hover:decoration-brand-500 transition-colors duration-200"
+                  >
+                    support@chefscart.ai
+                  </a>
+                  —we're happy to help!
+                </p>
+              </div>
             </div>
           </div>
         </section>

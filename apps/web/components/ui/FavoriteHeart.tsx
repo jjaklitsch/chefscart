@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Heart } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 
@@ -22,6 +22,11 @@ export default function FavoriteHeart({
   const { user } = useAuth()
   const [isLoading, setIsLoading] = useState(false)
   const [favorited, setFavorited] = useState(isFavorited)
+
+  // Update local state when prop changes
+  useEffect(() => {
+    setFavorited(isFavorited)
+  }, [isFavorited])
 
   const sizeClasses = {
     sm: 'w-4 h-4',

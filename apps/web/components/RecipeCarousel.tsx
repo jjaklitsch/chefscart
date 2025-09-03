@@ -21,10 +21,13 @@ interface Recipe {
   image_url?: string
   slug?: string
   primary_ingredient?: string
+  servings_default?: number
   ingredients_json?: {
-    ingredients: Array<{
-      display_name?: string
-      shoppable_name?: string
+    servings?: number
+    ingredients?: Array<{
+      display_name: string
+      quantity: number
+      unit: string
     }>
   }
 }
@@ -76,7 +79,7 @@ const RecipeCarousel: React.FC<RecipeCarouselProps> = ({
       // Get more recipes initially to ensure we have enough after filtering
       let query = supabase
         .from('meals')
-        .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url, primary_ingredient, ingredients_json')
+        .select('id, title, description, prep_time, cook_time, time_total_min, cooking_difficulty, cuisines, diets_supported, courses, allergens_present, image_url, primary_ingredient, ingredients_json, servings_default')
         .limit(50) // Increased limit to ensure we get enough valid recipes
 
       // Apply basic database filters where possible
@@ -150,8 +153,9 @@ const RecipeCarousel: React.FC<RecipeCarouselProps> = ({
     }
   }
 
+  const maxIndex = Math.max(0, recipes.length - itemsPerView)
   const canScrollLeft = currentIndex > 0
-  const canScrollRight = currentIndex < recipes.length - itemsPerView
+  const canScrollRight = currentIndex < maxIndex
   const showNavigation = recipes.length > itemsPerView
 
   const scrollLeft = () => {
@@ -256,9 +260,9 @@ const RecipeCarousel: React.FC<RecipeCarouselProps> = ({
       </div>
 
       {/* Dots Indicator */}
-      {showNavigation && (
+      {showNavigation && maxIndex > 0 && (
         <div className="flex justify-center mt-6 gap-2">
-          {Array.from({ length: Math.ceil(recipes.length - itemsPerView + 1) }).map((_, index) => (
+          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}

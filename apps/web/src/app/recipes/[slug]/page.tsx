@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useParams, useSearchParams, notFound } from 'next/navigation'
-import { ArrowLeft, Clock, Users, ChefHat, ShoppingCart, Share2, Heart, Star } from 'lucide-react'
+import { ArrowLeft, Clock, Users, ChefHat, ShoppingCart, Share2 } from 'lucide-react'
 import Link from 'next/link'
 import { createClient } from '../../../../lib/supabase'
 import { inferEquipmentFromRecipe } from '../../../../utils/equipmentInference'
@@ -12,6 +12,7 @@ import RecipeInstructions from '../../../../components/RecipeInstructions'
 import CookingEquipment from '../../../../components/CookingEquipment'
 import RelatedRecipes from '../../../../components/RelatedRecipes'
 import InstacartInstructionsModal from '../../../../components/InstacartInstructionsModal'
+import AddToMealCart from '../../../../components/AddToMealCart'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
 import BackToTop from '../../../components/shop/BackToTop'
@@ -86,8 +87,6 @@ export default function RecipePage() {
   const [showInstructions, setShowInstructions] = useState(false)
   const [showImageModal, setShowImageModal] = useState(false)
   const [cartUrl, setCartUrl] = useState<string | null>(null)
-  const [isLiked, setIsLiked] = useState(false)
-  const [likeCount, setLikeCount] = useState(0)
 
   useEffect(() => {
     if (slug) {
@@ -203,28 +202,6 @@ export default function RecipePage() {
     }
   }
 
-  const handleLike = async () => {
-    try {
-      // Toggle the like state immediately for better UX
-      const newLikedState = !isLiked
-      setIsLiked(newLikedState)
-      setLikeCount(prev => newLikedState ? prev + 1 : Math.max(0, prev - 1))
-      
-      // TODO: Call actual API endpoint when implemented
-      console.log(`${newLikedState ? 'Liked' : 'Unliked'} recipe:`, recipe?.id)
-      
-      // Here you would call something like:
-      // const response = await fetch(`/api/recipes/${recipe.id}/like`, {
-      //   method: newLikedState ? 'POST' : 'DELETE'
-      // })
-      
-    } catch (error) {
-      // Revert on error
-      setIsLiked(!isLiked)
-      setLikeCount(prev => isLiked ? prev + 1 : Math.max(0, prev - 1))
-      console.error('Error liking recipe:', error)
-    }
-  }
 
   const handleShare = () => {
     setShowShareModal(true)
@@ -295,19 +272,6 @@ export default function RecipePage() {
             </Link>
             
             <div className="flex items-center gap-3">
-              <button
-                onClick={handleLike}
-                className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
-                  isLiked 
-                    ? 'text-red-600 bg-red-50 hover:bg-red-100' 
-                    : 'text-neutral-600 hover:text-red-600 hover:bg-red-50'
-                }`}
-              >
-                <Heart className={`w-4 h-4 ${isLiked ? 'fill-red-600' : ''}`} />
-                <span className="hidden sm:inline">
-                  {isLiked ? 'Liked' : 'Like'} {likeCount > 0 && `(${likeCount})`}
-                </span>
-              </button>
               <button
                 onClick={handleShare}
                 className="inline-flex items-center gap-2 px-3 py-2 text-neutral-600 hover:text-neutral-800 hover:bg-neutral-100 rounded-lg transition-colors"
@@ -443,25 +407,27 @@ export default function RecipePage() {
                       </div>
                     </div>
 
-                    <button
-                      onClick={handleCreateCart}
-                      disabled={creatingCart}
-                      className="w-full flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 disabled:bg-brand-400 text-white px-4 py-3 rounded-lg font-semibold transition-colors shadow-lg hover:shadow-xl disabled:cursor-not-allowed"
-                    >
-                      {creatingCart ? (
-                        <>
-                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                          Creating Cart...
-                        </>
-                      ) : (
-                        <>
-                          <ShoppingCart className="w-4 h-4" />
-                          Shop Now
-                        </>
-                      )}
-                    </button>
+                    <AddToMealCart 
+                      meal={{
+                        id: recipe.id,
+                        title: recipe.title,
+                        description: recipe.description || '',
+                        ...(recipe.image_url && { imageUrl: recipe.image_url }),
+                        cuisine: recipe.cuisines?.[0] || 'international',
+                        difficulty: recipe.cooking_difficulty || 'medium',
+                        prepTime: recipe.prep_time || 0,
+                        cookTime: recipe.cook_time || 0,
+                        servings: recipe.servings_default || 2,
+                        ingredients: recipe.ingredients?.map(ing => ({
+                          name: ing.name,
+                          amount: ing.cooking_quantity,
+                          unit: ing.cooking_unit
+                        })) || []
+                      }}
+                      size="lg"
+                    />
                     <p className="text-xs text-neutral-500 text-center mt-2">
-                      Opens Instacart with all ingredients
+                      Adds recipe to your meal cart
                     </p>
                   </div>
                 </div>
@@ -670,64 +636,6 @@ export default function RecipePage() {
 
       <Footer />
 
-      {/* Fixed Upsell Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-neutral-200 shadow-lg z-40">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="bg-brand-100 rounded-lg p-2">
-                <ShoppingCart className="w-5 h-5 text-brand-600" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-neutral-800">Get all ingredients delivered</p>
-                <p className="text-xs text-neutral-600">Shop this recipe with one click</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              {/* Servings Adjuster */}
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-neutral-600">Servings:</span>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => updateServings(Math.max(recipe.servings_min || 1, servings - 1))}
-                    className="w-7 h-7 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center text-neutral-600 hover:bg-neutral-200 transition-colors text-sm"
-                  >
-                    -
-                  </button>
-                  <span className="text-sm font-semibold text-neutral-800 w-6 text-center">
-                    {servings}
-                  </span>
-                  <button
-                    onClick={() => updateServings(Math.min(recipe.servings_max || 10, servings + 1))}
-                    className="w-7 h-7 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center text-neutral-600 hover:bg-neutral-200 transition-colors text-sm"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              
-              <button
-                onClick={handleCreateCart}
-                disabled={creatingCart}
-                className="flex items-center gap-2 bg-brand-600 hover:bg-brand-700 disabled:bg-brand-400 text-white px-4 py-2 rounded-lg font-medium transition-colors shadow-sm disabled:cursor-not-allowed"
-              >
-                {creatingCart ? (
-                  <>
-                    <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-white"></div>
-                    Creating...
-                  </>
-                ) : (
-                  <>
-                    <ShoppingCart className="w-4 h-4" />
-                    Shop Now
-                  </>
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Share Modal */}
       {showShareModal && (

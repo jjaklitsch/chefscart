@@ -84,7 +84,7 @@ export default function MealPlanPage() {
     if (storedData) {
       const planData = JSON.parse(storedData)
       if (planData.quickPlan) {
-        router.push('/quick-plan')
+        router.push('/meal-plan-builder')
         return
       }
     }
@@ -124,7 +124,7 @@ export default function MealPlanPage() {
               </p>
               <div className="space-y-3">
                 <Link
-                  href="/quick-plan"
+                  href="/meal-plan-builder"
                   className="block bg-brand-green hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
                   Create New Meal Plan

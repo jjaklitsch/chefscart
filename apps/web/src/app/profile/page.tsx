@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '../../../contexts/AuthContext'
-import { ArrowLeft, User, Mail, MapPin, Settings, Save, Edit3 } from 'lucide-react'
+import { ArrowLeft, User, Mail, MapPin, Settings, Save, Edit3, Heart, Clock, ChefHat } from 'lucide-react'
 import Link from 'next/link'
 import { createAuthClient } from '../../../lib/supabase'
 import { UserPreferences } from '../../../types'
@@ -17,14 +17,33 @@ export default function ProfilePage() {
   const [isSaving, setIsSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [loadingProfile, setLoadingProfile] = useState(true)
+  const [likedRecipes, setLikedRecipes] = useState<any[]>([])
+  const [loadingLikes, setLoadingLikes] = useState(true)
 
   useEffect(() => {
     if (!loading && !user) {
       router.push('/login')
     } else if (user) {
       loadUserProfile()
+      loadLikedRecipes()
     }
   }, [user, loading, router])
+
+  const loadLikedRecipes = async () => {
+    try {
+      const response = await fetch('/api/social/liked-recipes')
+      if (response.ok) {
+        const data = await response.json()
+        setLikedRecipes(data.recipes || [])
+      } else {
+        console.error('Failed to load liked recipes')
+      }
+    } catch (error) {
+      console.error('Error loading liked recipes:', error)
+    } finally {
+      setLoadingLikes(false)
+    }
+  }
 
   const loadUserProfile = async () => {
     try {
@@ -217,6 +236,97 @@ export default function ProfilePage() {
               />
             </div>
           </div>
+        </div>
+
+        {/* Liked Recipes Section */}
+        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+            <Heart className="w-6 h-6 text-red-500" />
+            Liked Recipes
+            <span className="text-sm font-normal text-gray-500 ml-2">
+              ({likedRecipes.length} {likedRecipes.length === 1 ? 'recipe' : 'recipes'})
+            </span>
+          </h2>
+
+          {loadingLikes ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="bg-gray-100 rounded-lg p-4 animate-pulse">
+                  <div className="bg-gray-200 rounded-lg aspect-video mb-3"></div>
+                  <div className="bg-gray-200 h-4 rounded mb-2"></div>
+                  <div className="bg-gray-200 h-3 rounded w-2/3"></div>
+                </div>
+              ))}
+            </div>
+          ) : likedRecipes.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {likedRecipes.map((recipe) => (
+                <Link
+                  key={recipe.id}
+                  href={`/community/recipe/${recipe.slug}`}
+                  className="group"
+                >
+                  <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
+                      {recipe.image_url ? (
+                        <img
+                          src={recipe.image_url}
+                          alt={recipe.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <ChefHat className="w-8 h-8 text-gray-400" />
+                        </div>
+                      )}
+                      <div className="absolute top-2 right-2 bg-red-500 rounded-full p-1.5">
+                        <Heart className="w-4 h-4 text-white fill-white" />
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
+                        {recipe.title}
+                      </h3>
+                      {recipe.description && (
+                        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                          {recipe.description}
+                        </p>
+                      )}
+                      <div className="flex items-center justify-between text-xs text-gray-500">
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-3 h-3" />
+                          <span>{(recipe.prep_time || 0) + (recipe.cook_time || 0)}m</span>
+                        </div>
+                        <span className="capitalize">{recipe.cooking_difficulty}</span>
+                      </div>
+                      {recipe.author && (
+                        <div className="mt-2 text-xs text-gray-500">
+                          by {recipe.author.display_name || recipe.author.username}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-gray-400" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">No liked recipes yet</h3>
+              <p className="text-gray-600 mb-6">
+                Start exploring recipes and like the ones you want to save for later!
+              </p>
+              <Link
+                href="/community"
+                className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              >
+                <Heart className="w-5 h-5" />
+                Discover Recipes
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Preferences Summary */}

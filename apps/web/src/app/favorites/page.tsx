@@ -52,7 +52,7 @@ export default function FavoritesPage() {
 
   const createMealPlanFromFavorites = () => {
     // TODO: Navigate to meal plan creation with pre-selected favorites
-    router.push('/quick-plan?source=favorites')
+    router.push('/meal-plan-builder?source=favorites')
   }
 
   if (loading || !user) {
@@ -198,7 +198,7 @@ export default function FavoritesPage() {
               Start exploring our recipes and tap the heart icon on meals you love to add them to your favorites!
             </p>
             <button
-              onClick={() => router.push('/quick-plan')}
+              onClick={() => router.push('/meal-plan-builder')}
               className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
             >
               <Plus className="w-5 h-5" />

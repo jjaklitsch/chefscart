@@ -3,6 +3,8 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import "./globals.css";
 import { AuthProvider } from '../../contexts/AuthContext';
 import { CartProvider } from '../../contexts/CartContext';
+import { MealCartProvider } from '../../contexts/MealCartContext';
+import MobileBottomNav from '../../components/MobileBottomNav';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -36,7 +38,10 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <AuthProvider>
           <CartProvider>
-            {children}
+            <MealCartProvider>
+              {children}
+              <MobileBottomNav />
+            </MealCartProvider>
           </CartProvider>
         </AuthProvider>
       </body>

@@ -1,0 +1,271 @@
+{
+  "meals": [
+    {
+      "id": 193,
+      "title": "Cold Soba with Dipping Sauce",
+      "searchTerm": "Cold Soba with Dipping Sauce",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 149,
+      "title": "Coconut Rice with Grilled Prawns and Vegetables",
+      "searchTerm": "Coconut Rice with Grilled Prawns and Vegetables",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 409,
+      "title": "Complete Galbi (Short Ribs) with Vegetables",
+      "searchTerm": "Complete Galbi (Short Ribs) with Vegetables",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 173,
+      "title": "Complete Catfish Po'boy with Side Salad",
+      "searchTerm": "Complete Catfish Po'boy with Side Salad",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 419,
+      "title": "Complete Samgyeopsal (Pork Belly) Wraps with Pickled Vegetables",
+      "searchTerm": "Complete Samgyeopsal (Pork Belly) Wraps with",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 438,
+      "title": "Falafel Mezze Bowl",
+      "searchTerm": "Falafel Mezze Bowl",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 57,
+      "title": "Herbed Yogurt Veggie Wrap with Whole Grain Tortilla",
+      "searchTerm": "Herbed Yogurt Veggie Wrap with Whole Grain",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 48,
+      "title": "Herbed White Bean Breakfast Toast",
+      "searchTerm": "Herbed White Bean Breakfast Toast",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 217,
+      "title": "Jerk Shrimp Tacos with Pineapple",
+      "searchTerm": "Jerk Shrimp Tacos with Pineapple",
+      "hasImage": false,
+      "currentModel": null
+    },
+    {
+      "id": 482,
+      "title": "Keto Caprese Chicken (No Balsamic)",
+      "searchTerm": "Keto Caprese Chicken (No Balsamic)",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 126,
+      "title": "Kimchi Fried Rice with Egg",
+      "searchTerm": "Kimchi Fried Rice with Egg",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 58,
+      "title": "Lasagna Roll-Ups with Spinach and Ricotta",
+      "searchTerm": "Lasagna Roll-Ups with Spinach and Ricotta",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 216,
+      "title": "Lentil Bolognese over Whole-Wheat Pasta",
+      "searchTerm": "Lentil Bolognese over Whole-Wheat Pasta",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 66,
+      "title": "Low-Carb Orange-Ginger Beef & Broccoli with Cauliflower Rice",
+      "searchTerm": "Low-Carb Orange-Ginger Beef & Broccoli with",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 240,
+      "title": "Olive Tapenade & Egg Toast with Fresh Vegetables",
+      "searchTerm": "Olive Tapenade & Egg Toast with Fresh",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 63,
+      "title": "Roasted Pepper & Mozzarella Breakfast Wrap with Spinach",
+      "searchTerm": "Roasted Pepper & Mozzarella Breakfast Wra",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 118,
+      "title": "Roasted Cauliflower, Olives & Capers with Chickpeas",
+      "searchTerm": "Roasted Cauliflower, Olives & Capers with",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 128,
+      "title": "Roasted Veg & Hummus Plate with Extra Pita",
+      "searchTerm": "Roasted Veg & Hummus Plate with Extra Pita",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 299,
+      "title": "Smash Burger with Special Sauce",
+      "searchTerm": "Smash Burger with Special Sauce",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 153,
+      "title": "Smoked Mackerel & Egg Breakfast Bowl",
+      "searchTerm": "Smoked Mackerel & Egg Breakfast Bowl",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 462,
+      "title": "Som Tam with Grilled Chicken and Jasmine Rice",
+      "searchTerm": "Som Tam with Grilled Chicken and Jasmine Rice",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 102,
+      "title": "Spring Onion Oil Noodles with Tofu",
+      "searchTerm": "Spring Onion Oil Noodles with Tofu",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 304,
+      "title": "Strawberry Pistachio Goat Cheese Salad",
+      "searchTerm": "Strawberry Pistachio Goat Cheese Salad",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 152,
+      "title": "Teriyaki Meatballs Skewers with Rice and Vegetables",
+      "searchTerm": "Teriyaki Meatballs Skewers with Rice and Vegetables",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 343,
+      "title": "Thịt Kho Trứng (Complete Pork & Egg Caramelized with Vegetables)",
+      "searchTerm": "Thịt Kho Trứng (Complete Pork & Egg Caramelized",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 270,
+      "title": "Tofu Katsu Curry with Vegetable Medley",
+      "searchTerm": "Tofu Katsu Curry with Vegetable Medley",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 148,
+      "title": "Tom Kha Gai (Coconut Soup) with Jasmine Rice",
+      "searchTerm": "Tom Kha Gai (Coconut Soup) with Jasmine Rice",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 204,
+      "title": "Tomato Soup & Grilled Cheese with Lentils",
+      "searchTerm": "Tomato Soup & Grilled Cheese with Lentils",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 498,
+      "title": "Vegan Stuffed Peppers with Rice",
+      "searchTerm": "Vegan Stuffed Peppers with Rice",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 192,
+      "title": "Vegetarian Sushi Bowl",
+      "searchTerm": "Vegetarian Sushi Bowl",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    },
+    {
+      "id": 576,
+      "title": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+      "searchTerm": "Watermelon–Feta–Mint Salad (Lime Vinaigrette)",
+      "hasImage": true,
+      "currentModel": "nano-banana-gemini-2.5-flash-image-preview"
+    },
+    {
+      "id": 503,
+      "title": "Cheese Enchiladas Verde with Black Beans and Rice",
+      "searchTerm": "Cheese Enchiladas Verde with Black Beans and Rice",
+      "hasImage": false,
+      "currentModel": null
+    },
+    {
+      "id": 83,
+      "title": "Avocado Ranch Chicken Grain Bowl",
+      "searchTerm": "Avocado Ranch Chicken Grain Bowl",
+      "hasImage": true,
+      "currentModel": "imagen-4.0-generate-001"
+    }
+  ],
+  "ids": [
+    193,
+    149,
+    409,
+    173,
+    419,
+    438,
+    57,
+    48,
+    217,
+    482,
+    126,
+    58,
+    216,
+    66,
+    240,
+    63,
+    118,
+    128,
+    299,
+    153,
+    462,
+    102,
+    304,
+    152,
+    343,
+    270,
+    148,
+    204,
+    498,
+    192,
+    576,
+    503,
+    83
+  ],
+  "notFound": []
+}

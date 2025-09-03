@@ -7,6 +7,8 @@ import { ArrowLeft, Save, ShoppingCart, Utensils, Flame, Clock, Users, Leaf, Hea
 import Link from 'next/link'
 import { UserPreferences } from '../../../types'
 import { createAuthClient } from '../../../lib/supabase'
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
 
 // Cuisine preference options (matching onboarding)
 const cuisineOptions = [
@@ -184,6 +186,12 @@ export default function PreferencesPage() {
     if (!preferences) return false
     const current = preferences[category] || []
     const valueArray = Array.isArray(value) ? value : [value]
+    
+    // Special handling for "None" options - selected when array is empty
+    if (valueArray.length === 1 && valueArray[0] === '') {
+      return current.length === 0
+    }
+    
     return valueArray.some(v => current.includes(v))
   }
 
@@ -199,7 +207,9 @@ export default function PreferencesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-health-gradient">
+    <div className="min-h-screen bg-neutral-50">
+      <Header />
+      
       <div className="max-w-3xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -252,6 +262,33 @@ export default function PreferencesPage() {
           )}
 
           <div className="space-y-8">
+            {/* People per Meal - moved to top */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Users className="w-5 h-5 text-gray-700" />
+                <h2 className="text-lg font-semibold text-gray-900">People per Meal</h2>
+              </div>
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => setPreferences({ ...preferences, peoplePerMeal: Math.max(1, (preferences.peoplePerMeal || 2) - 1) })}
+                  className="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-gray-400 flex items-center justify-center font-bold"
+                  disabled={preferences.peoplePerMeal <= 1}
+                >
+                  −
+                </button>
+                <div className="text-2xl font-bold text-gray-900 w-16 text-center">
+                  {preferences.peoplePerMeal || 2}
+                </div>
+                <button
+                  onClick={() => setPreferences({ ...preferences, peoplePerMeal: Math.min(8, (preferences.peoplePerMeal || 2) + 1) })}
+                  className="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-gray-400 flex items-center justify-center font-bold"
+                  disabled={preferences.peoplePerMeal >= 8}
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
             {/* Cuisine Preferences */}
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -283,20 +320,33 @@ export default function PreferencesPage() {
                 <h2 className="text-lg font-semibold text-gray-900">Dietary Style</h2>
               </div>
               <div className="flex flex-wrap gap-2">
-                {dietaryOptions.map(option => (
-                  <button
-                    key={option.id}
-                    onClick={() => toggleArrayPreference('dietaryStyle', option.value)}
-                    className={`px-4 py-2 rounded-lg border-2 font-medium transition-colors flex items-center gap-2 ${
-                      isOptionSelected('dietaryStyle', option.value)
-                        ? 'bg-green-600 border-green-600 text-white'
-                        : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
-                    }`}
-                  >
-                    <span>{option.icon}</span>
-                    {option.label}
-                  </button>
-                ))}
+                {dietaryOptions.map(option => {
+                  const isNoneOption = option.id === 'none'
+                  const isSelected = isNoneOption 
+                    ? (preferences.dietaryStyle || []).length === 0
+                    : isOptionSelected('dietaryStyle', option.value)
+                  
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => {
+                        if (isNoneOption) {
+                          setPreferences({ ...preferences, dietaryStyle: [] })
+                        } else {
+                          toggleArrayPreference('dietaryStyle', option.value)
+                        }
+                      }}
+                      className={`px-4 py-2 rounded-lg border-2 font-medium transition-colors flex items-center gap-2 ${
+                        isSelected
+                          ? 'bg-green-600 border-green-600 text-white'
+                          : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
+                      }`}
+                    >
+                      <span>{option.icon}</span>
+                      {option.label}
+                    </button>
+                  )
+                })}
               </div>
             </div>
 
@@ -331,20 +381,33 @@ export default function PreferencesPage() {
                 <h2 className="text-lg font-semibold text-gray-900">Foods to Avoid</h2>
               </div>
               <div className="flex flex-wrap gap-2">
-                {avoidOptions.map(option => (
-                  <button
-                    key={option.id}
-                    onClick={() => toggleArrayPreference('foodsToAvoid', option.value)}
-                    className={`px-4 py-2 rounded-lg border-2 font-medium transition-colors flex items-center gap-2 ${
-                      isOptionSelected('foodsToAvoid', option.value)
-                        ? 'bg-red-600 border-red-600 text-white'
-                        : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
-                    }`}
-                  >
-                    <span>{option.icon}</span>
-                    {option.label}
-                  </button>
-                ))}
+                {avoidOptions.map(option => {
+                  const isNoneOption = option.id === 'none'
+                  const isSelected = isNoneOption 
+                    ? (preferences.foodsToAvoid || []).length === 0
+                    : isOptionSelected('foodsToAvoid', option.value)
+                  
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => {
+                        if (isNoneOption) {
+                          setPreferences({ ...preferences, foodsToAvoid: [] })
+                        } else {
+                          toggleArrayPreference('foodsToAvoid', option.value)
+                        }
+                      }}
+                      className={`px-4 py-2 rounded-lg border-2 font-medium transition-colors flex items-center gap-2 ${
+                        isSelected
+                          ? 'bg-red-600 border-red-600 text-white'
+                          : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
+                      }`}
+                    >
+                      <span>{option.icon}</span>
+                      {option.label}
+                    </button>
+                  )
+                })}
               </div>
             </div>
 
@@ -384,32 +447,6 @@ export default function PreferencesPage() {
               </div>
             </div>
 
-            {/* People per Meal */}
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Users className="w-5 h-5 text-gray-700" />
-                <h2 className="text-lg font-semibold text-gray-900">People per Meal</h2>
-              </div>
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => setPreferences({ ...preferences, peoplePerMeal: Math.max(1, (preferences.peoplePerMeal || 2) - 1) })}
-                  className="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-gray-400 flex items-center justify-center font-bold"
-                  disabled={preferences.peoplePerMeal <= 1}
-                >
-                  −
-                </button>
-                <div className="text-2xl font-bold text-gray-900 w-16 text-center">
-                  {preferences.peoplePerMeal || 2}
-                </div>
-                <button
-                  onClick={() => setPreferences({ ...preferences, peoplePerMeal: Math.min(8, (preferences.peoplePerMeal || 2) + 1) })}
-                  className="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-gray-400 flex items-center justify-center font-bold"
-                  disabled={preferences.peoplePerMeal >= 8}
-                >
-                  +
-                </button>
-              </div>
-            </div>
 
             {/* Organic Preference */}
             <div>
@@ -451,6 +488,8 @@ export default function PreferencesPage() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   )
 }
